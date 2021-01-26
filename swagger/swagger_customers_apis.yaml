@@ -1009,7 +1009,7 @@ paths:
                         example: 'https://api.banco.com.br/open-banking/<api>/v1/<resource>'
                   meta:
                     type: object
-                    descripion: Meta informações referente a API requisitada.
+                    description: Meta informações referente a API requisitada.
                     properties:
                       totalRecords:
                         type: integer
