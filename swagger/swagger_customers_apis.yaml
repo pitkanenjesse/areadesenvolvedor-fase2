@@ -103,7 +103,7 @@ paths:
                                               maxLength: 20
                                               pattern: \w*\W*
                                               description: Número do Passaporte. Documento concedido aos viajantes por uma autoridade administrativa nacional a fim de certificar sua identidade perante autoridades estrangeiras. De preenchimento obrigatório. Aplicável somente à Pessoa natural residente no exterior desobrigada de inscrição no CPF.
-                                              example: 07525346874459482062
+                                              example: '75253468744594820620'
                                             country:
                                               type: string
                                               description: Pais de emissão do passaporte. Código do pais de acordo com o código “alpha3” do ISO-3166.
@@ -169,7 +169,6 @@ paths:
                                               example: true
                                             other:
                                               type: object
-                                              required: null
                                               properties:
                                                 additionalInfo:
                                                   type: string
@@ -178,7 +177,6 @@ paths:
                                                   example: CAN
                                                 complementaryDocuments:
                                                   type: object
-                                                  required: null
                                                   properties:
                                                     type:
                                                       type: string
@@ -634,7 +632,6 @@ paths:
                                           type: array
                                           items:
                                             type: object
-                                            required: null
                                             properties:
                                               type:
                                                 type: string
@@ -933,7 +930,7 @@ paths:
                                               maxLength: 10
                                               x-cds-type: DateString
                                               description: 'Data da renda, conforme especificação RFC-3339.'
-                                              example: '2014'
+                                              example: '2014-03-19'
                                         informedPatrimony:
                                           type: object
                                           description: Objeto que agrupa as informações referentes ao patrimônio informado
