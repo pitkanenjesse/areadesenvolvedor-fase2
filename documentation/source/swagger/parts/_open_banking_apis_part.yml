@@ -1245,14 +1245,8 @@ components:
       $ref: ./schemas/BusinessUnarrangedAccountOverdraftCompany.yaml
     BusinessUnarrangedAccountOverdraftFee:
       $ref: ./schemas/BusinessUnarrangedAccountOverdraftFee.yaml
-    CNPJ:
-      $ref: ./schemas/CNPJ.yaml
-    Company:
-      $ref: ./schemas/Company.yaml
     CPF:
       $ref: ./schemas/CPF.yaml
-    CompanySimple:
-      $ref: ./schemas/CompanySimple.yaml
     CreditCardIdentification:
       $ref: ./schemas/CreditCardIdentification.yaml
     CreditCardInterest:
