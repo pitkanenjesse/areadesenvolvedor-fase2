@@ -1000,7 +1000,7 @@ paths:
 
         ### Visão Geral
 
-        Este *endpoint* possibilita ao diretório consultar dados relativos aos saldos em conta 
+        Este *endpoint* possibilita ao diretório consultar dados relativos aos saldos em conta
 
         ### Dicionário de dados
 
@@ -1064,7 +1064,7 @@ paths:
 
         ### Visão Geral
 
-        Este *endpoint* possibilita ao diretório consultar limites referentes ao valor das operações de crédito vinculadas à conta de depósito à vista ou conta corrente 
+        Este *endpoint* possibilita ao diretório consultar limites referentes ao valor das operações de crédito vinculadas à conta de depósito à vista ou conta corrente
 
         ### Dicionário de dados
 
