@@ -1291,9 +1291,19 @@ components:
         - name
         - cnpjNumber
         - accounts
-      allOf:
-        - $ref: '#/components/schemas/CompanySimple'
       properties:
+        name:
+          description: 'Nome da Instituição, pertencente à marca, responsável pela modalidade de Empréstimos.'
+          type: string
+          pattern: \w*\W*
+          maxLength: 80
+          example: Empresa da Organização A
+        cnpjNumber:
+          description: 'Número completo do CNPJ da instituição responsável pelo Cadastro - o CNPJ corresponde ao número de inscrição no Cadastro de Pessoa Jurídica. Deve-se ter apenas os números do CNPJ, sem máscara'
+          type: string
+          pattern: '^(\d{14})$|^NA$'
+          maxLength: 14
+          example: '50685362000135'
         accounts:
           $ref: '#/components/schemas/AccountsIdentification'
     AccountsIncomeRate:
@@ -1556,7 +1566,16 @@ components:
           example: false
     BankingAgentIdentification:
       type: object
+      required:
+        - cnpjNumber
+        - corporationName
       properties:
+        cnpjNumber:
+          description: 'Número completo do CNPJ da instituição responsável pelo Cadastro - o CNPJ corresponde ao número de inscrição no Cadastro de Pessoa Jurídica. Deve-se ter apenas os números do CNPJ, sem máscara'
+          type: string
+          pattern: '^(\d{14})$|^NA$'
+          maxLength: 14
+          example: '50685362000135'
         corporationName:
           type: string
           maxLength: 100
@@ -1566,13 +1585,8 @@ components:
           maxLength: 100
           pattern: \w*\W*
         isUnderestablishment:
-          type: boolean
           description: Indicador do Correspondente Bancário ser um Substabelecimento (são empresas  que foram contratadas por um correspondente bancário para prestar serviços. A empresa substabelecida é tratada como um correspondente do banco e tem praticamente os mesmos direitos e obrigações que possui o correspondente direto)
-      allOf:
-        - $ref: '#/components/schemas/CNPJ'
-      required:
-        - cnpjNumber
-        - corporationName
+          type: boolean
     BankingAgentLocation:
       type: object
       required:
@@ -1670,19 +1684,23 @@ components:
         - contractors
       properties:
         name:
+          description: 'Nome da Instituição, pertencente à Marca, responsável pelo Cadastro.'
           type: string
-          maxLength: 80
           pattern: \w*\W*
-          description: 'Nome da Instituição, pertencente à marca, responsável pelo Correspondente Bancário no país.'
+          maxLength: 80
           example: Empresa da Organização A
+        cnpjNumber:
+          description: 'Número completo do CNPJ da instituição responsável pelo Cadastro - o CNPJ corresponde ao número de inscrição no Cadastro de Pessoa Jurídica. Deve-se ter apenas os números do CNPJ, sem máscara'
+          type: string
+          pattern: '^(\d{14})$|^NA$'
+          maxLength: 14
+          example: '50685362000135'
         contractors:
           type: array
           items:
             $ref: '#/components/schemas/BankingAgentsContractor'
           minItems: 1
           description: Relação de informações de um contratante do serviço de correspondente.
-      allOf:
-        - $ref: '#/components/schemas/CNPJ'
     BankingAgentsContractor:
       type: object
       required:
@@ -1693,14 +1711,18 @@ components:
           type: string
           maxLength: 100
           pattern: \w*\W*
+        cnpjNumber:
+          description: 'Número completo do CNPJ da instituição responsável pelo Cadastro - o CNPJ corresponde ao número de inscrição no Cadastro de Pessoa Jurídica. Deve-se ter apenas os números do CNPJ, sem máscara'
+          type: string
+          pattern: '^(\d{14})$|^NA$'
+          maxLength: 14
+          example: '50685362000135'
         bankingAgents:
           type: array
           items:
             $ref: '#/components/schemas/BankingAgent'
           minItems: 1
           maxItems: 20
-      allOf:
-        - $ref: '#/components/schemas/CNPJ'
     Branch:
       type: object
       description: 'Dependência de instituições financeiras e demais instituições, autorizadas a funcionar pelo Banco Central do Brasil, destinada à prática das atividades para as quais a instituição esteja regularmente habilitada.'
@@ -1928,31 +1950,31 @@ components:
         - cnpjNumber
       properties:
         name:
+          description: 'Nome da Instituição, pertencente à Marca, responsável pelo Cadastro.'
           type: string
+          pattern: \w*\W*
           maxLength: 80
-          pattern: \w*\W*
+          example: Empresa da Organização A
         cnpjNumber:
+          description: 'Número completo do CNPJ da instituição responsável pelo Cadastro - o CNPJ corresponde ao número de inscrição no Cadastro de Pessoa Jurídica. Deve-se ter apenas os números do CNPJ, sem máscara'
           type: string
-          minLength: 14
-          maxLength: 14
           pattern: '^(\d{14})$|^NA$'
-          description: |
-            Número completo do CNPJ da instituição responsável pela dependência - o CNPJ corresponde ao número de inscrição no Cadastro de Pessoa Jurídica.
-            Deve-se ter apenas os números do CNPJ, sem máscara
-          example: '45086338000178'
+          maxLength: 14
+          example: '50685362000135'
         urlComplementaryList:
+          description: |
+            URL do link que conterá a lista complementar com os nomes e CNPJs agrupados sob o mesmo cnpjNumber. Os contidos nessa lista possuem as mesmas características para produtos e serviços. Endereço eletrônico de acesso ao canal. Será obrigatoriamente preenchido se houver lista complementar com os nomes e CNPJs a ser disponibilizada.
+            Restrição: Será obrigatorimente preenchido se houver lista complementar com os nomes e CNPJs a ser disponibilizada
           type: string
-          maxLength: 1024
           pattern: \w*\W*
-          example: 'https://example.com/mobile-banking'
+          maxLength: 1024
+          example: 'https://empresadaorganizacaoa.com/complementarylist'
         branches:
           type: array
           items:
             $ref: '#/components/schemas/Branch'
           minItems: 1
           description: Lista de Dependências de uma Instituição
-      allOf:
-        - $ref: '#/components/schemas/CNPJ'
     Brand:
       type: object
       properties:
@@ -2042,16 +2064,34 @@ components:
       required:
         - name
         - cnpjNumber
-      allOf:
-        - $ref: '#/components/schemas/Company'
       properties:
+        name:
+          description: 'Nome da Instituição, pertencente à Marca, responsável pelo Cadastro.'
+          type: string
+          pattern: \w*\W*
+          maxLength: 80
+          example: Empresa da Organização A
+        cnpjNumber:
+          description: 'Número completo do CNPJ da instituição responsável pelo Cadastro - o CNPJ corresponde ao número de inscrição no Cadastro de Pessoa Jurídica. Deve-se ter apenas os números do CNPJ, sem máscara'
+          type: string
+          pattern: '^(\d{14})$|^NA$'
+          maxLength: 14
+          example: '50685362000135'
+        urlComplementaryList:
+          description: |
+            URL do link que conterá a lista complementar com os nomes e CNPJs agrupados sob o mesmo cnpjNumber. Os contidos nessa lista possuem as mesmas características para produtos e serviços. Endereço eletrônico de acesso ao canal. Será obrigatoriamente preenchido se houver lista complementar com os nomes e CNPJs a ser disponibilizada.
+            Restrição: Será obrigatorimente preenchido se houver lista complementar com os nomes e CNPJs a ser disponibilizada
+          type: string
+          pattern: \w*\W*
+          maxLength: 1024
+          example: 'https://empresadaorganizacaoa.com/complementarylist'
         businessAccounts:
+          description: lista de tipos de conta
           type: array
           items:
             $ref: '#/components/schemas/BusinessAccounts'
           minItems: 1
           maxItems: 3
-          description: lista de tipos de conta
     BusinessAccountsService:
       type: object
       required:
@@ -2180,12 +2220,30 @@ components:
       required:
         - name
         - cnpjNumber
-      allOf:
-        - $ref: '#/components/schemas/Company'
       properties:
+        name:
+          description: 'Nome da Instituição, pertencente à Marca, responsável pelo Cadastro.'
+          type: string
+          pattern: \w*\W*
+          maxLength: 80
+          example: Empresa da Organização A
+        cnpjNumber:
+          description: 'Número completo do CNPJ da instituição responsável pelo Cadastro - o CNPJ corresponde ao número de inscrição no Cadastro de Pessoa Jurídica. Deve-se ter apenas os números do CNPJ, sem máscara'
+          type: string
+          pattern: '^(\d{14})$|^NA$'
+          maxLength: 14
+          example: '50685362000135'
+        urlComplementaryList:
+          description: |
+            URL do link que conterá a lista complementar com os nomes e CNPJs agrupados sob o mesmo cnpjNumber. Os contidos nessa lista possuem as mesmas características para produtos e serviços. Endereço eletrônico de acesso ao canal. Será obrigatoriamente preenchido se houver lista complementar com os nomes e CNPJs a ser disponibilizada.
+            Restrição: Será obrigatorimente preenchido se houver lista complementar com os nomes e CNPJs a ser disponibilizada
+          type: string
+          pattern: \w*\W*
+          maxLength: 1024
+          example: 'https://empresadaorganizacaoa.com/complementarylist'
         businessCreditCards:
-          type: array
           description: Lista dos nomes de conta de pagamento pós-paga
+          type: array
           items:
             $ref: '#/components/schemas/BusinessCreditCard'
           minItems: 1
@@ -2253,16 +2311,34 @@ components:
         - name
         - cnpjNumber
         - businessFinancings
-      allOf:
-        - $ref: '#/components/schemas/Company'
       properties:
+        name:
+          description: 'Nome da Instituição, pertencente à Marca, responsável pelo Cadastro.'
+          type: string
+          pattern: \w*\W*
+          maxLength: 80
+          example: Empresa da Organização A
+        cnpjNumber:
+          description: 'Número completo do CNPJ da instituição responsável pelo Cadastro - o CNPJ corresponde ao número de inscrição no Cadastro de Pessoa Jurídica. Deve-se ter apenas os números do CNPJ, sem máscara'
+          type: string
+          pattern: '^(\d{14})$|^NA$'
+          maxLength: 14
+          example: '50685362000135'
+        urlComplementaryList:
+          description: |
+            URL do link que conterá a lista complementar com os nomes e CNPJs agrupados sob o mesmo cnpjNumber. Os contidos nessa lista possuem as mesmas características para produtos e serviços. Endereço eletrônico de acesso ao canal. Será obrigatoriamente preenchido se houver lista complementar com os nomes e CNPJs a ser disponibilizada.
+            Restrição: Será obrigatorimente preenchido se houver lista complementar com os nomes e CNPJs a ser disponibilizada
+          type: string
+          pattern: \w*\W*
+          maxLength: 1024
+          example: 'https://empresadaorganizacaoa.com/complementarylist'
         businessFinancings:
+          description: Lista de financiamentos
           type: array
           items:
             $ref: '#/components/schemas/BusinessFinancing'
           minItems: 1
           maxItems: 9
-          description: Lista de financiamentos
     BusinessFinancingFee:
       type: object
       description: Objeto que reúne informações de tarifas de serviços
@@ -2288,8 +2364,13 @@ components:
       allOf:
         - $ref: '#/components/schemas/RequestDateTime'
         - $ref: '#/components/schemas/UpdateDateTime'
-        - $ref: '#/components/schemas/CNPJ'
       properties:
+        cnpjNumber:
+          description: 'Número completo do CNPJ da instituição responsável pelo Cadastro - o CNPJ corresponde ao número de inscrição no Cadastro de Pessoa Jurídica. Deve-se ter apenas os números do CNPJ, sem máscara'
+          type: string
+          pattern: '^(\d{14})$|^NA$'
+          maxLength: 14
+          example: '50685362000135'
         otherDocuments:
           type: array
           items:
@@ -2347,9 +2428,27 @@ components:
         - name
         - cnpjNumber
         - businessCustomers
-      allOf:
-        - $ref: '#/components/schemas/Company'
       properties:
+        name:
+          description: 'Nome da Instituição, pertencente à Marca, responsável pelo Cadastro.'
+          type: string
+          pattern: \w*\W*
+          maxLength: 80
+          example: Empresa da Organização A
+        cnpjNumber:
+          description: 'Número completo do CNPJ da instituição responsável pelo Cadastro - o CNPJ corresponde ao número de inscrição no Cadastro de Pessoa Jurídica. Deve-se ter apenas os números do CNPJ, sem máscara'
+          type: string
+          pattern: '^(\d{14})$|^NA$'
+          maxLength: 14
+          example: '50685362000135'
+        urlComplementaryList:
+          description: |
+            URL do link que conterá a lista complementar com os nomes e CNPJs agrupados sob o mesmo cnpjNumber. Os contidos nessa lista possuem as mesmas características para produtos e serviços. Endereço eletrônico de acesso ao canal. Será obrigatoriamente preenchido se houver lista complementar com os nomes e CNPJs a ser disponibilizada.
+            Restrição: Será obrigatorimente preenchido se houver lista complementar com os nomes e CNPJs a ser disponibilizada
+          type: string
+          pattern: \w*\W*
+          maxLength: 1024
+          example: 'https://empresadaorganizacaoa.com/complementarylist'
         businessCustomers:
           $ref: '#/components/schemas/BusinessIdentificationCustomers'
     BusinessIdentificationCustomers:
@@ -2439,16 +2538,34 @@ components:
         - name
         - cnpjNumber
         - businessInvoiceFinancings
-      allOf:
-        - $ref: '#/components/schemas/Company'
       properties:
+        name:
+          description: 'Nome da Instituição, pertencente à Marca, responsável pelo Cadastro.'
+          type: string
+          pattern: \w*\W*
+          maxLength: 80
+          example: Empresa da Organização A
+        cnpjNumber:
+          description: 'Número completo do CNPJ da instituição responsável pelo Cadastro - o CNPJ corresponde ao número de inscrição no Cadastro de Pessoa Jurídica. Deve-se ter apenas os números do CNPJ, sem máscara'
+          type: string
+          pattern: '^(\d{14})$|^NA$'
+          maxLength: 14
+          example: '50685362000135'
+        urlComplementaryList:
+          description: |
+            URL do link que conterá a lista complementar com os nomes e CNPJs agrupados sob o mesmo cnpjNumber. Os contidos nessa lista possuem as mesmas características para produtos e serviços. Endereço eletrônico de acesso ao canal. Será obrigatoriamente preenchido se houver lista complementar com os nomes e CNPJs a ser disponibilizada.
+            Restrição: Será obrigatorimente preenchido se houver lista complementar com os nomes e CNPJs a ser disponibilizada
+          type: string
+          pattern: \w*\W*
+          maxLength: 1024
+          example: 'https://empresadaorganizacaoa.com/complementarylist'
         businessInvoiceFinancings:
+          description: Lista de Modalidades de Direitos Creditórios Descontados
           type: array
           items:
             $ref: '#/components/schemas/BusinessInvoiceFinancings'
           minItems: 1
           maxItems: 5
-          description: Lista de Modalidades de Direitos Creditórios Descontados
     BusinessInvoiceFinancingsFees:
       type: object
       description: Objeto que reúne informações de tarifas de serviços
@@ -2563,17 +2680,25 @@ components:
         - businessLoans
       properties:
         name:
+          description: 'Nome da Instituição, pertencente à Marca, responsável pelo Cadastro.'
           type: string
           pattern: \w*\W*
           maxLength: 80
-          description: 'Nome da Instituição, pertencente à marca, responsável pela modalidade de Empréstimos. p.ex.''Empresa da Organização A'''
-          example: Empresa A1
+          example: Empresa da Organização A
+        cnpjNumber:
+          description: 'Número completo do CNPJ da instituição responsável pelo Cadastro - o CNPJ corresponde ao número de inscrição no Cadastro de Pessoa Jurídica. Deve-se ter apenas os números do CNPJ, sem máscara'
+          type: string
+          pattern: '^(\d{14})$|^NA$'
+          maxLength: 14
+          example: '50685362000135'
         urlComplementaryList:
+          description: |
+            URL do link que conterá a lista complementar com os nomes e CNPJs agrupados sob o mesmo cnpjNumber. Os contidos nessa lista possuem as mesmas características para produtos e serviços. Endereço eletrônico de acesso ao canal. Será obrigatoriamente preenchido se houver lista complementar com os nomes e CNPJs a ser disponibilizada.
+            Restrição: Será obrigatorimente preenchido se houver lista complementar com os nomes e CNPJs a ser disponibilizada
           type: string
           pattern: \w*\W*
           maxLength: 1024
-          description: URL do link que conterá a lista complementar com os nomes e CNPJs agrupados sob o mesmo cnpjNumber. Os contidos nessa lista possuem as mesmas características para produtos e serviços. Endereço eletrônico de acesso ao canal.
-          example: 'https://example.com/mobile-banking'
+          example: 'https://empresadaorganizacaoa.com/complementarylist'
         businessLoans:
           type: array
           items:
@@ -2581,8 +2706,6 @@ components:
           minItems: 1
           maxItems: 6
           description: Lista de modalidades de empréstimos
-      allOf:
-        - $ref: '#/components/schemas/CNPJ'
     BusinessOtherDocument:
       type: object
       properties:
@@ -2653,9 +2776,27 @@ components:
         - name
         - cnpjNumber
         - personalLoans
-      allOf:
-        - $ref: '#/components/schemas/Company'
       properties:
+        name:
+          description: 'Nome da Instituição, pertencente à Marca, responsável pelo Cadastro.'
+          type: string
+          pattern: \w*\W*
+          maxLength: 80
+          example: Empresa da Organização A
+        cnpjNumber:
+          description: 'Número completo do CNPJ da instituição responsável pelo Cadastro - o CNPJ corresponde ao número de inscrição no Cadastro de Pessoa Jurídica. Deve-se ter apenas os números do CNPJ, sem máscara'
+          type: string
+          pattern: '^(\d{14})$|^NA$'
+          maxLength: 14
+          example: '50685362000135'
+        urlComplementaryList:
+          description: |
+            URL do link que conterá a lista complementar com os nomes e CNPJs agrupados sob o mesmo cnpjNumber. Os contidos nessa lista possuem as mesmas características para produtos e serviços. Endereço eletrônico de acesso ao canal. Será obrigatoriamente preenchido se houver lista complementar com os nomes e CNPJs a ser disponibilizada.
+            Restrição: Será obrigatorimente preenchido se houver lista complementar com os nomes e CNPJs a ser disponibilizada
+          type: string
+          pattern: \w*\W*
+          maxLength: 1024
+          example: 'https://empresadaorganizacaoa.com/complementarylist'
         personalCustomers:
           $ref: '#/components/schemas/BusinessQualificationCustomers'
     BusinessQualificationCustomers:
@@ -2668,6 +2809,7 @@ components:
           $ref: '#/components/schemas/BusinessQualification'
     BusinessUnarrangedAccountOverdraft:
       type: object
+      description: Lista de produtos e serviços referente adiantamento a depositante
       required:
         - fees
         - interestRates
@@ -2710,12 +2852,29 @@ components:
         - name
         - cnpjNumber
         - businessUnarrangedAccountOverdraft
-      allOf:
-        - $ref: '#/components/schemas/Company'
       properties:
+        name:
+          description: 'Nome da Instituição, pertencente à Marca, responsável pelo Cadastro.'
+          type: string
+          pattern: \w*\W*
+          maxLength: 80
+          example: Empresa da Organização A
+        cnpjNumber:
+          description: 'Número completo do CNPJ da instituição responsável pelo Cadastro - o CNPJ corresponde ao número de inscrição no Cadastro de Pessoa Jurídica. Deve-se ter apenas os números do CNPJ, sem máscara'
+          type: string
+          pattern: '^(\d{14})$|^NA$'
+          maxLength: 14
+          example: '50685362000135'
+        urlComplementaryList:
+          description: |
+            URL do link que conterá a lista complementar com os nomes e CNPJs agrupados sob o mesmo cnpjNumber. Os contidos nessa lista possuem as mesmas características para produtos e serviços. Endereço eletrônico de acesso ao canal. Será obrigatoriamente preenchido se houver lista complementar com os nomes e CNPJs a ser disponibilizada.
+            Restrição: Será obrigatorimente preenchido se houver lista complementar com os nomes e CNPJs a ser disponibilizada
+          type: string
+          pattern: \w*\W*
+          maxLength: 1024
+          example: 'https://empresadaorganizacaoa.com/complementarylist'
         businessUnarrangedAccountOverdraft:
           $ref: '#/components/schemas/BusinessUnarrangedAccountOverdraft'
-          description: Lista de produtos e serviços referente adiantamento a depositante
     BusinessUnarrangedAccountOverdraftFee:
       type: object
       description: Objeto que reúne informações de tarifas de serviços
@@ -2729,37 +2888,6 @@ components:
           minItems: 1
           maxItems: 31
           description: Lista das Tarifas cobradas sobre Serviços Prioritários
-    CNPJ:
-      type: object
-      properties:
-        cnpjNumber:
-          type: string
-          pattern: '^(\d{14})$|^NA$'
-          description: Número completo do CNPJ da instituição
-          maxLength: 14
-          example: '50685362000135'
-    Company:
-      type: object
-      required:
-        - name
-        - cnpjNumber
-      allOf:
-        - $ref: '#/components/schemas/CNPJ'
-      properties:
-        name:
-          type: string
-          description: 'Nome da Instituição, pertencente à marca, responsável pela modalidade de Empréstimos. p.ex.''Empresa da Organização A'''
-          maxLength: 80
-          pattern: \w*\W*
-          example: Empresa A1
-        urlComplementaryList:
-          type: string
-          pattern: \w*\W*
-          maxLength: 1024
-          description: |
-            URL do link que conterá a lista complementar com os nomes e CNPJs agrupados sob o mesmo cnpjNumber. Os contidos nessa lista possuem as mesmas características para produtos e serviços. Endereço eletrônico de acesso ao canal. Será obrigatoriamente preenchido se houver lista complementar com os nomes e CNPJs a ser disponibilizada.
-            Restrição: Será obrigatorimente preenchido se houver lista complementar com os nomes e CNPJs a ser disponibilizada
-          example: 'https://empresadaorganizacaoa.com/complementarylist'
     CPF:
       type: object
       properties:
@@ -2769,20 +2897,6 @@ components:
           description: 'Número completo do CPF. O CPF é o Cadastro de Pessoa natural. Ele é um documento feito pela Receita Federal e serve para identificar os contribuintes. O CPF é uma numeração com 11 dígitos, que só mudam por decisão judicial. O documento é emitido pela receita federal'
           maxLength: 11
           example: '25872252137'
-    CompanySimple:
-      type: object
-      required:
-        - name
-        - cnpjNumber
-      allOf:
-        - $ref: '#/components/schemas/CNPJ'
-      properties:
-        name:
-          type: string
-          description: 'Nome da Instituição, pertencente à marca, responsável pela modalidade de Empréstimos.'
-          maxLength: 80
-          pattern: \w*\W*
-          example: Empresa da Organização A
     CreditCardIdentification:
       type: object
       required:
@@ -3430,16 +3544,25 @@ components:
         - cnpjNumber
       properties:
         name:
+          description: 'Nome da Instituição, pertencente à Marca, responsável pelo Cadastro.'
           type: string
-          description: Nome da marca selecionada pela Organização proprietária da dependência (titular).
-          example: Empresa da Marca A
+          pattern: \w*\W*
           maxLength: 80
-          pattern: \w*\W*
-        urlComplementaryList:
+          example: Empresa da Organização A
+        cnpjNumber:
+          description: 'Número completo do CNPJ da instituição responsável pelo Cadastro - o CNPJ corresponde ao número de inscrição no Cadastro de Pessoa Jurídica. Deve-se ter apenas os números do CNPJ, sem máscara'
           type: string
-          maxLength: 1024
+          pattern: '^(\d{14})$|^NA$'
+          maxLength: 14
+          example: '50685362000135'
+        urlComplementaryList:
+          description: |
+            URL do link que conterá a lista complementar com os nomes e CNPJs agrupados sob o mesmo cnpjNumber. Os contidos nessa lista possuem as mesmas características para produtos e serviços. Endereço eletrônico de acesso ao canal. Será obrigatoriamente preenchido se houver lista complementar com os nomes e CNPJs a ser disponibilizada.
+            Restrição: Será obrigatorimente preenchido se houver lista complementar com os nomes e CNPJs a ser disponibilizada
+          type: string
           pattern: \w*\W*
-          example: 'https://example.com/mobile-banking'
+          maxLength: 1024
+          example: 'https://empresadaorganizacaoa.com/complementarylist'
         electronicChannels:
           type: array
           items:
@@ -3447,8 +3570,6 @@ components:
           minItems: 1
           maxItems: 4
           description: Lista  de canais de atendimento eltrônico
-      allOf:
-        - $ref: '#/components/schemas/CNPJ'
     EndpointDowntime:
       type: object
       description: Tempos de downtime por endpoint.
@@ -4921,14 +5042,32 @@ components:
       required:
         - name
         - cnpjNumber
-      allOf:
-        - $ref: '#/components/schemas/Company'
       properties:
+        name:
+          description: 'Nome da Instituição, pertencente à Marca, responsável pelo Cadastro.'
+          type: string
+          pattern: \w*\W*
+          maxLength: 80
+          example: Empresa da Organização A
+        cnpjNumber:
+          description: 'Número completo do CNPJ da instituição responsável pelo Cadastro - o CNPJ corresponde ao número de inscrição no Cadastro de Pessoa Jurídica. Deve-se ter apenas os números do CNPJ, sem máscara'
+          type: string
+          pattern: '^(\d{14})$|^NA$'
+          maxLength: 14
+          example: '50685362000135'
+        urlComplementaryList:
+          description: |
+            URL do link que conterá a lista complementar com os nomes e CNPJs agrupados sob o mesmo cnpjNumber. Os contidos nessa lista possuem as mesmas características para produtos e serviços. Endereço eletrônico de acesso ao canal. Será obrigatoriamente preenchido se houver lista complementar com os nomes e CNPJs a ser disponibilizada.
+            Restrição: Será obrigatorimente preenchido se houver lista complementar com os nomes e CNPJs a ser disponibilizada
+          type: string
+          pattern: \w*\W*
+          maxLength: 1024
+          example: 'https://empresadaorganizacaoa.com/complementarylist'
         personalAccounts:
+          description: Lista de tipos de conta
           type: array
           items:
             $ref: '#/components/schemas/PersonalAccount'
-          description: Lista de tipos de conta
           minItems: 1
           maxItems: 3
     PersonalCreditCard:
@@ -4987,12 +5126,30 @@ components:
         - name
         - cnpjNumber
         - personalCreditCards
-      allOf:
-        - $ref: '#/components/schemas/Company'
       properties:
+        name:
+          description: 'Nome da Instituição, pertencente à Marca, responsável pelo Cadastro.'
+          type: string
+          pattern: \w*\W*
+          maxLength: 80
+          example: Empresa da Organização A
+        cnpjNumber:
+          description: 'Número completo do CNPJ da instituição responsável pelo Cadastro - o CNPJ corresponde ao número de inscrição no Cadastro de Pessoa Jurídica. Deve-se ter apenas os números do CNPJ, sem máscara'
+          type: string
+          pattern: '^(\d{14})$|^NA$'
+          maxLength: 14
+          example: '50685362000135'
+        urlComplementaryList:
+          description: |
+            URL do link que conterá a lista complementar com os nomes e CNPJs agrupados sob o mesmo cnpjNumber. Os contidos nessa lista possuem as mesmas características para produtos e serviços. Endereço eletrônico de acesso ao canal. Será obrigatoriamente preenchido se houver lista complementar com os nomes e CNPJs a ser disponibilizada.
+            Restrição: Será obrigatorimente preenchido se houver lista complementar com os nomes e CNPJs a ser disponibilizada
+          type: string
+          pattern: \w*\W*
+          maxLength: 1024
+          example: 'https://empresadaorganizacaoa.com/complementarylist'
         personalCreditCards:
-          type: array
           description: Lista das contas de pagamento pós-paga
+          type: array
           items:
             $ref: '#/components/schemas/PersonalCreditCard'
           minItems: 1
@@ -5060,16 +5217,34 @@ components:
         - name
         - cnpjNumber
         - personalFinancings
-      allOf:
-        - $ref: '#/components/schemas/Company'
       properties:
+        name:
+          description: 'Nome da Instituição, pertencente à Marca, responsável pelo Cadastro.'
+          type: string
+          pattern: \w*\W*
+          maxLength: 80
+          example: Empresa da Organização A
+        cnpjNumber:
+          description: 'Número completo do CNPJ da instituição responsável pelo Cadastro - o CNPJ corresponde ao número de inscrição no Cadastro de Pessoa Jurídica. Deve-se ter apenas os números do CNPJ, sem máscara'
+          type: string
+          pattern: '^(\d{14})$|^NA$'
+          maxLength: 14
+          example: '50685362000135'
+        urlComplementaryList:
+          description: |
+            URL do link que conterá a lista complementar com os nomes e CNPJs agrupados sob o mesmo cnpjNumber. Os contidos nessa lista possuem as mesmas características para produtos e serviços. Endereço eletrônico de acesso ao canal. Será obrigatoriamente preenchido se houver lista complementar com os nomes e CNPJs a ser disponibilizada.
+            Restrição: Será obrigatorimente preenchido se houver lista complementar com os nomes e CNPJs a ser disponibilizada
+          type: string
+          pattern: \w*\W*
+          maxLength: 1024
+          example: 'https://empresadaorganizacaoa.com/complementarylist'
         personalFinancings:
+          description: Lista de financiamentos
           type: array
           items:
             $ref: '#/components/schemas/PersonalFinancing'
           minItems: 1
           maxItems: 9
-          description: Lista de financiamentos
     PersonalFinancingFee:
       type: object
       required:
@@ -5165,9 +5340,19 @@ components:
         - name
         - cnpjNumber
         - personalLoans
-      allOf:
-        - $ref: '#/components/schemas/Company'
       properties:
+        name:
+          description: 'Nome da Instituição, pertencente à Marca, responsável pelo Cadastro.'
+          type: string
+          pattern: \w*\W*
+          maxLength: 80
+          example: Empresa da Organização A
+        cnpjNumber:
+          description: 'Número completo do CNPJ da instituição responsável pelo Cadastro - o CNPJ corresponde ao número de inscrição no Cadastro de Pessoa Jurídica. Deve-se ter apenas os números do CNPJ, sem máscara'
+          type: string
+          pattern: '^(\d{14})$|^NA$'
+          maxLength: 14
+          example: '50685362000135'
         personalCustomers:
           $ref: '#/components/schemas/PersonalIdentificationCustomers'
     PersonalIdentificationCustomers:
@@ -5257,16 +5442,34 @@ components:
         - name
         - cnpjNumber
         - personalInvoiceFinancings
-      allOf:
-        - $ref: '#/components/schemas/Company'
       properties:
+        name:
+          description: 'Nome da Instituição, pertencente à Marca, responsável pelo Cadastro.'
+          type: string
+          pattern: \w*\W*
+          maxLength: 80
+          example: Empresa da Organização A
+        cnpjNumber:
+          description: 'Número completo do CNPJ da instituição responsável pelo Cadastro - o CNPJ corresponde ao número de inscrição no Cadastro de Pessoa Jurídica. Deve-se ter apenas os números do CNPJ, sem máscara'
+          type: string
+          pattern: '^(\d{14})$|^NA$'
+          maxLength: 14
+          example: '50685362000135'
+        urlComplementaryList:
+          description: |
+            URL do link que conterá a lista complementar com os nomes e CNPJs agrupados sob o mesmo cnpjNumber. Os contidos nessa lista possuem as mesmas características para produtos e serviços. Endereço eletrônico de acesso ao canal. Será obrigatoriamente preenchido se houver lista complementar com os nomes e CNPJs a ser disponibilizada.
+            Restrição: Será obrigatorimente preenchido se houver lista complementar com os nomes e CNPJs a ser disponibilizada
+          type: string
+          pattern: \w*\W*
+          maxLength: 1024
+          example: 'https://empresadaorganizacaoa.com/complementarylist'
         personalInvoiceFinancings:
+          description: Lista de Modalidades de Direitos Creditórios Descontados ofertados
           type: array
           items:
             $ref: '#/components/schemas/PersonalInvoiceFinancings'
           minItems: 1
           maxItems: 5
-          description: Lista de Modalidades de Direitos Creditórios Descontados ofertados
     PersonalInvoiceFinancingsFees:
       type: object
       description: Objeto que reúne informações de tarifas de serviços
@@ -5381,17 +5584,25 @@ components:
         - personalLoans
       properties:
         name:
+          description: 'Nome da Instituição, pertencente à Marca, responsável pelo Cadastro.'
           type: string
           pattern: \w*\W*
           maxLength: 80
-          description: 'Nome da Instituição, pertencente à marca, responsável pela comercialização dos produtos e serviços'
-          example: Empresa da Marca A
+          example: Empresa da Organização A
+        cnpjNumber:
+          description: 'Número completo do CNPJ da instituição responsável pelo Cadastro - o CNPJ corresponde ao número de inscrição no Cadastro de Pessoa Jurídica. Deve-se ter apenas os números do CNPJ, sem máscara'
+          type: string
+          pattern: '^(\d{14})$|^NA$'
+          maxLength: 14
+          example: '50685362000135'
         urlComplementaryList:
+          description: |
+            URL do link que conterá a lista complementar com os nomes e CNPJs agrupados sob o mesmo cnpjNumber. Os contidos nessa lista possuem as mesmas características para produtos e serviços. Endereço eletrônico de acesso ao canal. Será obrigatoriamente preenchido se houver lista complementar com os nomes e CNPJs a ser disponibilizada.
+            Restrição: Será obrigatorimente preenchido se houver lista complementar com os nomes e CNPJs a ser disponibilizada
           type: string
           pattern: \w*\W*
           maxLength: 1024
-          description: URL do link que conterá a lista complementar com os nomes e CNPJs agrupados sob o mesmo cnpjNumber. Os contidos nessa lista possuem as mesmas características para produtos e serviços. Endereço eletrônico de acesso ao canal.
-          example: 'https://example.com/mobile-banking'
+          example: 'https://empresadaorganizacaoa.com/complementarylist'
         personalLoans:
           type: array
           items:
@@ -5399,8 +5610,6 @@ components:
           minItems: 1
           maxItems: 6
           description: Lista de modalidades de empréstimos
-      allOf:
-        - $ref: '#/components/schemas/CNPJ'
     PersonalOtherDocument:
       type: object
       required:
@@ -5474,9 +5683,27 @@ components:
         - name
         - cnpjNumber
         - personalLoans
-      allOf:
-        - $ref: '#/components/schemas/Company'
       properties:
+        name:
+          description: 'Nome da Instituição, pertencente à Marca, responsável pelo Cadastro.'
+          type: string
+          pattern: \w*\W*
+          maxLength: 80
+          example: Empresa da Organização A
+        cnpjNumber:
+          description: 'Número completo do CNPJ da instituição responsável pelo Cadastro - o CNPJ corresponde ao número de inscrição no Cadastro de Pessoa Jurídica. Deve-se ter apenas os números do CNPJ, sem máscara'
+          type: string
+          pattern: '^(\d{14})$|^NA$'
+          maxLength: 14
+          example: '50685362000135'
+        urlComplementaryList:
+          description: |
+            URL do link que conterá a lista complementar com os nomes e CNPJs agrupados sob o mesmo cnpjNumber. Os contidos nessa lista possuem as mesmas características para produtos e serviços. Endereço eletrônico de acesso ao canal. Será obrigatoriamente preenchido se houver lista complementar com os nomes e CNPJs a ser disponibilizada.
+            Restrição: Será obrigatorimente preenchido se houver lista complementar com os nomes e CNPJs a ser disponibilizada
+          type: string
+          pattern: \w*\W*
+          maxLength: 1024
+          example: 'https://empresadaorganizacaoa.com/complementarylist'
         personalCustomers:
           $ref: '#/components/schemas/PersonalQualificationCustomers'
     PersonalQualificationCustomers:
@@ -5489,6 +5716,7 @@ components:
           $ref: '#/components/schemas/PersonalQualification'
     PersonalUnarrangedAccountOverdraft:
       type: object
+      description: Lista de produtos e serviços referente adiantamento a depositante
       required:
         - fees
         - interestRates
@@ -5531,12 +5759,29 @@ components:
         - name
         - cnpjNumber
         - personalUnarrangedAccountOverdraft
-      allOf:
-        - $ref: '#/components/schemas/Company'
       properties:
+        name:
+          description: 'Nome da Instituição, pertencente à Marca, responsável pelo Cadastro.'
+          type: string
+          pattern: \w*\W*
+          maxLength: 80
+          example: Empresa da Organização A
+        cnpjNumber:
+          description: 'Número completo do CNPJ da instituição responsável pelo Cadastro - o CNPJ corresponde ao número de inscrição no Cadastro de Pessoa Jurídica. Deve-se ter apenas os números do CNPJ, sem máscara'
+          type: string
+          pattern: '^(\d{14})$|^NA$'
+          maxLength: 14
+          example: '50685362000135'
+        urlComplementaryList:
+          description: |
+            URL do link que conterá a lista complementar com os nomes e CNPJs agrupados sob o mesmo cnpjNumber. Os contidos nessa lista possuem as mesmas características para produtos e serviços. Endereço eletrônico de acesso ao canal. Será obrigatoriamente preenchido se houver lista complementar com os nomes e CNPJs a ser disponibilizada.
+            Restrição: Será obrigatorimente preenchido se houver lista complementar com os nomes e CNPJs a ser disponibilizada
+          type: string
+          pattern: \w*\W*
+          maxLength: 1024
+          example: 'https://empresadaorganizacaoa.com/complementarylist'
         personalUnarrangedAccountOverdraft:
           $ref: '#/components/schemas/PersonalUnarrangedAccountOverdraft'
-          description: Lista de produtos e serviços referente adiantamento a depositante
     PersonalUnarrangedAccountOverdraftFee:
       type: object
       description: Objeto que reúne informações de tarifas de serviços
@@ -5738,25 +5983,31 @@ components:
         - cnpjNumber
       properties:
         name:
+          description: 'Nome da Instituição, pertencente à Marca, responsável pelo Cadastro.'
           type: string
           pattern: \w*\W*
           maxLength: 80
-          description: 'Nome da Instituição, pertencente à organização, responsável pelo Canal Telefônico.'
-          example: Empresa da Marca A
+          example: Empresa da Organização A
+        cnpjNumber:
+          description: 'Número completo do CNPJ da instituição responsável pelo Cadastro - o CNPJ corresponde ao número de inscrição no Cadastro de Pessoa Jurídica. Deve-se ter apenas os números do CNPJ, sem máscara'
+          type: string
+          pattern: '^(\d{14})$|^NA$'
+          maxLength: 14
+          example: '50685362000135'
         urlComplementaryList:
+          description: |
+            URL do link que conterá a lista complementar com os nomes e CNPJs agrupados sob o mesmo cnpjNumber. Os contidos nessa lista possuem as mesmas características para produtos e serviços. Endereço eletrônico de acesso ao canal. Será obrigatoriamente preenchido se houver lista complementar com os nomes e CNPJs a ser disponibilizada.
+            Restrição: Será obrigatorimente preenchido se houver lista complementar com os nomes e CNPJs a ser disponibilizada
           type: string
           pattern: \w*\W*
           maxLength: 1024
-          example: 'https://example.com/mobile-banking'
-          description: URL do link que conterá a lista complementar com os nomes e CNPJs agrupados sob o mesmo cnpjNumber.
+          example: 'https://empresadaorganizacaoa.com/complementarylist'
         phoneChannels:
           type: array
           items:
             $ref: '#/components/schemas/PhoneChannel'
           minItems: 1
           description: Lista  de canais de atendimento telefônico
-      allOf:
-        - $ref: '#/components/schemas/CNPJ'
     ResponseAccountBalances:
       type: object
       required:
@@ -5790,9 +6041,19 @@ components:
                       - name
                       - cnpjNumber
                       - accounts
-                    allOf:
-                      - $ref: '#/components/schemas/CompanySimple'
                     properties:
+                      name:
+                        description: 'Nome da Instituição, pertencente à marca, responsável pela modalidade de Empréstimos.'
+                        type: string
+                        pattern: \w*\W*
+                        maxLength: 80
+                        example: Empresa da Organização A
+                      cnpjNumber:
+                        description: 'Número completo do CNPJ da instituição responsável pelo Cadastro - o CNPJ corresponde ao número de inscrição no Cadastro de Pessoa Jurídica. Deve-se ter apenas os números do CNPJ, sem máscara'
+                        type: string
+                        pattern: '^(\d{14})$|^NA$'
+                        maxLength: 14
+                        example: '50685362000135'
                       accounts:
                         type: object
                         required:
@@ -5859,9 +6120,19 @@ components:
                       - name
                       - cnpjNumber
                       - accounts
-                    allOf:
-                      - $ref: '#/components/schemas/CompanySimple'
                     properties:
+                      name:
+                        description: 'Nome da Instituição, pertencente à marca, responsável pela modalidade de Empréstimos.'
+                        type: string
+                        pattern: \w*\W*
+                        maxLength: 80
+                        example: Empresa da Organização A
+                      cnpjNumber:
+                        description: 'Número completo do CNPJ da instituição responsável pelo Cadastro - o CNPJ corresponde ao número de inscrição no Cadastro de Pessoa Jurídica. Deve-se ter apenas os números do CNPJ, sem máscara'
+                        type: string
+                        pattern: '^(\d{14})$|^NA$'
+                        maxLength: 14
+                        example: '50685362000135'
                       accounts:
                         $ref: '#/components/schemas/AccountOverdraftLimits'
                   minItems: 1
@@ -5903,9 +6174,19 @@ components:
                       - name
                       - cnpjNumber
                       - accounts
-                    allOf:
-                      - $ref: '#/components/schemas/CompanySimple'
                     properties:
+                      name:
+                        description: 'Nome da Instituição, pertencente à marca, responsável pela modalidade de Empréstimos.'
+                        type: string
+                        pattern: \w*\W*
+                        maxLength: 80
+                        example: Empresa da Organização A
+                      cnpjNumber:
+                        description: 'Número completo do CNPJ da instituição responsável pelo Cadastro - o CNPJ corresponde ao número de inscrição no Cadastro de Pessoa Jurídica. Deve-se ter apenas os números do CNPJ, sem máscara'
+                        type: string
+                        pattern: '^(\d{14})$|^NA$'
+                        maxLength: 14
+                        example: '50685362000135'
                       accounts:
                         type: object
                         required:
