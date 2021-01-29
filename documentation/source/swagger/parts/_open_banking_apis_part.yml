@@ -1245,8 +1245,6 @@ components:
       $ref: ./schemas/BusinessUnarrangedAccountOverdraftCompany.yaml
     BusinessUnarrangedAccountOverdraftFee:
       $ref: ./schemas/BusinessUnarrangedAccountOverdraftFee.yaml
-    CPF:
-      $ref: ./schemas/CPF.yaml
     CreditCardIdentification:
       $ref: ./schemas/CreditCardIdentification.yaml
     CreditCardInterest:
@@ -1443,8 +1441,6 @@ components:
       $ref: ./schemas/PartiesParticipation.yaml
     PartiesParticipationDocument:
       $ref: ./schemas/PartiesParticipationDocument.yaml
-    Passport:
-      $ref: ./schemas/Passport.yaml
     OverdraftLimits:
       $ref: ./schemas/OverdraftLimits.yaml
     PeakTPSMetrics:
