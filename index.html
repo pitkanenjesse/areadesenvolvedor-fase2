@@ -809,9 +809,6 @@
                     <a href="#tocS_LoanService" class="toc-h2 toc-link" data-title="LoanService">LoanService</a>
                   </li>
                   <li>
-                    <a href="#tocS_MaritalStatus" class="toc-h2 toc-link" data-title="MaritalStatus">MaritalStatus</a>
-                  </li>
-                  <li>
                     <a href="#tocS_MaximumPrice" class="toc-h2 toc-link" data-title="MaximumPrice">MaximumPrice</a>
                   </li>
                   <li>
@@ -9771,17 +9768,14 @@ This operation does not require authentication
               </span><span class="p">],</span><span class="w">
               </span><span class="nl">"nationality"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
                 </span><span class="nl">"hasBrazilianNationality"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"other"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"otherNationality"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
                   </span><span class="nl">"additionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CAN"</span><span class="p">,</span><span class="w">
-                  </span><span class="nl">"complementaryDocuments"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-                    </span><span class="nl">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-                    </span><span class="nl">"expirationDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-03-19"</span><span class="w">
-                  </span><span class="p">}</span><span class="w">
+                  </span><span class="nl">"complementaryDocuments"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="p">{}</span><span class="w">
+                  </span><span class="p">]</span><span class="w">
                 </span><span class="p">}</span><span class="w">
               </span><span class="p">},</span><span class="w">
               </span><span class="nl">"civilName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Elza Milena Stefany Teixeira"</span><span class="p">,</span><span class="w">
-              </span><span class="nl">"socialName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Elza"</span><span class="p">,</span><span class="w">
               </span><span class="nl">"filiation"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
                 </span><span class="p">{</span><span class="w">
                   </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MAE"</span><span class="p">,</span><span class="w">
@@ -9791,14 +9785,12 @@ This operation does not require authentication
                 </span><span class="p">}</span><span class="w">
               </span><span class="p">],</span><span class="w">
               </span><span class="nl">"birthDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-03-19"</span><span class="p">,</span><span class="w">
-              </span><span class="nl">"maritalStatus"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SOLTEIRO"</span><span class="w">
-              </span><span class="p">},</span><span class="w">
-              </span><span class="nl">"sex"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FEMININO"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"maritalStatusCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SOLTEIRO"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"maritalStatusAdditionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"gender"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FEMININO"</span><span class="p">,</span><span class="w">
               </span><span class="nl">"contacts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
                 </span><span class="nl">"postalAddresses"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
                   </span><span class="p">{</span><span class="w">
-                    </span><span class="nl">"isMain"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
                     </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Av Naburo Ykesaki, 1270"</span><span class="p">,</span><span class="w">
                     </span><span class="nl">"additionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fundos"</span><span class="p">,</span><span class="w">
                     </span><span class="nl">"districtName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Centro"</span><span class="p">,</span><span class="w">
@@ -9808,7 +9800,8 @@ This operation does not require authentication
                     </span><span class="nl">"postCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"17500001"</span><span class="p">,</span><span class="w">
                     </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Brasil"</span><span class="p">,</span><span class="w">
                     </span><span class="nl">"countryCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRA"</span><span class="p">,</span><span class="w">
-                    </span><span class="nl">"geographicCoordinates"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+                    </span><span class="nl">"geographicCoordinates"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+                    </span><span class="nl">"isMain"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
                   </span><span class="p">}</span><span class="w">
                 </span><span class="p">],</span><span class="w">
                 </span><span class="nl">"phones"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
@@ -10005,7 +9998,6 @@ This operation does not require authentication
               </span><span class="nl">"contacts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
                 </span><span class="nl">"postalAddresses"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
                   </span><span class="p">{</span><span class="w">
-                    </span><span class="nl">"isMain"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
                     </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Av Naburo Ykesaki, 1270"</span><span class="p">,</span><span class="w">
                     </span><span class="nl">"additionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fundos"</span><span class="p">,</span><span class="w">
                     </span><span class="nl">"districtName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Centro"</span><span class="p">,</span><span class="w">
@@ -10015,7 +10007,8 @@ This operation does not require authentication
                     </span><span class="nl">"postCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"17500001"</span><span class="p">,</span><span class="w">
                     </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Brasil"</span><span class="p">,</span><span class="w">
                     </span><span class="nl">"countryCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRA"</span><span class="p">,</span><span class="w">
-                    </span><span class="nl">"geographicCoordinates"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+                    </span><span class="nl">"geographicCoordinates"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+                    </span><span class="nl">"isMain"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
                   </span><span class="p">}</span><span class="w">
                 </span><span class="p">],</span><span class="w">
                 </span><span class="nl">"phones"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
@@ -15395,7 +15388,6 @@ This operation does not require authentication
   </span><span class="nl">"contacts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"postalAddresses"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
       </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"isMain"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
         </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Av Naburo Ykesaki, 1270"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"additionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fundos"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"districtName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Centro"</span><span class="p">,</span><span class="w">
@@ -15408,7 +15400,8 @@ This operation does not require authentication
         </span><span class="nl">"geographicCoordinates"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
           </span><span class="nl">"latitude"</span><span class="p">:</span><span class="w"> </span><span class="s2">"-90.8365180"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"longitude"</span><span class="p">:</span><span class="w"> </span><span class="s2">"-180.836519"</span><span class="w">
-        </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"isMain"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">],</span><span class="w">
     </span><span class="nl">"phones"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
@@ -15550,7 +15543,6 @@ This operation does not require authentication
           </span><span class="nl">"contacts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
             </span><span class="nl">"postalAddresses"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
               </span><span class="p">{</span><span class="w">
-                </span><span class="nl">"isMain"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
                 </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Av Naburo Ykesaki, 1270"</span><span class="p">,</span><span class="w">
                 </span><span class="nl">"additionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fundos"</span><span class="p">,</span><span class="w">
                 </span><span class="nl">"districtName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Centro"</span><span class="p">,</span><span class="w">
@@ -15563,7 +15555,8 @@ This operation does not require authentication
                 </span><span class="nl">"geographicCoordinates"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
                   </span><span class="nl">"latitude"</span><span class="p">:</span><span class="w"> </span><span class="s2">"-90.8365180"</span><span class="p">,</span><span class="w">
                   </span><span class="nl">"longitude"</span><span class="p">:</span><span class="w"> </span><span class="s2">"-180.836519"</span><span class="w">
-                </span><span class="p">}</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="nl">"isMain"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
               </span><span class="p">}</span><span class="w">
             </span><span class="p">],</span><span class="w">
             </span><span class="nl">"phones"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
@@ -15664,7 +15657,6 @@ This operation does not require authentication
       </span><span class="nl">"contacts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="nl">"postalAddresses"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
           </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"isMain"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
             </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Av Naburo Ykesaki, 1270"</span><span class="p">,</span><span class="w">
             </span><span class="nl">"additionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fundos"</span><span class="p">,</span><span class="w">
             </span><span class="nl">"districtName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Centro"</span><span class="p">,</span><span class="w">
@@ -15677,7 +15669,8 @@ This operation does not require authentication
             </span><span class="nl">"geographicCoordinates"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
               </span><span class="nl">"latitude"</span><span class="p">:</span><span class="w"> </span><span class="s2">"-90.8365180"</span><span class="p">,</span><span class="w">
               </span><span class="nl">"longitude"</span><span class="p">:</span><span class="w"> </span><span class="s2">"-180.836519"</span><span class="w">
-            </span><span class="p">}</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"isMain"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
           </span><span class="p">}</span><span class="w">
         </span><span class="p">],</span><span class="w">
         </span><span class="nl">"phones"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
@@ -15778,7 +15771,6 @@ This operation does not require authentication
     </span><span class="nl">"contacts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="nl">"postalAddresses"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"isMain"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
           </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Av Naburo Ykesaki, 1270"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"additionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fundos"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"districtName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Centro"</span><span class="p">,</span><span class="w">
@@ -15791,7 +15783,8 @@ This operation does not require authentication
           </span><span class="nl">"geographicCoordinates"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
             </span><span class="nl">"latitude"</span><span class="p">:</span><span class="w"> </span><span class="s2">"-90.8365180"</span><span class="p">,</span><span class="w">
             </span><span class="nl">"longitude"</span><span class="p">:</span><span class="w"> </span><span class="s2">"-180.836519"</span><span class="w">
-          </span><span class="p">}</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="nl">"isMain"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
         </span><span class="p">}</span><span class="w">
       </span><span class="p">],</span><span class="w">
       </span><span class="nl">"phones"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
@@ -18579,7 +18572,6 @@ This operation does not require authentication
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"postalAddresses"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"isMain"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
       </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Av Naburo Ykesaki, 1270"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"additionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fundos"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"districtName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Centro"</span><span class="p">,</span><span class="w">
@@ -18592,7 +18584,8 @@ This operation does not require authentication
       </span><span class="nl">"geographicCoordinates"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="nl">"latitude"</span><span class="p">:</span><span class="w"> </span><span class="s2">"-90.8365180"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"longitude"</span><span class="p">:</span><span class="w"> </span><span class="s2">"-180.836519"</span><span class="w">
-      </span><span class="p">}</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"isMain"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
   </span><span class="nl">"phones"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
@@ -19035,7 +19028,6 @@ This operation does not require authentication
 <a id="tocScustomerpostaladdress"></a>
 <a id="tocscustomerpostaladdress"></a></p>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"isMain"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
   </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Av Naburo Ykesaki, 1270"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"additionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fundos"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"districtName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Centro"</span><span class="p">,</span><span class="w">
@@ -19048,7 +19040,8 @@ This operation does not require authentication
   </span><span class="nl">"geographicCoordinates"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"latitude"</span><span class="p">:</span><span class="w"> </span><span class="s2">"-90.8365180"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"longitude"</span><span class="p">:</span><span class="w"> </span><span class="s2">"-180.836519"</span><span class="w">
-  </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"isMain"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
 </span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
@@ -19061,10 +19054,198 @@ This operation does not require authentication
 </tr>
 </thead><tbody>
 <tr>
+<td>address</td>
+<td>string</td>
+<td>true</td>
+<td>Deverá trazer toda a informação referente ao endereço da dependência informada: Tipo de logradouro + Nome do logradouro + Número do Logradouro (se não existir usar &#39; s/n&#39;) + complemento (se houver), como, p.ex.: &#39;R Diamatina, 59, bloco 35, fundos&#39; &#39;Praça da Boa Vontade s/n&#39;</td>
+</tr>
+<tr>
+<td>additionalInfo</td>
+<td>string</td>
+<td>false</td>
+<td>Alguns logradouros ainda necessitam ser especificados por meio de complemento</td>
+</tr>
+<tr>
+<td>districtName</td>
+<td>string</td>
+<td>false</td>
+<td>Bairro é uma comunidade ou região localizada em uma cidade ou município de acordo com as suas subdivisões geográficas. p.ex: &#39;Paraíso&#39;</td>
+</tr>
+<tr>
+<td>townName</td>
+<td>string</td>
+<td>true</td>
+<td>Localidade: O nome da localidade corresponde à designação da cidade ou município no qual o endereço está localizado. p.ex. &#39;São Paulo&#39;</td>
+</tr>
+<tr>
+<td>ibgeCode</td>
+<td>string</td>
+<td>false</td>
+<td>Código IBGE do município</td>
+</tr>
+<tr>
+<td>countrySubDivision</td>
+<td>string</td>
+<td>true</td>
+<td>Enumeração referente a cada sigla da unidade da federação que identifica o estado ou o distrito federal, no qual o endereço está localizado. p.ex. &#39;AC&#39;. São consideradas apenas as siglas para os estados brasileiros</td>
+</tr>
+<tr>
+<td>postCode</td>
+<td>string</td>
+<td>true</td>
+<td>Código de Endereçamento Postal</td>
+</tr>
+<tr>
+<td>country</td>
+<td>string</td>
+<td>true</td>
+<td>Nome do país</td>
+</tr>
+<tr>
+<td>countryCode</td>
+<td>string</td>
+<td>true</td>
+<td>Código do país</td>
+</tr>
+<tr>
+<td>geographicCoordinates</td>
+<td>object</td>
+<td>false</td>
+<td>Objeto agrupador das informações que compõem as Coordenadas geográficas: latitude e longitude</td>
+</tr>
+<tr>
+<td>» latitude</td>
+<td>string</td>
+<td>false</td>
+<td>Informação da latitude referente a geolocalização informada.</td>
+</tr>
+<tr>
+<td>» longitude</td>
+<td>string</td>
+<td>false</td>
+<td>Informação da longitude referente a geolocalização informada.</td>
+</tr>
+<tr>
 <td>isMain</td>
 <td>boolean</td>
 <td>true</td>
 <td>Indica se o endereço informado é o principal</td>
+</tr>
+</tbody></table>
+<h4 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades-enumerated-values'>Enumerated Values</h4>
+<table><thead>
+<tr>
+<th>Nome</th>
+<th>Código</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>countrySubDivision</td>
+<td>AC</td>
+</tr>
+<tr>
+<td>countrySubDivision</td>
+<td>AL</td>
+</tr>
+<tr>
+<td>countrySubDivision</td>
+<td>AP</td>
+</tr>
+<tr>
+<td>countrySubDivision</td>
+<td>AM</td>
+</tr>
+<tr>
+<td>countrySubDivision</td>
+<td>BA</td>
+</tr>
+<tr>
+<td>countrySubDivision</td>
+<td>CE</td>
+</tr>
+<tr>
+<td>countrySubDivision</td>
+<td>DF</td>
+</tr>
+<tr>
+<td>countrySubDivision</td>
+<td>ES</td>
+</tr>
+<tr>
+<td>countrySubDivision</td>
+<td>GO</td>
+</tr>
+<tr>
+<td>countrySubDivision</td>
+<td>MA</td>
+</tr>
+<tr>
+<td>countrySubDivision</td>
+<td>MT</td>
+</tr>
+<tr>
+<td>countrySubDivision</td>
+<td>MS</td>
+</tr>
+<tr>
+<td>countrySubDivision</td>
+<td>MG</td>
+</tr>
+<tr>
+<td>countrySubDivision</td>
+<td>PA</td>
+</tr>
+<tr>
+<td>countrySubDivision</td>
+<td>PB</td>
+</tr>
+<tr>
+<td>countrySubDivision</td>
+<td>PR</td>
+</tr>
+<tr>
+<td>countrySubDivision</td>
+<td>PE</td>
+</tr>
+<tr>
+<td>countrySubDivision</td>
+<td>PI</td>
+</tr>
+<tr>
+<td>countrySubDivision</td>
+<td>RJ</td>
+</tr>
+<tr>
+<td>countrySubDivision</td>
+<td>RN</td>
+</tr>
+<tr>
+<td>countrySubDivision</td>
+<td>RS</td>
+</tr>
+<tr>
+<td>countrySubDivision</td>
+<td>RO</td>
+</tr>
+<tr>
+<td>countrySubDivision</td>
+<td>RR</td>
+</tr>
+<tr>
+<td>countrySubDivision</td>
+<td>SC</td>
+</tr>
+<tr>
+<td>countrySubDivision</td>
+<td>SP</td>
+</tr>
+<tr>
+<td>countrySubDivision</td>
+<td>SE</td>
+</tr>
+<tr>
+<td>countrySubDivision</td>
+<td>TO</td>
 </tr>
 </tbody></table>
 
@@ -21430,7 +21611,7 @@ This operation does not require authentication
 <td>civilName</td>
 <td>string</td>
 <td>true</td>
-<td>Nome civil completo da pessoa relativa à filiação</td>
+<td>Nome civil completo da pessoa relativa à filiação. (Direito fundamental da pessoa, o nome civil é aquele atribuído à pessoa natural desde o registro de seu nascimento, com o qual será identificada por toda a sua vida, bem como após a sua morte)</td>
 </tr>
 <tr>
 <td>socialName</td>
@@ -22744,51 +22925,12 @@ This operation does not require authentication
 </tr>
 </tbody></table>
 
-<h2 id="tocS_MaritalStatus">MaritalStatus</h2>
-
-<p><a id="schemamaritalstatus"></a>
-<a id="schema_MaritalStatus"></a>
-<a id="tocSmaritalstatus"></a>
-<a id="tocsmaritalstatus"></a></p>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SOLTEIRO"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-
-</span></code></pre></div>
-
-<p>Objeto agrupador das informações relativas ao estado civil da Pessoa Natural</p>
-
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
-
-<table><thead>
-<tr>
-<th>Nome</th>
-<th>Tipo</th>
-<th>Obrigatório</th>
-<th>Descrição</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>code</td>
-<td><a href="#schemaenummaritalstatuscode/properties/type">EnumMaritalStatusCode/properties/type</a></td>
-<td>true</td>
-<td>Estado civil do cliente.</td>
-</tr>
-<tr>
-<td>additionalInfo</td>
-<td>string</td>
-<td>false</td>
-<td>Campo livre para complementar a informação relativa ao estado civil, quando selecionada a opção <code>OUTROS</code></td>
-</tr>
-</tbody></table>
-
 <h2 id="tocS_MaximumPrice">MaximumPrice</h2>
 
 <p><a id="schemamaximumprice"></a>
 <a id="schema_MaximumPrice"></a>
 <a id="tocSmaximumprice"></a>
 <a id="tocsmaximumprice"></a></p>
-
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8800.00"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="w">
@@ -22983,13 +23125,15 @@ This operation does not require authentication
 <a id="tocsnationality"></a></p>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"hasBrazilianNationality"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"other"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="nl">"otherNationality"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"additionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CAN"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"complementaryDocuments"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"expirationDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-03-19"</span><span class="w">
-    </span><span class="p">}</span><span class="w">
+    </span><span class="nl">"complementaryDocuments"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"expirationDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-03-19"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
@@ -23014,7 +23158,7 @@ This operation does not require authentication
 <td>Informa se o Cliente tem nacionalidade brasileira.</td>
 </tr>
 <tr>
-<td>other</td>
+<td>otherNationality</td>
 <td><a href="#schemanationalityother">NationalityOther</a></td>
 <td>false</td>
 <td>none</td>
@@ -23071,11 +23215,13 @@ This operation does not require authentication
 <a id="tocsnationalityother"></a></p>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"additionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CAN"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"complementaryDocuments"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"expirationDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-03-19"</span><span class="w">
-  </span><span class="p">}</span><span class="w">
+  </span><span class="nl">"complementaryDocuments"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"expirationDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-03-19"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
 </span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
@@ -23095,9 +23241,9 @@ This operation does not require authentication
 </tr>
 <tr>
 <td>complementaryDocuments</td>
-<td><a href="#schemanationalitycomplementarydocuments">NationalityComplementaryDocuments</a></td>
+<td>[<a href="#schemanationalitycomplementarydocuments">NationalityComplementaryDocuments</a>]</td>
 <td>false</td>
-<td>none</td>
+<td>Lista que traz relação de documentos complementares de pessoas com nacionalidade diferente de brasileira</td>
 </tr>
 </tbody></table>
 
@@ -25248,17 +25394,18 @@ This operation does not require authentication
   </span><span class="p">],</span><span class="w">
   </span><span class="nl">"nationality"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"hasBrazilianNationality"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"other"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"otherNationality"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="nl">"additionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CAN"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"complementaryDocuments"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"expirationDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-03-19"</span><span class="w">
-      </span><span class="p">}</span><span class="w">
+      </span><span class="nl">"complementaryDocuments"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"expirationDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-03-19"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="nl">"civilName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Elza Milena Stefany Teixeira"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"socialName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Elza"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"filiation"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MAE"</span><span class="p">,</span><span class="w">
@@ -25268,14 +25415,12 @@ This operation does not require authentication
     </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
   </span><span class="nl">"birthDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-03-19"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"maritalStatus"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SOLTEIRO"</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="nl">"sex"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FEMININO"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"maritalStatusCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SOLTEIRO"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"maritalStatusAdditionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"gender"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FEMININO"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"contacts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"postalAddresses"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
       </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"isMain"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
         </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Av Naburo Ykesaki, 1270"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"additionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fundos"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"districtName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Centro"</span><span class="p">,</span><span class="w">
@@ -25288,7 +25433,8 @@ This operation does not require authentication
         </span><span class="nl">"geographicCoordinates"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
           </span><span class="nl">"latitude"</span><span class="p">:</span><span class="w"> </span><span class="s2">"-90.8365180"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"longitude"</span><span class="p">:</span><span class="w"> </span><span class="s2">"-180.836519"</span><span class="w">
-        </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"isMain"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">],</span><span class="w">
     </span><span class="nl">"phones"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
@@ -25370,7 +25516,7 @@ This operation does not require authentication
 <tr>
 <td>nationality</td>
 <td><a href="#schemanationality">Nationality</a></td>
-<td>false</td>
+<td>true</td>
 <td>Objeto que agrupa informações relativas à nacionalidade da Pessoa Natural</td>
 </tr>
 <tr>
@@ -25378,12 +25524,6 @@ This operation does not require authentication
 <td>string</td>
 <td>true</td>
 <td>Nome civil completo da pessoa natural (Direito fundamental da pessoa, o nome civil é aquele atribuído à pessoa natural desde o registro de seu nascimento, com o qual será identificada por toda a sua vida, bem como após a sua morte)</td>
-</tr>
-<tr>
-<td>socialName</td>
-<td>string</td>
-<td>false</td>
-<td>Nome social da pessoa natural, se houver. (aquele pelo qual travestis e transexuais se reconhecem, bem como são identificados por sua comunidade e em seu meio social, conforme Decreto Nº 51.180, de 14 de janeiro de 2010)</td>
 </tr>
 <tr>
 <td>filiation</td>
@@ -25398,15 +25538,21 @@ This operation does not require authentication
 <td>Data de nascimento, conforme especificação RFC-3339</td>
 </tr>
 <tr>
-<td>maritalStatus</td>
-<td><a href="#schemamaritalstatus">MaritalStatus</a></td>
-<td>true</td>
-<td>Objeto agrupador das informações relativas ao estado civil da Pessoa Natural</td>
+<td>maritalStatusCode</td>
+<td><a href="#schemaenummaritalstatuscode/properties/type">EnumMaritalStatusCode/properties/type</a></td>
+<td>false</td>
+<td>Estado civil do cliente.</td>
 </tr>
 <tr>
-<td>sex</td>
+<td>maritalStatusAdditionalInfo</td>
+<td>string</td>
+<td>false</td>
+<td>Campo livre para complementar a informação relativa ao estado civil, quando selecionada a opção <code>OUTROS</code></td>
+</tr>
+<tr>
+<td>gender</td>
 <td><a href="#schemaenumsex/properties/sex">EnumSex/properties/sex</a></td>
-<td>true</td>
+<td>false</td>
 <td>Informar sexo</td>
 </tr>
 <tr>
@@ -25449,17 +25595,18 @@ This operation does not require authentication
           </span><span class="p">],</span><span class="w">
           </span><span class="nl">"nationality"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
             </span><span class="nl">"hasBrazilianNationality"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"other"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"otherNationality"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
               </span><span class="nl">"additionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CAN"</span><span class="p">,</span><span class="w">
-              </span><span class="nl">"complementaryDocuments"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"expirationDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-03-19"</span><span class="w">
-              </span><span class="p">}</span><span class="w">
+              </span><span class="nl">"complementaryDocuments"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"expirationDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-03-19"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+              </span><span class="p">]</span><span class="w">
             </span><span class="p">}</span><span class="w">
           </span><span class="p">},</span><span class="w">
           </span><span class="nl">"civilName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Elza Milena Stefany Teixeira"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"socialName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Elza"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"filiation"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
             </span><span class="p">{</span><span class="w">
               </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MAE"</span><span class="p">,</span><span class="w">
@@ -25469,14 +25616,12 @@ This operation does not require authentication
             </span><span class="p">}</span><span class="w">
           </span><span class="p">],</span><span class="w">
           </span><span class="nl">"birthDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-03-19"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"maritalStatus"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SOLTEIRO"</span><span class="w">
-          </span><span class="p">},</span><span class="w">
-          </span><span class="nl">"sex"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FEMININO"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"maritalStatusCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SOLTEIRO"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"maritalStatusAdditionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"gender"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FEMININO"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"contacts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
             </span><span class="nl">"postalAddresses"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
               </span><span class="p">{</span><span class="w">
-                </span><span class="nl">"isMain"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
                 </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Av Naburo Ykesaki, 1270"</span><span class="p">,</span><span class="w">
                 </span><span class="nl">"additionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fundos"</span><span class="p">,</span><span class="w">
                 </span><span class="nl">"districtName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Centro"</span><span class="p">,</span><span class="w">
@@ -25489,7 +25634,8 @@ This operation does not require authentication
                 </span><span class="nl">"geographicCoordinates"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
                   </span><span class="nl">"latitude"</span><span class="p">:</span><span class="w"> </span><span class="s2">"-90.8365180"</span><span class="p">,</span><span class="w">
                   </span><span class="nl">"longitude"</span><span class="p">:</span><span class="w"> </span><span class="s2">"-180.836519"</span><span class="w">
-                </span><span class="p">}</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="nl">"isMain"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
               </span><span class="p">}</span><span class="w">
             </span><span class="p">],</span><span class="w">
             </span><span class="nl">"phones"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
@@ -25573,17 +25719,18 @@ This operation does not require authentication
       </span><span class="p">],</span><span class="w">
       </span><span class="nl">"nationality"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="nl">"hasBrazilianNationality"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"other"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"otherNationality"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
           </span><span class="nl">"additionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CAN"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"complementaryDocuments"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"expirationDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-03-19"</span><span class="w">
-          </span><span class="p">}</span><span class="w">
+          </span><span class="nl">"complementaryDocuments"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"expirationDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-03-19"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">]</span><span class="w">
         </span><span class="p">}</span><span class="w">
       </span><span class="p">},</span><span class="w">
       </span><span class="nl">"civilName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Elza Milena Stefany Teixeira"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"socialName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Elza"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"filiation"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
           </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MAE"</span><span class="p">,</span><span class="w">
@@ -25593,14 +25740,12 @@ This operation does not require authentication
         </span><span class="p">}</span><span class="w">
       </span><span class="p">],</span><span class="w">
       </span><span class="nl">"birthDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-03-19"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"maritalStatus"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SOLTEIRO"</span><span class="w">
-      </span><span class="p">},</span><span class="w">
-      </span><span class="nl">"sex"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FEMININO"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"maritalStatusCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SOLTEIRO"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"maritalStatusAdditionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"gender"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FEMININO"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"contacts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="nl">"postalAddresses"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
           </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"isMain"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
             </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Av Naburo Ykesaki, 1270"</span><span class="p">,</span><span class="w">
             </span><span class="nl">"additionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fundos"</span><span class="p">,</span><span class="w">
             </span><span class="nl">"districtName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Centro"</span><span class="p">,</span><span class="w">
@@ -25613,7 +25758,8 @@ This operation does not require authentication
             </span><span class="nl">"geographicCoordinates"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
               </span><span class="nl">"latitude"</span><span class="p">:</span><span class="w"> </span><span class="s2">"-90.8365180"</span><span class="p">,</span><span class="w">
               </span><span class="nl">"longitude"</span><span class="p">:</span><span class="w"> </span><span class="s2">"-180.836519"</span><span class="w">
-            </span><span class="p">}</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"isMain"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
           </span><span class="p">}</span><span class="w">
         </span><span class="p">],</span><span class="w">
         </span><span class="nl">"phones"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
@@ -25692,17 +25838,18 @@ This operation does not require authentication
     </span><span class="p">],</span><span class="w">
     </span><span class="nl">"nationality"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="nl">"hasBrazilianNationality"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"other"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"otherNationality"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="nl">"additionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CAN"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"complementaryDocuments"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"expirationDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-03-19"</span><span class="w">
-        </span><span class="p">}</span><span class="w">
+        </span><span class="nl">"complementaryDocuments"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"expirationDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-03-19"</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="nl">"civilName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Elza Milena Stefany Teixeira"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"socialName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Elza"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"filiation"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
       </span><span class="p">{</span><span class="w">
         </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MAE"</span><span class="p">,</span><span class="w">
@@ -25712,14 +25859,12 @@ This operation does not require authentication
       </span><span class="p">}</span><span class="w">
     </span><span class="p">],</span><span class="w">
     </span><span class="nl">"birthDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-03-19"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"maritalStatus"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SOLTEIRO"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="nl">"sex"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FEMININO"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"maritalStatusCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SOLTEIRO"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"maritalStatusAdditionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"gender"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FEMININO"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"contacts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="nl">"postalAddresses"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"isMain"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
           </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Av Naburo Ykesaki, 1270"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"additionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fundos"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"districtName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Centro"</span><span class="p">,</span><span class="w">
@@ -25732,7 +25877,8 @@ This operation does not require authentication
           </span><span class="nl">"geographicCoordinates"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
             </span><span class="nl">"latitude"</span><span class="p">:</span><span class="w"> </span><span class="s2">"-90.8365180"</span><span class="p">,</span><span class="w">
             </span><span class="nl">"longitude"</span><span class="p">:</span><span class="w"> </span><span class="s2">"-180.836519"</span><span class="w">
-          </span><span class="p">}</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="nl">"isMain"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
         </span><span class="p">}</span><span class="w">
       </span><span class="p">],</span><span class="w">
       </span><span class="nl">"phones"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
@@ -30037,7 +30183,6 @@ This operation does not require authentication
               </span><span class="nl">"contacts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
                 </span><span class="nl">"postalAddresses"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
                   </span><span class="p">{</span><span class="w">
-                    </span><span class="nl">"isMain"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
                     </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Av Naburo Ykesaki, 1270"</span><span class="p">,</span><span class="w">
                     </span><span class="nl">"additionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fundos"</span><span class="p">,</span><span class="w">
                     </span><span class="nl">"districtName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Centro"</span><span class="p">,</span><span class="w">
@@ -30047,7 +30192,8 @@ This operation does not require authentication
                     </span><span class="nl">"postCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"17500001"</span><span class="p">,</span><span class="w">
                     </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Brasil"</span><span class="p">,</span><span class="w">
                     </span><span class="nl">"countryCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRA"</span><span class="p">,</span><span class="w">
-                    </span><span class="nl">"geographicCoordinates"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+                    </span><span class="nl">"geographicCoordinates"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+                    </span><span class="nl">"isMain"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
                   </span><span class="p">}</span><span class="w">
                 </span><span class="p">],</span><span class="w">
                 </span><span class="nl">"phones"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
@@ -33240,17 +33386,14 @@ This operation does not require authentication
               </span><span class="p">],</span><span class="w">
               </span><span class="nl">"nationality"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
                 </span><span class="nl">"hasBrazilianNationality"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"other"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"otherNationality"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
                   </span><span class="nl">"additionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CAN"</span><span class="p">,</span><span class="w">
-                  </span><span class="nl">"complementaryDocuments"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-                    </span><span class="nl">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-                    </span><span class="nl">"expirationDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-03-19"</span><span class="w">
-                  </span><span class="p">}</span><span class="w">
+                  </span><span class="nl">"complementaryDocuments"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="p">{}</span><span class="w">
+                  </span><span class="p">]</span><span class="w">
                 </span><span class="p">}</span><span class="w">
               </span><span class="p">},</span><span class="w">
               </span><span class="nl">"civilName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Elza Milena Stefany Teixeira"</span><span class="p">,</span><span class="w">
-              </span><span class="nl">"socialName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Elza"</span><span class="p">,</span><span class="w">
               </span><span class="nl">"filiation"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
                 </span><span class="p">{</span><span class="w">
                   </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MAE"</span><span class="p">,</span><span class="w">
@@ -33260,14 +33403,12 @@ This operation does not require authentication
                 </span><span class="p">}</span><span class="w">
               </span><span class="p">],</span><span class="w">
               </span><span class="nl">"birthDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-03-19"</span><span class="p">,</span><span class="w">
-              </span><span class="nl">"maritalStatus"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SOLTEIRO"</span><span class="w">
-              </span><span class="p">},</span><span class="w">
-              </span><span class="nl">"sex"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FEMININO"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"maritalStatusCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SOLTEIRO"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"maritalStatusAdditionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"gender"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FEMININO"</span><span class="p">,</span><span class="w">
               </span><span class="nl">"contacts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
                 </span><span class="nl">"postalAddresses"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
                   </span><span class="p">{</span><span class="w">
-                    </span><span class="nl">"isMain"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
                     </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Av Naburo Ykesaki, 1270"</span><span class="p">,</span><span class="w">
                     </span><span class="nl">"additionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fundos"</span><span class="p">,</span><span class="w">
                     </span><span class="nl">"districtName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Centro"</span><span class="p">,</span><span class="w">
@@ -33277,7 +33418,8 @@ This operation does not require authentication
                     </span><span class="nl">"postCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"17500001"</span><span class="p">,</span><span class="w">
                     </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Brasil"</span><span class="p">,</span><span class="w">
                     </span><span class="nl">"countryCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRA"</span><span class="p">,</span><span class="w">
-                    </span><span class="nl">"geographicCoordinates"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+                    </span><span class="nl">"geographicCoordinates"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+                    </span><span class="nl">"isMain"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
                   </span><span class="p">}</span><span class="w">
                 </span><span class="p">],</span><span class="w">
                 </span><span class="nl">"phones"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">

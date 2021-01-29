@@ -86,6 +86,7 @@ paths:
                                         - updateDateTime
                                         - cpfNumber
                                         - otherDocuments
+                                        - nationality
                                         - civilName
                                         - filiation
                                         - birthDate
@@ -97,12 +98,14 @@ paths:
                                           type: string
                                           pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])T(?:[01]\d|2[0123]):(?:[012345]\d):(?:[012345]\d)Z$'
                                           description: 'Data e hora da consulta, conforme especificação RFC-3339, formato UTC.'
+                                          x-cds-type: DateTimeString
                                           maxLength: 20
                                           example: '2020-07-21T08:30:00Z'
                                         updateDateTime:
                                           type: string
                                           pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])T(?:[01]\d|2[0123]):(?:[012345]\d):(?:[012345]\d)Z$'
                                           description: 'Data e hora da atualização do bloco, conforme especificação RFC-3339'
+                                          x-cds-type: DateTimeString
                                           maxLength: 20
                                           example: '2020-07-21T08:30:00Z'
                                         cpfNumber:
@@ -180,7 +183,7 @@ paths:
                                               type: boolean
                                               description: Informa se o Cliente tem nacionalidade brasileira.
                                               example: true
-                                            other:
+                                            otherNationality:
                                               type: object
                                               properties:
                                                 additionalInfo:
@@ -189,37 +192,34 @@ paths:
                                                   maxLength: 3
                                                   example: CAN
                                                 complementaryDocuments:
-                                                  type: object
-                                                  properties:
-                                                    type:
-                                                      type: string
-                                                      maxLength: 10
-                                                      pattern: \w*\W*
-                                                      description: 'Tipo de documento. Campo livre, de preenchimento obrigatório quando a nacionalidade for diferente de brasileira. Informar tipo e número do documento, além da, vigência e demais informações complementares para se identificar o documento de pessoa estrangeira'
-                                                    number:
-                                                      type: string
-                                                      maxLength: 40
-                                                      pattern: \w*\W*
-                                                      description: 'Número de identificação do documento. Campo livre, de preenchimento obrigatório quando a nacionalidade for diferente de brasileira. Informar o número do documento e demais informações complementares para se identificar o documento de pessoa estrangeira'
-                                                    expirationDate:
-                                                      type: string
-                                                      pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$'
-                                                      x-cds-type: DateString
-                                                      maxLength: 10
-                                                      description: 'Data de validade do documento informado, conforme especificação RFC-3339.'
-                                                      example: '2014-03-19'
+                                                  type: array
+                                                  description: Lista que traz relação de documentos complementares de pessoas com nacionalidade diferente de brasileira
+                                                  items:
+                                                    type: object
+                                                    properties:
+                                                      type:
+                                                        type: string
+                                                        maxLength: 10
+                                                        pattern: \w*\W*
+                                                        description: 'Tipo de documento. Campo livre, de preenchimento obrigatório quando a nacionalidade for diferente de brasileira. Informar tipo e número do documento, além da, vigência e demais informações complementares para se identificar o documento de pessoa estrangeira'
+                                                      number:
+                                                        type: string
+                                                        maxLength: 40
+                                                        pattern: \w*\W*
+                                                        description: 'Número de identificação do documento. Campo livre, de preenchimento obrigatório quando a nacionalidade for diferente de brasileira. Informar o número do documento e demais informações complementares para se identificar o documento de pessoa estrangeira'
+                                                      expirationDate:
+                                                        type: string
+                                                        pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$'
+                                                        x-cds-type: DateString
+                                                        maxLength: 10
+                                                        description: 'Data de validade do documento informado, conforme especificação RFC-3339.'
+                                                        example: '2014-03-19'
                                         civilName:
                                           type: string
                                           description: 'Nome civil completo da pessoa natural (Direito fundamental da pessoa, o nome civil é aquele atribuído à pessoa natural desde o registro de seu nascimento, com o qual será identificada por toda a sua vida, bem como após a sua morte)'
                                           maxLength: 70
                                           pattern: \w*\W*
                                           example: Elza Milena Stefany Teixeira
-                                        socialName:
-                                          type: string
-                                          description: 'Nome social da pessoa natural, se houver. (aquele pelo qual travestis e transexuais se reconhecem, bem como são identificados por sua comunidade e em seu meio social, conforme Decreto Nº 51.180, de 14 de janeiro de 2010)'
-                                          maxLength: 70
-                                          pattern: \w*\W*
-                                          example: Elza
                                         filiation:
                                           type: array
                                           items:
@@ -244,7 +244,7 @@ paths:
                                                 maxLength: 70
                                               civilName:
                                                 type: string
-                                                description: Nome civil completo da pessoa relativa à filiação
+                                                description: 'Nome civil completo da pessoa relativa à filiação. (Direito fundamental da pessoa, o nome civil é aquele atribuído à pessoa natural desde o registro de seu nascimento, com o qual será identificada por toda a sua vida, bem como após a sua morte)'
                                                 maxLength: 70
                                                 pattern: \w*\W*
                                               socialName:
@@ -261,33 +261,25 @@ paths:
                                           maxLength: 10
                                           description: 'Data de nascimento, conforme especificação RFC-3339'
                                           example: '2014-03-19'
-                                        maritalStatus:
-                                          type: object
-                                          description: Objeto agrupador das informações relativas ao estado civil da Pessoa Natural
-                                          required:
-                                            - code
-                                          properties:
-                                            code:
-                                              type: string
-                                              description: |
-                                                Estado civil do cliente. 
-                                              enum:
-                                                - SOLTEIRO
-                                                - CASADO
-                                                - VIUVO
-                                                - SEPARADO_JUDICIALMENTE
-                                                - DIVORCIADO
-                                                - UNIAO_ESTAVEL
-                                                - OUTROS
-                                              example: SOLTEIRO
-                                            additionalInfo:
-                                              type: string
-                                              description: 'Campo livre para complementar a informação relativa ao estado civil, quando selecionada a opção `OUTROS`'
-                                              pattern: \w*\W*
-                                              maxLength: 50
-                                          example:
-                                            code: SOLTEIRO
-                                        sex:
+                                        maritalStatusCode:
+                                          type: string
+                                          description: |
+                                            Estado civil do cliente. 
+                                          enum:
+                                            - SOLTEIRO
+                                            - CASADO
+                                            - VIUVO
+                                            - SEPARADO_JUDICIALMENTE
+                                            - DIVORCIADO
+                                            - UNIAO_ESTAVEL
+                                            - OUTROS
+                                          example: SOLTEIRO
+                                        maritalStatusAdditionalInfo:
+                                          type: string
+                                          description: 'Campo livre para complementar a informação relativa ao estado civil, quando selecionada a opção `OUTROS`'
+                                          pattern: \w*\W*
+                                          maxLength: 50
+                                        gender:
                                           type: string
                                           description: |
                                             Informar sexo
@@ -317,109 +309,106 @@ paths:
                                                   - country
                                                   - countryCode
                                                 properties:
+                                                  address:
+                                                    type: string
+                                                    description: |
+                                                      Deverá trazer toda a informação referente ao endereço da dependência informada: Tipo de logradouro + Nome do logradouro + Número do Logradouro (se não existir usar ' s/n') + complemento (se houver), como, p.ex.: 'R Diamatina, 59, bloco 35, fundos' 'Praça da Boa Vontade s/n'
+                                                    maxLength: 150
+                                                    pattern: \w*\W*
+                                                    example: 'Av Naburo Ykesaki, 1270'
+                                                  additionalInfo:
+                                                    type: string
+                                                    description: Alguns logradouros ainda necessitam ser especificados por meio de complemento
+                                                    maxLength: 30
+                                                    pattern: \w*\W*
+                                                    example: Fundos
+                                                  districtName:
+                                                    type: string
+                                                    description: |
+                                                      Bairro é uma comunidade ou região localizada em uma cidade ou município de acordo com as suas subdivisões geográficas. p.ex: 'Paraíso'
+                                                    maxLength: 50
+                                                    pattern: \w*\W*
+                                                    example: Centro
+                                                  townName:
+                                                    type: string
+                                                    description: |
+                                                      Localidade: O nome da localidade corresponde à designação da cidade ou município no qual o endereço está localizado. p.ex. 'São Paulo'
+                                                    maxLength: 50
+                                                    pattern: \w*\W*
+                                                    example: Marília
+                                                  ibgeCode:
+                                                    type: string
+                                                    description: Código IBGE do município
+                                                    pattern: '^(\d{7})$'
+                                                    example: '3550308'
+                                                  countrySubDivision:
+                                                    type: string
+                                                    description: 'Enumeração referente a cada sigla da unidade da federação que identifica o estado ou o distrito federal, no qual o endereço está localizado. p.ex. ''AC''. São consideradas apenas as siglas para os estados brasileiros'
+                                                    enum:
+                                                      - AC
+                                                      - AL
+                                                      - AP
+                                                      - AM
+                                                      - BA
+                                                      - CE
+                                                      - DF
+                                                      - ES
+                                                      - GO
+                                                      - MA
+                                                      - MT
+                                                      - MS
+                                                      - MG
+                                                      - PA
+                                                      - PB
+                                                      - PR
+                                                      - PE
+                                                      - PI
+                                                      - RJ
+                                                      - RN
+                                                      - RS
+                                                      - RO
+                                                      - RR
+                                                      - SC
+                                                      - SP
+                                                      - SE
+                                                      - TO
+                                                    example: SP
+                                                  postCode:
+                                                    type: string
+                                                    description: Código de Endereçamento Postal
+                                                    pattern: '(\d{8}|^NA$)'
+                                                    maxLength: 8
+                                                    example: '17500001'
+                                                  country:
+                                                    type: string
+                                                    description: Nome do país
+                                                    maxLength: 80
+                                                    pattern: \w*\W*
+                                                    example: Brasil
+                                                  countryCode:
+                                                    type: string
+                                                    description: Código do país
+                                                    example: BRA
+                                                  geographicCoordinates:
+                                                    type: object
+                                                    description: |
+                                                      Objeto agrupador das informações que compõem as Coordenadas geográficas: latitude e longitude
+                                                    properties:
+                                                      latitude:
+                                                        description: Informação da latitude referente a geolocalização informada.
+                                                        type: string
+                                                        pattern: '^-?\d{1,2}\.\d{1,9}$'
+                                                        maxLength: 13
+                                                        example: '-90.8365180'
+                                                      longitude:
+                                                        description: Informação da longitude referente a geolocalização informada.
+                                                        type: string
+                                                        pattern: '^-?\d{1,3}\.\d{1,8}$'
+                                                        maxLength: 13
+                                                        example: '-180.836519'
                                                   isMain:
                                                     type: boolean
                                                     description: Indica se o endereço informado é o principal
-                                                allOf:
-                                                  - type: object
-                                                    properties:
-                                                      address:
-                                                        type: string
-                                                        description: |
-                                                          Deverá trazer toda a informação referente ao endereço da dependência informada: Tipo de logradouro + Nome do logradouro + Número do Logradouro (se não existir usar ' s/n') + complemento (se houver), como, p.ex.: 'R Diamatina, 59, bloco 35, fundos' 'Praça da Boa Vontade s/n'
-                                                        maxLength: 150
-                                                        pattern: \w*\W*
-                                                        example: 'Av Naburo Ykesaki, 1270'
-                                                      additionalInfo:
-                                                        type: string
-                                                        description: Alguns logradouros ainda necessitam ser especificados por meio de complemento
-                                                        maxLength: 30
-                                                        pattern: \w*\W*
-                                                        example: Fundos
-                                                      districtName:
-                                                        type: string
-                                                        description: |
-                                                          Bairro é uma comunidade ou região localizada em uma cidade ou município de acordo com as suas subdivisões geográficas. p.ex: 'Paraíso'
-                                                        maxLength: 50
-                                                        pattern: \w*\W*
-                                                        example: Centro
-                                                      townName:
-                                                        type: string
-                                                        description: |
-                                                          Localidade: O nome da localidade corresponde à designação da cidade ou município no qual o endereço está localizado. p.ex. 'São Paulo'
-                                                        maxLength: 50
-                                                        pattern: \w*\W*
-                                                        example: Marília
-                                                      ibgeCode:
-                                                        type: string
-                                                        description: Código IBGE do município
-                                                        pattern: '^(\d{7})$'
-                                                        example: '3550308'
-                                                      countrySubDivision:
-                                                        type: string
-                                                        description: 'Enumeração referente a cada sigla da unidade da federação que identifica o estado ou o distrito federal, no qual o endereço está localizado. p.ex. ''AC''. São consideradas apenas as siglas para os estados brasileiros'
-                                                        enum:
-                                                          - AC
-                                                          - AL
-                                                          - AP
-                                                          - AM
-                                                          - BA
-                                                          - CE
-                                                          - DF
-                                                          - ES
-                                                          - GO
-                                                          - MA
-                                                          - MT
-                                                          - MS
-                                                          - MG
-                                                          - PA
-                                                          - PB
-                                                          - PR
-                                                          - PE
-                                                          - PI
-                                                          - RJ
-                                                          - RN
-                                                          - RS
-                                                          - RO
-                                                          - RR
-                                                          - SC
-                                                          - SP
-                                                          - SE
-                                                          - TO
-                                                        example: SP
-                                                      postCode:
-                                                        type: string
-                                                        description: Código de Endereçamento Postal
-                                                        pattern: '(\d{8}|^NA$)'
-                                                        maxLength: 8
-                                                        example: '17500001'
-                                                      country:
-                                                        type: string
-                                                        description: Nome do país
-                                                        maxLength: 80
-                                                        pattern: \w*\W*
-                                                        example: Brasil
-                                                      countryCode:
-                                                        type: string
-                                                        description: Código do país
-                                                        example: BRA
-                                                      geographicCoordinates:
-                                                        type: object
-                                                        description: |
-                                                          Objeto agrupador das informações que compõem as Coordenadas geográficas: latitude e longitude
-                                                        properties:
-                                                          latitude:
-                                                            description: Informação da latitude referente a geolocalização informada.
-                                                            type: string
-                                                            pattern: '^-?\d{1,2}\.\d{1,9}$'
-                                                            maxLength: 13
-                                                            example: '-90.8365180'
-                                                          longitude:
-                                                            description: Informação da longitude referente a geolocalização informada.
-                                                            type: string
-                                                            pattern: '^-?\d{1,3}\.\d{1,8}$'
-                                                            maxLength: 13
-                                                            example: '-180.836519'
                                               minItems: 1
                                               description: Lista de endereços
                                             phones:
