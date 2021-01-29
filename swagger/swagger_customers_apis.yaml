@@ -94,7 +94,6 @@ paths:
                                         - contacts
                                       allOf:
                                         - $ref: '#/paths/~1personal-qualification/get/responses/200/content/application~1json/schema/properties/data/properties/brand/properties/companies/items/properties/personalCustomers/properties/qualification/allOf/0'
-                                        - $ref: '#/paths/~1personal-qualification/get/responses/200/content/application~1json/schema/properties/data/properties/brand/properties/companies/items/properties/personalCustomers/properties/qualification/allOf/1'
                                         - type: object
                                           properties:
                                             cpfNumber:
@@ -104,6 +103,12 @@ paths:
                                               maxLength: 11
                                               example: '25872252137'
                                       properties:
+                                        requestDateTime:
+                                          type: string
+                                          pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])T(?:[01]\d|2[0123]):(?:[012345]\d):(?:[012345]\d)Z$'
+                                          description: 'Data e hora da consulta, conforme especificação RFC-3339, formato UTC.'
+                                          maxLength: 20
+                                          example: '2020-07-21T08:30:00Z'
                                         passport:
                                           type: object
                                           description: 'Agrupador das informações relativas a identificação do passaporte, documento de preenchimento obrigatório para as Pessoas Físicas residentes no exterior desobrigadas de inscrição no CPF'
@@ -653,8 +658,13 @@ paths:
                                         - contacts
                                       allOf:
                                         - $ref: '#/paths/~1personal-qualification/get/responses/200/content/application~1json/schema/properties/data/properties/brand/properties/companies/items/properties/personalCustomers/properties/qualification/allOf/0'
-                                        - $ref: '#/paths/~1personal-qualification/get/responses/200/content/application~1json/schema/properties/data/properties/brand/properties/companies/items/properties/personalCustomers/properties/qualification/allOf/1'
                                       properties:
+                                        requestDateTime:
+                                          type: string
+                                          pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])T(?:[01]\d|2[0123]):(?:[012345]\d):(?:[012345]\d)Z$'
+                                          description: 'Data e hora da consulta, conforme especificação RFC-3339, formato UTC.'
+                                          maxLength: 20
+                                          example: '2020-07-21T08:30:00Z'
                                         cnpjNumber:
                                           description: 'Número completo do CNPJ da instituição responsável pelo Cadastro - o CNPJ corresponde ao número de inscrição no Cadastro de Pessoa Jurídica. Deve-se ter apenas os números do CNPJ, sem máscara'
                                           type: string
@@ -899,14 +909,6 @@ paths:
                                       allOf:
                                         - type: object
                                           properties:
-                                            requestDateTime:
-                                              type: string
-                                              pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])T(?:[01]\d|2[0123]):(?:[012345]\d):(?:[012345]\d)Z$'
-                                              description: 'Data e hora da consulta, conforme especificação RFC-3339, formato UTC.'
-                                              maxLength: 20
-                                              example: '2020-07-21T08:30:00Z'
-                                        - type: object
-                                          properties:
                                             updateDateTime:
                                               type: string
                                               pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])T(?:[01]\d|2[0123]):(?:[012345]\d):(?:[012345]\d)Z$'
@@ -914,6 +916,12 @@ paths:
                                               maxLength: 20
                                               example: '2020-07-21T08:30:00Z'
                                       properties:
+                                        requestDateTime:
+                                          type: string
+                                          pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])T(?:[01]\d|2[0123]):(?:[012345]\d):(?:[012345]\d)Z$'
+                                          description: 'Data e hora da consulta, conforme especificação RFC-3339, formato UTC.'
+                                          maxLength: 20
+                                          example: '2020-07-21T08:30:00Z'
                                         informedIncome:
                                           type: object
                                           description: Objeto que agrupa as informações referentes à renda total informada
@@ -1130,8 +1138,13 @@ paths:
                                         - occupation
                                       allOf:
                                         - $ref: '#/paths/~1personal-qualification/get/responses/200/content/application~1json/schema/properties/data/properties/brand/properties/companies/items/properties/personalCustomers/properties/qualification/allOf/0'
-                                        - $ref: '#/paths/~1personal-qualification/get/responses/200/content/application~1json/schema/properties/data/properties/brand/properties/companies/items/properties/personalCustomers/properties/qualification/allOf/1'
                                       properties:
+                                        requestDateTime:
+                                          type: string
+                                          pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])T(?:[01]\d|2[0123]):(?:[012345]\d):(?:[012345]\d)Z$'
+                                          description: 'Data e hora da consulta, conforme especificação RFC-3339, formato UTC.'
+                                          maxLength: 20
+                                          example: '2020-07-21T08:30:00Z'
                                         economicActivity:
                                           type: object
                                           required:

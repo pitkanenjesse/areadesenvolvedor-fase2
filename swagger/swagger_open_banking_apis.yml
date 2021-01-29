@@ -2362,9 +2362,14 @@ components:
         - partiesParticipation
         - contacts
       allOf:
-        - $ref: '#/components/schemas/RequestDateTime'
         - $ref: '#/components/schemas/UpdateDateTime'
       properties:
+        requestDateTime:
+          type: string
+          pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])T(?:[01]\d|2[0123]):(?:[012345]\d):(?:[012345]\d)Z$'
+          description: 'Data e hora da consulta, conforme especificação RFC-3339, formato UTC.'
+          maxLength: 20
+          example: '2020-07-21T08:30:00Z'
         cnpjNumber:
           description: 'Número completo do CNPJ da instituição responsável pelo Cadastro - o CNPJ corresponde ao número de inscrição no Cadastro de Pessoa Jurídica. Deve-se ter apenas os números do CNPJ, sem máscara'
           type: string
@@ -2742,9 +2747,14 @@ components:
         - informedPatrimony
         - occupation
       allOf:
-        - $ref: '#/components/schemas/RequestDateTime'
         - $ref: '#/components/schemas/UpdateDateTime'
       properties:
+        requestDateTime:
+          type: string
+          pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])T(?:[01]\d|2[0123]):(?:[012345]\d):(?:[012345]\d)Z$'
+          description: 'Data e hora da consulta, conforme especificação RFC-3339, formato UTC.'
+          maxLength: 20
+          example: '2020-07-21T08:30:00Z'
         economicActivity:
           $ref: '#/components/schemas/EconomicActivity'
         informedRevenue:
@@ -5270,10 +5280,15 @@ components:
         - sex
         - contacts
       allOf:
-        - $ref: '#/components/schemas/RequestDateTime'
         - $ref: '#/components/schemas/UpdateDateTime'
         - $ref: '#/components/schemas/CPF'
       properties:
+        requestDateTime:
+          type: string
+          pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])T(?:[01]\d|2[0123]):(?:[012345]\d):(?:[012345]\d)Z$'
+          description: 'Data e hora da consulta, conforme especificação RFC-3339, formato UTC.'
+          maxLength: 20
+          example: '2020-07-21T08:30:00Z'
         passport:
           $ref: '#/components/schemas/Passport'
         otherDocuments:
@@ -5649,9 +5664,14 @@ components:
         - informedPatrimony
         - occupation
       allOf:
-        - $ref: '#/components/schemas/RequestDateTime'
         - $ref: '#/components/schemas/UpdateDateTime'
       properties:
+        requestDateTime:
+          type: string
+          pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])T(?:[01]\d|2[0123]):(?:[012345]\d):(?:[012345]\d)Z$'
+          description: 'Data e hora da consulta, conforme especificação RFC-3339, formato UTC.'
+          maxLength: 20
+          example: '2020-07-21T08:30:00Z'
         informedIncome:
           $ref: '#/components/schemas/InformedIncome'
         informedPatrimony:
@@ -6347,15 +6367,6 @@ components:
           description: 'Número de chamadas rejeitadas nos dias anteriores. O primeiro item do array é referente a ontem, e assim por diante. Devem ser retornados no máximo sete dias caso estejam disponíveis.'
           items:
             type: integer
-    RequestDateTime:
-      type: object
-      properties:
-        requestDateTime:
-          type: string
-          pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])T(?:[01]\d|2[0123]):(?:[012345]\d):(?:[012345]\d)Z$'
-          description: 'Data e hora da consulta, conforme especificação RFC-3339, formato UTC.'
-          maxLength: 20
-          example: '2020-07-21T08:30:00Z'
     RequestUpdateDateTime:
       type: object
       required:
