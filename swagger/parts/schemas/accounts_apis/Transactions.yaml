@@ -5,18 +5,24 @@ required:
   - updateDateTime
   - completedTransactions
   - authorisedPayments
-allOf:
-  - $ref: 'RequestUpdateDateTime.yaml'
 properties:
+  requestDateTime:
+      allOf:  
+      - $ref: '../common_field_types/AccountsDateTimeString.yaml'
+      description: 'Data e hora da consulta, conforme especificação RFC-3339, formato UTC.'    
+  updateDateTime:
+      allOf:  
+      - $ref: '../common_field_types/AccountsDateTimeString.yaml'
+      description: 'Data e hora da atualização, conforme especificação RFC-3339.'
   completedTransactions:
     type: array
     items:
-      $ref: 'AccountTransactionsCompleted.yaml'
+      $ref: './AccountTransactionsCompleted.yaml'
     minItems: 1
     description: Lista das transações a débito e a crédito efetivadas em conta.
   authorisedPayments:
     type: array
     items:
-      $ref: 'AccountTransactionsAuthorisedPayment.yaml'
+      $ref: './AccountTransactionsAuthorisedPayment.yaml'
     minItems: 1
     description: Lista das Informações relativas aos pagamentos autorizados.

@@ -4,15 +4,23 @@ required:
   - requestDateTime
   - updateDateTime
   - type
-allOf:
-  - $ref: './RequestUpdateDateTime.yaml'    
+  - amount
+  - currency
 properties:
+  requestDateTime:
+      allOf:
+      - $ref: '../common_field_types/AccountsDateTimeString.yaml'
+      description: 'Data e hora da consulta, conforme especificação RFC-3339, formato UTC.'    
+  updateDateTime:
+      allOf:  
+      - $ref: '../common_field_types/AccountsDateTimeString.yaml'
+      description: 'Data e hora da atualização, conforme especificação RFC-3339.'
   type:
-    $ref: './enum/EnumOverdraftLimitType.yaml'
+    $ref: '../enum/EnumOverdraftLimitType.yaml'
   amount:
     type: number
     nullable: true
     description: Valor da transação. Expressa em valor monetário com 2 casas decimais. A opção saldo a descoberto é expressa em valor negativo.
   currency:
-    $ref:  './Currency.yaml'
+    $ref:  '../Currency.yaml'
     

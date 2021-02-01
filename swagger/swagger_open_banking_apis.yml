@@ -1490,9 +1490,18 @@ components:
         - updateDateTime
         - type
         - amount
-      allOf:
-        - $ref: '#/components/schemas/RequestUpdateDateTime'
       properties:
+        requestDateTime:
+          allOf:
+            - $ref: '#/components/schemas/Balances/properties/updateDateTime/allOf/0'
+          description: 'Data e hora da consulta, conforme especificação RFC-3339, formato UTC.'
+        updateDateTime:
+          allOf:
+            - type: string
+              maxLength: 20
+              pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])T(?:[01]\d|2[0123]):(?:[012345]\d):(?:[012345]\d)Z$'
+              example: '2020-07-21T08:30:00Z'
+          description: 'Data e hora da atualização, conforme especificação RFC-3339.'
         type:
           $ref: '#/components/schemas/EnumBalanceType/properties/balanceType'
         amount:
@@ -4318,9 +4327,15 @@ components:
         - ispbCode
         - type
         - subtype
-      allOf:
-        - $ref: '#/components/schemas/RequestUpdateDateTime'
       properties:
+        requestDateTime:
+          allOf:
+            - $ref: '#/components/schemas/Balances/properties/updateDateTime/allOf/0'
+          description: 'Data e hora da consulta, conforme especificação RFC-3339, formato UTC.'
+        updateDateTime:
+          allOf:
+            - $ref: '#/components/schemas/Balances/properties/updateDateTime/allOf/0'
+          description: 'Data e hora da atualização, conforme especificação RFC-3339.'
         number:
           type: string
           maxLength: 8
@@ -4678,9 +4693,11 @@ components:
         prev:
           type: string
           description: URL da página anterior de registros
+          nullable: true
         next:
           type: string
           description: URL da próxima página de registros
+          nullable: true
         last:
           type: string
           description: URL da última página de registros
@@ -5016,9 +5033,17 @@ components:
         - requestDateTime
         - updateDateTime
         - type
-      allOf:
-        - $ref: '#/components/schemas/RequestUpdateDateTime'
+        - amount
+        - currency
       properties:
+        requestDateTime:
+          allOf:
+            - $ref: '#/components/schemas/Balances/properties/updateDateTime/allOf/0'
+          description: 'Data e hora da consulta, conforme especificação RFC-3339, formato UTC.'
+        updateDateTime:
+          allOf:
+            - $ref: '#/components/schemas/Balances/properties/updateDateTime/allOf/0'
+          description: 'Data e hora da atualização, conforme especificação RFC-3339.'
         type:
           $ref: '#/components/schemas/EnumOverdraftLimitType/properties/overdraftLimitType'
         amount:
@@ -6458,24 +6483,6 @@ components:
           description: 'Número de chamadas rejeitadas nos dias anteriores. O primeiro item do array é referente a ontem, e assim por diante. Devem ser retornados no máximo sete dias caso estejam disponíveis.'
           items:
             type: integer
-    RequestUpdateDateTime:
-      type: object
-      required:
-        - requestDateTime
-        - updateDateTime
-      properties:
-        requestDateTime:
-          type: string
-          maxLength: 20
-          pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])T(?:[01]\d|2[0123]):(?:[012345]\d):(?:[012345]\d)Z$'
-          description: 'Data e hora da consulta, conforme especificação RFC-3339, formato UTC.'
-          example: '2020-07-21T08:30:00Z'
-        updateDateTime:
-          type: string
-          maxLength: 20
-          pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])T(?:[01]\d|2[0123]):(?:[012345]\d):(?:[012345]\d)Z$'
-          description: 'Data e hora da atualização, conforme especificação RFC-3339.'
-          example: '2020-07-21T08:30:00Z'
     ResponseBankingAgentsList:
       type: object
       required:
@@ -10479,9 +10486,15 @@ components:
         - updateDateTime
         - completedTransactions
         - authorisedPayments
-      allOf:
-        - $ref: '#/components/schemas/RequestUpdateDateTime'
       properties:
+        requestDateTime:
+          allOf:
+            - $ref: '#/components/schemas/Balances/properties/updateDateTime/allOf/0'
+          description: 'Data e hora da consulta, conforme especificação RFC-3339, formato UTC.'
+        updateDateTime:
+          allOf:
+            - $ref: '#/components/schemas/Balances/properties/updateDateTime/allOf/0'
+          description: 'Data e hora da atualização, conforme especificação RFC-3339.'
         completedTransactions:
           type: array
           items:

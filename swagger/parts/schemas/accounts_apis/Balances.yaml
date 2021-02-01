@@ -1,0 +1,23 @@
+type: object
+required:
+  - requestDateTime
+  - updateDateTime
+  - type
+  - amount
+properties:
+  requestDateTime:
+      allOf:  
+      - $ref: '../common_field_types/AccountsDateTimeString.yaml'
+      description: 'Data e hora da consulta, conforme especificação RFC-3339, formato UTC.'    
+  updateDateTime:
+      allOf:  
+      - $ref: '../common_field_types/AccountsDateTimeString.yaml'
+      description: 'Data e hora da atualização, conforme especificação RFC-3339.'
+  type:
+    $ref: '../enum/EnumBalanceType.yaml'
+  amount:
+    type: number
+    nullable: true    
+    description: Valor do Saldo disponível, representado em valor monetário com 2 casas decimais. O tipo SALDO_DISPONIVEL admite valor negativo.
+  currency:
+    $ref:  '../Currency.yaml'
