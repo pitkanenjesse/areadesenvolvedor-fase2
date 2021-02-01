@@ -11,11 +11,11 @@ properties:
       - OUTROS
     description: |
             Tipo de canal telefônico de atendimento:
-              * `CENTRAL_TELEFONICA`
-              * `SAC`
-              * `OUVIDORIA`
-              * `OUTROS`
-    example: "OUVIDORIA"
+              \n* `CENTRAL_TELEFONICA`
+              \n* `SAC`
+              \n* `OUVIDORIA`
+              \n* `OUTROS`
+    example: OUVIDORIA
   additionalInfo:
     type: string
     pattern: \w*\W*

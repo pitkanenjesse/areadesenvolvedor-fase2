@@ -6,13 +6,11 @@ required:
 properties:
   data:
     type: object
-    description: Dados primários da requisição.
     required:
       - brand
     properties:
       brand:
         $ref: ./BusinessInvoiceFinancingsBrand.yaml
-        description: Organização controladora do grupo de instituições financeiras.
   links:
     $ref: ./Links.yaml
   meta:
@@ -59,7 +57,7 @@ example:
                     maximum:
                       value: '87.00'
                       currency: BRL
-              interestRates:
+              interestRate:
                 - referentialRateIndexer: POS_FIXADO_TR_TBF
                   rate: '0.15'
                   applications:

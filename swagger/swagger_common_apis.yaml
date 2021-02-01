@@ -46,14 +46,12 @@ paths:
                 properties:
                   data:
                     type: object
-                    description: Dados primários da requisição.
                     required:
                       - status
                     properties:
                       status:
                         type: array
                         items:
-                          description: Lista de códigos de status da API.
                           type: object
                           required:
                             - code
@@ -80,15 +78,15 @@ paths:
                             detectionTime:
                               type: string
                               description: A data e hora em que a interrupção atual foi detectada. Será obrigatoriamente preenchido se a propriedade code for PARTIAL_FAILURE ou UNAVAILABLE
-                              example: '2020-07-21T08:30:00Z'
+                              example: 2020-07-21T08:30:00.000Z
                             expectedResolutionTime:
                               type: string
                               description: A data e hora em que o serviço completo deve continuar (se conhecido). Será obrigatoriamente preenchido se code tiver algum valor que não seja OK
-                              example: '2020-07-21T08:30:00Z'
+                              example: 2020-07-21T08:30:00.000Z
                             updateTime:
                               type: string
                               description: A data e hora em que esse status foi atualizado pela última vez pelo titular dos dados.
-                              example: '2020-01-02T01:00:00Z'
+                              example: 2020-01-02T01:00:00.000Z
                             unavailableEndpoints:
                               type: array
                               description: Endpoints com indisponibilidade
@@ -98,7 +96,6 @@ paths:
                                 - 'https://api.banco.com.br/open-banking/channels/v1/electronic-channels'
                   links:
                     type: object
-                    description: Referências para outros recusos da API requisitada.
                     properties:
                       self:
                         type: string
@@ -122,7 +119,6 @@ paths:
                         example: 'https://api.banco.com.br/open-banking/<api>/v1/<resource>'
                   meta:
                     type: object
-                    description: Meta informações referente a API requisitada.
                     properties:
                       totalRecords:
                         type: integer
@@ -135,28 +131,6 @@ paths:
                     required:
                       - totalRecords
                       - totalPages
-                example:
-                  data:
-                    status:
-                      - code: SCHEDULED_OUTAGE
-                        explanation: Manutenção Planejada
-                        detectionTime: '2020-01-01T01:00:00Z'
-                        expectedResolutionTime: '2020-01-01T01:00:00Z'
-                        updateTime: '2020-01-02T01:00:00Z'
-                        unavailableEndpoints:
-                          - 'https://api.banco.com.br/open-banking/channels/v1/branches'
-                      - code: PARTIAL_FAILURE
-                        explanation: Falha na execução do serviço
-                        detectionTime: '2020-01-01T01:00:00Z'
-                        expectedResolutionTime: '2020-01-01T01:00:00Z'
-                        updateTime: '2020-01-02T01:00:00Z'
-                        unavailableEndpoints:
-                          - 'https://api.banco.com.br/open-banking/channels/v1/electronic-channels'
-                  links:
-                    self: 'https://api.banco.com.br/open-banking/discovery/v1/status'
-                  meta:
-                    totalRecords: 1
-                    totalPages: 1
   /outages:
     get:
       tags:
@@ -180,60 +154,31 @@ paths:
                   - meta
                 properties:
                   data:
-                    type: object
-                    description: Dados primários da requisição.
-                    required:
-                      - outages
-                    properties:
-                      outages:
-                        type: array
-                        items:
-                          type: object
-                          required:
-                            - outageTime
-                            - duration
-                            - isPartial
-                            - explanation
-                          properties:
-                            outageTime:
-                              description: Data e hora planejada do início da indisponibilidade
-                              type: string
-                              pattern: '^(?:2\d{3})-(?:0\d|1[012])-(?:[012]\d|3[01])T(?:[01]\d|2[0123]):(?:[012345]\d):(?:[012345]\d)Z$'
-                              example: '2020-07-21T08:30:00Z'
-                            duration:
-                              description: Duração prevista da indisponibilidade
-                              type: string
-                              pattern: ^P(?!$)(\d+Y)?(\d+M)?(\d+W)?(\d+D)?(T(?=\d)(\d+H)?(\d+M)?(\d+S)?)?$
-                              example: P23DT23H
-                            isPartial:
-                              type: boolean
-                              description: Flag que indica se a indisponibilidade é parcial (atingindo apenas alguns end points) ou total (atingindo todos os end points)
-                              example: false
-                            explanation:
-                              type: string
-                              description: Explicação sobre os motivos da indisponibilidade.
-                              example: Atualização do API Gateway
-                            unavailableEndpoints:
-                              type: array
-                              items:
-                                type: string
-                                pattern: '^([a-z0-9+.-]+):(?://(?:((?:[a-z0-9-._~!$&''()*+,;=:]|%[0-9A-F]{2})*)@)?((?:[a-z0-9-._~!$&''()*+,;=]|%[0-9A-F]{2})*)(?::(\d*))?(/(?:[a-z0-9-._~!$&''()*+,;=:@/]|%[0-9A-F]{2})*)?|(/?(?:[a-z0-9-._~!$&''()*+,;=:@]|%[0-9A-F]{2})+(?:[a-z0-9-._~!$&''()*+,;=:@/]|%[0-9A-F]{2})*)?)(?:\?((?:[a-z0-9-._~!$&''()*+,;=:/?@]|%[0-9A-F]{2})*))?(?:#((?:[a-z0-9-._~!$&''()*+,;=:/?@]|%[0-9A-F]{2})*))?$'
-                                example: 'http://www.google.com.br'
+                    type: array
+                    items:
+                      required:
+                        - outageTime
+                        - duration
+                        - isPartial
+                        - explanation
+                      properties:
+                        outageTime:
+                          type: string
+                          description: Data e hora planejada do início da indisponibilidade
+                          example: 2020-07-21T08:30:00.000Z
+                        duration:
+                          type: string
+                          description: Duração prevista da indisponibilidade
+                          example: PT2H30M
+                        isPartial:
+                          type: boolean
+                          description: Flag que indica se a indisponibilidade é parcial (atingindo apenas alguns end points) ou total (atingindo todos os end points)
+                          example: false
+                        explanation:
+                          type: string
+                          description: Explicação sobre os motivos da indisponibilidade.
+                          example: Atualização do API Gateway
                   links:
                     $ref: '#/paths/~1status/get/responses/200/content/application~1json/schema/properties/links'
                   meta:
                     $ref: '#/paths/~1status/get/responses/200/content/application~1json/schema/properties/meta'
-                example:
-                  data:
-                    outages:
-                      - outageTime: '2020-07-21T08:30:00Z'
-                        duration: PT2H30M
-                        isPartial: false
-                        explanation: Atualização do API Gateway
-                        unavailableEndpoints:
-                          - 'https://api.banco.com.br/open-banking/discovery/v1/outages'
-                  links:
-                    self: 'https://api.banco.com.br/open-banking/discovery/v1/outages'
-                  meta:
-                    totalRecords: 1
-                    totalPages: 1

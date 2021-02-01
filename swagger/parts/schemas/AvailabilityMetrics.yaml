@@ -1,5 +1,4 @@
 type: object
-description: Índices de disponibilidades das APIs.
 required:
   - uptime
   - downtime

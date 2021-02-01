@@ -276,7 +276,6 @@ paths:
                             description: Companies traz uma lista de todas as instituições da Marca.
                   links:
                     type: object
-                    description: Referências para outros recusos da API requisitada.
                     properties:
                       self:
                         type: string
@@ -300,7 +299,6 @@ paths:
                         example: 'https://api.banco.com.br/open-banking/<api>/v1/<resource>'
                   meta:
                     type: object
-                    description: Meta informações referente a API requisitada.
                     properties:
                       totalRecords:
                         type: integer

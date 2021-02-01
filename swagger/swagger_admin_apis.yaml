@@ -57,7 +57,6 @@ paths:
                 properties:
                   data:
                     type: object
-                    description: Dados primários da requisição.
                     required:
                       - requestTime
                       - availability
@@ -74,7 +73,6 @@ paths:
                         format: date-time
                       availability:
                         type: object
-                        description: Índices de disponibilidades das APIs.
                         required:
                           - uptime
                           - downtime
@@ -131,7 +129,6 @@ paths:
                                     description: Quantidade de segundos de indisponibilidade do endpoint.
                       invocations:
                         type: object
-                        description: Número de chamadas em cada nível e prioridade.
                         required:
                           - unauthenticated
                           - highPriority
@@ -200,7 +197,6 @@ paths:
                                   type: integer
                       averageResponse:
                         type: object
-                        description: Tempo médio de reposta em segundos em cada nível e prioridade.
                         required:
                           - unauthenticated
                           - highPriority
@@ -269,7 +265,6 @@ paths:
                                   type: integer
                       averageTps:
                         type: object
-                        description: Transações em média por segundo.
                         required:
                           - currentDay
                           - previousDays
@@ -284,7 +279,6 @@ paths:
                               type: integer
                       peakTps:
                         type: object
-                        description: Número máximo de transações por segundo.
                         required:
                           - currentDay
                           - previousDays
@@ -299,7 +293,6 @@ paths:
                               type: integer
                       errors:
                         type: object
-                        description: Número de chamadas que resultaram em erro devido ao servidor.
                         required:
                           - currentDay
                           - previousDays
@@ -314,7 +307,6 @@ paths:
                               type: integer
                       rejections:
                         type: object
-                        description: Número de chamadas rejeitadas devido aos limites.
                         required:
                           - currentDay
                           - previousDays
@@ -329,7 +321,6 @@ paths:
                               type: integer
                   links:
                     type: object
-                    description: Referências para outros recusos da API requisitada.
                     properties:
                       self:
                         type: string
@@ -353,7 +344,6 @@ paths:
                         example: 'https://api.banco.com.br/open-banking/<api>/v1/<resource>'
                   meta:
                     type: object
-                    description: Meta informações referente a API requisitada.
                     properties:
                       totalRecords:
                         type: integer

@@ -13,7 +13,7 @@ properties:
     maxLength: 2000
     pattern: \w*\W*
     description: Critérios de qualificação do cliente com a finalidade de definir sua elegibilidade para a aquisição do tipo de conta. Campo Aberto
-    example: "https://example.com/mobile-banking"
+    example: https://example.com/mobile-banking
   closingProcessInfo:
     type: string
     maxLength: 2000
