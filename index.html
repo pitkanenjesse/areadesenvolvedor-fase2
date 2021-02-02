@@ -549,6 +549,9 @@
                     <a href="#tocS_BusinessCreditCardCompany" class="toc-h2 toc-link" data-title="BusinessCreditCardCompany">BusinessCreditCardCompany</a>
                   </li>
                   <li>
+                    <a href="#tocS_BusinessCustomers" class="toc-h2 toc-link" data-title="BusinessCustomers">BusinessCustomers</a>
+                  </li>
+                  <li>
                     <a href="#tocS_BusinessFinancing" class="toc-h2 toc-link" data-title="BusinessFinancing">BusinessFinancing</a>
                   </li>
                   <li>
@@ -741,6 +744,12 @@
                     <a href="#tocS_EnumPriceIntervals" class="toc-h2 toc-link" data-title="EnumPriceIntervals">EnumPriceIntervals</a>
                   </li>
                   <li>
+                    <a href="#tocS_EnumProcuratorsType" class="toc-h2 toc-link" data-title="EnumProcuratorsType">EnumProcuratorsType</a>
+                  </li>
+                  <li>
+                    <a href="#tocS_EnumProductServiceType" class="toc-h2 toc-link" data-title="EnumProductServiceType">EnumProductServiceType</a>
+                  </li>
+                  <li>
                     <a href="#tocS_EnumPriorityServiceName" class="toc-h2 toc-link" data-title="EnumPriorityServiceName">EnumPriorityServiceName</a>
                   </li>
                   <li>
@@ -871,6 +880,9 @@
                   </li>
                   <li>
                     <a href="#tocS_PersonalCreditCardCompany" class="toc-h2 toc-link" data-title="PersonalCreditCardCompany">PersonalCreditCardCompany</a>
+                  </li>
+                  <li>
+                    <a href="#tocS_PersonalCustomer" class="toc-h2 toc-link" data-title="PersonalCustomer">PersonalCustomer</a>
                   </li>
                   <li>
                     <a href="#tocS_PersonalFinancing" class="toc-h2 toc-link" data-title="PersonalFinancing">PersonalFinancing</a>
@@ -15030,6 +15042,69 @@ This operation does not require authentication
 </tr>
 </tbody></table>
 
+<h2 id="tocS_BusinessCustomers">BusinessCustomers</h2>
+
+<p><a id="schemabusinesscustomers"></a>
+<a id="schema_BusinessCustomers"></a>
+<a id="tocSbusinesscustomers"></a>
+<a id="tocsbusinesscustomers"></a></p>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"companies"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Organização A"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"cnpjNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00.000.000/0001-00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"financialRelation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"updateDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"startDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"productsServices"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"productService"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SEGURO"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"procurators"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"procuratorsType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PROCURADOR"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"civilName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"socialName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<table><thead>
+<tr>
+<th>Nome</th>
+<th>Tipo</th>
+<th>Obrigatório</th>
+<th>Descrição</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>companies</td>
+<td>object</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>» name</td>
+<td>string</td>
+<td>true</td>
+<td>Nome da marca selecionada pela Organização</td>
+</tr>
+<tr>
+<td>» cnpjNumber</td>
+<td>string</td>
+<td>true</td>
+<td>Número completo do CNPJ da instituição responsável pelo Cadastro - o CNPJ corresponde ao número de inscrição no Cadastro de Pessoa Jurídica.</td>
+</tr>
+<tr>
+<td>» financialRelation</td>
+<td><a href="#schemapersonalcustomer/properties/companies/properties/financialrelation">PersonalCustomer/properties/companies/properties/financialRelation</a></td>
+<td>true</td>
+<td>Objeto que reúne as informações relativas ao processo de Relacionamento. Considera-se relacionamento as informações que permitam conhecer desde quando a pessoa consultada é cliente da instituição, bem como um indicador dos produtos e serviços que ela consome atualmente e seus representantes</td>
+</tr>
+</tbody></table>
+
 <h2 id="tocS_BusinessFinancing">BusinessFinancing</h2>
 
 <p><a id="schemabusinessfinancing"></a>
@@ -21144,13 +21219,135 @@ This operation does not require authentication
 </tr>
 </tbody></table>
 
+<h2 id="tocS_EnumProcuratorsType">EnumProcuratorsType</h2>
+
+<p><a id="schemaenumprocuratorstype"></a>
+<a id="schema_EnumProcuratorsType"></a>
+<a id="tocSenumprocuratorstype"></a>
+<a id="tocsenumprocuratorstype"></a></p>
+
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"procurators"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PROCURADOR"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<table><thead>
+<tr>
+<th>Nome</th>
+<th>Tipo</th>
+<th>Obrigatório</th>
+<th>Descrição</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>procurators</td>
+<td>string</td>
+<td>false</td>
+<td>Tipo de representante.<br>Representante legal - Nome Civil completo da Pessoa Natural que represente uma entidade ou uma empresa e é nomeado em seu ato constitutivo, ou seja, no contrato social ou estatuto social.<br>Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negócio, mediante autorização escrita do mesmo.</td>
+</tr>
+</tbody></table>
+<h4 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades-enumerated-values'>Enumerated Values</h4>
+<table><thead>
+<tr>
+<th>Nome</th>
+<th>Código</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>procurators</td>
+<td>REPRESENTANTE_LOCAL</td>
+</tr>
+<tr>
+<td>procurators</td>
+<td>PROCURADOR</td>
+</tr>
+</tbody></table>
+
+<h2 id="tocS_EnumProductServiceType">EnumProductServiceType</h2>
+
+<p><a id="schemaenumproductservicetype"></a>
+<a id="schema_EnumProductServiceType"></a>
+<a id="tocSenumproductservicetype"></a>
+<a id="tocsenumproductservicetype"></a></p>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"products"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SEGURO"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<table><thead>
+<tr>
+<th>Nome</th>
+<th>Tipo</th>
+<th>Obrigatório</th>
+<th>Descrição</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>products</td>
+<td>string</td>
+<td>false</td>
+<td>Relação dos produtos e serviços com contrato vigente.</td>
+</tr>
+</tbody></table>
+<h4 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades-enumerated-values'>Enumerated Values</h4>
+<table><thead>
+<tr>
+<th>Nome</th>
+<th>Código</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>products</td>
+<td>CONTA_DEPOSITO_A_VISTA</td>
+</tr>
+<tr>
+<td>products</td>
+<td>CONTA_POUPANCA</td>
+</tr>
+<tr>
+<td>products</td>
+<td>CONTA_PAGAMENTO_PRE_PAGA</td>
+</tr>
+<tr>
+<td>products</td>
+<td>CONTA_CREDITO</td>
+</tr>
+<tr>
+<td>products</td>
+<td>OPERACAO_CREDITO</td>
+</tr>
+<tr>
+<td>products</td>
+<td>SEGURO</td>
+</tr>
+<tr>
+<td>products</td>
+<td>PREVIDENCIA</td>
+</tr>
+<tr>
+<td>products</td>
+<td>INVESTIMENTO</td>
+</tr>
+<tr>
+<td>products</td>
+<td>OPERACOES_CAMBIO</td>
+</tr>
+<tr>
+<td>products</td>
+<td>CONTA_SALARIO</td>
+</tr>
+<tr>
+<td>products</td>
+<td>CREDENCIAMENTO</td>
+</tr>
+</tbody></table>
+
 <h2 id="tocS_EnumPriorityServiceName">EnumPriorityServiceName</h2>
 
 <p><a id="schemaenumpriorityservicename"></a>
 <a id="schema_EnumPriorityServiceName"></a>
 <a id="tocSenumpriorityservicename"></a>
 <a id="tocsenumpriorityservicename"></a></p>
-
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TRANSFERENCIA_TED_PESSOAL_OU_PRESENCIAL"</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -24953,6 +25150,123 @@ This operation does not require authentication
 <td>[<a href="#schemapersonalcreditcard">PersonalCreditCard</a>]</td>
 <td>true</td>
 <td>Lista das contas de pagamento pós-paga</td>
+</tr>
+</tbody></table>
+
+<h2 id="tocS_PersonalCustomer">PersonalCustomer</h2>
+
+<p><a id="schemapersonalcustomer"></a>
+<a id="schema_PersonalCustomer"></a>
+<a id="tocSpersonalcustomer"></a>
+<a id="tocspersonalcustomer"></a></p>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"companies"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Organização A"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"cnpjNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00.000.000/0001-00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"financialRelation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"updateDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"startDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"productsServices"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"productService"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SEGURO"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"procurators"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"procuratorsType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PROCURADOR"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"civilName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"socialName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<table><thead>
+<tr>
+<th>Nome</th>
+<th>Tipo</th>
+<th>Obrigatório</th>
+<th>Descrição</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>companies</td>
+<td>object</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>» name</td>
+<td>string</td>
+<td>true</td>
+<td>Nome da marca selecionada pela Organização</td>
+</tr>
+<tr>
+<td>» cnpjNumber</td>
+<td>string</td>
+<td>true</td>
+<td>Número completo do CNPJ da instituição responsável pelo Cadastro - o CNPJ corresponde ao número de inscrição no Cadastro de Pessoa Jurídica.</td>
+</tr>
+<tr>
+<td>» financialRelation</td>
+<td>object</td>
+<td>true</td>
+<td>Objeto que reúne as informações relativas ao processo de Relacionamento. Considera-se relacionamento as informações que permitam conhecer desde quando a pessoa consultada é cliente da instituição, bem como um indicador dos produtos e serviços que ela consome atualmente e seus representantes</td>
+</tr>
+<tr>
+<td>»» requestDateTime</td>
+<td>string</td>
+<td>true</td>
+<td>Data e hora da consulta, conforme especificação RFC-3339, formato UTC.</td>
+</tr>
+<tr>
+<td>»» updateDateTime</td>
+<td>string</td>
+<td>true</td>
+<td>Data e hora da atualização do bloco de Relacionamento, conforme especificação RFC-3339, formato UTC.</td>
+</tr>
+<tr>
+<td>»» startDate</td>
+<td>string</td>
+<td>true</td>
+<td>Data de início de relacionamento com a Instituição Financeira. Deve trazer o menor valor entre a informação reportada ao BACEN pelo DOC 3040 e CCS.</td>
+</tr>
+<tr>
+<td>»» productsServices</td>
+<td>[object]</td>
+<td>false</td>
+<td>Lista de produtos e serviços com contratos vigentes</td>
+</tr>
+<tr>
+<td>»»» productService</td>
+<td><a href="#schemaenumproductservicetype/properties/products">EnumProductServiceType/properties/products</a></td>
+<td>false</td>
+<td>Relação dos produtos e serviços com contrato vigente.</td>
+</tr>
+<tr>
+<td>»»» procurators</td>
+<td>object</td>
+<td>false</td>
+<td>Lista dos representantes. De preenchimento obrigatório se houver representante.</td>
+</tr>
+<tr>
+<td>»»»» procuratorsType</td>
+<td><a href="#schemaenumprocuratorstype/properties/procurators">EnumProcuratorsType/properties/procurators</a></td>
+<td>false</td>
+<td>Tipo de representante.<br>Representante legal - Nome Civil completo da Pessoa Natural que represente uma entidade ou uma empresa e é nomeado em seu ato constitutivo, ou seja, no contrato social ou estatuto social.<br>Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negócio, mediante autorização escrita do mesmo.</td>
+</tr>
+<tr>
+<td>»»»» civilName</td>
+<td>string</td>
+<td>false</td>
+<td>Nome civil completo da pessoa natural. (Direito fundamental da pessoa, o nome civil é aquele atribuído à pessoa natural desde o registro de seu nascimento, com o qual será identificada por toda a sua vida, bem como após a sua morte)</td>
+</tr>
+<tr>
+<td>»»»» socialName</td>
+<td>string</td>
+<td>false</td>
+<td>Nome social da pessoa natural, se houver. (aquele pelo qual travestis e transexuais se reconhecem, bem como são identificados por sua comunidade e em seu meio social, conforme Decreto Nº 51.180, de 14 de janeiro de 2010)</td>
 </tr>
 </tbody></table>
 
