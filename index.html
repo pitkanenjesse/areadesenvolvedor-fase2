@@ -810,6 +810,9 @@
                     <a href="#tocS_Filiation" class="toc-h2 toc-link" data-title="Filiation">Filiation</a>
                   </li>
                   <li>
+                    <a href="#tocS_FinantialRelation" class="toc-h2 toc-link" data-title="FinantialRelation">FinantialRelation</a>
+                  </li>
+                  <li>
                     <a href="#tocS_FinancingInterestRate" class="toc-h2 toc-link" data-title="FinancingInterestRate">FinancingInterestRate</a>
                   </li>
                   <li>
@@ -15443,21 +15446,28 @@ This operation does not require authentication
   </span><span class="nl">"companies"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Organização A"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"cnpjNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00.000.000/0001-00"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"financialRelation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"updateDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"startDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"productsServices"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"productService"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SEGURO"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"procurators"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"procuratorsType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PROCURADOR"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"civilName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"socialName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
-          </span><span class="p">}</span><span class="w">
+    </span><span class="nl">"businessCustomer"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"financialRelation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"updateDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"startDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"productsServices"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"productsServices"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"productType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SEGURO"</span><span class="w">
+              </span><span class="p">},</span><span class="w">
+              </span><span class="nl">"procurators"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"procuratorsType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PROCURADOR"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"cpfNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"000.000.000-00"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"civilName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"socialName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+              </span><span class="p">}</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">]</span><span class="w">
         </span><span class="p">}</span><span class="w">
-      </span><span class="p">]</span><span class="w">
-    </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
@@ -15474,7 +15484,7 @@ This operation does not require authentication
 <td>companies</td>
 <td>object</td>
 <td>true</td>
-<td></td>
+<td>Lista de instituições pertencentes à marca</td>
 </tr>
 <tr>
 <td>» name</td>
@@ -15489,8 +15499,14 @@ This operation does not require authentication
 <td>Número completo do CNPJ da instituição responsável pelo Cadastro - o CNPJ corresponde ao número de inscrição no Cadastro de Pessoa Jurídica.</td>
 </tr>
 <tr>
-<td>» financialRelation</td>
-<td><a href="#schemapersonalcustomer/properties/companies/properties/financialrelation">PersonalCustomer/properties/companies/properties/financialRelation</a></td>
+<td>» businessCustomer</td>
+<td>[object]</td>
+<td>false</td>
+<td></td>
+</tr>
+<tr>
+<td>»» financialRelation</td>
+<td><a href="#schemafinantialrelation">FinantialRelation</a></td>
 <td>true</td>
 <td>Objeto que reúne as informações relativas ao processo de Relacionamento. Considera-se relacionamento as informações que permitam conhecer desde quando a pessoa consultada é cliente da instituição, bem como um indicador dos produtos e serviços que ela consome atualmente e seus representantes</td>
 </tr>
@@ -22209,12 +22225,120 @@ This operation does not require authentication
 </tr>
 </tbody></table>
 
+<h2 id="tocS_FinantialRelation">FinantialRelation</h2>
+
+<p><a id="schemafinantialrelation"></a>
+<a id="schema_FinantialRelation"></a>
+<a id="tocSfinantialrelation"></a>
+<a id="tocsfinantialrelation"></a></p>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"updateDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"startDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"productsServices"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"productsServices"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"productType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SEGURO"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"procurators"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"procuratorsType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PROCURADOR"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"cpfNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"000.000.000-00"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"civilName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"socialName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre></div>
+
+<p>Objeto que reúne as informações relativas ao processo de Relacionamento. Considera-se relacionamento as informações que permitam conhecer desde quando a pessoa consultada é cliente da instituição, bem como um indicador dos produtos e serviços que ela consome atualmente e seus representantes</p>
+
+<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+
+<table><thead>
+<tr>
+<th>Nome</th>
+<th>Tipo</th>
+<th>Obrigatório</th>
+<th>Descrição</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>requestDateTime</td>
+<td>string</td>
+<td>true</td>
+<td>Data e hora da consulta, conforme especificação RFC-3339, formato UTC.</td>
+</tr>
+<tr>
+<td>updateDateTime</td>
+<td>string</td>
+<td>true</td>
+<td>Data e hora da atualização do bloco de Relacionamento, conforme especificação RFC-3339, formato UTC.</td>
+</tr>
+<tr>
+<td>startDate</td>
+<td>string</td>
+<td>true</td>
+<td>Data de início de relacionamento com a Instituição Financeira. Deve trazer o menor valor entre a informação reportada ao BACEN pelo DOC 3040 e CCS.</td>
+</tr>
+<tr>
+<td>productsServices</td>
+<td>[object]</td>
+<td>false</td>
+<td>Lista de produtos e serviços com contratos vigentes</td>
+</tr>
+<tr>
+<td>» productsServices</td>
+<td>object</td>
+<td>false</td>
+<td></td>
+</tr>
+<tr>
+<td>»» productType</td>
+<td><a href="#schemaenumproductservicetype/properties/products">EnumProductServiceType/properties/products</a></td>
+<td>false</td>
+<td>Relação dos produtos e serviços com contrato vigente.</td>
+</tr>
+<tr>
+<td>» procurators</td>
+<td>object</td>
+<td>false</td>
+<td>Lista dos representantes. De preenchimento obrigatório se houver representante.</td>
+</tr>
+<tr>
+<td>»» procuratorsType</td>
+<td><a href="#schemaenumprocuratorstype/properties/procurators">EnumProcuratorsType/properties/procurators</a></td>
+<td>false</td>
+<td>Tipo de representante.<br>Representante legal - Nome Civil completo da Pessoa Natural que represente uma entidade ou uma empresa e é nomeado em seu ato constitutivo, ou seja, no contrato social ou estatuto social.<br>Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negócio, mediante autorização escrita do mesmo.</td>
+</tr>
+<tr>
+<td>»» cpfNumber</td>
+<td>string</td>
+<td>false</td>
+<td>Número completo do CPF. O CPF é o Cadastro de Pessoa natural. Ele é um documento feito pela Receita Federal e serve para identificar os contribuintes. O CPF é uma numeração com 11 dígitos, que só mudam por decisão judicial. O documento é emitido pela receita federal</td>
+</tr>
+<tr>
+<td>»» civilName</td>
+<td>string</td>
+<td>false</td>
+<td>Nome civil completo da pessoa natural. (Direito fundamental da pessoa, o nome civil é aquele atribuído à pessoa natural desde o registro de seu nascimento, com o qual será identificada por toda a sua vida, bem como após a sua morte)</td>
+</tr>
+<tr>
+<td>»» socialName</td>
+<td>string</td>
+<td>false</td>
+<td>Nome social da pessoa natural, se houver. (aquele pelo qual travestis e transexuais se reconhecem, bem como são identificados por sua comunidade e em seu meio social, conforme Decreto Nº 51.180, de 14 de janeiro de 2010)</td>
+</tr>
+</tbody></table>
+
 <h2 id="tocS_FinancingInterestRate">FinancingInterestRate</h2>
 
 <p><a id="schemafinancinginterestrate"></a>
 <a id="schema_FinancingInterestRate"></a>
 <a id="tocSfinancinginterestrate"></a>
 <a id="tocsfinancinginterestrate"></a></p>
+
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"referentialRateIndexer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SEM_INDEXADOR_TAXA"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"rate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.15"</span><span class="p">,</span><span class="w">
@@ -25424,21 +25548,28 @@ This operation does not require authentication
   </span><span class="nl">"companies"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Organização A"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"cnpjNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00.000.000/0001-00"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"financialRelation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"updateDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"startDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"productsServices"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"productService"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SEGURO"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"procurators"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"procuratorsType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PROCURADOR"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"civilName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"socialName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
-          </span><span class="p">}</span><span class="w">
+    </span><span class="nl">"personalCustomer"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"financialRelation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"updateDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"startDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"productsServices"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"productsServices"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"productType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SEGURO"</span><span class="w">
+              </span><span class="p">},</span><span class="w">
+              </span><span class="nl">"procurators"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"procuratorsType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PROCURADOR"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"cpfNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"000.000.000-00"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"civilName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"socialName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+              </span><span class="p">}</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">]</span><span class="w">
         </span><span class="p">}</span><span class="w">
-      </span><span class="p">]</span><span class="w">
-    </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
@@ -25455,7 +25586,7 @@ This operation does not require authentication
 <td>companies</td>
 <td>object</td>
 <td>true</td>
-<td></td>
+<td>Lista de instituições pertencentes à marca</td>
 </tr>
 <tr>
 <td>» name</td>
@@ -25470,64 +25601,16 @@ This operation does not require authentication
 <td>Número completo do CNPJ da instituição responsável pelo Cadastro - o CNPJ corresponde ao número de inscrição no Cadastro de Pessoa Jurídica.</td>
 </tr>
 <tr>
-<td>» financialRelation</td>
-<td>object</td>
-<td>true</td>
-<td>Objeto que reúne as informações relativas ao processo de Relacionamento. Considera-se relacionamento as informações que permitam conhecer desde quando a pessoa consultada é cliente da instituição, bem como um indicador dos produtos e serviços que ela consome atualmente e seus representantes</td>
-</tr>
-<tr>
-<td>»» requestDateTime</td>
-<td>string</td>
-<td>true</td>
-<td>Data e hora da consulta, conforme especificação RFC-3339, formato UTC.</td>
-</tr>
-<tr>
-<td>»» updateDateTime</td>
-<td>string</td>
-<td>true</td>
-<td>Data e hora da atualização do bloco de Relacionamento, conforme especificação RFC-3339, formato UTC.</td>
-</tr>
-<tr>
-<td>»» startDate</td>
-<td>string</td>
-<td>true</td>
-<td>Data de início de relacionamento com a Instituição Financeira. Deve trazer o menor valor entre a informação reportada ao BACEN pelo DOC 3040 e CCS.</td>
-</tr>
-<tr>
-<td>»» productsServices</td>
+<td>» personalCustomer</td>
 <td>[object]</td>
 <td>false</td>
-<td>Lista de produtos e serviços com contratos vigentes</td>
+<td></td>
 </tr>
 <tr>
-<td>»»» productService</td>
-<td><a href="#schemaenumproductservicetype/properties/products">EnumProductServiceType/properties/products</a></td>
-<td>false</td>
-<td>Relação dos produtos e serviços com contrato vigente.</td>
-</tr>
-<tr>
-<td>»»» procurators</td>
-<td>object</td>
-<td>false</td>
-<td>Lista dos representantes. De preenchimento obrigatório se houver representante.</td>
-</tr>
-<tr>
-<td>»»»» procuratorsType</td>
-<td><a href="#schemaenumprocuratorstype/properties/procurators">EnumProcuratorsType/properties/procurators</a></td>
-<td>false</td>
-<td>Tipo de representante.<br>Representante legal - Nome Civil completo da Pessoa Natural que represente uma entidade ou uma empresa e é nomeado em seu ato constitutivo, ou seja, no contrato social ou estatuto social.<br>Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negócio, mediante autorização escrita do mesmo.</td>
-</tr>
-<tr>
-<td>»»»» civilName</td>
-<td>string</td>
-<td>false</td>
-<td>Nome civil completo da pessoa natural. (Direito fundamental da pessoa, o nome civil é aquele atribuído à pessoa natural desde o registro de seu nascimento, com o qual será identificada por toda a sua vida, bem como após a sua morte)</td>
-</tr>
-<tr>
-<td>»»»» socialName</td>
-<td>string</td>
-<td>false</td>
-<td>Nome social da pessoa natural, se houver. (aquele pelo qual travestis e transexuais se reconhecem, bem como são identificados por sua comunidade e em seu meio social, conforme Decreto Nº 51.180, de 14 de janeiro de 2010)</td>
+<td>»» financialRelation</td>
+<td><a href="#schemafinantialrelation">FinantialRelation</a></td>
+<td>true</td>
+<td>Objeto que reúne as informações relativas ao processo de Relacionamento. Considera-se relacionamento as informações que permitam conhecer desde quando a pessoa consultada é cliente da instituição, bem como um indicador dos produtos e serviços que ela consome atualmente e seus representantes</td>
 </tr>
 </tbody></table>
 
