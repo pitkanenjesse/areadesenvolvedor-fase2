@@ -4301,17 +4301,17 @@ components:
           items:
             type: object
             required:
-              - procuratorsType
+              - type
             properties:
               productsServices:
                 type: object
                 properties:
-                  productType:
+                  type:
                     $ref: '#/components/schemas/EnumProductServiceType/properties/products'
               procurators:
                 type: object
                 properties:
-                  procuratorsType:
+                  type:
                     $ref: '#/components/schemas/EnumProcuratorsType/properties/procurators'
                   cpfNumber:
                     type: string
