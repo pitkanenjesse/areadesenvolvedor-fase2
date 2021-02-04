@@ -58,7 +58,7 @@ paths:
                               required:
                                 - name
                                 - cnpjNumber
-                                - personalLoans
+                                - personalCustomers
                               properties:
                                 name:
                                   description: 'Nome da Instituição, pertencente à Marca, responsável pelo Cadastro.'
@@ -74,13 +74,13 @@ paths:
                                   example: '50685362000135'
                                 personalCustomers:
                                   type: object
-                                  description: Objeto que agrupa as informações Cadastrais do Cliente Pessoa natural
+                                  description: Conjunto de informações Cadastrais do Cliente Pessoa natural
                                   required:
                                     - identification
                                   properties:
                                     identification:
                                       type: object
-                                      description: Objeto agrupador das informações relativas a Identificação ou seja a ação e o efeito de identificar de forma única a pessoa natural através de seus dados cadastrais.
+                                      description: Conjunto de informações relativas a Identificação ou seja a ação e o efeito de identificar de forma única a pessoa natural através de seus dados cadastrais.
                                       required:
                                         - requestDateTime
                                         - updateDateTime
@@ -164,6 +164,12 @@ paths:
                                                 maxLength: 2
                                                 pattern: \w*\W*
                                                 description: Dígito verificador do documento informado. De preenchimento obrigatório se o documento informado tiver dígito verificador
+                                              additionalInfo:
+                                                type: string
+                                                maxLength: 50
+                                                pattern: \w*\W*
+                                                description: |
+                                                  Campo livre, de preenchimento obrigatório quando o documento informado tiver informações complementares. p.ex. RG, este campo deve trazer: "SSP-SP' para RGs emitidos no estado de São Paulo - SP
                                               expirationDate:
                                                 type: string
                                                 pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$'
@@ -290,7 +296,7 @@ paths:
                                           example: FEMININO
                                         contacts:
                                           type: object
-                                          description: Objeto agrupador formas de contactar o cliente
+                                          description: Conjunto de informações referentes às formas para contatar o cliente.
                                           required:
                                             - postalAddresses
                                             - phones
@@ -618,30 +624,22 @@ paths:
                                   pattern: '^(\d{14})$|^NA$'
                                   maxLength: 14
                                   example: '50685362000135'
-                                urlComplementaryList:
-                                  description: |
-                                    URL do link que conterá a lista complementar com os nomes e CNPJs agrupados sob o mesmo cnpjNumber. Os contidos nessa lista possuem as mesmas características para produtos e serviços. Endereço eletrônico de acesso ao canal. Será obrigatoriamente preenchido se houver lista complementar com os nomes e CNPJs a ser disponibilizada.
-                                    Restrição: Será obrigatorimente preenchido se houver lista complementar com os nomes e CNPJs a ser disponibilizada
-                                  type: string
-                                  pattern: \w*\W*
-                                  maxLength: 1024
-                                  example: 'https://empresadaorganizacaoa.com/complementarylist'
                                 businessCustomers:
                                   type: object
-                                  description: Objeto que agrupa as informações Cadastrais do Cliente Pessoa jurídica
+                                  description: Conjunto de informações Cadastrais do Cliente Pessoa jurídica
                                   required:
                                     - identification
                                   properties:
                                     identification:
                                       type: object
-                                      description: Objeto agrupador das informações relativas a Identificação ou seja a ação e o efeito de identificar de forma única a pessoa jurídica através de seus dados cadastrais
+                                      description: Conjunto de informações relativas a Identificação ou seja a ação e o efeito de identificar de forma única a pessoa jurídica através de seus dados cadastrais
                                       required:
                                         - requestDateTime
                                         - updateDateTime
                                         - cnpjNumber
                                         - otherDocuments
                                         - companyName
-                                        - partiesParticipation
+                                        - parties
                                         - contacts
                                       properties:
                                         requestDateTime:
@@ -708,7 +706,7 @@ paths:
                                           maxLength: 10
                                           description: 'Data de constituição da empresa, conforme especificação RFC-3339.'
                                           example: '2014-03-19'
-                                        partiesParticipation:
+                                        parties:
                                           type: array
                                           items:
                                             type: object
@@ -717,6 +715,8 @@ paths:
                                               - type
                                               - civilName
                                               - shareholding
+                                              - documentType
+                                              - documentNumber
                                             properties:
                                               type:
                                                 type: string
@@ -752,44 +752,37 @@ paths:
                                                 description: |
                                                   Percentual de participação societária. Só deve ser informada se igual ou superior a 25%. Ex: 0.25 (O valor ao lado representa 25%. O valor '1 'representa 100%)
                                                   A apuração pode acontecer com até 2 casas decimais.O preenchimento deve respeitar as 2 casas decimais, mesmo que venham preenchidas com zeros
-                                              document:
-                                                type: object
-                                                description: Objeto que agrupa informações relativas ao documento da parte envolvida
-                                                required:
-                                                  - type
-                                                  - number
-                                                properties:
-                                                  type:
-                                                    type: string
-                                                    enum:
-                                                      - CPF
-                                                      - PASSAPORTE
-                                                      - OUTRO_DOCUMENTO_VIAGEM
-                                                      - CNPJ
-                                                    description: |
-                                                      Tipo do documento informado. 
-                                                  number:
-                                                    type: string
-                                                    maxLength: 20
-                                                    pattern: \w*\W*
-                                                    description: Número do documento informado. Campo Texto Livre para preencher número e dígito do documento se houver
-                                                  additionalInfo:
-                                                    type: string
-                                                    maxLength: 100
-                                                    pattern: \w*\W*
-                                                    description: 'Campo livre, de preenchimento obrigatório quando o documento informado tiver informações complementares relevantes para a sua identificação'
-                                                  country:
-                                                    type: string
-                                                    description: País de emissão do documento. Código do pais de acordo com o código “alpha3” do ISO-3166.
-                                                    maxLength: 3
-                                                    example: CAN
-                                                  expirationDate:
-                                                    type: string
-                                                    pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$'
-                                                    x-cds-type: DateString
-                                                    maxLength: 10
-                                                    description: 'Data de validade do documento informado, conforme especificação RFC-3339.'
-                                                    example: '2014-03-19'
+                                              documentType:
+                                                type: string
+                                                enum:
+                                                  - CPF
+                                                  - PASSAPORTE
+                                                  - OUTRO_DOCUMENTO_VIAGEM
+                                                  - CNPJ
+                                                description: |
+                                                  Tipo do documento informado. 
+                                              documentNumber:
+                                                type: string
+                                                maxLength: 20
+                                                pattern: \w*\W*
+                                                description: Número do documento informado. Campo Texto Livre para preencher número e dígito do documento se houver
+                                              documentAdditionalInfo:
+                                                type: string
+                                                maxLength: 100
+                                                pattern: \w*\W*
+                                                description: 'Campo livre, de preenchimento obrigatório quando o documento informado tiver informações complementares relevantes para a sua identificação'
+                                              documentCountry:
+                                                type: string
+                                                description: País de emissão do documento. Código do pais de acordo com o código “alpha3” do ISO-3166.
+                                                maxLength: 3
+                                                example: CAN
+                                              documentExpirationDate:
+                                                type: string
+                                                pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$'
+                                                x-cds-type: DateString
+                                                maxLength: 10
+                                                description: 'Data de validade do documento informado, conforme especificação RFC-3339.'
+                                                example: '2014-03-19'
                                           minItems: 1
                                           description: |
                                             Lista relativa às informações das partes envolvidas, como: sócio e /ou administrador
@@ -860,7 +853,7 @@ paths:
                               required:
                                 - name
                                 - cnpjNumber
-                                - personalLoans
+                                - personalCustomers
                               properties:
                                 name:
                                   description: 'Nome da Instituição, pertencente à Marca, responsável pelo Cadastro.'
@@ -874,29 +867,22 @@ paths:
                                   pattern: '^(\d{14})$|^NA$'
                                   maxLength: 14
                                   example: '50685362000135'
-                                urlComplementaryList:
-                                  description: |
-                                    URL do link que conterá a lista complementar com os nomes e CNPJs agrupados sob o mesmo cnpjNumber. Os contidos nessa lista possuem as mesmas características para produtos e serviços. Endereço eletrônico de acesso ao canal. Será obrigatoriamente preenchido se houver lista complementar com os nomes e CNPJs a ser disponibilizada.
-                                    Restrição: Será obrigatorimente preenchido se houver lista complementar com os nomes e CNPJs a ser disponibilizada
-                                  type: string
-                                  pattern: \w*\W*
-                                  maxLength: 1024
-                                  example: 'https://empresadaorganizacaoa.com/complementarylist'
                                 personalCustomers:
                                   type: object
-                                  description: Objeto que agrupa as informações Cadastrais do Cliente Pessoa natural
+                                  description: Conjunto de informações Cadastrais do Cliente Pessoa natural
                                   required:
                                     - qualification
                                   properties:
                                     qualification:
                                       type: object
-                                      description: 'Objeto que reúne as informações relativas ao processo de qualificação. Considera-se qualificação as informações que permitam as instituições apreciar, avaliar, caracterizar e classificar o cliente com a finalidade de conhecer o seu perfil de risco e sua capacidade econômico-financeira'
+                                      description: 'Conjunto de informações relativas ao processo de qualificação. Considera-se qualificação as informações que permitam as instituições apreciar, avaliar, caracterizar e classificar o cliente com a finalidade de conhecer o seu perfil de risco e sua capacidade econômico-financeira'
                                       required:
                                         - requestDateTime
                                         - updateDateTime
                                         - informedIncome
                                         - informedPatrimony
-                                        - occupation
+                                        - occupationCode
+                                        - occupationDescription
                                       properties:
                                         requestDateTime:
                                           type: string
@@ -912,7 +898,7 @@ paths:
                                           example: '2020-07-21T08:30:00Z'
                                         informedIncome:
                                           type: object
-                                          description: Objeto que agrupa as informações referentes à renda total informada
+                                          description: Conjunto de informações referentes à renda total informada
                                           required:
                                             - frequency
                                             - date
@@ -953,7 +939,7 @@ paths:
                                               example: '2014-03-19'
                                         informedPatrimony:
                                           type: object
-                                          description: Objeto que agrupa as informações referentes ao patrimônio informado
+                                          description: Conjunto de informações referentes ao patrimônio informado
                                           required:
                                             - year
                                           allOf:
@@ -981,25 +967,19 @@ paths:
                                               maxLength: 4
                                               description: 'Ano de referência do Patrimônio, conforme especificação RFC-3339.'
                                               example: '2014'
-                                        occupation:
-                                          type: object
-                                          required:
-                                            - mainCodeType
-                                            - codeDescription
-                                          properties:
-                                            mainCodeType:
-                                              type: string
-                                              description: |
-                                                Traz a relação dos códigos relativos à ocupação.
-                                              enum:
-                                                - RECEITA_FEDERAL
-                                                - CBO
-                                                - OUTRO
-                                            codeDescription:
-                                              type: string
-                                              pattern: \w*\W*
-                                              maxLength: 100
-                                              description: Campo livre de preenchimento obrigatório. Traz o código da ocupação ou o descritivo da ocupação.
+                                        occupationCode:
+                                          type: string
+                                          description: |
+                                            Traz a relação dos códigos relativos à ocupação.
+                                          enum:
+                                            - RECEITA_FEDERAL
+                                            - CBO
+                                            - OUTRO
+                                        occupationDescription:
+                                          type: string
+                                          pattern: \w*\W*
+                                          maxLength: 100
+                                          description: 'Campo livre, de preenchimento obrigatório. Traz o código da ocupação ou o descritivo da ocupação, se selecionada a opção ''OUTRO'''
                             minItems: 1
                             description: Companies traz uma lista de todas as instituições da Marca
                   links:
@@ -1093,7 +1073,7 @@ paths:
                               required:
                                 - name
                                 - cnpjNumber
-                                - personalLoans
+                                - businessCustomers
                               properties:
                                 name:
                                   description: 'Nome da Instituição, pertencente à Marca, responsável pelo Cadastro.'
@@ -1107,15 +1087,7 @@ paths:
                                   pattern: '^(\d{14})$|^NA$'
                                   maxLength: 14
                                   example: '50685362000135'
-                                urlComplementaryList:
-                                  description: |
-                                    URL do link que conterá a lista complementar com os nomes e CNPJs agrupados sob o mesmo cnpjNumber. Os contidos nessa lista possuem as mesmas características para produtos e serviços. Endereço eletrônico de acesso ao canal. Será obrigatoriamente preenchido se houver lista complementar com os nomes e CNPJs a ser disponibilizada.
-                                    Restrição: Será obrigatorimente preenchido se houver lista complementar com os nomes e CNPJs a ser disponibilizada
-                                  type: string
-                                  pattern: \w*\W*
-                                  maxLength: 1024
-                                  example: 'https://empresadaorganizacaoa.com/complementarylist'
-                                personalCustomers:
+                                businessCustomers:
                                   type: object
                                   description: Objeto que agrupa as informações Cadastrais do Cliente Pessoa jurídica
                                   required:
@@ -1130,7 +1102,6 @@ paths:
                                         - economicActivity
                                         - informedRevenue
                                         - informedPatrimony
-                                        - occupation
                                       properties:
                                         requestDateTime:
                                           type: string
@@ -1147,19 +1118,18 @@ paths:
                                         economicActivity:
                                           type: object
                                           required:
-                                            - mainCode
+                                            - code
+                                            - isMain
                                           properties:
-                                            mainCode:
+                                            code:
                                               type: string
                                               pattern: '^\d{7}$|^NA$'
                                               maxLength: 7
                                               description: |
                                                 Traz o código do ramo da atividade principal da empresa consultada, segundo padrão CNAE (Classificação Nacional de Atividades Econômicas)
-                                            otherCodes:
-                                              type: string
-                                              pattern: '^\d{7}$'
-                                              maxLength: 7
-                                              description: 'Lista dos demais códigos relativos às demais atividades econômicas da empresa, segundo padrão CNAE (Classificação Nacional de Atividades Econômicas). De preenchimento obrigatório, se houver.'
+                                            isMain:
+                                              type: boolean
+                                              description: Informa se é o principal ramo de atividade
                                         informedRevenue:
                                           type: object
                                           description: Objeto que agrupa informações relativas ao faturamento da empresa informado

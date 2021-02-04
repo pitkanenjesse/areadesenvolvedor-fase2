@@ -885,13 +885,7 @@
                     <a href="#tocS_NationalityOther" class="toc-h2 toc-link" data-title="NationalityOther">NationalityOther</a>
                   </li>
                   <li>
-                    <a href="#tocS_Occupation" class="toc-h2 toc-link" data-title="Occupation">Occupation</a>
-                  </li>
-                  <li>
                     <a href="#tocS_PartiesParticipation" class="toc-h2 toc-link" data-title="PartiesParticipation">PartiesParticipation</a>
-                  </li>
-                  <li>
-                    <a href="#tocS_PartiesParticipationDocument" class="toc-h2 toc-link" data-title="PartiesParticipationDocument">PartiesParticipationDocument</a>
                   </li>
                   <li>
                     <a href="#tocS_OverdraftLimits" class="toc-h2 toc-link" data-title="OverdraftLimits">OverdraftLimits</a>
@@ -9820,15 +9814,9 @@ This operation does not require authentication
 
 <p>Esta especificação inclui todos os itens relevantes que permitam a ação e o efeito de identificar de forma única a pessoa natural através de seus dados cadastrais.</p>
 
-<p>Tags: .</p>
-
-<h3 id='apis-diretorio-e-service-desk-identificacao-pessoa-natural-visao-de-alto-de-nivel-das-estruturas-de-dados'>Visão de alto de nível das estruturas de dados</h3>
-
-<p><img class="lazy" src="images/loading-e35b35a4.gif" data-src="images/tld/.png"/></p>
-
 <h3 id='apis-diretorio-e-service-desk-identificacao-pessoa-natural-dicionario-de-dados'>Dicionário de dados</h3>
 
-<p><a href="dictionary/.csv" target="_blank">Fazer download do dicionário de dados</a></p>
+<p><a href="dictionary/personal_customers_identification.csv" target="_blank">Fazer download do dicionário de dados</a></p>
 
 <h3 id='apis-diretorio-e-service-desk-identificacao-pessoa-natural-especificacao-em-oas-3-0'>Especificação em OAS 3.0</h3>
 
@@ -9889,6 +9877,7 @@ This operation does not require authentication
                   </span><span class="nl">"typeAdditionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
                   </span><span class="nl">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
                   </span><span class="nl">"checkDigit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"st"</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"additionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
                   </span><span class="nl">"expirationDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-03-19"</span><span class="w">
                 </span><span class="p">}</span><span class="w">
               </span><span class="p">],</span><span class="w">
@@ -10035,15 +10024,9 @@ This operation does not require authentication
 
 <p>Esta especificação inclui todos os itens relevantes que permitam a ação e o efeito de identificar de forma única a pessoa jurídica através de seus dados cadastrais.</p>
 
-<p>Tags: .</p>
-
-<h3 id='apis-diretorio-e-service-desk-identificacao-pessoa-juridica-visao-de-alto-de-nivel-das-estruturas-de-dados'>Visão de alto de nível das estruturas de dados</h3>
-
-<p><img class="lazy" src="images/loading-e35b35a4.gif" data-src="images/tld/.png"/></p>
-
 <h3 id='apis-diretorio-e-service-desk-identificacao-pessoa-juridica-dicionario-de-dados'>Dicionário de dados</h3>
 
-<p><a href="dictionary/.csv" target="_blank">Fazer download do dicionário de dados</a></p>
+<p><a href="dictionary/business_customers_identification.csv" target="_blank">Fazer download do dicionário de dados</a></p>
 
 <h3 id='apis-diretorio-e-service-desk-identificacao-pessoa-juridica-especificacao-em-oas-3-0'>Especificação em OAS 3.0</h3>
 
@@ -10090,7 +10073,6 @@ This operation does not require authentication
         </span><span class="p">{</span><span class="w">
           </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Empresa da Organização A"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"cnpjNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"50685362000135"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"urlComplementaryList"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://empresadaorganizacaoa.com/complementarylist"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"businessCustomers"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
             </span><span class="nl">"identification"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
               </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
@@ -10107,20 +10089,18 @@ This operation does not require authentication
               </span><span class="nl">"companyName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
               </span><span class="nl">"tradeName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
               </span><span class="nl">"incorporationDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-03-19"</span><span class="p">,</span><span class="w">
-              </span><span class="nl">"partiesParticipation"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+              </span><span class="nl">"parties"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
                 </span><span class="p">{</span><span class="w">
                   </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SOCIO"</span><span class="p">,</span><span class="w">
                   </span><span class="nl">"civilName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Elza Milena Stefany Teixeira"</span><span class="p">,</span><span class="w">
                   </span><span class="nl">"socialName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Elza"</span><span class="p">,</span><span class="w">
                   </span><span class="nl">"startDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
                   </span><span class="nl">"shareholding"</span><span class="p">:</span><span class="w"> </span><span class="s2">"stri"</span><span class="p">,</span><span class="w">
-                  </span><span class="nl">"document"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CPF"</span><span class="p">,</span><span class="w">
-                    </span><span class="nl">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-                    </span><span class="nl">"additionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-                    </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CAN"</span><span class="p">,</span><span class="w">
-                    </span><span class="nl">"expirationDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-03-19"</span><span class="w">
-                  </span><span class="p">}</span><span class="w">
+                  </span><span class="nl">"documentType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CPF"</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"documentNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"documentAdditionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"documentCountry"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CAN"</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"documentExpirationDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-03-19"</span><span class="w">
                 </span><span class="p">}</span><span class="w">
               </span><span class="p">],</span><span class="w">
               </span><span class="nl">"contacts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -10244,15 +10224,9 @@ This operation does not require authentication
 
 <p>Esta especificação inclui todos os itens relevantes que permitam as instituições apreciar, avaliar, caracterizar e classificar o cliente com a finalidade de conhecer o seu perfil de risco e sua capacidade econômico-financeira.</p>
 
-<p>Tags: .</p>
-
-<h3 id='apis-diretorio-e-service-desk-qualificacao-pessoa-natural-visao-de-alto-de-nivel-das-estruturas-de-dados'>Visão de alto de nível das estruturas de dados</h3>
-
-<p><img class="lazy" src="images/loading-e35b35a4.gif" data-src="images/tld/.png"/></p>
-
 <h3 id='apis-diretorio-e-service-desk-qualificacao-pessoa-natural-dicionario-de-dados'>Dicionário de dados</h3>
 
-<p><a href="dictionary/.csv" target="_blank">Fazer download do dicionário de dados</a></p>
+<p><a href="dictionary/personal_customers_qualification.csv" target="_blank">Fazer download do dicionário de dados</a></p>
 
 <h3 id='apis-diretorio-e-service-desk-qualificacao-pessoa-natural-especificacao-em-oas-3-0'>Especificação em OAS 3.0</h3>
 
@@ -10299,7 +10273,6 @@ This operation does not require authentication
         </span><span class="p">{</span><span class="w">
           </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Empresa da Organização A"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"cnpjNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"50685362000135"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"urlComplementaryList"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://empresadaorganizacaoa.com/complementarylist"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"personalCustomers"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
             </span><span class="nl">"qualification"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
               </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
@@ -10315,10 +10288,8 @@ This operation does not require authentication
                 </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
                 </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="w">
               </span><span class="p">},</span><span class="w">
-              </span><span class="nl">"occupation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="nl">"mainCodeType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RECEITA_FEDERAL"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"codeDescription"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
-              </span><span class="p">}</span><span class="w">
+              </span><span class="nl">"occupationCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RECEITA_FEDERAL"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"occupationDescription"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
             </span><span class="p">}</span><span class="w">
           </span><span class="p">}</span><span class="w">
         </span><span class="p">}</span><span class="w">
@@ -10406,15 +10377,9 @@ This operation does not require authentication
 
 <p>Esta especificação inclui todos os itens relevantes que permitam as instituições apreciar, avaliar, caracterizar e classificar o cliente com a finalidade de conhecer o seu perfil de risco e sua capacidade econômico-financeira.</p>
 
-<p>Tags: .</p>
-
-<h3 id='apis-diretorio-e-service-desk-qualificacao-pessoa-juridica-visao-de-alto-de-nivel-das-estruturas-de-dados'>Visão de alto de nível das estruturas de dados</h3>
-
-<p><img class="lazy" src="images/loading-e35b35a4.gif" data-src="images/tld/.png"/></p>
-
 <h3 id='apis-diretorio-e-service-desk-qualificacao-pessoa-juridica-dicionario-de-dados'>Dicionário de dados</h3>
 
-<p><a href="dictionary/.csv" target="_blank">Fazer download do dicionário de dados</a></p>
+<p><a href="dictionary/business_customers_qualification.csv" target="_blank">Fazer download do dicionário de dados</a></p>
 
 <h3 id='apis-diretorio-e-service-desk-qualificacao-pessoa-juridica-especificacao-em-oas-3-0'>Especificação em OAS 3.0</h3>
 
@@ -10461,14 +10426,13 @@ This operation does not require authentication
         </span><span class="p">{</span><span class="w">
           </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Empresa da Organização A"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"cnpjNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"50685362000135"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"urlComplementaryList"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://empresadaorganizacaoa.com/complementarylist"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"personalCustomers"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"businessCustomers"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
             </span><span class="nl">"qualification"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
               </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
               </span><span class="nl">"updateDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
               </span><span class="nl">"economicActivity"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="nl">"mainCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"otherCodes"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+                </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"isMain"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
               </span><span class="p">},</span><span class="w">
               </span><span class="nl">"informedRevenue"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
                 </span><span class="nl">"frequency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DIARIO"</span><span class="p">,</span><span class="w">
@@ -16107,20 +16071,18 @@ This operation does not require authentication
   </span><span class="nl">"companyName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"tradeName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"incorporationDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-03-19"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"partiesParticipation"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+  </span><span class="nl">"parties"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SOCIO"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"civilName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Elza Milena Stefany Teixeira"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"socialName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Elza"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"startDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"shareholding"</span><span class="p">:</span><span class="w"> </span><span class="s2">"stri"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"document"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CPF"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"additionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CAN"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"expirationDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-03-19"</span><span class="w">
-      </span><span class="p">}</span><span class="w">
+      </span><span class="nl">"documentType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CPF"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"documentNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"documentAdditionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"documentCountry"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CAN"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"documentExpirationDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-03-19"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
   </span><span class="nl">"contacts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -16164,7 +16126,7 @@ This operation does not require authentication
 
 </span></code></pre></div>
 
-<p>Objeto agrupador das informações relativas a Identificação ou seja a ação e o efeito de identificar de forma única a pessoa jurídica através de seus dados cadastrais</p>
+<p>Conjunto de informações relativas a Identificação ou seja a ação e o efeito de identificar de forma única a pessoa jurídica através de seus dados cadastrais</p>
 
 <h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
 
@@ -16219,7 +16181,7 @@ This operation does not require authentication
 <td>Data de constituição da empresa, conforme especificação RFC-3339.</td>
 </tr>
 <tr>
-<td>partiesParticipation</td>
+<td>parties</td>
 <td>[<a href="#schemapartiesparticipation">PartiesParticipation</a>]</td>
 <td>true</td>
 <td>Lista relativa às informações das partes envolvidas, como: sócio e /ou administrador</td>
@@ -16228,7 +16190,7 @@ This operation does not require authentication
 <td>contacts</td>
 <td><a href="#schemacustomercontacts">CustomerContacts</a></td>
 <td>true</td>
-<td>Objeto agrupador formas de contactar o cliente</td>
+<td>Conjunto de informações referentes às formas para contatar o cliente.</td>
 </tr>
 </tbody></table>
 
@@ -16245,7 +16207,6 @@ This operation does not require authentication
     </span><span class="p">{</span><span class="w">
       </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Empresa da Organização A"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"cnpjNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"50685362000135"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"urlComplementaryList"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://empresadaorganizacaoa.com/complementarylist"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"businessCustomers"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="nl">"identification"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
           </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
@@ -16262,20 +16223,18 @@ This operation does not require authentication
           </span><span class="nl">"companyName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"tradeName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"incorporationDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-03-19"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"partiesParticipation"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="nl">"parties"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
             </span><span class="p">{</span><span class="w">
               </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SOCIO"</span><span class="p">,</span><span class="w">
               </span><span class="nl">"civilName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Elza Milena Stefany Teixeira"</span><span class="p">,</span><span class="w">
               </span><span class="nl">"socialName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Elza"</span><span class="p">,</span><span class="w">
               </span><span class="nl">"startDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
               </span><span class="nl">"shareholding"</span><span class="p">:</span><span class="w"> </span><span class="s2">"stri"</span><span class="p">,</span><span class="w">
-              </span><span class="nl">"document"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CPF"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"additionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CAN"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"expirationDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-03-19"</span><span class="w">
-              </span><span class="p">}</span><span class="w">
+              </span><span class="nl">"documentType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CPF"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"documentNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"documentAdditionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"documentCountry"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CAN"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"documentExpirationDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-03-19"</span><span class="w">
             </span><span class="p">}</span><span class="w">
           </span><span class="p">],</span><span class="w">
           </span><span class="nl">"contacts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -16359,7 +16318,6 @@ This operation does not require authentication
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Empresa da Organização A"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"cnpjNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"50685362000135"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"urlComplementaryList"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://empresadaorganizacaoa.com/complementarylist"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"businessCustomers"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"identification"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
@@ -16376,20 +16334,18 @@ This operation does not require authentication
       </span><span class="nl">"companyName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"tradeName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"incorporationDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-03-19"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"partiesParticipation"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="nl">"parties"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
           </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SOCIO"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"civilName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Elza Milena Stefany Teixeira"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"socialName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Elza"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"startDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"shareholding"</span><span class="p">:</span><span class="w"> </span><span class="s2">"stri"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"document"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CPF"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"additionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CAN"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"expirationDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-03-19"</span><span class="w">
-          </span><span class="p">}</span><span class="w">
+          </span><span class="nl">"documentType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CPF"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"documentNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"documentAdditionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"documentCountry"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CAN"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"documentExpirationDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-03-19"</span><span class="w">
         </span><span class="p">}</span><span class="w">
       </span><span class="p">],</span><span class="w">
       </span><span class="nl">"contacts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -16455,16 +16411,10 @@ This operation does not require authentication
 <td>Número completo do CNPJ da instituição responsável pelo Cadastro - o CNPJ corresponde ao número de inscrição no Cadastro de Pessoa Jurídica. Deve-se ter apenas os números do CNPJ, sem máscara</td>
 </tr>
 <tr>
-<td>urlComplementaryList</td>
-<td>string</td>
-<td>false</td>
-<td>URL do link que conterá a lista complementar com os nomes e CNPJs agrupados sob o mesmo cnpjNumber. Os contidos nessa lista possuem as mesmas características para produtos e serviços. Endereço eletrônico de acesso ao canal. Será obrigatoriamente preenchido se houver lista complementar com os nomes e CNPJs a ser disponibilizada.<br>Restrição: Será obrigatorimente preenchido se houver lista complementar com os nomes e CNPJs a ser disponibilizada</td>
-</tr>
-<tr>
 <td>businessCustomers</td>
 <td><a href="#schemabusinessidentificationcustomers">BusinessIdentificationCustomers</a></td>
 <td>true</td>
-<td>Objeto que agrupa as informações Cadastrais do Cliente Pessoa jurídica</td>
+<td>Conjunto de informações Cadastrais do Cliente Pessoa jurídica</td>
 </tr>
 </tbody></table>
 
@@ -16490,20 +16440,18 @@ This operation does not require authentication
     </span><span class="nl">"companyName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"tradeName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"incorporationDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-03-19"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"partiesParticipation"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="nl">"parties"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
       </span><span class="p">{</span><span class="w">
         </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SOCIO"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"civilName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Elza Milena Stefany Teixeira"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"socialName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Elza"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"startDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"shareholding"</span><span class="p">:</span><span class="w"> </span><span class="s2">"stri"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"document"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CPF"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"additionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CAN"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"expirationDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-03-19"</span><span class="w">
-        </span><span class="p">}</span><span class="w">
+        </span><span class="nl">"documentType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CPF"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"documentNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"documentAdditionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"documentCountry"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CAN"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"documentExpirationDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-03-19"</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">],</span><span class="w">
     </span><span class="nl">"contacts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -16548,7 +16496,7 @@ This operation does not require authentication
 
 </span></code></pre></div>
 
-<p>Objeto que agrupa as informações Cadastrais do Cliente Pessoa jurídica</p>
+<p>Conjunto de informações Cadastrais do Cliente Pessoa jurídica</p>
 
 <h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
 
@@ -16564,7 +16512,7 @@ This operation does not require authentication
 <td>identification</td>
 <td><a href="#schemabusinessidentification">BusinessIdentification</a></td>
 <td>true</td>
-<td>Objeto agrupador das informações relativas a Identificação ou seja a ação e o efeito de identificar de forma única a pessoa jurídica através de seus dados cadastrais</td>
+<td>Conjunto de informações relativas a Identificação ou seja a ação e o efeito de identificar de forma única a pessoa jurídica através de seus dados cadastrais</td>
 </tr>
 </tbody></table>
 
@@ -17793,8 +17741,8 @@ This operation does not require authentication
   </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"updateDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"economicActivity"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"mainCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"otherCodes"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"isMain"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="nl">"informedRevenue"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"frequency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DIARIO"</span><span class="p">,</span><span class="w">
@@ -17868,14 +17816,13 @@ This operation does not require authentication
     </span><span class="p">{</span><span class="w">
       </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Empresa da Organização A"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"cnpjNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"50685362000135"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"urlComplementaryList"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://empresadaorganizacaoa.com/complementarylist"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"personalCustomers"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"businessCustomers"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="nl">"qualification"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
           </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"updateDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"economicActivity"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"mainCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"otherCodes"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+            </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"isMain"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
           </span><span class="p">},</span><span class="w">
           </span><span class="nl">"informedRevenue"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
             </span><span class="nl">"frequency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DIARIO"</span><span class="p">,</span><span class="w">
@@ -17932,14 +17879,13 @@ This operation does not require authentication
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Empresa da Organização A"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"cnpjNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"50685362000135"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"urlComplementaryList"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://empresadaorganizacaoa.com/complementarylist"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"personalCustomers"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="nl">"businessCustomers"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"qualification"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"updateDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"economicActivity"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"mainCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"otherCodes"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+        </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"isMain"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
       </span><span class="p">},</span><span class="w">
       </span><span class="nl">"informedRevenue"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="nl">"frequency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DIARIO"</span><span class="p">,</span><span class="w">
@@ -17978,15 +17924,9 @@ This operation does not require authentication
 <td>Número completo do CNPJ da instituição responsável pelo Cadastro - o CNPJ corresponde ao número de inscrição no Cadastro de Pessoa Jurídica. Deve-se ter apenas os números do CNPJ, sem máscara</td>
 </tr>
 <tr>
-<td>urlComplementaryList</td>
-<td>string</td>
-<td>false</td>
-<td>URL do link que conterá a lista complementar com os nomes e CNPJs agrupados sob o mesmo cnpjNumber. Os contidos nessa lista possuem as mesmas características para produtos e serviços. Endereço eletrônico de acesso ao canal. Será obrigatoriamente preenchido se houver lista complementar com os nomes e CNPJs a ser disponibilizada.<br>Restrição: Será obrigatorimente preenchido se houver lista complementar com os nomes e CNPJs a ser disponibilizada</td>
-</tr>
-<tr>
-<td>personalCustomers</td>
+<td>businessCustomers</td>
 <td><a href="#schemabusinessqualificationcustomers">BusinessQualificationCustomers</a></td>
-<td>false</td>
+<td>true</td>
 <td>Objeto que agrupa as informações Cadastrais do Cliente Pessoa jurídica</td>
 </tr>
 </tbody></table>
@@ -18002,8 +17942,8 @@ This operation does not require authentication
     </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"updateDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"economicActivity"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"mainCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"otherCodes"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+      </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"isMain"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="nl">"informedRevenue"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="nl">"frequency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DIARIO"</span><span class="p">,</span><span class="w">
@@ -19427,7 +19367,7 @@ This operation does not require authentication
 
 </span></code></pre></div>
 
-<p>Objeto agrupador formas de contactar o cliente</p>
+<p>Conjunto de informações referentes às formas para contatar o cliente.</p>
 
 <h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
 
@@ -20074,8 +20014,8 @@ This operation does not require authentication
 <a id="tocSeconomicactivity"></a>
 <a id="tocseconomicactivity"></a></p>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"mainCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"otherCodes"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"isMain"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
 </span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
@@ -20088,16 +20028,16 @@ This operation does not require authentication
 </tr>
 </thead><tbody>
 <tr>
-<td>mainCode</td>
+<td>code</td>
 <td>string</td>
 <td>true</td>
 <td>Traz o código do ramo da atividade principal da empresa consultada, segundo padrão CNAE (Classificação Nacional de Atividades Econômicas)</td>
 </tr>
 <tr>
-<td>otherCodes</td>
-<td>string</td>
-<td>false</td>
-<td>Lista dos demais códigos relativos às demais atividades econômicas da empresa, segundo padrão CNAE (Classificação Nacional de Atividades Econômicas). De preenchimento obrigatório, se houver.</td>
+<td>isMain</td>
+<td>boolean</td>
+<td>true</td>
+<td>Informa se é o principal ramo de atividade</td>
 </tr>
 </tbody></table>
 
@@ -22690,7 +22630,7 @@ This operation does not require authentication
 
 </span></code></pre></div>
 
-<p>Objeto que agrupa as informações referentes à renda total informada</p>
+<p>Conjunto de informações referentes à renda total informada</p>
 
 <h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
 
@@ -23941,40 +23881,6 @@ This operation does not require authentication
 </tr>
 </tbody></table>
 
-<h2 id="tocS_Occupation">Occupation</h2>
-
-<p><a id="schemaoccupation"></a>
-<a id="schema_Occupation"></a>
-<a id="tocSoccupation"></a>
-<a id="tocsoccupation"></a></p>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"mainCodeType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RECEITA_FEDERAL"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"codeDescription"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-
-</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
-<table><thead>
-<tr>
-<th>Nome</th>
-<th>Tipo</th>
-<th>Obrigatório</th>
-<th>Descrição</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>mainCodeType</td>
-<td><a href="#schemaenumoccupationmaincodetype/properties/maincodetype">EnumOccupationMainCodeType/properties/mainCodeType</a></td>
-<td>true</td>
-<td>Traz a relação dos códigos relativos à ocupação.</td>
-</tr>
-<tr>
-<td>codeDescription</td>
-<td>string</td>
-<td>true</td>
-<td>Campo livre de preenchimento obrigatório. Traz o código da ocupação ou o descritivo da ocupação.</td>
-</tr>
-</tbody></table>
-
 <h2 id="tocS_PartiesParticipation">PartiesParticipation</h2>
 
 <p><a id="schemapartiesparticipation"></a>
@@ -23987,13 +23893,11 @@ This operation does not require authentication
   </span><span class="nl">"socialName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Elza"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"startDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"shareholding"</span><span class="p">:</span><span class="w"> </span><span class="s2">"stri"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"document"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CPF"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"additionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CAN"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"expirationDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-03-19"</span><span class="w">
-  </span><span class="p">}</span><span class="w">
+  </span><span class="nl">"documentType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CPF"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"documentNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"documentAdditionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"documentCountry"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CAN"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"documentExpirationDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-03-19"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
 </span></code></pre></div>
@@ -24041,68 +23945,31 @@ This operation does not require authentication
 <td>Percentual de participação societária. Só deve ser informada se igual ou superior a 25%. Ex: 0.25 (O valor ao lado representa 25%. O valor &#39;1 &#39;representa 100%)<br>A apuração pode acontecer com até 2 casas decimais.O preenchimento deve respeitar as 2 casas decimais, mesmo que venham preenchidas com zeros</td>
 </tr>
 <tr>
-<td>document</td>
-<td><a href="#schemapartiesparticipationdocument">PartiesParticipationDocument</a></td>
-<td>false</td>
-<td>Objeto que agrupa informações relativas ao documento da parte envolvida</td>
-</tr>
-</tbody></table>
-
-<h2 id="tocS_PartiesParticipationDocument">PartiesParticipationDocument</h2>
-
-<p><a id="schemapartiesparticipationdocument"></a>
-<a id="schema_PartiesParticipationDocument"></a>
-<a id="tocSpartiesparticipationdocument"></a>
-<a id="tocspartiesparticipationdocument"></a></p>
-
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CPF"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"additionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CAN"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"expirationDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-03-19"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-
-</span></code></pre></div>
-
-<p>Objeto que agrupa informações relativas ao documento da parte envolvida</p>
-
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
-
-<table><thead>
-<tr>
-<th>Nome</th>
-<th>Tipo</th>
-<th>Obrigatório</th>
-<th>Descrição</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>type</td>
+<td>documentType</td>
 <td><a href="#schemaenumpartiesparticipationdocumenttype/properties/type">EnumPartiesParticipationDocumentType/properties/type</a></td>
 <td>true</td>
 <td>Tipo do documento informado.</td>
 </tr>
 <tr>
-<td>number</td>
+<td>documentNumber</td>
 <td>string</td>
 <td>true</td>
 <td>Número do documento informado. Campo Texto Livre para preencher número e dígito do documento se houver</td>
 </tr>
 <tr>
-<td>additionalInfo</td>
+<td>documentAdditionalInfo</td>
 <td>string</td>
 <td>false</td>
 <td>Campo livre, de preenchimento obrigatório quando o documento informado tiver informações complementares relevantes para a sua identificação</td>
 </tr>
 <tr>
-<td>country</td>
+<td>documentCountry</td>
 <td>string</td>
 <td>false</td>
 <td>País de emissão do documento. Código do pais de acordo com o código “alpha3” do ISO-3166.</td>
 </tr>
 <tr>
-<td>expirationDate</td>
+<td>documentExpirationDate</td>
 <td>string</td>
 <td>false</td>
 <td>Data de validade do documento informado, conforme especificação RFC-3339.</td>
@@ -26207,6 +26074,7 @@ This operation does not require authentication
       </span><span class="nl">"typeAdditionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"checkDigit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"st"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"additionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"expirationDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-03-19"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
@@ -26277,7 +26145,7 @@ This operation does not require authentication
 
 </span></code></pre></div>
 
-<p>Objeto agrupador das informações relativas a Identificação ou seja a ação e o efeito de identificar de forma única a pessoa natural através de seus dados cadastrais.</p>
+<p>Conjunto de informações relativas a Identificação ou seja a ação e o efeito de identificar de forma única a pessoa natural através de seus dados cadastrais.</p>
 
 <h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
 
@@ -26377,7 +26245,7 @@ This operation does not require authentication
 <td>contacts</td>
 <td><a href="#schemacustomercontacts">CustomerContacts</a></td>
 <td>true</td>
-<td>Objeto agrupador formas de contactar o cliente</td>
+<td>Conjunto de informações referentes às formas para contatar o cliente.</td>
 </tr>
 </tbody></table>
 
@@ -26408,6 +26276,7 @@ This operation does not require authentication
               </span><span class="nl">"typeAdditionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
               </span><span class="nl">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
               </span><span class="nl">"checkDigit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"st"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"additionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
               </span><span class="nl">"expirationDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-03-19"</span><span class="w">
             </span><span class="p">}</span><span class="w">
           </span><span class="p">],</span><span class="w">
@@ -26532,6 +26401,7 @@ This operation does not require authentication
           </span><span class="nl">"typeAdditionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"checkDigit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"st"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"additionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"expirationDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-03-19"</span><span class="w">
         </span><span class="p">}</span><span class="w">
       </span><span class="p">],</span><span class="w">
@@ -26626,8 +26496,8 @@ This operation does not require authentication
 <tr>
 <td>personalCustomers</td>
 <td><a href="#schemapersonalidentificationcustomers">PersonalIdentificationCustomers</a></td>
-<td>false</td>
-<td>Objeto que agrupa as informações Cadastrais do Cliente Pessoa natural</td>
+<td>true</td>
+<td>Conjunto de informações Cadastrais do Cliente Pessoa natural</td>
 </tr>
 </tbody></table>
 
@@ -26651,6 +26521,7 @@ This operation does not require authentication
         </span><span class="nl">"typeAdditionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"checkDigit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"st"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"additionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"expirationDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-03-19"</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">],</span><span class="w">
@@ -26722,7 +26593,7 @@ This operation does not require authentication
 
 </span></code></pre></div>
 
-<p>Objeto que agrupa as informações Cadastrais do Cliente Pessoa natural</p>
+<p>Conjunto de informações Cadastrais do Cliente Pessoa natural</p>
 
 <h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
 
@@ -26738,7 +26609,7 @@ This operation does not require authentication
 <td>identification</td>
 <td><a href="#schemapersonalidentification">PersonalIdentification</a></td>
 <td>true</td>
-<td>Objeto agrupador das informações relativas a Identificação ou seja a ação e o efeito de identificar de forma única a pessoa natural através de seus dados cadastrais.</td>
+<td>Conjunto de informações relativas a Identificação ou seja a ação e o efeito de identificar de forma única a pessoa natural através de seus dados cadastrais.</td>
 </tr>
 </tbody></table>
 
@@ -26757,7 +26628,7 @@ This operation does not require authentication
 
 </span></code></pre></div>
 
-<p>Objeto que agrupa as informações referentes ao patrimônio informado</p>
+<p>Conjunto de informações referentes ao patrimônio informado</p>
 
 <h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
 
@@ -27920,6 +27791,7 @@ This operation does not require authentication
   </span><span class="nl">"typeAdditionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"checkDigit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"st"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"additionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"expirationDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-03-19"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
@@ -27957,6 +27829,12 @@ This operation does not require authentication
 <td>Dígito verificador do documento informado. De preenchimento obrigatório se o documento informado tiver dígito verificador</td>
 </tr>
 <tr>
+<td>additionalInfo</td>
+<td>string</td>
+<td>false</td>
+<td>Campo livre, de preenchimento obrigatório quando o documento informado tiver informações complementares. p.ex. RG, este campo deve trazer: &quot;SSP-SP&#39; para RGs emitidos no estado de São Paulo - SP</td>
+</tr>
+<tr>
 <td>expirationDate</td>
 <td>string</td>
 <td>false</td>
@@ -27984,15 +27862,13 @@ This operation does not require authentication
     </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="w">
   </span><span class="p">},</span><span class="w">
-  </span><span class="nl">"occupation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"mainCodeType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RECEITA_FEDERAL"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"codeDescription"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
-  </span><span class="p">}</span><span class="w">
+  </span><span class="nl">"occupationCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RECEITA_FEDERAL"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"occupationDescription"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
 </span></code></pre></div>
 
-<p>Objeto que reúne as informações relativas ao processo de qualificação. Considera-se qualificação as informações que permitam as instituições apreciar, avaliar, caracterizar e classificar o cliente com a finalidade de conhecer o seu perfil de risco e sua capacidade econômico-financeira</p>
+<p>Conjunto de informações relativas ao processo de qualificação. Considera-se qualificação as informações que permitam as instituições apreciar, avaliar, caracterizar e classificar o cliente com a finalidade de conhecer o seu perfil de risco e sua capacidade econômico-financeira</p>
 
 <h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
 
@@ -28020,19 +27896,25 @@ This operation does not require authentication
 <td>informedIncome</td>
 <td><a href="#schemainformedincome">InformedIncome</a></td>
 <td>true</td>
-<td>Objeto que agrupa as informações referentes à renda total informada</td>
+<td>Conjunto de informações referentes à renda total informada</td>
 </tr>
 <tr>
 <td>informedPatrimony</td>
 <td><a href="#schemapersonalinformedpatrimony">PersonalInformedPatrimony</a></td>
 <td>true</td>
-<td>Objeto que agrupa as informações referentes ao patrimônio informado</td>
+<td>Conjunto de informações referentes ao patrimônio informado</td>
 </tr>
 <tr>
-<td>occupation</td>
-<td><a href="#schemaoccupation">Occupation</a></td>
+<td>occupationCode</td>
+<td><a href="#schemaenumoccupationmaincodetype/properties/maincodetype">EnumOccupationMainCodeType/properties/mainCodeType</a></td>
 <td>true</td>
-<td></td>
+<td>Traz a relação dos códigos relativos à ocupação.</td>
+</tr>
+<tr>
+<td>occupationDescription</td>
+<td>string</td>
+<td>true</td>
+<td>Campo livre, de preenchimento obrigatório. Traz o código da ocupação ou o descritivo da ocupação, se selecionada a opção &#39;OUTRO&#39;</td>
 </tr>
 </tbody></table>
 
@@ -28049,7 +27931,6 @@ This operation does not require authentication
     </span><span class="p">{</span><span class="w">
       </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Empresa da Organização A"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"cnpjNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"50685362000135"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"urlComplementaryList"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://empresadaorganizacaoa.com/complementarylist"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"personalCustomers"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="nl">"qualification"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
           </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
@@ -28065,10 +27946,8 @@ This operation does not require authentication
             </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
             </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="w">
           </span><span class="p">},</span><span class="w">
-          </span><span class="nl">"occupation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"mainCodeType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RECEITA_FEDERAL"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"codeDescription"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
-          </span><span class="p">}</span><span class="w">
+          </span><span class="nl">"occupationCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RECEITA_FEDERAL"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"occupationDescription"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
         </span><span class="p">}</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">}</span><span class="w">
@@ -28113,7 +27992,6 @@ This operation does not require authentication
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Empresa da Organização A"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"cnpjNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"50685362000135"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"urlComplementaryList"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://empresadaorganizacaoa.com/complementarylist"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"personalCustomers"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"qualification"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
@@ -28129,10 +28007,8 @@ This operation does not require authentication
         </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="w">
       </span><span class="p">},</span><span class="w">
-      </span><span class="nl">"occupation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"mainCodeType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RECEITA_FEDERAL"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"codeDescription"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
-      </span><span class="p">}</span><span class="w">
+      </span><span class="nl">"occupationCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RECEITA_FEDERAL"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"occupationDescription"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -28159,16 +28035,10 @@ This operation does not require authentication
 <td>Número completo do CNPJ da instituição responsável pelo Cadastro - o CNPJ corresponde ao número de inscrição no Cadastro de Pessoa Jurídica. Deve-se ter apenas os números do CNPJ, sem máscara</td>
 </tr>
 <tr>
-<td>urlComplementaryList</td>
-<td>string</td>
-<td>false</td>
-<td>URL do link que conterá a lista complementar com os nomes e CNPJs agrupados sob o mesmo cnpjNumber. Os contidos nessa lista possuem as mesmas características para produtos e serviços. Endereço eletrônico de acesso ao canal. Será obrigatoriamente preenchido se houver lista complementar com os nomes e CNPJs a ser disponibilizada.<br>Restrição: Será obrigatorimente preenchido se houver lista complementar com os nomes e CNPJs a ser disponibilizada</td>
-</tr>
-<tr>
 <td>personalCustomers</td>
 <td><a href="#schemapersonalqualificationcustomers">PersonalQualificationCustomers</a></td>
-<td>false</td>
-<td>Objeto que agrupa as informações Cadastrais do Cliente Pessoa natural</td>
+<td>true</td>
+<td>Conjunto de informações Cadastrais do Cliente Pessoa natural</td>
 </tr>
 </tbody></table>
 
@@ -28193,16 +28063,14 @@ This operation does not require authentication
       </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="w">
     </span><span class="p">},</span><span class="w">
-    </span><span class="nl">"occupation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"mainCodeType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RECEITA_FEDERAL"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"codeDescription"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
-    </span><span class="p">}</span><span class="w">
+    </span><span class="nl">"occupationCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RECEITA_FEDERAL"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"occupationDescription"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
 </span></code></pre></div>
 
-<p>Objeto que agrupa as informações Cadastrais do Cliente Pessoa natural</p>
+<p>Conjunto de informações Cadastrais do Cliente Pessoa natural</p>
 
 <h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
 
@@ -28218,7 +28086,7 @@ This operation does not require authentication
 <td>qualification</td>
 <td><a href="#schemapersonalqualification">PersonalQualification</a></td>
 <td>true</td>
-<td>Objeto que reúne as informações relativas ao processo de qualificação. Considera-se qualificação as informações que permitam as instituições apreciar, avaliar, caracterizar e classificar o cliente com a finalidade de conhecer o seu perfil de risco e sua capacidade econômico-financeira</td>
+<td>Conjunto de informações relativas ao processo de qualificação. Considera-se qualificação as informações que permitam as instituições apreciar, avaliar, caracterizar e classificar o cliente com a finalidade de conhecer o seu perfil de risco e sua capacidade econômico-financeira</td>
 </tr>
 </tbody></table>
 
@@ -31127,7 +30995,6 @@ This operation does not require authentication
         </span><span class="p">{</span><span class="w">
           </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Empresa da Organização A"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"cnpjNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"50685362000135"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"urlComplementaryList"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://empresadaorganizacaoa.com/complementarylist"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"businessCustomers"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
             </span><span class="nl">"identification"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
               </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
@@ -31144,20 +31011,18 @@ This operation does not require authentication
               </span><span class="nl">"companyName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
               </span><span class="nl">"tradeName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
               </span><span class="nl">"incorporationDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-03-19"</span><span class="p">,</span><span class="w">
-              </span><span class="nl">"partiesParticipation"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+              </span><span class="nl">"parties"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
                 </span><span class="p">{</span><span class="w">
                   </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SOCIO"</span><span class="p">,</span><span class="w">
                   </span><span class="nl">"civilName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Elza Milena Stefany Teixeira"</span><span class="p">,</span><span class="w">
                   </span><span class="nl">"socialName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Elza"</span><span class="p">,</span><span class="w">
                   </span><span class="nl">"startDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
                   </span><span class="nl">"shareholding"</span><span class="p">:</span><span class="w"> </span><span class="s2">"stri"</span><span class="p">,</span><span class="w">
-                  </span><span class="nl">"document"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CPF"</span><span class="p">,</span><span class="w">
-                    </span><span class="nl">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-                    </span><span class="nl">"additionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-                    </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CAN"</span><span class="p">,</span><span class="w">
-                    </span><span class="nl">"expirationDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-03-19"</span><span class="w">
-                  </span><span class="p">}</span><span class="w">
+                  </span><span class="nl">"documentType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CPF"</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"documentNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"documentAdditionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"documentCountry"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CAN"</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"documentExpirationDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-03-19"</span><span class="w">
                 </span><span class="p">}</span><span class="w">
               </span><span class="p">],</span><span class="w">
               </span><span class="nl">"contacts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -31262,14 +31127,13 @@ This operation does not require authentication
         </span><span class="p">{</span><span class="w">
           </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Empresa da Organização A"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"cnpjNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"50685362000135"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"urlComplementaryList"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://empresadaorganizacaoa.com/complementarylist"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"personalCustomers"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"businessCustomers"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
             </span><span class="nl">"qualification"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
               </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
               </span><span class="nl">"updateDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
               </span><span class="nl">"economicActivity"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="nl">"mainCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"otherCodes"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+                </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"isMain"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
               </span><span class="p">},</span><span class="w">
               </span><span class="nl">"informedRevenue"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
                 </span><span class="nl">"frequency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DIARIO"</span><span class="p">,</span><span class="w">
@@ -34427,6 +34291,7 @@ This operation does not require authentication
                   </span><span class="nl">"typeAdditionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
                   </span><span class="nl">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
                   </span><span class="nl">"checkDigit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"st"</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"additionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
                   </span><span class="nl">"expirationDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-03-19"</span><span class="w">
                 </span><span class="p">}</span><span class="w">
               </span><span class="p">],</span><span class="w">
@@ -34554,7 +34419,6 @@ This operation does not require authentication
         </span><span class="p">{</span><span class="w">
           </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Empresa da Organização A"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"cnpjNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"50685362000135"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"urlComplementaryList"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://empresadaorganizacaoa.com/complementarylist"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"personalCustomers"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
             </span><span class="nl">"qualification"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
               </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
@@ -34570,10 +34434,8 @@ This operation does not require authentication
                 </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
                 </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="w">
               </span><span class="p">},</span><span class="w">
-              </span><span class="nl">"occupation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="nl">"mainCodeType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RECEITA_FEDERAL"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"codeDescription"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
-              </span><span class="p">}</span><span class="w">
+              </span><span class="nl">"occupationCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RECEITA_FEDERAL"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"occupationDescription"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
             </span><span class="p">}</span><span class="w">
           </span><span class="p">}</span><span class="w">
         </span><span class="p">}</span><span class="w">
