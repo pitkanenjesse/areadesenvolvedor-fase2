@@ -38,128 +38,116 @@ paths:
                   data:
                     type: object
                     required:
-                      - brand
+                      - account
                     properties:
-                      brand:
+                      account:
                         type: object
-                        description: Objeto que define a Organização controladora do grupo de instituições financeiras
+                        description: 'Conjunto de informações das Contas de: depósito à vista, poupança e de pagamento pré-paga'
                         required:
-                          - name
-                          - companies
+                          - identification
                         properties:
-                          name:
-                            type: string
-                            description: 'Nome da Marca reportada pelo participante do Open Banking. O conceito a que se refere a ''marca'' é em essência uma promessa da empresa em fornecer uma série específica de atributos, benefícios e serviços uniformes aos clientes.'
-                            maxLength: 80
-                            pattern: \w*\W*
-                          companies:
-                            type: array
-                            items:
-                              type: object
-                              description: Instituições da Marca
-                              required:
-                                - name
-                                - cnpjNumber
-                                - accounts
-                              properties:
-                                name:
-                                  description: 'Nome da Instituição, pertencente à marca, responsável pela modalidade de Empréstimos.'
-                                  type: string
-                                  pattern: \w*\W*
-                                  maxLength: 80
-                                  example: Empresa da Organização A
-                                cnpjNumber:
-                                  description: 'Número completo do CNPJ da instituição responsável pelo Cadastro - o CNPJ corresponde ao número de inscrição no Cadastro de Pessoa Jurídica. Deve-se ter apenas os números do CNPJ, sem máscara'
-                                  type: string
-                                  pattern: '^(\d{14})$|^NA$'
-                                  maxLength: 14
-                                  example: '50685362000135'
-                                accounts:
-                                  description: 'Conjunto de informações  das Contas de: depósito à vista, poupança e de pagamento pré-paga'
-                                  type: object
-                                  required:
-                                    - identification
-                                  properties:
-                                    identification:
-                                      description: 'Conjunto dos atributos que identificam Contas de: depósito à vista, poupança e de pagamento pré-paga'
-                                      type: object
-                                      required:
-                                        - requestDateTime
-                                        - updateDateTime
-                                        - number
-                                        - digitNumber
-                                        - branchCode
-                                        - ispbCode
-                                        - type
-                                        - subtype
-                                      properties:
-                                        requestDateTime:
-                                          allOf: null
-                                          type: string
-                                          maxLength: 20
-                                          pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])T(?:[01]\d|2[0123]):(?:[012345]\d):(?:[012345]\d)Z$'
-                                          example: '2020-07-21T08:30:00Z'
-                                          description: 'Data e hora da consulta, conforme especificação RFC-3339, formato UTC.'
-                                        updateDateTime:
-                                          type: string
-                                          maxLength: 20
-                                          pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])T(?:[01]\d|2[0123]):(?:[012345]\d):(?:[012345]\d)Z$'
-                                          example: '2020-07-21T08:30:00Z'
-                                          description: 'Data e hora da atualização, conforme especificação RFC-3339.'
-                                        number:
-                                          type: string
-                                          maxLength: 8
-                                          pattern: '\d{8}|^NA$'
-                                          description: |
-                                            Número da conta
-                                          example: '24550'
-                                        digitNumber:
-                                          type: string
-                                          maxLength: 1
-                                          pattern: '\d{8}|^NA$'
-                                          description: |
-                                            Número do dígito da conta
-                                          example: '4'
-                                        branchCode:
-                                          type: string
-                                          maxLength: 4
-                                          pattern: '\d{8}|^NA$'
-                                          description: |
-                                            Código da Agência detentora da conta
-                                          example: '6272'
-                                        ispbCode:
-                                          type: string
-                                          maxLength: 8
-                                          pattern: '\d{8}|^NA$'
-                                          description: |
-                                            Código da Instituição financeira. 
-                                            ISPB: Identificador do participante junto ao Banco Central para o Sistema de Pagamentos Brasileiro – código identificador atribuído a todos os participantes do Sistema de Transferência de Reservas (STR) do Banco Central do Brasil
-                                          example: '60701190'
-                                        type:
-                                          type: string
-                                          enum:
-                                            - CONTA_DEPOSITO_A_VISTA
-                                            - CONTA_POUPANCA
-                                            - CONTA_PAGAMENTO_PRE_PAGA
-                                          description: |
-                                            Tipos de contas ofertadas para pessoa natural ou jurídica, p.ex. 'CONTA_DEPOSITO_A_VISTA'.
-                                            Conta de depósito à vista ou Conta corrente - é o tipo mais comum. Nela, o dinheiro fica à sua disposição para ser sacado a qualquer momento. Essa conta não gera rendimentos para o depositante
-                                            Conta poupança - foi criada para estimular as pessoas a pouparem. O dinheiro que ficar na conta por trinta dias passa a gerar rendimentos, com isenção de imposto de renda para quem declara. Ou seja, o dinheiro “cresce” (rende) enquanto ficar guardado na conta. Cada depósito terá rendimentos de mês em mês, sempre no dia do mês em que o dinheiro tiver sido depositado
-                                            Conta de pagamento pré-paga: segundo CIRCULAR Nº 3.680, BCB de  2013, é a 'destinada à execução de transações de pagamento em moeda eletrônica realizadas com base em fundos denominados em reais previamente aportados'
-                                          example: CONTA_DEPOSITO_A_VISTA
-                                        subtype:
-                                          type: string
-                                          enum:
-                                            - INDIVIDUAL
-                                            - CONJUNTA_SOLIDARIA
-                                            - CONJUNTA_NAO_SOLIDARIA
-                                          description: |
-                                            Conta individual - possui um único titular
-                                            Conta conjunta solidária - é a modalidade cujos titulares podem realizar movimentações de forma isolada, isto é, sem que seja necessária a autorização dos demais titulares
-                                            Conta conjunta não solidária - onde as movimentações financeiras só podem serem realizadas mediante autorização de TODOS os correntistas da conta.
-                                          example: INDIVIDUAL
-                            minItems: 1
-                            description: Companies traz uma lista de todas as instituições da Marca.
+                          identification:
+                            type: object
+                            description: 'Conjunto dos atributos que caracterizam as Contas de: depósito à vista, poupança e de pagamento pré-paga'
+                            required:
+                              - ispbCode
+                              - branchCode
+                              - number
+                              - checkDigit
+                              - brandName
+                              - companyCnpj
+                              - requestDateTime
+                              - updateDateTime
+                              - type
+                              - subtype
+                              - personalBusinessIndicator
+                            properties:
+                              ispbCode:
+                                type: string
+                                maxLength: 8
+                                pattern: '\d{8}|^NA$'
+                                description: |
+                                  Código da Instituição financeira. 
+                                  ISPB: Identificador do participante junto ao Banco Central para o Sistema de Pagamentos Brasileiro – código identificador atribuído a todos os participantes do Sistema de Transferência de Reservas (STR) do Banco Central do Brasil
+                                example: '60701190'
+                              branchCode:
+                                type: string
+                                maxLength: 4
+                                pattern: '\d{8}|^NA$'
+                                description: |
+                                  Código da Agência detentora da conta
+                                example: '6272'
+                              number:
+                                type: string
+                                maxLength: 8
+                                pattern: '\d{8}|^NA$'
+                                description: |
+                                  Número da conta
+                                example: '24550'
+                              checkDigit:
+                                type: string
+                                maxLength: 1
+                                pattern: '\d{8}|^NA$'
+                                description: |
+                                  Dígito da conta
+                                example: '4'
+                              brandName:
+                                type: string
+                                maxLength: 80
+                                pattern: '\d{8}|^NA$'
+                                description: |
+                                  'Nome da Marca reportada pelo participante do Open Banking. O conceito a que se refere a 'marca' é em essência uma promessa da empresa em fornecer uma série específica de atributos, benefícios e serviços uniformes aos clientes'
+                                example: Organização A
+                              companyCnpj:
+                                type: string
+                                maxLength: 14
+                                pattern: '\d{14}|^NA$'
+                                description: |
+                                  'Número completo do CNPJ da instituição responsável pelo Cadastro - o CNPJ corresponde ao número de inscrição no Cadastro de Pessoa Jurídica. Deve-se ter apenas os números do CNPJ, sem máscara'
+                                example: '21128159000166'
+                              requestDateTime:
+                                type: string
+                                maxLength: 20
+                                pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])T(?:[01]\d|2[0123]):(?:[012345]\d):(?:[012345]\d)Z$'
+                                example: '2020-07-21T08:30:00Z'
+                                description: 'Data e hora da consulta, conforme especificação RFC-3339, formato UTC.'
+                              updateDateTime:
+                                type: string
+                                maxLength: 20
+                                pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])T(?:[01]\d|2[0123]):(?:[012345]\d):(?:[012345]\d)Z$'
+                                example: '2020-07-21T08:30:00Z'
+                                description: 'Data e hora da atualização, conforme especificação RFC-3339.'
+                              type:
+                                type: string
+                                enum:
+                                  - CONTA_DEPOSITO_A_VISTA
+                                  - CONTA_POUPANCA
+                                  - CONTA_PAGAMENTO_PRE_PAGA
+                                description: |
+                                  Tipos de contas ofertadas para pessoa natural ou jurídica, p.ex. 'CONTA_DEPOSITO_A_VISTA'.
+                                  Conta de depósito à vista ou Conta corrente - é o tipo mais comum. Nela, o dinheiro fica à sua disposição para ser sacado a qualquer momento. Essa conta não gera rendimentos para o depositante
+                                  Conta poupança - foi criada para estimular as pessoas a pouparem. O dinheiro que ficar na conta por trinta dias passa a gerar rendimentos, com isenção de imposto de renda para quem declara. Ou seja, o dinheiro “cresce” (rende) enquanto ficar guardado na conta. Cada depósito terá rendimentos de mês em mês, sempre no dia do mês em que o dinheiro tiver sido depositado
+                                  Conta de pagamento pré-paga: segundo CIRCULAR Nº 3.680, BCB de  2013, é a 'destinada à execução de transações de pagamento em moeda eletrônica realizadas com base em fundos denominados em reais previamente aportados'
+                                example: CONTA_DEPOSITO_A_VISTA
+                              subtype:
+                                type: string
+                                enum:
+                                  - INDIVIDUAL
+                                  - CONJUNTA_SOLIDARIA
+                                  - CONJUNTA_NAO_SOLIDARIA
+                                description: |
+                                  Conta individual - possui um único titular
+                                  Conta conjunta solidária - é a modalidade cujos titulares podem realizar movimentações de forma isolada, isto é, sem que seja necessária a autorização dos demais titulares
+                                  Conta conjunta não solidária - onde as movimentações financeiras só podem serem realizadas mediante autorização de TODOS os correntistas da conta.
+                                example: INDIVIDUAL
+                              personalBusinessIndicator:
+                                type: string
+                                enum:
+                                  - PESSOAL
+                                  - JURIDICA
+                                description: |
+                                  Indicador do tipo de conta Pessoal ou Jurídica
+                                example: PESSOAL
                   links:
                     $ref: '#/paths/~1balances/get/responses/200/content/application~1json/schema/properties/links'
                   meta:
@@ -201,92 +189,111 @@ paths:
                   data:
                     type: object
                     required:
-                      - brand
+                      - account
                     properties:
-                      brand:
+                      account:
                         type: object
-                        description: Objeto que define a Organização controladora do grupo de instituições financeiras
+                        description: 'Conjunto de informações das Contas de: depósito à vista, poupança e de pagamento pré-paga'
                         required:
-                          - name
-                          - companies
+                          - balances
                         properties:
-                          name:
-                            type: string
-                            description: 'Nome da Marca reportada pelo participante do Open Banking. O conceito a que se refere a ''marca'' é em essência uma promessa da empresa em fornecer uma série específica de atributos, benefícios e serviços uniformes aos clientes.'
-                            maxLength: 80
-                            pattern: \w*\W*
-                          companies:
-                            type: array
-                            items:
-                              type: object
-                              description: Instituições da Marca
-                              required:
-                                - name
-                                - cnpjNumber
-                                - accounts
-                              properties:
-                                name:
-                                  description: 'Nome da Instituição, pertencente à marca, responsável pela modalidade de Empréstimos.'
-                                  type: string
-                                  pattern: \w*\W*
-                                  maxLength: 80
-                                  example: Empresa da Organização A
-                                cnpjNumber:
-                                  description: 'Número completo do CNPJ da instituição responsável pelo Cadastro - o CNPJ corresponde ao número de inscrição no Cadastro de Pessoa Jurídica. Deve-se ter apenas os números do CNPJ, sem máscara'
-                                  type: string
-                                  pattern: '^(\d{14})$|^NA$'
-                                  maxLength: 14
-                                  example: '50685362000135'
-                                accounts:
-                                  description: 'Conjunto de informações  das Contas de: depósito à vista, poupança e de pagamento pré-paga'
+                          balances:
+                            type: object
+                            description: 'Traz as informações relativas aos saldos para  Contas de: depósito à vista, poupança e de pagamento pré-paga '
+                            required:
+                              - ispbCode
+                              - branchCode
+                              - number
+                              - checkDigit
+                              - brandName
+                              - companyCnpj
+                              - requestDateTime
+                              - currency
+                              - statementAccount
+                            properties:
+                              ispbCode:
+                                type: string
+                                maxLength: 8
+                                pattern: '\d{8}|^NA$'
+                                description: |
+                                  Código da Instituição financeira. 
+                                  ISPB: Identificador do participante junto ao Banco Central para o Sistema de Pagamentos Brasileiro – código identificador atribuído a todos os participantes do Sistema de Transferência de Reservas (STR) do Banco Central do Brasil
+                                example: '60701190'
+                              branchCode:
+                                type: string
+                                maxLength: 4
+                                pattern: '\d{8}|^NA$'
+                                description: |
+                                  Código da Agência detentora da conta
+                                example: '6272'
+                              number:
+                                type: string
+                                maxLength: 8
+                                pattern: '\d{8}|^NA$'
+                                description: |
+                                  Número da conta
+                                example: '24550'
+                              checkDigit:
+                                type: string
+                                maxLength: 1
+                                pattern: '\d{8}|^NA$'
+                                description: |
+                                  Dígito da conta
+                                example: '4'
+                              brandName:
+                                type: string
+                                maxLength: 80
+                                pattern: '\d{8}|^NA$'
+                                description: |
+                                  'Nome da Marca reportada pelo participante do Open Banking. O conceito a que se refere a 'marca' é em essência uma promessa da empresa em fornecer uma série específica de atributos, benefícios e serviços uniformes aos clientes'
+                                example: Organização A
+                              companyCnpj:
+                                type: string
+                                maxLength: 14
+                                pattern: '\d{14}|^NA$'
+                                description: |
+                                  'Número completo do CNPJ da instituição responsável pelo Cadastro - o CNPJ corresponde ao número de inscrição no Cadastro de Pessoa Jurídica. Deve-se ter apenas os números do CNPJ, sem máscara'
+                                example: '21128159000166'
+                              requestDateTime:
+                                type: string
+                                maxLength: 20
+                                pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])T(?:[01]\d|2[0123]):(?:[012345]\d):(?:[012345]\d)Z$'
+                                example: '2020-07-21T08:30:00Z'
+                                description: 'Data e hora da consulta, conforme especificação RFC-3339, formato UTC.'
+                              currency:
+                                type: string
+                                pattern: '^(\w{3}){1}$'
+                                maxLength: 3
+                                format: CurrencyString
+                                description: 'Moeda referente ao valor mínimo da Tarifa, segundo modelo ISO-4217'
+                                example: BRL
+                              statementAccount:
+                                type: array
+                                items:
                                   type: object
                                   required:
-                                    - balances
+                                    - type
+                                    - amount
                                   properties:
-                                    balances:
-                                      type: array
-                                      description: 'Traz as informações relativas aos saldos para  Contas de: depósito à vista, poupança e de pagamento pré-paga'
-                                      items:
-                                        type: object
-                                        required:
-                                          - requestDateTime
-                                          - updateDateTime
-                                          - type
-                                          - amount
-                                        properties:
-                                          requestDateTime:
-                                            allOf:
-                                              - $ref: '#/paths/~1transactions/get/responses/200/content/application~1json/schema/properties/data/properties/brand/properties/companies/items/properties/accounts/properties/transactions/properties/updateDateTime/allOf/0'
-                                            description: 'Data e hora da consulta, conforme especificação RFC-3339, formato UTC.'
-                                          updateDateTime:
-                                            allOf:
-                                              - $ref: '#/paths/~1transactions/get/responses/200/content/application~1json/schema/properties/data/properties/brand/properties/companies/items/properties/accounts/properties/transactions/properties/updateDateTime/allOf/0'
-                                            description: 'Data e hora da atualização, conforme especificação RFC-3339.'
-                                          type:
-                                            type: string
-                                            enum:
-                                              - SALDO_DISPONIVEL
-                                              - SALDO_BLOQUEADO
-                                              - SALDO_DISPONIVEL_APLICACAO_AUTOMATICA
-                                            description: |
-                                              tipos de saldo em conta: (vide enum) informados:
-                                              Saldo disponível para utilização imediata. No caso de conta de depósito a vista, sem considerar cheque especial e investimentos atrelados a conta. Admite saldo negativo.
-                                              Saldo bloqueado não disponível para utilização imediata, por motivo de bloqueio por compensação, ou bloqueio judicial
-                                              Saldo disponível com aplicação automática - saldo disponível para utilização imediata, referente ao tipo de conta que remunera automaticamente o saldo em conta 
-                                            example: SALDO_DISPONIVEL
-                                          amount:
-                                            type: number
-                                            nullable: true
-                                            description: 'Valor do Saldo disponível, representado em valor monetário com 2 casas decimais. O tipo SALDO_DISPONIVEL admite valor negativo.'
-                                          currency:
-                                            type: string
-                                            pattern: '^(\w{3}){1}$'
-                                            maxLength: 3
-                                            format: CurrencyString
-                                            description: 'Moeda referente ao valor mínimo da Tarifa, segundo modelo ISO-4217'
-                                            example: BRL
-                            minItems: 1
-                            description: Companies traz uma lista de todas as instituições da Marca.
+                                    type:
+                                      type: string
+                                      enum:
+                                        - SALDO_DISPONIVEL
+                                        - SALDO_BLOQUEADO
+                                        - SALDO_DISPONIVEL_APLICACAO_AUTOMATICA
+                                      description: |
+                                        tipos de saldo em conta: (vide enum) informados:
+                                        Saldo disponível para utilização imediata. No caso de conta de depósito a vista, sem considerar cheque especial e investimentos atrelados a conta. Admite saldo negativo.
+                                        Saldo bloqueado não disponível para utilização imediata, por motivo de bloqueio por compensação, ou bloqueio judicial
+                                        Saldo disponível com aplicação automática - saldo disponível para utilização imediata, referente ao tipo de conta que remunera automaticamente o saldo em conta 
+                                      example: SALDO_DISPONIVEL
+                                    amount:
+                                      type: number
+                                      nullable: true
+                                      description: 'Valor do Saldo disponível, representado em valor monetário com 2 casas decimais. O tipo SALDO_DISPONIVEL admite valor negativo.'
+                                      example: 800.87
+                                minItems: 1
+                                description: 'Lista os saldos referentes às contas de: depósito à vista, poupança ou de pagamento pré-paga'
                   links:
                     type: object
                     description: Referências para outros recusos da API requisitada.
@@ -356,168 +363,170 @@ paths:
                   data:
                     type: object
                     required:
-                      - brand
+                      - account
                     properties:
-                      brand:
+                      account:
                         type: object
-                        description: Objeto que define a Organização controladora do grupo de instituições financeiras
+                        description: 'Conjunto de informações das Contas de: depósito à vista, poupança e de pagamento pré-paga'
                         required:
-                          - name
-                          - companies
+                          - transactions
                         properties:
-                          name:
-                            type: string
-                            description: 'Nome da Marca reportada pelo participante do Open Banking. O conceito a que se refere a ''marca'' é em essência uma promessa da empresa em fornecer uma série específica de atributos, benefícios e serviços uniformes aos clientes.'
-                            maxLength: 80
-                            pattern: \w*\W*
-                          companies:
-                            type: array
-                            items:
-                              type: object
-                              description: Instituições da Marca
-                              required:
-                                - name
-                                - cnpjNumber
-                                - accounts
-                              properties:
-                                name:
-                                  description: 'Nome da Instituição, pertencente à marca, responsável pela modalidade de Empréstimos.'
-                                  type: string
-                                  pattern: \w*\W*
-                                  maxLength: 80
-                                  example: Empresa da Organização A
-                                cnpjNumber:
-                                  description: 'Número completo do CNPJ da instituição responsável pelo Cadastro - o CNPJ corresponde ao número de inscrição no Cadastro de Pessoa Jurídica. Deve-se ter apenas os números do CNPJ, sem máscara'
-                                  type: string
-                                  pattern: '^(\d{14})$|^NA$'
-                                  maxLength: 14
-                                  example: '50685362000135'
-                                accounts:
+                          transactions:
+                            type: object
+                            description: 'Conjunto de informações relativas às Transações de crédito e débito realizadas e de pagamento autorizado para  Contas de: depósito à vista, poupança e de pagamento pré-paga'
+                            required:
+                              - ispbCode
+                              - branchCode
+                              - number
+                              - checkDigit
+                              - brandName
+                              - companyCnpj
+                              - requestDateTime
+                              - currency
+                              - statementAccount
+                            properties:
+                              ispbCode:
+                                type: string
+                                maxLength: 8
+                                pattern: '\d{8}|^NA$'
+                                description: |
+                                  Código da Instituição financeira. 
+                                  ISPB: Identificador do participante junto ao Banco Central para o Sistema de Pagamentos Brasileiro – código identificador atribuído a todos os participantes do Sistema de Transferência de Reservas (STR) do Banco Central do Brasil
+                                example: '60701190'
+                              branchCode:
+                                type: string
+                                maxLength: 4
+                                pattern: '\d{8}|^NA$'
+                                description: |
+                                  Código da Agência detentora da conta
+                                example: '6272'
+                              number:
+                                type: string
+                                maxLength: 8
+                                pattern: '\d{8}|^NA$'
+                                description: |
+                                  Número da conta
+                                example: '24550'
+                              checkDigit:
+                                type: string
+                                maxLength: 1
+                                pattern: '\d{8}|^NA$'
+                                description: |
+                                  Dígito da conta
+                                example: '4'
+                              brandName:
+                                type: string
+                                maxLength: 80
+                                pattern: '\d{8}|^NA$'
+                                description: |
+                                  'Nome da Marca reportada pelo participante do Open Banking. O conceito a que se refere a 'marca' é em essência uma promessa da empresa em fornecer uma série específica de atributos, benefícios e serviços uniformes aos clientes'
+                                example: Organização A
+                              companyCnpj:
+                                type: string
+                                maxLength: 14
+                                pattern: '\d{14}|^NA$'
+                                description: |
+                                  'Número completo do CNPJ da instituição responsável pelo Cadastro - o CNPJ corresponde ao número de inscrição no Cadastro de Pessoa Jurídica. Deve-se ter apenas os números do CNPJ, sem máscara'
+                                example: '21128159000166'
+                              requestDateTime:
+                                type: string
+                                maxLength: 20
+                                pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])T(?:[01]\d|2[0123]):(?:[012345]\d):(?:[012345]\d)Z$'
+                                example: '2020-07-21T08:30:00Z'
+                                description: 'Data e hora da consulta, conforme especificação RFC-3339, formato UTC.'
+                              currency:
+                                $ref: '#/paths/~1balances/get/responses/200/content/application~1json/schema/properties/data/properties/account/properties/balances/properties/currency'
+                              statementAccount:
+                                type: array
+                                items:
                                   type: object
+                                  description: Agrupador das informações relativas às Transações de crédito e débito realizadas e autorizadas
                                   required:
-                                    - transactions
+                                    - completedAuthorisedPaymentIndicator
+                                    - creditDebitIndicator
+                                    - type
+                                    - additionalInfo
+                                    - amount
+                                    - transactionDate
+                                    - payer
+                                    - payee
                                   properties:
-                                    transactions:
-                                      type: object
-                                      description: Agrupador das informações relativas às Transações de crédito e débito realizadas e autorizadas
-                                      required:
-                                        - requestDateTime
-                                        - updateDateTime
-                                        - completedTransactions
-                                        - authorisedPayments
-                                      properties:
-                                        requestDateTime:
-                                          allOf:
-                                            - $ref: '#/paths/~1transactions/get/responses/200/content/application~1json/schema/properties/data/properties/brand/properties/companies/items/properties/accounts/properties/transactions/properties/updateDateTime/allOf/0'
-                                          description: 'Data e hora da consulta, conforme especificação RFC-3339, formato UTC.'
-                                        updateDateTime:
-                                          allOf:
-                                            - type: string
-                                              maxLength: 20
-                                              pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])T(?:[01]\d|2[0123]):(?:[012345]\d):(?:[012345]\d)Z$'
-                                              example: '2020-07-21T08:30:00Z'
-                                          description: 'Data e hora da atualização, conforme especificação RFC-3339.'
-                                        completedTransactions:
-                                          type: array
-                                          items:
-                                            type: object
-                                            description: Transações a débito e a crédito efetivadas em conta
-                                            required:
-                                              - creditDebitIndicator
-                                              - type
-                                              - amount
-                                              - transactionDate
-                                              - payer
-                                              - payee
-                                            properties:
-                                              creditDebitIndicator:
-                                                $ref: '#/paths/~1transactions/get/responses/200/content/application~1json/schema/properties/data/properties/brand/properties/companies/items/properties/accounts/properties/transactions/properties/authorisedPayments/items/properties/creditDebitIndicator'
-                                              type:
-                                                $ref: '#/paths/~1transactions/get/responses/200/content/application~1json/schema/properties/data/properties/brand/properties/companies/items/properties/accounts/properties/transactions/properties/authorisedPayments/items/properties/type'
-                                              amount:
-                                                type: number
-                                                nullable: true
-                                                description: Valor da transação. Expressa em valor monetário com 2 casas decimais
-                                              currency:
-                                                $ref: '#/paths/~1balances/get/responses/200/content/application~1json/schema/properties/data/properties/brand/properties/companies/items/properties/accounts/properties/balances/items/properties/currency'
-                                              transactionDate:
-                                                type: string
-                                                description: Data de lançamento da transação
-                                                maxLength: 10
-                                                pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$'
-                                              payer:
-                                                type: string
-                                                description: Identificação do Pagador da transação
-                                                maxLength: 100
-                                                pattern: \w*\W*
-                                              payee:
-                                                type: string
-                                                description: Identificação do Recebedor da transação
-                                                maxLength: 100
-                                                pattern: \w*\W*
-                                          minItems: 1
-                                          description: Lista das transações a débito e a crédito efetivadas em conta.
-                                        authorisedPayments:
-                                          type: array
-                                          items:
-                                            type: object
-                                            description: Informações relativas aos pagamentos autorizados
-                                            required:
-                                              - creditDebitIndicator
-                                              - type
-                                              - amount
-                                              - transactionDate
-                                              - payer
-                                              - payee
-                                            properties:
-                                              creditDebitIndicator:
-                                                type: string
-                                                enum:
-                                                  - CREDITO
-                                                  - DEBITO
-                                                description: |
-                                                  Indicador do tipo de lançamento: a crédito ou a débito. 
-                                                example: CREDITO
-                                              type:
-                                                type: string
-                                                enum:
-                                                  - PACOTE_TARIFA_SERVICOS
-                                                  - TARIFA_SERVICOS_AVULSOS
-                                                  - FOLHA_PAGAMENTO
-                                                  - SAQUE
-                                                  - CARTAO_DEBITO
-                                                  - CARTAO_PRE_PAGO
-                                                  - DEPOSITO
-                                                  - JUROS_CHEQUE_ESPECIAL
-                                                  - RENDIMENTOS
-                                                description: |
-                                                  Tipo de Transação
-                                                example: SAQUE
-                                              amount:
-                                                type: number
-                                                nullable: true
-                                                description: Valor da transação. Expressa em valor monetário com 2 casas decimais
-                                              currency:
-                                                $ref: '#/paths/~1balances/get/responses/200/content/application~1json/schema/properties/data/properties/brand/properties/companies/items/properties/accounts/properties/balances/items/properties/currency'
-                                              transactionDate:
-                                                type: string
-                                                description: Data de lançamento da transação
-                                                maxLength: 10
-                                                pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$'
-                                              payer:
-                                                type: string
-                                                description: Identificação do Pagador da transação
-                                                maxLength: 100
-                                                pattern: \w*\W*
-                                              payee:
-                                                type: string
-                                                description: Identificação do Recebedor da transação
-                                                maxLength: 100
-                                                pattern: \w*\W*
-                                          minItems: 1
-                                          description: Lista das Informações relativas aos pagamentos autorizados.
-                            minItems: 1
-                            description: Companies traz uma lista de todas as instituições da Marca.
+                                    completedAuthorisedPaymentIndicator:
+                                      type: string
+                                      enum:
+                                        - TRANSACAO_EFETIVADA
+                                        - PAGAMENTO_AUTORIZADO
+                                      description: |
+                                        Indicador da transação
+                                      example: TRANSACAO_EFETIVADA
+                                    creditDebitIndicator:
+                                      type: string
+                                      enum:
+                                        - CREDITO
+                                        - DEBITO
+                                      description: |
+                                        Indicador do tipo de lançamento: a crédito ou a débito. 
+                                      example: CREDITO
+                                    type:
+                                      type: string
+                                      enum:
+                                        - TED
+                                        - DIC
+                                        - PIX
+                                        - TRANSFERENCIA_MESMA_INSTITUICAO
+                                        - BOLETO
+                                        - CONVENIO
+                                        - ARRECADACAO
+                                        - PACOTE_TARIFA_SERVICOS
+                                        - TARIFA_SERVICOS_AVULSOS
+                                        - FOLHA_PAGAMENTO
+                                        - DEPOSITO
+                                        - SAQUE
+                                        - CARTAO
+                                        - JUROS_CHEQUE_ESPECIAL
+                                        - RENDIMENTO
+                                        - DEBITO_APLICACAO_AUTOMATICA
+                                        - OUTRO
+                                      description: |
+                                        Tipo de Transação
+                                      example: PIX
+                                    additionalInfo:
+                                      type: string
+                                      maxLength: 30
+                                      pattern: \w*\W*
+                                      description: |
+                                        'Campo livre, de preenchimento obrigatório para complementar informação, quando selecionado o tipo de transação: OUTRO'
+                                      example: Transferência
+                                    amount:
+                                      type: number
+                                      nullable: true
+                                      description: 'Valor do Saldo disponível, representado em valor monetário com 2 casas decimais. O tipo SALDO_DISPONIVEL admite valor negativo.'
+                                      example: 500.54
+                                    transactionDate:
+                                      type: string
+                                      maxLength: 10
+                                      pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$'
+                                      description: |
+                                        'Se indicador de transação:
+                                         TRANSACAO_EFETIVADA - corresponde a data de lançamento da transação
+                                         PAGAMENTO_AUTORIZADO - corresponde a data prevista de efetivação da transação'
+                                      example: '2021-01-07'
+                                    payer:
+                                      type: string
+                                      maxLength: 100
+                                      pattern: \w*\W*
+                                      description: |
+                                        'Identificação do Pagador da transação'
+                                      example: GSOKS74631
+                                    payee:
+                                      type: string
+                                      maxLength: 100
+                                      pattern: \w*\W*
+                                      description: |
+                                        'Identificação do Recebedor da transação'
+                                      example: RHGTJ37417
+                                minItems: 1
+                                description: 'Lista dos lançamentos referentes às transações realizadas e de pagamento autorizado para as contas de: depósito à vista, poupança e de pagamento pré-paga'
                   links:
                     $ref: '#/paths/~1balances/get/responses/200/content/application~1json/schema/properties/links'
                   meta:
@@ -547,87 +556,106 @@ paths:
                   data:
                     type: object
                     required:
-                      - brand
+                      - account
                     properties:
-                      brand:
+                      account:
                         type: object
-                        description: Objeto que define a Organização controladora do grupo de instituições financeiras
+                        description: 'Conjunto de informações das Contas de: depósito à vista, poupança e de pagamento pré-paga'
                         required:
-                          - name
-                          - companies
+                          - overdraftLimits
                         properties:
-                          name:
-                            type: string
-                            description: 'Nome da Marca reportada pelo participante do Open Banking. O conceito a que se refere a ''marca'' é em essência uma promessa da empresa em fornecer uma série específica de atributos, benefícios e serviços uniformes aos clientes.'
-                            maxLength: 80
-                            pattern: \w*\W*
-                          companies:
-                            type: array
-                            items:
-                              type: object
-                              description: Instituições da Marca
-                              required:
-                                - name
-                                - cnpjNumber
-                                - accounts
-                              properties:
-                                name:
-                                  description: 'Nome da Instituição, pertencente à marca, responsável pela modalidade de Empréstimos.'
-                                  type: string
-                                  pattern: \w*\W*
-                                  maxLength: 80
-                                  example: Empresa da Organização A
-                                cnpjNumber:
-                                  description: 'Número completo do CNPJ da instituição responsável pelo Cadastro - o CNPJ corresponde ao número de inscrição no Cadastro de Pessoa Jurídica. Deve-se ter apenas os números do CNPJ, sem máscara'
-                                  type: string
-                                  pattern: '^(\d{14})$|^NA$'
-                                  maxLength: 14
-                                  example: '50685362000135'
-                                accounts:
+                          overdraftLimits:
+                            type: object
+                            description: 'Conjunto das informações relativas aos Limites referentes ao valor das operações de crédito (Cheque especial e Adiantamento a Depositantes) vinculadas à conta de depósito à vista ou conta corrente '
+                            required:
+                              - ispbCode
+                              - branchCode
+                              - number
+                              - checkDigit
+                              - brandName
+                              - companyCnpj
+                              - requestDateTime
+                              - currency
+                              - balances
+                            properties:
+                              ispbCode:
+                                type: string
+                                maxLength: 8
+                                pattern: '\d{8}|^NA$'
+                                description: |
+                                  Código da Instituição financeira. 
+                                  ISPB: Identificador do participante junto ao Banco Central para o Sistema de Pagamentos Brasileiro – código identificador atribuído a todos os participantes do Sistema de Transferência de Reservas (STR) do Banco Central do Brasil
+                                example: '60701190'
+                              branchCode:
+                                type: string
+                                maxLength: 4
+                                pattern: '\d{8}|^NA$'
+                                description: |
+                                  Código da Agência detentora da conta
+                                example: '6272'
+                              number:
+                                type: string
+                                maxLength: 8
+                                pattern: '\d{8}|^NA$'
+                                description: |
+                                  Número da conta
+                                example: '24550'
+                              checkDigit:
+                                type: string
+                                maxLength: 1
+                                pattern: '\d{8}|^NA$'
+                                description: |
+                                  Dígito da conta
+                                example: '4'
+                              brandName:
+                                type: string
+                                maxLength: 80
+                                pattern: '\d{8}|^NA$'
+                                description: |
+                                  'Nome da Marca reportada pelo participante do Open Banking. O conceito a que se refere a 'marca' é em essência uma promessa da empresa em fornecer uma série específica de atributos, benefícios e serviços uniformes aos clientes'
+                                example: Organização A
+                              companyCnpj:
+                                type: string
+                                maxLength: 14
+                                pattern: '\d{14}|^NA$'
+                                description: |
+                                  'Número completo do CNPJ da instituição responsável pelo Cadastro - o CNPJ corresponde ao número de inscrição no Cadastro de Pessoa Jurídica. Deve-se ter apenas os números do CNPJ, sem máscara'
+                                example: '21128159000166'
+                              requestDateTime:
+                                type: string
+                                maxLength: 20
+                                pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])T(?:[01]\d|2[0123]):(?:[012345]\d):(?:[012345]\d)Z$'
+                                example: '2020-07-21T08:30:00Z'
+                                description: 'Data e hora da consulta, conforme especificação RFC-3339, formato UTC.'
+                              currency:
+                                $ref: '#/paths/~1balances/get/responses/200/content/application~1json/schema/properties/data/properties/account/properties/balances/properties/currency'
+                              balances:
+                                type: array
+                                items:
                                   type: object
                                   required:
-                                    - overdraftLimits
+                                    - type
+                                    - amount
                                   properties:
-                                    overdraftLimits:
-                                      type: array
-                                      items:
-                                        type: object
-                                        description: Objeto que define um Limite referente ao valor das operações de crédito (cheque especial e Adiantamento a Depositantes) vinculadas à conta de depósito à vista ou conta corrente
-                                        required:
-                                          - requestDateTime
-                                          - updateDateTime
-                                          - type
-                                          - amount
-                                          - currency
-                                        properties:
-                                          requestDateTime:
-                                            allOf:
-                                              - $ref: '#/paths/~1transactions/get/responses/200/content/application~1json/schema/properties/data/properties/brand/properties/companies/items/properties/accounts/properties/transactions/properties/updateDateTime/allOf/0'
-                                            description: 'Data e hora da consulta, conforme especificação RFC-3339, formato UTC.'
-                                          updateDateTime:
-                                            allOf:
-                                              - $ref: '#/paths/~1transactions/get/responses/200/content/application~1json/schema/properties/data/properties/brand/properties/companies/items/properties/accounts/properties/transactions/properties/updateDateTime/allOf/0'
-                                            description: 'Data e hora da atualização, conforme especificação RFC-3339.'
-                                          type:
-                                            type: string
-                                            enum:
-                                              - VALOR_UTILIZADO
-                                              - VALOR_DISPONIVEL
-                                              - SALDO_DESCOBERTO
-                                            description: |
-                                              Tipo de Transação relativa ao saldo do limite  informado: (vide Enum)
-                                              valor utilizado do limite do cheque especial
-                                              valor disponível do limite do cheque especial
-                                              saldo a descoberto em conta de depósito a vista (relativo ao adiantamento a depositante 
-                                            example: VALOR_UTILIZADO
-                                          amount:
-                                            type: number
-                                            nullable: true
-                                            description: Valor da transação. Expressa em valor monetário com 2 casas decimais. A opção saldo a descoberto é expressa em valor negativo.
-                                          currency:
-                                            $ref: '#/paths/~1balances/get/responses/200/content/application~1json/schema/properties/data/properties/brand/properties/companies/items/properties/accounts/properties/balances/items/properties/currency'
-                            minItems: 1
-                            description: Companies traz uma lista de todas as instituições da Marca.
+                                    type:
+                                      type: string
+                                      enum:
+                                        - VALOR_UTILIZADO
+                                        - VALOR_DISPONIVEL
+                                        - SALDO_DESCOBERTO
+                                      description: |
+                                        Tipo de Transação relativa ao saldo do limite  informado: (vide Enum)
+                                        valor utilizado do limite do cheque especial
+                                        valor disponível do limite do cheque especial
+                                        saldo a descoberto em conta de depósito a vista (relativo ao adiantamento a depositante 
+                                      example: VALOR_UTILIZADO
+                                    amount:
+                                      type: number
+                                      nullable: true
+                                      description: Valor do saldo. Expressa em valor monetário com 2 casas decimais.
+                                      example: 500
+                                minItems: 1
+                                description: Lista dos valores referentes ao Limite de Cheque especial e ao adiantamento a depositante
                   links:
                     $ref: '#/paths/~1balances/get/responses/200/content/application~1json/schema/properties/links'
                   meta:
