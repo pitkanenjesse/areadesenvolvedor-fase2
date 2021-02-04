@@ -1165,6 +1165,7 @@ components:
         - identification
       properties:
         identification:
+          description: 'Conjunto dos atributos que identificam Contas de: depósito à vista, poupança e de pagamento pré-paga'
           $ref: '#/components/schemas/Identification'
     AccountsIdentificationBrand:
       type: object
@@ -1205,6 +1206,7 @@ components:
           maxLength: 14
           example: '50685362000135'
         accounts:
+          description: 'Conjunto de informações  das Contas de: depósito à vista, poupança e de pagamento pré-paga'
           $ref: '#/components/schemas/AccountsIdentification'
     AccountsIncomeRate:
       type: object
@@ -4458,12 +4460,17 @@ components:
         - subtype
       properties:
         requestDateTime:
-          allOf:
-            - $ref: '#/components/schemas/Balances/properties/updateDateTime/allOf/0'
+          allOf: null
+          type: string
+          maxLength: 20
+          pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])T(?:[01]\d|2[0123]):(?:[012345]\d):(?:[012345]\d)Z$'
+          example: '2020-07-21T08:30:00Z'
           description: 'Data e hora da consulta, conforme especificação RFC-3339, formato UTC.'
         updateDateTime:
-          allOf:
-            - $ref: '#/components/schemas/Balances/properties/updateDateTime/allOf/0'
+          type: string
+          maxLength: 20
+          pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])T(?:[01]\d|2[0123]):(?:[012345]\d):(?:[012345]\d)Z$'
+          example: '2020-07-21T08:30:00Z'
           description: 'Data e hora da atualização, conforme especificação RFC-3339.'
         number:
           type: string
@@ -4471,18 +4478,21 @@ components:
           pattern: '\d{8}|^NA$'
           description: |
             Número da conta
+          example: '24550'
         digitNumber:
           type: string
           maxLength: 1
           pattern: '\d{8}|^NA$'
           description: |
             Número do dígito da conta
+          example: '4'
         branchCode:
           type: string
           maxLength: 4
           pattern: '\d{8}|^NA$'
           description: |
             Código da Agência detentora da conta
+          example: '6272'
         ispbCode:
           type: string
           maxLength: 8
@@ -4490,6 +4500,7 @@ components:
           description: |
             Código da Instituição financeira. 
             ISPB: Identificador do participante junto ao Banco Central para o Sistema de Pagamentos Brasileiro – código identificador atribuído a todos os participantes do Sistema de Transferência de Reservas (STR) do Banco Central do Brasil
+          example: '60701190'
         type:
           $ref: '#/components/schemas/AccountType/properties/type'
         subtype:
@@ -6310,12 +6321,14 @@ components:
                         maxLength: 14
                         example: '50685362000135'
                       accounts:
+                        description: 'Conjunto de informações  das Contas de: depósito à vista, poupança e de pagamento pré-paga'
                         type: object
                         required:
                           - balances
                         properties:
                           balances:
                             type: array
+                            description: 'Traz as informações relativas aos saldos para  Contas de: depósito à vista, poupança e de pagamento pré-paga'
                             items:
                               $ref: '#/components/schemas/Balances'
                   minItems: 1
