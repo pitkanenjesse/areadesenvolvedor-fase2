@@ -805,6 +805,11 @@ paths:
         Esta especificação inclui todos os itens relevantes que permitam a ação e o efeito de identificar de forma única a pessoa natural através de seus dados cadastrais.
 
 
+        ### Visão de alto de nível das estruturas de dados
+
+        <img class="lazy" src="images/loading.gif" data-src="images/tld/customers/TLD_Personal_Customers_Identification_v2.png"/>
+
+
         ### Dicionário de dados
 
         <a href="dictionary/personal_customers_identification.csv" target="_blank">Fazer download do dicionário de dados</a>
@@ -839,6 +844,11 @@ paths:
         Obtém dados relativos à identificação pessoa jurídica
 
         Esta especificação inclui todos os itens relevantes que permitam a ação e o efeito de identificar de forma única a pessoa jurídica através de seus dados cadastrais.
+
+
+        ### Visão de alto de nível das estruturas de dados
+
+        <img class="lazy" src="images/loading.gif" data-src="images/tld/customers/TLD_Business_Customers_Identification_v2.png"/>
 
 
         ### Dicionário de dados
@@ -877,6 +887,11 @@ paths:
         Esta especificação inclui todos os itens relevantes que permitam as instituições apreciar, avaliar, caracterizar e classificar o cliente com a finalidade de conhecer o seu perfil de risco e sua capacidade econômico-financeira.
 
 
+        ### Visão de alto de nível das estruturas de dados
+
+        <img class="lazy" src="images/loading.gif" data-src="images/tld/customers/TLD_Personal_Customers_Qualification_v2.png"/>
+
+
         ### Dicionário de dados
 
         <a href="dictionary/personal_customers_qualification.csv" target="_blank">Fazer download do dicionário de dados</a>
@@ -913,6 +928,11 @@ paths:
         Esta especificação inclui todos os itens relevantes que permitam as instituições apreciar, avaliar, caracterizar e classificar o cliente com a finalidade de conhecer o seu perfil de risco e sua capacidade econômico-financeira.
 
 
+        ### Visão de alto de nível das estruturas de dados
+
+        <img class="lazy" src="images/loading.gif" data-src="images/tld/customers/TLD_Business_Customers_Qualification_v2.png"/>
+
+
         ### Dicionário de dados
 
         <a href="dictionary/business_customers_qualification.csv" target="_blank">Fazer download do dicionário de dados</a>
@@ -932,6 +952,84 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ResponseBusinessCustomersQualification'
+  /customers/v1/personal-financial-relation:
+    get:
+      tags:
+        - API - Customers
+      summary: Relacionamento Pessoa Natural
+      description: |
+        |Versão|
+        |:-----|
+        |1     |
+
+        ### Visão Geral
+
+        Obtém dados relativos ao processo de relacionamento pessoa natural
+
+
+        ### Visão de alto de nível das estruturas de dados
+
+        <img class="lazy" src="images/loading.gif" data-src="images/tld/customers/TLD_Personal_Customers_Financial_Relation_v2.png"/>
+
+
+        ### Dicionário de dados
+
+        <a href="dictionary/personal_customers_financial_relation.csv" target="_blank">Fazer download do dicionário de dados</a>
+
+
+        ### Especificação em OAS 3.0
+
+        <a href="swagger/swagger_customers_apis.yaml">Download da Especificação (OAS 3.0)</a>
+      operationId: getPersonalFinancialRelation
+      parameters:
+        - $ref: '#/components/parameters/page'
+        - $ref: '#/components/parameters/pageSize'
+      responses:
+        '200':
+          description: Dados cadastrais sobre relacionamento pessoa natural obtidos com sucesso.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponsePersonalCustomersFinancialRelation'
+  /customers/v1/business-financial-relation:
+    get:
+      tags:
+        - API - Customers
+      summary: Relacionamento Pessoa Jurídica
+      description: |
+        |Versão|
+        |:-----|
+        |1     |
+
+        ### Visão Geral
+
+        Obtém dados relativos ao processo de relacionamento pessoa jurídica
+
+
+        ### Visão de alto de nível das estruturas de dados
+
+        <img class="lazy" src="images/loading.gif" data-src="images/tld/customers/TLD_Business_Customers_Financial_Relation_v2.png"/>
+
+
+        ### Dicionário de dados
+
+        <a href="dictionary/business_customers_financial_relation.csv" target="_blank">Fazer download do dicionário de dados</a>
+
+
+        ### Especificação em OAS 3.0
+
+        <a href="swagger/swagger_customers_apis.yaml">Download da Especificação (OAS 3.0)</a>
+      operationId: getBusinessFinancialRelation
+      parameters:
+        - $ref: '#/components/parameters/page'
+        - $ref: '#/components/parameters/pageSize'
+      responses:
+        '200':
+          description: Dados cadastrais sobre relacionamento pessoa jurídica obtidos com sucesso.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseBusinessCustomersFinancialRelation'
   /accounts/v1/identification:
     get:
       tags:
@@ -2377,41 +2475,56 @@ components:
           items:
             $ref: '#/components/schemas/BusinessCreditCard'
           minItems: 1
-    BusinessCustomers:
+    BusinessFinancialRelationBrand:
+      type: object
+      description: Objeto que define a Organização controladora do grupo de instituições financeiras
+      required:
+        - name
+        - companies
+      properties:
+        name:
+          type: string
+          pattern: \w*\W*
+          maxLength: 80
+          description: 'Nome da Marca reportada pelo participante do Open Banking. O conceito a que se refere a ''marca'' é em essência uma promessa da empresa em fornecer uma série específica de atributos, benefícios e serviços uniformes aos clientes'
+          example: Organização A
+        companies:
+          type: array
+          items:
+            $ref: '#/components/schemas/BusinessFinancialRelationCompany'
+          minItems: 1
+          description: Companies traz uma lista de todas as instituições da Marca
+    BusinessFinancialRelationCompany:
       type: object
       required:
-        - companies
-        - financialRelation
+        - name
+        - cnpjNumber
+        - businessCustomers
       properties:
-        companies:
-          required:
-            - name
-            - cnpjNumber
-            - financialRelation
-          type: object
-          description: Lista de instituições pertencentes à marca
-          properties:
-            name:
-              type: string
-              maxLength: 80
-              pattern: \w*\W*
-              description: Nome da marca selecionada pela Organização
-              example: Organização A
-            cnpjNumber:
-              type: string
-              maxLength: 14
-              pattern: '\d{14}|^NA$'
-              description: Número completo do CNPJ da instituição responsável pelo Cadastro - o CNPJ corresponde ao número de inscrição no Cadastro de Pessoa Jurídica.
-              example: 00.000.000/0001-00
-            businessCustomer:
-              type: array
-              items:
-                type: object
-                required:
-                  - financialRelation
-                properties:
-                  financialRelation:
-                    $ref: '#/components/schemas/FinantialRelation'
+        name:
+          type: string
+          maxLength: 80
+          pattern: \w*\W*
+          description: Nome da marca selecionada pela Organização
+          example: Organização A
+        cnpjNumber:
+          type: string
+          maxLength: 14
+          pattern: '\d{14}|^NA$'
+          description: Número completo do CNPJ da instituição responsável pelo Cadastro - o CNPJ corresponde ao número de inscrição no Cadastro de Pessoa Jurídica.
+          example: '00000000000100'
+        businessCustomers:
+          $ref: '#/components/schemas/BusinessFinancialRelationCustomers'
+    BusinessFinancialRelationCustomers:
+      type: array
+      description: 'Conjunto de informações relativas ao processo de Relacionamento. Considera-se relacionamento as informações que permitam conhecer desde quando a pessoa consultada é cliente da instituição, bem como um indicador dos produtos e serviços que ela consome atualmente'
+      items:
+        type: object
+        required:
+          - financialRelation
+        properties:
+          financialRelation:
+            $ref: '#/components/schemas/FinancialRelation'
     BusinessFinancing:
       type: object
       required:
@@ -2570,7 +2683,7 @@ components:
         incorporationDate:
           type: string
           pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$'
-          x-cds-type: DateString
+          format: DateString
           maxLength: 10
           description: 'Data de constituição da empresa, conforme especificação RFC-3339.'
           example: '2014-03-19'
@@ -2635,15 +2748,28 @@ components:
       type: object
       description: Objeto que agrupa informações relativas ao patrimônio da empresa
       required:
+        - amount
         - date
-      allOf:
-        - $ref: '#/components/schemas/InformedPatrimony'
       properties:
+        amount:
+          type: string
+          description: |
+            Valor do patrimônio informado. Expresso em valor monetário com 2 casas decimais.
+            "Patrimônio é o conjunto de bens vinculado a uma pessoa ou a uma entidade".
+          maxLength: 12
+          pattern: '^((\d{1,9}\.\d{2}){1}|NA)$'
+        currency:
+          type: string
+          pattern: '^(\w{3}){1}$'
+          maxLength: 3
+          format: CurrencyString
+          description: 'Moeda referente ao valor do patrimônio, segundo modelo ISO-4217.'
+          example: BRL
         date:
           type: string
           pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$'
           maxLength: 10
-          x-cds-type: DateString
+          format: DateString
           description: 'Data do Patrimônio, conforme especificação RFC-3339.'
           example: '2014-03-19'
     BusinessInvoiceFinancings:
@@ -2910,7 +3036,7 @@ components:
         expirationDate:
           type: string
           pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$'
-          x-cds-type: DateString
+          format: DateString
           maxLength: 10
           description: 'Data de validade do documento informado, conforme especificação RFC-3339.'
           example: '2014-03-19'
@@ -4296,7 +4422,7 @@ components:
           description: 'Nome social da pessoa natural, se houver. (aquele pelo qual travestis e transexuais se reconhecem, bem como são identificados por sua comunidade e em seu meio social, conforme Decreto Nº 51.180, de 14 de janeiro de 2010)'
           maxLength: 70
           pattern: \w*\W*
-    FinantialRelation:
+    FinancialRelation:
       type: object
       description: 'Objeto que reúne as informações relativas ao processo de Relacionamento. Considera-se relacionamento as informações que permitam conhecer desde quando a pessoa consultada é cliente da instituição, bem como um indicador dos produtos e serviços que ela consome atualmente e seus representantes'
       required:
@@ -4310,20 +4436,20 @@ components:
           type: string
           pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])T(?:[01]\d|2[0123]):(?:[012345]\d):(?:[012345]\d)Z$'
           description: 'Data e hora da consulta, conforme especificação RFC-3339, formato UTC.'
-          maxLenght: 20
+          maxLength: 20
           example: '2020-07-21T08:30:00Z'
         updateDateTime:
           type: string
           pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])T(?:[01]\d|2[0123]):(?:[012345]\d):(?:[012345]\d)Z$'
           description: 'Data e hora da atualização do bloco de Relacionamento, conforme especificação RFC-3339, formato UTC.'
-          maxLenght: 20
+          maxLength: 20
           example: '2020-07-21T08:30:00Z'
         startDate:
           type: string
           pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$'
           description: Data de início de relacionamento com a Instituição Financeira. Deve trazer o menor valor entre a informação reportada ao BACEN pelo DOC 3040 e CCS.
-          example: '2020-07-21T08:30:00Z'
-          maxLenght: 10
+          example: '2020-07-21'
+          maxLength: 10
         productsServices:
           type: array
           items:
@@ -4343,20 +4469,20 @@ components:
                     $ref: '#/components/schemas/EnumProcuratorsType/properties/procurators'
                   cpfNumber:
                     type: string
-                    pattern: '\d{11}$'
+                    pattern: '^\d{11}$'
                     description: 'Número completo do CPF. O CPF é o Cadastro de Pessoa natural. Ele é um documento feito pela Receita Federal e serve para identificar os contribuintes. O CPF é uma numeração com 11 dígitos, que só mudam por decisão judicial. O documento é emitido pela receita federal'
-                    example: 000.000.000-00
-                    maxLenght: 11
+                    example: '00000000000'
+                    maxLength: 11
                   civilName:
                     type: string
                     pattern: \w*\W*
                     description: 'Nome civil completo da pessoa natural. (Direito fundamental da pessoa, o nome civil é aquele atribuído à pessoa natural desde o registro de seu nascimento, com o qual será identificada por toda a sua vida, bem como após a sua morte)'
-                    maxLenght: 70
+                    maxLength: 70
                   socialName:
                     type: string
                     pattern: \w*\W*
                     description: 'Nome social da pessoa natural, se houver. (aquele pelo qual travestis e transexuais se reconhecem, bem como são identificados por sua comunidade e em seu meio social, conforme Decreto Nº 51.180, de 14 de janeiro de 2010)'
-                    maxLenght: 70
+                    maxLength: 70
                 description: Lista dos representantes. De preenchimento obrigatório se houver representante.
             minItems: 1
             maxItems: 14
@@ -4583,34 +4709,16 @@ components:
           type: string
           pattern: '^(\w{3}){1}$'
           maxLength: 3
-          x-cds-type: CurrencyString
+          format: CurrencyString
           description: 'Moeda referente ao valor da renda, segundo modelo ISO-4217.'
           example: BRL
         date:
           type: string
           pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$'
           maxLength: 10
-          x-cds-type: DateString
+          format: DateString
           description: 'Data da renda, conforme especificação RFC-3339.'
           example: '2014-03-19'
-    InformedPatrimony:
-      type: object
-      description: Objeto que agrupa as informações referentes ao patrimônio informado
-      properties:
-        amount:
-          type: string
-          description: |
-            Valor do patrimônio informado. Expresso em valor monetário com 2 casas decimais.
-            "Patrimônio é o conjunto de bens vinculado a uma pessoa ou a uma entidade".
-          maxLength: 12
-          pattern: '^((\d{1,9}\.\d{2}){1}|NA)$'
-        currency:
-          type: string
-          pattern: '^(\w{3}){1}$'
-          maxLength: 3
-          x-cds-type: CurrencyString
-          description: 'Moeda referente ao valor do patrimônio, segundo modelo ISO-4217.'
-          example: BRL
     InformedRevenue:
       type: object
       description: Objeto que agrupa informações relativas ao faturamento da empresa informado
@@ -4631,7 +4739,7 @@ components:
           type: string
           pattern: '^(\w{3}){1}$'
           maxLength: 3
-          x-cds-type: CurrencyString
+          format: CurrencyString
           description: 'Moeda referente ao valor da faturamento, segundo modelo ISO-4217.'
           example: BRL
         year:
@@ -5056,7 +5164,7 @@ components:
         expirationDate:
           type: string
           pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$'
-          x-cds-type: DateString
+          format: DateString
           maxLength: 10
           description: 'Data de validade do documento informado, conforme especificação RFC-3339.'
           example: '2014-03-19'
@@ -5101,7 +5209,7 @@ components:
           type: string
           maxLength: 10
           pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$|^NA$'
-          x-cds-type: DateString
+          format: DateString
           description: 'Data de início da participação, conforme especificação RFC-3339.'
         shareholding:
           type: string
@@ -5130,7 +5238,7 @@ components:
         documentExpirationDate:
           type: string
           pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$'
-          x-cds-type: DateString
+          format: DateString
           maxLength: 10
           description: 'Data de validade do documento informado, conforme especificação RFC-3339.'
           example: '2014-03-19'
@@ -5422,41 +5530,54 @@ components:
           items:
             $ref: '#/components/schemas/PersonalCreditCard'
           minItems: 1
-    PersonalCustomer:
+    PersonalFinancialRelationBrand:
+      type: object
+      description: Objeto que define a Organização controladora do grupo de instituições financeiras
+      required:
+        - name
+        - companies
+      properties:
+        name:
+          type: string
+          pattern: \w*\W*
+          maxLength: 80
+          description: 'Nome da Marca reportada pelo participante do Open Banking. O conceito a que se refere a ''marca'' é em essência uma promessa da empresa em fornecer uma série específica de atributos, benefícios e serviços uniformes aos clientes'
+          example: Organização A
+        companies:
+          type: array
+          items:
+            $ref: '#/components/schemas/PersonalFinancialRelationCompany'
+          minItems: 1
+          description: Companies traz uma lista de todas as instituições da Marca
+    PersonalFinancialRelationCompany:
       type: object
       required:
-        - companies
+        - name
+        - cnpjNumber
+        - personalCustomers
+      properties:
+        name:
+          type: string
+          maxLength: 80
+          pattern: \w*\W*
+          description: Nome da marca selecionada pela Organização
+          example: Organização A
+        cnpjNumber:
+          type: string
+          maxLength: 14
+          pattern: '\d{14}|^NA$'
+          description: Número completo do CNPJ da instituição responsável pelo Cadastro - o CNPJ corresponde ao número de inscrição no Cadastro de Pessoa Jurídica.
+          example: '00000000000100'
+        personalCustomers:
+          $ref: '#/components/schemas/PersonalFinancialRelationCustomers'
+    PersonalFinancialRelationCustomers:
+      type: object
+      description: Conjunto de informações Cadastrais do Cliente Pessoa natural
+      required:
         - financialRelation
       properties:
-        companies:
-          required:
-            - name
-            - cnpjNumber
-            - financialRelation
-          type: object
-          description: Lista de instituições pertencentes à marca
-          properties:
-            name:
-              type: string
-              maxLength: 80
-              pattern: \w*\W*
-              description: Nome da marca selecionada pela Organização
-              example: Organização A
-            cnpjNumber:
-              type: string
-              maxLength: 14
-              pattern: '\d{14}|^NA$'
-              description: Número completo do CNPJ da instituição responsável pelo Cadastro - o CNPJ corresponde ao número de inscrição no Cadastro de Pessoa Jurídica.
-              example: 00.000.000/0001-00
-            personalCustomer:
-              type: array
-              items:
-                type: object
-                required:
-                  - financialRelation
-                properties:
-                  financialRelation:
-                    $ref: '#/components/schemas/FinantialRelation'
+        financialRelation:
+          $ref: '#/components/schemas/FinancialRelation'
     PersonalFinancing:
       type: object
       required:
@@ -5587,14 +5708,14 @@ components:
           type: string
           pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])T(?:[01]\d|2[0123]):(?:[012345]\d):(?:[012345]\d)Z$'
           description: 'Data e hora da consulta, conforme especificação RFC-3339, formato UTC.'
-          x-cds-type: DateTimeString
+          format: DateTimeString
           maxLength: 20
           example: '2020-07-21T08:30:00Z'
         updateDateTime:
           type: string
           pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])T(?:[01]\d|2[0123]):(?:[012345]\d):(?:[012345]\d)Z$'
           description: 'Data e hora da atualização do bloco, conforme especificação RFC-3339'
-          x-cds-type: DateTimeString
+          format: DateTimeString
           maxLength: 20
           example: '2020-07-21T08:30:00Z'
         cpfNumber:
@@ -5619,7 +5740,7 @@ components:
           pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$'
           maxLength: 10
           description: 'Data vigência do Passaporte, conforme especificação RFC-3339.'
-          x-cds-type: DateString
+          format: DateString
           example: '2014-03-19'
         otherDocuments:
           type: array
@@ -5644,7 +5765,7 @@ components:
         birthDate:
           type: string
           pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$'
-          x-cds-type: DateString
+          format: DateString
           maxLength: 10
           description: 'Data de nascimento, conforme especificação RFC-3339'
           example: '2014-03-19'
@@ -5711,10 +5832,22 @@ components:
       type: object
       description: Conjunto de informações referentes ao patrimônio informado
       required:
-        - year
-      allOf:
-        - $ref: '#/components/schemas/InformedPatrimony'
+        - amount
       properties:
+        amount:
+          type: string
+          description: |
+            Valor do patrimônio informado. Expresso em valor monetário com 2 casas decimais.
+            "Patrimônio é o conjunto de bens vinculado a uma pessoa ou a uma entidade".
+          maxLength: 12
+          pattern: '^((\d{1,9}\.\d{2}){1}|NA)$'
+        currency:
+          type: string
+          pattern: '^(\w{3}){1}$'
+          maxLength: 3
+          format: CurrencyString
+          description: 'Moeda referente ao valor do patrimônio, segundo modelo ISO-4217.'
+          example: BRL
         year:
           type: string
           pattern: '^\d{4}$'
@@ -5996,7 +6129,7 @@ components:
         expirationDate:
           type: string
           pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$'
-          x-cds-type: DateString
+          format: DateString
           maxLength: 10
           description: 'Data de validade do documento informado, conforme especificação RFC-3339.'
           example: '2014-03-19'
@@ -7120,6 +7253,24 @@ components:
         meta:
           totalRecords: 1
           totalPages: 1
+    ResponseBusinessCustomersFinancialRelation:
+      type: object
+      required:
+        - data
+        - links
+        - meta
+      properties:
+        data:
+          type: object
+          required:
+            - brand
+          properties:
+            brand:
+              $ref: '#/components/schemas/BusinessFinancialRelationBrand'
+        links:
+          $ref: '#/components/schemas/Links'
+        meta:
+          $ref: '#/components/schemas/Meta'
     ResponseBusinessCustomersIdentification:
       type: object
       required:
@@ -8918,6 +9069,24 @@ components:
         meta:
           totalRecords: 1
           totalPages: 1
+    ResponsePersonalCustomersFinancialRelation:
+      type: object
+      required:
+        - data
+        - links
+        - meta
+      properties:
+        data:
+          type: object
+          required:
+            - brand
+          properties:
+            brand:
+              $ref: '#/components/schemas/PersonalFinancialRelationBrand'
+        links:
+          $ref: '#/components/schemas/Links'
+        meta:
+          $ref: '#/components/schemas/Meta'
     ResponsePersonalCustomersIdentification:
       type: object
       required:

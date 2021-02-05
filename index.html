@@ -436,6 +436,12 @@
                   <li>
                     <a href="#apis-diretorio-e-service-desk-qualificacao-pessoa-juridica" class="toc-h2 toc-link" data-title="Qualificação Pessoa Jurídica">Qualificação Pessoa Jurídica</a>
                   </li>
+                  <li>
+                    <a href="#apis-diretorio-e-service-desk-relacionamento-pessoa-natural" class="toc-h2 toc-link" data-title="Relacionamento Pessoa Natural">Relacionamento Pessoa Natural</a>
+                  </li>
+                  <li>
+                    <a href="#apis-diretorio-e-service-desk-relacionamento-pessoa-juridica" class="toc-h2 toc-link" data-title="Relacionamento Pessoa Jurídica">Relacionamento Pessoa Jurídica</a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -579,7 +585,13 @@
                     <a href="#tocS_BusinessCreditCardCompany" class="toc-h2 toc-link" data-title="BusinessCreditCardCompany">BusinessCreditCardCompany</a>
                   </li>
                   <li>
-                    <a href="#tocS_BusinessCustomers" class="toc-h2 toc-link" data-title="BusinessCustomers">BusinessCustomers</a>
+                    <a href="#tocS_BusinessFinancialRelationBrand" class="toc-h2 toc-link" data-title="BusinessFinancialRelationBrand">BusinessFinancialRelationBrand</a>
+                  </li>
+                  <li>
+                    <a href="#tocS_BusinessFinancialRelationCompany" class="toc-h2 toc-link" data-title="BusinessFinancialRelationCompany">BusinessFinancialRelationCompany</a>
+                  </li>
+                  <li>
+                    <a href="#tocS_BusinessFinancialRelationCustomers" class="toc-h2 toc-link" data-title="BusinessFinancialRelationCustomers">BusinessFinancialRelationCustomers</a>
                   </li>
                   <li>
                     <a href="#tocS_BusinessFinancing" class="toc-h2 toc-link" data-title="BusinessFinancing">BusinessFinancing</a>
@@ -810,7 +822,7 @@
                     <a href="#tocS_Filiation" class="toc-h2 toc-link" data-title="Filiation">Filiation</a>
                   </li>
                   <li>
-                    <a href="#tocS_FinantialRelation" class="toc-h2 toc-link" data-title="FinantialRelation">FinantialRelation</a>
+                    <a href="#tocS_FinancialRelation" class="toc-h2 toc-link" data-title="FinancialRelation">FinancialRelation</a>
                   </li>
                   <li>
                     <a href="#tocS_FinancingInterestRate" class="toc-h2 toc-link" data-title="FinancingInterestRate">FinancingInterestRate</a>
@@ -829,9 +841,6 @@
                   </li>
                   <li>
                     <a href="#tocS_InformedIncome" class="toc-h2 toc-link" data-title="InformedIncome">InformedIncome</a>
-                  </li>
-                  <li>
-                    <a href="#tocS_InformedPatrimony" class="toc-h2 toc-link" data-title="InformedPatrimony">InformedPatrimony</a>
                   </li>
                   <li>
                     <a href="#tocS_InformedRevenue" class="toc-h2 toc-link" data-title="InformedRevenue">InformedRevenue</a>
@@ -915,7 +924,13 @@
                     <a href="#tocS_PersonalCreditCardCompany" class="toc-h2 toc-link" data-title="PersonalCreditCardCompany">PersonalCreditCardCompany</a>
                   </li>
                   <li>
-                    <a href="#tocS_PersonalCustomer" class="toc-h2 toc-link" data-title="PersonalCustomer">PersonalCustomer</a>
+                    <a href="#tocS_PersonalFinancialRelationBrand" class="toc-h2 toc-link" data-title="PersonalFinancialRelationBrand">PersonalFinancialRelationBrand</a>
+                  </li>
+                  <li>
+                    <a href="#tocS_PersonalFinancialRelationCompany" class="toc-h2 toc-link" data-title="PersonalFinancialRelationCompany">PersonalFinancialRelationCompany</a>
+                  </li>
+                  <li>
+                    <a href="#tocS_PersonalFinancialRelationCustomers" class="toc-h2 toc-link" data-title="PersonalFinancialRelationCustomers">PersonalFinancialRelationCustomers</a>
                   </li>
                   <li>
                     <a href="#tocS_PersonalFinancing" class="toc-h2 toc-link" data-title="PersonalFinancing">PersonalFinancing</a>
@@ -1056,6 +1071,9 @@
                     <a href="#tocS_ResponseBusinessCreditCard" class="toc-h2 toc-link" data-title="ResponseBusinessCreditCard">ResponseBusinessCreditCard</a>
                   </li>
                   <li>
+                    <a href="#tocS_ResponseBusinessCustomersFinancialRelation" class="toc-h2 toc-link" data-title="ResponseBusinessCustomersFinancialRelation">ResponseBusinessCustomersFinancialRelation</a>
+                  </li>
+                  <li>
                     <a href="#tocS_ResponseBusinessCustomersIdentification" class="toc-h2 toc-link" data-title="ResponseBusinessCustomersIdentification">ResponseBusinessCustomersIdentification</a>
                   </li>
                   <li>
@@ -1090,6 +1108,9 @@
                   </li>
                   <li>
                     <a href="#tocS_ResponsePersonalCreditCard" class="toc-h2 toc-link" data-title="ResponsePersonalCreditCard">ResponsePersonalCreditCard</a>
+                  </li>
+                  <li>
+                    <a href="#tocS_ResponsePersonalCustomersFinancialRelation" class="toc-h2 toc-link" data-title="ResponsePersonalCustomersFinancialRelation">ResponsePersonalCustomersFinancialRelation</a>
                   </li>
                   <li>
                     <a href="#tocS_ResponsePersonalCustomersIdentification" class="toc-h2 toc-link" data-title="ResponsePersonalCustomersIdentification">ResponsePersonalCustomersIdentification</a>
@@ -9820,6 +9841,10 @@ This operation does not require authentication
 
 <p>Esta especificação inclui todos os itens relevantes que permitam a ação e o efeito de identificar de forma única a pessoa natural através de seus dados cadastrais.</p>
 
+<h3 id='apis-diretorio-e-service-desk-identificacao-pessoa-natural-visao-de-alto-de-nivel-das-estruturas-de-dados'>Visão de alto de nível das estruturas de dados</h3>
+
+<p><img class="lazy" src="images/loading-e35b35a4.gif" data-src="images/tld/customers/TLD_Personal_Customers_Identification_v2-f29798cf.png"/></p>
+
 <h3 id='apis-diretorio-e-service-desk-identificacao-pessoa-natural-dicionario-de-dados'>Dicionário de dados</h3>
 
 <p><a href="dictionary/personal_customers_identification.csv" target="_blank">Fazer download do dicionário de dados</a></p>
@@ -10030,6 +10055,10 @@ This operation does not require authentication
 
 <p>Esta especificação inclui todos os itens relevantes que permitam a ação e o efeito de identificar de forma única a pessoa jurídica através de seus dados cadastrais.</p>
 
+<h3 id='apis-diretorio-e-service-desk-identificacao-pessoa-juridica-visao-de-alto-de-nivel-das-estruturas-de-dados'>Visão de alto de nível das estruturas de dados</h3>
+
+<p><img class="lazy" src="images/loading-e35b35a4.gif" data-src="images/tld/customers/TLD_Business_Customers_Identification_v2-214a841f.png"/></p>
+
 <h3 id='apis-diretorio-e-service-desk-identificacao-pessoa-juridica-dicionario-de-dados'>Dicionário de dados</h3>
 
 <p><a href="dictionary/business_customers_identification.csv" target="_blank">Fazer download do dicionário de dados</a></p>
@@ -10230,6 +10259,10 @@ This operation does not require authentication
 
 <p>Esta especificação inclui todos os itens relevantes que permitam as instituições apreciar, avaliar, caracterizar e classificar o cliente com a finalidade de conhecer o seu perfil de risco e sua capacidade econômico-financeira.</p>
 
+<h3 id='apis-diretorio-e-service-desk-qualificacao-pessoa-natural-visao-de-alto-de-nivel-das-estruturas-de-dados'>Visão de alto de nível das estruturas de dados</h3>
+
+<p><img class="lazy" src="images/loading-e35b35a4.gif" data-src="images/tld/customers/TLD_Personal_Customers_Qualification_v2-294b79e8.png"/></p>
+
 <h3 id='apis-diretorio-e-service-desk-qualificacao-pessoa-natural-dicionario-de-dados'>Dicionário de dados</h3>
 
 <p><a href="dictionary/personal_customers_qualification.csv" target="_blank">Fazer download do dicionário de dados</a></p>
@@ -10290,9 +10323,9 @@ This operation does not require authentication
                 </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-03-19"</span><span class="w">
               </span><span class="p">},</span><span class="w">
               </span><span class="nl">"informedPatrimony"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="nl">"year"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014"</span><span class="p">,</span><span class="w">
                 </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="w">
+                </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"year"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014"</span><span class="w">
               </span><span class="p">},</span><span class="w">
               </span><span class="nl">"occupationCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RECEITA_FEDERAL"</span><span class="p">,</span><span class="w">
               </span><span class="nl">"occupationDescription"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
@@ -10383,6 +10416,10 @@ This operation does not require authentication
 
 <p>Esta especificação inclui todos os itens relevantes que permitam as instituições apreciar, avaliar, caracterizar e classificar o cliente com a finalidade de conhecer o seu perfil de risco e sua capacidade econômico-financeira.</p>
 
+<h3 id='apis-diretorio-e-service-desk-qualificacao-pessoa-juridica-visao-de-alto-de-nivel-das-estruturas-de-dados'>Visão de alto de nível das estruturas de dados</h3>
+
+<p><img class="lazy" src="images/loading-e35b35a4.gif" data-src="images/tld/customers/TLD_Business_Customers_Qualification_v2-d0a6a9b7.png"/></p>
+
 <h3 id='apis-diretorio-e-service-desk-qualificacao-pessoa-juridica-dicionario-de-dados'>Dicionário de dados</h3>
 
 <p><a href="dictionary/business_customers_qualification.csv" target="_blank">Fazer download do dicionário de dados</a></p>
@@ -10447,9 +10484,9 @@ This operation does not require authentication
                 </span><span class="nl">"year"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014"</span><span class="w">
               </span><span class="p">},</span><span class="w">
               </span><span class="nl">"informedPatrimony"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-03-19"</span><span class="p">,</span><span class="w">
                 </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="w">
+                </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-03-19"</span><span class="w">
               </span><span class="p">}</span><span class="w">
             </span><span class="p">}</span><span class="w">
           </span><span class="p">}</span><span class="w">
@@ -10486,6 +10523,313 @@ This operation does not require authentication
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.1">OK</a></td>
 <td>Dados cadastrais sobre qualificação pessoa jurídica obtidos com sucesso.</td>
 <td><a href="#schemaresponsebusinesscustomersqualification">ResponseBusinessCustomersQualification</a></td>
+</tr>
+</tbody></table>
+
+<aside class="success">
+This operation does not require authentication
+</aside>
+
+<h2 id='apis-diretorio-e-service-desk-relacionamento-pessoa-natural'>Relacionamento Pessoa Natural</h2>
+
+<p><a id="opIdgetPersonalFinancialRelation"></a></p>
+
+<blockquote>
+<p>Exemplo de código</p>
+</blockquote>
+
+<div class="highlight"><pre class="highlight javascript tab-javascript"><code>
+<span class="kd">const</span> <span class="nx">headers</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="dl">'</span><span class="s1">Accept</span><span class="dl">'</span><span class="p">:</span><span class="dl">'</span><span class="s1">application/json</span><span class="dl">'</span>
+<span class="p">};</span>
+
+<span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">http://api.banco.com.br/open-banking/customers/v1/personal-financial-relation</span><span class="dl">'</span><span class="p">,</span>
+<span class="p">{</span>
+  <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">GET</span><span class="dl">'</span><span class="p">,</span>
+
+  <span class="na">headers</span><span class="p">:</span> <span class="nx">headers</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
+<span class="p">}).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">body</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">body</span><span class="p">);</span>
+<span class="p">});</span>
+
+</code></pre></div>
+
+<p><code>GET /customers/v1/personal-financial-relation</code></p>
+
+<table><thead>
+<tr>
+<th style="text-align: left">Versão</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">1</td>
+</tr>
+</tbody></table>
+
+<h3 id='apis-diretorio-e-service-desk-relacionamento-pessoa-natural-visao-geral'>Visão Geral</h3>
+
+<p>Obtém dados relativos ao processo de relacionamento pessoa natural</p>
+
+<h3 id='apis-diretorio-e-service-desk-relacionamento-pessoa-natural-visao-de-alto-de-nivel-das-estruturas-de-dados'>Visão de alto de nível das estruturas de dados</h3>
+
+<p><img class="lazy" src="images/loading-e35b35a4.gif" data-src="images/tld/customers/TLD_Personal_Customers_Financial_Relation_v2-be21d6a8.png"/></p>
+
+<h3 id='apis-diretorio-e-service-desk-relacionamento-pessoa-natural-dicionario-de-dados'>Dicionário de dados</h3>
+
+<p><a href="dictionary/personal_customers_financial_relation.csv" target="_blank">Fazer download do dicionário de dados</a></p>
+
+<h3 id='apis-diretorio-e-service-desk-relacionamento-pessoa-natural-especificacao-em-oas-3-0'>Especificação em OAS 3.0</h3>
+
+<p><a href="swagger/swagger_customers_apis.yaml">Download da Especificação (OAS 3.0)</a></p>
+
+<h3 id="relacionamento-pessoa-natural-parameters">Parâmetros</h3>
+
+<table><thead>
+<tr>
+<th>Nome</th>
+<th>Origem</th>
+<th>Tipo</th>
+<th>Obrigatório</th>
+<th>Descrição</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>page</td>
+<td>query</td>
+<td>integer</td>
+<td>false</td>
+<td>Número da página que está sendo requisitada (o valor da primeira página é 1).</td>
+</tr>
+<tr>
+<td>page-size</td>
+<td>query</td>
+<td>integer</td>
+<td>false</td>
+<td>Quantidade total de registros por páginas.</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>O comando acima retorna uma estrutura json como essa:</p>
+
+<p>200 Response</p>
+</blockquote>
+
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"brand"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Organização A"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"companies"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Organização A"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"cnpjNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00000000000100"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"personalCustomers"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"financialRelation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"updateDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"startDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"productsServices"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                  </span><span class="nl">"productsServices"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SEGURO"</span><span class="w">
+                  </span><span class="p">},</span><span class="w">
+                  </span><span class="nl">"procurators"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PROCURADOR"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"cpfNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00000000000"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"civilName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"socialName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+                  </span><span class="p">}</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+              </span><span class="p">]</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"self"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.banco.com.br/open-banking/&lt;api&gt;/v1/&lt;resource&gt;"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"first"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.banco.com.br/open-banking/&lt;api&gt;/v1/&lt;resource&gt;"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"prev"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"next"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"last"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.banco.com.br/open-banking/&lt;api&gt;/v1/&lt;resource&gt;"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"totalRecords"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"totalPages"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+
+<h3 id="relacionamento-pessoa-natural-responses">Resposta</h3>
+
+<table><thead>
+<tr>
+<th>Status</th>
+<th>Significado</th>
+<th>Descrição</th>
+<th>Schema</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>200</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.1">OK</a></td>
+<td>Dados cadastrais sobre relacionamento pessoa natural obtidos com sucesso.</td>
+<td><a href="#schemaresponsepersonalcustomersfinancialrelation">ResponsePersonalCustomersFinancialRelation</a></td>
+</tr>
+</tbody></table>
+
+<aside class="success">
+This operation does not require authentication
+</aside>
+
+<h2 id='apis-diretorio-e-service-desk-relacionamento-pessoa-juridica'>Relacionamento Pessoa Jurídica</h2>
+
+<p><a id="opIdgetBusinessFinancialRelation"></a></p>
+
+<blockquote>
+<p>Exemplo de código</p>
+</blockquote>
+
+<div class="highlight"><pre class="highlight javascript tab-javascript"><code>
+<span class="kd">const</span> <span class="nx">headers</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="dl">'</span><span class="s1">Accept</span><span class="dl">'</span><span class="p">:</span><span class="dl">'</span><span class="s1">application/json</span><span class="dl">'</span>
+<span class="p">};</span>
+
+<span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">http://api.banco.com.br/open-banking/customers/v1/business-financial-relation</span><span class="dl">'</span><span class="p">,</span>
+<span class="p">{</span>
+  <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">GET</span><span class="dl">'</span><span class="p">,</span>
+
+  <span class="na">headers</span><span class="p">:</span> <span class="nx">headers</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
+<span class="p">}).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">body</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">body</span><span class="p">);</span>
+<span class="p">});</span>
+
+</code></pre></div>
+
+<p><code>GET /customers/v1/business-financial-relation</code></p>
+
+<table><thead>
+<tr>
+<th style="text-align: left">Versão</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">1</td>
+</tr>
+</tbody></table>
+
+<h3 id='apis-diretorio-e-service-desk-relacionamento-pessoa-juridica-visao-geral'>Visão Geral</h3>
+
+<p>Obtém dados relativos ao processo de relacionamento pessoa jurídica</p>
+
+<h3 id='apis-diretorio-e-service-desk-relacionamento-pessoa-juridica-visao-de-alto-de-nivel-das-estruturas-de-dados'>Visão de alto de nível das estruturas de dados</h3>
+
+<p><img class="lazy" src="images/loading-e35b35a4.gif" data-src="images/tld/customers/TLD_Business_Customers_Financial_Relation_v2-cf67d544.png"/></p>
+
+<h3 id='apis-diretorio-e-service-desk-relacionamento-pessoa-juridica-dicionario-de-dados'>Dicionário de dados</h3>
+
+<p><a href="dictionary/business_customers_financial_relation.csv" target="_blank">Fazer download do dicionário de dados</a></p>
+
+<h3 id='apis-diretorio-e-service-desk-relacionamento-pessoa-juridica-especificacao-em-oas-3-0'>Especificação em OAS 3.0</h3>
+
+<p><a href="swagger/swagger_customers_apis.yaml">Download da Especificação (OAS 3.0)</a></p>
+
+<h3 id="relacionamento-pessoa-jurídica-parameters">Parâmetros</h3>
+
+<table><thead>
+<tr>
+<th>Nome</th>
+<th>Origem</th>
+<th>Tipo</th>
+<th>Obrigatório</th>
+<th>Descrição</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>page</td>
+<td>query</td>
+<td>integer</td>
+<td>false</td>
+<td>Número da página que está sendo requisitada (o valor da primeira página é 1).</td>
+</tr>
+<tr>
+<td>page-size</td>
+<td>query</td>
+<td>integer</td>
+<td>false</td>
+<td>Quantidade total de registros por páginas.</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>O comando acima retorna uma estrutura json como essa:</p>
+
+<p>200 Response</p>
+</blockquote>
+
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"brand"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Organização A"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"companies"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Organização A"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"cnpjNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00000000000100"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"businessCustomers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"financialRelation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"updateDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"startDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"productsServices"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                  </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"productsServices"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+                    </span><span class="nl">"procurators"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+                  </span><span class="p">}</span><span class="w">
+                </span><span class="p">]</span><span class="w">
+              </span><span class="p">}</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"self"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.banco.com.br/open-banking/&lt;api&gt;/v1/&lt;resource&gt;"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"first"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.banco.com.br/open-banking/&lt;api&gt;/v1/&lt;resource&gt;"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"prev"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"next"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"last"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.banco.com.br/open-banking/&lt;api&gt;/v1/&lt;resource&gt;"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"totalRecords"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"totalPages"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+
+<h3 id="relacionamento-pessoa-jurídica-responses">Resposta</h3>
+
+<table><thead>
+<tr>
+<th>Status</th>
+<th>Significado</th>
+<th>Descrição</th>
+<th>Schema</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>200</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.1">OK</a></td>
+<td>Dados cadastrais sobre relacionamento pessoa jurídica obtidos com sucesso.</td>
+<td><a href="#schemaresponsebusinesscustomersfinancialrelation">ResponseBusinessCustomersFinancialRelation</a></td>
 </tr>
 </tbody></table>
 
@@ -15377,39 +15721,104 @@ This operation does not require authentication
 </tr>
 </tbody></table>
 
-<h2 id="tocS_BusinessCustomers">BusinessCustomers</h2>
+<h2 id="tocS_BusinessFinancialRelationBrand">BusinessFinancialRelationBrand</h2>
 
-<p><a id="schemabusinesscustomers"></a>
-<a id="schema_BusinessCustomers"></a>
-<a id="tocSbusinesscustomers"></a>
-<a id="tocsbusinesscustomers"></a></p>
+<p><a id="schemabusinessfinancialrelationbrand"></a>
+<a id="schema_BusinessFinancialRelationBrand"></a>
+<a id="tocSbusinessfinancialrelationbrand"></a>
+<a id="tocsbusinessfinancialrelationbrand"></a></p>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"companies"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Organização A"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"cnpjNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00.000.000/0001-00"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"businessCustomer"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"financialRelation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"updateDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"startDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"productsServices"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-            </span><span class="p">{</span><span class="w">
-              </span><span class="nl">"productsServices"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SEGURO"</span><span class="w">
-              </span><span class="p">},</span><span class="w">
-              </span><span class="nl">"procurators"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PROCURADOR"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"cpfNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"000.000.000-00"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"civilName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"socialName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Organização A"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"companies"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Organização A"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"cnpjNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00000000000100"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"businessCustomers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"financialRelation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"updateDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"startDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"productsServices"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+              </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"productsServices"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SEGURO"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="nl">"procurators"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PROCURADOR"</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"cpfNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00000000000"</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"civilName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"socialName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
               </span><span class="p">}</span><span class="w">
-            </span><span class="p">}</span><span class="w">
-          </span><span class="p">]</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+          </span><span class="p">}</span><span class="w">
         </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre></div>
+
+<p>Objeto que define a Organização controladora do grupo de instituições financeiras</p>
+
+<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+
+<table><thead>
+<tr>
+<th>Nome</th>
+<th>Tipo</th>
+<th>Obrigatório</th>
+<th>Descrição</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>true</td>
+<td>Nome da Marca reportada pelo participante do Open Banking. O conceito a que se refere a &#39;marca&#39; é em essência uma promessa da empresa em fornecer uma série específica de atributos, benefícios e serviços uniformes aos clientes</td>
+</tr>
+<tr>
+<td>companies</td>
+<td>[<a href="#schemabusinessfinancialrelationcompany">BusinessFinancialRelationCompany</a>]</td>
+<td>true</td>
+<td>Companies traz uma lista de todas as instituições da Marca</td>
+</tr>
+</tbody></table>
+
+<h2 id="tocS_BusinessFinancialRelationCompany">BusinessFinancialRelationCompany</h2>
+
+<p><a id="schemabusinessfinancialrelationcompany"></a>
+<a id="schema_BusinessFinancialRelationCompany"></a>
+<a id="tocSbusinessfinancialrelationcompany"></a>
+<a id="tocsbusinessfinancialrelationcompany"></a></p>
+
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Organização A"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"cnpjNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00000000000100"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"businessCustomers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"financialRelation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"updateDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"startDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"productsServices"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"productsServices"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SEGURO"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"procurators"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PROCURADOR"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"cpfNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00000000000"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"civilName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"socialName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
       </span><span class="p">}</span><span class="w">
-    </span><span class="p">]</span><span class="w">
-  </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
 </span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
@@ -15422,32 +15831,71 @@ This operation does not require authentication
 </tr>
 </thead><tbody>
 <tr>
-<td>companies</td>
-<td>object</td>
-<td>true</td>
-<td>Lista de instituições pertencentes à marca</td>
-</tr>
-<tr>
-<td>» name</td>
+<td>name</td>
 <td>string</td>
 <td>true</td>
 <td>Nome da marca selecionada pela Organização</td>
 </tr>
 <tr>
-<td>» cnpjNumber</td>
+<td>cnpjNumber</td>
 <td>string</td>
 <td>true</td>
 <td>Número completo do CNPJ da instituição responsável pelo Cadastro - o CNPJ corresponde ao número de inscrição no Cadastro de Pessoa Jurídica.</td>
 </tr>
 <tr>
-<td>» businessCustomer</td>
-<td>[object]</td>
-<td>false</td>
-<td></td>
+<td>businessCustomers</td>
+<td><a href="#schemabusinessfinancialrelationcustomers">BusinessFinancialRelationCustomers</a></td>
+<td>true</td>
+<td>Conjunto de informações relativas ao processo de Relacionamento. Considera-se relacionamento as informações que permitam conhecer desde quando a pessoa consultada é cliente da instituição, bem como um indicador dos produtos e serviços que ela consome atualmente</td>
 </tr>
+</tbody></table>
+
+<h2 id="tocS_BusinessFinancialRelationCustomers">BusinessFinancialRelationCustomers</h2>
+
+<p><a id="schemabusinessfinancialrelationcustomers"></a>
+<a id="schema_BusinessFinancialRelationCustomers"></a>
+<a id="tocSbusinessfinancialrelationcustomers"></a>
+<a id="tocsbusinessfinancialrelationcustomers"></a></p>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"financialRelation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"updateDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"startDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"productsServices"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"productsServices"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SEGURO"</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="nl">"procurators"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PROCURADOR"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"cpfNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00000000000"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"civilName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"socialName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+
+</span></code></pre></div>
+
+<p>Conjunto de informações relativas ao processo de Relacionamento. Considera-se relacionamento as informações que permitam conhecer desde quando a pessoa consultada é cliente da instituição, bem como um indicador dos produtos e serviços que ela consome atualmente</p>
+
+<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+
+<table><thead>
 <tr>
-<td>»» financialRelation</td>
-<td><a href="#schemafinantialrelation">FinantialRelation</a></td>
+<th>Nome</th>
+<th>Tipo</th>
+<th>Obrigatório</th>
+<th>Descrição</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>financialRelation</td>
+<td><a href="#schemafinancialrelation">FinancialRelation</a></td>
 <td>true</td>
 <td>Objeto que reúne as informações relativas ao processo de Relacionamento. Considera-se relacionamento as informações que permitam conhecer desde quando a pessoa consultada é cliente da instituição, bem como um indicador dos produtos e serviços que ela consome atualmente e seus representantes</td>
 </tr>
@@ -15459,6 +15907,7 @@ This operation does not require authentication
 <a id="schema_BusinessFinancing"></a>
 <a id="tocSbusinessfinancing"></a>
 <a id="tocsbusinessfinancing"></a></p>
+
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FINANCIAMENTO_AQUISICAO_BENS_VEICULOS_AUTOMOTORES"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"fees"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -16153,7 +16602,7 @@ This operation does not require authentication
 </tr>
 <tr>
 <td>incorporationDate</td>
-<td>string</td>
+<td>string(DateString)</td>
 <td>false</td>
 <td>Data de constituição da empresa, conforme especificação RFC-3339.</td>
 </tr>
@@ -16501,9 +16950,9 @@ This operation does not require authentication
 <a id="tocsbusinessinformedpatrimony"></a></p>
 
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-03-19"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="w">
+  </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-03-19"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
 </span></code></pre></div>
@@ -16521,8 +16970,20 @@ This operation does not require authentication
 </tr>
 </thead><tbody>
 <tr>
-<td>date</td>
+<td>amount</td>
 <td>string</td>
+<td>true</td>
+<td>Valor do patrimônio informado. Expresso em valor monetário com 2 casas decimais.<br>&quot;Patrimônio é o conjunto de bens vinculado a uma pessoa ou a uma entidade&quot;.</td>
+</tr>
+<tr>
+<td>currency</td>
+<td>string(CurrencyString)</td>
+<td>false</td>
+<td>Moeda referente ao valor do patrimônio, segundo modelo ISO-4217.</td>
+</tr>
+<tr>
+<td>date</td>
+<td>string(DateString)</td>
 <td>true</td>
 <td>Data do Patrimônio, conforme especificação RFC-3339.</td>
 </tr>
@@ -17702,7 +18163,7 @@ This operation does not require authentication
 </tr>
 <tr>
 <td>expirationDate</td>
-<td>string</td>
+<td>string(DateString)</td>
 <td>false</td>
 <td>Data de validade do documento informado, conforme especificação RFC-3339.</td>
 </tr>
@@ -17728,9 +18189,9 @@ This operation does not require authentication
     </span><span class="nl">"year"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014"</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="nl">"informedPatrimony"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-03-19"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="w">
+    </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-03-19"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
@@ -17808,9 +18269,9 @@ This operation does not require authentication
             </span><span class="nl">"year"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014"</span><span class="w">
           </span><span class="p">},</span><span class="w">
           </span><span class="nl">"informedPatrimony"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-03-19"</span><span class="p">,</span><span class="w">
             </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="w">
+            </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-03-19"</span><span class="w">
           </span><span class="p">}</span><span class="w">
         </span><span class="p">}</span><span class="w">
       </span><span class="p">}</span><span class="w">
@@ -17871,9 +18332,9 @@ This operation does not require authentication
         </span><span class="nl">"year"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014"</span><span class="w">
       </span><span class="p">},</span><span class="w">
       </span><span class="nl">"informedPatrimony"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-03-19"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="w">
+        </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-03-19"</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">}</span><span class="w">
@@ -17929,9 +18390,9 @@ This operation does not require authentication
       </span><span class="nl">"year"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014"</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="nl">"informedPatrimony"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-03-19"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="w">
+      </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-03-19"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -22217,16 +22678,16 @@ This operation does not require authentication
 </tr>
 </tbody></table>
 
-<h2 id="tocS_FinantialRelation">FinantialRelation</h2>
+<h2 id="tocS_FinancialRelation">FinancialRelation</h2>
 
-<p><a id="schemafinantialrelation"></a>
-<a id="schema_FinantialRelation"></a>
-<a id="tocSfinantialrelation"></a>
-<a id="tocsfinantialrelation"></a></p>
+<p><a id="schemafinancialrelation"></a>
+<a id="schema_FinancialRelation"></a>
+<a id="tocSfinancialrelation"></a>
+<a id="tocsfinancialrelation"></a></p>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"updateDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"startDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"startDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"productsServices"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nl">"productsServices"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -22234,7 +22695,7 @@ This operation does not require authentication
       </span><span class="p">},</span><span class="w">
       </span><span class="nl">"procurators"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PROCURADOR"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"cpfNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"000.000.000-00"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"cpfNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00000000000"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"civilName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"socialName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
       </span><span class="p">}</span><span class="w">
@@ -22735,55 +23196,15 @@ This operation does not require authentication
 </tr>
 <tr>
 <td>currency</td>
-<td>string</td>
+<td>string(CurrencyString)</td>
 <td>false</td>
 <td>Moeda referente ao valor da renda, segundo modelo ISO-4217.</td>
 </tr>
 <tr>
 <td>date</td>
-<td>string</td>
+<td>string(DateString)</td>
 <td>true</td>
 <td>Data da renda, conforme especificação RFC-3339.</td>
-</tr>
-</tbody></table>
-
-<h2 id="tocS_InformedPatrimony">InformedPatrimony</h2>
-
-<p><a id="schemainformedpatrimony"></a>
-<a id="schema_InformedPatrimony"></a>
-<a id="tocSinformedpatrimony"></a>
-<a id="tocsinformedpatrimony"></a></p>
-
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-
-</span></code></pre></div>
-
-<p>Objeto que agrupa as informações referentes ao patrimônio informado</p>
-
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
-
-<table><thead>
-<tr>
-<th>Nome</th>
-<th>Tipo</th>
-<th>Obrigatório</th>
-<th>Descrição</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>amount</td>
-<td>string</td>
-<td>false</td>
-<td>Valor do patrimônio informado. Expresso em valor monetário com 2 casas decimais.<br>&quot;Patrimônio é o conjunto de bens vinculado a uma pessoa ou a uma entidade&quot;.</td>
-</tr>
-<tr>
-<td>currency</td>
-<td>string</td>
-<td>false</td>
-<td>Moeda referente ao valor do patrimônio, segundo modelo ISO-4217.</td>
 </tr>
 </tbody></table>
 
@@ -22829,7 +23250,7 @@ This operation does not require authentication
 </tr>
 <tr>
 <td>currency</td>
-<td>string</td>
+<td>string(CurrencyString)</td>
 <td>false</td>
 <td>Moeda referente ao valor da faturamento, segundo modelo ISO-4217.</td>
 </tr>
@@ -23914,7 +24335,7 @@ This operation does not require authentication
 </tr>
 <tr>
 <td>expirationDate</td>
-<td>string</td>
+<td>string(DateString)</td>
 <td>false</td>
 <td>Data de validade do documento informado, conforme especificação RFC-3339.</td>
 </tr>
@@ -24013,7 +24434,7 @@ This operation does not require authentication
 </tr>
 <tr>
 <td>startDate</td>
-<td>string</td>
+<td>string(DateString)</td>
 <td>false</td>
 <td>Data de início da participação, conforme especificação RFC-3339.</td>
 </tr>
@@ -24049,7 +24470,7 @@ This operation does not require authentication
 </tr>
 <tr>
 <td>documentExpirationDate</td>
-<td>string</td>
+<td>string(DateString)</td>
 <td>false</td>
 <td>Data de validade do documento informado, conforme especificação RFC-3339.</td>
 </tr>
@@ -25551,22 +25972,23 @@ This operation does not require authentication
 </tr>
 </tbody></table>
 
-<h2 id="tocS_PersonalCustomer">PersonalCustomer</h2>
+<h2 id="tocS_PersonalFinancialRelationBrand">PersonalFinancialRelationBrand</h2>
 
-<p><a id="schemapersonalcustomer"></a>
-<a id="schema_PersonalCustomer"></a>
-<a id="tocSpersonalcustomer"></a>
-<a id="tocspersonalcustomer"></a></p>
+<p><a id="schemapersonalfinancialrelationbrand"></a>
+<a id="schema_PersonalFinancialRelationBrand"></a>
+<a id="tocSpersonalfinancialrelationbrand"></a>
+<a id="tocspersonalfinancialrelationbrand"></a></p>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"companies"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Organização A"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"cnpjNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00.000.000/0001-00"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"personalCustomer"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-      </span><span class="p">{</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Organização A"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"companies"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Organização A"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"cnpjNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00000000000100"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"personalCustomers"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="nl">"financialRelation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
           </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"updateDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"startDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"startDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"productsServices"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
             </span><span class="p">{</span><span class="w">
               </span><span class="nl">"productsServices"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -25574,7 +25996,7 @@ This operation does not require authentication
               </span><span class="p">},</span><span class="w">
               </span><span class="nl">"procurators"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
                 </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PROCURADOR"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"cpfNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"000.000.000-00"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"cpfNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00000000000"</span><span class="p">,</span><span class="w">
                 </span><span class="nl">"civilName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
                 </span><span class="nl">"socialName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
               </span><span class="p">}</span><span class="w">
@@ -25582,7 +26004,67 @@ This operation does not require authentication
           </span><span class="p">]</span><span class="w">
         </span><span class="p">}</span><span class="w">
       </span><span class="p">}</span><span class="w">
-    </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre></div>
+
+<p>Objeto que define a Organização controladora do grupo de instituições financeiras</p>
+
+<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+
+<table><thead>
+<tr>
+<th>Nome</th>
+<th>Tipo</th>
+<th>Obrigatório</th>
+<th>Descrição</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>true</td>
+<td>Nome da Marca reportada pelo participante do Open Banking. O conceito a que se refere a &#39;marca&#39; é em essência uma promessa da empresa em fornecer uma série específica de atributos, benefícios e serviços uniformes aos clientes</td>
+</tr>
+<tr>
+<td>companies</td>
+<td>[<a href="#schemapersonalfinancialrelationcompany">PersonalFinancialRelationCompany</a>]</td>
+<td>true</td>
+<td>Companies traz uma lista de todas as instituições da Marca</td>
+</tr>
+</tbody></table>
+
+<h2 id="tocS_PersonalFinancialRelationCompany">PersonalFinancialRelationCompany</h2>
+
+<p><a id="schemapersonalfinancialrelationcompany"></a>
+<a id="schema_PersonalFinancialRelationCompany"></a>
+<a id="tocSpersonalfinancialrelationcompany"></a>
+<a id="tocspersonalfinancialrelationcompany"></a></p>
+
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Organização A"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"cnpjNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00000000000100"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"personalCustomers"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"financialRelation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"updateDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"startDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"productsServices"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"productsServices"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SEGURO"</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="nl">"procurators"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PROCURADOR"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"cpfNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00000000000"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"civilName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"socialName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
@@ -25596,32 +26078,69 @@ This operation does not require authentication
 </tr>
 </thead><tbody>
 <tr>
-<td>companies</td>
-<td>object</td>
-<td>true</td>
-<td>Lista de instituições pertencentes à marca</td>
-</tr>
-<tr>
-<td>» name</td>
+<td>name</td>
 <td>string</td>
 <td>true</td>
 <td>Nome da marca selecionada pela Organização</td>
 </tr>
 <tr>
-<td>» cnpjNumber</td>
+<td>cnpjNumber</td>
 <td>string</td>
 <td>true</td>
 <td>Número completo do CNPJ da instituição responsável pelo Cadastro - o CNPJ corresponde ao número de inscrição no Cadastro de Pessoa Jurídica.</td>
 </tr>
 <tr>
-<td>» personalCustomer</td>
-<td>[object]</td>
-<td>false</td>
-<td></td>
+<td>personalCustomers</td>
+<td><a href="#schemapersonalfinancialrelationcustomers">PersonalFinancialRelationCustomers</a></td>
+<td>true</td>
+<td>Conjunto de informações Cadastrais do Cliente Pessoa natural</td>
 </tr>
+</tbody></table>
+
+<h2 id="tocS_PersonalFinancialRelationCustomers">PersonalFinancialRelationCustomers</h2>
+
+<p><a id="schemapersonalfinancialrelationcustomers"></a>
+<a id="schema_PersonalFinancialRelationCustomers"></a>
+<a id="tocSpersonalfinancialrelationcustomers"></a>
+<a id="tocspersonalfinancialrelationcustomers"></a></p>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"financialRelation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updateDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"startDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"productsServices"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"productsServices"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SEGURO"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"procurators"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PROCURADOR"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"cpfNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00000000000"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"civilName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"socialName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre></div>
+
+<p>Conjunto de informações Cadastrais do Cliente Pessoa natural</p>
+
+<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+
+<table><thead>
 <tr>
-<td>»» financialRelation</td>
-<td><a href="#schemafinantialrelation">FinantialRelation</a></td>
+<th>Nome</th>
+<th>Tipo</th>
+<th>Obrigatório</th>
+<th>Descrição</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>financialRelation</td>
+<td><a href="#schemafinancialrelation">FinancialRelation</a></td>
 <td>true</td>
 <td>Objeto que reúne as informações relativas ao processo de Relacionamento. Considera-se relacionamento as informações que permitam conhecer desde quando a pessoa consultada é cliente da instituição, bem como um indicador dos produtos e serviços que ela consome atualmente e seus representantes</td>
 </tr>
@@ -25633,6 +26152,7 @@ This operation does not require authentication
 <a id="schema_PersonalFinancing"></a>
 <a id="tocSpersonalfinancing"></a>
 <a id="tocspersonalfinancing"></a></p>
+
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FINANCIAMENTO_AQUISICAO_BENS_VEICULOS_AUTOMOTORES"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"fees"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -26305,13 +26825,13 @@ This operation does not require authentication
 </thead><tbody>
 <tr>
 <td>requestDateTime</td>
-<td>string</td>
+<td>string(DateTimeString)</td>
 <td>true</td>
 <td>Data e hora da consulta, conforme especificação RFC-3339, formato UTC.</td>
 </tr>
 <tr>
 <td>updateDateTime</td>
-<td>string</td>
+<td>string(DateTimeString)</td>
 <td>true</td>
 <td>Data e hora da atualização do bloco, conforme especificação RFC-3339</td>
 </tr>
@@ -26335,7 +26855,7 @@ This operation does not require authentication
 </tr>
 <tr>
 <td>passportExpirationDate</td>
-<td>string</td>
+<td>string(DateString)</td>
 <td>false</td>
 <td>Data vigência do Passaporte, conforme especificação RFC-3339.</td>
 </tr>
@@ -26365,7 +26885,7 @@ This operation does not require authentication
 </tr>
 <tr>
 <td>birthDate</td>
-<td>string</td>
+<td>string(DateString)</td>
 <td>true</td>
 <td>Data de nascimento, conforme especificação RFC-3339</td>
 </tr>
@@ -26767,9 +27287,9 @@ This operation does not require authentication
 <a id="tocspersonalinformedpatrimony"></a></p>
 
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"year"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="w">
+  </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"year"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
 </span></code></pre></div>
@@ -26787,9 +27307,21 @@ This operation does not require authentication
 </tr>
 </thead><tbody>
 <tr>
-<td>year</td>
+<td>amount</td>
 <td>string</td>
 <td>true</td>
+<td>Valor do patrimônio informado. Expresso em valor monetário com 2 casas decimais.<br>&quot;Patrimônio é o conjunto de bens vinculado a uma pessoa ou a uma entidade&quot;.</td>
+</tr>
+<tr>
+<td>currency</td>
+<td>string(CurrencyString)</td>
+<td>false</td>
+<td>Moeda referente ao valor do patrimônio, segundo modelo ISO-4217.</td>
+</tr>
+<tr>
+<td>year</td>
+<td>string</td>
+<td>false</td>
 <td>Ano de referência do Patrimônio, conforme especificação RFC-3339.</td>
 </tr>
 </tbody></table>
@@ -27982,7 +28514,7 @@ This operation does not require authentication
 </tr>
 <tr>
 <td>expirationDate</td>
-<td>string</td>
+<td>string(DateString)</td>
 <td>false</td>
 <td>Data de validade do documento informado, conforme especificação RFC-3339.</td>
 </tr>
@@ -28004,9 +28536,9 @@ This operation does not require authentication
     </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-03-19"</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="nl">"informedPatrimony"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"year"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="w">
+    </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"year"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014"</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="nl">"occupationCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RECEITA_FEDERAL"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"occupationDescription"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
@@ -28088,9 +28620,9 @@ This operation does not require authentication
             </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-03-19"</span><span class="w">
           </span><span class="p">},</span><span class="w">
           </span><span class="nl">"informedPatrimony"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"year"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014"</span><span class="p">,</span><span class="w">
             </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="w">
+            </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"year"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014"</span><span class="w">
           </span><span class="p">},</span><span class="w">
           </span><span class="nl">"occupationCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RECEITA_FEDERAL"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"occupationDescription"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
@@ -28149,9 +28681,9 @@ This operation does not require authentication
         </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-03-19"</span><span class="w">
       </span><span class="p">},</span><span class="w">
       </span><span class="nl">"informedPatrimony"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"year"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="w">
+        </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"year"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014"</span><span class="w">
       </span><span class="p">},</span><span class="w">
       </span><span class="nl">"occupationCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RECEITA_FEDERAL"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"occupationDescription"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
@@ -28205,9 +28737,9 @@ This operation does not require authentication
       </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-03-19"</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="nl">"informedPatrimony"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"year"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="w">
+      </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"year"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014"</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="nl">"occupationCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RECEITA_FEDERAL"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"occupationDescription"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
@@ -31008,6 +31540,87 @@ This operation does not require authentication
 </tr>
 </tbody></table>
 
+<h2 id="tocS_ResponseBusinessCustomersFinancialRelation">ResponseBusinessCustomersFinancialRelation</h2>
+
+<p><a id="schemaresponsebusinesscustomersfinancialrelation"></a>
+<a id="schema_ResponseBusinessCustomersFinancialRelation"></a>
+<a id="tocSresponsebusinesscustomersfinancialrelation"></a>
+<a id="tocsresponsebusinesscustomersfinancialrelation"></a></p>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"brand"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Organização A"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"companies"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Organização A"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"cnpjNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00000000000100"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"businessCustomers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"financialRelation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"updateDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"startDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"productsServices"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                  </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"productsServices"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+                    </span><span class="nl">"procurators"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+                  </span><span class="p">}</span><span class="w">
+                </span><span class="p">]</span><span class="w">
+              </span><span class="p">}</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"self"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.banco.com.br/open-banking/&lt;api&gt;/v1/&lt;resource&gt;"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"first"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.banco.com.br/open-banking/&lt;api&gt;/v1/&lt;resource&gt;"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"prev"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"next"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"last"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.banco.com.br/open-banking/&lt;api&gt;/v1/&lt;resource&gt;"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"totalRecords"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"totalPages"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<table><thead>
+<tr>
+<th>Nome</th>
+<th>Tipo</th>
+<th>Obrigatório</th>
+<th>Descrição</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>data</td>
+<td>object</td>
+<td>true</td>
+<td></td>
+</tr>
+<tr>
+<td>» brand</td>
+<td><a href="#schemabusinessfinancialrelationbrand">BusinessFinancialRelationBrand</a></td>
+<td>true</td>
+<td>Objeto que define a Organização controladora do grupo de instituições financeiras</td>
+</tr>
+<tr>
+<td>links</td>
+<td><a href="#schemalinks">Links</a></td>
+<td>true</td>
+<td>Referências para outros recusos da API requisitada.</td>
+</tr>
+<tr>
+<td>meta</td>
+<td><a href="#schemameta">Meta</a></td>
+<td>true</td>
+<td>Meta informações referente a API requisitada.</td>
+</tr>
+</tbody></table>
+
 <h2 id="tocS_ResponseBusinessCustomersIdentification">ResponseBusinessCustomersIdentification</h2>
 
 <p><a id="schemaresponsebusinesscustomersidentification"></a>
@@ -31169,9 +31782,9 @@ This operation does not require authentication
                 </span><span class="nl">"year"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014"</span><span class="w">
               </span><span class="p">},</span><span class="w">
               </span><span class="nl">"informedPatrimony"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-03-19"</span><span class="p">,</span><span class="w">
                 </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="w">
+                </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-03-19"</span><span class="w">
               </span><span class="p">}</span><span class="w">
             </span><span class="p">}</span><span class="w">
           </span><span class="p">}</span><span class="w">
@@ -34290,6 +34903,92 @@ This operation does not require authentication
 </tr>
 </tbody></table>
 
+<h2 id="tocS_ResponsePersonalCustomersFinancialRelation">ResponsePersonalCustomersFinancialRelation</h2>
+
+<p><a id="schemaresponsepersonalcustomersfinancialrelation"></a>
+<a id="schema_ResponsePersonalCustomersFinancialRelation"></a>
+<a id="tocSresponsepersonalcustomersfinancialrelation"></a>
+<a id="tocsresponsepersonalcustomersfinancialrelation"></a></p>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"brand"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Organização A"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"companies"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Organização A"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"cnpjNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00000000000100"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"personalCustomers"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"financialRelation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"updateDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"startDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"productsServices"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                  </span><span class="nl">"productsServices"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SEGURO"</span><span class="w">
+                  </span><span class="p">},</span><span class="w">
+                  </span><span class="nl">"procurators"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PROCURADOR"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"cpfNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00000000000"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"civilName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"socialName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+                  </span><span class="p">}</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+              </span><span class="p">]</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"self"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.banco.com.br/open-banking/&lt;api&gt;/v1/&lt;resource&gt;"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"first"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.banco.com.br/open-banking/&lt;api&gt;/v1/&lt;resource&gt;"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"prev"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"next"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"last"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.banco.com.br/open-banking/&lt;api&gt;/v1/&lt;resource&gt;"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"totalRecords"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"totalPages"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<table><thead>
+<tr>
+<th>Nome</th>
+<th>Tipo</th>
+<th>Obrigatório</th>
+<th>Descrição</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>data</td>
+<td>object</td>
+<td>true</td>
+<td></td>
+</tr>
+<tr>
+<td>» brand</td>
+<td><a href="#schemapersonalfinancialrelationbrand">PersonalFinancialRelationBrand</a></td>
+<td>true</td>
+<td>Objeto que define a Organização controladora do grupo de instituições financeiras</td>
+</tr>
+<tr>
+<td>links</td>
+<td><a href="#schemalinks">Links</a></td>
+<td>true</td>
+<td>Referências para outros recusos da API requisitada.</td>
+</tr>
+<tr>
+<td>meta</td>
+<td><a href="#schemameta">Meta</a></td>
+<td>true</td>
+<td>Meta informações referente a API requisitada.</td>
+</tr>
+</tbody></table>
+
 <h2 id="tocS_ResponsePersonalCustomersIdentification">ResponsePersonalCustomersIdentification</h2>
 
 <p><a id="schemaresponsepersonalcustomersidentification"></a>
@@ -34457,9 +35156,9 @@ This operation does not require authentication
                 </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-03-19"</span><span class="w">
               </span><span class="p">},</span><span class="w">
               </span><span class="nl">"informedPatrimony"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="nl">"year"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014"</span><span class="p">,</span><span class="w">
                 </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="w">
+                </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"year"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014"</span><span class="w">
               </span><span class="p">},</span><span class="w">
               </span><span class="nl">"occupationCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RECEITA_FEDERAL"</span><span class="p">,</span><span class="w">
               </span><span class="nl">"occupationDescription"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
