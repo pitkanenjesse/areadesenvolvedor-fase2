@@ -672,6 +672,12 @@
                     <a href="#tocS_BusinessUnarrangedAccountOverdraftFee" class="toc-h2 toc-link" data-title="BusinessUnarrangedAccountOverdraftFee">BusinessUnarrangedAccountOverdraftFee</a>
                   </li>
                   <li>
+                    <a href="#tocS_CreditCardsAccountIdentification" class="toc-h2 toc-link" data-title="CreditCardsAccountIdentification">CreditCardsAccountIdentification</a>
+                  </li>
+                  <li>
+                    <a href="#tocS_CreditCardsAccountPaymentMethod" class="toc-h2 toc-link" data-title="CreditCardsAccountPaymentMethod">CreditCardsAccountPaymentMethod</a>
+                  </li>
+                  <li>
                     <a href="#tocS_CreditCardIdentification" class="toc-h2 toc-link" data-title="CreditCardIdentification">CreditCardIdentification</a>
                   </li>
                   <li>
@@ -763,6 +769,15 @@
                   </li>
                   <li>
                     <a href="#tocS_EnumBalanceType" class="toc-h2 toc-link" data-title="EnumBalanceType">EnumBalanceType</a>
+                  </li>
+                  <li>
+                    <a href="#tocS_EnumCreditCardAccountNetwork" class="toc-h2 toc-link" data-title="EnumCreditCardAccountNetwork">EnumCreditCardAccountNetwork</a>
+                  </li>
+                  <li>
+                    <a href="#tocS_EnumCreditCardAccountPaymentMethodApresentation" class="toc-h2 toc-link" data-title="EnumCreditCardAccountPaymentMethodApresentation">EnumCreditCardAccountPaymentMethodApresentation</a>
+                  </li>
+                  <li>
+                    <a href="#tocS_EnumCreditCardAccountPaymentMethodType" class="toc-h2 toc-link" data-title="EnumCreditCardAccountPaymentMethodType">EnumCreditCardAccountPaymentMethodType</a>
                   </li>
                   <li>
                     <a href="#tocS_EnumCreditDebitIndicator" class="toc-h2 toc-link" data-title="EnumCreditDebitIndicator">EnumCreditDebitIndicator</a>
@@ -18941,6 +18956,278 @@ This operation does not require authentication
 </tr>
 </tbody></table>
 
+<h2 id="tocS_CreditCardsAccountIdentification">CreditCardsAccountIdentification</h2>
+
+<p><a id="schemacreditcardsaccountidentification"></a>
+<a id="schema_CreditCardsAccountIdentification"></a>
+<a id="tocScreditcardsaccountidentification"></a>
+<a id="tocscreditcardsaccountidentification"></a></p>
+
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"companies"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Empresa da Organização A"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"cnpjNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00.000.000/0001-00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"creditCardAccounts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"updateDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cartão Universitário Bem-Vindo"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CLASSIC_NACIONAL"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"additionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"network"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"network"</span><span class="p">:</span><span class="w"> </span><span class="s2">"VISA"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"additionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"paymentMethod"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"isCreditDebit"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PRINCIPAL"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"apresentation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"VIRTUAL"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre></div>
+
+<p>Conjunto de informações referentes à identificação da conta de pagamento pós-paga</p>
+
+<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+
+<table><thead>
+<tr>
+<th>Nome</th>
+<th>Tipo</th>
+<th>Obrigatório</th>
+<th>Descrição</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>true</td>
+<td>Nome da Marca reportada pelo participante do Open Banking. O conceito a que se refere a &#39;marca&#39; é em essência uma promessa da empresa em fornecer uma série específica de atributos, benefícios e serviços uniformes aos clientes</td>
+</tr>
+<tr>
+<td>companies</td>
+<td>object</td>
+<td>true</td>
+<td>Companies traz uma lista de todas as instituições da Marca</td>
+</tr>
+<tr>
+<td>» name</td>
+<td>string</td>
+<td>true</td>
+<td>Nome da Instituição, pertencente à Marca, responsável pelo Cadastro.</td>
+</tr>
+<tr>
+<td>» cnpjNumber</td>
+<td>string</td>
+<td>true</td>
+<td>Número completo do CNPJ da instituição responsável pelo Cadastro - o CNPJ corresponde ao número de inscrição no Cadastro de Pessoa Jurídica.</td>
+</tr>
+<tr>
+<td>» creditCardAccounts</td>
+<td>object</td>
+<td>true</td>
+<td>Conjunto de informações de conta de pagamento pós-paga</td>
+</tr>
+<tr>
+<td>»» requestDateTime</td>
+<td>string</td>
+<td>true</td>
+<td>Data e hora da consulta, conforme especificação RFC-3339, formato UTC.</td>
+</tr>
+<tr>
+<td>»» updateDateTime</td>
+<td>string</td>
+<td>true</td>
+<td>Data e hora da atualização do bloco de Relacionamento, conforme especificação RFC-3339, formato UTC.</td>
+</tr>
+<tr>
+<td>»» name</td>
+<td>string</td>
+<td>true</td>
+<td>Denominação/Identificação do nome da conta de pagamento pós-paga (cartão). Conforme CIRCULAR Nº 3.680,BCB, 2013: &#39;conta de pagamento pós-paga: destinada à execução de transações de pagamento que independem do aporte prévio de recursos&#39;</td>
+</tr>
+<tr>
+<td>»» type</td>
+<td>string</td>
+<td>true</td>
+<td>Categoria atribuída a um cartão de pagamento, sob uma certa denominação, que lhe agrega um conjunto de vantagens, diferenciando-o de acordo com o perfil do portador.</td>
+</tr>
+<tr>
+<td>»» additionalInfo</td>
+<td>string</td>
+<td>false</td>
+<td>Texto livre para especificar categoria de bandeira marcada como &#39;OUTRAS&#39;</td>
+</tr>
+<tr>
+<td>»» network</td>
+<td>object</td>
+<td>true</td>
+<td></td>
+</tr>
+<tr>
+<td>»»» network</td>
+<td><a href="#schemaenumcreditcardaccountnetwork/properties/network">EnumCreditCardAccountNetwork/properties/network</a></td>
+<td>false</td>
+<td>Categoria de Bandeiras de Cartões de Crédito (Instituidor do arranjo de pagamento).<br>Bandeira é a detentora de todos os direitos e deveres da utilização da marca estampada no cartão, inclusive as bandeiras pertencentes aos emissores.</td>
+</tr>
+<tr>
+<td>»»» additionalInfo</td>
+<td>string</td>
+<td>false</td>
+<td>Texto livre para especificar categoria de bandeira marcada como &#39;OUTRAS&#39;</td>
+</tr>
+<tr>
+<td>»» paymentMethod</td>
+<td><a href="#schemacreditcardsaccountpaymentmethod">CreditCardsAccountPaymentMethod</a></td>
+<td>true</td>
+<td>Conjunto de informações relativas aos Meios de Pagamento da Conta de pagamento pós-paga</td>
+</tr>
+</tbody></table>
+
+<h4 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades-enumerated-values'>Enumerated Values</h4>
+
+<table><thead>
+<tr>
+<th>Nome</th>
+<th>Código</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>type</td>
+<td>CLASSIC_NACIONAL</td>
+</tr>
+<tr>
+<td>type</td>
+<td>CLASSIC_INTERNACIONAL</td>
+</tr>
+<tr>
+<td>type</td>
+<td>GOLD</td>
+</tr>
+<tr>
+<td>type</td>
+<td>PLATINUM</td>
+</tr>
+<tr>
+<td>type</td>
+<td>INFINITE</td>
+</tr>
+<tr>
+<td>type</td>
+<td>ELECTRON</td>
+</tr>
+<tr>
+<td>type</td>
+<td>STANDARD_NACIONAL</td>
+</tr>
+<tr>
+<td>type</td>
+<td>STANDARD_INTERNACIONAL</td>
+</tr>
+<tr>
+<td>type</td>
+<td>ELETRONIC</td>
+</tr>
+<tr>
+<td>type</td>
+<td>BLACK</td>
+</tr>
+<tr>
+<td>type</td>
+<td>REDESHOP</td>
+</tr>
+<tr>
+<td>type</td>
+<td>MAESTRO_MASTERCARD_MAESTRO</td>
+</tr>
+<tr>
+<td>type</td>
+<td>GREEN</td>
+</tr>
+<tr>
+<td>type</td>
+<td>BLUE</td>
+</tr>
+<tr>
+<td>type</td>
+<td>BLUEBOX</td>
+</tr>
+<tr>
+<td>type</td>
+<td>PROFISSIONAL_LIBERAL</td>
+</tr>
+<tr>
+<td>type</td>
+<td>CHEQUE_ELETRONICO</td>
+</tr>
+<tr>
+<td>type</td>
+<td>CORPORATIVO</td>
+</tr>
+<tr>
+<td>type</td>
+<td>EMPRESARIAL</td>
+</tr>
+<tr>
+<td>type</td>
+<td>COMPRAS</td>
+</tr>
+<tr>
+<td>type</td>
+<td>OUTROS</td>
+</tr>
+</tbody></table>
+
+<h2 id="tocS_CreditCardsAccountPaymentMethod">CreditCardsAccountPaymentMethod</h2>
+
+<p><a id="schemacreditcardsaccountpaymentmethod"></a>
+<a id="schema_CreditCardsAccountPaymentMethod"></a>
+<a id="tocScreditcardsaccountpaymentmethod"></a>
+<a id="tocscreditcardsaccountpaymentmethod"></a></p>
+
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"isCreditDebit"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PRINCIPAL"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"apresentation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"VIRTUAL"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre></div>
+
+<p>Conjunto de informações relativas aos Meios de Pagamento da Conta de pagamento pós-paga</p>
+
+<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+
+<table><thead>
+<tr>
+<th>Nome</th>
+<th>Tipo</th>
+<th>Obrigatório</th>
+<th>Descrição</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>isCreditDebit</td>
+<td>boolean</td>
+<td>true</td>
+<td>Indicador da conta de Pagamento pós paga ser Múltipla. &quot;Cartões  denominados múltiplos possuem tanto a função crédito quanto a débito, devendo o proprietário do cartão, no momento de sua utilização, informar se o pagamento é na função crédito (que leva a um pagamento futuro, por meio de uma fatura do cartão de crédito) ou na função débito&quot;.<br>Fonte: Tipos de cartão - Banco Central do Brasilwww.bcb.gov.br › port ›folder_serie_I_tipos_de_<br>cartao</td>
+</tr>
+<tr>
+<td>type</td>
+<td><a href="#schemaenumcreditcardaccountpaymentmethodtype/properties/apresentation">EnumCreditCardAccountPaymentMethodType/properties/apresentation</a></td>
+<td>true</td>
+<td>Enumera os tipos de cartão (conta de pagamento pós-paga)</td>
+</tr>
+<tr>
+<td>apresentation</td>
+<td><a href="#schemaenumcreditcardaccountpaymentmethodapresentation/properties/apresentation">EnumCreditCardAccountPaymentMethodApresentation/properties/apresentation</a></td>
+<td>true</td>
+<td>Enumera as formas de disponibilização do cartão (conta de pagamento pós-paga)</td>
+</tr>
+</tbody></table>
+
 <h2 id="tocS_CreditCardIdentification">CreditCardIdentification</h2>
 
 <p><a id="schemacreditcardidentification"></a>
@@ -21721,6 +22008,163 @@ This operation does not require authentication
 <tr>
 <td>balanceType</td>
 <td>SALDO_DISPONIVEL_APLICACAO_AUTOMATICA</td>
+</tr>
+</tbody></table>
+
+<h2 id="tocS_EnumCreditCardAccountNetwork">EnumCreditCardAccountNetwork</h2>
+
+<p><a id="schemaenumcreditcardaccountnetwork"></a>
+<a id="schema_EnumCreditCardAccountNetwork"></a>
+<a id="tocSenumcreditcardaccountnetwork"></a>
+<a id="tocsenumcreditcardaccountnetwork"></a></p>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"network"</span><span class="p">:</span><span class="w"> </span><span class="s2">"VISA"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<table><thead>
+<tr>
+<th>Nome</th>
+<th>Tipo</th>
+<th>Obrigatório</th>
+<th>Descrição</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>network</td>
+<td>string</td>
+<td>false</td>
+<td>Categoria de Bandeiras de Cartões de Crédito (Instituidor do arranjo de pagamento).<br>Bandeira é a detentora de todos os direitos e deveres da utilização da marca estampada no cartão, inclusive as bandeiras pertencentes aos emissores.</td>
+</tr>
+</tbody></table>
+<h4 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades-enumerated-values'>Enumerated Values</h4>
+<table><thead>
+<tr>
+<th>Nome</th>
+<th>Código</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>network</td>
+<td>VISA</td>
+</tr>
+<tr>
+<td>network</td>
+<td>MASTERCARD</td>
+</tr>
+<tr>
+<td>network</td>
+<td>AMERICAN_EXPRESS</td>
+</tr>
+<tr>
+<td>network</td>
+<td>DINERS_CLUB</td>
+</tr>
+<tr>
+<td>network</td>
+<td>HIPERCARD</td>
+</tr>
+<tr>
+<td>network</td>
+<td>BANDEIRA_PROPRIA</td>
+</tr>
+<tr>
+<td>network</td>
+<td>CHEQUE_ELETRONICO</td>
+</tr>
+<tr>
+<td>network</td>
+<td>ELO</td>
+</tr>
+<tr>
+<td>network</td>
+<td>OUTRAS</td>
+</tr>
+</tbody></table>
+
+<h2 id="tocS_EnumCreditCardAccountPaymentMethodApresentation">EnumCreditCardAccountPaymentMethodApresentation</h2>
+
+<p><a id="schemaenumcreditcardaccountpaymentmethodapresentation"></a>
+<a id="schema_EnumCreditCardAccountPaymentMethodApresentation"></a>
+<a id="tocSenumcreditcardaccountpaymentmethodapresentation"></a>
+<a id="tocsenumcreditcardaccountpaymentmethodapresentation"></a></p>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"apresentation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"VIRTUAL"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<table><thead>
+<tr>
+<th>Nome</th>
+<th>Tipo</th>
+<th>Obrigatório</th>
+<th>Descrição</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>apresentation</td>
+<td>string</td>
+<td>false</td>
+<td>Enumera as formas de disponibilização do cartão (conta de pagamento pós-paga)</td>
+</tr>
+</tbody></table>
+<h4 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades-enumerated-values'>Enumerated Values</h4>
+<table><thead>
+<tr>
+<th>Nome</th>
+<th>Código</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>apresentation</td>
+<td>FISICO</td>
+</tr>
+<tr>
+<td>apresentation</td>
+<td>VIRTUAL</td>
+</tr>
+</tbody></table>
+
+<h2 id="tocS_EnumCreditCardAccountPaymentMethodType">EnumCreditCardAccountPaymentMethodType</h2>
+
+<p><a id="schemaenumcreditcardaccountpaymentmethodtype"></a>
+<a id="schema_EnumCreditCardAccountPaymentMethodType"></a>
+<a id="tocSenumcreditcardaccountpaymentmethodtype"></a>
+<a id="tocsenumcreditcardaccountpaymentmethodtype"></a></p>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"apresentation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PRINCIPAL"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<table><thead>
+<tr>
+<th>Nome</th>
+<th>Tipo</th>
+<th>Obrigatório</th>
+<th>Descrição</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>apresentation</td>
+<td>string</td>
+<td>false</td>
+<td>Enumera os tipos de cartão (conta de pagamento pós-paga)</td>
+</tr>
+</tbody></table>
+<h4 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades-enumerated-values'>Enumerated Values</h4>
+<table><thead>
+<tr>
+<th>Nome</th>
+<th>Código</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>apresentation</td>
+<td>PRINCIPAL</td>
+</tr>
+<tr>
+<td>apresentation</td>
+<td>ADICIONAL</td>
 </tr>
 </tbody></table>
 
