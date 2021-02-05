@@ -1162,7 +1162,8 @@ components:
   schemas:
     AccountBalances:
       type: object
-      description: 'Conjunto de informações das Contas de: depósito à vista, poupança e de pagamento pré-paga'
+      description: |
+        Conjunto de informações das Contas de: depósito à vista, poupança e de pagamento pré-paga
       required:
         - balances
       properties:
@@ -1227,7 +1228,8 @@ components:
           $ref: '#/components/schemas/MaximumPrice'
     AccountOverdraftLimits:
       type: object
-      description: 'Conjunto de informações das Contas de: depósito à vista, poupança e de pagamento pré-paga'
+      description: |
+        Conjunto de informações das Contas de: depósito à vista, poupança e de pagamento pré-paga
       required:
         - overdraftLimits
       properties:
@@ -1266,7 +1268,8 @@ components:
           $ref: '#/components/schemas/MaximumPrice'
     AccountsIdentification:
       type: object
-      description: 'Conjunto de informações das Contas de: depósito à vista, poupança e de pagamento pré-paga'
+      description: |
+        Conjunto de informações das Contas de: depósito à vista, poupança e de pagamento pré-paga
       required:
         - identification
       properties:
@@ -1476,7 +1479,8 @@ components:
             type: integer
     Balances:
       type: object
-      description: 'Traz as informações relativas aos saldos para  Contas de: depósito à vista, poupança e de pagamento pré-paga '
+      description: |
+        Traz as informações relativas aos saldos para  Contas de: depósito à vista, poupança e de pagamento pré-paga
       required:
         - ispbCode
         - branchCode
@@ -1495,47 +1499,47 @@ components:
           description: |
             Código da Instituição financeira. 
             ISPB: Identificador do participante junto ao Banco Central para o Sistema de Pagamentos Brasileiro – código identificador atribuído a todos os participantes do Sistema de Transferência de Reservas (STR) do Banco Central do Brasil
-          example: '60701190'
+          example: 60701190
         branchCode:
           type: string
           maxLength: 4
           pattern: '\d{8}|^NA$'
           description: |
             Código da Agência detentora da conta
-          example: '6272'
+          example: 6272
         number:
           type: string
           maxLength: 8
           pattern: '\d{8}|^NA$'
           description: |
             Número da conta
-          example: '24550'
+          example: 24550
         checkDigit:
           type: string
           maxLength: 1
           pattern: '\d{8}|^NA$'
           description: |
             Dígito da conta
-          example: '4'
+          example: 4
         brandName:
           type: string
           maxLength: 80
           pattern: '\d{8}|^NA$'
           description: |
-            'Nome da Marca reportada pelo participante do Open Banking. O conceito a que se refere a 'marca' é em essência uma promessa da empresa em fornecer uma série específica de atributos, benefícios e serviços uniformes aos clientes'
+            Nome da Marca reportada pelo participante do Open Banking. O conceito a que se refere a marca é em essência uma promessa da empresa em fornecer uma série específica de atributos, benefícios e serviços uniformes aos clientes
           example: Organização A
         companyCnpj:
           type: string
           maxLength: 14
           pattern: '\d{14}|^NA$'
           description: |
-            'Número completo do CNPJ da instituição responsável pelo Cadastro - o CNPJ corresponde ao número de inscrição no Cadastro de Pessoa Jurídica. Deve-se ter apenas os números do CNPJ, sem máscara'
-          example: '21128159000166'
+            Número completo do CNPJ da instituição responsável pelo Cadastro - o CNPJ corresponde ao número de inscrição no Cadastro de Pessoa Jurídica. Deve-se ter apenas os números do CNPJ, sem máscara
+          example: 21128159000166
         requestDateTime:
           type: string
           maxLength: 20
           pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])T(?:[01]\d|2[0123]):(?:[012345]\d):(?:[012345]\d)Z$'
-          example: '2020-07-21T08:30:00Z'
+          example: 2020-07-21T08:30:00.000Z
           description: 'Data e hora da consulta, conforme especificação RFC-3339, formato UTC.'
         currency:
           $ref: '#/components/schemas/Currency'
@@ -1544,7 +1548,8 @@ components:
           items:
             $ref: '#/components/schemas/StatementAccountBalance'
           minItems: 1
-          description: 'Lista os saldos referentes às contas de: depósito à vista, poupança ou de pagamento pré-paga'
+          description: |
+            Lista os saldos referentes às contas de: depósito à vista, poupança ou de pagamento pré-paga
     BankingAgent:
       type: object
       required:
@@ -4916,7 +4921,8 @@ components:
           example: '-180.836519'
     Identification:
       type: object
-      description: 'Conjunto dos atributos que caracterizam as Contas de: depósito à vista, poupança e de pagamento pré-paga'
+      description: |
+        Conjunto dos atributos que caracterizam as Contas de: depósito à vista, poupança e de pagamento pré-paga
       required:
         - ispbCode
         - branchCode
@@ -4937,53 +4943,53 @@ components:
           description: |
             Código da Instituição financeira. 
             ISPB: Identificador do participante junto ao Banco Central para o Sistema de Pagamentos Brasileiro – código identificador atribuído a todos os participantes do Sistema de Transferência de Reservas (STR) do Banco Central do Brasil
-          example: '60701190'
+          example: 60701190
         branchCode:
           type: string
           maxLength: 4
           pattern: '\d{8}|^NA$'
           description: |
             Código da Agência detentora da conta
-          example: '6272'
+          example: 6272
         number:
           type: string
           maxLength: 8
           pattern: '\d{8}|^NA$'
           description: |
             Número da conta
-          example: '24550'
+          example: 24550
         checkDigit:
           type: string
           maxLength: 1
           pattern: '\d{8}|^NA$'
           description: |
             Dígito da conta
-          example: '4'
+          example: 4
         brandName:
           type: string
           maxLength: 80
           pattern: '\d{8}|^NA$'
           description: |
-            'Nome da Marca reportada pelo participante do Open Banking. O conceito a que se refere a 'marca' é em essência uma promessa da empresa em fornecer uma série específica de atributos, benefícios e serviços uniformes aos clientes'
+            Nome da Marca reportada pelo participante do Open Banking. O conceito a que se refere a marca é em essência uma promessa da empresa em fornecer uma série específica de atributos, benefícios e serviços uniformes aos clientes
           example: Organização A
         companyCnpj:
           type: string
           maxLength: 14
           pattern: '\d{14}|^NA$'
           description: |
-            'Número completo do CNPJ da instituição responsável pelo Cadastro - o CNPJ corresponde ao número de inscrição no Cadastro de Pessoa Jurídica. Deve-se ter apenas os números do CNPJ, sem máscara'
-          example: '21128159000166'
+            Número completo do CNPJ da instituição responsável pelo Cadastro - o CNPJ corresponde ao número de inscrição no Cadastro de Pessoa Jurídica. Deve-se ter apenas os números do CNPJ, sem máscara
+          example: 21128159000166
         requestDateTime:
           type: string
           maxLength: 20
           pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])T(?:[01]\d|2[0123]):(?:[012345]\d):(?:[012345]\d)Z$'
-          example: '2020-07-21T08:30:00Z'
+          example: 2020-07-21T08:30:00.000Z
           description: 'Data e hora da consulta, conforme especificação RFC-3339, formato UTC.'
         updateDateTime:
           type: string
           maxLength: 20
           pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])T(?:[01]\d|2[0123]):(?:[012345]\d):(?:[012345]\d)Z$'
-          example: '2020-07-21T08:30:00Z'
+          example: 2020-07-21T08:30:00.000Z
           description: 'Data e hora da atualização, conforme especificação RFC-3339.'
         type:
           $ref: '#/components/schemas/AccountType/properties/type'
@@ -5557,7 +5563,7 @@ components:
           example: '2014-03-19'
     OverdraftLimits:
       type: object
-      description: 'Conjunto das informações relativas aos Limites referentes ao valor das operações de crédito (Cheque especial e Adiantamento a Depositantes) vinculadas à conta de depósito à vista ou conta corrente '
+      description: Conjunto das informações relativas aos Limites referentes ao valor das operações de crédito (Cheque especial e Adiantamento a Depositantes) vinculadas à conta de depósito à vista ou conta corrente
       required:
         - ispbCode
         - branchCode
@@ -5576,47 +5582,47 @@ components:
           description: |
             Código da Instituição financeira. 
             ISPB: Identificador do participante junto ao Banco Central para o Sistema de Pagamentos Brasileiro – código identificador atribuído a todos os participantes do Sistema de Transferência de Reservas (STR) do Banco Central do Brasil
-          example: '60701190'
+          example: 60701190
         branchCode:
           type: string
           maxLength: 4
           pattern: '\d{8}|^NA$'
           description: |
             Código da Agência detentora da conta
-          example: '6272'
+          example: 6272
         number:
           type: string
           maxLength: 8
           pattern: '\d{8}|^NA$'
           description: |
             Número da conta
-          example: '24550'
+          example: 24550
         checkDigit:
           type: string
           maxLength: 1
           pattern: '\d{8}|^NA$'
           description: |
             Dígito da conta
-          example: '4'
+          example: 4
         brandName:
           type: string
           maxLength: 80
           pattern: '\d{8}|^NA$'
           description: |
-            'Nome da Marca reportada pelo participante do Open Banking. O conceito a que se refere a 'marca' é em essência uma promessa da empresa em fornecer uma série específica de atributos, benefícios e serviços uniformes aos clientes'
+            Nome da Marca reportada pelo participante do Open Banking. O conceito a que se refere a marca é em essência uma promessa da empresa em fornecer uma série específica de atributos, benefícios e serviços uniformes aos clientes
           example: Organização A
         companyCnpj:
           type: string
           maxLength: 14
           pattern: '\d{14}|^NA$'
           description: |
-            'Número completo do CNPJ da instituição responsável pelo Cadastro - o CNPJ corresponde ao número de inscrição no Cadastro de Pessoa Jurídica. Deve-se ter apenas os números do CNPJ, sem máscara'
-          example: '21128159000166'
+            Número completo do CNPJ da instituição responsável pelo Cadastro - o CNPJ corresponde ao número de inscrição no Cadastro de Pessoa Jurídica. Deve-se ter apenas os números do CNPJ, sem máscara
+          example: 21128159000166
         requestDateTime:
           type: string
           maxLength: 20
           pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])T(?:[01]\d|2[0123]):(?:[012345]\d):(?:[012345]\d)Z$'
-          example: '2020-07-21T08:30:00Z'
+          example: 2020-07-21T08:30:00.000Z
           description: 'Data e hora da consulta, conforme especificação RFC-3339, formato UTC.'
         currency:
           $ref: '#/components/schemas/Currency'
@@ -6893,7 +6899,8 @@ components:
           properties:
             account:
               type: object
-              description: 'Conjunto de informações das Contas de: depósito à vista, poupança e de pagamento pré-paga'
+              description: |
+                Conjunto de informações das Contas de: depósito à vista, poupança e de pagamento pré-paga
               required:
                 - transactions
               properties:
@@ -11080,7 +11087,7 @@ components:
           maxLength: 30
           pattern: \w*\W*
           description: |
-            'Campo livre, de preenchimento obrigatório para complementar informação, quando selecionado o tipo de transação: OUTRO'
+            Campo livre, de preenchimento obrigatório para complementar informação, quando selecionado o tipo de transação: OUTRO
           example: Transferência
         amount:
           type: number
@@ -11092,23 +11099,23 @@ components:
           maxLength: 10
           pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$'
           description: |
-            'Se indicador de transação:
+            Se indicador de transação:
              TRANSACAO_EFETIVADA - corresponde a data de lançamento da transação
-             PAGAMENTO_AUTORIZADO - corresponde a data prevista de efetivação da transação'
-          example: '2021-01-07'
+             PAGAMENTO_AUTORIZADO - corresponde a data prevista de efetivação da transação
+          example: 2021-01-07T00:00:00.000Z
         payer:
           type: string
           maxLength: 100
           pattern: \w*\W*
           description: |
-            'Identificação do Pagador da transação'
+            Identificação do Pagador da transação
           example: GSOKS74631
         payee:
           type: string
           maxLength: 100
           pattern: \w*\W*
           description: |
-            'Identificação do Recebedor da transação'
+            Identificação do Recebedor da transação
           example: RHGTJ37417
     Status:
       type: object
@@ -11155,7 +11162,8 @@ components:
             - 'https://api.banco.com.br/open-banking/channels/v1/electronic-channels'
     Transactions:
       type: object
-      description: 'Conjunto de informações relativas às Transações de crédito e débito realizadas e de pagamento autorizado para  Contas de: depósito à vista, poupança e de pagamento pré-paga'
+      description: |
+        Conjunto de informações relativas às Transações de crédito e débito realizadas e de pagamento autorizado para  Contas de: depósito à vista, poupança e de pagamento pré-paga
       required:
         - ispbCode
         - branchCode
@@ -11174,47 +11182,47 @@ components:
           description: |
             Código da Instituição financeira. 
             ISPB: Identificador do participante junto ao Banco Central para o Sistema de Pagamentos Brasileiro – código identificador atribuído a todos os participantes do Sistema de Transferência de Reservas (STR) do Banco Central do Brasil
-          example: '60701190'
+          example: 60701190
         branchCode:
           type: string
           maxLength: 4
           pattern: '\d{8}|^NA$'
           description: |
             Código da Agência detentora da conta
-          example: '6272'
+          example: 6272
         number:
           type: string
           maxLength: 8
           pattern: '\d{8}|^NA$'
           description: |
             Número da conta
-          example: '24550'
+          example: 24550
         checkDigit:
           type: string
           maxLength: 1
           pattern: '\d{8}|^NA$'
           description: |
             Dígito da conta
-          example: '4'
+          example: 4
         brandName:
           type: string
           maxLength: 80
           pattern: '\d{8}|^NA$'
           description: |
-            'Nome da Marca reportada pelo participante do Open Banking. O conceito a que se refere a 'marca' é em essência uma promessa da empresa em fornecer uma série específica de atributos, benefícios e serviços uniformes aos clientes'
+            Nome da Marca reportada pelo participante do Open Banking. O conceito a que se refere a marca é em essência uma promessa da empresa em fornecer uma série específica de atributos, benefícios e serviços uniformes aos clientes
           example: Organização A
         companyCnpj:
           type: string
           maxLength: 14
           pattern: '\d{14}|^NA$'
           description: |
-            'Número completo do CNPJ da instituição responsável pelo Cadastro - o CNPJ corresponde ao número de inscrição no Cadastro de Pessoa Jurídica. Deve-se ter apenas os números do CNPJ, sem máscara'
-          example: '21128159000166'
+            Número completo do CNPJ da instituição responsável pelo Cadastro - o CNPJ corresponde ao número de inscrição no Cadastro de Pessoa Jurídica. Deve-se ter apenas os números do CNPJ, sem máscara
+          example: 21128159000166
         requestDateTime:
           type: string
           maxLength: 20
           pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])T(?:[01]\d|2[0123]):(?:[012345]\d):(?:[012345]\d)Z$'
-          example: '2020-07-21T08:30:00Z'
+          example: 2020-07-21T08:30:00.000Z
           description: 'Data e hora da consulta, conforme especificação RFC-3339, formato UTC.'
         currency:
           $ref: '#/components/schemas/Currency'
@@ -11223,7 +11231,8 @@ components:
           items:
             $ref: '#/components/schemas/StatementAccountTransaction'
           minItems: 1
-          description: 'Lista dos lançamentos referentes às transações realizadas e de pagamento autorizado para as contas de: depósito à vista, poupança e de pagamento pré-paga'
+          description: |
+            Lista dos lançamentos referentes às transações realizadas e de pagamento autorizado para as contas de: depósito à vista, poupança e de pagamento pré-paga         
     UnarrangedAccountOverdraftRate:
       type: object
       required:
