@@ -69,13 +69,12 @@ paths:
                                 maxLength: 8
                                 pattern: '\d{8}|^NA$'
                                 description: |
-                                  Código da Instituição financeira. 
-                                  ISPB: Identificador do participante junto ao Banco Central para o Sistema de Pagamentos Brasileiro – código identificador atribuído a todos os participantes do Sistema de Transferência de Reservas (STR) do Banco Central do Brasil
+                                  Código identificador atribuído pelo Banco Central do Brasil às instituições participantes do STR (Sistema de Transferência de reservas). O número-código substituiu o antigo código COMPE. Todos os participantes do STR, exceto as Infraestruturas do Mercado Financeiro (IMF) e a Secretaria do Tesouro Nacional, possuem um número-código independentemente de participarem da Centralizadora da Compensação de Cheques (Compe). O campo tem a anotação “n/a” (“não se aplica”) para os participantes do STR aos quais não é atribuído um número-código
                                 example: 60701190
                               branchCode:
                                 type: string
                                 maxLength: 4
-                                pattern: '\d{8}|^NA$'
+                                pattern: '\d{4}|^NA$'
                                 description: |
                                   Código da Agência detentora da conta
                                 example: 6272
@@ -89,14 +88,14 @@ paths:
                               checkDigit:
                                 type: string
                                 maxLength: 1
-                                pattern: '\d{8}|^NA$'
+                                pattern: '\d{1}|^NA$'
                                 description: |
                                   Dígito da conta
                                 example: 4
                               brandName:
                                 type: string
                                 maxLength: 80
-                                pattern: '\d{8}|^NA$'
+                                pattern: \w*\W*
                                 description: |
                                   Nome da Marca reportada pelo participante do Open Banking. O conceito a que se refere a marca é em essência uma promessa da empresa em fornecer uma série específica de atributos, benefícios e serviços uniformes aos clientes
                                 example: Organização A
@@ -220,13 +219,12 @@ paths:
                                 maxLength: 8
                                 pattern: '\d{8}|^NA$'
                                 description: |
-                                  Código da Instituição financeira. 
-                                  ISPB: Identificador do participante junto ao Banco Central para o Sistema de Pagamentos Brasileiro – código identificador atribuído a todos os participantes do Sistema de Transferência de Reservas (STR) do Banco Central do Brasil
+                                  Código identificador atribuído pelo Banco Central do Brasil às instituições participantes do STR (Sistema de Transferência de reservas). O número-código substituiu o antigo código COMPE. Todos os participantes do STR, exceto as Infraestruturas do Mercado Financeiro (IMF) e a Secretaria do Tesouro Nacional, possuem um número-código independentemente de participarem da Centralizadora da Compensação de Cheques (Compe). O campo tem a anotação “n/a” (“não se aplica”) para os participantes do STR aos quais não é atribuído um número-código
                                 example: 60701190
                               branchCode:
                                 type: string
                                 maxLength: 4
-                                pattern: '\d{8}|^NA$'
+                                pattern: '\d{4}|^NA$'
                                 description: |
                                   Código da Agência detentora da conta
                                 example: 6272
@@ -240,14 +238,14 @@ paths:
                               checkDigit:
                                 type: string
                                 maxLength: 1
-                                pattern: '\d{8}|^NA$'
+                                pattern: '\d{1}|^NA$'
                                 description: |
                                   Dígito da conta
                                 example: 4
                               brandName:
                                 type: string
                                 maxLength: 80
-                                pattern: '\d{8}|^NA$'
+                                pattern: \w*\W*
                                 description: |
                                   Nome da Marca reportada pelo participante do Open Banking. O conceito a que se refere a marca é em essência uma promessa da empresa em fornecer uma série específica de atributos, benefícios e serviços uniformes aos clientes
                                 example: Organização A
@@ -294,6 +292,7 @@ paths:
                                     amount:
                                       type: number
                                       nullable: true
+                                      maxLenght: 12
                                       description: 'Valor do Saldo disponível, representado em valor monetário com 2 casas decimais. O tipo SALDO_DISPONIVEL admite valor negativo.'
                                       example: 800.87
                                 minItems: 1
@@ -397,13 +396,12 @@ paths:
                                 maxLength: 8
                                 pattern: '\d{8}|^NA$'
                                 description: |
-                                  Código da Instituição financeira. 
-                                  ISPB: Identificador do participante junto ao Banco Central para o Sistema de Pagamentos Brasileiro – código identificador atribuído a todos os participantes do Sistema de Transferência de Reservas (STR) do Banco Central do Brasil
+                                  Código identificador atribuído pelo Banco Central do Brasil às instituições participantes do STR (Sistema de Transferência de reservas). O número-código substituiu o antigo código COMPE. Todos os participantes do STR, exceto as Infraestruturas do Mercado Financeiro (IMF) e a Secretaria do Tesouro Nacional, possuem um número-código independentemente de participarem da Centralizadora da Compensação de Cheques (Compe). O campo tem a anotação “n/a” (“não se aplica”) para os participantes do STR aos quais não é atribuído um número-código
                                 example: 60701190
                               branchCode:
                                 type: string
                                 maxLength: 4
-                                pattern: '\d{8}|^NA$'
+                                pattern: '\d{4}|^NA$'
                                 description: |
                                   Código da Agência detentora da conta
                                 example: 6272
@@ -417,14 +415,14 @@ paths:
                               checkDigit:
                                 type: string
                                 maxLength: 1
-                                pattern: '\d{8}|^NA$'
+                                pattern: '\d{1}|^NA$'
                                 description: |
                                   Dígito da conta
                                 example: 4
                               brandName:
                                 type: string
                                 maxLength: 80
-                                pattern: '\d{8}|^NA$'
+                                pattern: \w*\W*
                                 description: |
                                   Nome da Marca reportada pelo participante do Open Banking. O conceito a que se refere a marca é em essência uma promessa da empresa em fornecer uma série específica de atributos, benefícios e serviços uniformes aos clientes
                                 example: Organização A
@@ -506,7 +504,6 @@ paths:
                                       example: Transferência
                                     amount:
                                       type: number
-                                      nullable: true
                                       description: 'Valor do Saldo disponível, representado em valor monetário com 2 casas decimais. O tipo SALDO_DISPONIVEL admite valor negativo.'
                                       example: 500.54
                                     transactionDate:
@@ -592,13 +589,12 @@ paths:
                                 maxLength: 8
                                 pattern: '\d{8}|^NA$'
                                 description: |
-                                  Código da Instituição financeira. 
-                                  ISPB: Identificador do participante junto ao Banco Central para o Sistema de Pagamentos Brasileiro – código identificador atribuído a todos os participantes do Sistema de Transferência de Reservas (STR) do Banco Central do Brasil
+                                  Código identificador atribuído pelo Banco Central do Brasil às instituições participantes do STR (Sistema de Transferência de reservas). O número-código substituiu o antigo código COMPE. Todos os participantes do STR, exceto as Infraestruturas do Mercado Financeiro (IMF) e a Secretaria do Tesouro Nacional, possuem um número-código independentemente de participarem da Centralizadora da Compensação de Cheques (Compe). O campo tem a anotação “n/a” (“não se aplica”) para os participantes do STR aos quais não é atribuído um número-código
                                 example: 60701190
                               branchCode:
                                 type: string
                                 maxLength: 4
-                                pattern: '\d{8}|^NA$'
+                                pattern: '\d{4}|^NA$'
                                 description: |
                                   Código da Agência detentora da conta
                                 example: 6272
@@ -612,14 +608,14 @@ paths:
                               checkDigit:
                                 type: string
                                 maxLength: 1
-                                pattern: '\d{8}|^NA$'
+                                pattern: '\d{1}|^NA$'
                                 description: |
                                   Dígito da conta
                                 example: 4
                               brandName:
                                 type: string
                                 maxLength: 80
-                                pattern: '\d{8}|^NA$'
+                                pattern: \w*\W*
                                 description: |
                                   Nome da Marca reportada pelo participante do Open Banking. O conceito a que se refere a marca é em essência uma promessa da empresa em fornecer uma série específica de atributos, benefícios e serviços uniformes aos clientes
                                 example: Organização A
@@ -649,8 +645,8 @@ paths:
                                     type:
                                       type: string
                                       enum:
-                                        - VALOR_UTILIZADO
-                                        - VALOR_DISPONIVEL
+                                        - VALOR_CONTRATADO_LIMITE
+                                        - VALOR_UTILIZADO_LIMITE
                                         - SALDO_DESCOBERTO
                                       description: |
                                         Tipo de Transação relativa ao saldo do limite  informado: (vide Enum)
@@ -661,6 +657,7 @@ paths:
                                     amount:
                                       type: number
                                       nullable: true
+                                      maxLenght: 12
                                       description: Valor do saldo. Expressa em valor monetário com 2 casas decimais.
                                       example: 500
                                 minItems: 1
