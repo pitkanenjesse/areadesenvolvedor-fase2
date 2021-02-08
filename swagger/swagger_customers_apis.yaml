@@ -1248,83 +1248,6 @@ paths:
                               required:
                                 - name
                                 - cnpjNumber
-                                - businessCustomers
-                              properties:
-                                name:
-                                  type: string
-                                  maxLength: 80
-                                  pattern: \w*\W*
-                                  description: Nome da marca selecionada pela Organização
-                                  example: Organização A
-                                cnpjNumber:
-                                  type: string
-                                  maxLength: 14
-                                  pattern: '\d{14}|^NA$'
-                                  description: Número completo do CNPJ da instituição responsável pelo Cadastro - o CNPJ corresponde ao número de inscrição no Cadastro de Pessoa Jurídica.
-                                  example: '00000000000100'
-                                businessCustomers:
-                                  type: array
-                                  description: 'Conjunto de informações relativas ao processo de Relacionamento. Considera-se relacionamento as informações que permitam conhecer desde quando a pessoa consultada é cliente da instituição, bem como um indicador dos produtos e serviços que ela consome atualmente'
-                                  items:
-                                    type: object
-                                    required:
-                                      - financialRelation
-                                    properties:
-                                      financialRelation:
-                                        $ref: '#/paths/~1business-financial-relation/get/responses/200/content/application~1json/schema/properties/data/properties/brand/properties/companies/items/properties/personalCustomers/properties/financialRelation'
-                            minItems: 1
-                            description: Companies traz uma lista de todas as instituições da Marca
-                  links:
-                    $ref: '#/paths/~1personal-qualification/get/responses/200/content/application~1json/schema/properties/links'
-                  meta:
-                    $ref: '#/paths/~1personal-qualification/get/responses/200/content/application~1json/schema/properties/meta'
-  /business-financial-relation:
-    get:
-      tags:
-        - Customers
-      summary: Obtém dados relativos ao processo de relacionamento pessoa jurídica
-      description: Obtém dados relativos ao processo de relacionamento pessoa jurídica
-      operationId: getBusinessFinancialRelation
-      parameters:
-        - $ref: '#/paths/~1personal-qualification/get/parameters/0'
-        - $ref: '#/paths/~1personal-qualification/get/parameters/1'
-      responses:
-        '200':
-          description: Dados sobre relacionamento pessoa jurídica
-          content:
-            application/json:
-              schema:
-                type: object
-                required:
-                  - data
-                  - links
-                  - meta
-                properties:
-                  data:
-                    type: object
-                    required:
-                      - brand
-                    properties:
-                      brand:
-                        type: object
-                        description: Objeto que define a Organização controladora do grupo de instituições financeiras
-                        required:
-                          - name
-                          - companies
-                        properties:
-                          name:
-                            type: string
-                            pattern: \w*\W*
-                            maxLength: 80
-                            description: 'Nome da Marca reportada pelo participante do Open Banking. O conceito a que se refere a ''marca'' é em essência uma promessa da empresa em fornecer uma série específica de atributos, benefícios e serviços uniformes aos clientes'
-                            example: Organização A
-                          companies:
-                            type: array
-                            items:
-                              type: object
-                              required:
-                                - name
-                                - cnpjNumber
                                 - personalCustomers
                               properties:
                                 name:
@@ -1439,3 +1362,109 @@ paths:
                     $ref: '#/paths/~1personal-qualification/get/responses/200/content/application~1json/schema/properties/links'
                   meta:
                     $ref: '#/paths/~1personal-qualification/get/responses/200/content/application~1json/schema/properties/meta'
+  /business-financial-relation:
+    get:
+      tags:
+        - Customers
+      summary: Obtém dados relativos ao processo de relacionamento pessoa jurídica
+      description: Obtém dados relativos ao processo de relacionamento pessoa jurídica
+      operationId: getBusinessFinancialRelation
+      parameters:
+        - $ref: '#/paths/~1personal-qualification/get/parameters/0'
+        - $ref: '#/paths/~1personal-qualification/get/parameters/1'
+      responses:
+        '200':
+          description: Dados sobre relacionamento pessoa jurídica
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - data
+                  - links
+                  - meta
+                properties:
+                  data:
+                    type: object
+                    required:
+                      - brand
+                    properties:
+                      brand:
+                        type: object
+                        description: Objeto que define a Organização controladora do grupo de instituições financeiras
+                        required:
+                          - name
+                          - companies
+                        properties:
+                          name:
+                            type: string
+                            pattern: \w*\W*
+                            maxLength: 80
+                            description: 'Nome da Marca reportada pelo participante do Open Banking. O conceito a que se refere a ''marca'' é em essência uma promessa da empresa em fornecer uma série específica de atributos, benefícios e serviços uniformes aos clientes'
+                            example: Organização A
+                          companies:
+                            type: array
+                            items:
+                              type: object
+                              required:
+                                - name
+                                - cnpjNumber
+                                - businessCustomers
+                              properties:
+                                name:
+                                  type: string
+                                  maxLength: 80
+                                  pattern: \w*\W*
+                                  description: Nome da marca selecionada pela Organização
+                                  example: Organização A
+                                cnpjNumber:
+                                  type: string
+                                  maxLength: 14
+                                  pattern: '\d{14}|^NA$'
+                                  description: Número completo do CNPJ da instituição responsável pelo Cadastro - o CNPJ corresponde ao número de inscrição no Cadastro de Pessoa Jurídica.
+                                  example: '00000000000100'
+                                businessCustomers:
+                                  type: array
+                                  description: 'Conjunto de informações relativas ao processo de Relacionamento. Considera-se relacionamento as informações que permitam conhecer desde quando a pessoa consultada é cliente da instituição, bem como um indicador dos produtos e serviços que ela consome atualmente'
+                                  items:
+                                    type: object
+                                    required:
+                                      - financialRelation
+                                    properties:
+                                      financialRelation:
+                                        $ref: '#/paths/~1personal-financial-relation/get/responses/200/content/application~1json/schema/properties/data/properties/brand/properties/companies/items/properties/personalCustomers/properties/financialRelation'
+                            minItems: 1
+                            description: Companies traz uma lista de todas as instituições da Marca
+                  links:
+                    $ref: '#/paths/~1personal-qualification/get/responses/200/content/application~1json/schema/properties/links'
+                  meta:
+                    $ref: '#/paths/~1personal-qualification/get/responses/200/content/application~1json/schema/properties/meta'
+                example:
+                  data:
+                    brand:
+                      name: Organização A
+                      companies:
+                        - cnpjNumber: '50685362000135'
+                          name: Empresa A1
+                          urlComplementaryList: 'https://empresadaorganizacaoa.com/complementarylist'
+                          businessCustomer:
+                            financialRelation:
+                              - requestDateTime: '2020-07-21T08:30:00Z'
+                                updateDateTime: '2020-07-21T08:30:00Z'
+                                startDate: '2020-07-21'
+                                productServices:
+                                  - productServices: SEGURO
+                                    procurators:
+                                      - type: PROCURADOR
+                                        cpfNumber: '00000000000'
+                                        civilName: string
+                                        socialName: string
+                  links:
+                    self: 'https://api.banco.com.br/open-banking/products-services/v1/<resource>'
+                    first: 'https://api.banco.com.br/open-banking/products-services/v1/<resource>'
+                    prev: string
+                    next: string
+                    last: 'https://api.banco.com.br/open-banking/products-services/v1/<resource>'
+                  meta:
+                    totalRecords: 1
+                    totalPages: 1
