@@ -453,16 +453,16 @@
             <a href="#apis-do-open-banking-brasil-api-contas" class="toc-h1 toc-link" data-title="API - Contas">API - Contas</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#apis-diretorio-e-service-desk-dados-de-identificacao-de-contas" class="toc-h2 toc-link" data-title="Dados de Identificação de Contas">Dados de Identificação de Contas</a>
+                    <a href="#apis-diretorio-e-service-desk-identificacao-da-conta" class="toc-h2 toc-link" data-title="Identificação da Conta">Identificação da Conta</a>
                   </li>
                   <li>
-                    <a href="#apis-diretorio-e-service-desk-dados-relativos-aos-saldos-em-conta" class="toc-h2 toc-link" data-title="Dados relativos aos saldos em conta">Dados relativos aos saldos em conta</a>
+                    <a href="#apis-diretorio-e-service-desk-saldos-da-conta" class="toc-h2 toc-link" data-title="Saldos da conta">Saldos da conta</a>
                   </li>
                   <li>
-                    <a href="#apis-diretorio-e-service-desk-informacoes-relativas-as-transacoes-de-credito-e-debito-realizadas-e-autorizadas" class="toc-h2 toc-link" data-title="Informações relativas às Transações de crédito e débito realizadas e autorizadas">Informações relativas às Transações de crédito e débito realizadas e autorizadas</a>
+                    <a href="#apis-diretorio-e-service-desk-transacoes-da-conta" class="toc-h2 toc-link" data-title="Transações da conta">Transações da conta</a>
                   </li>
                   <li>
-                    <a href="#apis-diretorio-e-service-desk-limites-referentes-ao-valor-das-operacoes-de-credito" class="toc-h2 toc-link" data-title="Limites referentes ao valor das operações de crédito">Limites referentes ao valor das operações de crédito</a>
+                    <a href="#apis-diretorio-e-service-desk-limites-da-conta" class="toc-h2 toc-link" data-title="Limites da conta">Limites da conta</a>
                   </li>
               </ul>
           </li>
@@ -10175,7 +10175,7 @@ This operation does not require authentication
 
 <h3 id='apis-diretorio-e-service-desk-identificacao-pessoa-natural-visao-geral'>Visão Geral</h3>
 
-<p>Obtém dados relativos à identificação pessoa natural</p>
+<p>Obtém dados cadastrais relativos à identificação pessoa natural</p>
 
 <p>Esta especificação inclui todos os itens relevantes que permitam a ação e o efeito de identificar de forma única a pessoa natural através de seus dados cadastrais.</p>
 
@@ -10430,7 +10430,7 @@ This operation does not require authentication
 
 <h3 id='apis-diretorio-e-service-desk-identificacao-pessoa-juridica-visao-geral'>Visão Geral</h3>
 
-<p>Obtém dados relativos à identificação pessoa jurídica</p>
+<p>Obtém dados cadastrais relativos à identificação pessoa jurídica</p>
 
 <p>Esta especificação inclui todos os itens relevantes que permitam a ação e o efeito de identificar de forma única a pessoa jurídica através de seus dados cadastrais.</p>
 
@@ -10668,9 +10668,9 @@ This operation does not require authentication
 
 <h3 id='apis-diretorio-e-service-desk-qualificacao-pessoa-natural-visao-geral'>Visão Geral</h3>
 
-<p>Obtém dados relativos ao processo de qualificação pessoa natural</p>
+<p>Obtém dados cadastrais relativos ao processo de qualificação pessoa natural</p>
 
-<p>Esta especificação inclui todos os itens relevantes que permitam as instituições apreciar, avaliar, caracterizar e classificar o cliente com a finalidade de conhecer o seu perfil de risco e sua capacidade econômico-financeira.</p>
+<p>Esta especificação inclui todos os itens relevantes, que permitam as instituições apreciar, avaliar, caracterizar e classificar o cliente com a finalidade de conhecer o seu perfil de risco e sua capacidade econômico-financeira.</p>
 
 <h3 id='apis-diretorio-e-service-desk-qualificacao-pessoa-natural-visao-de-alto-de-nivel-das-estruturas-de-dados'>Visão de alto de nível das estruturas de dados</h3>
 
@@ -10856,9 +10856,9 @@ This operation does not require authentication
 
 <h3 id='apis-diretorio-e-service-desk-qualificacao-pessoa-juridica-visao-geral'>Visão Geral</h3>
 
-<p>Obtém dados relativos ao processo de qualificação pessoa jurídica</p>
+<p>Obtém dados cadastrais relativos ao processo de qualificação pessoa jurídica</p>
 
-<p>Esta especificação inclui todos os itens relevantes que permitam as instituições apreciar, avaliar, caracterizar e classificar o cliente com a finalidade de conhecer o seu perfil de risco e sua capacidade econômico-financeira.</p>
+<p>Esta especificação inclui todos os itens relevantes, que permitam as instituições apreciar, avaliar, caracterizar e classificar o cliente com a finalidade de conhecer o seu perfil de risco e sua capacidade econômico-financeira.</p>
 
 <h3 id='apis-diretorio-e-service-desk-qualificacao-pessoa-juridica-visao-de-alto-de-nivel-das-estruturas-de-dados'>Visão de alto de nível das estruturas de dados</h3>
 
@@ -11048,7 +11048,9 @@ This operation does not require authentication
 
 <h3 id='apis-diretorio-e-service-desk-relacionamento-pessoa-natural-visao-geral'>Visão Geral</h3>
 
-<p>Obtém dados relativos ao processo de relacionamento pessoa natural</p>
+<p>Obtém dados cadastrais relativos ao relacionamento da pessoa natural com a sua instituição.</p>
+
+<p>Considera-se relacionamento as informações que permitam conhecer desde quando a pessoa consultada é cliente da instituição, bem como um indicador dos produtos e serviços que ela consome atualmente.</p>
 
 <h3 id='apis-diretorio-e-service-desk-relacionamento-pessoa-natural-visao-de-alto-de-nivel-das-estruturas-de-dados'>Visão de alto de nível das estruturas de dados</h3>
 
@@ -11233,7 +11235,9 @@ This operation does not require authentication
 
 <h3 id='apis-diretorio-e-service-desk-relacionamento-pessoa-juridica-visao-geral'>Visão Geral</h3>
 
-<p>Obtém dados relativos ao processo de relacionamento pessoa jurídica</p>
+<p>Obtém dados cadastrais relativos ao relacionamento pessoa jurídica com a sua instituição.</p>
+
+<p>Considera-se relacionamento as informações que permitam conhecer desde quando a pessoa consultada é cliente da instituição, bem como um indicador dos produtos e serviços que ela consome atualmente.</p>
 
 <h3 id='apis-diretorio-e-service-desk-relacionamento-pessoa-juridica-visao-de-alto-de-nivel-das-estruturas-de-dados'>Visão de alto de nível das estruturas de dados</h3>
 
@@ -11370,7 +11374,7 @@ This operation does not require authentication
 
 <h1 id="apis-do-open-banking-brasil-api-contas">API - Contas</h1>
 
-<h2 id='apis-diretorio-e-service-desk-dados-de-identificacao-de-contas'>Dados de Identificação de Contas</h2>
+<h2 id='apis-diretorio-e-service-desk-identificacao-da-conta'>Identificação da Conta</h2>
 
 <p><a id="opIdgetAccountsIdentification"></a></p>
 
@@ -11422,15 +11426,15 @@ This operation does not require authentication
 </tr>
 </tbody></table>
 
-<h3 id='apis-diretorio-e-service-desk-dados-de-identificacao-de-contas-visao-geral'>Visão Geral</h3>
+<h3 id='apis-diretorio-e-service-desk-identificacao-da-conta-visao-geral'>Visão Geral</h3>
 
-<p>Este <em>endpoint</em> possibilita ao diretório consultar dados que identificam uma conta</p>
+<p>Esta especificação inclui todos os artefatos relevantes para a Especificação de API sobre a Identificação de uma conta de: depósito à vista, poupança ou de pagamento pré-paga referente às informações transacionais de cliente.</p>
 
-<h3 id='apis-diretorio-e-service-desk-dados-de-identificacao-de-contas-visao-de-alto-de-nivel-das-estruturas-de-dados'>Visão de alto de nível das estruturas de dados</h3>
+<h3 id='apis-diretorio-e-service-desk-identificacao-da-conta-visao-de-alto-de-nivel-das-estruturas-de-dados'>Visão de alto de nível das estruturas de dados</h3>
 
 <p><img class="lazy" src="images/loading-e35b35a4.gif" data-src="images/tld/accounts/TLD_Accounts_Identification-65f359c9.png"/></p>
 
-<h3 id='apis-diretorio-e-service-desk-dados-de-identificacao-de-contas-der-diagramas-de-entidade-e-relacionamento'>DER - Diagramas de Entidade e Relacionamento</h3>
+<h3 id='apis-diretorio-e-service-desk-identificacao-da-conta-der-diagramas-de-entidade-e-relacionamento'>DER - Diagramas de Entidade e Relacionamento</h3>
 
 <ul>
 <li>DER Conceitual</li>
@@ -11448,15 +11452,15 @@ This operation does not require authentication
 
 <p><a href="images/der/accounts/DER_Accounts_Identification-ff2091ee.png" target="_blank">Fazer download do DER conceitual</a></p>
 
-<h3 id='apis-diretorio-e-service-desk-dados-de-identificacao-de-contas-dicionario-de-dados'>Dicionário de dados</h3>
+<h3 id='apis-diretorio-e-service-desk-identificacao-da-conta-dicionario-de-dados'>Dicionário de dados</h3>
 
 <p><a href='dictionary/accounts_identification.csv' target="_blank">Fazer download do dicionário de dados</a></p>
 
-<h3 id='apis-diretorio-e-service-desk-dados-de-identificacao-de-contas-especificacao-em-oas-3-0'>Especificação em OAS 3.0</h3>
+<h3 id='apis-diretorio-e-service-desk-identificacao-da-conta-especificacao-em-oas-3-0'>Especificação em OAS 3.0</h3>
 
 <p><a href='swagger/swagger_accounts_apis.yaml'>Download da Especificação (OAS 3.0)</a></p>
 
-<h3 id="dados-de-identificação-de-contas-parameters">Parâmetros</h3>
+<h3 id="identificação-da-conta-parameters">Parâmetros</h3>
 
 <table><thead>
 <tr>
@@ -11521,7 +11525,7 @@ This operation does not require authentication
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 
-<h3 id="dados-de-identificação-de-contas-responses">Resposta</h3>
+<h3 id="identificação-da-conta-responses">Resposta</h3>
 
 <table><thead>
 <tr>
@@ -11543,7 +11547,7 @@ This operation does not require authentication
 This operation does not require authentication
 </aside>
 
-<h2 id='apis-diretorio-e-service-desk-dados-relativos-aos-saldos-em-conta'>Dados relativos aos saldos em conta</h2>
+<h2 id='apis-diretorio-e-service-desk-saldos-da-conta'>Saldos da conta</h2>
 
 <p><a id="opIdgetAccountsBalances"></a></p>
 
@@ -11595,15 +11599,15 @@ This operation does not require authentication
 </tr>
 </tbody></table>
 
-<h3 id='apis-diretorio-e-service-desk-dados-relativos-aos-saldos-em-conta-visao-geral'>Visão Geral</h3>
+<h3 id='apis-diretorio-e-service-desk-saldos-da-conta-visao-geral'>Visão Geral</h3>
 
-<p>Este <em>endpoint</em> possibilita ao diretório consultar dados relativos aos saldos em conta</p>
+<p>Esta especificação inclui todos os artefatos relevantes para a Especificação de API sobre os saldos de uma conta de: depósito à vista, poupança ou de pagamento pré-paga referente às informações transacionais de cliente.</p>
 
-<h3 id='apis-diretorio-e-service-desk-dados-relativos-aos-saldos-em-conta-visao-de-alto-de-nivel-das-estruturas-de-dados'>Visão de alto de nível das estruturas de dados</h3>
+<h3 id='apis-diretorio-e-service-desk-saldos-da-conta-visao-de-alto-de-nivel-das-estruturas-de-dados'>Visão de alto de nível das estruturas de dados</h3>
 
 <p><img class="lazy" src="images/loading-e35b35a4.gif" data-src="images/tld/accounts/TLD_Accounts_Balances-c44f40d5.png"/></p>
 
-<h3 id='apis-diretorio-e-service-desk-dados-relativos-aos-saldos-em-conta-der-diagramas-de-entidade-e-relacionamento'>DER - Diagramas de Entidade e Relacionamento</h3>
+<h3 id='apis-diretorio-e-service-desk-saldos-da-conta-der-diagramas-de-entidade-e-relacionamento'>DER - Diagramas de Entidade e Relacionamento</h3>
 
 <ul>
 <li>DER Conceitual</li>
@@ -11621,15 +11625,15 @@ This operation does not require authentication
 
 <p><a href="images/der/accounts/DER_Accounts_Balances-6df9d551.png" target="_blank">Fazer download do DER conceitual</a></p>
 
-<h3 id='apis-diretorio-e-service-desk-dados-relativos-aos-saldos-em-conta-dicionario-de-dados'>Dicionário de dados</h3>
+<h3 id='apis-diretorio-e-service-desk-saldos-da-conta-dicionario-de-dados'>Dicionário de dados</h3>
 
 <p><a href='dictionary/accounts_balances.csv' target="_blank">Fazer download do dicionário de dados</a></p>
 
-<h3 id='apis-diretorio-e-service-desk-dados-relativos-aos-saldos-em-conta-especificacao-em-oas-3-0'>Especificação em OAS 3.0</h3>
+<h3 id='apis-diretorio-e-service-desk-saldos-da-conta-especificacao-em-oas-3-0'>Especificação em OAS 3.0</h3>
 
 <p><a href='swagger/swagger_accounts_apis.yaml'>Download da Especificação (OAS 3.0)</a></p>
 
-<h3 id="dados-relativos-aos-saldos-em-conta-parameters">Parâmetros</h3>
+<h3 id="saldos-da-conta-parameters">Parâmetros</h3>
 
 <table><thead>
 <tr>
@@ -11697,7 +11701,7 @@ This operation does not require authentication
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 
-<h3 id="dados-relativos-aos-saldos-em-conta-responses">Resposta</h3>
+<h3 id="saldos-da-conta-responses">Resposta</h3>
 
 <table><thead>
 <tr>
@@ -11719,7 +11723,7 @@ This operation does not require authentication
 This operation does not require authentication
 </aside>
 
-<h2 id='apis-diretorio-e-service-desk-informacoes-relativas-as-transacoes-de-credito-e-debito-realizadas-e-autorizadas'>Informações relativas às Transações de crédito e débito realizadas e autorizadas</h2>
+<h2 id='apis-diretorio-e-service-desk-transacoes-da-conta'>Transações da conta</h2>
 
 <p><a id="opIdgetAccountsTransactions"></a></p>
 
@@ -11771,15 +11775,15 @@ This operation does not require authentication
 </tr>
 </tbody></table>
 
-<h3 id='apis-diretorio-e-service-desk-informacoes-relativas-as-transacoes-de-credito-e-debito-realizadas-e-autorizadas-visao-geral'>Visão Geral</h3>
+<h3 id='apis-diretorio-e-service-desk-transacoes-da-conta-visao-geral'>Visão Geral</h3>
 
-<p>Este <em>endpoint</em> possibilita ao diretório consultar informações relativas às Transações de crédito e débito realizadas e autorizadas</p>
+<p>Esta especificação inclui todos os artefatos relevantes para a Especificação de API sobre as transações efetivadas e os pagamentos autorizados de uma conta de: depósito à vista, poupança ou de pagamento pré-paga referente às informações transacionais de cliente.</p>
 
-<h3 id='apis-diretorio-e-service-desk-informacoes-relativas-as-transacoes-de-credito-e-debito-realizadas-e-autorizadas-visao-de-alto-de-nivel-das-estruturas-de-dados'>Visão de alto de nível das estruturas de dados</h3>
+<h3 id='apis-diretorio-e-service-desk-transacoes-da-conta-visao-de-alto-de-nivel-das-estruturas-de-dados'>Visão de alto de nível das estruturas de dados</h3>
 
 <p><img class="lazy" src="images/loading-e35b35a4.gif" data-src="images/tld/accounts/TLD_Accounts_Transactions-557cdf46.png"/></p>
 
-<h3 id='apis-diretorio-e-service-desk-informacoes-relativas-as-transacoes-de-credito-e-debito-realizadas-e-autorizadas-der-diagramas-de-entidade-e-relacionamento'>DER - Diagramas de Entidade e Relacionamento</h3>
+<h3 id='apis-diretorio-e-service-desk-transacoes-da-conta-der-diagramas-de-entidade-e-relacionamento'>DER - Diagramas de Entidade e Relacionamento</h3>
 
 <ul>
 <li>DER Conceitual</li>
@@ -11797,15 +11801,15 @@ This operation does not require authentication
 
 <p><a href="images/der/accounts/DER_Accounts_Transactions-dfd15428.png" target="_blank">Fazer download do DER conceitual</a></p>
 
-<h3 id='apis-diretorio-e-service-desk-informacoes-relativas-as-transacoes-de-credito-e-debito-realizadas-e-autorizadas-dicionario-de-dados'>Dicionário de dados</h3>
+<h3 id='apis-diretorio-e-service-desk-transacoes-da-conta-dicionario-de-dados'>Dicionário de dados</h3>
 
 <p><a href='dictionary/accounts_transactions.csv' target="_blank">Fazer download do dicionário de dados</a></p>
 
-<h3 id='apis-diretorio-e-service-desk-informacoes-relativas-as-transacoes-de-credito-e-debito-realizadas-e-autorizadas-especificacao-em-oas-3-0'>Especificação em OAS 3.0</h3>
+<h3 id='apis-diretorio-e-service-desk-transacoes-da-conta-especificacao-em-oas-3-0'>Especificação em OAS 3.0</h3>
 
 <p><a href='swagger/swagger_accounts_apis.yaml'>Download da Especificação (OAS 3.0)</a></p>
 
-<h3 id="informações-relativas-às-transações-de-crédito-e-débito-realizadas-e-autorizadas-parameters">Parâmetros</h3>
+<h3 id="transações-da-conta-parameters">Parâmetros</h3>
 
 <table><thead>
 <tr>
@@ -11879,7 +11883,7 @@ This operation does not require authentication
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 
-<h3 id="informações-relativas-às-transações-de-crédito-e-débito-realizadas-e-autorizadas-responses">Resposta</h3>
+<h3 id="transações-da-conta-responses">Resposta</h3>
 
 <table><thead>
 <tr>
@@ -11901,7 +11905,7 @@ This operation does not require authentication
 This operation does not require authentication
 </aside>
 
-<h2 id='apis-diretorio-e-service-desk-limites-referentes-ao-valor-das-operacoes-de-credito'>Limites referentes ao valor das operações de crédito</h2>
+<h2 id='apis-diretorio-e-service-desk-limites-da-conta'>Limites da conta</h2>
 
 <p><a id="opIdgetAccountsOverdraftLimits"></a></p>
 
@@ -11953,15 +11957,15 @@ This operation does not require authentication
 </tr>
 </tbody></table>
 
-<h3 id='apis-diretorio-e-service-desk-limites-referentes-ao-valor-das-operacoes-de-credito-visao-geral'>Visão Geral</h3>
+<h3 id='apis-diretorio-e-service-desk-limites-da-conta-visao-geral'>Visão Geral</h3>
 
-<p>Este <em>endpoint</em> possibilita ao diretório consultar limites referentes ao valor das operações de crédito vinculadas à conta de depósito à vista ou conta corrente</p>
+<p>Esta especificação inclui todos os artefatos relevantes para a Especificação de API sobre os valores utilizado e disponível do limite do Cheque Especial e o valor em excesso (Adiantamento a depositante) de uma conta de depósito à vista, referente às informações transacionais de cliente. </p>
 
-<h3 id='apis-diretorio-e-service-desk-limites-referentes-ao-valor-das-operacoes-de-credito-visao-de-alto-de-nivel-das-estruturas-de-dados'>Visão de alto de nível das estruturas de dados</h3>
+<h3 id='apis-diretorio-e-service-desk-limites-da-conta-visao-de-alto-de-nivel-das-estruturas-de-dados'>Visão de alto de nível das estruturas de dados</h3>
 
 <p><img class="lazy" src="images/loading-e35b35a4.gif" data-src="images/tld/accounts/TLD_Accounts_OverdraftLimits-1f00e503.png"/></p>
 
-<h3 id='apis-diretorio-e-service-desk-limites-referentes-ao-valor-das-operacoes-de-credito-der-diagramas-de-entidade-e-relacionamento'>DER - Diagramas de Entidade e Relacionamento</h3>
+<h3 id='apis-diretorio-e-service-desk-limites-da-conta-der-diagramas-de-entidade-e-relacionamento'>DER - Diagramas de Entidade e Relacionamento</h3>
 
 <ul>
 <li>DER Conceitual</li>
@@ -11979,15 +11983,15 @@ This operation does not require authentication
 
 <p><a href="images/der/accounts/DER_Accounts_OverdraftLimits-cc61fa65.png" target="_blank">Fazer download do DER conceitual</a></p>
 
-<h3 id='apis-diretorio-e-service-desk-limites-referentes-ao-valor-das-operacoes-de-credito-dicionario-de-dados'>Dicionário de dados</h3>
+<h3 id='apis-diretorio-e-service-desk-limites-da-conta-dicionario-de-dados'>Dicionário de dados</h3>
 
 <p><a href='dictionary/accounts_overdraft_limits.csv' target="_blank">Fazer download do dicionário de dados</a></p>
 
-<h3 id='apis-diretorio-e-service-desk-limites-referentes-ao-valor-das-operacoes-de-credito-especificacao-em-oas-3-0'>Especificação em OAS 3.0</h3>
+<h3 id='apis-diretorio-e-service-desk-limites-da-conta-especificacao-em-oas-3-0'>Especificação em OAS 3.0</h3>
 
 <p><a href='swagger/swagger_accounts_apis.yaml'>Download da Especificação (OAS 3.0)</a></p>
 
-<h3 id="limites-referentes-ao-valor-das-operações-de-crédito-parameters">Parâmetros</h3>
+<h3 id="limites-da-conta-parameters">Parâmetros</h3>
 
 <table><thead>
 <tr>
@@ -12055,7 +12059,7 @@ This operation does not require authentication
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 
-<h3 id="limites-referentes-ao-valor-das-operações-de-crédito-responses">Resposta</h3>
+<h3 id="limites-da-conta-responses">Resposta</h3>
 
 <table><thead>
 <tr>
@@ -12109,7 +12113,7 @@ This operation does not require authentication
 
 <p>Conjunto de informações das Contas de: depósito à vista, poupança e de pagamento pré-paga</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -12239,7 +12243,7 @@ This operation does not require authentication
 
 <p>Objeto que reúne informações de tarifas de serviços</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -12297,7 +12301,7 @@ This operation does not require authentication
 
 <p>Conjunto de informações referentes aos limites da conta de  pagamento pós-paga.</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -12388,7 +12392,7 @@ This operation does not require authentication
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -12464,7 +12468,7 @@ This operation does not require authentication
 
 <p>Conjunto de informações das Contas de: depósito à vista, poupança e de pagamento pré-paga</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -12537,7 +12541,7 @@ This operation does not require authentication
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -12610,7 +12614,7 @@ This operation does not require authentication
 
 <p>Conjunto de informações das Contas de: depósito à vista, poupança e de pagamento pré-paga</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -12644,7 +12648,7 @@ This operation does not require authentication
 
 <p>Valores dos percentuais de taxas.</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -12688,7 +12692,7 @@ This operation does not require authentication
 
 <p>Objeto que reúne informações relativas a Termos e Condições para as modalidades tratadas</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -12735,7 +12739,7 @@ This operation does not require authentication
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -12792,7 +12796,7 @@ This operation does not require authentication
 
 <p>Índices de disponibilidades das APIs.</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -12884,7 +12888,7 @@ This operation does not require authentication
 
 <p>Tempo médio de reposta em segundos em cada nível e prioridade.</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -12986,7 +12990,7 @@ This operation does not require authentication
 
 <p>Transações em média por segundo.</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -13038,7 +13042,7 @@ This operation does not require authentication
 
 <p>Traz as informações relativas aos saldos para  Contas de: depósito à vista, poupança e de pagamento pré-paga</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -13165,7 +13169,7 @@ This operation does not require authentication
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -13212,7 +13216,7 @@ This operation does not require authentication
   </span><span class="nl">"isPublicAccessAllowed"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -13276,7 +13280,7 @@ This operation does not require authentication
 
 <p>Dados de identificação do correspondente.</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -13356,7 +13360,7 @@ This operation does not require authentication
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -13411,7 +13415,7 @@ This operation does not require authentication
 
 <p>Endereço do correspondente.</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -13495,7 +13499,7 @@ This operation does not require authentication
 </tr>
 </tbody></table>
 
-<h4 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades-enumerated-values'>Enumerated Values</h4>
+<h4 id='schemas-limites-da-conta-propriedades-enumerated-values'>Enumerated Values</h4>
 
 <table><thead>
 <tr>
@@ -13630,7 +13634,7 @@ This operation does not require authentication
 
 <p>Serviços fornecidos pelo correspondente.</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -13660,7 +13664,7 @@ This operation does not require authentication
 </tr>
 </tbody></table>
 
-<h4 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades-enumerated-values'>Enumerated Values</h4>
+<h4 id='schemas-limites-da-conta-propriedades-enumerated-values'>Enumerated Values</h4>
 
 <table><thead>
 <tr>
@@ -13810,7 +13814,7 @@ This operation does not require authentication
 
 <p>Organização controladora do grupo de instituições financeiras.</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -13907,7 +13911,7 @@ This operation does not require authentication
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -14002,7 +14006,7 @@ This operation does not require authentication
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -14094,7 +14098,7 @@ This operation does not require authentication
 
 <p>Dependência de instituições financeiras e demais instituições, autorizadas a funcionar pelo Banco Central do Brasil, destinada à prática das atividades para as quais a instituição esteja regularmente habilitada.</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -14159,7 +14163,7 @@ This operation does not require authentication
 
 <p>Dias e horários de funcionamento na dependência</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -14207,7 +14211,7 @@ This operation does not require authentication
 </tr>
 </tbody></table>
 
-<h4 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades-enumerated-values'>Enumerated Values</h4>
+<h4 id='schemas-limites-da-conta-propriedades-enumerated-values'>Enumerated Values</h4>
 
 <table><thead>
 <tr>
@@ -14266,7 +14270,7 @@ This operation does not require authentication
 
 <p>Dados de identificação na dependência.</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -14320,7 +14324,7 @@ This operation does not require authentication
 </tr>
 </tbody></table>
 
-<h4 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades-enumerated-values'>Enumerated Values</h4>
+<h4 id='schemas-limites-da-conta-propriedades-enumerated-values'>Enumerated Values</h4>
 
 <table><thead>
 <tr>
@@ -14360,7 +14364,7 @@ This operation does not require authentication
   </span><span class="nl">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"35721199"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -14394,7 +14398,7 @@ This operation does not require authentication
 <td>Número de telefone da dependência - se houver</td>
 </tr>
 </tbody></table>
-<h4 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades-enumerated-values'>Enumerated Values</h4>
+<h4 id='schemas-limites-da-conta-propriedades-enumerated-values'>Enumerated Values</h4>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -14437,7 +14441,7 @@ This operation does not require authentication
 
 <p>Endereço na dependência.</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -14509,7 +14513,7 @@ This operation does not require authentication
 </tr>
 </tbody></table>
 
-<h4 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades-enumerated-values'>Enumerated Values</h4>
+<h4 id='schemas-limites-da-conta-propriedades-enumerated-values'>Enumerated Values</h4>
 
 <table><thead>
 <tr>
@@ -14640,7 +14644,7 @@ This operation does not require authentication
   </span><span class="nl">"additionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -14668,7 +14672,7 @@ This operation does not require authentication
 <td>Texto livre para complementar informação relativa ao Serviço disponível, quando for selecionada a opção &#39;OUTROS_PRODUTOS_SERVICOS&#39;</td>
 </tr>
 </tbody></table>
-<h4 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades-enumerated-values'>Enumerated Values</h4>
+<h4 id='schemas-limites-da-conta-propriedades-enumerated-values'>Enumerated Values</h4>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -14912,7 +14916,7 @@ This operation does not require authentication
 
 <p>Organização controladora do grupo de instituições financeiras.</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -15007,7 +15011,7 @@ This operation does not require authentication
 
 <p>Nome da Instituição, pertencente à Marca, responsável pela Dependência.</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -15054,7 +15058,7 @@ This operation does not require authentication
   </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Organização A"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -15206,7 +15210,7 @@ This operation does not require authentication
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -15414,7 +15418,7 @@ This operation does not require authentication
 
 <p>Organização controladora do grupo de instituições financeiras.</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -15581,7 +15585,7 @@ This operation does not require authentication
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -15670,7 +15674,7 @@ This operation does not require authentication
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -15898,7 +15902,7 @@ This operation does not require authentication
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -16116,7 +16120,7 @@ This operation does not require authentication
 
 <p>Organização controladora do grupo de instituições financeiras</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -16329,7 +16333,7 @@ This operation does not require authentication
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -16404,7 +16408,7 @@ This operation does not require authentication
 
 <p>Objeto que define a Organização controladora do grupo de instituições financeiras</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -16460,7 +16464,7 @@ This operation does not require authentication
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -16520,7 +16524,7 @@ This operation does not require authentication
 
 <p>Conjunto de informações cadastrais do Cliente pessoa jurídica.</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -16650,7 +16654,7 @@ This operation does not require authentication
   </span><span class="nl">"termsConditions"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://empresaa1.com/personal_financing"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -16690,7 +16694,7 @@ This operation does not require authentication
 <td>Campo aberto para informar as condições contratuais relativas à Modalidade de Financiamentos para pessoa jurídica informada. Pode ser informada a URL referente ao endereço onde constam as condições informadas. Endereço eletrônico de acesso ao canal.</td>
 </tr>
 </tbody></table>
-<h4 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades-enumerated-values'>Enumerated Values</h4>
+<h4 id='schemas-limites-da-conta-propriedades-enumerated-values'>Enumerated Values</h4>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -16854,7 +16858,7 @@ This operation does not require authentication
 
 <p>Organização controladora do grupo de instituições financeiras</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -16997,7 +17001,7 @@ This operation does not require authentication
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -17094,7 +17098,7 @@ This operation does not require authentication
 
 <p>Objeto que reúne informações de tarifas de serviços</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -17191,7 +17195,7 @@ This operation does not require authentication
 
 <p>Conjunto de informações relativas a Identificação ou seja a ação e o efeito de identificar de forma única a pessoa jurídica através de seus dados cadastrais</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -17347,7 +17351,7 @@ This operation does not require authentication
 
 <p>Objeto que define a Organização controladora do grupo de instituições financeiras</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -17452,7 +17456,7 @@ This operation does not require authentication
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -17561,7 +17565,7 @@ This operation does not require authentication
 
 <p>Conjunto de informações Cadastrais do Cliente Pessoa jurídica</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -17596,7 +17600,7 @@ This operation does not require authentication
 
 <p>Objeto que agrupa informações relativas ao patrimônio da empresa</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -17738,7 +17742,7 @@ This operation does not require authentication
   </span><span class="nl">"termsConditions"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://empresaa1.com/personal_invoice_financings"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -17778,7 +17782,7 @@ This operation does not require authentication
 <td>Campo aberto para informar as condições contratuais relativas à Modalidade de Financiamentos para pessoa jurídica informada. Pode ser informada a URL referente ao endereço onde constam as condições informadas. Endereço eletrônico de acesso ao canal.</td>
 </tr>
 </tbody></table>
-<h4 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades-enumerated-values'>Enumerated Values</h4>
+<h4 id='schemas-limites-da-conta-propriedades-enumerated-values'>Enumerated Values</h4>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -17926,7 +17930,7 @@ This operation does not require authentication
 
 <p>Organização controladora do grupo de instituições financeiras</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -18069,7 +18073,7 @@ This operation does not require authentication
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -18166,7 +18170,7 @@ This operation does not require authentication
 
 <p>Objeto que reúne informações de tarifas de serviços</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -18236,7 +18240,7 @@ This operation does not require authentication
   </span><span class="nl">"maximumRate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.6865"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -18388,7 +18392,7 @@ This operation does not require authentication
   </span><span class="nl">"termsConditions"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://empresaa1.com/personal_loans"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -18428,7 +18432,7 @@ This operation does not require authentication
 <td>Campo aberto para informar as condições contratuais relativas à Modalidade de Empréstimo para pessoa jurídica informada. Pode ser informada a URL referente ao endereço onde constam as condições informadas. Endereço eletrônico de acesso ao canal.</td>
 </tr>
 </tbody></table>
-<h4 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades-enumerated-values'>Enumerated Values</h4>
+<h4 id='schemas-limites-da-conta-propriedades-enumerated-values'>Enumerated Values</h4>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -18580,7 +18584,7 @@ This operation does not require authentication
 
 <p>Organização controladora do grupo de instituições financeiras</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -18723,7 +18727,7 @@ This operation does not require authentication
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -18771,7 +18775,7 @@ This operation does not require authentication
   </span><span class="nl">"expirationDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-03-19"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -18838,7 +18842,7 @@ This operation does not require authentication
 
 <p>Objeto que reúne as informações relativas ao processo de qualificação. Considera-se qualificação as informações que permitam as instituições apreciar, avaliar, caracterizar e classificar o cliente com a finalidade de conhecer o seu perfil de risco e sua capacidade econômico-financeira</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -18924,7 +18928,7 @@ This operation does not require authentication
 
 <p>Objeto que define a Organização controladora do grupo de instituições financeiras</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -18983,7 +18987,7 @@ This operation does not require authentication
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -19046,7 +19050,7 @@ This operation does not require authentication
 
 <p>Objeto que agrupa as informações Cadastrais do Cliente Pessoa jurídica</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -19176,7 +19180,7 @@ This operation does not require authentication
 
 <p>Lista de adiantamento a depositante</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -19328,7 +19332,7 @@ This operation does not require authentication
 
 <p>Organização titular das dependências</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -19469,7 +19473,7 @@ This operation does not require authentication
 
 <p>Lista de adiantamento a depositante</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -19568,7 +19572,7 @@ This operation does not require authentication
 
 <p>Objeto que reúne informações de tarifas de serviços</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -19602,7 +19606,7 @@ This operation does not require authentication
   </span><span class="nl">"payeeAdditionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MIYQZ86345'"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -19691,7 +19695,7 @@ This operation does not require authentication
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -19765,7 +19769,7 @@ This operation does not require authentication
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -19832,7 +19836,7 @@ This operation does not require authentication
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -19899,7 +19903,7 @@ This operation does not require authentication
 
 <p>Lista dos lançamentos referentes aos limites relativos à conta de  pagamento pós-paga</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -19965,7 +19969,7 @@ This operation does not require authentication
 </tr>
 </tbody></table>
 
-<h4 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades-enumerated-values'>Enumerated Values</h4>
+<h4 id='schemas-limites-da-conta-propriedades-enumerated-values'>Enumerated Values</h4>
 
 <table><thead>
 <tr>
@@ -20021,7 +20025,7 @@ This operation does not require authentication
 
 <p>Lista que traz os valores relativos aos saldos do Limite de crédito total da conta de pagamento pós-paga</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -20145,7 +20149,7 @@ This operation does not require authentication
 
 <p>objeto que agrupa as informações referentes as transações de pagamentos realizadas na conta de  pagamento pós-paga</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -20211,7 +20215,7 @@ This operation does not require authentication
 
 <p>Conjunto de informações referentes à identificação da conta de pagamento pós-paga</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -20300,7 +20304,7 @@ This operation does not require authentication
 
 <p>Conjunto de informações relativas aos Meios de Pagamento da Conta de pagamento pós-paga</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -20352,7 +20356,7 @@ This operation does not require authentication
 
 <p>Informações de identificação do cartão de crédito</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -20400,7 +20404,7 @@ This operation does not require authentication
 </tr>
 </tbody></table>
 
-<h4 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades-enumerated-values'>Enumerated Values</h4>
+<h4 id='schemas-limites-da-conta-propriedades-enumerated-values'>Enumerated Values</h4>
 
 <table><thead>
 <tr>
@@ -20642,7 +20646,7 @@ This operation does not require authentication
 
 <p>Informações sobre taxas de juros</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -20786,7 +20790,7 @@ This operation does not require authentication
 </tr>
 </tbody></table>
 
-<h4 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades-enumerated-values'>Enumerated Values</h4>
+<h4 id='schemas-limites-da-conta-propriedades-enumerated-values'>Enumerated Values</h4>
 
 <table><thead>
 <tr>
@@ -20824,7 +20828,7 @@ This operation does not require authentication
 
 <p>Informações sobre programas de recompensa presentes no cartão de crédito</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -20903,7 +20907,7 @@ This operation does not require authentication
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -20949,7 +20953,7 @@ This operation does not require authentication
 <td>Valor máximo apurado para a tarifa de serviços sobre a base de clientes no mês de referência</td>
 </tr>
 </tbody></table>
-<h4 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades-enumerated-values'>Enumerated Values</h4>
+<h4 id='schemas-limites-da-conta-propriedades-enumerated-values'>Enumerated Values</h4>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -21047,7 +21051,7 @@ This operation does not require authentication
 
 <p>Informações sobre termos e condições para aquisição e cancelamento</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -21096,7 +21100,7 @@ This operation does not require authentication
 
 <p>Moeda referente ao valor mínimo da Tarifa, segundo modelo ISO-4217</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -21129,7 +21133,7 @@ This operation does not require authentication
 
 <p>Percentual de clientes em cada faixa.</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -21196,7 +21200,7 @@ This operation does not require authentication
 
 <p>Conjunto de informações referentes às formas para contatar o cliente.</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -21238,7 +21242,7 @@ This operation does not require authentication
   </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"elzamilenastefanyteixeira-81@br.inter.net"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -21277,7 +21281,7 @@ This operation does not require authentication
   </span><span class="nl">"phoneExtension"</span><span class="p">:</span><span class="w"> </span><span class="s2">"strin"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -21329,7 +21333,7 @@ This operation does not require authentication
 <td>Número do ramal. De preenchimento obrigatório se fizer parte da identificação do número do telefone informado</td>
 </tr>
 </tbody></table>
-<h4 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades-enumerated-values'>Enumerated Values</h4>
+<h4 id='schemas-limites-da-conta-propriedades-enumerated-values'>Enumerated Values</h4>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -21629,7 +21633,7 @@ This operation does not require authentication
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -21705,7 +21709,7 @@ This operation does not require authentication
 <td>Objeto agrupador das informações que compõem as Coordenadas geográficas: latitude e longitude</td>
 </tr>
 </tbody></table>
-<h4 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades-enumerated-values'>Enumerated Values</h4>
+<h4 id='schemas-limites-da-conta-propriedades-enumerated-values'>Enumerated Values</h4>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -21833,7 +21837,7 @@ This operation does not require authentication
   </span><span class="nl">"isMain"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -21879,7 +21883,7 @@ This operation does not require authentication
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -21916,7 +21920,7 @@ This operation does not require authentication
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -21944,7 +21948,7 @@ This operation does not require authentication
 <td>Lista das URLs que atendem um tipo de canal eletrônico selecionado</td>
 </tr>
 </tbody></table>
-<h4 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades-enumerated-values'>Enumerated Values</h4>
+<h4 id='schemas-limites-da-conta-propriedades-enumerated-values'>Enumerated Values</h4>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -21989,7 +21993,7 @@ This operation does not require authentication
   </span><span class="nl">"additionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SIC"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -22017,7 +22021,7 @@ This operation does not require authentication
 <td>Texto livre para complementar informação relativa ao Serviço disponível, quando for selecionada a opção &#39;OUTROS_PRODUTOS_SERVICOS&#39;</td>
 </tr>
 </tbody></table>
-<h4 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades-enumerated-values'>Enumerated Values</h4>
+<h4 id='schemas-limites-da-conta-propriedades-enumerated-values'>Enumerated Values</h4>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -22194,7 +22198,7 @@ This operation does not require authentication
 <a id="tocselectronicchannelurl"></a></p>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="s2">"string"</span><span class="w">
 
-</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -22250,7 +22254,7 @@ This operation does not require authentication
 
 <p>Organização controladora do grupo de instituições financeiras.</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -22305,7 +22309,7 @@ This operation does not require authentication
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -22355,7 +22359,7 @@ This operation does not require authentication
 
 <p>Tempos de downtime por endpoint.</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -22395,7 +22399,7 @@ This operation does not require authentication
 
 <p>Tempos de uptime por endpoint.</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -22432,7 +22436,7 @@ This operation does not require authentication
 
 <p>Sigla de identificação do Serviço Prioritário, segundo Resolução 3.919 do Bacen.</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -22450,7 +22454,7 @@ This operation does not require authentication
 </tr>
 </tbody></table>
 
-<h4 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades-enumerated-values'>Enumerated Values</h4>
+<h4 id='schemas-limites-da-conta-propriedades-enumerated-values'>Enumerated Values</h4>
 
 <table><thead>
 <tr>
@@ -22635,7 +22639,7 @@ This operation does not require authentication
 Conta conjunta solidária - é a modalidade cujos titulares podem realizar movimentações de forma isolada, isto é, sem que seja necessária a autorização dos demais titulares
 Conta conjunta não solidária - onde as movimentações financeiras só podem serem realizadas mediante autorização de TODOS os correntistas da conta.</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -22653,7 +22657,7 @@ Conta conjunta não solidária - onde as movimentações financeiras só podem s
 </tr>
 </tbody></table>
 
-<h4 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades-enumerated-values'>Enumerated Values</h4>
+<h4 id='schemas-limites-da-conta-propriedades-enumerated-values'>Enumerated Values</h4>
 
 <table><thead>
 <tr>
@@ -22691,7 +22695,7 @@ Conta de depósito à vista ou Conta corrente - é o tipo mais comum. Nela, o di
 Conta poupança - foi criada para estimular as pessoas a pouparem. O dinheiro que ficar na conta por trinta dias passa a gerar rendimentos, com isenção de imposto de renda para quem declara. Ou seja, o dinheiro “cresce” (rende) enquanto ficar guardado na conta. Cada depósito terá rendimentos de mês em mês, sempre no dia do mês em que o dinheiro tiver sido depositado
 Conta de pagamento pré-paga: segundo CIRCULAR Nº 3.680, BCB de  2013, é a &#39;destinada à execução de transações de pagamento em moeda eletrônica realizadas com base em fundos denominados em reais previamente aportados&#39;</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -22709,7 +22713,7 @@ Conta de pagamento pré-paga: segundo CIRCULAR Nº 3.680, BCB de  2013, é a &#3
 </tr>
 </tbody></table>
 
-<h4 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades-enumerated-values'>Enumerated Values</h4>
+<h4 id='schemas-limites-da-conta-propriedades-enumerated-values'>Enumerated Values</h4>
 
 <table><thead>
 <tr>
@@ -22744,7 +22748,7 @@ Conta de pagamento pré-paga: segundo CIRCULAR Nº 3.680, BCB de  2013, é a &#3
 
 <p>Faixas para cobrança da taxa efetiva aplicada pela contratação do crédito, no intervalo informado: 1ª faixa, 2ª faixa, 3ª faixa e 4ª faixa. Segundo Normativa nº32 de 2020: &#39;Distribuição de frequência relativa dos valores de tarifas e taxas de juros cobrados dos clientes, de que trata o § 2º do art. 3º da Circular nº 4.015, de 2020, deve dar-se com base em quatro faixas de igual tamanho, com explicitação dos valores sobre a mediana e o percentual de clientes em cada uma dessas faixas.</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -22762,7 +22766,7 @@ Conta de pagamento pré-paga: segundo CIRCULAR Nº 3.680, BCB de  2013, é a &#3
 </tr>
 </tbody></table>
 
-<h4 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades-enumerated-values'>Enumerated Values</h4>
+<h4 id='schemas-limites-da-conta-propriedades-enumerated-values'>Enumerated Values</h4>
 
 <table><thead>
 <tr>
@@ -22801,7 +22805,7 @@ Conta de pagamento pré-paga: segundo CIRCULAR Nº 3.680, BCB de  2013, é a &#3
 
 <p>Identificação do Tipo de telefone do cliente.</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -22819,7 +22823,7 @@ Conta de pagamento pré-paga: segundo CIRCULAR Nº 3.680, BCB de  2013, é a &#3
 </tr>
 </tbody></table>
 
-<h4 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades-enumerated-values'>Enumerated Values</h4>
+<h4 id='schemas-limites-da-conta-propriedades-enumerated-values'>Enumerated Values</h4>
 
 <table><thead>
 <tr>
@@ -22854,7 +22858,7 @@ Conta de pagamento pré-paga: segundo CIRCULAR Nº 3.680, BCB de  2013, é a &#3
 
 <p>Tipo de filiação.</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -22872,7 +22876,7 @@ Conta de pagamento pré-paga: segundo CIRCULAR Nº 3.680, BCB de  2013, é a &#3
 </tr>
 </tbody></table>
 
-<h4 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades-enumerated-values'>Enumerated Values</h4>
+<h4 id='schemas-limites-da-conta-propriedades-enumerated-values'>Enumerated Values</h4>
 
 <table><thead>
 <tr>
@@ -22907,7 +22911,7 @@ Conta de pagamento pré-paga: segundo CIRCULAR Nº 3.680, BCB de  2013, é a &#3
 
 <p>Informar sexo</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -22925,7 +22929,7 @@ Conta de pagamento pré-paga: segundo CIRCULAR Nº 3.680, BCB de  2013, é a &#3
 </tr>
 </tbody></table>
 
-<h4 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades-enumerated-values'>Enumerated Values</h4>
+<h4 id='schemas-limites-da-conta-propriedades-enumerated-values'>Enumerated Values</h4>
 
 <table><thead>
 <tr>
@@ -22960,7 +22964,7 @@ Conta de pagamento pré-paga: segundo CIRCULAR Nº 3.680, BCB de  2013, é a &#3
 
 <p>Traz a frequência ou período da renda informada.</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -22978,7 +22982,7 @@ Conta de pagamento pré-paga: segundo CIRCULAR Nº 3.680, BCB de  2013, é a &#3
 </tr>
 </tbody></table>
 
-<h4 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades-enumerated-values'>Enumerated Values</h4>
+<h4 id='schemas-limites-da-conta-propriedades-enumerated-values'>Enumerated Values</h4>
 
 <table><thead>
 <tr>
@@ -23034,7 +23038,7 @@ Conta de pagamento pré-paga: segundo CIRCULAR Nº 3.680, BCB de  2013, é a &#3
 <p>Traz a frequência ou período do faturamento informado. 
 &quot;O faturamento é calculado a partir de todos os benefícios que a empresa conseguiu com sua atividade econômica em um determinado período. Esses benefícios são os rendimentos ou ganhos da organização através de suas vendas ou serviços prestados&quot;.</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -23052,7 +23056,7 @@ Conta de pagamento pré-paga: segundo CIRCULAR Nº 3.680, BCB de  2013, é a &#3
 </tr>
 </tbody></table>
 
-<h4 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades-enumerated-values'>Enumerated Values</h4>
+<h4 id='schemas-limites-da-conta-propriedades-enumerated-values'>Enumerated Values</h4>
 
 <table><thead>
 <tr>
@@ -23107,7 +23111,7 @@ Conta de pagamento pré-paga: segundo CIRCULAR Nº 3.680, BCB de  2013, é a &#3
 
 <p>Estado civil do cliente. </p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -23125,7 +23129,7 @@ Conta de pagamento pré-paga: segundo CIRCULAR Nº 3.680, BCB de  2013, é a &#3
 </tr>
 </tbody></table>
 
-<h4 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades-enumerated-values'>Enumerated Values</h4>
+<h4 id='schemas-limites-da-conta-propriedades-enumerated-values'>Enumerated Values</h4>
 
 <table><thead>
 <tr>
@@ -23176,7 +23180,7 @@ Conta de pagamento pré-paga: segundo CIRCULAR Nº 3.680, BCB de  2013, é a &#3
 
 <p>Traz a relação dos códigos relativos à ocupação.</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -23194,7 +23198,7 @@ Conta de pagamento pré-paga: segundo CIRCULAR Nº 3.680, BCB de  2013, é a &#3
 </tr>
 </tbody></table>
 
-<h4 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades-enumerated-values'>Enumerated Values</h4>
+<h4 id='schemas-limites-da-conta-propriedades-enumerated-values'>Enumerated Values</h4>
 
 <table><thead>
 <tr>
@@ -23232,7 +23236,7 @@ Saldo disponível para utilização imediata. No caso de conta de depósito a vi
 Saldo bloqueado não disponível para utilização imediata, por motivo de bloqueio por compensação, ou bloqueio judicial
 Saldo disponível com aplicação automática - saldo disponível para utilização imediata, referente ao tipo de conta que remunera automaticamente o saldo em conta </p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -23250,7 +23254,7 @@ Saldo disponível com aplicação automática - saldo disponível para utilizaç
 </tr>
 </tbody></table>
 
-<h4 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades-enumerated-values'>Enumerated Values</h4>
+<h4 id='schemas-limites-da-conta-propriedades-enumerated-values'>Enumerated Values</h4>
 
 <table><thead>
 <tr>
@@ -23285,7 +23289,7 @@ Saldo disponível com aplicação automática - saldo disponível para utilizaç
 
 <p>Traz os tipos dos valores relativos aos saldos  do Limite de crédito total da conta de pagamento pós-paga</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -23303,7 +23307,7 @@ Saldo disponível com aplicação automática - saldo disponível para utilizaç
 </tr>
 </tbody></table>
 
-<h4 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades-enumerated-values'>Enumerated Values</h4>
+<h4 id='schemas-limites-da-conta-propriedades-enumerated-values'>Enumerated Values</h4>
 
 <table><thead>
 <tr>
@@ -23334,7 +23338,7 @@ Saldo disponível com aplicação automática - saldo disponível para utilizaç
 
 <p>Traz os tipos de Tarifas</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -23352,7 +23356,7 @@ Saldo disponível com aplicação automática - saldo disponível para utilizaç
 </tr>
 </tbody></table>
 
-<h4 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades-enumerated-values'>Enumerated Values</h4>
+<h4 id='schemas-limites-da-conta-propriedades-enumerated-values'>Enumerated Values</h4>
 
 <table><thead>
 <tr>
@@ -23404,7 +23408,7 @@ Saldo disponível com aplicação automática - saldo disponível para utilizaç
 <p>Categoria de Bandeiras de Cartões de Crédito (Instituidor do arranjo de pagamento).
 Bandeira é a detentora de todos os direitos e deveres da utilização da marca estampada no cartão, inclusive as bandeiras pertencentes aos emissores.</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -23422,7 +23426,7 @@ Bandeira é a detentora de todos os direitos e deveres da utilização da marca 
 </tr>
 </tbody></table>
 
-<h4 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades-enumerated-values'>Enumerated Values</h4>
+<h4 id='schemas-limites-da-conta-propriedades-enumerated-values'>Enumerated Values</h4>
 
 <table><thead>
 <tr>
@@ -23481,7 +23485,7 @@ Bandeira é a detentora de todos os direitos e deveres da utilização da marca 
 
 <p>Enumera as formas de disponibilização do cartão (conta de pagamento pós-paga)</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -23499,7 +23503,7 @@ Bandeira é a detentora de todos os direitos e deveres da utilização da marca 
 </tr>
 </tbody></table>
 
-<h4 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades-enumerated-values'>Enumerated Values</h4>
+<h4 id='schemas-limites-da-conta-propriedades-enumerated-values'>Enumerated Values</h4>
 
 <table><thead>
 <tr>
@@ -23530,7 +23534,7 @@ Bandeira é a detentora de todos os direitos e deveres da utilização da marca 
 
 <p>Enumera os tipos de cartão (conta de pagamento pós-paga)</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -23548,7 +23552,7 @@ Bandeira é a detentora de todos os direitos e deveres da utilização da marca 
 </tr>
 </tbody></table>
 
-<h4 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades-enumerated-values'>Enumerated Values</h4>
+<h4 id='schemas-limites-da-conta-propriedades-enumerated-values'>Enumerated Values</h4>
 
 <table><thead>
 <tr>
@@ -23579,7 +23583,7 @@ Bandeira é a detentora de todos os direitos e deveres da utilização da marca 
 
 <p>Indicador que permite informar se o valor do limite é consolidado ou individual.</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -23597,7 +23601,7 @@ Bandeira é a detentora de todos os direitos e deveres da utilização da marca 
 </tr>
 </tbody></table>
 
-<h4 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades-enumerated-values'>Enumerated Values</h4>
+<h4 id='schemas-limites-da-conta-propriedades-enumerated-values'>Enumerated Values</h4>
 
 <table><thead>
 <tr>
@@ -23628,7 +23632,7 @@ Bandeira é a detentora de todos os direitos e deveres da utilização da marca 
 
 <p>Indicador que permite informar se a operação de crédito é com limite ou com limite flexível</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -23646,7 +23650,7 @@ Bandeira é a detentora de todos os direitos e deveres da utilização da marca 
 </tr>
 </tbody></table>
 
-<h4 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades-enumerated-values'>Enumerated Values</h4>
+<h4 id='schemas-limites-da-conta-propriedades-enumerated-values'>Enumerated Values</h4>
 
 <table><thead>
 <tr>
@@ -23677,7 +23681,7 @@ Bandeira é a detentora de todos os direitos e deveres da utilização da marca 
 
 <p>Indicador do tipo de limite</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -23695,7 +23699,7 @@ Bandeira é a detentora de todos os direitos e deveres da utilização da marca 
 </tr>
 </tbody></table>
 
-<h4 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades-enumerated-values'>Enumerated Values</h4>
+<h4 id='schemas-limites-da-conta-propriedades-enumerated-values'>Enumerated Values</h4>
 
 <table><thead>
 <tr>
@@ -23726,7 +23730,7 @@ Bandeira é a detentora de todos os direitos e deveres da utilização da marca 
 
 <p>Modalidade de operação - Lista de   Modalidades de Operação relacionadas às Contas de Pagamento Pós-Pagas</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -23744,7 +23748,7 @@ Bandeira é a detentora de todos os direitos e deveres da utilização da marca 
 </tr>
 </tbody></table>
 
-<h4 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades-enumerated-values'>Enumerated Values</h4>
+<h4 id='schemas-limites-da-conta-propriedades-enumerated-values'>Enumerated Values</h4>
 
 <table><thead>
 <tr>
@@ -23787,7 +23791,7 @@ Bandeira é a detentora de todos os direitos e deveres da utilização da marca 
 
 <p>Traz outros tipos de crédito contratados no cartão.</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -23805,7 +23809,7 @@ Bandeira é a detentora de todos os direitos e deveres da utilização da marca 
 </tr>
 </tbody></table>
 
-<h4 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades-enumerated-values'>Enumerated Values</h4>
+<h4 id='schemas-limites-da-conta-propriedades-enumerated-values'>Enumerated Values</h4>
 
 <table><thead>
 <tr>
@@ -23844,7 +23848,7 @@ Bandeira é a detentora de todos os direitos e deveres da utilização da marca 
 
 <p>Categoria atribuída a um cartão de pagamento, sob uma certa denominação, que lhe agrega um conjunto de vantagens, diferenciando-o de acordo com o perfil do portador.</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -23862,7 +23866,7 @@ Bandeira é a detentora de todos os direitos e deveres da utilização da marca 
 </tr>
 </tbody></table>
 
-<h4 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades-enumerated-values'>Enumerated Values</h4>
+<h4 id='schemas-limites-da-conta-propriedades-enumerated-values'>Enumerated Values</h4>
 
 <table><thead>
 <tr>
@@ -23969,7 +23973,7 @@ Bandeira é a detentora de todos os direitos e deveres da utilização da marca 
 
 <p>Traz os tipos de Transação</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -23987,7 +23991,7 @@ Bandeira é a detentora de todos os direitos e deveres da utilização da marca 
 </tr>
 </tbody></table>
 
-<h4 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades-enumerated-values'>Enumerated Values</h4>
+<h4 id='schemas-limites-da-conta-propriedades-enumerated-values'>Enumerated Values</h4>
 
 <table><thead>
 <tr>
@@ -24034,7 +24038,7 @@ Bandeira é a detentora de todos os direitos e deveres da utilização da marca 
 
 <p>Indicador do tipo de lançamento: a crédito ou a débito. </p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -24052,7 +24056,7 @@ Bandeira é a detentora de todos os direitos e deveres da utilização da marca 
 </tr>
 </tbody></table>
 
-<h4 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades-enumerated-values'>Enumerated Values</h4>
+<h4 id='schemas-limites-da-conta-propriedades-enumerated-values'>Enumerated Values</h4>
 
 <table><thead>
 <tr>
@@ -24083,7 +24087,7 @@ Bandeira é a detentora de todos os direitos e deveres da utilização da marca 
 
 <p>Canais disponíveis para abertura e encerramento de contas, p.ex. &#39;DEPENDENCIAS_PROPRIAS&#39;</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -24101,7 +24105,7 @@ Bandeira é a detentora de todos os direitos e deveres da utilização da marca 
 </tr>
 </tbody></table>
 
-<h4 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades-enumerated-values'>Enumerated Values</h4>
+<h4 id='schemas-limites-da-conta-propriedades-enumerated-values'>Enumerated Values</h4>
 
 <table><thead>
 <tr>
@@ -24152,7 +24156,7 @@ Bandeira é a detentora de todos os direitos e deveres da utilização da marca 
 
 <p>Tipo do documento informado. </p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -24170,7 +24174,7 @@ Bandeira é a detentora de todos os direitos e deveres da utilização da marca 
 </tr>
 </tbody></table>
 
-<h4 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades-enumerated-values'>Enumerated Values</h4>
+<h4 id='schemas-limites-da-conta-propriedades-enumerated-values'>Enumerated Values</h4>
 
 <table><thead>
 <tr>
@@ -24211,7 +24215,7 @@ Bandeira é a detentora de todos os direitos e deveres da utilização da marca 
 O administrador é o responsável por desempenhar todas as funções administrativas da empresa. É ele quem conduz o dia a dia do negócio, assinando documentos, respondendo legalmente pela sociedade, realizando empréstimos e outras ações gerenciais. Apesar de estar na linha de frente da empresa, ele é denominado sócio por também possuir sua parcela de participação no Capital Social.
 Sócio não tem qualquer envolvimento nas atividades administrativas da sociedade.</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -24229,7 +24233,7 @@ Sócio não tem qualquer envolvimento nas atividades administrativas da sociedad
 </tr>
 </tbody></table>
 
-<h4 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades-enumerated-values'>Enumerated Values</h4>
+<h4 id='schemas-limites-da-conta-propriedades-enumerated-values'>Enumerated Values</h4>
 
 <table><thead>
 <tr>
@@ -24260,7 +24264,7 @@ Sócio não tem qualquer envolvimento nas atividades administrativas da sociedad
 
 <p>Indicador do tipo de conta Pessoal ou Jurídica</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -24278,7 +24282,7 @@ Sócio não tem qualquer envolvimento nas atividades administrativas da sociedad
 </tr>
 </tbody></table>
 
-<h4 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades-enumerated-values'>Enumerated Values</h4>
+<h4 id='schemas-limites-da-conta-propriedades-enumerated-values'>Enumerated Values</h4>
 
 <table><thead>
 <tr>
@@ -24309,7 +24313,7 @@ Sócio não tem qualquer envolvimento nas atividades administrativas da sociedad
 
 <p>Relação dos Códigos dos demais documentos pessoa natural.</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -24327,7 +24331,7 @@ Sócio não tem qualquer envolvimento nas atividades administrativas da sociedad
 </tr>
 </tbody></table>
 
-<h4 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades-enumerated-values'>Enumerated Values</h4>
+<h4 id='schemas-limites-da-conta-propriedades-enumerated-values'>Enumerated Values</h4>
 
 <table><thead>
 <tr>
@@ -24373,7 +24377,7 @@ valor utilizado do limite do cheque especial
 valor disponível do limite do cheque especial
 saldo a descoberto em conta de depósito a vista (relativo ao adiantamento a depositante </p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -24391,7 +24395,7 @@ saldo a descoberto em conta de depósito a vista (relativo ao adiantamento a dep
 </tr>
 </tbody></table>
 
-<h4 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades-enumerated-values'>Enumerated Values</h4>
+<h4 id='schemas-limites-da-conta-propriedades-enumerated-values'>Enumerated Values</h4>
 
 <table><thead>
 <tr>
@@ -24426,7 +24430,7 @@ saldo a descoberto em conta de depósito a vista (relativo ao adiantamento a dep
 
 <p>Segundo Normativa nº 32, BCB, de 2020: Distribuição de frequência relativa dos valores de tarifas cobradas dos clientes, de que trata o § 2º do art. 3º da Circular nº 4.015, de 2020, deve dar-se com base em quatro faixas de igual tamanho, com explicitação dos valores sobre a mediana em cada uma dessas faixas. Informando: 1ª faixa, 2ª faixa, 3ª faixa e 4ª faixa</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -24444,7 +24448,7 @@ saldo a descoberto em conta de depósito a vista (relativo ao adiantamento a dep
 </tr>
 </tbody></table>
 
-<h4 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades-enumerated-values'>Enumerated Values</h4>
+<h4 id='schemas-limites-da-conta-propriedades-enumerated-values'>Enumerated Values</h4>
 
 <table><thead>
 <tr>
@@ -24485,7 +24489,7 @@ saldo a descoberto em conta de depósito a vista (relativo ao adiantamento a dep
 Representante legal - Nome Civil completo da Pessoa Natural que represente uma entidade ou uma empresa e é nomeado em seu ato constitutivo, ou seja, no contrato social ou estatuto social.
 Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negócio, mediante autorização escrita do mesmo.</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -24503,7 +24507,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
 </tr>
 </tbody></table>
 
-<h4 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades-enumerated-values'>Enumerated Values</h4>
+<h4 id='schemas-limites-da-conta-propriedades-enumerated-values'>Enumerated Values</h4>
 
 <table><thead>
 <tr>
@@ -24534,7 +24538,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
 
 <p>Relação dos produtos e serviços com contrato vigente.</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -24552,7 +24556,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
 </tr>
 </tbody></table>
 
-<h4 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades-enumerated-values'>Enumerated Values</h4>
+<h4 id='schemas-limites-da-conta-propriedades-enumerated-values'>Enumerated Values</h4>
 
 <table><thead>
 <tr>
@@ -24619,7 +24623,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
 
 <p>Nome dos Serviços prioritários, segundo Resolução 3.919 do Bacen, para pessoa natural.</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -24637,7 +24641,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
 </tr>
 </tbody></table>
 
-<h4 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades-enumerated-values'>Enumerated Values</h4>
+<h4 id='schemas-limites-da-conta-propriedades-enumerated-values'>Enumerated Values</h4>
 
 <table><thead>
 <tr>
@@ -24820,7 +24824,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
 
 <p>Tipo de Transação</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -24838,7 +24842,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
 </tr>
 </tbody></table>
 
-<h4 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades-enumerated-values'>Enumerated Values</h4>
+<h4 id='schemas-limites-da-conta-propriedades-enumerated-values'>Enumerated Values</h4>
 
 <table><thead>
 <tr>
@@ -24929,7 +24933,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
 
 <p>Tipos de taxas referenciais ou indexadores, conforme Anexo 5: Taxa referencial ou Indexador (Indx), do Documento 3040</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -24947,7 +24951,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
 </tr>
 </tbody></table>
 
-<h4 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades-enumerated-values'>Enumerated Values</h4>
+<h4 id='schemas-limites-da-conta-propriedades-enumerated-values'>Enumerated Values</h4>
 
 <table><thead>
 <tr>
@@ -25060,7 +25064,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
  <code>acordos de compensação</code>: operações que sejam abrangidas por acordos para a compensação e liquidação de obrigações no âmbito do SFN, nos termos da Resolução 3.263, de 24 de fevereiro de 2005
  <code>não aplicável</code></p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -25078,7 +25082,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
 </tr>
 </tbody></table>
 
-<h4 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades-enumerated-values'>Enumerated Values</h4>
+<h4 id='schemas-limites-da-conta-propriedades-enumerated-values'>Enumerated Values</h4>
 
 <table><thead>
 <tr>
@@ -25157,7 +25161,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
 
 <p>Lista de formas de movimentação possíveis para a conta</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -25175,7 +25179,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
 </tr>
 </tbody></table>
 
-<h4 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades-enumerated-values'>Enumerated Values</h4>
+<h4 id='schemas-limites-da-conta-propriedades-enumerated-values'>Enumerated Values</h4>
 
 <table><thead>
 <tr>
@@ -25219,7 +25223,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
 
 <p>Número de chamadas que resultaram em erro devido ao servidor.</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -25259,7 +25263,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
 
 <p>Tarifas cobradas sobre Serviços ofertados</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -25297,7 +25301,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
   </span><span class="nl">"socialName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -25359,7 +25363,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
 
 <p>Objeto que reúne as informações relativas ao processo de Relacionamento. Considera-se relacionamento as informações que permitam conhecer desde quando a pessoa consultada é cliente da instituição, bem como um indicador dos produtos e serviços que ela consome atualmente e seus representantes</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -25483,7 +25487,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
   </span><span class="nl">"maximumRate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.6865"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -25578,7 +25582,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -25640,7 +25644,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
 
 <p>Objeto agrupador das informações que compõem as Coordenadas geográficas: latitude e longitude</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -25689,7 +25693,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
 
 <p>Conjunto dos atributos que caracterizam as Contas de: depósito à vista, poupança e de pagamento pré-paga</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -25782,7 +25786,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
 
 <p>Percentual que corresponde a mediana da taxa efetiva cobrada do cliente pela contratação do Empréstimo, no intervalo informado.</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -25818,7 +25822,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
 
 <p>Conjunto de informações referentes à renda total informada</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -25872,7 +25876,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
 
 <p>Objeto que agrupa informações relativas ao faturamento da empresa informado</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -25964,7 +25968,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -26028,7 +26032,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
   </span><span class="nl">"rate"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.15</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -26050,7 +26054,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
 <td>Percentual que incide sobre a composição das taxas de juros remuneratórios. (representa uma porcentagem Ex: 0.15 (O valor ao lado representa 15%. O valor 1 representa 100%) A apuração pode acontecer com até 4 casas decimais. O preenchimento deve respeitar as 4 casas decimais, mesmo que venham preenchidas com zeros (representação de porcentagem p.ex: 0.1500. Este valor representa 15%. O valor 1 representa 100%)</td>
 </tr>
 </tbody></table>
-<h4 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades-enumerated-values'>Enumerated Values</h4>
+<h4 id='schemas-limites-da-conta-propriedades-enumerated-values'>Enumerated Values</h4>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -26172,7 +26176,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
 
 <p>Número de chamadas em cada nível e prioridade.</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -26311,7 +26315,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -26376,7 +26380,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
 
 <p>Referências para outros recusos da API requisitada.</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -26481,7 +26485,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
 
 <p>Objeto que reúne informações de tarifas de serviços</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -26551,7 +26555,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
   </span><span class="nl">"maximumRate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.6865"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -26646,7 +26650,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -26708,7 +26712,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
 
 <p>Valor máximo apurado para a tarifa de serviços sobre a base de clientes no mês de referência</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -26748,7 +26752,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
 
 <p>Meta informações referente a API requisitada.</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -26784,7 +26788,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
   </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -26822,7 +26826,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
 
 <p>Valor mínimo apurado para a tarifa de serviços sobre a base de clientes no mês de referência</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -26862,7 +26866,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -26921,7 +26925,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
 
 <p>Objeto que agrupa informações relativas à nacionalidade da Pessoa Natural</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -26958,7 +26962,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
   </span><span class="nl">"expirationDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-03-19"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -27004,7 +27008,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -27050,7 +27054,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
 
 <p>Objeto relativo às informações de composição da participação societária</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -27140,7 +27144,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
 
 <p>Objeto agrupador de informações relativas a Documentos da pessoa natural</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -27204,7 +27208,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
 
 <p>Conjunto das informações relativas aos Limites referentes ao valor das operações de crédito (Cheque especial e Adiantamento a Depositantes) vinculadas à conta de depósito à vista ou conta corrente</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -27282,7 +27286,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
   </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">500</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -27322,7 +27326,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
 
 <p>Número máximo de transações por segundo.</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -27531,7 +27535,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -27774,7 +27778,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
 
 <p>Organização controladora do grupo de instituições financeiras.</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -27990,7 +27994,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -28206,7 +28210,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -28424,7 +28428,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
 
 <p>Organização controladora do grupo de instituições financeiras</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -28637,7 +28641,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -28710,7 +28714,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
 
 <p>Objeto que define a Organização controladora do grupo de instituições financeiras</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -28764,7 +28768,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -28822,7 +28826,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
 
 <p>Conjunto de informações Cadastrais do Cliente Pessoa natural</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -28952,7 +28956,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
   </span><span class="nl">"termsConditions"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://empresaa1.com/personal_financing"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -28992,7 +28996,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
 <td>Campo aberto para informar as condições contratuais relativas ao produto ou serviço informado. Pode ser informada a URL referente ao endereço onde constam as condições informadas.</td>
 </tr>
 </tbody></table>
-<h4 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades-enumerated-values'>Enumerated Values</h4>
+<h4 id='schemas-limites-da-conta-propriedades-enumerated-values'>Enumerated Values</h4>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -29156,7 +29160,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
 
 <p>Organização controladora do grupo de instituições financeiras</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -29299,7 +29303,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -29396,7 +29400,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
 
 <p>Objeto que reúne informações de tarifas de serviços</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -29510,7 +29514,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
 
 <p>Conjunto de informações relativas a Identificação ou seja a ação e o efeito de identificar de forma única a pessoa natural através de seus dados cadastrais.</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -29707,7 +29711,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
 
 <p>Objeto que define a Organização controladora do grupo de instituições financeiras</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -29829,7 +29833,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -29955,7 +29959,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
 
 <p>Conjunto de informações Cadastrais do Cliente Pessoa natural</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -29990,7 +29994,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
 
 <p>Conjunto de informações referentes ao patrimônio informado</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -30132,7 +30136,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
   </span><span class="nl">"termsConditions"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://empresaa1.com/personal_invoice_financings"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -30172,7 +30176,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
 <td>Campo aberto para informar as condições contratuais relativas à Modalidade de Financiamentos para pessoa natural informada. Pode ser informada a URL referente ao endereço onde constam as condições informadas. Endereço eletrônico de acesso ao canal.</td>
 </tr>
 </tbody></table>
-<h4 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades-enumerated-values'>Enumerated Values</h4>
+<h4 id='schemas-limites-da-conta-propriedades-enumerated-values'>Enumerated Values</h4>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -30320,7 +30324,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
 
 <p>Organização controladora do grupo de instituições financeiras</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -30463,7 +30467,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -30560,7 +30564,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
 
 <p>Objeto que reúne informações de tarifas de serviços</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -30630,7 +30634,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
   </span><span class="nl">"maximumRate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.6865"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -30782,7 +30786,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
   </span><span class="nl">"termsConditions"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://empresaa1.com/personal_loans"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -30822,7 +30826,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
 <td>Campo aberto para informar as condições contratuais relativas à Modalidade de Financiamentos para pessoa jurídica informada. Pode ser informada a URL referente ao endereço onde constam as condições informadas. Endereço eletrônico de acesso ao canal.</td>
 </tr>
 </tbody></table>
-<h4 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades-enumerated-values'>Enumerated Values</h4>
+<h4 id='schemas-limites-da-conta-propriedades-enumerated-values'>Enumerated Values</h4>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -30974,7 +30978,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
 
 <p>Organização controladora do grupo de instituições financeiras</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -31117,7 +31121,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -31167,7 +31171,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
   </span><span class="nl">"expirationDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-03-19"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -31242,7 +31246,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
 
 <p>Conjunto de informações relativas ao processo de qualificação. Considera-se qualificação as informações que permitam as instituições apreciar, avaliar, caracterizar e classificar o cliente com a finalidade de conhecer o seu perfil de risco e sua capacidade econômico-financeira</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -31330,7 +31334,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
 
 <p>Objeto que define a Organização controladora do grupo de instituições financeiras</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -31385,7 +31389,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -31444,7 +31448,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
 
 <p>Conjunto de informações Cadastrais do Cliente Pessoa natural</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -31574,7 +31578,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
 
 <p>Lista de produtos e serviços referente adiantamento a depositante</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -31726,7 +31730,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
 
 <p>Organização titular das dependências</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -31867,7 +31871,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
 
 <p>Lista de produtos e serviços referente adiantamento a depositante</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -31966,7 +31970,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
 
 <p>Objeto que reúne informações de tarifas de serviços</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -31998,7 +32002,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
   </span><span class="nl">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"35721199"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -32032,7 +32036,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
 <td>Número de telefone da dependência - se houver</td>
 </tr>
 </tbody></table>
-<h4 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades-enumerated-values'>Enumerated Values</h4>
+<h4 id='schemas-limites-da-conta-propriedades-enumerated-values'>Enumerated Values</h4>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -32077,7 +32081,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -32119,7 +32123,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -32147,7 +32151,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
 <td>Lista de telefones do Canal de Atendimento</td>
 </tr>
 </tbody></table>
-<h4 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades-enumerated-values'>Enumerated Values</h4>
+<h4 id='schemas-limites-da-conta-propriedades-enumerated-values'>Enumerated Values</h4>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -32185,7 +32189,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
   </span><span class="nl">"additionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mensagem complementar necessária para o agrupamento da identificação do telefone."</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -32232,7 +32236,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
   </span><span class="nl">"additionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -32260,7 +32264,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
 <td>Texto livre para complementar informação relativa ao Serviço disponível, quando for selecionada a opção &#39;OUTROS_PRODUTOS_SERVICOS&#39;</td>
 </tr>
 </tbody></table>
-<h4 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades-enumerated-values'>Enumerated Values</h4>
+<h4 id='schemas-limites-da-conta-propriedades-enumerated-values'>Enumerated Values</h4>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -32473,7 +32477,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
 
 <p>Organização controladora do grupo de instituições financeiras.</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -32533,7 +32537,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -32608,7 +32612,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -32680,7 +32684,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -32755,7 +32759,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -32836,7 +32840,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -32892,7 +32896,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -32950,7 +32954,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
 
 <p>Número de chamadas rejeitadas devido aos limites.</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -33207,7 +33211,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -33358,7 +33362,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -33579,7 +33583,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -33824,7 +33828,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -33912,7 +33916,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -34047,7 +34051,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -34136,7 +34140,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -34413,7 +34417,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -35049,7 +35053,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -35791,7 +35795,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
 
 <p>Organização controladora do grupo de instituições financeiras</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -35960,7 +35964,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -36044,7 +36048,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -36138,7 +36142,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -36202,7 +36206,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -36307,7 +36311,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -36377,7 +36381,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
 <td>Meta informações referente a API requisitada.</td>
 </tr>
 </tbody></table>
-<h4 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades-enumerated-values'>Enumerated Values</h4>
+<h4 id='schemas-limites-da-conta-propriedades-enumerated-values'>Enumerated Values</h4>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -36502,7 +36506,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -36653,7 +36657,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -37130,7 +37134,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -37377,7 +37381,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -37461,7 +37465,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -37613,7 +37617,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -37698,7 +37702,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -37977,7 +37981,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -38613,7 +38617,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -39354,7 +39358,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -39521,7 +39525,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -39725,7 +39729,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -39888,7 +39892,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -39983,7 +39987,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -40037,7 +40041,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
   </span><span class="nl">"freeEventQuantity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -40117,7 +40121,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -40170,7 +40174,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
   </span><span class="nl">"isPublicAccessAllowed"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -40278,7 +40282,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
 
 <p>Organização controladora do grupo de instituições financeiras.</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -40355,7 +40359,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
   </span><span class="nl">"urlComplementaryList"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://empresadaorganizacaoa.com/complementarylist"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -40400,7 +40404,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
   </span><span class="nl">"ownerName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"João da Silva Santos"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -40439,7 +40443,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -40509,7 +40513,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
 <td>Objeto agrupador das informações que compõem as Coordenadas geográficas: latitude e longitude</td>
 </tr>
 </tbody></table>
-<h4 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades-enumerated-values'>Enumerated Values</h4>
+<h4 id='schemas-limites-da-conta-propriedades-enumerated-values'>Enumerated Values</h4>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -40638,7 +40642,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
   </span><span class="nl">"additionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Serviços complementares de atendimento via terminais de autoatendimento."</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -40666,7 +40670,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
 <td>Texto livre para complementar informação relativa ao Serviço disponível, quando for preenchida a opção &#39;OUTROS_PRODUTOS_SERVICOS&#39;</td>
 </tr>
 </tbody></table>
-<h4 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades-enumerated-values'>Enumerated Values</h4>
+<h4 id='schemas-limites-da-conta-propriedades-enumerated-values'>Enumerated Values</h4>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -40862,7 +40866,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
   </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">800.87</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -40906,7 +40910,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
 
 <p>Agrupador das informações relativas às Transações de crédito e débito realizadas e autorizadas</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -40966,7 +40970,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
 </tr>
 </tbody></table>
 
-<h4 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades-enumerated-values'>Enumerated Values</h4>
+<h4 id='schemas-limites-da-conta-propriedades-enumerated-values'>Enumerated Values</h4>
 
 <table><thead>
 <tr>
@@ -41002,7 +41006,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -41048,7 +41052,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
 <td>Endpoints com indisponibilidade</td>
 </tr>
 </tbody></table>
-<h4 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades-enumerated-values'>Enumerated Values</h4>
+<h4 id='schemas-limites-da-conta-propriedades-enumerated-values'>Enumerated Values</h4>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -41106,7 +41110,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
 
 <p>Conjunto de informações relativas às Transações de crédito e débito realizadas e de pagamento autorizado para  Contas de: depósito à vista, poupança e de pagamento pré-paga</p>
 
-<h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
 <table><thead>
 <tr>
@@ -41224,7 +41228,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
   </span><span class="nl">&quot;maximumRate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0.8565&quot;</span><span class="w">
 </span><span class="p">}</span><span class="w"></p>
 
-<p></span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<p></span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -41320,7 +41324,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w"></p>
 
-<p></span></code></pre></div><h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
+<p></span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -41366,7 +41370,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
 <td>Valor máximo apurado para a tarifa de serviços sobre a base de clientes no mês de referência</td>
 </tr>
 </tbody></table>
-<h4 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades-enumerated-values'>Enumerated Values</h4>
+<h4 id='schemas-limites-da-conta-propriedades-enumerated-values'>Enumerated Values</h4>
 <table><thead>
 <tr>
 <th>Nome</th>
