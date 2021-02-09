@@ -4964,11 +4964,8 @@ components:
             required:
               - type
             properties:
-              productsServices:
-                type: object
-                properties:
-                  type:
-                    $ref: '#/components/schemas/EnumProductServiceType'
+              type:
+                $ref: '#/components/schemas/EnumProductServiceType'
           minItems: 1
           maxItems: 14
           description: Lista de produtos e serviços com contratos vigentes

@@ -1398,26 +1398,23 @@ paths:
                                             required:
                                               - type
                                             properties:
-                                              productsServices:
-                                                type: object
-                                                properties:
-                                                  type:
-                                                    type: string
-                                                    enum:
-                                                      - CONTA_DEPOSITO_A_VISTA
-                                                      - CONTA_POUPANCA
-                                                      - CONTA_PAGAMENTO_PRE_PAGA
-                                                      - CONTA_CREDITO
-                                                      - OPERACAO_CREDITO
-                                                      - SEGURO
-                                                      - PREVIDENCIA
-                                                      - INVESTIMENTO
-                                                      - OPERACOES_CAMBIO
-                                                      - CONTA_SALARIO
-                                                      - CREDENCIAMENTO
-                                                    description: |
-                                                      Relação dos produtos e serviços com contrato vigente.
-                                                    example: SEGURO
+                                              type:
+                                                type: string
+                                                enum:
+                                                  - CONTA_DEPOSITO_A_VISTA
+                                                  - CONTA_POUPANCA
+                                                  - CONTA_PAGAMENTO_PRE_PAGA
+                                                  - CONTA_CREDITO
+                                                  - OPERACAO_CREDITO
+                                                  - SEGURO
+                                                  - PREVIDENCIA
+                                                  - INVESTIMENTO
+                                                  - OPERACOES_CAMBIO
+                                                  - CONTA_SALARIO
+                                                  - CREDENCIAMENTO
+                                                description: |
+                                                  Relação dos produtos e serviços com contrato vigente.
+                                                example: SEGURO
                                           minItems: 1
                                           maxItems: 14
                                           description: Lista de produtos e serviços com contratos vigentes
