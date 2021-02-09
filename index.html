@@ -11037,15 +11037,16 @@ This operation does not require authentication
                 </span><span class="p">{</span><span class="w">
                   </span><span class="nl">"productsServices"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
                     </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SEGURO"</span><span class="w">
-                  </span><span class="p">},</span><span class="w">
-                  </span><span class="nl">"procurators"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PROCURADOR"</span><span class="p">,</span><span class="w">
-                    </span><span class="nl">"cpfNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00000000000"</span><span class="p">,</span><span class="w">
-                    </span><span class="nl">"civilName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-                    </span><span class="nl">"socialName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
                   </span><span class="p">}</span><span class="w">
                 </span><span class="p">}</span><span class="w">
-              </span><span class="p">]</span><span class="w">
+              </span><span class="p">],</span><span class="w">
+              </span><span class="nl">"procurators"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PROCURADOR"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"cpfNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00000000000"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"civilName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"socialName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+              </span><span class="p">}</span><span class="w">
             </span><span class="p">}</span><span class="w">
           </span><span class="p">}</span><span class="w">
         </span><span class="p">}</span><span class="w">
@@ -11197,8 +11198,7 @@ This operation does not require authentication
         </span><span class="p">{</span><span class="w">
           </span><span class="nl">"cnpjNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"50685362000135"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Empresa A1"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"urlComplementaryList"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://empresadaorganizacaoa.com/complementarylist"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"businessCustomer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"businessCustomers"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
             </span><span class="nl">"financialRelation"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
               </span><span class="p">{</span><span class="w">
                 </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
@@ -11206,15 +11206,15 @@ This operation does not require authentication
                 </span><span class="nl">"startDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21"</span><span class="p">,</span><span class="w">
                 </span><span class="nl">"productServices"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
                   </span><span class="p">{</span><span class="w">
-                    </span><span class="nl">"productServices"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SEGURO"</span><span class="p">,</span><span class="w">
-                    </span><span class="nl">"procurators"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-                      </span><span class="p">{</span><span class="w">
-                        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PROCURADOR"</span><span class="p">,</span><span class="w">
-                        </span><span class="nl">"cpfNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00000000000"</span><span class="p">,</span><span class="w">
-                        </span><span class="nl">"civilName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-                        </span><span class="nl">"socialName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
-                      </span><span class="p">}</span><span class="w">
-                    </span><span class="p">]</span><span class="w">
+                    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SEGURO"</span><span class="w">
+                  </span><span class="p">}</span><span class="w">
+                </span><span class="p">],</span><span class="w">
+                </span><span class="nl">"procurators"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                  </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PROCURADOR"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"cpfNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00000000000"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"civilName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"socialName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
                   </span><span class="p">}</span><span class="w">
                 </span><span class="p">]</span><span class="w">
               </span><span class="p">}</span><span class="w">
@@ -16206,15 +16206,16 @@ This operation does not require authentication
               </span><span class="p">{</span><span class="w">
                 </span><span class="nl">"productsServices"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
                   </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SEGURO"</span><span class="w">
-                </span><span class="p">},</span><span class="w">
-                </span><span class="nl">"procurators"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PROCURADOR"</span><span class="p">,</span><span class="w">
-                  </span><span class="nl">"cpfNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00000000000"</span><span class="p">,</span><span class="w">
-                  </span><span class="nl">"civilName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-                  </span><span class="nl">"socialName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
                 </span><span class="p">}</span><span class="w">
               </span><span class="p">}</span><span class="w">
-            </span><span class="p">]</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="nl">"procurators"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PROCURADOR"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"cpfNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00000000000"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"civilName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"socialName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+            </span><span class="p">}</span><span class="w">
           </span><span class="p">}</span><span class="w">
         </span><span class="p">}</span><span class="w">
       </span><span class="p">]</span><span class="w">
@@ -16270,15 +16271,16 @@ This operation does not require authentication
           </span><span class="p">{</span><span class="w">
             </span><span class="nl">"productsServices"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
               </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SEGURO"</span><span class="w">
-            </span><span class="p">},</span><span class="w">
-            </span><span class="nl">"procurators"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-              </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PROCURADOR"</span><span class="p">,</span><span class="w">
-              </span><span class="nl">"cpfNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00000000000"</span><span class="p">,</span><span class="w">
-              </span><span class="nl">"civilName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-              </span><span class="nl">"socialName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
             </span><span class="p">}</span><span class="w">
           </span><span class="p">}</span><span class="w">
-        </span><span class="p">]</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"procurators"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PROCURADOR"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"cpfNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00000000000"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"civilName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"socialName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+        </span><span class="p">}</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
@@ -16309,7 +16311,7 @@ This operation does not require authentication
 <td>businessCustomers</td>
 <td><a href="#schemabusinessfinancialrelationcustomers">BusinessFinancialRelationCustomers</a></td>
 <td>true</td>
-<td>Conjunto de informações relativas ao processo de Relacionamento. Considera-se relacionamento as informações que permitam conhecer desde quando a pessoa consultada é cliente da instituição, bem como um indicador dos produtos e serviços que ela consome atualmente</td>
+<td>Conjunto de informações cadastrais do Cliente pessoa jurídica.</td>
 </tr>
 </tbody></table>
 
@@ -16329,22 +16331,23 @@ This operation does not require authentication
         </span><span class="p">{</span><span class="w">
           </span><span class="nl">"productsServices"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
             </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SEGURO"</span><span class="w">
-          </span><span class="p">},</span><span class="w">
-          </span><span class="nl">"procurators"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PROCURADOR"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"cpfNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00000000000"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"civilName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"socialName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
           </span><span class="p">}</span><span class="w">
         </span><span class="p">}</span><span class="w">
-      </span><span class="p">]</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"procurators"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PROCURADOR"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"cpfNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00000000000"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"civilName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"socialName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+      </span><span class="p">}</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 
 </span></code></pre></div>
 
-<p>Conjunto de informações relativas ao processo de Relacionamento. Considera-se relacionamento as informações que permitam conhecer desde quando a pessoa consultada é cliente da instituição, bem como um indicador dos produtos e serviços que ela consome atualmente</p>
+<p>Conjunto de informações cadastrais do Cliente pessoa jurídica.</p>
 
 <h3 id='schemas-limites-referentes-ao-valor-das-operacoes-de-credito-propriedades'>Propriedades</h3>
 
@@ -25172,15 +25175,16 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
     </span><span class="p">{</span><span class="w">
       </span><span class="nl">"productsServices"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SEGURO"</span><span class="w">
-      </span><span class="p">},</span><span class="w">
-      </span><span class="nl">"procurators"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PROCURADOR"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"cpfNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00000000000"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"civilName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"socialName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">}</span><span class="w">
-  </span><span class="p">]</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"procurators"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PROCURADOR"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"cpfNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00000000000"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"civilName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"socialName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+  </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
 </span></code></pre></div>
@@ -25234,34 +25238,40 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
 <td>Relação dos produtos e serviços com contrato vigente.</td>
 </tr>
 <tr>
-<td>» procurators</td>
+<td>procurators</td>
 <td>object</td>
-<td>false</td>
-<td>Lista dos representantes. De preenchimento obrigatório se houver representante.</td>
+<td>true</td>
+<td></td>
 </tr>
 <tr>
-<td>»» type</td>
+<td>» type</td>
 <td><a href="#schemaenumprocuratorstype">EnumProcuratorsType</a></td>
 <td>false</td>
 <td>Tipo de representante.<br>Representante legal - Nome Civil completo da Pessoa Natural que represente uma entidade ou uma empresa e é nomeado em seu ato constitutivo, ou seja, no contrato social ou estatuto social.<br>Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negócio, mediante autorização escrita do mesmo.</td>
 </tr>
 <tr>
-<td>»» cpfNumber</td>
+<td>» cpfNumber</td>
 <td>string</td>
 <td>false</td>
 <td>Número completo do CPF. O CPF é o Cadastro de Pessoa natural. Ele é um documento feito pela Receita Federal e serve para identificar os contribuintes. O CPF é uma numeração com 11 dígitos, que só mudam por decisão judicial. O documento é emitido pela receita federal</td>
 </tr>
 <tr>
-<td>»» civilName</td>
+<td>» civilName</td>
 <td>string</td>
 <td>false</td>
 <td>Nome civil completo da pessoa natural. (Direito fundamental da pessoa, o nome civil é aquele atribuído à pessoa natural desde o registro de seu nascimento, com o qual será identificada por toda a sua vida, bem como após a sua morte)</td>
 </tr>
 <tr>
-<td>»» socialName</td>
+<td>» socialName</td>
 <td>string</td>
 <td>false</td>
 <td>Nome social da pessoa natural, se houver. (aquele pelo qual travestis e transexuais se reconhecem, bem como são identificados por sua comunidade e em seu meio social, conforme Decreto Nº 51.180, de 14 de janeiro de 2010)</td>
+</tr>
+<tr>
+<td>» description</td>
+<td>any</td>
+<td>false</td>
+<td></td>
 </tr>
 </tbody></table>
 
@@ -28527,15 +28537,16 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
             </span><span class="p">{</span><span class="w">
               </span><span class="nl">"productsServices"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
                 </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SEGURO"</span><span class="w">
-              </span><span class="p">},</span><span class="w">
-              </span><span class="nl">"procurators"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PROCURADOR"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"cpfNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00000000000"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"civilName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"socialName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
               </span><span class="p">}</span><span class="w">
             </span><span class="p">}</span><span class="w">
-          </span><span class="p">]</span><span class="w">
+          </span><span class="p">],</span><span class="w">
+          </span><span class="nl">"procurators"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PROCURADOR"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"cpfNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00000000000"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"civilName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"socialName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+          </span><span class="p">}</span><span class="w">
         </span><span class="p">}</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">}</span><span class="w">
@@ -28589,15 +28600,16 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
         </span><span class="p">{</span><span class="w">
           </span><span class="nl">"productsServices"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
             </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SEGURO"</span><span class="w">
-          </span><span class="p">},</span><span class="w">
-          </span><span class="nl">"procurators"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PROCURADOR"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"cpfNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00000000000"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"civilName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"socialName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
           </span><span class="p">}</span><span class="w">
         </span><span class="p">}</span><span class="w">
-      </span><span class="p">]</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"procurators"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PROCURADOR"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"cpfNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00000000000"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"civilName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"socialName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+      </span><span class="p">}</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -28646,15 +28658,16 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
       </span><span class="p">{</span><span class="w">
         </span><span class="nl">"productsServices"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
           </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SEGURO"</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="nl">"procurators"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PROCURADOR"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"cpfNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00000000000"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"civilName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"socialName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
         </span><span class="p">}</span><span class="w">
       </span><span class="p">}</span><span class="w">
-    </span><span class="p">]</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"procurators"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PROCURADOR"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"cpfNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00000000000"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"civilName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"socialName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="p">}</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
@@ -33713,8 +33726,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
         </span><span class="p">{</span><span class="w">
           </span><span class="nl">"cnpjNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"50685362000135"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Empresa A1"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"urlComplementaryList"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://empresadaorganizacaoa.com/complementarylist"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"businessCustomer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"businessCustomers"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
             </span><span class="nl">"financialRelation"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
               </span><span class="p">{</span><span class="w">
                 </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
@@ -33722,15 +33734,15 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
                 </span><span class="nl">"startDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21"</span><span class="p">,</span><span class="w">
                 </span><span class="nl">"productServices"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
                   </span><span class="p">{</span><span class="w">
-                    </span><span class="nl">"productServices"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SEGURO"</span><span class="p">,</span><span class="w">
-                    </span><span class="nl">"procurators"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-                      </span><span class="p">{</span><span class="w">
-                        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PROCURADOR"</span><span class="p">,</span><span class="w">
-                        </span><span class="nl">"cpfNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00000000000"</span><span class="p">,</span><span class="w">
-                        </span><span class="nl">"civilName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-                        </span><span class="nl">"socialName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
-                      </span><span class="p">}</span><span class="w">
-                    </span><span class="p">]</span><span class="w">
+                    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SEGURO"</span><span class="w">
+                  </span><span class="p">}</span><span class="w">
+                </span><span class="p">],</span><span class="w">
+                </span><span class="nl">"procurators"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                  </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PROCURADOR"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"cpfNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00000000000"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"civilName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"socialName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
                   </span><span class="p">}</span><span class="w">
                 </span><span class="p">]</span><span class="w">
               </span><span class="p">}</span><span class="w">
@@ -37273,15 +37285,16 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
                 </span><span class="p">{</span><span class="w">
                   </span><span class="nl">"productsServices"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
                     </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SEGURO"</span><span class="w">
-                  </span><span class="p">},</span><span class="w">
-                  </span><span class="nl">"procurators"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PROCURADOR"</span><span class="p">,</span><span class="w">
-                    </span><span class="nl">"cpfNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00000000000"</span><span class="p">,</span><span class="w">
-                    </span><span class="nl">"civilName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-                    </span><span class="nl">"socialName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
                   </span><span class="p">}</span><span class="w">
                 </span><span class="p">}</span><span class="w">
-              </span><span class="p">]</span><span class="w">
+              </span><span class="p">],</span><span class="w">
+              </span><span class="nl">"procurators"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PROCURADOR"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"cpfNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00000000000"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"civilName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"socialName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+              </span><span class="p">}</span><span class="w">
             </span><span class="p">}</span><span class="w">
           </span><span class="p">}</span><span class="w">
         </span><span class="p">}</span><span class="w">
