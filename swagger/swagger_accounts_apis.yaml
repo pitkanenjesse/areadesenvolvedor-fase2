@@ -667,3 +667,71 @@ paths:
                     $ref: '#/paths/~1balances/get/responses/200/content/application~1json/schema/properties/links'
                   meta:
                     $ref: '#/paths/~1balances/get/responses/200/content/application~1json/schema/properties/meta'
+  /accounts/identification:
+    get:
+      tags:
+        - Accounts Identification
+      summary: Obtém os dados de identificação da conta mantidos na instituição transmissora.
+      description: Método para obter os dados de identificação da conta na transmissora.
+      operationId: getAccountsIdentification
+      parameters:
+        - $ref: '#/paths/~1balances/get/parameters/0'
+        - $ref: '#/paths/~1balances/get/parameters/1'
+      responses:
+        '200':
+          description: Dados de identificação de conta obtidos com sucesso.
+          content:
+            application/json:
+              schema:
+                $ref: '#/paths/~1identification/get/responses/200/content/application~1json/schema'
+  /accounts/balances:
+    get:
+      tags:
+        - Accounts Balances
+      summary: Obtém os saldos da conta mantidos na instituição transmissora.
+      description: Método para obter os dados da conta na transmissora.
+      operationId: getAccountsBalances
+      parameters:
+        - $ref: '#/paths/~1balances/get/parameters/0'
+        - $ref: '#/paths/~1balances/get/parameters/1'
+      responses:
+        '200':
+          description: Dados relativos aos saldos em conta obtidos com sucesso.
+          content:
+            application/json:
+              schema:
+                $ref: '#/paths/~1balances/get/responses/200/content/application~1json/schema'
+  /accounts/transactions:
+    get:
+      tags:
+        - Accounts Transactions
+      summary: Obtém a lista de transações da conta mantidos na instituição transmissora.
+      description: Método para obter a lista de transações da conta na transmissora.
+      operationId: getAccountsTransactions
+      parameters:
+        - $ref: '#/paths/~1balances/get/parameters/0'
+        - $ref: '#/paths/~1balances/get/parameters/1'
+      responses:
+        '200':
+          description: Dados de Transações de crédito e débito realizadas e autorizadas obtidos com sucesso.
+          content:
+            application/json:
+              schema:
+                $ref: '#/paths/~1transactions/get/responses/200/content/application~1json/schema'
+  /accounts/overdraft-limits:
+    get:
+      tags:
+        - Accounts Overdraft Limits
+      summary: Obtém os dados de limite de cheque especial e de adiantamento a depositante  da conta mantidos na instituição transmissora.
+      description: Método para obter os dados de cheque especial e de adiantamento a depositante  da conta na transmissora.
+      operationId: getAccountsOverdraftLimits
+      parameters:
+        - $ref: '#/paths/~1balances/get/parameters/0'
+        - $ref: '#/paths/~1balances/get/parameters/1'
+      responses:
+        '200':
+          description: Dados de Limites referentes ao valor das operações de crédito obtidos com sucesso.
+          content:
+            application/json:
+              schema:
+                $ref: '#/paths/~1overdraft-limits/get/responses/200/content/application~1json/schema'

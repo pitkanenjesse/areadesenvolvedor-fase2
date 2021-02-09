@@ -1625,3 +1625,105 @@ paths:
                   meta:
                     totalRecords: 1
                     totalPages: 1
+  /business-customers/identification:
+    get:
+      tags:
+        - Customers
+      summary: Obtém os dados de identificação da pessoa jurídica mantidos na instituição transmissora.
+      description: Método para obter os dados de identificação da pessoa jurídica na transmissora.
+      operationId: getBusinessCustomersIdentification
+      parameters:
+        - $ref: '#/paths/~1personal-qualification/get/parameters/0'
+        - $ref: '#/paths/~1personal-qualification/get/parameters/1'
+      responses:
+        '200':
+          description: Dados sobre identificação pessoa jurídica
+          content:
+            application/json:
+              schema:
+                $ref: '#/paths/~1business-identification/get/responses/200/content/application~1json/schema'
+  /business-customers/qualification:
+    get:
+      tags:
+        - Customers
+      summary: Obtém os dados de qualificação da pessoa jurídica mantidos na instituição transmissora.
+      description: Método para obter os dados de qualificação da pessoa jurídica na transmissora.
+      operationId: getBusinessCustomersQualification
+      parameters:
+        - $ref: '#/paths/~1personal-qualification/get/parameters/0'
+        - $ref: '#/paths/~1personal-qualification/get/parameters/1'
+      responses:
+        '200':
+          description: Dados sobre qualificação pessoa jurídica
+          content:
+            application/json:
+              schema:
+                $ref: '#/paths/~1business-qualification/get/responses/200/content/application~1json/schema'
+  /business-customers/financial-relation:
+    get:
+      tags:
+        - Customers
+      summary: Obtém os dados de relacionamento financeiro da pessoa jurídica mantidos na instituição transmissora.
+      description: Método para obter os dados de relacionamento financeiro da pessoa jurídica na transmissora.
+      operationId: getBusinessCustomersFinancialRelation
+      parameters:
+        - $ref: '#/paths/~1personal-qualification/get/parameters/0'
+        - $ref: '#/paths/~1personal-qualification/get/parameters/1'
+      responses:
+        '200':
+          description: Dados sobre relacionamento pessoa jurídica
+          content:
+            application/json:
+              schema:
+                $ref: '#/paths/~1business-financial-relation/get/responses/200/content/application~1json/schema'
+  /personal-customers/identification:
+    get:
+      tags:
+        - Customers
+      summary: Obtém os dados de identificação da pessoa natural mantidos na instituição transmissora.
+      description: Método para obter os dados de identificação da pessoa natural na transmissora.
+      operationId: getPersonalCustomersIdentification
+      parameters:
+        - $ref: '#/paths/~1personal-qualification/get/parameters/0'
+        - $ref: '#/paths/~1personal-qualification/get/parameters/1'
+      responses:
+        '200':
+          description: Dados sobre identificação pessoa física.
+          content:
+            application/json:
+              schema:
+                $ref: '#/paths/~1personal-identification/get/responses/200/content/application~1json/schema'
+  /personal-customers/qualification:
+    get:
+      tags:
+        - Customers
+      summary: Obtém os dados de qualificação da pessoa natural mantidos na instituição transmissora.
+      description: Método para obter os dados de qualificação da pessoa natural na transmissora.
+      operationId: getPersonalCustomersQualification
+      parameters:
+        - $ref: '#/paths/~1personal-qualification/get/parameters/0'
+        - $ref: '#/paths/~1personal-qualification/get/parameters/1'
+      responses:
+        '200':
+          description: Dados sobre qualificação da pessoa física
+          content:
+            application/json:
+              schema:
+                $ref: '#/paths/~1personal-qualification/get/responses/200/content/application~1json/schema'
+  /personal-customers/financial-relation:
+    get:
+      tags:
+        - Customers
+      summary: Obtém os dados de relacionamento financeiro da pessoa natural mantidos na instituição transmissora.
+      description: Método para obter os dados de relacionamento financeiro da pessoa natural na transmissora.
+      operationId: getPersonalCustomersFinancialRelation
+      parameters:
+        - $ref: '#/paths/~1personal-qualification/get/parameters/0'
+        - $ref: '#/paths/~1personal-qualification/get/parameters/1'
+      responses:
+        '200':
+          description: Dados sobre relacionamento da pessoa física
+          content:
+            application/json:
+              schema:
+                $ref: '#/paths/~1personal-financial-relation/get/responses/200/content/application~1json/schema'
