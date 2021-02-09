@@ -826,6 +826,7 @@ paths:
         ### Dicionário de dados
 
         <a href="dictionary/personal_customers_identification.csv" target="_blank">Fazer download do dicionário de dados</a>
+
         <a href="dictionary/example/examples_personal_customers_identification.csv" target="_blank">Fazer download dos exemplos</a>
 
 
@@ -881,6 +882,7 @@ paths:
         ### Dicionário de dados
 
         <a href="dictionary/business_customers_identification.csv" target="_blank">Fazer download do dicionário de dados</a>
+
         <a href="dictionary/example/examples_business_customers_identification.csv" target="_blank">Fazer download dos exemplos</a>
 
 
@@ -936,6 +938,7 @@ paths:
         ### Dicionário de dados
 
         <a href="dictionary/personal_customers_qualification.csv" target="_blank">Fazer download do dicionário de dados</a>
+
         <a href="dictionary/example/examples_personal_customers_qualification.csv" target="_blank">Fazer download dos exemplos</a>
 
 
@@ -991,6 +994,7 @@ paths:
         ### Dicionário de dados
 
         <a href="dictionary/business_customers_qualification.csv" target="_blank">Fazer download do dicionário de dados</a>
+
         <a href="dictionary/example/examples_business_customers_qualification.csv" target="_blank">Fazer download dos exemplos</a>
 
 
@@ -1045,6 +1049,7 @@ paths:
         ### Dicionário de dados
 
         <a href="dictionary/personal_customers_financial_relation.csv" target="_blank">Fazer download do dicionário de dados</a>
+
         <a href="dictionary/example/examples_personal_customers_financial_relation.csv" target="_blank">Fazer download dos exemplos</a>
 
 
@@ -1099,6 +1104,7 @@ paths:
         ### Dicionário de dados
 
         <a href="dictionary/business_customers_financial_relation.csv" target="_blank">Fazer download do dicionário de dados</a>
+
         <a href="dictionary/example/examples_business_customers_financial_relation.csv" target="_blank">Fazer download dos exemplos</a>
 
 
@@ -1151,6 +1157,7 @@ paths:
         ### Dicionário de dados
 
         <a href='dictionary/accounts_identification.csv' target="_blank">Fazer download do dicionário de dados</a>
+
         <a href="dictionary/example/examples_accounts_identification.csv" target="_blank">Fazer download dos exemplos</a>
 
         ### Especificação em OAS 3.0
@@ -1202,6 +1209,7 @@ paths:
         ### Dicionário de dados
 
         <a href='dictionary/accounts_balances.csv' target="_blank">Fazer download do dicionário de dados</a>
+
         <a href="dictionary/example/examples_accounts_balances.csv" target="_blank">Fazer download dos exemplos</a>
 
         ### Especificação em OAS 3.0
@@ -1253,6 +1261,7 @@ paths:
         ### Dicionário de dados
 
         <a href='dictionary/accounts_transactions.csv' target="_blank">Fazer download do dicionário de dados</a>
+
         <a href="dictionary/example/examples_accounts_transactions.csv" target="_blank">Fazer download dos exemplos</a>
 
         ### Especificação em OAS 3.0
@@ -1304,6 +1313,7 @@ paths:
         ### Dicionário de dados
 
         <a href='dictionary/accounts_overdraft_limits.csv' target="_blank">Fazer download do dicionário de dados</a>
+
         <a href="dictionary/example/examples_accounts_overdraft_limits.csv" target="_blank">Fazer download dos exemplos</a>
 
         ### Especificação em OAS 3.0
