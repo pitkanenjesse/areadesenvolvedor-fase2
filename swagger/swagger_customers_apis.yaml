@@ -69,7 +69,7 @@ paths:
                                 cnpjNumber:
                                   description: 'Número completo do CNPJ da instituição responsável pelo Cadastro - o CNPJ corresponde ao número de inscrição no Cadastro de Pessoa Jurídica. Deve-se ter apenas os números do CNPJ, sem máscara'
                                   type: string
-                                  pattern: '^(\d{14})$|^NA$'
+                                  pattern: '\d{14}|^NA$'
                                   maxLength: 14
                                   example: '50685362000135'
                                 personalCustomers:
@@ -84,14 +84,14 @@ paths:
                                       required:
                                         - requestDateTime
                                         - updateDateTime
-                                        - cpfNumber
+                                        - documents
                                         - otherDocuments
                                         - nationality
                                         - civilName
                                         - filiation
                                         - birthDate
-                                        - maritalStatus
-                                        - sex
+                                        - maritalStatusCode
+                                        - gender
                                         - contacts
                                       properties:
                                         requestDateTime:
@@ -108,30 +108,36 @@ paths:
                                           format: DateTimeString
                                           maxLength: 20
                                           example: '2020-07-21T08:30:00Z'
-                                        cpfNumber:
-                                          type: string
-                                          pattern: '^\d{11}$|^NA$'
-                                          description: 'Número completo do CPF. O CPF é o Cadastro de Pessoa natural. Ele é um documento feito pela Receita Federal e serve para identificar os contribuintes. O CPF é uma numeração com 11 dígitos, que só mudam por decisão judicial. O documento é emitido pela receita federal'
-                                          maxLength: 11
-                                          example: '25872252137'
-                                        passportNumber:
-                                          type: string
-                                          maxLength: 20
-                                          pattern: \w*\W*
-                                          description: Número do Passaporte. Documento concedido aos viajantes por uma autoridade administrativa nacional a fim de certificar sua identidade perante autoridades estrangeiras. De preenchimento obrigatório. Aplicável somente à Pessoa natural residente no exterior desobrigada de inscrição no CPF.
-                                          example: '75253468744594820620'
-                                        passportCountry:
-                                          type: string
-                                          description: Pais de emissão do passaporte. Código do pais de acordo com o código “alpha3” do ISO-3166.
-                                          maxLength: 3
-                                          example: CAN
-                                        passportExpirationDate:
-                                          type: string
-                                          pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$'
-                                          maxLength: 10
-                                          description: 'Data vigência do Passaporte, conforme especificação RFC-3339.'
-                                          format: DateString
-                                          example: '2014-03-19'
+                                        documents:
+                                          type: object
+                                          description: Objeto agrupador de informações relativas a Documentos da pessoa natural
+                                          required:
+                                            - cpfNumber
+                                          properties:
+                                            cpfNumber:
+                                              type: string
+                                              pattern: '^\d{11}$|^NA$'
+                                              description: 'Número completo do CPF. O CPF é o Cadastro de Pessoa natural. Ele é um documento feito pela Receita Federal e serve para identificar os contribuintes. O CPF é uma numeração com 11 dígitos, que só mudam por decisão judicial. O documento é emitido pela receita federal'
+                                              maxLength: 11
+                                              example: '25872252137'
+                                            passportNumber:
+                                              type: string
+                                              maxLength: 20
+                                              pattern: \w*\W*
+                                              description: Número do Passaporte. Documento concedido aos viajantes por uma autoridade administrativa nacional a fim de certificar sua identidade perante autoridades estrangeiras. De preenchimento obrigatório. Aplicável somente à Pessoa natural residente no exterior desobrigada de inscrição no CPF.
+                                              example: '75253468744594820620'
+                                            passportCountry:
+                                              type: string
+                                              description: Pais de emissão do passaporte. Código do pais de acordo com o código “alpha3” do ISO-3166.
+                                              maxLength: 3
+                                              example: CAN
+                                            passportExpirationDate:
+                                              type: string
+                                              pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$'
+                                              maxLength: 10
+                                              description: 'Data vigência do Passaporte, conforme especificação RFC-3339.'
+                                              format: DateString
+                                              example: '2014-03-19'
                                         otherDocuments:
                                           type: array
                                           items:
@@ -188,7 +194,7 @@ paths:
                                             hasBrazilianNationality:
                                               type: boolean
                                               description: Informa se o Cliente tem nacionalidade brasileira.
-                                              example: true
+                                              example: false
                                             otherNationality:
                                               type: object
                                               properties:
@@ -196,7 +202,7 @@ paths:
                                                   type: string
                                                   description: Campo de preenchimento obrigatório caso o cliente não possua nacionalidade brasileira. Preencher utilizando o código de pais de acordo com o código “alpha3” do ISO-3166.
                                                   maxLength: 3
-                                                  example: CAN
+                                                  example: USA
                                                 complementaryDocuments:
                                                   type: array
                                                   description: Lista que traz relação de documentos complementares de pessoas com nacionalidade diferente de brasileira
@@ -213,6 +219,7 @@ paths:
                                                         maxLength: 40
                                                         pattern: \w*\W*
                                                         description: 'Número de identificação do documento. Campo livre, de preenchimento obrigatório quando a nacionalidade for diferente de brasileira. Informar o número do documento e demais informações complementares para se identificar o documento de pessoa estrangeira'
+                                                        example: '423929299'
                                                       expirationDate:
                                                         type: string
                                                         pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$'
@@ -226,6 +233,11 @@ paths:
                                           maxLength: 70
                                           pattern: \w*\W*
                                           example: Elza Milena Stefany Teixeira
+                                        socialName:
+                                          type: string
+                                          description: 'Nome social da pessoa natural, se houver. (aquele pelo qual travestis e transexuais se reconhecem, bem como são identificados por sua comunidade e em seu meio social, conforme Decreto Nº 51.180, de 14 de janeiro de 2010)'
+                                          maxLength: 70
+                                          pattern: \w*\W*
                                         filiation:
                                           type: array
                                           items:
@@ -315,6 +327,9 @@ paths:
                                                   - country
                                                   - countryCode
                                                 properties:
+                                                  isMain:
+                                                    type: boolean
+                                                    description: Indica se o endereço informado é o principal
                                                   address:
                                                     type: string
                                                     description: |
@@ -342,10 +357,11 @@ paths:
                                                     maxLength: 50
                                                     pattern: \w*\W*
                                                     example: Marília
-                                                  ibgeCode:
+                                                  ibgeTownCode:
                                                     type: string
                                                     description: Código IBGE do município
                                                     pattern: '^(\d{7})$'
+                                                    maxLength: 7
                                                     example: '3550308'
                                                   countrySubDivision:
                                                     type: string
@@ -394,6 +410,7 @@ paths:
                                                   countryCode:
                                                     type: string
                                                     description: Código do país
+                                                    maxLength: 3
                                                     example: BRA
                                                   geographicCoordinates:
                                                     type: object
@@ -412,9 +429,6 @@ paths:
                                                         pattern: '^-?\d{1,3}\.\d{1,8}$'
                                                         maxLength: 13
                                                         example: '-180.836519'
-                                                  isMain:
-                                                    type: boolean
-                                                    description: Indica se o endereço informado é o principal
                                               minItems: 1
                                               description: Lista de endereços
                                             phones:
@@ -448,7 +462,7 @@ paths:
                                                     maxLength: 70
                                                   countryCallingCode:
                                                     type: string
-                                                    maxLength: 2
+                                                    maxLength: 4
                                                     pattern: '^\d{1,4}$|^NA$'
                                                     example: '55'
                                                     description: Número de DDI (Discagem Direta Internacional) para telefone de acesso ao Cliente - se houver
@@ -563,6 +577,83 @@ paths:
                     $ref: '#/paths/~1personal-qualification/get/responses/200/content/application~1json/schema/properties/links'
                   meta:
                     $ref: '#/paths/~1personal-qualification/get/responses/200/content/application~1json/schema/properties/meta'
+                example:
+                  data:
+                    brand:
+                      name: Organização A
+                      companies:
+                        - name: Empresa da Organização A
+                          cnpjNumber: '50685362000135'
+                          personalCustomers:
+                            identification:
+                              requestDateTime: '2020-07-21T08:30:00Z'
+                              updateDateTime: '2020-07-21T08:30:00Z'
+                              documents:
+                                cpfNumber: '25872252137'
+                                passportNumber: '75253468744594820620'
+                                passportCountry: CAN
+                                passportExpirationDate: '2014-03-19'
+                              otherDocuments:
+                                - type: CNH
+                                  typeAdditionalInfo: string
+                                  number: string
+                                  checkDigit: string
+                                  additionalInfo: string
+                                  expirationDate: '2014-03-19'
+                              nationality:
+                                hasBrazilianNationality: false
+                                otherNationality:
+                                  additionalInfo: USA
+                                  complementaryDocuments:
+                                    - type: SOCIAL SEC
+                                      number: '423929299'
+                                      expirationDate: '2014-03-19'
+                              civilName: Elza Milena Stefany Teixeira
+                              socialName: string
+                              filiation:
+                                - type: MAE
+                                  additionalInfo: string
+                                  civilName: string
+                                  socialName: string
+                              birthDate: '2014-03-19'
+                              maritalStatusCode: SOLTEIRO
+                              maritalStatusAdditionalInfo: string
+                              gender: FEMININO
+                              contacts:
+                                postalAddresses:
+                                  - isMain: true
+                                    address: 'Av Naburo Ykesaki, 1270'
+                                    additionalInfo: Fundos
+                                    districtName: Centro
+                                    townName: Marília
+                                    ibgeTownCode: '3550308'
+                                    countrySubDivision: SP
+                                    postCode: '17500001'
+                                    country: Brasil
+                                    countryCode: BRA
+                                    geographicCoordinates:
+                                      latitude: '-90.8365180'
+                                      longitude: '-180.836519'
+                                phones:
+                                  - isMain: true
+                                    type: FIXO
+                                    additionalInfo: string
+                                    countryCallingCode: '55'
+                                    areaCode: '19'
+                                    number: '29875132'
+                                    phoneExtension: string
+                                emails:
+                                  - isMain: true
+                                    email: elzamilenastefanyteixeira-81@br.inter.net
+                  links:
+                    self: 'https://api.banco.com.br/open-banking/<api>/v1/<resource>'
+                    first: 'https://api.banco.com.br/open-banking/<api>/v1/<resource>'
+                    prev: string
+                    next: string
+                    last: 'https://api.banco.com.br/open-banking/<api>/v1/<resource>'
+                  meta:
+                    totalRecords: 1
+                    totalPages: 1
   /business-identification:
     get:
       tags:
@@ -621,7 +712,7 @@ paths:
                                 cnpjNumber:
                                   description: 'Número completo do CNPJ da instituição responsável pelo Cadastro - o CNPJ corresponde ao número de inscrição no Cadastro de Pessoa Jurídica. Deve-se ter apenas os números do CNPJ, sem máscara'
                                   type: string
-                                  pattern: '^(\d{14})$|^NA$'
+                                  pattern: '\d{14}|^NA$'
                                   maxLength: 14
                                   example: '50685362000135'
                                 businessCustomers:
@@ -672,7 +763,7 @@ paths:
                                                 description: 'Tipo do outro documento informado. De preenchimento obrigatório, para a Pessoa jurídica com domicílio ou sede no exterior, desobrigada de inscrição no CNPJ'
                                               number:
                                                 type: string
-                                                maxLength: 11
+                                                maxLength: 20
                                                 pattern: \w*\W*
                                                 description: 'Número do outro documento. De preenchimento obrigatório, para a Pessoa jurídica com domicílio ou sede no exterior, desobrigada de inscrição no CNPJ'
                                               country:
@@ -864,7 +955,7 @@ paths:
                                 cnpjNumber:
                                   description: 'Número completo do CNPJ da instituição responsável pelo Cadastro - o CNPJ corresponde ao número de inscrição no Cadastro de Pessoa Jurídica. Deve-se ter apenas os números do CNPJ, sem máscara'
                                   type: string
-                                  pattern: '^(\d{14})$|^NA$'
+                                  pattern: '\d{14}|^NA$'
                                   maxLength: 14
                                   example: '50685362000135'
                                 personalCustomers:
@@ -1080,7 +1171,7 @@ paths:
                                 cnpjNumber:
                                   description: 'Número completo do CNPJ da instituição responsável pelo Cadastro - o CNPJ corresponde ao número de inscrição no Cadastro de Pessoa Jurídica. Deve-se ter apenas os números do CNPJ, sem máscara'
                                   type: string
-                                  pattern: '^(\d{14})$|^NA$'
+                                  pattern: '\d{14}|^NA$'
                                   maxLength: 14
                                   example: '50685362000135'
                                 businessCustomers:
@@ -1095,7 +1186,7 @@ paths:
                                       required:
                                         - requestDateTime
                                         - updateDateTime
-                                        - economicActivity
+                                        - economicActivities
                                         - informedRevenue
                                         - informedPatrimony
                                       properties:
@@ -1111,21 +1202,25 @@ paths:
                                           description: 'Data e hora da atualização do bloco, conforme especificação RFC-3339'
                                           maxLength: 20
                                           example: '2020-07-21T08:30:00Z'
-                                        economicActivity:
-                                          type: object
-                                          required:
-                                            - code
-                                            - isMain
-                                          properties:
-                                            code:
-                                              type: string
-                                              pattern: '^\d{7}$|^NA$'
-                                              maxLength: 7
-                                              description: |
-                                                Traz o código do ramo da atividade principal da empresa consultada, segundo padrão CNAE (Classificação Nacional de Atividades Econômicas)
-                                            isMain:
-                                              type: boolean
-                                              description: Informa se é o principal ramo de atividade
+                                        economicActivities:
+                                          type: array
+                                          items:
+                                            type: object
+                                            required:
+                                              - code
+                                              - isMain
+                                            properties:
+                                              code:
+                                                type: string
+                                                pattern: '^\d{7}$|^NA$'
+                                                maxLength: 7
+                                                description: |
+                                                  Traz o código do ramo da atividade principal da empresa consultada, segundo padrão CNAE (Classificação Nacional de Atividades Econômicas)
+                                              isMain:
+                                                type: boolean
+                                                description: Informa se é o principal ramo de atividade
+                                          minItems: 1
+                                          description: 'Lista dos demais códigos relativos às demais atividades econômicas da empresa, segundo padrão CNAE (Classificação Nacional de Atividades Econômicas). De preenchimento obrigatório, se houver'
                                         informedRevenue:
                                           type: object
                                           description: Objeto que agrupa informações relativas ao faturamento da empresa informado
@@ -1172,7 +1267,7 @@ paths:
                                           description: Objeto que agrupa informações relativas ao patrimônio da empresa
                                           required:
                                             - amount
-                                            - date
+                                            - year
                                           properties:
                                             amount:
                                               type: string
@@ -1188,13 +1283,13 @@ paths:
                                               format: CurrencyString
                                               description: 'Moeda referente ao valor do patrimônio, segundo modelo ISO-4217.'
                                               example: BRL
-                                            date:
+                                            year:
                                               type: string
-                                              pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$'
-                                              maxLength: 10
+                                              pattern: '^\d{4}$'
+                                              maxLength: 4
                                               format: DateString
                                               description: 'Data do Patrimônio, conforme especificação RFC-3339.'
-                                              example: '2014-03-19'
+                                              example: '2014'
                             minItems: 1
                             description: Companies traz uma lista de todas as instituições da Marca
                   links:
