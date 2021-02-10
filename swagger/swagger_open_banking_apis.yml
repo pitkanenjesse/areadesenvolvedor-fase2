@@ -1184,6 +1184,10 @@ paths:
         <a href='swagger/swagger_accounts_apis.yaml'>Download da Especificação (OAS 3.0)</a>
       operationId: getAccountsIdentification
       parameters:
+        - $ref: '#/components/parameters/accountsIspbCode'
+        - $ref: '#/components/parameters/accountsBranchCode'
+        - $ref: '#/components/parameters/accountsNumber'
+        - $ref: '#/components/parameters/accountsCheckDigit'
         - $ref: '#/components/parameters/page'
         - $ref: '#/components/parameters/pageSize'
       responses:
@@ -1239,6 +1243,10 @@ paths:
         <a href='swagger/swagger_accounts_apis.yaml'>Download da Especificação (OAS 3.0)</a>
       operationId: getAccountsBalances
       parameters:
+        - $ref: '#/components/parameters/accountsIspbCode'
+        - $ref: '#/components/parameters/accountsBranchCode'
+        - $ref: '#/components/parameters/accountsNumber'
+        - $ref: '#/components/parameters/accountsCheckDigit'
         - $ref: '#/components/parameters/page'
         - $ref: '#/components/parameters/pageSize'
       responses:
@@ -1294,6 +1302,10 @@ paths:
         <a href='swagger/swagger_accounts_apis.yaml'>Download da Especificação (OAS 3.0)</a>
       operationId: getAccountsTransactions
       parameters:
+        - $ref: '#/components/parameters/accountsIspbCode'
+        - $ref: '#/components/parameters/accountsBranchCode'
+        - $ref: '#/components/parameters/accountsNumber'
+        - $ref: '#/components/parameters/accountsCheckDigit'
         - $ref: '#/components/parameters/page'
         - $ref: '#/components/parameters/pageSize'
       responses:
@@ -1349,6 +1361,10 @@ paths:
         <a href='swagger/swagger_accounts_apis.yaml'>Download da Especificação (OAS 3.0)</a>
       operationId: getAccountsOverdraftLimits
       parameters:
+        - $ref: '#/components/parameters/accountsIspbCode'
+        - $ref: '#/components/parameters/accountsBranchCode'
+        - $ref: '#/components/parameters/accountsNumber'
+        - $ref: '#/components/parameters/accountsCheckDigit'
         - $ref: '#/components/parameters/page'
         - $ref: '#/components/parameters/pageSize'
       responses:
@@ -2974,8 +2990,7 @@ components:
           type: string
           pattern: '^\d{4}$'
           maxLength: 4
-          format: DateString
-          description: 'Data do Patrimônio, conforme especificação RFC-3339.'
+          description: 'Ano do Patrimônio, conforme especificação RFC-3339.'
           example: '2014'
     BusinessInvoiceFinancings:
       type: object
@@ -11872,6 +11887,42 @@ components:
           value: '2200.00'
           currency: BRL
   parameters:
+    accountsBranchCode:
+      name: branchCode
+      in: query
+      description: 'Código da Agência detentora da conta. (Agência é a dependência destinada ao atendimento aos clientes, ao público em geral e aos associados de cooperativas de crédito, no exercício de atividades da instituição, não podendo ser móvel ou transitória)'
+      schema:
+        type: string
+        maxLength: 4
+        pattern: '\d{4}|^NA$'
+      required: true
+    accountsCheckDigit:
+      name: checkDigit
+      in: query
+      description: Dígito da conta
+      schema:
+        type: string
+        maxLength: 2
+        pattern: '^\d{1}$|^NA$'
+      required: true
+    accountsIspbCode:
+      name: ispbCode
+      in: query
+      description: 'Código identificador atribuído pelo Banco Central do Brasil às instituições participantes do STR (Sistema de Transferência de reservas). O número-código substituiu o antigo código COMPE. Todos os participantes do STR, exceto as Infraestruturas do Mercado Financeiro (IMF) e a Secretaria do Tesouro Nacional, possuem um número-código independentemente de participarem da Centralizadora da Compensação de Cheques (Compe). O campo tem a anotação “n/a” (“não se aplica”) para os participantes do STR aos quais não é atribuído um número-código'
+      schema:
+        type: string
+        maxLength: 8
+        pattern: '\d{8}|^NA$'
+      required: true
+    accountsNumber:
+      name: number
+      in: query
+      description: Número da conta
+      schema:
+        type: string
+        maxLength: 20
+        pattern: '\d{20}|^NA$'
+      required: true
     page:
       name: page
       in: query

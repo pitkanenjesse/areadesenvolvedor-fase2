@@ -11632,7 +11632,7 @@ This operation does not require authentication
   <span class="p">}</span>
 <span class="p">});</span>
 
-<span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">http://api.banco.com.br/open-banking/accounts/v1/accounts/identification</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">http://api.banco.com.br/open-banking/accounts/v1/accounts/identification?ispbCode=string&amp;branchCode=stri&amp;number=string&amp;checkDigit=st</span><span class="dl">"</span><span class="p">);</span>
 <span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="dl">"</span><span class="s2">Accept</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">application/json</span><span class="dl">"</span><span class="p">);</span>
 
 <span class="nx">xhr</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
@@ -11642,13 +11642,13 @@ This operation does not require authentication
 
 <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span> <span class="s">'Accept'</span><span class="p">:</span> <span class="s">"application/json"</span> <span class="p">}</span>
 
-<span class="n">conn</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="s">"/open-banking/accounts/v1/accounts/identification"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+<span class="n">conn</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="s">"/open-banking/accounts/v1/accounts/identification?ispbCode=string&amp;branchCode=stri&amp;number=string&amp;checkDigit=st"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
 
 <span class="n">res</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">getresponse</span><span class="p">()</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 
 <span class="k">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">"utf-8"</span><span class="p">))</span>
-</code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="nc">HttpResponse</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">response</span> <span class="o">=</span> <span class="nc">Unirest</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">"http://api.banco.com.br/open-banking/accounts/v1/accounts/identification"</span><span class="o">)</span>
+</code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="nc">HttpResponse</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">response</span> <span class="o">=</span> <span class="nc">Unirest</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">"http://api.banco.com.br/open-banking/accounts/v1/accounts/identification?ispbCode=string&amp;branchCode=stri&amp;number=string&amp;checkDigit=st"</span><span class="o">)</span>
   <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"Accept"</span><span class="o">,</span> <span class="s">"application/json"</span><span class="o">)</span>
   <span class="o">.</span><span class="na">asString</span><span class="o">();</span>
 </code></pre></div>
@@ -11716,6 +11716,34 @@ This operation does not require authentication
 <th>Descrição</th>
 </tr>
 </thead><tbody>
+<tr>
+<td>ispbCode</td>
+<td>query</td>
+<td>string</td>
+<td>true</td>
+<td>Código identificador atribuído pelo Banco Central do Brasil às instituições participantes do STR (Sistema de Transferência de reservas). O número-código substituiu o antigo código COMPE. Todos os participantes do STR, exceto as Infraestruturas do Mercado Financeiro (IMF) e a Secretaria do Tesouro Nacional, possuem um número-código independentemente de participarem da Centralizadora da Compensação de Cheques (Compe). O campo tem a anotação “n/a” (“não se aplica”) para os participantes do STR aos quais não é atribuído um número-código</td>
+</tr>
+<tr>
+<td>branchCode</td>
+<td>query</td>
+<td>string</td>
+<td>true</td>
+<td>Código da Agência detentora da conta. (Agência é a dependência destinada ao atendimento aos clientes, ao público em geral e aos associados de cooperativas de crédito, no exercício de atividades da instituição, não podendo ser móvel ou transitória)</td>
+</tr>
+<tr>
+<td>number</td>
+<td>query</td>
+<td>string</td>
+<td>true</td>
+<td>Número da conta</td>
+</tr>
+<tr>
+<td>checkDigit</td>
+<td>query</td>
+<td>string</td>
+<td>true</td>
+<td>Dígito da conta</td>
+</tr>
 <tr>
 <td>page</td>
 <td>query</td>
@@ -11811,7 +11839,7 @@ This operation does not require authentication
   <span class="p">}</span>
 <span class="p">});</span>
 
-<span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">http://api.banco.com.br/open-banking/accounts/v1/accounts/balances</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">http://api.banco.com.br/open-banking/accounts/v1/accounts/balances?ispbCode=string&amp;branchCode=stri&amp;number=string&amp;checkDigit=st</span><span class="dl">"</span><span class="p">);</span>
 <span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="dl">"</span><span class="s2">Accept</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">application/json</span><span class="dl">"</span><span class="p">);</span>
 
 <span class="nx">xhr</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
@@ -11821,13 +11849,13 @@ This operation does not require authentication
 
 <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span> <span class="s">'Accept'</span><span class="p">:</span> <span class="s">"application/json"</span> <span class="p">}</span>
 
-<span class="n">conn</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="s">"/open-banking/accounts/v1/accounts/balances"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+<span class="n">conn</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="s">"/open-banking/accounts/v1/accounts/balances?ispbCode=string&amp;branchCode=stri&amp;number=string&amp;checkDigit=st"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
 
 <span class="n">res</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">getresponse</span><span class="p">()</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 
 <span class="k">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">"utf-8"</span><span class="p">))</span>
-</code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="nc">HttpResponse</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">response</span> <span class="o">=</span> <span class="nc">Unirest</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">"http://api.banco.com.br/open-banking/accounts/v1/accounts/balances"</span><span class="o">)</span>
+</code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="nc">HttpResponse</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">response</span> <span class="o">=</span> <span class="nc">Unirest</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">"http://api.banco.com.br/open-banking/accounts/v1/accounts/balances?ispbCode=string&amp;branchCode=stri&amp;number=string&amp;checkDigit=st"</span><span class="o">)</span>
   <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"Accept"</span><span class="o">,</span> <span class="s">"application/json"</span><span class="o">)</span>
   <span class="o">.</span><span class="na">asString</span><span class="o">();</span>
 </code></pre></div>
@@ -11894,6 +11922,34 @@ This operation does not require authentication
 <th>Descrição</th>
 </tr>
 </thead><tbody>
+<tr>
+<td>ispbCode</td>
+<td>query</td>
+<td>string</td>
+<td>true</td>
+<td>Código identificador atribuído pelo Banco Central do Brasil às instituições participantes do STR (Sistema de Transferência de reservas). O número-código substituiu o antigo código COMPE. Todos os participantes do STR, exceto as Infraestruturas do Mercado Financeiro (IMF) e a Secretaria do Tesouro Nacional, possuem um número-código independentemente de participarem da Centralizadora da Compensação de Cheques (Compe). O campo tem a anotação “n/a” (“não se aplica”) para os participantes do STR aos quais não é atribuído um número-código</td>
+</tr>
+<tr>
+<td>branchCode</td>
+<td>query</td>
+<td>string</td>
+<td>true</td>
+<td>Código da Agência detentora da conta. (Agência é a dependência destinada ao atendimento aos clientes, ao público em geral e aos associados de cooperativas de crédito, no exercício de atividades da instituição, não podendo ser móvel ou transitória)</td>
+</tr>
+<tr>
+<td>number</td>
+<td>query</td>
+<td>string</td>
+<td>true</td>
+<td>Número da conta</td>
+</tr>
+<tr>
+<td>checkDigit</td>
+<td>query</td>
+<td>string</td>
+<td>true</td>
+<td>Dígito da conta</td>
+</tr>
 <tr>
 <td>page</td>
 <td>query</td>
@@ -11992,7 +12048,7 @@ This operation does not require authentication
   <span class="p">}</span>
 <span class="p">});</span>
 
-<span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">http://api.banco.com.br/open-banking/accounts/v1/accounts/transactions</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">http://api.banco.com.br/open-banking/accounts/v1/accounts/transactions?ispbCode=string&amp;branchCode=stri&amp;number=string&amp;checkDigit=st</span><span class="dl">"</span><span class="p">);</span>
 <span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="dl">"</span><span class="s2">Accept</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">application/json</span><span class="dl">"</span><span class="p">);</span>
 
 <span class="nx">xhr</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
@@ -12002,13 +12058,13 @@ This operation does not require authentication
 
 <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span> <span class="s">'Accept'</span><span class="p">:</span> <span class="s">"application/json"</span> <span class="p">}</span>
 
-<span class="n">conn</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="s">"/open-banking/accounts/v1/accounts/transactions"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+<span class="n">conn</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="s">"/open-banking/accounts/v1/accounts/transactions?ispbCode=string&amp;branchCode=stri&amp;number=string&amp;checkDigit=st"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
 
 <span class="n">res</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">getresponse</span><span class="p">()</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 
 <span class="k">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">"utf-8"</span><span class="p">))</span>
-</code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="nc">HttpResponse</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">response</span> <span class="o">=</span> <span class="nc">Unirest</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">"http://api.banco.com.br/open-banking/accounts/v1/accounts/transactions"</span><span class="o">)</span>
+</code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="nc">HttpResponse</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">response</span> <span class="o">=</span> <span class="nc">Unirest</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">"http://api.banco.com.br/open-banking/accounts/v1/accounts/transactions?ispbCode=string&amp;branchCode=stri&amp;number=string&amp;checkDigit=st"</span><span class="o">)</span>
   <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"Accept"</span><span class="o">,</span> <span class="s">"application/json"</span><span class="o">)</span>
   <span class="o">.</span><span class="na">asString</span><span class="o">();</span>
 </code></pre></div>
@@ -12075,6 +12131,34 @@ This operation does not require authentication
 <th>Descrição</th>
 </tr>
 </thead><tbody>
+<tr>
+<td>ispbCode</td>
+<td>query</td>
+<td>string</td>
+<td>true</td>
+<td>Código identificador atribuído pelo Banco Central do Brasil às instituições participantes do STR (Sistema de Transferência de reservas). O número-código substituiu o antigo código COMPE. Todos os participantes do STR, exceto as Infraestruturas do Mercado Financeiro (IMF) e a Secretaria do Tesouro Nacional, possuem um número-código independentemente de participarem da Centralizadora da Compensação de Cheques (Compe). O campo tem a anotação “n/a” (“não se aplica”) para os participantes do STR aos quais não é atribuído um número-código</td>
+</tr>
+<tr>
+<td>branchCode</td>
+<td>query</td>
+<td>string</td>
+<td>true</td>
+<td>Código da Agência detentora da conta. (Agência é a dependência destinada ao atendimento aos clientes, ao público em geral e aos associados de cooperativas de crédito, no exercício de atividades da instituição, não podendo ser móvel ou transitória)</td>
+</tr>
+<tr>
+<td>number</td>
+<td>query</td>
+<td>string</td>
+<td>true</td>
+<td>Número da conta</td>
+</tr>
+<tr>
+<td>checkDigit</td>
+<td>query</td>
+<td>string</td>
+<td>true</td>
+<td>Dígito da conta</td>
+</tr>
 <tr>
 <td>page</td>
 <td>query</td>
@@ -12179,7 +12263,7 @@ This operation does not require authentication
   <span class="p">}</span>
 <span class="p">});</span>
 
-<span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">http://api.banco.com.br/open-banking/accounts/v1/accounts/overdraft-limits</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">http://api.banco.com.br/open-banking/accounts/v1/accounts/overdraft-limits?ispbCode=string&amp;branchCode=stri&amp;number=string&amp;checkDigit=st</span><span class="dl">"</span><span class="p">);</span>
 <span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="dl">"</span><span class="s2">Accept</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">application/json</span><span class="dl">"</span><span class="p">);</span>
 
 <span class="nx">xhr</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
@@ -12189,13 +12273,13 @@ This operation does not require authentication
 
 <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span> <span class="s">'Accept'</span><span class="p">:</span> <span class="s">"application/json"</span> <span class="p">}</span>
 
-<span class="n">conn</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="s">"/open-banking/accounts/v1/accounts/overdraft-limits"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+<span class="n">conn</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="s">"/open-banking/accounts/v1/accounts/overdraft-limits?ispbCode=string&amp;branchCode=stri&amp;number=string&amp;checkDigit=st"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
 
 <span class="n">res</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">getresponse</span><span class="p">()</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 
 <span class="k">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">"utf-8"</span><span class="p">))</span>
-</code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="nc">HttpResponse</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">response</span> <span class="o">=</span> <span class="nc">Unirest</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">"http://api.banco.com.br/open-banking/accounts/v1/accounts/overdraft-limits"</span><span class="o">)</span>
+</code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="nc">HttpResponse</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">response</span> <span class="o">=</span> <span class="nc">Unirest</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">"http://api.banco.com.br/open-banking/accounts/v1/accounts/overdraft-limits?ispbCode=string&amp;branchCode=stri&amp;number=string&amp;checkDigit=st"</span><span class="o">)</span>
   <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"Accept"</span><span class="o">,</span> <span class="s">"application/json"</span><span class="o">)</span>
   <span class="o">.</span><span class="na">asString</span><span class="o">();</span>
 </code></pre></div>
@@ -12262,6 +12346,34 @@ This operation does not require authentication
 <th>Descrição</th>
 </tr>
 </thead><tbody>
+<tr>
+<td>ispbCode</td>
+<td>query</td>
+<td>string</td>
+<td>true</td>
+<td>Código identificador atribuído pelo Banco Central do Brasil às instituições participantes do STR (Sistema de Transferência de reservas). O número-código substituiu o antigo código COMPE. Todos os participantes do STR, exceto as Infraestruturas do Mercado Financeiro (IMF) e a Secretaria do Tesouro Nacional, possuem um número-código independentemente de participarem da Centralizadora da Compensação de Cheques (Compe). O campo tem a anotação “n/a” (“não se aplica”) para os participantes do STR aos quais não é atribuído um número-código</td>
+</tr>
+<tr>
+<td>branchCode</td>
+<td>query</td>
+<td>string</td>
+<td>true</td>
+<td>Código da Agência detentora da conta. (Agência é a dependência destinada ao atendimento aos clientes, ao público em geral e aos associados de cooperativas de crédito, no exercício de atividades da instituição, não podendo ser móvel ou transitória)</td>
+</tr>
+<tr>
+<td>number</td>
+<td>query</td>
+<td>string</td>
+<td>true</td>
+<td>Número da conta</td>
+</tr>
+<tr>
+<td>checkDigit</td>
+<td>query</td>
+<td>string</td>
+<td>true</td>
+<td>Dígito da conta</td>
+</tr>
 <tr>
 <td>page</td>
 <td>query</td>
@@ -17884,9 +17996,9 @@ This operation does not require authentication
 </tr>
 <tr>
 <td>year</td>
-<td>string(DateString)</td>
+<td>string</td>
 <td>true</td>
-<td>Data do Patrimônio, conforme especificação RFC-3339.</td>
+<td>Ano do Patrimônio, conforme especificação RFC-3339.</td>
 </tr>
 </tbody></table>
 
