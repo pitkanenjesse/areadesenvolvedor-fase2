@@ -1211,8 +1211,7 @@ paths:
 
         Esta especificação inclui todos os artefatos relevantes para a Especificação de API sobre os saldos de uma conta de: depósito à vista, poupança ou de pagamento pré-paga referente às informações transacionais de cliente.
 
-        Tags: [CNAE (Cnae Code)](#glossarioCNAE), [Código Número (ISPB) (IspbCode)](#glossarioISPB), [Saldo (Account Balance)](#glossarioSaldo), [Saldo Bloqueado (Cash Blocked)](#glossarioSaldoBloqueado), [Saldo Disponível (Cash Amount)](#glossarioSaldoDisponivel),
-              [CNPJ (CNPJ Number)](#glossarioCNPJ), [Marca (Brand)](#glossarioMarca) e [Instituição Financeira (Company)](#glossarioInstituicaoFinanceira).
+        Tags: [Agência (Branch)](#glossarioAgencia), [Código Número (ISPB) (IspbCode)](#glossarioISPB), [Saldo (Account Balance)](#glossarioSaldo), [Saldo Bloqueado (Cash Blocked)](#glossarioSaldoBloqueado), [Saldo Disponível (Cash Amount)](#glossarioSaldoDisponivel), [CNPJ (CNPJ Number)](#glossarioCNPJ), [Marca (Brand)](#glossarioMarca) e [Instituição Financeira (Company)](#glossarioInstituicaoFinanceira).
 
         ### Visão de alto de nível das estruturas de dados
 
@@ -1270,8 +1269,7 @@ paths:
 
         Esta especificação inclui todos os artefatos relevantes para a Especificação de API sobre as transações efetivadas e os pagamentos autorizados de uma conta de: depósito à vista, poupança ou de pagamento pré-paga referente às informações transacionais de cliente.
 
-        Tags: [Código Número (ISPB) (IspbCode)](#glossarioISPB), [Crédito (Credit)](#glossarioCredito), [Débito (Debit)](#glossarioDebito), [Pagador (Payer)](#glossarioPagador), [Pagamento autorizado (Authorised Payment)](#glossarioPagamentoAutorizado), [Recebedor (Payee)](#glossarioRecebedor), [Transação Agendada (Scheduled Payment)](#glossarioTransacaoAgendada), [Transações Realizadas (Completed Transaction) (Scheduled Payment)](#glossarioTransacaoRealizada),
-              [CNPJ (CNPJ Number)](#glossarioCNPJ), [Marca (Brand)](#glossarioMarca) e [Instituição Financeira (Company)](#glossarioInstituicaoFinanceira).
+        Tags: [Código Número (ISPB) (IspbCode)](#glossarioISPB), [Crédito (Credit)](#glossarioCredito), [Débito (Debit)](#glossarioDebito), [Pagador (Payer)](#glossarioPagador), [Pagamento autorizado (Authorised Payment)](#glossarioPagamentoAutorizado), [Recebedor (Payee)](#glossarioRecebedor), [Transação Agendada (Scheduled Payment)](#glossarioTransacaoAgendada), [Transações Realizadas (Completed Transaction) (Scheduled Payment)](#glossarioTransacaoRealizada), [CNPJ (CNPJ Number)](#glossarioCNPJ), [Marca (Brand)](#glossarioMarca), [Instituição Financeira (Company)](#glossarioInstituicaoFinanceira) e [Agência (Branch)](#glossarioAgencia).
 
         ### Visão de alto de nível das estruturas de dados
 
@@ -1329,8 +1327,7 @@ paths:
 
         Esta especificação inclui todos os artefatos relevantes para a Especificação de API sobre os valores utilizado e disponível do limite do Cheque Especial e o valor em excesso (Adiantamento a depositante) de uma conta de depósito à vista, referente às informações transacionais de cliente.
 
-        Tags: [Adiantamento a Depositante (Unarranged Account Overdraft)](#glossarioAdiantamentoDepositante), [Cheque Especial (Arranged Overdraft)](#glossarioChequeEspecial), [Código Número (ISPB) (IspbCode)](#glossarioISPB), [Saldo (Account Balance)](#glossarioSaldo),
-              [CNPJ (CNPJ Number)](#glossarioCNPJ), [Marca (Brand)](#glossarioMarca) e [Instituição Financeira (Company)](#glossarioInstituicaoFinanceira).
+        Tags: [Adiantamento a Depositante (Unarranged Account Overdraft)](#glossarioAdiantamentoDepositante), [Cheque Especial (Arranged Overdraft)](#glossarioChequeEspecial), [Código Número (ISPB) (IspbCode)](#glossarioISPB), [Saldo (Account Balance)](#glossarioSaldo), [CNPJ (CNPJ Number)](#glossarioCNPJ), [Marca (Brand)](#glossarioMarca), [Instituição Financeira (Company)](#glossarioInstituicaoFinanceira), [Agência (Branch)](#glossarioAgencia) e [Conta de depósito à vista (Account)](#glossarioContaDepositoVista).
 
         ### Visão de alto de nível das estruturas de dados
 
@@ -4127,7 +4124,7 @@ components:
           description: Endereço de email
           maxLength: 320
           pattern: \w*\W*
-          example: elzamilenastefanyteixeira-81@br.inter.net
+          example: karinafernandes-81@br.inter.net
     CustomerPhone:
       type: object
       required:
@@ -5902,13 +5899,13 @@ components:
           description: 'Nome civil completo da pessoa natural (Direito fundamental da pessoa, o nome civil é aquele atribuído à pessoa natural desde o registro de seu nascimento, com o qual será identificada por toda a sua vida, bem como após a sua morte)'
           maxLength: 70
           pattern: \w*\W*
-          example: Elza Milena Stefany Teixeira
+          example: Juan Kaique Cláudio Fernandes
         socialName:
           type: string
           description: 'Nome social da pessoa natural, se houver. (aquele pelo qual travestis e transexuais se reconhecem, bem como são identificados por sua comunidade e em seu meio social, conforme Decreto Nº 51.180, de 14 de janeiro de 2010)'
           maxLength: 70
           pattern: \w*\W*
-          example: Elza
+          example: Karina
         startDate:
           type: string
           maxLength: 10
@@ -6467,7 +6464,7 @@ components:
           description: 'Nome civil completo da pessoa natural (Direito fundamental da pessoa, o nome civil é aquele atribuído à pessoa natural desde o registro de seu nascimento, com o qual será identificada por toda a sua vida, bem como após a sua morte)'
           maxLength: 70
           pattern: \w*\W*
-          example: Elza Milena Stefany Teixeira
+          example: Juan Kaique Cláudio Fernandes
         socialName:
           type: string
           description: 'Nome social da pessoa natural, se houver. (aquele pelo qual travestis e transexuais se reconhecem, bem como são identificados por sua comunidade e em seu meio social, conforme Decreto Nº 51.180, de 14 de janeiro de 2010)'
@@ -7975,8 +7972,8 @@ components:
                     incorporationDate: '2014-03-19'
                     parties:
                       - type: SOCIO
-                        civilName: Elza Milena Stefany Teixeira
-                        socialName: Elza
+                        civilName: Juan Kaique Cláudio Fernandes
+                        socialName: Karina
                         startDate: string
                         shareholding: stri
                         documentType: CPF
@@ -8009,7 +8006,7 @@ components:
                           phoneExtension: string
                       emails:
                         - isMain: true
-                          email: elzamilenastefanyteixeira-81@br.inter.net
+                          email: karinafernandes-81@br.inter.net
         links:
           self: 'https://api.banco.com.br/open-banking/<api>/v1/<resource>'
           first: 'https://api.banco.com.br/open-banking/<api>/v1/<resource>'
@@ -9902,7 +9899,7 @@ components:
                           - type: SOCIAL SEC
                             number: '423929299'
                             expirationDate: '2014-03-19'
-                    civilName: Elza Milena Stefany Teixeira
+                    civilName: Juan Kaique Cláudio Fernandes
                     socialName: string
                     filiation:
                       - type: MAE
@@ -9938,7 +9935,7 @@ components:
                           phoneExtension: string
                       emails:
                         - isMain: true
-                          email: elzamilenastefanyteixeira-81@br.inter.net
+                          email: karinafernandes-81@br.inter.net
         links:
           self: 'https://api.banco.com.br/open-banking/<api>/v1/<resource>'
           first: 'https://api.banco.com.br/open-banking/<api>/v1/<resource>'

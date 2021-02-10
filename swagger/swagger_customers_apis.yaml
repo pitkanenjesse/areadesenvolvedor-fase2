@@ -180,13 +180,13 @@ paths:
                                                 description: 'Nome civil completo da pessoa natural (Direito fundamental da pessoa, o nome civil é aquele atribuído à pessoa natural desde o registro de seu nascimento, com o qual será identificada por toda a sua vida, bem como após a sua morte)'
                                                 maxLength: 70
                                                 pattern: \w*\W*
-                                                example: Elza Milena Stefany Teixeira
+                                                example: Juan Kaique Cláudio Fernandes
                                               socialName:
                                                 type: string
                                                 description: 'Nome social da pessoa natural, se houver. (aquele pelo qual travestis e transexuais se reconhecem, bem como são identificados por sua comunidade e em seu meio social, conforme Decreto Nº 51.180, de 14 de janeiro de 2010)'
                                                 maxLength: 70
                                                 pattern: \w*\W*
-                                                example: Elza
+                                                example: Karina
                                               startDate:
                                                 type: string
                                                 maxLength: 10
@@ -496,7 +496,7 @@ paths:
                                                     description: Endereço de email
                                                     maxLength: 320
                                                     pattern: \w*\W*
-                                                    example: elzamilenastefanyteixeira-81@br.inter.net
+                                                    example: karinafernandes-81@br.inter.net
                                               minItems: 1
                                               description: Lista e-mails de contato
                             minItems: 1
@@ -527,8 +527,8 @@ paths:
                               incorporationDate: '2014-03-19'
                               parties:
                                 - type: SOCIO
-                                  civilName: Elza Milena Stefany Teixeira
-                                  socialName: Elza
+                                  civilName: Juan Kaique Cláudio Fernandes
+                                  socialName: Karina
                                   startDate: string
                                   shareholding: stri
                                   documentType: CPF
@@ -561,7 +561,7 @@ paths:
                                     phoneExtension: string
                                 emails:
                                   - isMain: true
-                                    email: elzamilenastefanyteixeira-81@br.inter.net
+                                    email: karinafernandes-81@br.inter.net
                   links:
                     self: 'https://api.banco.com.br/open-banking/<api>/v1/<resource>'
                     first: 'https://api.banco.com.br/open-banking/<api>/v1/<resource>'
@@ -1131,7 +1131,7 @@ paths:
                                           description: 'Nome civil completo da pessoa natural (Direito fundamental da pessoa, o nome civil é aquele atribuído à pessoa natural desde o registro de seu nascimento, com o qual será identificada por toda a sua vida, bem como após a sua morte)'
                                           maxLength: 70
                                           pattern: \w*\W*
-                                          example: Elza Milena Stefany Teixeira
+                                          example: Juan Kaique Cláudio Fernandes
                                         socialName:
                                           type: string
                                           description: 'Nome social da pessoa natural, se houver. (aquele pelo qual travestis e transexuais se reconhecem, bem como são identificados por sua comunidade e em seu meio social, conforme Decreto Nº 51.180, de 14 de janeiro de 2010)'
@@ -1244,7 +1244,7 @@ paths:
                                     - type: SOCIAL SEC
                                       number: '423929299'
                                       expirationDate: '2014-03-19'
-                              civilName: Elza Milena Stefany Teixeira
+                              civilName: Juan Kaique Cláudio Fernandes
                               socialName: string
                               filiation:
                                 - type: MAE
@@ -1280,7 +1280,7 @@ paths:
                                     phoneExtension: string
                                 emails:
                                   - isMain: true
-                                    email: elzamilenastefanyteixeira-81@br.inter.net
+                                    email: karinafernandes-81@br.inter.net
                   links:
                     self: 'https://api.banco.com.br/open-banking/<api>/v1/<resource>'
                     first: 'https://api.banco.com.br/open-banking/<api>/v1/<resource>'
