@@ -2742,99 +2742,75 @@ A informação de quais possibilidades estarão disponíveis (<em>query paramete
 <td><a href="#schemaresponsediscoverystatuslist">ResponseDiscoveryStatusList</a></td>
 </tr>
 <tr>
-<td>201</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.2">Created</a></td>
-<td>Created</td>
-<td>None</td>
-</tr>
-<tr>
-<td>204</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.5">No Content</a></td>
-<td>No Content</td>
-<td>None</td>
-</tr>
-<tr>
 <td>400</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.1">Bad Request</a></td>
-<td>Bad Request</td>
+<td>A requisição foi malformada, omitindo atributos obrigatórios, seja no payload ou através de atributos na URL.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>401</td>
 <td><a href="https://tools.ietf.org/html/rfc7235#section-3.1">Unauthorized</a></td>
-<td>Unauthorized</td>
+<td>Cabeçalho de autenticação ausente/inválido ou token inválido.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>403</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.3">Forbidden</a></td>
-<td>Forbidden</td>
+<td>O token tem escopo incorreto ou uma política de segurança foi violada.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>404</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.4">Not Found</a></td>
-<td>Not Found</td>
+<td>O recurso solicitado não existe ou não foi implementado.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>405</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.5">Method Not Allowed</a></td>
-<td>Method Not Allowed</td>
+<td>O consumidor tentou acessar o recurso com um método não suportado.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>406</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.6">Not Acceptable</a></td>
-<td>Not Acceptable</td>
+<td>A solicitação continha um cabeçalho Accept diferente dos tipos de mídia permitidos ou um conjunto de caracteres diferente de UTF-8.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>410</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.9">Gone</a></td>
-<td>Gone</td>
-<td>None</td>
-</tr>
-<tr>
-<td>415</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.13">Unsupported Media Type</a></td>
-<td>Unsupported Media Type</td>
+<td>Indica que o recurso não está mais disponível.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>422</td>
 <td><a href="https://tools.ietf.org/html/rfc2518#section-10.3">Unprocessable Entity</a></td>
-<td>Unprocessable Entity</td>
+<td>A solicitação foi bem formada, mas não pôde ser processada devido à lógica de negócios específica da solicitação.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>429</td>
 <td><a href="https://tools.ietf.org/html/rfc6585#section-4">Too Many Requests</a></td>
-<td>Too Many Requests</td>
+<td>A operação foi recusada, pois muitas solicitações foram feitas dentro de um determinado período ou o limite global de requisições concorrentes foi atingido.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>500</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.1">Internal Server Error</a></td>
-<td>Internal Server Error</td>
-<td>None</td>
-</tr>
-<tr>
-<td>502</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.3">Bad Gateway</a></td>
-<td>Bad Gateway</td>
+<td>Ocorreu um erro no gateway da API ou no microsserviço.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>503</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.4">Service Unavailable</a></td>
-<td>Service Unavailable</td>
+<td>O serviço está indisponível no momento.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>504</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.5">Gateway Time-out</a></td>
-<td>Gateway Timeout</td>
+<td>O servidor não pôde responder em tempo hábil.</td>
 <td>None</td>
 </tr>
 </tbody></table>
@@ -2977,99 +2953,75 @@ This operation does not require authentication
 <td><a href="#schemaresponsediscoveryoutageslist">ResponseDiscoveryOutagesList</a></td>
 </tr>
 <tr>
-<td>201</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.2">Created</a></td>
-<td>Created</td>
-<td>None</td>
-</tr>
-<tr>
-<td>204</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.5">No Content</a></td>
-<td>No Content</td>
-<td>None</td>
-</tr>
-<tr>
 <td>400</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.1">Bad Request</a></td>
-<td>Bad Request</td>
+<td>A requisição foi malformada, omitindo atributos obrigatórios, seja no payload ou através de atributos na URL.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>401</td>
 <td><a href="https://tools.ietf.org/html/rfc7235#section-3.1">Unauthorized</a></td>
-<td>Unauthorized</td>
+<td>Cabeçalho de autenticação ausente/inválido ou token inválido.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>403</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.3">Forbidden</a></td>
-<td>Forbidden</td>
+<td>O token tem escopo incorreto ou uma política de segurança foi violada.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>404</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.4">Not Found</a></td>
-<td>Not Found</td>
+<td>O recurso solicitado não existe ou não foi implementado.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>405</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.5">Method Not Allowed</a></td>
-<td>Method Not Allowed</td>
+<td>O consumidor tentou acessar o recurso com um método não suportado.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>406</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.6">Not Acceptable</a></td>
-<td>Not Acceptable</td>
+<td>A solicitação continha um cabeçalho Accept diferente dos tipos de mídia permitidos ou um conjunto de caracteres diferente de UTF-8.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>410</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.9">Gone</a></td>
-<td>Gone</td>
-<td>None</td>
-</tr>
-<tr>
-<td>415</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.13">Unsupported Media Type</a></td>
-<td>Unsupported Media Type</td>
+<td>Indica que o recurso não está mais disponível.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>422</td>
 <td><a href="https://tools.ietf.org/html/rfc2518#section-10.3">Unprocessable Entity</a></td>
-<td>Unprocessable Entity</td>
+<td>A solicitação foi bem formada, mas não pôde ser processada devido à lógica de negócios específica da solicitação.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>429</td>
 <td><a href="https://tools.ietf.org/html/rfc6585#section-4">Too Many Requests</a></td>
-<td>Too Many Requests</td>
+<td>A operação foi recusada, pois muitas solicitações foram feitas dentro de um determinado período ou o limite global de requisições concorrentes foi atingido.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>500</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.1">Internal Server Error</a></td>
-<td>Internal Server Error</td>
-<td>None</td>
-</tr>
-<tr>
-<td>502</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.3">Bad Gateway</a></td>
-<td>Bad Gateway</td>
+<td>Ocorreu um erro no gateway da API ou no microsserviço.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>503</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.4">Service Unavailable</a></td>
-<td>Service Unavailable</td>
+<td>O serviço está indisponível no momento.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>504</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.5">Gateway Time-out</a></td>
-<td>Gateway Timeout</td>
+<td>O servidor não pôde responder em tempo hábil.</td>
 <td>None</td>
 </tr>
 </tbody></table>
@@ -3313,99 +3265,75 @@ This operation does not require authentication
 <td><a href="#schemaresponsebrancheslist">ResponseBranchesList</a></td>
 </tr>
 <tr>
-<td>201</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.2">Created</a></td>
-<td>Created</td>
-<td>None</td>
-</tr>
-<tr>
-<td>204</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.5">No Content</a></td>
-<td>No Content</td>
-<td>None</td>
-</tr>
-<tr>
 <td>400</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.1">Bad Request</a></td>
-<td>Bad Request</td>
+<td>A requisição foi malformada, omitindo atributos obrigatórios, seja no payload ou através de atributos na URL.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>401</td>
 <td><a href="https://tools.ietf.org/html/rfc7235#section-3.1">Unauthorized</a></td>
-<td>Unauthorized</td>
+<td>Cabeçalho de autenticação ausente/inválido ou token inválido.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>403</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.3">Forbidden</a></td>
-<td>Forbidden</td>
+<td>O token tem escopo incorreto ou uma política de segurança foi violada.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>404</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.4">Not Found</a></td>
-<td>Not Found</td>
+<td>O recurso solicitado não existe ou não foi implementado.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>405</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.5">Method Not Allowed</a></td>
-<td>Method Not Allowed</td>
+<td>O consumidor tentou acessar o recurso com um método não suportado.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>406</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.6">Not Acceptable</a></td>
-<td>Not Acceptable</td>
+<td>A solicitação continha um cabeçalho Accept diferente dos tipos de mídia permitidos ou um conjunto de caracteres diferente de UTF-8.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>410</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.9">Gone</a></td>
-<td>Gone</td>
-<td>None</td>
-</tr>
-<tr>
-<td>415</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.13">Unsupported Media Type</a></td>
-<td>Unsupported Media Type</td>
+<td>Indica que o recurso não está mais disponível.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>422</td>
 <td><a href="https://tools.ietf.org/html/rfc2518#section-10.3">Unprocessable Entity</a></td>
-<td>Unprocessable Entity</td>
+<td>A solicitação foi bem formada, mas não pôde ser processada devido à lógica de negócios específica da solicitação.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>429</td>
 <td><a href="https://tools.ietf.org/html/rfc6585#section-4">Too Many Requests</a></td>
-<td>Too Many Requests</td>
+<td>A operação foi recusada, pois muitas solicitações foram feitas dentro de um determinado período ou o limite global de requisições concorrentes foi atingido.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>500</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.1">Internal Server Error</a></td>
-<td>Internal Server Error</td>
-<td>None</td>
-</tr>
-<tr>
-<td>502</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.3">Bad Gateway</a></td>
-<td>Bad Gateway</td>
+<td>Ocorreu um erro no gateway da API ou no microsserviço.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>503</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.4">Service Unavailable</a></td>
-<td>Service Unavailable</td>
+<td>O serviço está indisponível no momento.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>504</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.5">Gateway Time-out</a></td>
-<td>Gateway Timeout</td>
+<td>O servidor não pôde responder em tempo hábil.</td>
 <td>None</td>
 </tr>
 </tbody></table>
@@ -3631,99 +3559,75 @@ This operation does not require authentication
 <td><a href="#schemaresponseelectronicchannelslist">ResponseElectronicChannelsList</a></td>
 </tr>
 <tr>
-<td>201</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.2">Created</a></td>
-<td>Created</td>
-<td>None</td>
-</tr>
-<tr>
-<td>204</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.5">No Content</a></td>
-<td>No Content</td>
-<td>None</td>
-</tr>
-<tr>
 <td>400</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.1">Bad Request</a></td>
-<td>Bad Request</td>
+<td>A requisição foi malformada, omitindo atributos obrigatórios, seja no payload ou através de atributos na URL.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>401</td>
 <td><a href="https://tools.ietf.org/html/rfc7235#section-3.1">Unauthorized</a></td>
-<td>Unauthorized</td>
+<td>Cabeçalho de autenticação ausente/inválido ou token inválido.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>403</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.3">Forbidden</a></td>
-<td>Forbidden</td>
+<td>O token tem escopo incorreto ou uma política de segurança foi violada.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>404</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.4">Not Found</a></td>
-<td>Not Found</td>
+<td>O recurso solicitado não existe ou não foi implementado.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>405</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.5">Method Not Allowed</a></td>
-<td>Method Not Allowed</td>
+<td>O consumidor tentou acessar o recurso com um método não suportado.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>406</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.6">Not Acceptable</a></td>
-<td>Not Acceptable</td>
+<td>A solicitação continha um cabeçalho Accept diferente dos tipos de mídia permitidos ou um conjunto de caracteres diferente de UTF-8.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>410</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.9">Gone</a></td>
-<td>Gone</td>
-<td>None</td>
-</tr>
-<tr>
-<td>415</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.13">Unsupported Media Type</a></td>
-<td>Unsupported Media Type</td>
+<td>Indica que o recurso não está mais disponível.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>422</td>
 <td><a href="https://tools.ietf.org/html/rfc2518#section-10.3">Unprocessable Entity</a></td>
-<td>Unprocessable Entity</td>
+<td>A solicitação foi bem formada, mas não pôde ser processada devido à lógica de negócios específica da solicitação.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>429</td>
 <td><a href="https://tools.ietf.org/html/rfc6585#section-4">Too Many Requests</a></td>
-<td>Too Many Requests</td>
+<td>A operação foi recusada, pois muitas solicitações foram feitas dentro de um determinado período ou o limite global de requisições concorrentes foi atingido.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>500</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.1">Internal Server Error</a></td>
-<td>Internal Server Error</td>
-<td>None</td>
-</tr>
-<tr>
-<td>502</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.3">Bad Gateway</a></td>
-<td>Bad Gateway</td>
+<td>Ocorreu um erro no gateway da API ou no microsserviço.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>503</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.4">Service Unavailable</a></td>
-<td>Service Unavailable</td>
+<td>O serviço está indisponível no momento.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>504</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.5">Gateway Time-out</a></td>
-<td>Gateway Timeout</td>
+<td>O servidor não pôde responder em tempo hábil.</td>
 <td>None</td>
 </tr>
 </tbody></table>
@@ -4018,99 +3922,75 @@ This operation does not require authentication
 <td><a href="#schemaresponsephonechannelslist">ResponsePhoneChannelsList</a></td>
 </tr>
 <tr>
-<td>201</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.2">Created</a></td>
-<td>Created</td>
-<td>None</td>
-</tr>
-<tr>
-<td>204</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.5">No Content</a></td>
-<td>No Content</td>
-<td>None</td>
-</tr>
-<tr>
 <td>400</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.1">Bad Request</a></td>
-<td>Bad Request</td>
+<td>A requisição foi malformada, omitindo atributos obrigatórios, seja no payload ou através de atributos na URL.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>401</td>
 <td><a href="https://tools.ietf.org/html/rfc7235#section-3.1">Unauthorized</a></td>
-<td>Unauthorized</td>
+<td>Cabeçalho de autenticação ausente/inválido ou token inválido.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>403</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.3">Forbidden</a></td>
-<td>Forbidden</td>
+<td>O token tem escopo incorreto ou uma política de segurança foi violada.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>404</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.4">Not Found</a></td>
-<td>Not Found</td>
+<td>O recurso solicitado não existe ou não foi implementado.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>405</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.5">Method Not Allowed</a></td>
-<td>Method Not Allowed</td>
+<td>O consumidor tentou acessar o recurso com um método não suportado.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>406</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.6">Not Acceptable</a></td>
-<td>Not Acceptable</td>
+<td>A solicitação continha um cabeçalho Accept diferente dos tipos de mídia permitidos ou um conjunto de caracteres diferente de UTF-8.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>410</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.9">Gone</a></td>
-<td>Gone</td>
-<td>None</td>
-</tr>
-<tr>
-<td>415</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.13">Unsupported Media Type</a></td>
-<td>Unsupported Media Type</td>
+<td>Indica que o recurso não está mais disponível.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>422</td>
 <td><a href="https://tools.ietf.org/html/rfc2518#section-10.3">Unprocessable Entity</a></td>
-<td>Unprocessable Entity</td>
+<td>A solicitação foi bem formada, mas não pôde ser processada devido à lógica de negócios específica da solicitação.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>429</td>
 <td><a href="https://tools.ietf.org/html/rfc6585#section-4">Too Many Requests</a></td>
-<td>Too Many Requests</td>
+<td>A operação foi recusada, pois muitas solicitações foram feitas dentro de um determinado período ou o limite global de requisições concorrentes foi atingido.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>500</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.1">Internal Server Error</a></td>
-<td>Internal Server Error</td>
-<td>None</td>
-</tr>
-<tr>
-<td>502</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.3">Bad Gateway</a></td>
-<td>Bad Gateway</td>
+<td>Ocorreu um erro no gateway da API ou no microsserviço.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>503</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.4">Service Unavailable</a></td>
-<td>Service Unavailable</td>
+<td>O serviço está indisponível no momento.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>504</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.5">Gateway Time-out</a></td>
-<td>Gateway Timeout</td>
+<td>O servidor não pôde responder em tempo hábil.</td>
 <td>None</td>
 </tr>
 </tbody></table>
@@ -4466,99 +4346,75 @@ This operation does not require authentication
 <td><a href="#schemaresponsebankingagentslist">ResponseBankingAgentsList</a></td>
 </tr>
 <tr>
-<td>201</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.2">Created</a></td>
-<td>Created</td>
-<td>None</td>
-</tr>
-<tr>
-<td>204</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.5">No Content</a></td>
-<td>No Content</td>
-<td>None</td>
-</tr>
-<tr>
 <td>400</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.1">Bad Request</a></td>
-<td>Bad Request</td>
+<td>A requisição foi malformada, omitindo atributos obrigatórios, seja no payload ou através de atributos na URL.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>401</td>
 <td><a href="https://tools.ietf.org/html/rfc7235#section-3.1">Unauthorized</a></td>
-<td>Unauthorized</td>
+<td>Cabeçalho de autenticação ausente/inválido ou token inválido.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>403</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.3">Forbidden</a></td>
-<td>Forbidden</td>
+<td>O token tem escopo incorreto ou uma política de segurança foi violada.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>404</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.4">Not Found</a></td>
-<td>Not Found</td>
+<td>O recurso solicitado não existe ou não foi implementado.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>405</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.5">Method Not Allowed</a></td>
-<td>Method Not Allowed</td>
+<td>O consumidor tentou acessar o recurso com um método não suportado.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>406</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.6">Not Acceptable</a></td>
-<td>Not Acceptable</td>
+<td>A solicitação continha um cabeçalho Accept diferente dos tipos de mídia permitidos ou um conjunto de caracteres diferente de UTF-8.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>410</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.9">Gone</a></td>
-<td>Gone</td>
-<td>None</td>
-</tr>
-<tr>
-<td>415</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.13">Unsupported Media Type</a></td>
-<td>Unsupported Media Type</td>
+<td>Indica que o recurso não está mais disponível.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>422</td>
 <td><a href="https://tools.ietf.org/html/rfc2518#section-10.3">Unprocessable Entity</a></td>
-<td>Unprocessable Entity</td>
+<td>A solicitação foi bem formada, mas não pôde ser processada devido à lógica de negócios específica da solicitação.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>429</td>
 <td><a href="https://tools.ietf.org/html/rfc6585#section-4">Too Many Requests</a></td>
-<td>Too Many Requests</td>
+<td>A operação foi recusada, pois muitas solicitações foram feitas dentro de um determinado período ou o limite global de requisições concorrentes foi atingido.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>500</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.1">Internal Server Error</a></td>
-<td>Internal Server Error</td>
-<td>None</td>
-</tr>
-<tr>
-<td>502</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.3">Bad Gateway</a></td>
-<td>Bad Gateway</td>
+<td>Ocorreu um erro no gateway da API ou no microsserviço.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>503</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.4">Service Unavailable</a></td>
-<td>Service Unavailable</td>
+<td>O serviço está indisponível no momento.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>504</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.5">Gateway Time-out</a></td>
-<td>Gateway Timeout</td>
+<td>O servidor não pôde responder em tempo hábil.</td>
 <td>None</td>
 </tr>
 </tbody></table>
@@ -4810,99 +4666,75 @@ This operation does not require authentication
 <td><a href="#schemaresponsesharedautomatedtellermachineslist">ResponseSharedAutomatedTellerMachinesList</a></td>
 </tr>
 <tr>
-<td>201</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.2">Created</a></td>
-<td>Created</td>
-<td>None</td>
-</tr>
-<tr>
-<td>204</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.5">No Content</a></td>
-<td>No Content</td>
-<td>None</td>
-</tr>
-<tr>
 <td>400</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.1">Bad Request</a></td>
-<td>Bad Request</td>
+<td>A requisição foi malformada, omitindo atributos obrigatórios, seja no payload ou através de atributos na URL.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>401</td>
 <td><a href="https://tools.ietf.org/html/rfc7235#section-3.1">Unauthorized</a></td>
-<td>Unauthorized</td>
+<td>Cabeçalho de autenticação ausente/inválido ou token inválido.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>403</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.3">Forbidden</a></td>
-<td>Forbidden</td>
+<td>O token tem escopo incorreto ou uma política de segurança foi violada.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>404</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.4">Not Found</a></td>
-<td>Not Found</td>
+<td>O recurso solicitado não existe ou não foi implementado.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>405</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.5">Method Not Allowed</a></td>
-<td>Method Not Allowed</td>
+<td>O consumidor tentou acessar o recurso com um método não suportado.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>406</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.6">Not Acceptable</a></td>
-<td>Not Acceptable</td>
+<td>A solicitação continha um cabeçalho Accept diferente dos tipos de mídia permitidos ou um conjunto de caracteres diferente de UTF-8.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>410</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.9">Gone</a></td>
-<td>Gone</td>
-<td>None</td>
-</tr>
-<tr>
-<td>415</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.13">Unsupported Media Type</a></td>
-<td>Unsupported Media Type</td>
+<td>Indica que o recurso não está mais disponível.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>422</td>
 <td><a href="https://tools.ietf.org/html/rfc2518#section-10.3">Unprocessable Entity</a></td>
-<td>Unprocessable Entity</td>
+<td>A solicitação foi bem formada, mas não pôde ser processada devido à lógica de negócios específica da solicitação.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>429</td>
 <td><a href="https://tools.ietf.org/html/rfc6585#section-4">Too Many Requests</a></td>
-<td>Too Many Requests</td>
+<td>A operação foi recusada, pois muitas solicitações foram feitas dentro de um determinado período ou o limite global de requisições concorrentes foi atingido.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>500</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.1">Internal Server Error</a></td>
-<td>Internal Server Error</td>
-<td>None</td>
-</tr>
-<tr>
-<td>502</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.3">Bad Gateway</a></td>
-<td>Bad Gateway</td>
+<td>Ocorreu um erro no gateway da API ou no microsserviço.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>503</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.4">Service Unavailable</a></td>
-<td>Service Unavailable</td>
+<td>O serviço está indisponível no momento.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>504</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.5">Gateway Time-out</a></td>
-<td>Gateway Timeout</td>
+<td>O servidor não pôde responder em tempo hábil.</td>
 <td>None</td>
 </tr>
 </tbody></table>
@@ -5430,99 +5262,75 @@ This operation does not require authentication
 <td><a href="#schemaresponsepersonalaccounts">ResponsePersonalAccounts</a></td>
 </tr>
 <tr>
-<td>201</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.2">Created</a></td>
-<td>Created</td>
-<td>None</td>
-</tr>
-<tr>
-<td>204</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.5">No Content</a></td>
-<td>No Content</td>
-<td>None</td>
-</tr>
-<tr>
 <td>400</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.1">Bad Request</a></td>
-<td>Bad Request</td>
+<td>A requisição foi malformada, omitindo atributos obrigatórios, seja no payload ou através de atributos na URL.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>401</td>
 <td><a href="https://tools.ietf.org/html/rfc7235#section-3.1">Unauthorized</a></td>
-<td>Unauthorized</td>
+<td>Cabeçalho de autenticação ausente/inválido ou token inválido.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>403</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.3">Forbidden</a></td>
-<td>Forbidden</td>
+<td>O token tem escopo incorreto ou uma política de segurança foi violada.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>404</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.4">Not Found</a></td>
-<td>Not Found</td>
+<td>O recurso solicitado não existe ou não foi implementado.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>405</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.5">Method Not Allowed</a></td>
-<td>Method Not Allowed</td>
+<td>O consumidor tentou acessar o recurso com um método não suportado.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>406</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.6">Not Acceptable</a></td>
-<td>Not Acceptable</td>
+<td>A solicitação continha um cabeçalho Accept diferente dos tipos de mídia permitidos ou um conjunto de caracteres diferente de UTF-8.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>410</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.9">Gone</a></td>
-<td>Gone</td>
-<td>None</td>
-</tr>
-<tr>
-<td>415</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.13">Unsupported Media Type</a></td>
-<td>Unsupported Media Type</td>
+<td>Indica que o recurso não está mais disponível.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>422</td>
 <td><a href="https://tools.ietf.org/html/rfc2518#section-10.3">Unprocessable Entity</a></td>
-<td>Unprocessable Entity</td>
+<td>A solicitação foi bem formada, mas não pôde ser processada devido à lógica de negócios específica da solicitação.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>429</td>
 <td><a href="https://tools.ietf.org/html/rfc6585#section-4">Too Many Requests</a></td>
-<td>Too Many Requests</td>
+<td>A operação foi recusada, pois muitas solicitações foram feitas dentro de um determinado período ou o limite global de requisições concorrentes foi atingido.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>500</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.1">Internal Server Error</a></td>
-<td>Internal Server Error</td>
-<td>None</td>
-</tr>
-<tr>
-<td>502</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.3">Bad Gateway</a></td>
-<td>Bad Gateway</td>
+<td>Ocorreu um erro no gateway da API ou no microsserviço.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>503</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.4">Service Unavailable</a></td>
-<td>Service Unavailable</td>
+<td>O serviço está indisponível no momento.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>504</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.5">Gateway Time-out</a></td>
-<td>Gateway Timeout</td>
+<td>O servidor não pôde responder em tempo hábil.</td>
 <td>None</td>
 </tr>
 </tbody></table>
@@ -5834,99 +5642,75 @@ This operation does not require authentication
 <td><a href="#schemaresponsebusinessaccounts">ResponseBusinessAccounts</a></td>
 </tr>
 <tr>
-<td>201</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.2">Created</a></td>
-<td>Created</td>
-<td>None</td>
-</tr>
-<tr>
-<td>204</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.5">No Content</a></td>
-<td>No Content</td>
-<td>None</td>
-</tr>
-<tr>
 <td>400</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.1">Bad Request</a></td>
-<td>Bad Request</td>
+<td>A requisição foi malformada, omitindo atributos obrigatórios, seja no payload ou através de atributos na URL.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>401</td>
 <td><a href="https://tools.ietf.org/html/rfc7235#section-3.1">Unauthorized</a></td>
-<td>Unauthorized</td>
+<td>Cabeçalho de autenticação ausente/inválido ou token inválido.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>403</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.3">Forbidden</a></td>
-<td>Forbidden</td>
+<td>O token tem escopo incorreto ou uma política de segurança foi violada.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>404</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.4">Not Found</a></td>
-<td>Not Found</td>
+<td>O recurso solicitado não existe ou não foi implementado.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>405</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.5">Method Not Allowed</a></td>
-<td>Method Not Allowed</td>
+<td>O consumidor tentou acessar o recurso com um método não suportado.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>406</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.6">Not Acceptable</a></td>
-<td>Not Acceptable</td>
+<td>A solicitação continha um cabeçalho Accept diferente dos tipos de mídia permitidos ou um conjunto de caracteres diferente de UTF-8.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>410</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.9">Gone</a></td>
-<td>Gone</td>
-<td>None</td>
-</tr>
-<tr>
-<td>415</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.13">Unsupported Media Type</a></td>
-<td>Unsupported Media Type</td>
+<td>Indica que o recurso não está mais disponível.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>422</td>
 <td><a href="https://tools.ietf.org/html/rfc2518#section-10.3">Unprocessable Entity</a></td>
-<td>Unprocessable Entity</td>
+<td>A solicitação foi bem formada, mas não pôde ser processada devido à lógica de negócios específica da solicitação.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>429</td>
 <td><a href="https://tools.ietf.org/html/rfc6585#section-4">Too Many Requests</a></td>
-<td>Too Many Requests</td>
+<td>A operação foi recusada, pois muitas solicitações foram feitas dentro de um determinado período ou o limite global de requisições concorrentes foi atingido.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>500</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.1">Internal Server Error</a></td>
-<td>Internal Server Error</td>
-<td>None</td>
-</tr>
-<tr>
-<td>502</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.3">Bad Gateway</a></td>
-<td>Bad Gateway</td>
+<td>Ocorreu um erro no gateway da API ou no microsserviço.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>503</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.4">Service Unavailable</a></td>
-<td>Service Unavailable</td>
+<td>O serviço está indisponível no momento.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>504</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.5">Gateway Time-out</a></td>
-<td>Gateway Timeout</td>
+<td>O servidor não pôde responder em tempo hábil.</td>
 <td>None</td>
 </tr>
 </tbody></table>
@@ -6760,99 +6544,75 @@ This operation does not require authentication
 <td><a href="#schemaresponsepersonalloans">ResponsePersonalLoans</a></td>
 </tr>
 <tr>
-<td>201</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.2">Created</a></td>
-<td>Created</td>
-<td>None</td>
-</tr>
-<tr>
-<td>204</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.5">No Content</a></td>
-<td>No Content</td>
-<td>None</td>
-</tr>
-<tr>
 <td>400</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.1">Bad Request</a></td>
-<td>Bad Request</td>
+<td>A requisição foi malformada, omitindo atributos obrigatórios, seja no payload ou através de atributos na URL.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>401</td>
 <td><a href="https://tools.ietf.org/html/rfc7235#section-3.1">Unauthorized</a></td>
-<td>Unauthorized</td>
+<td>Cabeçalho de autenticação ausente/inválido ou token inválido.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>403</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.3">Forbidden</a></td>
-<td>Forbidden</td>
+<td>O token tem escopo incorreto ou uma política de segurança foi violada.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>404</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.4">Not Found</a></td>
-<td>Not Found</td>
+<td>O recurso solicitado não existe ou não foi implementado.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>405</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.5">Method Not Allowed</a></td>
-<td>Method Not Allowed</td>
+<td>O consumidor tentou acessar o recurso com um método não suportado.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>406</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.6">Not Acceptable</a></td>
-<td>Not Acceptable</td>
+<td>A solicitação continha um cabeçalho Accept diferente dos tipos de mídia permitidos ou um conjunto de caracteres diferente de UTF-8.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>410</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.9">Gone</a></td>
-<td>Gone</td>
-<td>None</td>
-</tr>
-<tr>
-<td>415</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.13">Unsupported Media Type</a></td>
-<td>Unsupported Media Type</td>
+<td>Indica que o recurso não está mais disponível.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>422</td>
 <td><a href="https://tools.ietf.org/html/rfc2518#section-10.3">Unprocessable Entity</a></td>
-<td>Unprocessable Entity</td>
+<td>A solicitação foi bem formada, mas não pôde ser processada devido à lógica de negócios específica da solicitação.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>429</td>
 <td><a href="https://tools.ietf.org/html/rfc6585#section-4">Too Many Requests</a></td>
-<td>Too Many Requests</td>
+<td>A operação foi recusada, pois muitas solicitações foram feitas dentro de um determinado período ou o limite global de requisições concorrentes foi atingido.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>500</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.1">Internal Server Error</a></td>
-<td>Internal Server Error</td>
-<td>None</td>
-</tr>
-<tr>
-<td>502</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.3">Bad Gateway</a></td>
-<td>Bad Gateway</td>
+<td>Ocorreu um erro no gateway da API ou no microsserviço.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>503</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.4">Service Unavailable</a></td>
-<td>Service Unavailable</td>
+<td>O serviço está indisponível no momento.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>504</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.5">Gateway Time-out</a></td>
-<td>Gateway Timeout</td>
+<td>O servidor não pôde responder em tempo hábil.</td>
 <td>None</td>
 </tr>
 </tbody></table>
@@ -7681,99 +7441,75 @@ This operation does not require authentication
 <td><a href="#schemaresponsebusinessloans">ResponseBusinessLoans</a></td>
 </tr>
 <tr>
-<td>201</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.2">Created</a></td>
-<td>Created</td>
-<td>None</td>
-</tr>
-<tr>
-<td>204</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.5">No Content</a></td>
-<td>No Content</td>
-<td>None</td>
-</tr>
-<tr>
 <td>400</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.1">Bad Request</a></td>
-<td>Bad Request</td>
+<td>A requisição foi malformada, omitindo atributos obrigatórios, seja no payload ou através de atributos na URL.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>401</td>
 <td><a href="https://tools.ietf.org/html/rfc7235#section-3.1">Unauthorized</a></td>
-<td>Unauthorized</td>
+<td>Cabeçalho de autenticação ausente/inválido ou token inválido.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>403</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.3">Forbidden</a></td>
-<td>Forbidden</td>
+<td>O token tem escopo incorreto ou uma política de segurança foi violada.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>404</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.4">Not Found</a></td>
-<td>Not Found</td>
+<td>O recurso solicitado não existe ou não foi implementado.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>405</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.5">Method Not Allowed</a></td>
-<td>Method Not Allowed</td>
+<td>O consumidor tentou acessar o recurso com um método não suportado.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>406</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.6">Not Acceptable</a></td>
-<td>Not Acceptable</td>
+<td>A solicitação continha um cabeçalho Accept diferente dos tipos de mídia permitidos ou um conjunto de caracteres diferente de UTF-8.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>410</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.9">Gone</a></td>
-<td>Gone</td>
-<td>None</td>
-</tr>
-<tr>
-<td>415</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.13">Unsupported Media Type</a></td>
-<td>Unsupported Media Type</td>
+<td>Indica que o recurso não está mais disponível.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>422</td>
 <td><a href="https://tools.ietf.org/html/rfc2518#section-10.3">Unprocessable Entity</a></td>
-<td>Unprocessable Entity</td>
+<td>A solicitação foi bem formada, mas não pôde ser processada devido à lógica de negócios específica da solicitação.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>429</td>
 <td><a href="https://tools.ietf.org/html/rfc6585#section-4">Too Many Requests</a></td>
-<td>Too Many Requests</td>
+<td>A operação foi recusada, pois muitas solicitações foram feitas dentro de um determinado período ou o limite global de requisições concorrentes foi atingido.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>500</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.1">Internal Server Error</a></td>
-<td>Internal Server Error</td>
-<td>None</td>
-</tr>
-<tr>
-<td>502</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.3">Bad Gateway</a></td>
-<td>Bad Gateway</td>
+<td>Ocorreu um erro no gateway da API ou no microsserviço.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>503</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.4">Service Unavailable</a></td>
-<td>Service Unavailable</td>
+<td>O serviço está indisponível no momento.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>504</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.5">Gateway Time-out</a></td>
-<td>Gateway Timeout</td>
+<td>O servidor não pôde responder em tempo hábil.</td>
 <td>None</td>
 </tr>
 </tbody></table>
@@ -8143,99 +7879,75 @@ This operation does not require authentication
 <td><a href="#schemaresponsepersonalfinancings">ResponsePersonalFinancings</a></td>
 </tr>
 <tr>
-<td>201</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.2">Created</a></td>
-<td>Created</td>
-<td>None</td>
-</tr>
-<tr>
-<td>204</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.5">No Content</a></td>
-<td>No Content</td>
-<td>None</td>
-</tr>
-<tr>
 <td>400</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.1">Bad Request</a></td>
-<td>Bad Request</td>
+<td>A requisição foi malformada, omitindo atributos obrigatórios, seja no payload ou através de atributos na URL.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>401</td>
 <td><a href="https://tools.ietf.org/html/rfc7235#section-3.1">Unauthorized</a></td>
-<td>Unauthorized</td>
+<td>Cabeçalho de autenticação ausente/inválido ou token inválido.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>403</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.3">Forbidden</a></td>
-<td>Forbidden</td>
+<td>O token tem escopo incorreto ou uma política de segurança foi violada.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>404</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.4">Not Found</a></td>
-<td>Not Found</td>
+<td>O recurso solicitado não existe ou não foi implementado.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>405</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.5">Method Not Allowed</a></td>
-<td>Method Not Allowed</td>
+<td>O consumidor tentou acessar o recurso com um método não suportado.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>406</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.6">Not Acceptable</a></td>
-<td>Not Acceptable</td>
+<td>A solicitação continha um cabeçalho Accept diferente dos tipos de mídia permitidos ou um conjunto de caracteres diferente de UTF-8.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>410</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.9">Gone</a></td>
-<td>Gone</td>
-<td>None</td>
-</tr>
-<tr>
-<td>415</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.13">Unsupported Media Type</a></td>
-<td>Unsupported Media Type</td>
+<td>Indica que o recurso não está mais disponível.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>422</td>
 <td><a href="https://tools.ietf.org/html/rfc2518#section-10.3">Unprocessable Entity</a></td>
-<td>Unprocessable Entity</td>
+<td>A solicitação foi bem formada, mas não pôde ser processada devido à lógica de negócios específica da solicitação.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>429</td>
 <td><a href="https://tools.ietf.org/html/rfc6585#section-4">Too Many Requests</a></td>
-<td>Too Many Requests</td>
+<td>A operação foi recusada, pois muitas solicitações foram feitas dentro de um determinado período ou o limite global de requisições concorrentes foi atingido.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>500</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.1">Internal Server Error</a></td>
-<td>Internal Server Error</td>
-<td>None</td>
-</tr>
-<tr>
-<td>502</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.3">Bad Gateway</a></td>
-<td>Bad Gateway</td>
+<td>Ocorreu um erro no gateway da API ou no microsserviço.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>503</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.4">Service Unavailable</a></td>
-<td>Service Unavailable</td>
+<td>O serviço está indisponível no momento.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>504</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.5">Gateway Time-out</a></td>
-<td>Gateway Timeout</td>
+<td>O servidor não pôde responder em tempo hábil.</td>
 <td>None</td>
 </tr>
 </tbody></table>
@@ -8603,99 +8315,75 @@ This operation does not require authentication
 <td><a href="#schemaresponsebusinessfinancings">ResponseBusinessFinancings</a></td>
 </tr>
 <tr>
-<td>201</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.2">Created</a></td>
-<td>Created</td>
-<td>None</td>
-</tr>
-<tr>
-<td>204</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.5">No Content</a></td>
-<td>No Content</td>
-<td>None</td>
-</tr>
-<tr>
 <td>400</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.1">Bad Request</a></td>
-<td>Bad Request</td>
+<td>A requisição foi malformada, omitindo atributos obrigatórios, seja no payload ou através de atributos na URL.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>401</td>
 <td><a href="https://tools.ietf.org/html/rfc7235#section-3.1">Unauthorized</a></td>
-<td>Unauthorized</td>
+<td>Cabeçalho de autenticação ausente/inválido ou token inválido.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>403</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.3">Forbidden</a></td>
-<td>Forbidden</td>
+<td>O token tem escopo incorreto ou uma política de segurança foi violada.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>404</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.4">Not Found</a></td>
-<td>Not Found</td>
+<td>O recurso solicitado não existe ou não foi implementado.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>405</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.5">Method Not Allowed</a></td>
-<td>Method Not Allowed</td>
+<td>O consumidor tentou acessar o recurso com um método não suportado.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>406</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.6">Not Acceptable</a></td>
-<td>Not Acceptable</td>
+<td>A solicitação continha um cabeçalho Accept diferente dos tipos de mídia permitidos ou um conjunto de caracteres diferente de UTF-8.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>410</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.9">Gone</a></td>
-<td>Gone</td>
-<td>None</td>
-</tr>
-<tr>
-<td>415</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.13">Unsupported Media Type</a></td>
-<td>Unsupported Media Type</td>
+<td>Indica que o recurso não está mais disponível.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>422</td>
 <td><a href="https://tools.ietf.org/html/rfc2518#section-10.3">Unprocessable Entity</a></td>
-<td>Unprocessable Entity</td>
+<td>A solicitação foi bem formada, mas não pôde ser processada devido à lógica de negócios específica da solicitação.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>429</td>
 <td><a href="https://tools.ietf.org/html/rfc6585#section-4">Too Many Requests</a></td>
-<td>Too Many Requests</td>
+<td>A operação foi recusada, pois muitas solicitações foram feitas dentro de um determinado período ou o limite global de requisições concorrentes foi atingido.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>500</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.1">Internal Server Error</a></td>
-<td>Internal Server Error</td>
-<td>None</td>
-</tr>
-<tr>
-<td>502</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.3">Bad Gateway</a></td>
-<td>Bad Gateway</td>
+<td>Ocorreu um erro no gateway da API ou no microsserviço.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>503</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.4">Service Unavailable</a></td>
-<td>Service Unavailable</td>
+<td>O serviço está indisponível no momento.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>504</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.5">Gateway Time-out</a></td>
-<td>Gateway Timeout</td>
+<td>O servidor não pôde responder em tempo hábil.</td>
 <td>None</td>
 </tr>
 </tbody></table>
@@ -9422,99 +9110,75 @@ This operation does not require authentication
 <td><a href="#schemaresponsepersonalinvoicefinancings">ResponsePersonalInvoiceFinancings</a></td>
 </tr>
 <tr>
-<td>201</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.2">Created</a></td>
-<td>Created</td>
-<td>None</td>
-</tr>
-<tr>
-<td>204</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.5">No Content</a></td>
-<td>No Content</td>
-<td>None</td>
-</tr>
-<tr>
 <td>400</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.1">Bad Request</a></td>
-<td>Bad Request</td>
+<td>A requisição foi malformada, omitindo atributos obrigatórios, seja no payload ou através de atributos na URL.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>401</td>
 <td><a href="https://tools.ietf.org/html/rfc7235#section-3.1">Unauthorized</a></td>
-<td>Unauthorized</td>
+<td>Cabeçalho de autenticação ausente/inválido ou token inválido.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>403</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.3">Forbidden</a></td>
-<td>Forbidden</td>
+<td>O token tem escopo incorreto ou uma política de segurança foi violada.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>404</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.4">Not Found</a></td>
-<td>Not Found</td>
+<td>O recurso solicitado não existe ou não foi implementado.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>405</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.5">Method Not Allowed</a></td>
-<td>Method Not Allowed</td>
+<td>O consumidor tentou acessar o recurso com um método não suportado.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>406</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.6">Not Acceptable</a></td>
-<td>Not Acceptable</td>
+<td>A solicitação continha um cabeçalho Accept diferente dos tipos de mídia permitidos ou um conjunto de caracteres diferente de UTF-8.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>410</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.9">Gone</a></td>
-<td>Gone</td>
-<td>None</td>
-</tr>
-<tr>
-<td>415</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.13">Unsupported Media Type</a></td>
-<td>Unsupported Media Type</td>
+<td>Indica que o recurso não está mais disponível.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>422</td>
 <td><a href="https://tools.ietf.org/html/rfc2518#section-10.3">Unprocessable Entity</a></td>
-<td>Unprocessable Entity</td>
+<td>A solicitação foi bem formada, mas não pôde ser processada devido à lógica de negócios específica da solicitação.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>429</td>
 <td><a href="https://tools.ietf.org/html/rfc6585#section-4">Too Many Requests</a></td>
-<td>Too Many Requests</td>
+<td>A operação foi recusada, pois muitas solicitações foram feitas dentro de um determinado período ou o limite global de requisições concorrentes foi atingido.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>500</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.1">Internal Server Error</a></td>
-<td>Internal Server Error</td>
-<td>None</td>
-</tr>
-<tr>
-<td>502</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.3">Bad Gateway</a></td>
-<td>Bad Gateway</td>
+<td>Ocorreu um erro no gateway da API ou no microsserviço.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>503</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.4">Service Unavailable</a></td>
-<td>Service Unavailable</td>
+<td>O serviço está indisponível no momento.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>504</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.5">Gateway Time-out</a></td>
-<td>Gateway Timeout</td>
+<td>O servidor não pôde responder em tempo hábil.</td>
 <td>None</td>
 </tr>
 </tbody></table>
@@ -10241,99 +9905,75 @@ This operation does not require authentication
 <td><a href="#schemaresponsebusinessinvoicefinancings">ResponseBusinessInvoiceFinancings</a></td>
 </tr>
 <tr>
-<td>201</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.2">Created</a></td>
-<td>Created</td>
-<td>None</td>
-</tr>
-<tr>
-<td>204</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.5">No Content</a></td>
-<td>No Content</td>
-<td>None</td>
-</tr>
-<tr>
 <td>400</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.1">Bad Request</a></td>
-<td>Bad Request</td>
+<td>A requisição foi malformada, omitindo atributos obrigatórios, seja no payload ou através de atributos na URL.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>401</td>
 <td><a href="https://tools.ietf.org/html/rfc7235#section-3.1">Unauthorized</a></td>
-<td>Unauthorized</td>
+<td>Cabeçalho de autenticação ausente/inválido ou token inválido.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>403</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.3">Forbidden</a></td>
-<td>Forbidden</td>
+<td>O token tem escopo incorreto ou uma política de segurança foi violada.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>404</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.4">Not Found</a></td>
-<td>Not Found</td>
+<td>O recurso solicitado não existe ou não foi implementado.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>405</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.5">Method Not Allowed</a></td>
-<td>Method Not Allowed</td>
+<td>O consumidor tentou acessar o recurso com um método não suportado.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>406</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.6">Not Acceptable</a></td>
-<td>Not Acceptable</td>
+<td>A solicitação continha um cabeçalho Accept diferente dos tipos de mídia permitidos ou um conjunto de caracteres diferente de UTF-8.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>410</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.9">Gone</a></td>
-<td>Gone</td>
-<td>None</td>
-</tr>
-<tr>
-<td>415</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.13">Unsupported Media Type</a></td>
-<td>Unsupported Media Type</td>
+<td>Indica que o recurso não está mais disponível.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>422</td>
 <td><a href="https://tools.ietf.org/html/rfc2518#section-10.3">Unprocessable Entity</a></td>
-<td>Unprocessable Entity</td>
+<td>A solicitação foi bem formada, mas não pôde ser processada devido à lógica de negócios específica da solicitação.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>429</td>
 <td><a href="https://tools.ietf.org/html/rfc6585#section-4">Too Many Requests</a></td>
-<td>Too Many Requests</td>
+<td>A operação foi recusada, pois muitas solicitações foram feitas dentro de um determinado período ou o limite global de requisições concorrentes foi atingido.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>500</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.1">Internal Server Error</a></td>
-<td>Internal Server Error</td>
-<td>None</td>
-</tr>
-<tr>
-<td>502</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.3">Bad Gateway</a></td>
-<td>Bad Gateway</td>
+<td>Ocorreu um erro no gateway da API ou no microsserviço.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>503</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.4">Service Unavailable</a></td>
-<td>Service Unavailable</td>
+<td>O serviço está indisponível no momento.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>504</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.5">Gateway Time-out</a></td>
-<td>Gateway Timeout</td>
+<td>O servidor não pôde responder em tempo hábil.</td>
 <td>None</td>
 </tr>
 </tbody></table>
@@ -10669,99 +10309,75 @@ This operation does not require authentication
 <td><a href="#schemaresponsepersonalcreditcard">ResponsePersonalCreditCard</a></td>
 </tr>
 <tr>
-<td>201</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.2">Created</a></td>
-<td>Created</td>
-<td>None</td>
-</tr>
-<tr>
-<td>204</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.5">No Content</a></td>
-<td>No Content</td>
-<td>None</td>
-</tr>
-<tr>
 <td>400</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.1">Bad Request</a></td>
-<td>Bad Request</td>
+<td>A requisição foi malformada, omitindo atributos obrigatórios, seja no payload ou através de atributos na URL.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>401</td>
 <td><a href="https://tools.ietf.org/html/rfc7235#section-3.1">Unauthorized</a></td>
-<td>Unauthorized</td>
+<td>Cabeçalho de autenticação ausente/inválido ou token inválido.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>403</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.3">Forbidden</a></td>
-<td>Forbidden</td>
+<td>O token tem escopo incorreto ou uma política de segurança foi violada.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>404</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.4">Not Found</a></td>
-<td>Not Found</td>
+<td>O recurso solicitado não existe ou não foi implementado.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>405</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.5">Method Not Allowed</a></td>
-<td>Method Not Allowed</td>
+<td>O consumidor tentou acessar o recurso com um método não suportado.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>406</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.6">Not Acceptable</a></td>
-<td>Not Acceptable</td>
+<td>A solicitação continha um cabeçalho Accept diferente dos tipos de mídia permitidos ou um conjunto de caracteres diferente de UTF-8.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>410</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.9">Gone</a></td>
-<td>Gone</td>
-<td>None</td>
-</tr>
-<tr>
-<td>415</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.13">Unsupported Media Type</a></td>
-<td>Unsupported Media Type</td>
+<td>Indica que o recurso não está mais disponível.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>422</td>
 <td><a href="https://tools.ietf.org/html/rfc2518#section-10.3">Unprocessable Entity</a></td>
-<td>Unprocessable Entity</td>
+<td>A solicitação foi bem formada, mas não pôde ser processada devido à lógica de negócios específica da solicitação.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>429</td>
 <td><a href="https://tools.ietf.org/html/rfc6585#section-4">Too Many Requests</a></td>
-<td>Too Many Requests</td>
+<td>A operação foi recusada, pois muitas solicitações foram feitas dentro de um determinado período ou o limite global de requisições concorrentes foi atingido.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>500</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.1">Internal Server Error</a></td>
-<td>Internal Server Error</td>
-<td>None</td>
-</tr>
-<tr>
-<td>502</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.3">Bad Gateway</a></td>
-<td>Bad Gateway</td>
+<td>Ocorreu um erro no gateway da API ou no microsserviço.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>503</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.4">Service Unavailable</a></td>
-<td>Service Unavailable</td>
+<td>O serviço está indisponível no momento.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>504</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.5">Gateway Time-out</a></td>
-<td>Gateway Timeout</td>
+<td>O servidor não pôde responder em tempo hábil.</td>
 <td>None</td>
 </tr>
 </tbody></table>
@@ -11095,99 +10711,75 @@ This operation does not require authentication
 <td><a href="#schemaresponsebusinesscreditcard">ResponseBusinessCreditCard</a></td>
 </tr>
 <tr>
-<td>201</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.2">Created</a></td>
-<td>Created</td>
-<td>None</td>
-</tr>
-<tr>
-<td>204</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.5">No Content</a></td>
-<td>No Content</td>
-<td>None</td>
-</tr>
-<tr>
 <td>400</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.1">Bad Request</a></td>
-<td>Bad Request</td>
+<td>A requisição foi malformada, omitindo atributos obrigatórios, seja no payload ou através de atributos na URL.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>401</td>
 <td><a href="https://tools.ietf.org/html/rfc7235#section-3.1">Unauthorized</a></td>
-<td>Unauthorized</td>
+<td>Cabeçalho de autenticação ausente/inválido ou token inválido.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>403</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.3">Forbidden</a></td>
-<td>Forbidden</td>
+<td>O token tem escopo incorreto ou uma política de segurança foi violada.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>404</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.4">Not Found</a></td>
-<td>Not Found</td>
+<td>O recurso solicitado não existe ou não foi implementado.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>405</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.5">Method Not Allowed</a></td>
-<td>Method Not Allowed</td>
+<td>O consumidor tentou acessar o recurso com um método não suportado.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>406</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.6">Not Acceptable</a></td>
-<td>Not Acceptable</td>
+<td>A solicitação continha um cabeçalho Accept diferente dos tipos de mídia permitidos ou um conjunto de caracteres diferente de UTF-8.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>410</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.9">Gone</a></td>
-<td>Gone</td>
-<td>None</td>
-</tr>
-<tr>
-<td>415</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.13">Unsupported Media Type</a></td>
-<td>Unsupported Media Type</td>
+<td>Indica que o recurso não está mais disponível.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>422</td>
 <td><a href="https://tools.ietf.org/html/rfc2518#section-10.3">Unprocessable Entity</a></td>
-<td>Unprocessable Entity</td>
+<td>A solicitação foi bem formada, mas não pôde ser processada devido à lógica de negócios específica da solicitação.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>429</td>
 <td><a href="https://tools.ietf.org/html/rfc6585#section-4">Too Many Requests</a></td>
-<td>Too Many Requests</td>
+<td>A operação foi recusada, pois muitas solicitações foram feitas dentro de um determinado período ou o limite global de requisições concorrentes foi atingido.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>500</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.1">Internal Server Error</a></td>
-<td>Internal Server Error</td>
-<td>None</td>
-</tr>
-<tr>
-<td>502</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.3">Bad Gateway</a></td>
-<td>Bad Gateway</td>
+<td>Ocorreu um erro no gateway da API ou no microsserviço.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>503</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.4">Service Unavailable</a></td>
-<td>Service Unavailable</td>
+<td>O serviço está indisponível no momento.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>504</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.5">Gateway Time-out</a></td>
-<td>Gateway Timeout</td>
+<td>O servidor não pôde responder em tempo hábil.</td>
 <td>None</td>
 </tr>
 </tbody></table>
@@ -11445,99 +11037,75 @@ This operation does not require authentication
 <td><a href="#schemaresponsepersonalunarrangedaccountoverdraft">ResponsePersonalUnarrangedAccountOverdraft</a></td>
 </tr>
 <tr>
-<td>201</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.2">Created</a></td>
-<td>Created</td>
-<td>None</td>
-</tr>
-<tr>
-<td>204</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.5">No Content</a></td>
-<td>No Content</td>
-<td>None</td>
-</tr>
-<tr>
 <td>400</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.1">Bad Request</a></td>
-<td>Bad Request</td>
+<td>A requisição foi malformada, omitindo atributos obrigatórios, seja no payload ou através de atributos na URL.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>401</td>
 <td><a href="https://tools.ietf.org/html/rfc7235#section-3.1">Unauthorized</a></td>
-<td>Unauthorized</td>
+<td>Cabeçalho de autenticação ausente/inválido ou token inválido.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>403</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.3">Forbidden</a></td>
-<td>Forbidden</td>
+<td>O token tem escopo incorreto ou uma política de segurança foi violada.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>404</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.4">Not Found</a></td>
-<td>Not Found</td>
+<td>O recurso solicitado não existe ou não foi implementado.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>405</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.5">Method Not Allowed</a></td>
-<td>Method Not Allowed</td>
+<td>O consumidor tentou acessar o recurso com um método não suportado.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>406</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.6">Not Acceptable</a></td>
-<td>Not Acceptable</td>
+<td>A solicitação continha um cabeçalho Accept diferente dos tipos de mídia permitidos ou um conjunto de caracteres diferente de UTF-8.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>410</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.9">Gone</a></td>
-<td>Gone</td>
-<td>None</td>
-</tr>
-<tr>
-<td>415</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.13">Unsupported Media Type</a></td>
-<td>Unsupported Media Type</td>
+<td>Indica que o recurso não está mais disponível.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>422</td>
 <td><a href="https://tools.ietf.org/html/rfc2518#section-10.3">Unprocessable Entity</a></td>
-<td>Unprocessable Entity</td>
+<td>A solicitação foi bem formada, mas não pôde ser processada devido à lógica de negócios específica da solicitação.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>429</td>
 <td><a href="https://tools.ietf.org/html/rfc6585#section-4">Too Many Requests</a></td>
-<td>Too Many Requests</td>
+<td>A operação foi recusada, pois muitas solicitações foram feitas dentro de um determinado período ou o limite global de requisições concorrentes foi atingido.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>500</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.1">Internal Server Error</a></td>
-<td>Internal Server Error</td>
-<td>None</td>
-</tr>
-<tr>
-<td>502</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.3">Bad Gateway</a></td>
-<td>Bad Gateway</td>
+<td>Ocorreu um erro no gateway da API ou no microsserviço.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>503</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.4">Service Unavailable</a></td>
-<td>Service Unavailable</td>
+<td>O serviço está indisponível no momento.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>504</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.5">Gateway Time-out</a></td>
-<td>Gateway Timeout</td>
+<td>O servidor não pôde responder em tempo hábil.</td>
 <td>None</td>
 </tr>
 </tbody></table>
@@ -11795,99 +11363,75 @@ This operation does not require authentication
 <td><a href="#schemaresponsebusinessunarrangedaccountoverdraft">ResponseBusinessUnarrangedAccountOverdraft</a></td>
 </tr>
 <tr>
-<td>201</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.2">Created</a></td>
-<td>Created</td>
-<td>None</td>
-</tr>
-<tr>
-<td>204</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.5">No Content</a></td>
-<td>No Content</td>
-<td>None</td>
-</tr>
-<tr>
 <td>400</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.1">Bad Request</a></td>
-<td>Bad Request</td>
+<td>A requisição foi malformada, omitindo atributos obrigatórios, seja no payload ou através de atributos na URL.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>401</td>
 <td><a href="https://tools.ietf.org/html/rfc7235#section-3.1">Unauthorized</a></td>
-<td>Unauthorized</td>
+<td>Cabeçalho de autenticação ausente/inválido ou token inválido.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>403</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.3">Forbidden</a></td>
-<td>Forbidden</td>
+<td>O token tem escopo incorreto ou uma política de segurança foi violada.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>404</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.4">Not Found</a></td>
-<td>Not Found</td>
+<td>O recurso solicitado não existe ou não foi implementado.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>405</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.5">Method Not Allowed</a></td>
-<td>Method Not Allowed</td>
+<td>O consumidor tentou acessar o recurso com um método não suportado.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>406</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.6">Not Acceptable</a></td>
-<td>Not Acceptable</td>
+<td>A solicitação continha um cabeçalho Accept diferente dos tipos de mídia permitidos ou um conjunto de caracteres diferente de UTF-8.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>410</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.9">Gone</a></td>
-<td>Gone</td>
-<td>None</td>
-</tr>
-<tr>
-<td>415</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.13">Unsupported Media Type</a></td>
-<td>Unsupported Media Type</td>
+<td>Indica que o recurso não está mais disponível.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>422</td>
 <td><a href="https://tools.ietf.org/html/rfc2518#section-10.3">Unprocessable Entity</a></td>
-<td>Unprocessable Entity</td>
+<td>A solicitação foi bem formada, mas não pôde ser processada devido à lógica de negócios específica da solicitação.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>429</td>
 <td><a href="https://tools.ietf.org/html/rfc6585#section-4">Too Many Requests</a></td>
-<td>Too Many Requests</td>
+<td>A operação foi recusada, pois muitas solicitações foram feitas dentro de um determinado período ou o limite global de requisições concorrentes foi atingido.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>500</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.1">Internal Server Error</a></td>
-<td>Internal Server Error</td>
-<td>None</td>
-</tr>
-<tr>
-<td>502</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.3">Bad Gateway</a></td>
-<td>Bad Gateway</td>
+<td>Ocorreu um erro no gateway da API ou no microsserviço.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>503</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.4">Service Unavailable</a></td>
-<td>Service Unavailable</td>
+<td>O serviço está indisponível no momento.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>504</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.5">Gateway Time-out</a></td>
-<td>Gateway Timeout</td>
+<td>O servidor não pôde responder em tempo hábil.</td>
 <td>None</td>
 </tr>
 </tbody></table>
@@ -12147,99 +11691,75 @@ This operation does not require authentication
 <td><a href="#schemaresponsemetricslist">ResponseMetricsList</a></td>
 </tr>
 <tr>
-<td>201</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.2">Created</a></td>
-<td>Created</td>
-<td>None</td>
-</tr>
-<tr>
-<td>204</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.5">No Content</a></td>
-<td>No Content</td>
-<td>None</td>
-</tr>
-<tr>
 <td>400</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.1">Bad Request</a></td>
-<td>Bad Request</td>
+<td>A requisição foi malformada, omitindo atributos obrigatórios, seja no payload ou através de atributos na URL.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>401</td>
 <td><a href="https://tools.ietf.org/html/rfc7235#section-3.1">Unauthorized</a></td>
-<td>Unauthorized</td>
+<td>Cabeçalho de autenticação ausente/inválido ou token inválido.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>403</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.3">Forbidden</a></td>
-<td>Forbidden</td>
+<td>O token tem escopo incorreto ou uma política de segurança foi violada.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>404</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.4">Not Found</a></td>
-<td>Not Found</td>
+<td>O recurso solicitado não existe ou não foi implementado.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>405</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.5">Method Not Allowed</a></td>
-<td>Method Not Allowed</td>
+<td>O consumidor tentou acessar o recurso com um método não suportado.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>406</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.6">Not Acceptable</a></td>
-<td>Not Acceptable</td>
+<td>A solicitação continha um cabeçalho Accept diferente dos tipos de mídia permitidos ou um conjunto de caracteres diferente de UTF-8.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>410</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.9">Gone</a></td>
-<td>Gone</td>
-<td>None</td>
-</tr>
-<tr>
-<td>415</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.13">Unsupported Media Type</a></td>
-<td>Unsupported Media Type</td>
+<td>Indica que o recurso não está mais disponível.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>422</td>
 <td><a href="https://tools.ietf.org/html/rfc2518#section-10.3">Unprocessable Entity</a></td>
-<td>Unprocessable Entity</td>
+<td>A solicitação foi bem formada, mas não pôde ser processada devido à lógica de negócios específica da solicitação.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>429</td>
 <td><a href="https://tools.ietf.org/html/rfc6585#section-4">Too Many Requests</a></td>
-<td>Too Many Requests</td>
+<td>A operação foi recusada, pois muitas solicitações foram feitas dentro de um determinado período ou o limite global de requisições concorrentes foi atingido.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>500</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.1">Internal Server Error</a></td>
-<td>Internal Server Error</td>
-<td>None</td>
-</tr>
-<tr>
-<td>502</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.3">Bad Gateway</a></td>
-<td>Bad Gateway</td>
+<td>Ocorreu um erro no gateway da API ou no microsserviço.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>503</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.4">Service Unavailable</a></td>
-<td>Service Unavailable</td>
+<td>O serviço está indisponível no momento.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>504</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.5">Gateway Time-out</a></td>
-<td>Gateway Timeout</td>
+<td>O servidor não pôde responder em tempo hábil.</td>
 <td>None</td>
 </tr>
 </tbody></table>
@@ -12488,99 +12008,75 @@ This operation does not require authentication
 <td><a href="#schemaresponsebusinesscustomersidentification">ResponseBusinessCustomersIdentification</a></td>
 </tr>
 <tr>
-<td>201</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.2">Created</a></td>
-<td>Created</td>
-<td>None</td>
-</tr>
-<tr>
-<td>204</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.5">No Content</a></td>
-<td>No Content</td>
-<td>None</td>
-</tr>
-<tr>
 <td>400</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.1">Bad Request</a></td>
-<td>Bad Request</td>
+<td>A requisição foi malformada, omitindo atributos obrigatórios, seja no payload ou através de atributos na URL.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>401</td>
 <td><a href="https://tools.ietf.org/html/rfc7235#section-3.1">Unauthorized</a></td>
-<td>Unauthorized</td>
+<td>Cabeçalho de autenticação ausente/inválido ou token inválido.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>403</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.3">Forbidden</a></td>
-<td>Forbidden</td>
+<td>O token tem escopo incorreto ou uma política de segurança foi violada.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>404</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.4">Not Found</a></td>
-<td>Not Found</td>
+<td>O recurso solicitado não existe ou não foi implementado.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>405</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.5">Method Not Allowed</a></td>
-<td>Method Not Allowed</td>
+<td>O consumidor tentou acessar o recurso com um método não suportado.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>406</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.6">Not Acceptable</a></td>
-<td>Not Acceptable</td>
+<td>A solicitação continha um cabeçalho Accept diferente dos tipos de mídia permitidos ou um conjunto de caracteres diferente de UTF-8.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>410</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.9">Gone</a></td>
-<td>Gone</td>
-<td>None</td>
-</tr>
-<tr>
-<td>415</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.13">Unsupported Media Type</a></td>
-<td>Unsupported Media Type</td>
+<td>Indica que o recurso não está mais disponível.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>422</td>
 <td><a href="https://tools.ietf.org/html/rfc2518#section-10.3">Unprocessable Entity</a></td>
-<td>Unprocessable Entity</td>
+<td>A solicitação foi bem formada, mas não pôde ser processada devido à lógica de negócios específica da solicitação.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>429</td>
 <td><a href="https://tools.ietf.org/html/rfc6585#section-4">Too Many Requests</a></td>
-<td>Too Many Requests</td>
+<td>A operação foi recusada, pois muitas solicitações foram feitas dentro de um determinado período ou o limite global de requisições concorrentes foi atingido.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>500</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.1">Internal Server Error</a></td>
-<td>Internal Server Error</td>
-<td>None</td>
-</tr>
-<tr>
-<td>502</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.3">Bad Gateway</a></td>
-<td>Bad Gateway</td>
+<td>Ocorreu um erro no gateway da API ou no microsserviço.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>503</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.4">Service Unavailable</a></td>
-<td>Service Unavailable</td>
+<td>O serviço está indisponível no momento.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>504</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.5">Gateway Time-out</a></td>
-<td>Gateway Timeout</td>
+<td>O servidor não pôde responder em tempo hábil.</td>
 <td>None</td>
 </tr>
 </tbody></table>
@@ -12781,99 +12277,75 @@ This operation does not require authentication
 <td><a href="#schemaresponsebusinesscustomersqualification">ResponseBusinessCustomersQualification</a></td>
 </tr>
 <tr>
-<td>201</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.2">Created</a></td>
-<td>Created</td>
-<td>None</td>
-</tr>
-<tr>
-<td>204</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.5">No Content</a></td>
-<td>No Content</td>
-<td>None</td>
-</tr>
-<tr>
 <td>400</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.1">Bad Request</a></td>
-<td>Bad Request</td>
+<td>A requisição foi malformada, omitindo atributos obrigatórios, seja no payload ou através de atributos na URL.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>401</td>
 <td><a href="https://tools.ietf.org/html/rfc7235#section-3.1">Unauthorized</a></td>
-<td>Unauthorized</td>
+<td>Cabeçalho de autenticação ausente/inválido ou token inválido.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>403</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.3">Forbidden</a></td>
-<td>Forbidden</td>
+<td>O token tem escopo incorreto ou uma política de segurança foi violada.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>404</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.4">Not Found</a></td>
-<td>Not Found</td>
+<td>O recurso solicitado não existe ou não foi implementado.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>405</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.5">Method Not Allowed</a></td>
-<td>Method Not Allowed</td>
+<td>O consumidor tentou acessar o recurso com um método não suportado.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>406</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.6">Not Acceptable</a></td>
-<td>Not Acceptable</td>
+<td>A solicitação continha um cabeçalho Accept diferente dos tipos de mídia permitidos ou um conjunto de caracteres diferente de UTF-8.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>410</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.9">Gone</a></td>
-<td>Gone</td>
-<td>None</td>
-</tr>
-<tr>
-<td>415</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.13">Unsupported Media Type</a></td>
-<td>Unsupported Media Type</td>
+<td>Indica que o recurso não está mais disponível.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>422</td>
 <td><a href="https://tools.ietf.org/html/rfc2518#section-10.3">Unprocessable Entity</a></td>
-<td>Unprocessable Entity</td>
+<td>A solicitação foi bem formada, mas não pôde ser processada devido à lógica de negócios específica da solicitação.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>429</td>
 <td><a href="https://tools.ietf.org/html/rfc6585#section-4">Too Many Requests</a></td>
-<td>Too Many Requests</td>
+<td>A operação foi recusada, pois muitas solicitações foram feitas dentro de um determinado período ou o limite global de requisições concorrentes foi atingido.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>500</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.1">Internal Server Error</a></td>
-<td>Internal Server Error</td>
-<td>None</td>
-</tr>
-<tr>
-<td>502</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.3">Bad Gateway</a></td>
-<td>Bad Gateway</td>
+<td>Ocorreu um erro no gateway da API ou no microsserviço.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>503</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.4">Service Unavailable</a></td>
-<td>Service Unavailable</td>
+<td>O serviço está indisponível no momento.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>504</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.5">Gateway Time-out</a></td>
-<td>Gateway Timeout</td>
+<td>O servidor não pôde responder em tempo hábil.</td>
 <td>None</td>
 </tr>
 </tbody></table>
@@ -13073,99 +12545,75 @@ This operation does not require authentication
 <td><a href="#schemaresponsebusinesscustomersfinancialrelation">ResponseBusinessCustomersFinancialRelation</a></td>
 </tr>
 <tr>
-<td>201</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.2">Created</a></td>
-<td>Created</td>
-<td>None</td>
-</tr>
-<tr>
-<td>204</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.5">No Content</a></td>
-<td>No Content</td>
-<td>None</td>
-</tr>
-<tr>
 <td>400</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.1">Bad Request</a></td>
-<td>Bad Request</td>
+<td>A requisição foi malformada, omitindo atributos obrigatórios, seja no payload ou através de atributos na URL.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>401</td>
 <td><a href="https://tools.ietf.org/html/rfc7235#section-3.1">Unauthorized</a></td>
-<td>Unauthorized</td>
+<td>Cabeçalho de autenticação ausente/inválido ou token inválido.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>403</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.3">Forbidden</a></td>
-<td>Forbidden</td>
+<td>O token tem escopo incorreto ou uma política de segurança foi violada.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>404</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.4">Not Found</a></td>
-<td>Not Found</td>
+<td>O recurso solicitado não existe ou não foi implementado.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>405</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.5">Method Not Allowed</a></td>
-<td>Method Not Allowed</td>
+<td>O consumidor tentou acessar o recurso com um método não suportado.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>406</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.6">Not Acceptable</a></td>
-<td>Not Acceptable</td>
+<td>A solicitação continha um cabeçalho Accept diferente dos tipos de mídia permitidos ou um conjunto de caracteres diferente de UTF-8.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>410</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.9">Gone</a></td>
-<td>Gone</td>
-<td>None</td>
-</tr>
-<tr>
-<td>415</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.13">Unsupported Media Type</a></td>
-<td>Unsupported Media Type</td>
+<td>Indica que o recurso não está mais disponível.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>422</td>
 <td><a href="https://tools.ietf.org/html/rfc2518#section-10.3">Unprocessable Entity</a></td>
-<td>Unprocessable Entity</td>
+<td>A solicitação foi bem formada, mas não pôde ser processada devido à lógica de negócios específica da solicitação.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>429</td>
 <td><a href="https://tools.ietf.org/html/rfc6585#section-4">Too Many Requests</a></td>
-<td>Too Many Requests</td>
+<td>A operação foi recusada, pois muitas solicitações foram feitas dentro de um determinado período ou o limite global de requisições concorrentes foi atingido.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>500</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.1">Internal Server Error</a></td>
-<td>Internal Server Error</td>
-<td>None</td>
-</tr>
-<tr>
-<td>502</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.3">Bad Gateway</a></td>
-<td>Bad Gateway</td>
+<td>Ocorreu um erro no gateway da API ou no microsserviço.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>503</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.4">Service Unavailable</a></td>
-<td>Service Unavailable</td>
+<td>O serviço está indisponível no momento.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>504</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.5">Gateway Time-out</a></td>
-<td>Gateway Timeout</td>
+<td>O servidor não pôde responder em tempo hábil.</td>
 <td>None</td>
 </tr>
 </tbody></table>
@@ -13429,99 +12877,75 @@ This operation does not require authentication
 <td><a href="#schemaresponsepersonalcustomersidentification">ResponsePersonalCustomersIdentification</a></td>
 </tr>
 <tr>
-<td>201</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.2">Created</a></td>
-<td>Created</td>
-<td>None</td>
-</tr>
-<tr>
-<td>204</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.5">No Content</a></td>
-<td>No Content</td>
-<td>None</td>
-</tr>
-<tr>
 <td>400</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.1">Bad Request</a></td>
-<td>Bad Request</td>
+<td>A requisição foi malformada, omitindo atributos obrigatórios, seja no payload ou através de atributos na URL.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>401</td>
 <td><a href="https://tools.ietf.org/html/rfc7235#section-3.1">Unauthorized</a></td>
-<td>Unauthorized</td>
+<td>Cabeçalho de autenticação ausente/inválido ou token inválido.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>403</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.3">Forbidden</a></td>
-<td>Forbidden</td>
+<td>O token tem escopo incorreto ou uma política de segurança foi violada.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>404</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.4">Not Found</a></td>
-<td>Not Found</td>
+<td>O recurso solicitado não existe ou não foi implementado.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>405</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.5">Method Not Allowed</a></td>
-<td>Method Not Allowed</td>
+<td>O consumidor tentou acessar o recurso com um método não suportado.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>406</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.6">Not Acceptable</a></td>
-<td>Not Acceptable</td>
+<td>A solicitação continha um cabeçalho Accept diferente dos tipos de mídia permitidos ou um conjunto de caracteres diferente de UTF-8.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>410</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.9">Gone</a></td>
-<td>Gone</td>
-<td>None</td>
-</tr>
-<tr>
-<td>415</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.13">Unsupported Media Type</a></td>
-<td>Unsupported Media Type</td>
+<td>Indica que o recurso não está mais disponível.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>422</td>
 <td><a href="https://tools.ietf.org/html/rfc2518#section-10.3">Unprocessable Entity</a></td>
-<td>Unprocessable Entity</td>
+<td>A solicitação foi bem formada, mas não pôde ser processada devido à lógica de negócios específica da solicitação.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>429</td>
 <td><a href="https://tools.ietf.org/html/rfc6585#section-4">Too Many Requests</a></td>
-<td>Too Many Requests</td>
+<td>A operação foi recusada, pois muitas solicitações foram feitas dentro de um determinado período ou o limite global de requisições concorrentes foi atingido.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>500</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.1">Internal Server Error</a></td>
-<td>Internal Server Error</td>
-<td>None</td>
-</tr>
-<tr>
-<td>502</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.3">Bad Gateway</a></td>
-<td>Bad Gateway</td>
+<td>Ocorreu um erro no gateway da API ou no microsserviço.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>503</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.4">Service Unavailable</a></td>
-<td>Service Unavailable</td>
+<td>O serviço está indisponível no momento.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>504</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.5">Gateway Time-out</a></td>
-<td>Gateway Timeout</td>
+<td>O servidor não pôde responder em tempo hábil.</td>
 <td>None</td>
 </tr>
 </tbody></table>
@@ -13718,99 +13142,75 @@ This operation does not require authentication
 <td><a href="#schemaresponsepersonalcustomersqualification">ResponsePersonalCustomersQualification</a></td>
 </tr>
 <tr>
-<td>201</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.2">Created</a></td>
-<td>Created</td>
-<td>None</td>
-</tr>
-<tr>
-<td>204</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.5">No Content</a></td>
-<td>No Content</td>
-<td>None</td>
-</tr>
-<tr>
 <td>400</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.1">Bad Request</a></td>
-<td>Bad Request</td>
+<td>A requisição foi malformada, omitindo atributos obrigatórios, seja no payload ou através de atributos na URL.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>401</td>
 <td><a href="https://tools.ietf.org/html/rfc7235#section-3.1">Unauthorized</a></td>
-<td>Unauthorized</td>
+<td>Cabeçalho de autenticação ausente/inválido ou token inválido.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>403</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.3">Forbidden</a></td>
-<td>Forbidden</td>
+<td>O token tem escopo incorreto ou uma política de segurança foi violada.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>404</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.4">Not Found</a></td>
-<td>Not Found</td>
+<td>O recurso solicitado não existe ou não foi implementado.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>405</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.5">Method Not Allowed</a></td>
-<td>Method Not Allowed</td>
+<td>O consumidor tentou acessar o recurso com um método não suportado.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>406</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.6">Not Acceptable</a></td>
-<td>Not Acceptable</td>
+<td>A solicitação continha um cabeçalho Accept diferente dos tipos de mídia permitidos ou um conjunto de caracteres diferente de UTF-8.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>410</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.9">Gone</a></td>
-<td>Gone</td>
-<td>None</td>
-</tr>
-<tr>
-<td>415</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.13">Unsupported Media Type</a></td>
-<td>Unsupported Media Type</td>
+<td>Indica que o recurso não está mais disponível.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>422</td>
 <td><a href="https://tools.ietf.org/html/rfc2518#section-10.3">Unprocessable Entity</a></td>
-<td>Unprocessable Entity</td>
+<td>A solicitação foi bem formada, mas não pôde ser processada devido à lógica de negócios específica da solicitação.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>429</td>
 <td><a href="https://tools.ietf.org/html/rfc6585#section-4">Too Many Requests</a></td>
-<td>Too Many Requests</td>
+<td>A operação foi recusada, pois muitas solicitações foram feitas dentro de um determinado período ou o limite global de requisições concorrentes foi atingido.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>500</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.1">Internal Server Error</a></td>
-<td>Internal Server Error</td>
-<td>None</td>
-</tr>
-<tr>
-<td>502</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.3">Bad Gateway</a></td>
-<td>Bad Gateway</td>
+<td>Ocorreu um erro no gateway da API ou no microsserviço.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>503</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.4">Service Unavailable</a></td>
-<td>Service Unavailable</td>
+<td>O serviço está indisponível no momento.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>504</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.5">Gateway Time-out</a></td>
-<td>Gateway Timeout</td>
+<td>O servidor não pôde responder em tempo hábil.</td>
 <td>None</td>
 </tr>
 </tbody></table>
@@ -14006,99 +13406,75 @@ This operation does not require authentication
 <td><a href="#schemaresponsepersonalcustomersfinancialrelation">ResponsePersonalCustomersFinancialRelation</a></td>
 </tr>
 <tr>
-<td>201</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.2">Created</a></td>
-<td>Created</td>
-<td>None</td>
-</tr>
-<tr>
-<td>204</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.5">No Content</a></td>
-<td>No Content</td>
-<td>None</td>
-</tr>
-<tr>
 <td>400</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.1">Bad Request</a></td>
-<td>Bad Request</td>
+<td>A requisição foi malformada, omitindo atributos obrigatórios, seja no payload ou através de atributos na URL.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>401</td>
 <td><a href="https://tools.ietf.org/html/rfc7235#section-3.1">Unauthorized</a></td>
-<td>Unauthorized</td>
+<td>Cabeçalho de autenticação ausente/inválido ou token inválido.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>403</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.3">Forbidden</a></td>
-<td>Forbidden</td>
+<td>O token tem escopo incorreto ou uma política de segurança foi violada.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>404</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.4">Not Found</a></td>
-<td>Not Found</td>
+<td>O recurso solicitado não existe ou não foi implementado.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>405</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.5">Method Not Allowed</a></td>
-<td>Method Not Allowed</td>
+<td>O consumidor tentou acessar o recurso com um método não suportado.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>406</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.6">Not Acceptable</a></td>
-<td>Not Acceptable</td>
+<td>A solicitação continha um cabeçalho Accept diferente dos tipos de mídia permitidos ou um conjunto de caracteres diferente de UTF-8.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>410</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.9">Gone</a></td>
-<td>Gone</td>
-<td>None</td>
-</tr>
-<tr>
-<td>415</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.13">Unsupported Media Type</a></td>
-<td>Unsupported Media Type</td>
+<td>Indica que o recurso não está mais disponível.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>422</td>
 <td><a href="https://tools.ietf.org/html/rfc2518#section-10.3">Unprocessable Entity</a></td>
-<td>Unprocessable Entity</td>
+<td>A solicitação foi bem formada, mas não pôde ser processada devido à lógica de negócios específica da solicitação.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>429</td>
 <td><a href="https://tools.ietf.org/html/rfc6585#section-4">Too Many Requests</a></td>
-<td>Too Many Requests</td>
+<td>A operação foi recusada, pois muitas solicitações foram feitas dentro de um determinado período ou o limite global de requisições concorrentes foi atingido.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>500</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.1">Internal Server Error</a></td>
-<td>Internal Server Error</td>
-<td>None</td>
-</tr>
-<tr>
-<td>502</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.3">Bad Gateway</a></td>
-<td>Bad Gateway</td>
+<td>Ocorreu um erro no gateway da API ou no microsserviço.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>503</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.4">Service Unavailable</a></td>
-<td>Service Unavailable</td>
+<td>O serviço está indisponível no momento.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>504</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.5">Gateway Time-out</a></td>
-<td>Gateway Timeout</td>
+<td>O servidor não pôde responder em tempo hábil.</td>
 <td>None</td>
 </tr>
 </tbody></table>
@@ -14519,99 +13895,75 @@ This operation does not require authentication
 <td><a href="#schemaresponseaccountbalances">ResponseAccountBalances</a></td>
 </tr>
 <tr>
-<td>201</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.2">Created</a></td>
-<td>Created</td>
-<td>None</td>
-</tr>
-<tr>
-<td>204</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.5">No Content</a></td>
-<td>No Content</td>
-<td>None</td>
-</tr>
-<tr>
 <td>400</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.1">Bad Request</a></td>
-<td>Bad Request</td>
+<td>A requisição foi malformada, omitindo atributos obrigatórios, seja no payload ou através de atributos na URL.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>401</td>
 <td><a href="https://tools.ietf.org/html/rfc7235#section-3.1">Unauthorized</a></td>
-<td>Unauthorized</td>
+<td>Cabeçalho de autenticação ausente/inválido ou token inválido.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>403</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.3">Forbidden</a></td>
-<td>Forbidden</td>
+<td>O token tem escopo incorreto ou uma política de segurança foi violada.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>404</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.4">Not Found</a></td>
-<td>Not Found</td>
+<td>O recurso solicitado não existe ou não foi implementado.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>405</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.5">Method Not Allowed</a></td>
-<td>Method Not Allowed</td>
+<td>O consumidor tentou acessar o recurso com um método não suportado.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>406</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.6">Not Acceptable</a></td>
-<td>Not Acceptable</td>
+<td>A solicitação continha um cabeçalho Accept diferente dos tipos de mídia permitidos ou um conjunto de caracteres diferente de UTF-8.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>410</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.9">Gone</a></td>
-<td>Gone</td>
-<td>None</td>
-</tr>
-<tr>
-<td>415</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.13">Unsupported Media Type</a></td>
-<td>Unsupported Media Type</td>
+<td>Indica que o recurso não está mais disponível.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>422</td>
 <td><a href="https://tools.ietf.org/html/rfc2518#section-10.3">Unprocessable Entity</a></td>
-<td>Unprocessable Entity</td>
+<td>A solicitação foi bem formada, mas não pôde ser processada devido à lógica de negócios específica da solicitação.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>429</td>
 <td><a href="https://tools.ietf.org/html/rfc6585#section-4">Too Many Requests</a></td>
-<td>Too Many Requests</td>
+<td>A operação foi recusada, pois muitas solicitações foram feitas dentro de um determinado período ou o limite global de requisições concorrentes foi atingido.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>500</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.1">Internal Server Error</a></td>
-<td>Internal Server Error</td>
-<td>None</td>
-</tr>
-<tr>
-<td>502</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.3">Bad Gateway</a></td>
-<td>Bad Gateway</td>
+<td>Ocorreu um erro no gateway da API ou no microsserviço.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>503</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.4">Service Unavailable</a></td>
-<td>Service Unavailable</td>
+<td>O serviço está indisponível no momento.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>504</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.5">Gateway Time-out</a></td>
-<td>Gateway Timeout</td>
+<td>O servidor não pôde responder em tempo hábil.</td>
 <td>None</td>
 </tr>
 </tbody></table>
@@ -14829,99 +14181,75 @@ This operation does not require authentication
 <td><a href="#schemaresponseaccounttransactions">ResponseAccountTransactions</a></td>
 </tr>
 <tr>
-<td>201</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.2">Created</a></td>
-<td>Created</td>
-<td>None</td>
-</tr>
-<tr>
-<td>204</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.5">No Content</a></td>
-<td>No Content</td>
-<td>None</td>
-</tr>
-<tr>
 <td>400</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.1">Bad Request</a></td>
-<td>Bad Request</td>
+<td>A requisição foi malformada, omitindo atributos obrigatórios, seja no payload ou através de atributos na URL.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>401</td>
 <td><a href="https://tools.ietf.org/html/rfc7235#section-3.1">Unauthorized</a></td>
-<td>Unauthorized</td>
+<td>Cabeçalho de autenticação ausente/inválido ou token inválido.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>403</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.3">Forbidden</a></td>
-<td>Forbidden</td>
+<td>O token tem escopo incorreto ou uma política de segurança foi violada.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>404</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.4">Not Found</a></td>
-<td>Not Found</td>
+<td>O recurso solicitado não existe ou não foi implementado.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>405</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.5">Method Not Allowed</a></td>
-<td>Method Not Allowed</td>
+<td>O consumidor tentou acessar o recurso com um método não suportado.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>406</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.6">Not Acceptable</a></td>
-<td>Not Acceptable</td>
+<td>A solicitação continha um cabeçalho Accept diferente dos tipos de mídia permitidos ou um conjunto de caracteres diferente de UTF-8.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>410</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.9">Gone</a></td>
-<td>Gone</td>
-<td>None</td>
-</tr>
-<tr>
-<td>415</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.13">Unsupported Media Type</a></td>
-<td>Unsupported Media Type</td>
+<td>Indica que o recurso não está mais disponível.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>422</td>
 <td><a href="https://tools.ietf.org/html/rfc2518#section-10.3">Unprocessable Entity</a></td>
-<td>Unprocessable Entity</td>
+<td>A solicitação foi bem formada, mas não pôde ser processada devido à lógica de negócios específica da solicitação.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>429</td>
 <td><a href="https://tools.ietf.org/html/rfc6585#section-4">Too Many Requests</a></td>
-<td>Too Many Requests</td>
+<td>A operação foi recusada, pois muitas solicitações foram feitas dentro de um determinado período ou o limite global de requisições concorrentes foi atingido.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>500</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.1">Internal Server Error</a></td>
-<td>Internal Server Error</td>
-<td>None</td>
-</tr>
-<tr>
-<td>502</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.3">Bad Gateway</a></td>
-<td>Bad Gateway</td>
+<td>Ocorreu um erro no gateway da API ou no microsserviço.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>503</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.4">Service Unavailable</a></td>
-<td>Service Unavailable</td>
+<td>O serviço está indisponível no momento.</td>
 <td>None</td>
 </tr>
 <tr>
 <td>504</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.5">Gateway Time-out</a></td>
-<td>Gateway Timeout</td>
+<td>O servidor não pôde responder em tempo hábil.</td>
 <td>None</td>
 </tr>
 </tbody></table>
