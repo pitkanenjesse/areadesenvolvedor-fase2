@@ -1021,6 +1021,18 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ResponsePersonalCustomersIdentification'
+        '204':
+          description: No Content
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+        '500':
+          description: Internal Server Error
+        '502':
+          description: Bad Gateway
   /customers/v1/personal-customers/qualification:
     get:
       tags:
