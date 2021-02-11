@@ -571,6 +571,38 @@ paths:
                   meta:
                     totalRecords: 1
                     totalPages: 1
+        '201':
+          $ref: '#/paths/~1business-customers~1qualification/get/responses/201'
+        '204':
+          $ref: '#/paths/~1business-customers~1qualification/get/responses/204'
+        '400':
+          $ref: '#/paths/~1business-customers~1qualification/get/responses/400'
+        '401':
+          $ref: '#/paths/~1business-customers~1qualification/get/responses/401'
+        '403':
+          $ref: '#/paths/~1business-customers~1qualification/get/responses/403'
+        '404':
+          $ref: '#/paths/~1business-customers~1qualification/get/responses/404'
+        '405':
+          $ref: '#/paths/~1business-customers~1qualification/get/responses/405'
+        '406':
+          $ref: '#/paths/~1business-customers~1qualification/get/responses/406'
+        '410':
+          $ref: '#/paths/~1business-customers~1qualification/get/responses/410'
+        '415':
+          $ref: '#/paths/~1business-customers~1qualification/get/responses/415'
+        '422':
+          $ref: '#/paths/~1business-customers~1qualification/get/responses/422'
+        '429':
+          $ref: '#/paths/~1business-customers~1qualification/get/responses/429'
+        '500':
+          $ref: '#/paths/~1business-customers~1qualification/get/responses/500'
+        '502':
+          $ref: '#/paths/~1business-customers~1qualification/get/responses/502'
+        '503':
+          $ref: '#/paths/~1business-customers~1qualification/get/responses/503'
+        '504':
+          $ref: '#/paths/~1business-customers~1qualification/get/responses/504'
   /business-customers/qualification:
     get:
       tags:
@@ -805,6 +837,38 @@ paths:
                     required:
                       - totalRecords
                       - totalPages
+        '201':
+          description: Created
+        '204':
+          description: No Content
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+        '405':
+          description: Method Not Allowed
+        '406':
+          description: Not Acceptable
+        '410':
+          description: Gone
+        '415':
+          description: Unsupported Media Type
+        '422':
+          description: Unprocessable Entity
+        '429':
+          description: Too Many Requests
+        '500':
+          description: Internal Server Error
+        '502':
+          description: Bad Gateway
+        '503':
+          description: Service Unavailable
+        '504':
+          description: Gateway Timeout
   /business-customers/financial-relation:
     get:
       tags:
@@ -910,6 +974,38 @@ paths:
                   meta:
                     totalRecords: 1
                     totalPages: 1
+        '201':
+          $ref: '#/paths/~1business-customers~1qualification/get/responses/201'
+        '204':
+          $ref: '#/paths/~1business-customers~1qualification/get/responses/204'
+        '400':
+          $ref: '#/paths/~1business-customers~1qualification/get/responses/400'
+        '401':
+          $ref: '#/paths/~1business-customers~1qualification/get/responses/401'
+        '403':
+          $ref: '#/paths/~1business-customers~1qualification/get/responses/403'
+        '404':
+          $ref: '#/paths/~1business-customers~1qualification/get/responses/404'
+        '405':
+          $ref: '#/paths/~1business-customers~1qualification/get/responses/405'
+        '406':
+          $ref: '#/paths/~1business-customers~1qualification/get/responses/406'
+        '410':
+          $ref: '#/paths/~1business-customers~1qualification/get/responses/410'
+        '415':
+          $ref: '#/paths/~1business-customers~1qualification/get/responses/415'
+        '422':
+          $ref: '#/paths/~1business-customers~1qualification/get/responses/422'
+        '429':
+          $ref: '#/paths/~1business-customers~1qualification/get/responses/429'
+        '500':
+          $ref: '#/paths/~1business-customers~1qualification/get/responses/500'
+        '502':
+          $ref: '#/paths/~1business-customers~1qualification/get/responses/502'
+        '503':
+          $ref: '#/paths/~1business-customers~1qualification/get/responses/503'
+        '504':
+          $ref: '#/paths/~1business-customers~1qualification/get/responses/504'
   /personal-customers/identification:
     get:
       tags:
@@ -1290,18 +1386,38 @@ paths:
                   meta:
                     totalRecords: 1
                     totalPages: 1
+        '201':
+          $ref: '#/paths/~1business-customers~1qualification/get/responses/201'
         '204':
-          description: No Content
+          $ref: '#/paths/~1business-customers~1qualification/get/responses/204'
+        '400':
+          $ref: '#/paths/~1business-customers~1qualification/get/responses/400'
         '401':
-          description: Unauthorized
+          $ref: '#/paths/~1business-customers~1qualification/get/responses/401'
         '403':
-          description: Forbidden
+          $ref: '#/paths/~1business-customers~1qualification/get/responses/403'
         '404':
-          description: Not Found
+          $ref: '#/paths/~1business-customers~1qualification/get/responses/404'
+        '405':
+          $ref: '#/paths/~1business-customers~1qualification/get/responses/405'
+        '406':
+          $ref: '#/paths/~1business-customers~1qualification/get/responses/406'
+        '410':
+          $ref: '#/paths/~1business-customers~1qualification/get/responses/410'
+        '415':
+          $ref: '#/paths/~1business-customers~1qualification/get/responses/415'
+        '422':
+          $ref: '#/paths/~1business-customers~1qualification/get/responses/422'
+        '429':
+          $ref: '#/paths/~1business-customers~1qualification/get/responses/429'
         '500':
-          description: Internal Server Error
+          $ref: '#/paths/~1business-customers~1qualification/get/responses/500'
         '502':
-          description: Bad Gateway
+          $ref: '#/paths/~1business-customers~1qualification/get/responses/502'
+        '503':
+          $ref: '#/paths/~1business-customers~1qualification/get/responses/503'
+        '504':
+          $ref: '#/paths/~1business-customers~1qualification/get/responses/504'
   /personal-customers/qualification:
     get:
       tags:
@@ -1478,6 +1594,38 @@ paths:
                     $ref: '#/paths/~1business-customers~1qualification/get/responses/200/content/application~1json/schema/properties/links'
                   meta:
                     $ref: '#/paths/~1business-customers~1qualification/get/responses/200/content/application~1json/schema/properties/meta'
+        '201':
+          $ref: '#/paths/~1business-customers~1qualification/get/responses/201'
+        '204':
+          $ref: '#/paths/~1business-customers~1qualification/get/responses/204'
+        '400':
+          $ref: '#/paths/~1business-customers~1qualification/get/responses/400'
+        '401':
+          $ref: '#/paths/~1business-customers~1qualification/get/responses/401'
+        '403':
+          $ref: '#/paths/~1business-customers~1qualification/get/responses/403'
+        '404':
+          $ref: '#/paths/~1business-customers~1qualification/get/responses/404'
+        '405':
+          $ref: '#/paths/~1business-customers~1qualification/get/responses/405'
+        '406':
+          $ref: '#/paths/~1business-customers~1qualification/get/responses/406'
+        '410':
+          $ref: '#/paths/~1business-customers~1qualification/get/responses/410'
+        '415':
+          $ref: '#/paths/~1business-customers~1qualification/get/responses/415'
+        '422':
+          $ref: '#/paths/~1business-customers~1qualification/get/responses/422'
+        '429':
+          $ref: '#/paths/~1business-customers~1qualification/get/responses/429'
+        '500':
+          $ref: '#/paths/~1business-customers~1qualification/get/responses/500'
+        '502':
+          $ref: '#/paths/~1business-customers~1qualification/get/responses/502'
+        '503':
+          $ref: '#/paths/~1business-customers~1qualification/get/responses/503'
+        '504':
+          $ref: '#/paths/~1business-customers~1qualification/get/responses/504'
   /personal-customers/financial-relation:
     get:
       tags:
@@ -1636,3 +1784,35 @@ paths:
                     $ref: '#/paths/~1business-customers~1qualification/get/responses/200/content/application~1json/schema/properties/links'
                   meta:
                     $ref: '#/paths/~1business-customers~1qualification/get/responses/200/content/application~1json/schema/properties/meta'
+        '201':
+          $ref: '#/paths/~1business-customers~1qualification/get/responses/201'
+        '204':
+          $ref: '#/paths/~1business-customers~1qualification/get/responses/204'
+        '400':
+          $ref: '#/paths/~1business-customers~1qualification/get/responses/400'
+        '401':
+          $ref: '#/paths/~1business-customers~1qualification/get/responses/401'
+        '403':
+          $ref: '#/paths/~1business-customers~1qualification/get/responses/403'
+        '404':
+          $ref: '#/paths/~1business-customers~1qualification/get/responses/404'
+        '405':
+          $ref: '#/paths/~1business-customers~1qualification/get/responses/405'
+        '406':
+          $ref: '#/paths/~1business-customers~1qualification/get/responses/406'
+        '410':
+          $ref: '#/paths/~1business-customers~1qualification/get/responses/410'
+        '415':
+          $ref: '#/paths/~1business-customers~1qualification/get/responses/415'
+        '422':
+          $ref: '#/paths/~1business-customers~1qualification/get/responses/422'
+        '429':
+          $ref: '#/paths/~1business-customers~1qualification/get/responses/429'
+        '500':
+          $ref: '#/paths/~1business-customers~1qualification/get/responses/500'
+        '502':
+          $ref: '#/paths/~1business-customers~1qualification/get/responses/502'
+        '503':
+          $ref: '#/paths/~1business-customers~1qualification/get/responses/503'
+        '504':
+          $ref: '#/paths/~1business-customers~1qualification/get/responses/504'

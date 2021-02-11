@@ -43,6 +43,38 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ResponseDiscoveryStatusList'
+        '201':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/201'
+        '204':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/204'
+        '400':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/400'
+        '401':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/401'
+        '403':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/403'
+        '404':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/404'
+        '405':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/405'
+        '406':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/406'
+        '410':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/410'
+        '415':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/415'
+        '422':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/422'
+        '429':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/429'
+        '500':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/500'
+        '502':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/502'
+        '503':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/503'
+        '504':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/504'
   /discovery/v1/outages:
     get:
       tags:
@@ -71,6 +103,38 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ResponseDiscoveryOutagesList'
+        '201':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/201'
+        '204':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/204'
+        '400':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/400'
+        '401':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/401'
+        '403':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/403'
+        '404':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/404'
+        '405':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/405'
+        '406':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/406'
+        '410':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/410'
+        '415':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/415'
+        '422':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/422'
+        '429':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/429'
+        '500':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/500'
+        '502':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/502'
+        '503':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/503'
+        '504':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/504'
   /channels/v1/branches:
     get:
       tags:
@@ -111,6 +175,38 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ResponseBranchesList'
+        '201':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/201'
+        '204':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/204'
+        '400':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/400'
+        '401':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/401'
+        '403':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/403'
+        '404':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/404'
+        '405':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/405'
+        '406':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/406'
+        '410':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/410'
+        '415':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/415'
+        '422':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/422'
+        '429':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/429'
+        '500':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/500'
+        '502':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/502'
+        '503':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/503'
+        '504':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/504'
   /channels/v1/electronic-channels:
     get:
       tags:
@@ -151,6 +247,38 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ResponseElectronicChannelsList'
+        '201':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/201'
+        '204':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/204'
+        '400':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/400'
+        '401':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/401'
+        '403':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/403'
+        '404':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/404'
+        '405':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/405'
+        '406':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/406'
+        '410':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/410'
+        '415':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/415'
+        '422':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/422'
+        '429':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/429'
+        '500':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/500'
+        '502':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/502'
+        '503':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/503'
+        '504':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/504'
   /channels/v1/phone-channels:
     get:
       tags:
@@ -192,6 +320,38 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ResponsePhoneChannelsList'
+        '201':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/201'
+        '204':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/204'
+        '400':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/400'
+        '401':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/401'
+        '403':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/403'
+        '404':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/404'
+        '405':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/405'
+        '406':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/406'
+        '410':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/410'
+        '415':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/415'
+        '422':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/422'
+        '429':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/429'
+        '500':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/500'
+        '502':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/502'
+        '503':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/503'
+        '504':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/504'
   /channels/v1/banking-agents:
     get:
       tags:
@@ -229,6 +389,38 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ResponseBankingAgentsList'
+        '201':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/201'
+        '204':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/204'
+        '400':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/400'
+        '401':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/401'
+        '403':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/403'
+        '404':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/404'
+        '405':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/405'
+        '406':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/406'
+        '410':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/410'
+        '415':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/415'
+        '422':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/422'
+        '429':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/429'
+        '500':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/500'
+        '502':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/502'
+        '503':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/503'
+        '504':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/504'
   /channels/v1/shared-automated-teller-machines:
     get:
       tags:
@@ -267,6 +459,38 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ResponseSharedAutomatedTellerMachinesList'
+        '201':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/201'
+        '204':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/204'
+        '400':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/400'
+        '401':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/401'
+        '403':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/403'
+        '404':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/404'
+        '405':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/405'
+        '406':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/406'
+        '410':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/410'
+        '415':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/415'
+        '422':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/422'
+        '429':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/429'
+        '500':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/500'
+        '502':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/502'
+        '503':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/503'
+        '504':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/504'
   /products-services/v1/personal-accounts:
     get:
       tags:
@@ -307,6 +531,38 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ResponsePersonalAccounts'
+        '201':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/201'
+        '204':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/204'
+        '400':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/400'
+        '401':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/401'
+        '403':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/403'
+        '404':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/404'
+        '405':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/405'
+        '406':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/406'
+        '410':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/410'
+        '415':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/415'
+        '422':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/422'
+        '429':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/429'
+        '500':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/500'
+        '502':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/502'
+        '503':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/503'
+        '504':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/504'
   /products-services/v1/business-accounts:
     get:
       tags:
@@ -347,6 +603,38 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ResponseBusinessAccounts'
+        '201':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/201'
+        '204':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/204'
+        '400':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/400'
+        '401':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/401'
+        '403':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/403'
+        '404':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/404'
+        '405':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/405'
+        '406':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/406'
+        '410':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/410'
+        '415':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/415'
+        '422':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/422'
+        '429':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/429'
+        '500':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/500'
+        '502':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/502'
+        '503':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/503'
+        '504':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/504'
   /products-services/v1/personal-loans:
     get:
       tags:
@@ -389,6 +677,38 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ResponsePersonalLoans'
+        '201':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/201'
+        '204':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/204'
+        '400':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/400'
+        '401':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/401'
+        '403':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/403'
+        '404':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/404'
+        '405':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/405'
+        '406':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/406'
+        '410':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/410'
+        '415':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/415'
+        '422':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/422'
+        '429':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/429'
+        '500':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/500'
+        '502':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/502'
+        '503':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/503'
+        '504':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/504'
   /products-services/v1/business-loans:
     get:
       tags:
@@ -429,6 +749,38 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ResponseBusinessLoans'
+        '201':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/201'
+        '204':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/204'
+        '400':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/400'
+        '401':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/401'
+        '403':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/403'
+        '404':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/404'
+        '405':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/405'
+        '406':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/406'
+        '410':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/410'
+        '415':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/415'
+        '422':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/422'
+        '429':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/429'
+        '500':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/500'
+        '502':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/502'
+        '503':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/503'
+        '504':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/504'
   /products-services/v1/personal-financings:
     get:
       tags:
@@ -469,6 +821,38 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ResponsePersonalFinancings'
+        '201':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/201'
+        '204':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/204'
+        '400':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/400'
+        '401':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/401'
+        '403':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/403'
+        '404':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/404'
+        '405':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/405'
+        '406':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/406'
+        '410':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/410'
+        '415':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/415'
+        '422':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/422'
+        '429':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/429'
+        '500':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/500'
+        '502':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/502'
+        '503':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/503'
+        '504':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/504'
   /products-services/v1/business-financings:
     get:
       tags:
@@ -509,6 +893,38 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ResponseBusinessFinancings'
+        '201':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/201'
+        '204':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/204'
+        '400':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/400'
+        '401':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/401'
+        '403':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/403'
+        '404':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/404'
+        '405':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/405'
+        '406':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/406'
+        '410':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/410'
+        '415':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/415'
+        '422':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/422'
+        '429':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/429'
+        '500':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/500'
+        '502':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/502'
+        '503':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/503'
+        '504':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/504'
   /products-services/v1/personal-invoice-financings:
     get:
       tags:
@@ -549,6 +965,38 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ResponsePersonalInvoiceFinancings'
+        '201':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/201'
+        '204':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/204'
+        '400':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/400'
+        '401':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/401'
+        '403':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/403'
+        '404':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/404'
+        '405':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/405'
+        '406':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/406'
+        '410':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/410'
+        '415':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/415'
+        '422':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/422'
+        '429':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/429'
+        '500':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/500'
+        '502':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/502'
+        '503':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/503'
+        '504':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/504'
   /products-services/v1/business-invoice-financings:
     get:
       tags:
@@ -589,6 +1037,38 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ResponseBusinessInvoiceFinancings'
+        '201':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/201'
+        '204':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/204'
+        '400':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/400'
+        '401':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/401'
+        '403':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/403'
+        '404':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/404'
+        '405':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/405'
+        '406':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/406'
+        '410':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/410'
+        '415':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/415'
+        '422':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/422'
+        '429':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/429'
+        '500':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/500'
+        '502':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/502'
+        '503':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/503'
+        '504':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/504'
   /products-services/v1/personal-credit-cards:
     get:
       tags:
@@ -627,6 +1107,38 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ResponsePersonalCreditCard'
+        '201':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/201'
+        '204':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/204'
+        '400':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/400'
+        '401':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/401'
+        '403':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/403'
+        '404':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/404'
+        '405':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/405'
+        '406':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/406'
+        '410':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/410'
+        '415':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/415'
+        '422':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/422'
+        '429':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/429'
+        '500':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/500'
+        '502':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/502'
+        '503':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/503'
+        '504':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/504'
   /products-services/v1/business-credit-cards:
     get:
       tags:
@@ -665,6 +1177,38 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ResponseBusinessCreditCard'
+        '201':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/201'
+        '204':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/204'
+        '400':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/400'
+        '401':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/401'
+        '403':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/403'
+        '404':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/404'
+        '405':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/405'
+        '406':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/406'
+        '410':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/410'
+        '415':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/415'
+        '422':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/422'
+        '429':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/429'
+        '500':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/500'
+        '502':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/502'
+        '503':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/503'
+        '504':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/504'
   /products-services/v1/personal-unarranged-account-overdraft:
     get:
       tags:
@@ -706,6 +1250,38 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ResponsePersonalUnarrangedAccountOverdraft'
+        '201':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/201'
+        '204':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/204'
+        '400':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/400'
+        '401':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/401'
+        '403':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/403'
+        '404':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/404'
+        '405':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/405'
+        '406':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/406'
+        '410':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/410'
+        '415':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/415'
+        '422':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/422'
+        '429':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/429'
+        '500':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/500'
+        '502':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/502'
+        '503':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/503'
+        '504':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/504'
   /products-services/v1/business-unarranged-account-overdraft:
     get:
       tags:
@@ -748,6 +1324,38 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ResponseBusinessUnarrangedAccountOverdraft'
+        '201':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/201'
+        '204':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/204'
+        '400':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/400'
+        '401':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/401'
+        '403':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/403'
+        '404':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/404'
+        '405':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/405'
+        '406':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/406'
+        '410':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/410'
+        '415':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/415'
+        '422':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/422'
+        '429':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/429'
+        '500':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/500'
+        '502':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/502'
+        '503':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/503'
+        '504':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/504'
   /admin/v1/metrics:
     get:
       tags:
@@ -788,6 +1396,38 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ResponseMetricsList'
+        '201':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/201'
+        '204':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/204'
+        '400':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/400'
+        '401':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/401'
+        '403':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/403'
+        '404':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/404'
+        '405':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/405'
+        '406':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/406'
+        '410':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/410'
+        '415':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/415'
+        '422':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/422'
+        '429':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/429'
+        '500':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/500'
+        '502':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/502'
+        '503':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/503'
+        '504':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/504'
   /customers/v1/business-customers/identification:
     get:
       tags:
@@ -847,6 +1487,38 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ResponseBusinessCustomersIdentification'
+        '201':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/201'
+        '204':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/204'
+        '400':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/400'
+        '401':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/401'
+        '403':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/403'
+        '404':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/404'
+        '405':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/405'
+        '406':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/406'
+        '410':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/410'
+        '415':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/415'
+        '422':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/422'
+        '429':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/429'
+        '500':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/500'
+        '502':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/502'
+        '503':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/503'
+        '504':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/504'
   /customers/v1/business-customers/qualification:
     get:
       tags:
@@ -905,6 +1577,38 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ResponseBusinessCustomersQualification'
+        '201':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/201'
+        '204':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/204'
+        '400':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/400'
+        '401':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/401'
+        '403':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/403'
+        '404':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/404'
+        '405':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/405'
+        '406':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/406'
+        '410':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/410'
+        '415':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/415'
+        '422':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/422'
+        '429':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/429'
+        '500':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/500'
+        '502':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/502'
+        '503':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/503'
+        '504':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/504'
   /customers/v1/business-customers/financial-relation:
     get:
       tags:
@@ -963,6 +1667,38 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ResponseBusinessCustomersFinancialRelation'
+        '201':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/201'
+        '204':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/204'
+        '400':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/400'
+        '401':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/401'
+        '403':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/403'
+        '404':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/404'
+        '405':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/405'
+        '406':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/406'
+        '410':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/410'
+        '415':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/415'
+        '422':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/422'
+        '429':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/429'
+        '500':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/500'
+        '502':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/502'
+        '503':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/503'
+        '504':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/504'
   /customers/v1/personal-customers/identification:
     get:
       tags:
@@ -1021,18 +1757,38 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ResponsePersonalCustomersIdentification'
+        '201':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/201'
         '204':
-          description: No Content
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/204'
+        '400':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/400'
         '401':
-          description: Unauthorized
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/401'
         '403':
-          description: Forbidden
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/403'
         '404':
-          description: Not Found
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/404'
+        '405':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/405'
+        '406':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/406'
+        '410':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/410'
+        '415':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/415'
+        '422':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/422'
+        '429':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/429'
         '500':
-          description: Internal Server Error
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/500'
         '502':
-          description: Bad Gateway
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/502'
+        '503':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/503'
+        '504':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/504'
   /customers/v1/personal-customers/qualification:
     get:
       tags:
@@ -1091,6 +1847,38 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ResponsePersonalCustomersQualification'
+        '201':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/201'
+        '204':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/204'
+        '400':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/400'
+        '401':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/401'
+        '403':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/403'
+        '404':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/404'
+        '405':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/405'
+        '406':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/406'
+        '410':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/410'
+        '415':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/415'
+        '422':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/422'
+        '429':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/429'
+        '500':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/500'
+        '502':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/502'
+        '503':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/503'
+        '504':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/504'
   /customers/v1/personal-customers/financial-relation:
     get:
       tags:
@@ -1149,8 +1937,72 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ResponsePersonalCustomersFinancialRelation'
+        '201':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/201'
+        '204':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/204'
+        '400':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/400'
+        '401':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/401'
+        '403':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/403'
+        '404':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/404'
+        '405':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/405'
+        '406':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/406'
+        '410':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/410'
+        '415':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/415'
+        '422':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/422'
+        '429':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/429'
+        '500':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/500'
+        '502':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/502'
+        '503':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/503'
+        '504':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/504'
   /accounts/v1/accounts/identification:
     get:
+      '201':
+        description: Created
+      '204':
+        description: No Content
+      '400':
+        description: Bad Request
+      '401':
+        description: Unauthorized
+      '403':
+        description: Forbidden
+      '404':
+        description: Not Found
+      '405':
+        description: Method Not Allowed
+      '406':
+        description: Not Acceptable
+      '410':
+        description: Gone
+      '415':
+        description: Unsupported Media Type
+      '422':
+        description: Unprocessable Entity
+      '429':
+        description: Too Many Requests
+      '500':
+        description: Internal Server Error
+      '502':
+        description: Bad Gateway
+      '503':
+        description: Service Unavailable
+      '504':
+        description: Gateway Timeout
       tags:
         - API - Contas
       summary: Identificação da Conta
@@ -1267,6 +2119,38 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ResponseAccountBalances'
+        '201':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/201'
+        '204':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/204'
+        '400':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/400'
+        '401':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/401'
+        '403':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/403'
+        '404':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/404'
+        '405':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/405'
+        '406':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/406'
+        '410':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/410'
+        '415':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/415'
+        '422':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/422'
+        '429':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/429'
+        '500':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/500'
+        '502':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/502'
+        '503':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/503'
+        '504':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/504'
   /accounts/v1/accounts/transactions:
     get:
       tags:
@@ -1325,6 +2209,38 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ResponseAccountTransactions'
+        '201':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/201'
+        '204':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/204'
+        '400':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/400'
+        '401':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/401'
+        '403':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/403'
+        '404':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/404'
+        '405':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/405'
+        '406':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/406'
+        '410':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/410'
+        '415':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/415'
+        '422':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/422'
+        '429':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/429'
+        '500':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/500'
+        '502':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/502'
+        '503':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/503'
+        '504':
+          $ref: '#/paths/~1accounts~1v1~1accounts~1identification/get/504'
   /accounts/v1/accounts/overdraft-limits:
     get:
       tags:
