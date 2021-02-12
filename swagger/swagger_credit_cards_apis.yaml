@@ -720,3 +720,273 @@ paths:
           $ref: '#/paths/~1credit-cards~1limits/get/responses/503'
         '504':
           $ref: '#/paths/~1credit-cards~1limits/get/responses/504'
+  /credit-cards/billing:
+    get:
+      tags:
+        - Credit Cards
+      summary: Obtém os dados referentes à fatura da conta de pagamento pós-paga
+      description: Método para obter os dados referentes à fatura da conta de pagamento pós-paga
+      operationId: getCrediCardsBilling
+      parameters:
+        - $ref: '#/paths/~1credit-cards~1limits/get/parameters/0'
+        - $ref: '#/paths/~1credit-cards~1limits/get/parameters/1'
+      responses:
+        '200':
+          description: Dados sobre a fatura da conta de pagamento pós-paga
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - data
+                  - links
+                  - meta
+                properties:
+                  data:
+                    type: object
+                    required:
+                      - brand
+                    properties:
+                      brand:
+                        type: object
+                        description: Objeto que define a Organização controladora do grupo de instituições financeiras
+                        required:
+                          - name
+                          - companies
+                        properties:
+                          name:
+                            type: string
+                            pattern: \w*\W*
+                            description: 'Nome da Marca reportada pelo participante do Open Banking. O conceito a que se refere a ''marca'' é em essência uma promessa da empresa em fornecer uma série específica de atributos, benefícios e serviços uniformes aos clientes'
+                            maxLength: 80
+                          companies:
+                            type: array
+                            description: Companies traz uma lista de todas as instituições da Marca
+                            items:
+                              type: object
+                              required:
+                                - name
+                                - cnpjNumber
+                                - creditCardAccounts
+                              properties:
+                                name:
+                                  type: string
+                                  maxLength: 80
+                                  pattern: \w*\W*
+                                  description: Nome da marca selecionada pela Organização
+                                  example: Organização A
+                                cnpjNumber:
+                                  type: string
+                                  maxLength: 14
+                                  pattern: '\d{14}|^NA$'
+                                  description: Número completo do CNPJ da instituição responsável pelo Cadastro - o CNPJ corresponde ao número de inscrição no Cadastro de Pessoa Jurídica.
+                                creditCardAccounts:
+                                  type: object
+                                  description: Objeto que agrupa as informações de conta de pagamento pós-paga
+                                  required:
+                                    - bill
+                                  properties:
+                                    bill:
+                                      type: object
+                                      description: Objeto que agrupa as informações referentes a fatura da conta de  pagamento pós-paga
+                                      required:
+                                        - requestDateTime
+                                        - updateDateTime
+                                        - dueDate
+                                        - averageDate
+                                        - statementCreditCardAccounts
+                                      properties:
+                                        requestDateTime:
+                                          type: string
+                                          pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])T(?:[01]\d|2[0123]):(?:[012345]\d):(?:[012345]\d)Z$'
+                                          description: 'Data e hora da consulta, conforme especificação RFC-3339, formato UTC.'
+                                          maxLength: 20
+                                          example: '2020-07-21T08:30:00Z'
+                                        updateDateTime:
+                                          type: string
+                                          pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])T(?:[01]\d|2[0123]):(?:[012345]\d):(?:[012345]\d)Z$'
+                                          description: 'Data e hora da atualização do bloco, conforme especificação RFC-3339'
+                                          maxLength: 20
+                                          example: '2020-07-21T08:30:00Z'
+                                        currency:
+                                          type: string
+                                          pattern: '^(\w{3}){1}$'
+                                          maxLength: 3
+                                          format: CurrencyString
+                                          description: |
+                                            Moeda referente ao valor de todas  transações relacionadas com  fatura da conta de pagamento pós-paga, segundo modelo ISO-4217. p.ex. 'BRL' 
+                                            Todos os saldos informados estão representados com a moeda vigente do Brasil.
+                                          example: BRL
+                                        dueDate:
+                                          type: string
+                                          pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$'
+                                          maxLength: 10
+                                          format: DateString
+                                          description: Data de vencimento da Fatura
+                                        averageDate:
+                                          type: string
+                                          pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$'
+                                          maxLength: 10
+                                          format: DateString
+                                          description: Data efetiva de quando o Pagamento da fatura foi realizado
+                                        statementCreditCardAccounts:
+                                          type: array
+                                          items:
+                                            type: object
+                                            required:
+                                              - balances
+                                            properties:
+                                              balances:
+                                                type: object
+                                                required:
+                                                  - type
+                                                  - paymentType
+                                                  - amount
+                                                properties:
+                                                  type:
+                                                    type: string
+                                                    description: |
+                                                      Traz os tipos dos valores relativos aos pagamentos da fatura da conta de pagamento pós-paga: 
+                                                      - Valor total da fatura
+                                                      - Valor de pagamento mínimo da fatura
+                                                      - Valor de pagamento da fatura com parcelamento
+                                                    enum:
+                                                      - VALOR_TOTAL_FATURA
+                                                      - VALOR_PAGAMENTO_MINIMO_FATURA
+                                                      - VALOR_PAGAMENTO_FATURA_PARCELAMENTO
+                                                  paymentType:
+                                                    type: string
+                                                    description: |
+                                                      Traz as formas de efetivação do pagamento realizado: 
+                                                      - Débito em conta corrente
+                                                      - Boleto bancário
+                                                      - Averbação em folha
+                                                      - PIX
+                                                    enum:
+                                                      - DEBITO_CONTA_CORRENTE
+                                                      - BOLETO_BANCARIO
+                                                      - AVERBACAO_FOLHA
+                                                      - PIX
+                                                  amount:
+                                                    type: string
+                                                    maxLength: 12
+                                                    nullable: true
+                                                    format: AmountString
+                                                    description: Valor da transação. Expresso em valor monetário com 2 casas decimais
+                                              fees:
+                                                type: array
+                                                items:
+                                                  type: object
+                                                  required:
+                                                    - type
+                                                    - amount
+                                                  properties:
+                                                    type:
+                                                      type: string
+                                                      description: |
+                                                        Traz a denominação dos Encargos que incidem na fatura da conta de pagamento pós-paga.
+                                                        - Juros remuneratórios por atraso no pagamento da fatura
+                                                        - Multa por atraso no pagamento da fatura
+                                                        - Juros de mora por atraso no pagamento da fatura
+                                                        - IOF
+                                                        - Crédito rotativo
+                                                        - Parcelamento da fatura
+                                                        - Empréstimo
+                                                        - Outros
+                                                      enum:
+                                                        - JUROS_REMUNERATORIOS_ATRASO_PAGAMENTO_FATURA
+                                                        - MULTA_ATRASO_PAGAMENTO_FATURA
+                                                        - JUROS_MORA_ATRASO_PAGAMENTO_FATURA
+                                                        - IOF
+                                                        - CREDITO_ROTATIVO
+                                                        - PARCELAMENTO_FATURA
+                                                        - EMPRÉSTIMO
+                                                        - OUTROS
+                                                    additionalInfo:
+                                                      type: string
+                                                      maxLength: 60
+                                                      pattern: \w*\W*
+                                                      description: 'Campo livre, de preenchimento obrigatório se selecionado tipo de encargo ''OUTROS'''
+                                                    amount:
+                                                      type: string
+                                                      maxLength: 12
+                                                      nullable: true
+                                                      format: AmountString
+                                                      description: Valor cobrado pelo encargo. Expresso em valor monetário com 2 casas decimais
+                                                description: Lista dos encargos cobrados na fatura
+                                          minItems: 1
+                                          description: Lista que traz os valores relativos aos pagamentos da Fatura da conta de pagamento pós-paga
+                            minItems: 1
+                  links:
+                    $ref: '#/paths/~1credit-cards~1limits/get/responses/200/content/application~1json/schema/properties/links'
+                  meta:
+                    $ref: '#/paths/~1credit-cards~1limits/get/responses/200/content/application~1json/schema/properties/meta'
+                example:
+                  data:
+                    brand:
+                      name: Organização A
+                      companies:
+                        - name: Empresa A
+                          cnpjNumber: '21128159000166'
+                          creditCardAccounts:
+                            bill:
+                              requestDateTime: '2020-07-21T08:30:00Z'
+                              updateDateTime: '2020-07-21T08:58:00Z'
+                              currency: BRL
+                              dueDate: '2021-03-05'
+                              averageDate: '2021-03-03'
+                              statementCreditCardAccounts:
+                                - balances:
+                                    type: VALOR_TOTAL_FATURA
+                                    paymentType: DEBITO_CONTA_CORRENTE
+                                    amount: '1000.00'
+                                  fees:
+                                    - type: IOF
+                                      amount: '0.00'
+                                - balances:
+                                    type: VALOR_PAGAMENTO_MINIMO_FATURA
+                                    paymentType: DEBITO_CONTA_CORRENTE
+                                    amount: '100.00'
+                                  fees:
+                                    - type: CREDITO_ROTATIVO
+                                      amount: '25.00'
+                                - balances:
+                                    type: VALOR_PAGAMENTO_FATURA_PARCELAMENTO
+                                    paymentType: DEBITO_CONTA_CORRENTE
+                                    amount: '1250.00'
+                                  fees:
+                                    - type: PARCELAMENTO_FATURA
+                                      amount: '250.00'
+                  links:
+                    self: 'https://api.banco.com.br/open-banking/<api>/v1/<resource>'
+                    first: 'https://api.banco.com.br/open-banking/<api>/v1/<resource>'
+                    prev: string
+                    next: string
+                    last: 'https://api.banco.com.br/open-banking/<api>/v1/<resource>'
+                  meta:
+                    totalRecords: 1
+                    totalPages: 1
+        '400':
+          $ref: '#/paths/~1credit-cards~1limits/get/responses/400'
+        '401':
+          $ref: '#/paths/~1credit-cards~1limits/get/responses/401'
+        '403':
+          $ref: '#/paths/~1credit-cards~1limits/get/responses/403'
+        '404':
+          $ref: '#/paths/~1credit-cards~1limits/get/responses/404'
+        '405':
+          $ref: '#/paths/~1credit-cards~1limits/get/responses/405'
+        '406':
+          $ref: '#/paths/~1credit-cards~1limits/get/responses/406'
+        '410':
+          $ref: '#/paths/~1credit-cards~1limits/get/responses/410'
+        '422':
+          $ref: '#/paths/~1credit-cards~1limits/get/responses/422'
+        '429':
+          $ref: '#/paths/~1credit-cards~1limits/get/responses/429'
+        '500':
+          $ref: '#/paths/~1credit-cards~1limits/get/responses/500'
+        '503':
+          $ref: '#/paths/~1credit-cards~1limits/get/responses/503'
+        '504':
+          $ref: '#/paths/~1credit-cards~1limits/get/responses/504'

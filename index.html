@@ -461,6 +461,9 @@
                   <li>
                     <a href="#apis-diretorio-e-service-desk-transacoes-de-cartao-de-credito" class="toc-h2 toc-link" data-title="Transações de cartão de crédito">Transações de cartão de crédito</a>
                   </li>
+                  <li>
+                    <a href="#apis-diretorio-e-service-desk-fatura-do-cartao-de-credito" class="toc-h2 toc-link" data-title="Fatura do Cartão de Crédito">Fatura do Cartão de Crédito</a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -691,6 +694,24 @@
                     <a href="#tocS_CreditCardAccountBalances" class="toc-h2 toc-link" data-title="CreditCardAccountBalances">CreditCardAccountBalances</a>
                   </li>
                   <li>
+                    <a href="#tocS_CreditCardAccountsBilling" class="toc-h2 toc-link" data-title="CreditCardAccountsBilling">CreditCardAccountsBilling</a>
+                  </li>
+                  <li>
+                    <a href="#tocS_CreditCardAccountsBillingBalances" class="toc-h2 toc-link" data-title="CreditCardAccountsBillingBalances">CreditCardAccountsBillingBalances</a>
+                  </li>
+                  <li>
+                    <a href="#tocS_CreditCardAccountsBillingBill" class="toc-h2 toc-link" data-title="CreditCardAccountsBillingBill">CreditCardAccountsBillingBill</a>
+                  </li>
+                  <li>
+                    <a href="#tocS_CreditCardAccountsBillingBrand" class="toc-h2 toc-link" data-title="CreditCardAccountsBillingBrand">CreditCardAccountsBillingBrand</a>
+                  </li>
+                  <li>
+                    <a href="#tocS_CreditCardAccountsBillingCompanies" class="toc-h2 toc-link" data-title="CreditCardAccountsBillingCompanies">CreditCardAccountsBillingCompanies</a>
+                  </li>
+                  <li>
+                    <a href="#tocS_CreditCardAccountsBillingFee" class="toc-h2 toc-link" data-title="CreditCardAccountsBillingFee">CreditCardAccountsBillingFee</a>
+                  </li>
+                  <li>
                     <a href="#tocS_CreditCardAccountsLimitsBrand" class="toc-h2 toc-link" data-title="CreditCardAccountsLimitsBrand">CreditCardAccountsLimitsBrand</a>
                   </li>
                   <li>
@@ -704,6 +725,9 @@
                   </li>
                   <li>
                     <a href="#tocS_CreditCardAccountsStatementBalance" class="toc-h2 toc-link" data-title="CreditCardAccountsStatementBalance">CreditCardAccountsStatementBalance</a>
+                  </li>
+                  <li>
+                    <a href="#tocS_CreditCardAccountStatementBilling" class="toc-h2 toc-link" data-title="CreditCardAccountStatementBilling">CreditCardAccountStatementBilling</a>
                   </li>
                   <li>
                     <a href="#tocS_CreditCardAccountStatementTransaction" class="toc-h2 toc-link" data-title="CreditCardAccountStatementTransaction">CreditCardAccountStatementTransaction</a>
@@ -827,6 +851,15 @@
                   </li>
                   <li>
                     <a href="#tocS_EnumCreditCardAccountPaymentMethodType" class="toc-h2 toc-link" data-title="EnumCreditCardAccountPaymentMethodType">EnumCreditCardAccountPaymentMethodType</a>
+                  </li>
+                  <li>
+                    <a href="#tocS_EnumCreditCardAccountsBillingBalancePaymentType" class="toc-h2 toc-link" data-title="EnumCreditCardAccountsBillingBalancePaymentType">EnumCreditCardAccountsBillingBalancePaymentType</a>
+                  </li>
+                  <li>
+                    <a href="#tocS_EnumCreditCardAccountsBillingBalanceType" class="toc-h2 toc-link" data-title="EnumCreditCardAccountsBillingBalanceType">EnumCreditCardAccountsBillingBalanceType</a>
+                  </li>
+                  <li>
+                    <a href="#tocS_EnumCreditCardAccountsBillingFeeType" class="toc-h2 toc-link" data-title="EnumCreditCardAccountsBillingFeeType">EnumCreditCardAccountsBillingFeeType</a>
                   </li>
                   <li>
                     <a href="#tocS_EnumCreditCardAccountsConsolidationType" class="toc-h2 toc-link" data-title="EnumCreditCardAccountsConsolidationType">EnumCreditCardAccountsConsolidationType</a>
@@ -1169,6 +1202,9 @@
                   </li>
                   <li>
                     <a href="#tocS_ResponseCreditCardAccountsIdentification" class="toc-h2 toc-link" data-title="ResponseCreditCardAccountsIdentification">ResponseCreditCardAccountsIdentification</a>
+                  </li>
+                  <li>
+                    <a href="#tocS_ResponseCreditCardAccountsBilling" class="toc-h2 toc-link" data-title="ResponseCreditCardAccountsBilling">ResponseCreditCardAccountsBilling</a>
                   </li>
                   <li>
                     <a href="#tocS_ResponseCreditCardAccountsLimits" class="toc-h2 toc-link" data-title="ResponseCreditCardAccountsLimits">ResponseCreditCardAccountsLimits</a>
@@ -14309,6 +14345,306 @@ This operation does not require authentication
 This operation does not require authentication
 </aside>
 
+<h2 id='apis-diretorio-e-service-desk-fatura-do-cartao-de-credito'>Fatura do Cartão de Crédito</h2>
+
+<p><a id="opIdgetCrediCardsBilling"></a></p>
+
+<blockquote>
+<p>Exemplo de código</p>
+</blockquote>
+
+<div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">data</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">xhr</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XMLHttpRequest</span><span class="p">();</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">withCredentials</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">readystatechange</span><span class="dl">"</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">readyState</span> <span class="o">===</span> <span class="k">this</span><span class="p">.</span><span class="nx">DONE</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">responseText</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">http://api.banco.com.br/open-banking/credit-cards/v1/billing</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="dl">"</span><span class="s2">Accept</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">application/json</span><span class="dl">"</span><span class="p">);</span>
+
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">http.client</span>
+
+<span class="n">conn</span> <span class="o">=</span> <span class="n">http</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">HTTPConnection</span><span class="p">(</span><span class="s">"api.banco.com.br"</span><span class="p">)</span>
+
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span> <span class="s">'Accept'</span><span class="p">:</span> <span class="s">"application/json"</span> <span class="p">}</span>
+
+<span class="n">conn</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="s">"/open-banking/credit-cards/v1/billing"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+
+<span class="n">res</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">getresponse</span><span class="p">()</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">"utf-8"</span><span class="p">))</span>
+</code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="nc">HttpResponse</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">response</span> <span class="o">=</span> <span class="nc">Unirest</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">"http://api.banco.com.br/open-banking/credit-cards/v1/billing"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"Accept"</span><span class="o">,</span> <span class="s">"application/json"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">asString</span><span class="o">();</span>
+</code></pre></div>
+
+<p><code>GET /credit-cards/v1/billing</code></p>
+
+<table><thead>
+<tr>
+<th style="text-align: left">Versão</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">1</td>
+</tr>
+</tbody></table>
+
+<h3 id='apis-diretorio-e-service-desk-fatura-do-cartao-de-credito-visao-geral'>Visão Geral</h3>
+
+<p>A definir.
+Obtém dados referentes à fatura da conta de pagamento pós-paga.</p>
+
+<p>Tags: A definir <a href="#glossarioCNPJ">CNPJ (CNPJ Number)</a>, <a href="#glossarioMarca">Marca (Brand)</a>, <a href="#glossarioInstituicaoFinanceira">Instituição Financeira (Company)</a> e <a href="#glossarioAgencia">Agência (Branch)</a>.</p>
+
+<h3 id='apis-diretorio-e-service-desk-fatura-do-cartao-de-credito-visao-de-alto-de-nivel-das-estruturas-de-dados'>Visão de alto de nível das estruturas de dados</h3>
+
+<p>A definir </p>
+
+<p><img class="lazy" src="images/loading-e35b35a4.gif" data-src="images/tld/accounts/TLD_Cards_Billing.png"/></p>
+
+<h3 id='apis-diretorio-e-service-desk-fatura-do-cartao-de-credito-der-diagramas-de-entidade-e-relacionamento'>DER - Diagramas de Entidade e Relacionamento</h3>
+
+<ul>
+<li>DER Conceitual</li>
+</ul>
+
+<p>A definir </p>
+
+<p><img class="lazy" src="images/loading-e35b35a4.gif" data-src="images/der/accounts/DER_Cards.png"/></p>
+
+<p><a href="images/der/accounts/DER_Cards.png" target="_blank">Fazer download do DER Conceitual</a></p>
+
+<ul>
+<li>DER Lógico</li>
+</ul>
+
+<p>A definir </p>
+
+<p><img class="lazy" src="images/loading-e35b35a4.gif" data-src="images/der/accounts/DER_Cards_Billing.png"/></p>
+
+<p><a href="images/der/accounts/DER_Cards_Billing.png" target="_blank">Fazer download do DER Lógico</a></p>
+
+<h3 id='apis-diretorio-e-service-desk-fatura-do-cartao-de-credito-dicionario-de-dados'>Dicionário de dados</h3>
+
+<p><a href='dictionary/credit_cards_billing.csv' target="_blank">Fazer download do dicionário de dados</a></p>
+
+<p><a href="dictionary/example/examples_credit_cards_billing.csv" target="_blank">Fazer download dos exemplos</a></p>
+
+<h3 id='apis-diretorio-e-service-desk-fatura-do-cartao-de-credito-especificacao-em-oas-3-0'>Especificação em OAS 3.0</h3>
+
+<p><a href='swagger/swagger_credit_cards_apis.yaml'>Download da Especificação (OAS 3.0)</a></p>
+
+<h3 id="fatura-do-cartão-de-crédito-parameters">Parâmetros</h3>
+
+<table><thead>
+<tr>
+<th>Nome</th>
+<th>Origem</th>
+<th>Tipo</th>
+<th>Obrigatório</th>
+<th>Descrição</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>page</td>
+<td>query</td>
+<td>integer</td>
+<td>false</td>
+<td>Número da página que está sendo requisitada (o valor da primeira página é 1).</td>
+</tr>
+<tr>
+<td>page-size</td>
+<td>query</td>
+<td>integer</td>
+<td>false</td>
+<td>Quantidade total de registros por páginas.</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>O comando acima retorna uma estrutura json como essa:</p>
+
+<p>200 Response</p>
+</blockquote>
+
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"brand"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Organização A"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"companies"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Empresa A"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"cnpjNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"21128159000166"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"creditCardAccounts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"bill"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"updateDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:58:00Z"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"dueDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-03-05"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"averageDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-03-03"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"statementCreditCardAccounts"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                  </span><span class="nl">"balances"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"VALOR_TOTAL_FATURA"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"paymentType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DEBITO_CONTA_CORRENTE"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1000.00"</span><span class="w">
+                  </span><span class="p">},</span><span class="w">
+                  </span><span class="nl">"fees"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IOF"</span><span class="p">,</span><span class="w">
+                      </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00"</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                  </span><span class="p">]</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                  </span><span class="nl">"balances"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"VALOR_PAGAMENTO_MINIMO_FATURA"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"paymentType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DEBITO_CONTA_CORRENTE"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100.00"</span><span class="w">
+                  </span><span class="p">},</span><span class="w">
+                  </span><span class="nl">"fees"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CREDITO_ROTATIVO"</span><span class="p">,</span><span class="w">
+                      </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"25.00"</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                  </span><span class="p">]</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                  </span><span class="nl">"balances"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"VALOR_PAGAMENTO_FATURA_PARCELAMENTO"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"paymentType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DEBITO_CONTA_CORRENTE"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1250.00"</span><span class="w">
+                  </span><span class="p">},</span><span class="w">
+                  </span><span class="nl">"fees"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PARCELAMENTO_FATURA"</span><span class="p">,</span><span class="w">
+                      </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"250.00"</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                  </span><span class="p">]</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+              </span><span class="p">]</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"self"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.banco.com.br/open-banking/&lt;api&gt;/v1/&lt;resource&gt;"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"first"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.banco.com.br/open-banking/&lt;api&gt;/v1/&lt;resource&gt;"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"prev"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"next"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"last"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.banco.com.br/open-banking/&lt;api&gt;/v1/&lt;resource&gt;"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"totalRecords"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"totalPages"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+
+<h3 id="fatura-do-cartão-de-crédito-responses">Resposta</h3>
+
+<table><thead>
+<tr>
+<th>Status</th>
+<th>Significado</th>
+<th>Descrição</th>
+<th>Schema</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>200</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.1">OK</a></td>
+<td>Método para obter os dados referentes à fatura da conta de pagamento pós-paga</td>
+<td><a href="#schemaresponsecreditcardaccountsbilling">ResponseCreditCardAccountsBilling</a></td>
+</tr>
+<tr>
+<td>400</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.1">Bad Request</a></td>
+<td>A requisição foi malformada, omitindo atributos obrigatórios, seja no payload ou através de atributos na URL.</td>
+<td>None</td>
+</tr>
+<tr>
+<td>401</td>
+<td><a href="https://tools.ietf.org/html/rfc7235#section-3.1">Unauthorized</a></td>
+<td>Cabeçalho de autenticação ausente/inválido ou token inválido.</td>
+<td>None</td>
+</tr>
+<tr>
+<td>403</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.3">Forbidden</a></td>
+<td>O token tem escopo incorreto ou uma política de segurança foi violada.</td>
+<td>None</td>
+</tr>
+<tr>
+<td>404</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.4">Not Found</a></td>
+<td>O recurso solicitado não existe ou não foi implementado.</td>
+<td>None</td>
+</tr>
+<tr>
+<td>405</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.5">Method Not Allowed</a></td>
+<td>O consumidor tentou acessar o recurso com um método não suportado.</td>
+<td>None</td>
+</tr>
+<tr>
+<td>406</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.6">Not Acceptable</a></td>
+<td>A solicitação continha um cabeçalho Accept diferente dos tipos de mídia permitidos ou um conjunto de caracteres diferente de UTF-8.</td>
+<td>None</td>
+</tr>
+<tr>
+<td>410</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.9">Gone</a></td>
+<td>Indica que o recurso não está mais disponível.</td>
+<td>None</td>
+</tr>
+<tr>
+<td>422</td>
+<td><a href="https://tools.ietf.org/html/rfc2518#section-10.3">Unprocessable Entity</a></td>
+<td>A solicitação foi bem formada, mas não pôde ser processada devido à lógica de negócios específica da solicitação.</td>
+<td>None</td>
+</tr>
+<tr>
+<td>429</td>
+<td><a href="https://tools.ietf.org/html/rfc6585#section-4">Too Many Requests</a></td>
+<td>A operação foi recusada, pois muitas solicitações foram feitas dentro de um determinado período ou o limite global de requisições concorrentes foi atingido.</td>
+<td>None</td>
+</tr>
+<tr>
+<td>500</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.1">Internal Server Error</a></td>
+<td>Ocorreu um erro no gateway da API ou no microsserviço.</td>
+<td>None</td>
+</tr>
+<tr>
+<td>503</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.4">Service Unavailable</a></td>
+<td>O serviço está indisponível no momento.</td>
+<td>None</td>
+</tr>
+<tr>
+<td>504</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.5">Gateway Time-out</a></td>
+<td>O servidor não pôde responder em tempo hábil.</td>
+<td>None</td>
+</tr>
+</tbody></table>
+
+<aside class="success">
+This operation does not require authentication
+</aside>
+
 <h1 id="apis-do-open-banking-brasil-api-contas">API - Contas</h1>
 
 <h2 id='apis-diretorio-e-service-desk-identificacao-da-conta'>Identificação da Conta</h2>
@@ -23028,6 +23364,361 @@ This operation does not require authentication
 </tr>
 </tbody></table>
 
+<h2 id="tocS_CreditCardAccountsBilling">CreditCardAccountsBilling</h2>
+
+<p><a id="schemacreditcardaccountsbilling"></a>
+<a id="schema_CreditCardAccountsBilling"></a>
+<a id="tocScreditcardaccountsbilling"></a>
+<a id="tocscreditcardaccountsbilling"></a></p>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"bill"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updateDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dueDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"averageDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"statementCreditCardAccounts"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"balances"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"VALOR_TOTAL_FATURA"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"paymentType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DEBITO_CONTA_CORRENTE"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"fees"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JUROS_REMUNERATORIOS_ATRASO_PAGAMENTO_FATURA"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"additionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre></div>
+
+<p>Objeto que agrupa as informações de conta de pagamento pós-paga</p>
+
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
+
+<table><thead>
+<tr>
+<th>Nome</th>
+<th>Tipo</th>
+<th>Obrigatório</th>
+<th>Descrição</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>bill</td>
+<td><a href="#schemacreditcardaccountsbillingbill">CreditCardAccountsBillingBill</a></td>
+<td>true</td>
+<td>Objeto que agrupa as informações referentes a fatura da conta de  pagamento pós-paga</td>
+</tr>
+</tbody></table>
+
+<h2 id="tocS_CreditCardAccountsBillingBalances">CreditCardAccountsBillingBalances</h2>
+
+<p><a id="schemacreditcardaccountsbillingbalances"></a>
+<a id="schema_CreditCardAccountsBillingBalances"></a>
+<a id="tocScreditcardaccountsbillingbalances"></a>
+<a id="tocscreditcardaccountsbillingbalances"></a></p>
+
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"VALOR_TOTAL_FATURA"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"paymentType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DEBITO_CONTA_CORRENTE"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
+<table><thead>
+<tr>
+<th>Nome</th>
+<th>Tipo</th>
+<th>Obrigatório</th>
+<th>Descrição</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>type</td>
+<td><a href="#schemaenumcreditcardaccountsbillingbalancetype">EnumCreditCardAccountsBillingBalanceType</a></td>
+<td>true</td>
+<td>Traz os tipos dos valores relativos aos pagamentos da fatura da conta de pagamento pós-paga: <br>- Valor total da fatura<br>- Valor de pagamento mínimo da fatura<br>- Valor de pagamento da fatura com parcelamento</td>
+</tr>
+<tr>
+<td>paymentType</td>
+<td><a href="#schemaenumcreditcardaccountsbillingbalancepaymenttype">EnumCreditCardAccountsBillingBalancePaymentType</a></td>
+<td>true</td>
+<td>Traz as formas de efetivação do pagamento realizado: <br>- Débito em conta corrente<br>- Boleto bancário<br>- Averbação em folha<br>- PIX</td>
+</tr>
+<tr>
+<td>amount</td>
+<td>string(AmountString)¦null</td>
+<td>true</td>
+<td>Valor da transação. Expresso em valor monetário com 2 casas decimais</td>
+</tr>
+</tbody></table>
+
+<h2 id="tocS_CreditCardAccountsBillingBill">CreditCardAccountsBillingBill</h2>
+
+<p><a id="schemacreditcardaccountsbillingbill"></a>
+<a id="schema_CreditCardAccountsBillingBill"></a>
+<a id="tocScreditcardaccountsbillingbill"></a>
+<a id="tocscreditcardaccountsbillingbill"></a></p>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"updateDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"dueDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"averageDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"statementCreditCardAccounts"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"balances"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"VALOR_TOTAL_FATURA"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"paymentType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DEBITO_CONTA_CORRENTE"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"fees"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JUROS_REMUNERATORIOS_ATRASO_PAGAMENTO_FATURA"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"additionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre></div>
+
+<p>Objeto que agrupa as informações referentes a fatura da conta de  pagamento pós-paga</p>
+
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
+
+<table><thead>
+<tr>
+<th>Nome</th>
+<th>Tipo</th>
+<th>Obrigatório</th>
+<th>Descrição</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>requestDateTime</td>
+<td>string</td>
+<td>true</td>
+<td>Data e hora da consulta, conforme especificação RFC-3339, formato UTC.</td>
+</tr>
+<tr>
+<td>updateDateTime</td>
+<td>string</td>
+<td>true</td>
+<td>Data e hora da atualização do bloco, conforme especificação RFC-3339</td>
+</tr>
+<tr>
+<td>currency</td>
+<td>string(CurrencyString)</td>
+<td>false</td>
+<td>Moeda referente ao valor de todas  transações relacionadas com  fatura da conta de pagamento pós-paga, segundo modelo ISO-4217. p.ex. &#39;BRL&#39; <br>Todos os saldos informados estão representados com a moeda vigente do Brasil.</td>
+</tr>
+<tr>
+<td>dueDate</td>
+<td>string(DateString)</td>
+<td>true</td>
+<td>Data de vencimento da Fatura</td>
+</tr>
+<tr>
+<td>averageDate</td>
+<td>string(DateString)</td>
+<td>true</td>
+<td>Data efetiva de quando o Pagamento da fatura foi realizado</td>
+</tr>
+<tr>
+<td>statementCreditCardAccounts</td>
+<td>[<a href="#schemacreditcardaccountstatementbilling">CreditCardAccountStatementBilling</a>]</td>
+<td>true</td>
+<td>Lista que traz os valores relativos aos pagamentos da Fatura da conta de pagamento pós-paga</td>
+</tr>
+</tbody></table>
+
+<h2 id="tocS_CreditCardAccountsBillingBrand">CreditCardAccountsBillingBrand</h2>
+
+<p><a id="schemacreditcardaccountsbillingbrand"></a>
+<a id="schema_CreditCardAccountsBillingBrand"></a>
+<a id="tocScreditcardaccountsbillingbrand"></a>
+<a id="tocscreditcardaccountsbillingbrand"></a></p>
+
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"companies"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Organização A"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"cnpjNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"creditCardAccounts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"bill"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"updateDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"dueDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"averageDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"statementCreditCardAccounts"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"balances"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"VALOR_TOTAL_FATURA"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"paymentType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DEBITO_CONTA_CORRENTE"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+              </span><span class="p">},</span><span class="w">
+              </span><span class="nl">"fees"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JUROS_REMUNERATORIOS_ATRASO_PAGAMENTO_FATURA"</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"additionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+              </span><span class="p">]</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre></div>
+
+<p>Objeto que define a Organização controladora do grupo de instituições financeiras</p>
+
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
+
+<table><thead>
+<tr>
+<th>Nome</th>
+<th>Tipo</th>
+<th>Obrigatório</th>
+<th>Descrição</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>true</td>
+<td>Nome da Marca reportada pelo participante do Open Banking. O conceito a que se refere a &#39;marca&#39; é em essência uma promessa da empresa em fornecer uma série específica de atributos, benefícios e serviços uniformes aos clientes</td>
+</tr>
+<tr>
+<td>companies</td>
+<td>[<a href="#schemacreditcardaccountsbillingcompanies">CreditCardAccountsBillingCompanies</a>]</td>
+<td>true</td>
+<td>Companies traz uma lista de todas as instituições da Marca</td>
+</tr>
+</tbody></table>
+
+<h2 id="tocS_CreditCardAccountsBillingCompanies">CreditCardAccountsBillingCompanies</h2>
+
+<p><a id="schemacreditcardaccountsbillingcompanies"></a>
+<a id="schema_CreditCardAccountsBillingCompanies"></a>
+<a id="tocScreditcardaccountsbillingcompanies"></a>
+<a id="tocscreditcardaccountsbillingcompanies"></a></p>
+
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Organização A"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"cnpjNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"creditCardAccounts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"bill"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"updateDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"dueDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"averageDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"statementCreditCardAccounts"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"balances"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"VALOR_TOTAL_FATURA"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"paymentType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DEBITO_CONTA_CORRENTE"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="nl">"fees"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JUROS_REMUNERATORIOS_ATRASO_PAGAMENTO_FATURA"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"additionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
+<table><thead>
+<tr>
+<th>Nome</th>
+<th>Tipo</th>
+<th>Obrigatório</th>
+<th>Descrição</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>true</td>
+<td>Nome da marca selecionada pela Organização</td>
+</tr>
+<tr>
+<td>cnpjNumber</td>
+<td>string</td>
+<td>true</td>
+<td>Número completo do CNPJ da instituição responsável pelo Cadastro - o CNPJ corresponde ao número de inscrição no Cadastro de Pessoa Jurídica.</td>
+</tr>
+<tr>
+<td>creditCardAccounts</td>
+<td><a href="#schemacreditcardaccountsbilling">CreditCardAccountsBilling</a></td>
+<td>true</td>
+<td>Objeto que agrupa as informações de conta de pagamento pós-paga</td>
+</tr>
+</tbody></table>
+
+<h2 id="tocS_CreditCardAccountsBillingFee">CreditCardAccountsBillingFee</h2>
+
+<p><a id="schemacreditcardaccountsbillingfee"></a>
+<a id="schema_CreditCardAccountsBillingFee"></a>
+<a id="tocScreditcardaccountsbillingfee"></a>
+<a id="tocscreditcardaccountsbillingfee"></a></p>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JUROS_REMUNERATORIOS_ATRASO_PAGAMENTO_FATURA"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"additionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
+<table><thead>
+<tr>
+<th>Nome</th>
+<th>Tipo</th>
+<th>Obrigatório</th>
+<th>Descrição</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>type</td>
+<td><a href="#schemaenumcreditcardaccountsbillingfeetype">EnumCreditCardAccountsBillingFeeType</a></td>
+<td>true</td>
+<td>Traz a denominação dos Encargos que incidem na fatura da conta de pagamento pós-paga.<br>- Juros remuneratórios por atraso no pagamento da fatura<br>- Multa por atraso no pagamento da fatura<br>- Juros de mora por atraso no pagamento da fatura<br>- IOF<br>- Crédito rotativo<br>- Parcelamento da fatura<br>- Empréstimo<br>- Outros</td>
+</tr>
+<tr>
+<td>additionalInfo</td>
+<td>string</td>
+<td>false</td>
+<td>Campo livre, de preenchimento obrigatório se selecionado tipo de encargo &#39;OUTROS&#39;</td>
+</tr>
+<tr>
+<td>amount</td>
+<td>string(AmountString)¦null</td>
+<td>true</td>
+<td>Valor cobrado pelo encargo. Expresso em valor monetário com 2 casas decimais</td>
+</tr>
+</tbody></table>
+
 <h2 id="tocS_CreditCardAccountsLimitsBrand">CreditCardAccountsLimitsBrand</h2>
 
 <p><a id="schemacreditcardaccountslimitsbrand"></a>
@@ -23386,13 +24077,57 @@ This operation does not require authentication
 </tr>
 </tbody></table>
 
+<h2 id="tocS_CreditCardAccountStatementBilling">CreditCardAccountStatementBilling</h2>
+
+<p><a id="schemacreditcardaccountstatementbilling"></a>
+<a id="schema_CreditCardAccountStatementBilling"></a>
+<a id="tocScreditcardaccountstatementbilling"></a>
+<a id="tocscreditcardaccountstatementbilling"></a></p>
+
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"balances"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"VALOR_TOTAL_FATURA"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"paymentType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DEBITO_CONTA_CORRENTE"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"fees"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JUROS_REMUNERATORIOS_ATRASO_PAGAMENTO_FATURA"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"additionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
+<table><thead>
+<tr>
+<th>Nome</th>
+<th>Tipo</th>
+<th>Obrigatório</th>
+<th>Descrição</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>balances</td>
+<td><a href="#schemacreditcardaccountsbillingbalances">CreditCardAccountsBillingBalances</a></td>
+<td>true</td>
+<td></td>
+</tr>
+<tr>
+<td>fees</td>
+<td>[<a href="#schemacreditcardaccountsbillingfee">CreditCardAccountsBillingFee</a>]</td>
+<td>false</td>
+<td>Lista dos encargos cobrados na fatura</td>
+</tr>
+</tbody></table>
+
 <h2 id="tocS_CreditCardAccountStatementTransaction">CreditCardAccountStatementTransaction</h2>
 
 <p><a id="schemacreditcardaccountstatementtransaction"></a>
 <a id="schema_CreditCardAccountStatementTransaction"></a>
 <a id="tocScreditcardaccountstatementtransaction"></a>
 <a id="tocscreditcardaccountstatementtransaction"></a></p>
-
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"creditDebitIndicator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CREDITO"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CASHBACK"</span><span class="p">,</span><span class="w">
@@ -26960,6 +27695,204 @@ Bandeira é a detentora de todos os direitos e deveres da utilização da marca 
 <tr>
 <td>**</td>
 <td>ADICIONAL</td>
+</tr>
+</tbody></table>
+
+<h2 id="tocS_EnumCreditCardAccountsBillingBalancePaymentType">EnumCreditCardAccountsBillingBalancePaymentType</h2>
+
+<p><a id="schemaenumcreditcardaccountsbillingbalancepaymenttype"></a>
+<a id="schema_EnumCreditCardAccountsBillingBalancePaymentType"></a>
+<a id="tocSenumcreditcardaccountsbillingbalancepaymenttype"></a>
+<a id="tocsenumcreditcardaccountsbillingbalancepaymenttype"></a></p>
+
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="s2">"DEBITO_CONTA_CORRENTE"</span><span class="w">
+
+</span></code></pre></div>
+
+<p>Traz as formas de efetivação do pagamento realizado: 
+- Débito em conta corrente
+- Boleto bancário
+- Averbação em folha
+- PIX</p>
+
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
+
+<table><thead>
+<tr>
+<th>Nome</th>
+<th>Tipo</th>
+<th>Obrigatório</th>
+<th>Descrição</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>**</td>
+<td>string</td>
+<td>false</td>
+<td>Traz as formas de efetivação do pagamento realizado: <br>- Débito em conta corrente<br>- Boleto bancário<br>- Averbação em folha<br>- PIX</td>
+</tr>
+</tbody></table>
+
+<h4 id='schemas-limites-da-conta-propriedades-enumerated-values'>Enumerated Values</h4>
+
+<table><thead>
+<tr>
+<th>Nome</th>
+<th>Código</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>**</td>
+<td>DEBITO_CONTA_CORRENTE</td>
+</tr>
+<tr>
+<td>**</td>
+<td>BOLETO_BANCARIO</td>
+</tr>
+<tr>
+<td>**</td>
+<td>AVERBACAO_FOLHA</td>
+</tr>
+<tr>
+<td>**</td>
+<td>PIX</td>
+</tr>
+</tbody></table>
+
+<h2 id="tocS_EnumCreditCardAccountsBillingBalanceType">EnumCreditCardAccountsBillingBalanceType</h2>
+
+<p><a id="schemaenumcreditcardaccountsbillingbalancetype"></a>
+<a id="schema_EnumCreditCardAccountsBillingBalanceType"></a>
+<a id="tocSenumcreditcardaccountsbillingbalancetype"></a>
+<a id="tocsenumcreditcardaccountsbillingbalancetype"></a></p>
+
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="s2">"VALOR_TOTAL_FATURA"</span><span class="w">
+
+</span></code></pre></div>
+
+<p>Traz os tipos dos valores relativos aos pagamentos da fatura da conta de pagamento pós-paga: 
+- Valor total da fatura
+- Valor de pagamento mínimo da fatura
+- Valor de pagamento da fatura com parcelamento</p>
+
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
+
+<table><thead>
+<tr>
+<th>Nome</th>
+<th>Tipo</th>
+<th>Obrigatório</th>
+<th>Descrição</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>**</td>
+<td>string</td>
+<td>false</td>
+<td>Traz os tipos dos valores relativos aos pagamentos da fatura da conta de pagamento pós-paga: <br>- Valor total da fatura<br>- Valor de pagamento mínimo da fatura<br>- Valor de pagamento da fatura com parcelamento</td>
+</tr>
+</tbody></table>
+
+<h4 id='schemas-limites-da-conta-propriedades-enumerated-values'>Enumerated Values</h4>
+
+<table><thead>
+<tr>
+<th>Nome</th>
+<th>Código</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>**</td>
+<td>VALOR_TOTAL_FATURA</td>
+</tr>
+<tr>
+<td>**</td>
+<td>VALOR_PAGAMENTO_MINIMO_FATURA</td>
+</tr>
+<tr>
+<td>**</td>
+<td>VALOR_PAGAMENTO_FATURA_PARCELAMENTO</td>
+</tr>
+</tbody></table>
+
+<h2 id="tocS_EnumCreditCardAccountsBillingFeeType">EnumCreditCardAccountsBillingFeeType</h2>
+
+<p><a id="schemaenumcreditcardaccountsbillingfeetype"></a>
+<a id="schema_EnumCreditCardAccountsBillingFeeType"></a>
+<a id="tocSenumcreditcardaccountsbillingfeetype"></a>
+<a id="tocsenumcreditcardaccountsbillingfeetype"></a></p>
+
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="s2">"JUROS_REMUNERATORIOS_ATRASO_PAGAMENTO_FATURA"</span><span class="w">
+
+</span></code></pre></div>
+
+<p>Traz a denominação dos Encargos que incidem na fatura da conta de pagamento pós-paga.
+- Juros remuneratórios por atraso no pagamento da fatura
+- Multa por atraso no pagamento da fatura
+- Juros de mora por atraso no pagamento da fatura
+- IOF
+- Crédito rotativo
+- Parcelamento da fatura
+- Empréstimo
+- Outros</p>
+
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
+
+<table><thead>
+<tr>
+<th>Nome</th>
+<th>Tipo</th>
+<th>Obrigatório</th>
+<th>Descrição</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>**</td>
+<td>string</td>
+<td>false</td>
+<td>Traz a denominação dos Encargos que incidem na fatura da conta de pagamento pós-paga.<br>- Juros remuneratórios por atraso no pagamento da fatura<br>- Multa por atraso no pagamento da fatura<br>- Juros de mora por atraso no pagamento da fatura<br>- IOF<br>- Crédito rotativo<br>- Parcelamento da fatura<br>- Empréstimo<br>- Outros</td>
+</tr>
+</tbody></table>
+
+<h4 id='schemas-limites-da-conta-propriedades-enumerated-values'>Enumerated Values</h4>
+
+<table><thead>
+<tr>
+<th>Nome</th>
+<th>Código</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>**</td>
+<td>JUROS_REMUNERATORIOS_ATRASO_PAGAMENTO_FATURA</td>
+</tr>
+<tr>
+<td>**</td>
+<td>MULTA_ATRASO_PAGAMENTO_FATURA</td>
+</tr>
+<tr>
+<td>**</td>
+<td>JUROS_MORA_ATRASO_PAGAMENTO_FATURA</td>
+</tr>
+<tr>
+<td>**</td>
+<td>IOF</td>
+</tr>
+<tr>
+<td>**</td>
+<td>CREDITO_ROTATIVO</td>
+</tr>
+<tr>
+<td>**</td>
+<td>PARCELAMENTO_FATURA</td>
+</tr>
+<tr>
+<td>**</td>
+<td>EMPRÉSTIMO</td>
+</tr>
+<tr>
+<td>**</td>
+<td>OUTROS</td>
 </tr>
 </tbody></table>
 
@@ -39490,6 +40423,122 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
 <td><a href="#schemacreditcardsaccountidentification">CreditCardsAccountIdentification</a></td>
 <td>true</td>
 <td>Conjunto de informações referentes à identificação da conta de pagamento pós-paga.</td>
+</tr>
+<tr>
+<td>links</td>
+<td><a href="#schemalinks">Links</a></td>
+<td>true</td>
+<td>Referências para outros recusos da API requisitada.</td>
+</tr>
+<tr>
+<td>meta</td>
+<td><a href="#schemameta">Meta</a></td>
+<td>true</td>
+<td>Meta informações referente a API requisitada.</td>
+</tr>
+</tbody></table>
+
+<h2 id="tocS_ResponseCreditCardAccountsBilling">ResponseCreditCardAccountsBilling</h2>
+
+<p><a id="schemaresponsecreditcardaccountsbilling"></a>
+<a id="schema_ResponseCreditCardAccountsBilling"></a>
+<a id="tocSresponsecreditcardaccountsbilling"></a>
+<a id="tocsresponsecreditcardaccountsbilling"></a></p>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"brand"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Organização A"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"companies"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Empresa A"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"cnpjNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"21128159000166"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"creditCardAccounts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"bill"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"updateDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:58:00Z"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"dueDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-03-05"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"averageDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-03-03"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"statementCreditCardAccounts"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                  </span><span class="nl">"balances"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"VALOR_TOTAL_FATURA"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"paymentType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DEBITO_CONTA_CORRENTE"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1000.00"</span><span class="w">
+                  </span><span class="p">},</span><span class="w">
+                  </span><span class="nl">"fees"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IOF"</span><span class="p">,</span><span class="w">
+                      </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00"</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                  </span><span class="p">]</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                  </span><span class="nl">"balances"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"VALOR_PAGAMENTO_MINIMO_FATURA"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"paymentType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DEBITO_CONTA_CORRENTE"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100.00"</span><span class="w">
+                  </span><span class="p">},</span><span class="w">
+                  </span><span class="nl">"fees"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CREDITO_ROTATIVO"</span><span class="p">,</span><span class="w">
+                      </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"25.00"</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                  </span><span class="p">]</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                  </span><span class="nl">"balances"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"VALOR_PAGAMENTO_FATURA_PARCELAMENTO"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"paymentType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DEBITO_CONTA_CORRENTE"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1250.00"</span><span class="w">
+                  </span><span class="p">},</span><span class="w">
+                  </span><span class="nl">"fees"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PARCELAMENTO_FATURA"</span><span class="p">,</span><span class="w">
+                      </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"250.00"</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                  </span><span class="p">]</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+              </span><span class="p">]</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"self"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.banco.com.br/open-banking/&lt;api&gt;/v1/&lt;resource&gt;"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"first"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.banco.com.br/open-banking/&lt;api&gt;/v1/&lt;resource&gt;"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"prev"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"next"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"last"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.banco.com.br/open-banking/&lt;api&gt;/v1/&lt;resource&gt;"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"totalRecords"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"totalPages"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
+<table><thead>
+<tr>
+<th>Nome</th>
+<th>Tipo</th>
+<th>Obrigatório</th>
+<th>Descrição</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>data</td>
+<td>object</td>
+<td>true</td>
+<td></td>
+</tr>
+<tr>
+<td>» brand</td>
+<td><a href="#schemacreditcardaccountsbillingbrand">CreditCardAccountsBillingBrand</a></td>
+<td>true</td>
+<td>Objeto que define a Organização controladora do grupo de instituições financeiras</td>
 </tr>
 <tr>
 <td>links</td>
