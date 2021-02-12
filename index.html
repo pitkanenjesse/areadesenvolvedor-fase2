@@ -450,6 +450,20 @@
               </ul>
           </li>
           <li>
+            <a href="#apis-do-open-banking-brasil-api-cart-o-de-cr-dito" class="toc-h1 toc-link" data-title="API - Cartão de Crédito">API - Cartão de Crédito</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#apis-diretorio-e-service-desk-identificacao-de-cartao-de-credito" class="toc-h2 toc-link" data-title="Identificação de cartão de crédito">Identificação de cartão de crédito</a>
+                  </li>
+                  <li>
+                    <a href="#apis-diretorio-e-service-desk-identificacao-de-limite-de-cartao-de-credito" class="toc-h2 toc-link" data-title="Identificação de limite de cartão de crédito">Identificação de limite de cartão de crédito</a>
+                  </li>
+                  <li>
+                    <a href="#apis-diretorio-e-service-desk-transacoes-de-cartao-de-credito" class="toc-h2 toc-link" data-title="Transações de cartão de crédito">Transações de cartão de crédito</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#apis-do-open-banking-brasil-api-contas" class="toc-h1 toc-link" data-title="API - Contas">API - Contas</a>
               <ul class="toc-list-h2">
                   <li>
@@ -689,6 +703,9 @@
                     <a href="#tocS_CreditCardAccountsStatement" class="toc-h2 toc-link" data-title="CreditCardAccountsStatement">CreditCardAccountsStatement</a>
                   </li>
                   <li>
+                    <a href="#tocS_CreditCardAccountsStatementBalance" class="toc-h2 toc-link" data-title="CreditCardAccountsStatementBalance">CreditCardAccountsStatementBalance</a>
+                  </li>
+                  <li>
                     <a href="#tocS_CreditCardAccountStatementTransaction" class="toc-h2 toc-link" data-title="CreditCardAccountStatementTransaction">CreditCardAccountStatementTransaction</a>
                   </li>
                   <li>
@@ -812,22 +829,22 @@
                     <a href="#tocS_EnumCreditCardAccountPaymentMethodType" class="toc-h2 toc-link" data-title="EnumCreditCardAccountPaymentMethodType">EnumCreditCardAccountPaymentMethodType</a>
                   </li>
                   <li>
-                    <a href="#tocS_EnumCreditCardAccountsConsolidationIndicator" class="toc-h2 toc-link" data-title="EnumCreditCardAccountsConsolidationIndicator">EnumCreditCardAccountsConsolidationIndicator</a>
+                    <a href="#tocS_EnumCreditCardAccountsConsolidationType" class="toc-h2 toc-link" data-title="EnumCreditCardAccountsConsolidationType">EnumCreditCardAccountsConsolidationType</a>
                   </li>
                   <li>
-                    <a href="#tocS_EnumCreditCardAccountsLimitIndicator" class="toc-h2 toc-link" data-title="EnumCreditCardAccountsLimitIndicator">EnumCreditCardAccountsLimitIndicator</a>
+                    <a href="#tocS_EnumCreditCardAccountsLimitType" class="toc-h2 toc-link" data-title="EnumCreditCardAccountsLimitType">EnumCreditCardAccountsLimitType</a>
                   </li>
                   <li>
-                    <a href="#tocS_EnumCreditCardAccountsLimitsLinesIndicator" class="toc-h2 toc-link" data-title="EnumCreditCardAccountsLimitsLinesIndicator">EnumCreditCardAccountsLimitsLinesIndicator</a>
+                    <a href="#tocS_EnumCreditCardAccountsLineLimitType" class="toc-h2 toc-link" data-title="EnumCreditCardAccountsLineLimitType">EnumCreditCardAccountsLineLimitType</a>
                   </li>
                   <li>
-                    <a href="#tocS_EnumCreditCardAccountsNameLine" class="toc-h2 toc-link" data-title="EnumCreditCardAccountsNameLine">EnumCreditCardAccountsNameLine</a>
+                    <a href="#tocS_EnumCreditCardAccountsLineName" class="toc-h2 toc-link" data-title="EnumCreditCardAccountsLineName">EnumCreditCardAccountsLineName</a>
                   </li>
                   <li>
                     <a href="#tocS_EnumCreditCardAccountsOtherCredits" class="toc-h2 toc-link" data-title="EnumCreditCardAccountsOtherCredits">EnumCreditCardAccountsOtherCredits</a>
                   </li>
                   <li>
-                    <a href="#tocS_EnumCreditCardAccountsType" class="toc-h2 toc-link" data-title="EnumCreditCardAccountsType">EnumCreditCardAccountsType</a>
+                    <a href="#tocS_EnumCreditCardAccountsProductType" class="toc-h2 toc-link" data-title="EnumCreditCardAccountsProductType">EnumCreditCardAccountsProductType</a>
                   </li>
                   <li>
                     <a href="#tocS_EnumCreditCardTransactionType" class="toc-h2 toc-link" data-title="EnumCreditCardTransactionType">EnumCreditCardTransactionType</a>
@@ -1149,6 +1166,9 @@
                   </li>
                   <li>
                     <a href="#tocS_ResponseBusinessUnarrangedAccountOverdraft" class="toc-h2 toc-link" data-title="ResponseBusinessUnarrangedAccountOverdraft">ResponseBusinessUnarrangedAccountOverdraft</a>
+                  </li>
+                  <li>
+                    <a href="#tocS_ResponseCreditCardAccountsIdentification" class="toc-h2 toc-link" data-title="ResponseCreditCardAccountsIdentification">ResponseCreditCardAccountsIdentification</a>
                   </li>
                   <li>
                     <a href="#tocS_ResponseCreditCardAccountsLimits" class="toc-h2 toc-link" data-title="ResponseCreditCardAccountsLimits">ResponseCreditCardAccountsLimits</a>
@@ -13483,6 +13503,812 @@ This operation does not require authentication
 This operation does not require authentication
 </aside>
 
+<h1 id="apis-do-open-banking-brasil-api-cart-o-de-cr-dito">API - Cartão de Crédito</h1>
+
+<h2 id='apis-diretorio-e-service-desk-identificacao-de-cartao-de-credito'>Identificação de cartão de crédito</h2>
+
+<p><a id="opIdgetCreditCardAccountsIdentification"></a></p>
+
+<blockquote>
+<p>Exemplo de código</p>
+</blockquote>
+
+<div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">data</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">xhr</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XMLHttpRequest</span><span class="p">();</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">withCredentials</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">readystatechange</span><span class="dl">"</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">readyState</span> <span class="o">===</span> <span class="k">this</span><span class="p">.</span><span class="nx">DONE</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">responseText</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">http://api.banco.com.br/open-banking/credit-card/v1/accounts/identification</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="dl">"</span><span class="s2">Accept</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">application/json</span><span class="dl">"</span><span class="p">);</span>
+
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">http.client</span>
+
+<span class="n">conn</span> <span class="o">=</span> <span class="n">http</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">HTTPConnection</span><span class="p">(</span><span class="s">"api.banco.com.br"</span><span class="p">)</span>
+
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span> <span class="s">'Accept'</span><span class="p">:</span> <span class="s">"application/json"</span> <span class="p">}</span>
+
+<span class="n">conn</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="s">"/open-banking/credit-card/v1/accounts/identification"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+
+<span class="n">res</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">getresponse</span><span class="p">()</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">"utf-8"</span><span class="p">))</span>
+</code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="nc">HttpResponse</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">response</span> <span class="o">=</span> <span class="nc">Unirest</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">"http://api.banco.com.br/open-banking/credit-card/v1/accounts/identification"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"Accept"</span><span class="o">,</span> <span class="s">"application/json"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">asString</span><span class="o">();</span>
+</code></pre></div>
+
+<p><code>GET /credit-card/v1/accounts/identification</code></p>
+
+<table><thead>
+<tr>
+<th style="text-align: left">Versão</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">1</td>
+</tr>
+</tbody></table>
+
+<h3 id='apis-diretorio-e-service-desk-identificacao-de-cartao-de-credito-visao-geral'>Visão Geral</h3>
+
+<p>Obtém dados relativos a identificação de cartão de crédito.</p>
+
+<p>Considera-se relacionamento as informações que permitam conhecer desde quando a pessoa consultada é cliente da instituição, bem como um indicador dos produtos e serviços que ela consome atualmente.</p>
+
+<p>Tags: <a href="#glossarioCPF">CPF - Cadastro de Pessoa Física (Cpf Number)</a>, <a href="#glossarioNomeCivil">Nome Civil Completo (Civil Name)</a>, <a href="#glossarioNomeSocial">Nome Social (Social Name)</a>, <a href="#glossarioProcurador">Procurador (Procurator)</a>, <a href="#glossarioRelacionamento">Relacionamento (Financial Relation)</a>, <a href="#glossarioRepresentanteLegal">Representante Legal (Legal Representative)</a>,
+      <a href="#glossarioCNPJ">CNPJ (CNPJ Number)</a>, <a href="#glossarioMarca">Marca (Brand)</a> e <a href="#glossarioInstituicaoFinanceira">Instituição Financeira (Company)</a>.</p>
+
+<h3 id='apis-diretorio-e-service-desk-identificacao-de-cartao-de-credito-visao-de-alto-de-nivel-das-estruturas-de-dados'>Visão de alto de nível das estruturas de dados</h3>
+
+<p><img class="lazy" src="images/loading-e35b35a4.gif" data-src="images/tld/customers/TLD_Personal_Customers_Financial_Relation_v2-8b021d26.png"/></p>
+
+<h3 id='apis-diretorio-e-service-desk-identificacao-de-cartao-de-credito-der-diagramas-de-entidade-e-relacionamento'>DER - Diagramas de Entidade e Relacionamento</h3>
+
+<ul>
+<li>DER Conceitual</li>
+</ul>
+
+<p><img class="lazy" src="images/loading-e35b35a4.gif" data-src="images/der/customers/DER_PersonalCustomers-b2fa08f8.png"/></p>
+
+<p><a href="images/der/customers/DER_PersonalCustomers-b2fa08f8.png" target="_blank">Fazer download do DER Conceitual</a></p>
+
+<ul>
+<li>DER Lógico</li>
+</ul>
+
+<p><img class="lazy" src="images/loading-e35b35a4.gif" data-src="images/der/customers/DER_Personal_Customers_FinancialRelation-3d57123a.png"/></p>
+
+<p><a href="images/der/customers/DER_Personal_Customers_FinancialRelation-3d57123a.png" target="_blank">Fazer download do DER Lógico</a></p>
+
+<h3 id='apis-diretorio-e-service-desk-identificacao-de-cartao-de-credito-dicionario-de-dados'>Dicionário de dados</h3>
+
+<p><a href="dictionary/personal_customers_financial_relation.csv" target="_blank">Fazer download do dicionário de dados</a></p>
+
+<p><a href="dictionary/example/examples_personal_customers_financial_relation.csv" target="_blank">Fazer download dos exemplos</a></p>
+
+<h3 id='apis-diretorio-e-service-desk-identificacao-de-cartao-de-credito-especificacao-em-oas-3-0'>Especificação em OAS 3.0</h3>
+
+<p><a href="swagger/swagger_credit_cards_apis.yaml">Download da Especificação (OAS 3.0)</a></p>
+
+<h3 id="identificação-de-cartão-de-crédito-parameters">Parâmetros</h3>
+
+<table><thead>
+<tr>
+<th>Nome</th>
+<th>Origem</th>
+<th>Tipo</th>
+<th>Obrigatório</th>
+<th>Descrição</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>page</td>
+<td>query</td>
+<td>integer</td>
+<td>false</td>
+<td>Número da página que está sendo requisitada (o valor da primeira página é 1).</td>
+</tr>
+<tr>
+<td>page-size</td>
+<td>query</td>
+<td>integer</td>
+<td>false</td>
+<td>Quantidade total de registros por páginas.</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>O comando acima retorna uma estrutura json como essa:</p>
+
+<p>200 Response</p>
+</blockquote>
+
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"brand"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"companies"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Organização A"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"cnpjNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00000000000100"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"creditCardAccountsLimits"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"identification"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"creditCardAccountId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"XXZTR3459087"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"brandName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Organização A"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cartão Universitário"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"companyCnpj"</span><span class="p">:</span><span class="w"> </span><span class="s2">"21128159000166"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"productType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CLASSIC_NACIONAL"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"productAdditionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"creditCardNetwork"</span><span class="p">:</span><span class="w"> </span><span class="s2">"VISA"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"networkAdditionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"paymentMethod"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"identificationNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4453"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"isMultipleCreditCard"</span><span class="p">:</span><span class="w"> </span><span class="s2">"true"</span><span class="w">
+              </span><span class="p">}</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"self"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.banco.com.br/open-banking/&lt;api&gt;/v1/&lt;resource&gt;"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"first"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.banco.com.br/open-banking/&lt;api&gt;/v1/&lt;resource&gt;"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"prev"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"next"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"last"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.banco.com.br/open-banking/&lt;api&gt;/v1/&lt;resource&gt;"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"totalRecords"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"totalPages"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+
+<h3 id="identificação-de-cartão-de-crédito-responses">Resposta</h3>
+
+<table><thead>
+<tr>
+<th>Status</th>
+<th>Significado</th>
+<th>Descrição</th>
+<th>Schema</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>200</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.1">OK</a></td>
+<td>Método para obter os dados de identificação de cartão de crédito.</td>
+<td><a href="#schemaresponsecreditcardaccountsidentification">ResponseCreditCardAccountsIdentification</a></td>
+</tr>
+<tr>
+<td>400</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.1">Bad Request</a></td>
+<td>A requisição foi malformada, omitindo atributos obrigatórios, seja no payload ou através de atributos na URL.</td>
+<td>None</td>
+</tr>
+<tr>
+<td>401</td>
+<td><a href="https://tools.ietf.org/html/rfc7235#section-3.1">Unauthorized</a></td>
+<td>Cabeçalho de autenticação ausente/inválido ou token inválido.</td>
+<td>None</td>
+</tr>
+<tr>
+<td>403</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.3">Forbidden</a></td>
+<td>O token tem escopo incorreto ou uma política de segurança foi violada.</td>
+<td>None</td>
+</tr>
+<tr>
+<td>404</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.4">Not Found</a></td>
+<td>O recurso solicitado não existe ou não foi implementado.</td>
+<td>None</td>
+</tr>
+<tr>
+<td>405</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.5">Method Not Allowed</a></td>
+<td>O consumidor tentou acessar o recurso com um método não suportado.</td>
+<td>None</td>
+</tr>
+<tr>
+<td>406</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.6">Not Acceptable</a></td>
+<td>A solicitação continha um cabeçalho Accept diferente dos tipos de mídia permitidos ou um conjunto de caracteres diferente de UTF-8.</td>
+<td>None</td>
+</tr>
+<tr>
+<td>410</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.9">Gone</a></td>
+<td>Indica que o recurso não está mais disponível.</td>
+<td>None</td>
+</tr>
+<tr>
+<td>422</td>
+<td><a href="https://tools.ietf.org/html/rfc2518#section-10.3">Unprocessable Entity</a></td>
+<td>A solicitação foi bem formada, mas não pôde ser processada devido à lógica de negócios específica da solicitação.</td>
+<td>None</td>
+</tr>
+<tr>
+<td>429</td>
+<td><a href="https://tools.ietf.org/html/rfc6585#section-4">Too Many Requests</a></td>
+<td>A operação foi recusada, pois muitas solicitações foram feitas dentro de um determinado período ou o limite global de requisições concorrentes foi atingido.</td>
+<td>None</td>
+</tr>
+<tr>
+<td>500</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.1">Internal Server Error</a></td>
+<td>Ocorreu um erro no gateway da API ou no microsserviço.</td>
+<td>None</td>
+</tr>
+<tr>
+<td>503</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.4">Service Unavailable</a></td>
+<td>O serviço está indisponível no momento.</td>
+<td>None</td>
+</tr>
+<tr>
+<td>504</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.5">Gateway Time-out</a></td>
+<td>O servidor não pôde responder em tempo hábil.</td>
+<td>None</td>
+</tr>
+</tbody></table>
+
+<aside class="success">
+This operation does not require authentication
+</aside>
+
+<h2 id='apis-diretorio-e-service-desk-identificacao-de-limite-de-cartao-de-credito'>Identificação de limite de cartão de crédito</h2>
+
+<p><a id="opIdgetCreditCardAccountsLimits"></a></p>
+
+<blockquote>
+<p>Exemplo de código</p>
+</blockquote>
+
+<div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">data</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">xhr</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XMLHttpRequest</span><span class="p">();</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">withCredentials</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">readystatechange</span><span class="dl">"</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">readyState</span> <span class="o">===</span> <span class="k">this</span><span class="p">.</span><span class="nx">DONE</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">responseText</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">http://api.banco.com.br/open-banking/credit-card/v1/accounts/limits</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="dl">"</span><span class="s2">Accept</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">application/json</span><span class="dl">"</span><span class="p">);</span>
+
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">http.client</span>
+
+<span class="n">conn</span> <span class="o">=</span> <span class="n">http</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">HTTPConnection</span><span class="p">(</span><span class="s">"api.banco.com.br"</span><span class="p">)</span>
+
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span> <span class="s">'Accept'</span><span class="p">:</span> <span class="s">"application/json"</span> <span class="p">}</span>
+
+<span class="n">conn</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="s">"/open-banking/credit-card/v1/accounts/limits"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+
+<span class="n">res</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">getresponse</span><span class="p">()</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">"utf-8"</span><span class="p">))</span>
+</code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="nc">HttpResponse</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">response</span> <span class="o">=</span> <span class="nc">Unirest</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">"http://api.banco.com.br/open-banking/credit-card/v1/accounts/limits"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"Accept"</span><span class="o">,</span> <span class="s">"application/json"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">asString</span><span class="o">();</span>
+</code></pre></div>
+
+<p><code>GET /credit-card/v1/accounts/limits</code></p>
+
+<table><thead>
+<tr>
+<th style="text-align: left">Versão</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">1</td>
+</tr>
+</tbody></table>
+
+<h3 id='apis-diretorio-e-service-desk-identificacao-de-limite-de-cartao-de-credito-visao-geral'>Visão Geral</h3>
+
+<p>Obtém dados relativos ao limite de cartão de crédito.</p>
+
+<p>Considera-se relacionamento as informações que permitam conhecer desde quando a pessoa consultada é cliente da instituição, bem como um indicador dos produtos e serviços que ela consome atualmente.</p>
+
+<p>Tags: <a href="#glossarioCPF">CPF - Cadastro de Pessoa Física (Cpf Number)</a>, <a href="#glossarioNomeCivil">Nome Civil Completo (Civil Name)</a>, <a href="#glossarioNomeSocial">Nome Social (Social Name)</a>, <a href="#glossarioProcurador">Procurador (Procurator)</a>, <a href="#glossarioRelacionamento">Relacionamento (Financial Relation)</a>, <a href="#glossarioRepresentanteLegal">Representante Legal (Legal Representative)</a>,
+      <a href="#glossarioCNPJ">CNPJ (CNPJ Number)</a>, <a href="#glossarioMarca">Marca (Brand)</a> e <a href="#glossarioInstituicaoFinanceira">Instituição Financeira (Company)</a>.</p>
+
+<h3 id='apis-diretorio-e-service-desk-identificacao-de-limite-de-cartao-de-credito-visao-de-alto-de-nivel-das-estruturas-de-dados'>Visão de alto de nível das estruturas de dados</h3>
+
+<p><img class="lazy" src="images/loading-e35b35a4.gif" data-src="images/tld/customers/TLD_Personal_Customers_Financial_Relation_v2-8b021d26.png"/></p>
+
+<h3 id='apis-diretorio-e-service-desk-identificacao-de-limite-de-cartao-de-credito-der-diagramas-de-entidade-e-relacionamento'>DER - Diagramas de Entidade e Relacionamento</h3>
+
+<ul>
+<li>DER Conceitual</li>
+</ul>
+
+<p><img class="lazy" src="images/loading-e35b35a4.gif" data-src="images/der/customers/DER_PersonalCustomers-b2fa08f8.png"/></p>
+
+<p><a href="images/der/customers/DER_PersonalCustomers-b2fa08f8.png" target="_blank">Fazer download do DER Conceitual</a></p>
+
+<ul>
+<li>DER Lógico</li>
+</ul>
+
+<p><img class="lazy" src="images/loading-e35b35a4.gif" data-src="images/der/customers/DER_Personal_Customers_FinancialRelation-3d57123a.png"/></p>
+
+<p><a href="images/der/customers/DER_Personal_Customers_FinancialRelation-3d57123a.png" target="_blank">Fazer download do DER Lógico</a></p>
+
+<h3 id='apis-diretorio-e-service-desk-identificacao-de-limite-de-cartao-de-credito-dicionario-de-dados'>Dicionário de dados</h3>
+
+<p><a href="dictionary/personal_customers_financial_relation.csv" target="_blank">Fazer download do dicionário de dados</a></p>
+
+<p><a href="dictionary/example/examples_personal_customers_financial_relation.csv" target="_blank">Fazer download dos exemplos</a></p>
+
+<h3 id='apis-diretorio-e-service-desk-identificacao-de-limite-de-cartao-de-credito-especificacao-em-oas-3-0'>Especificação em OAS 3.0</h3>
+
+<p><a href="swagger/swagger_credit_cards_apis.yaml">Download da Especificação (OAS 3.0)</a></p>
+
+<h3 id="identificação-de-limite-de-cartão-de-crédito-parameters">Parâmetros</h3>
+
+<table><thead>
+<tr>
+<th>Nome</th>
+<th>Origem</th>
+<th>Tipo</th>
+<th>Obrigatório</th>
+<th>Descrição</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>page</td>
+<td>query</td>
+<td>integer</td>
+<td>false</td>
+<td>Número da página que está sendo requisitada (o valor da primeira página é 1).</td>
+</tr>
+<tr>
+<td>page-size</td>
+<td>query</td>
+<td>integer</td>
+<td>false</td>
+<td>Quantidade total de registros por páginas.</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>O comando acima retorna uma estrutura json como essa:</p>
+
+<p>200 Response</p>
+</blockquote>
+
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"brand"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"companies"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Organização A"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"cnpjNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00000000000100"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"creditCardAccountsLimits"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"creditCardAccounts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"limits"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"creditCardAccountId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"XXZTR3459087"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"brandName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Organização A"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"companyCnpj"</span><span class="p">:</span><span class="w"> </span><span class="s2">"21128159000166"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"statementCreditCardAccounts"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                  </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"creditLineLimitType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LIMITE_CREDITO_TOTAL"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"consolidationType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CONSOLIDADO"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"lineName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CREDITO_A_VISTA"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"lineNameAdditionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"limitType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"COM_LIMITE"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"balances"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+                  </span><span class="p">}</span><span class="w">
+                </span><span class="p">]</span><span class="w">
+              </span><span class="p">}</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"self"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.banco.com.br/open-banking/&lt;api&gt;/v1/&lt;resource&gt;"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"first"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.banco.com.br/open-banking/&lt;api&gt;/v1/&lt;resource&gt;"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"prev"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"next"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"last"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.banco.com.br/open-banking/&lt;api&gt;/v1/&lt;resource&gt;"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"totalRecords"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"totalPages"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+
+<h3 id="identificação-de-limite-de-cartão-de-crédito-responses">Resposta</h3>
+
+<table><thead>
+<tr>
+<th>Status</th>
+<th>Significado</th>
+<th>Descrição</th>
+<th>Schema</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>200</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.1">OK</a></td>
+<td>Método para obter os dados de identificação de cartão de crédito.</td>
+<td><a href="#schemaresponsecreditcardaccountslimits">ResponseCreditCardAccountsLimits</a></td>
+</tr>
+<tr>
+<td>400</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.1">Bad Request</a></td>
+<td>A requisição foi malformada, omitindo atributos obrigatórios, seja no payload ou através de atributos na URL.</td>
+<td>None</td>
+</tr>
+<tr>
+<td>401</td>
+<td><a href="https://tools.ietf.org/html/rfc7235#section-3.1">Unauthorized</a></td>
+<td>Cabeçalho de autenticação ausente/inválido ou token inválido.</td>
+<td>None</td>
+</tr>
+<tr>
+<td>403</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.3">Forbidden</a></td>
+<td>O token tem escopo incorreto ou uma política de segurança foi violada.</td>
+<td>None</td>
+</tr>
+<tr>
+<td>404</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.4">Not Found</a></td>
+<td>O recurso solicitado não existe ou não foi implementado.</td>
+<td>None</td>
+</tr>
+<tr>
+<td>405</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.5">Method Not Allowed</a></td>
+<td>O consumidor tentou acessar o recurso com um método não suportado.</td>
+<td>None</td>
+</tr>
+<tr>
+<td>406</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.6">Not Acceptable</a></td>
+<td>A solicitação continha um cabeçalho Accept diferente dos tipos de mídia permitidos ou um conjunto de caracteres diferente de UTF-8.</td>
+<td>None</td>
+</tr>
+<tr>
+<td>410</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.9">Gone</a></td>
+<td>Indica que o recurso não está mais disponível.</td>
+<td>None</td>
+</tr>
+<tr>
+<td>422</td>
+<td><a href="https://tools.ietf.org/html/rfc2518#section-10.3">Unprocessable Entity</a></td>
+<td>A solicitação foi bem formada, mas não pôde ser processada devido à lógica de negócios específica da solicitação.</td>
+<td>None</td>
+</tr>
+<tr>
+<td>429</td>
+<td><a href="https://tools.ietf.org/html/rfc6585#section-4">Too Many Requests</a></td>
+<td>A operação foi recusada, pois muitas solicitações foram feitas dentro de um determinado período ou o limite global de requisições concorrentes foi atingido.</td>
+<td>None</td>
+</tr>
+<tr>
+<td>500</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.1">Internal Server Error</a></td>
+<td>Ocorreu um erro no gateway da API ou no microsserviço.</td>
+<td>None</td>
+</tr>
+<tr>
+<td>503</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.4">Service Unavailable</a></td>
+<td>O serviço está indisponível no momento.</td>
+<td>None</td>
+</tr>
+<tr>
+<td>504</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.5">Gateway Time-out</a></td>
+<td>O servidor não pôde responder em tempo hábil.</td>
+<td>None</td>
+</tr>
+</tbody></table>
+
+<aside class="success">
+This operation does not require authentication
+</aside>
+
+<h2 id='apis-diretorio-e-service-desk-transacoes-de-cartao-de-credito'>Transações de cartão de crédito</h2>
+
+<p><a id="opIdgetCreditCardAccountsTransaction"></a></p>
+
+<blockquote>
+<p>Exemplo de código</p>
+</blockquote>
+
+<div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">data</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">xhr</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XMLHttpRequest</span><span class="p">();</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">withCredentials</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">readystatechange</span><span class="dl">"</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">readyState</span> <span class="o">===</span> <span class="k">this</span><span class="p">.</span><span class="nx">DONE</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">responseText</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">http://api.banco.com.br/open-banking/credit-card/v1/accounts/transactions</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="dl">"</span><span class="s2">Accept</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">application/json</span><span class="dl">"</span><span class="p">);</span>
+
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">http.client</span>
+
+<span class="n">conn</span> <span class="o">=</span> <span class="n">http</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">HTTPConnection</span><span class="p">(</span><span class="s">"api.banco.com.br"</span><span class="p">)</span>
+
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span> <span class="s">'Accept'</span><span class="p">:</span> <span class="s">"application/json"</span> <span class="p">}</span>
+
+<span class="n">conn</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="s">"/open-banking/credit-card/v1/accounts/transactions"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+
+<span class="n">res</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">getresponse</span><span class="p">()</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">"utf-8"</span><span class="p">))</span>
+</code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="nc">HttpResponse</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">response</span> <span class="o">=</span> <span class="nc">Unirest</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">"http://api.banco.com.br/open-banking/credit-card/v1/accounts/transactions"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"Accept"</span><span class="o">,</span> <span class="s">"application/json"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">asString</span><span class="o">();</span>
+</code></pre></div>
+
+<p><code>GET /credit-card/v1/accounts/transactions</code></p>
+
+<table><thead>
+<tr>
+<th style="text-align: left">Versão</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">1</td>
+</tr>
+</tbody></table>
+
+<h3 id='apis-diretorio-e-service-desk-transacoes-de-cartao-de-credito-visao-geral'>Visão Geral</h3>
+
+<p>Obtém dados relativos a transações de cartão de crédito.</p>
+
+<p>Considera-se relacionamento as informações que permitam conhecer desde quando a pessoa consultada é cliente da instituição, bem como um indicador dos produtos e serviços que ela consome atualmente.</p>
+
+<p>Tags: <a href="#glossarioCPF">CPF - Cadastro de Pessoa Física (Cpf Number)</a>, <a href="#glossarioNomeCivil">Nome Civil Completo (Civil Name)</a>, <a href="#glossarioNomeSocial">Nome Social (Social Name)</a>, <a href="#glossarioProcurador">Procurador (Procurator)</a>, <a href="#glossarioRelacionamento">Relacionamento (Financial Relation)</a>, <a href="#glossarioRepresentanteLegal">Representante Legal (Legal Representative)</a>,
+      <a href="#glossarioCNPJ">CNPJ (CNPJ Number)</a>, <a href="#glossarioMarca">Marca (Brand)</a> e <a href="#glossarioInstituicaoFinanceira">Instituição Financeira (Company)</a>.</p>
+
+<h3 id='apis-diretorio-e-service-desk-transacoes-de-cartao-de-credito-visao-de-alto-de-nivel-das-estruturas-de-dados'>Visão de alto de nível das estruturas de dados</h3>
+
+<p><img class="lazy" src="images/loading-e35b35a4.gif" data-src="images/tld/customers/TLD_Personal_Customers_Financial_Relation_v2-8b021d26.png"/></p>
+
+<h3 id='apis-diretorio-e-service-desk-transacoes-de-cartao-de-credito-der-diagramas-de-entidade-e-relacionamento'>DER - Diagramas de Entidade e Relacionamento</h3>
+
+<ul>
+<li>DER Conceitual</li>
+</ul>
+
+<p><img class="lazy" src="images/loading-e35b35a4.gif" data-src="images/der/customers/DER_PersonalCustomers-b2fa08f8.png"/></p>
+
+<p><a href="images/der/customers/DER_PersonalCustomers-b2fa08f8.png" target="_blank">Fazer download do DER Conceitual</a></p>
+
+<ul>
+<li>DER Lógico</li>
+</ul>
+
+<p><img class="lazy" src="images/loading-e35b35a4.gif" data-src="images/der/customers/DER_Personal_Customers_FinancialRelation-3d57123a.png"/></p>
+
+<p><a href="images/der/customers/DER_Personal_Customers_FinancialRelation-3d57123a.png" target="_blank">Fazer download do DER Lógico</a></p>
+
+<h3 id='apis-diretorio-e-service-desk-transacoes-de-cartao-de-credito-dicionario-de-dados'>Dicionário de dados</h3>
+
+<p><a href="dictionary/personal_customers_financial_relation.csv" target="_blank">Fazer download do dicionário de dados</a></p>
+
+<p><a href="dictionary/example/examples_personal_customers_financial_relation.csv" target="_blank">Fazer download dos exemplos</a></p>
+
+<h3 id='apis-diretorio-e-service-desk-transacoes-de-cartao-de-credito-especificacao-em-oas-3-0'>Especificação em OAS 3.0</h3>
+
+<p><a href="swagger/swagger_credit_cards_apis.yaml">Download da Especificação (OAS 3.0)</a></p>
+
+<h3 id="transações-de-cartão-de-crédito-parameters">Parâmetros</h3>
+
+<table><thead>
+<tr>
+<th>Nome</th>
+<th>Origem</th>
+<th>Tipo</th>
+<th>Obrigatório</th>
+<th>Descrição</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>page</td>
+<td>query</td>
+<td>integer</td>
+<td>false</td>
+<td>Número da página que está sendo requisitada (o valor da primeira página é 1).</td>
+</tr>
+<tr>
+<td>page-size</td>
+<td>query</td>
+<td>integer</td>
+<td>false</td>
+<td>Quantidade total de registros por páginas.</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>O comando acima retorna uma estrutura json como essa:</p>
+
+<p>200 Response</p>
+</blockquote>
+
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"brand"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"companies"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Organização A"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"cnpjNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00000000000100"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"creditCardAccountsLimits"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"limits"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"updateDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"statementCreditCardAccounts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"creditDebitIndicator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CREDITO"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CASHBACK"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"typeAdditionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"fee"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ANUIDADE"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"installmentIdentificator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"billIdentificator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"quantityInstallment"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"transactionIdentication"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"otherCredits"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                  </span><span class="nl">"otherCreditsType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CREDITO_ROTATIVO"</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"otherCreditsAdditionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="nl">"balances"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"VALOR_TRANSACAO_BRASIL"</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100.87"</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"transactionDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-30'"</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"postBillDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-30'"</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"payeeMCC"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8299'"</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"payeeAdditionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MIYQZ86345'"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+              </span><span class="p">}</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"self"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.banco.com.br/open-banking/&lt;api&gt;/v1/&lt;resource&gt;"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"first"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.banco.com.br/open-banking/&lt;api&gt;/v1/&lt;resource&gt;"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"prev"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"next"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"last"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.banco.com.br/open-banking/&lt;api&gt;/v1/&lt;resource&gt;"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"totalRecords"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"totalPages"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+
+<h3 id="transações-de-cartão-de-crédito-responses">Resposta</h3>
+
+<table><thead>
+<tr>
+<th>Status</th>
+<th>Significado</th>
+<th>Descrição</th>
+<th>Schema</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>200</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.1">OK</a></td>
+<td>Método para obter os dados de identificação de cartão de crédito.</td>
+<td><a href="#schemaresponsecreditcardaccountstransactions">ResponseCreditCardAccountsTransactions</a></td>
+</tr>
+<tr>
+<td>400</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.1">Bad Request</a></td>
+<td>A requisição foi malformada, omitindo atributos obrigatórios, seja no payload ou através de atributos na URL.</td>
+<td>None</td>
+</tr>
+<tr>
+<td>401</td>
+<td><a href="https://tools.ietf.org/html/rfc7235#section-3.1">Unauthorized</a></td>
+<td>Cabeçalho de autenticação ausente/inválido ou token inválido.</td>
+<td>None</td>
+</tr>
+<tr>
+<td>403</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.3">Forbidden</a></td>
+<td>O token tem escopo incorreto ou uma política de segurança foi violada.</td>
+<td>None</td>
+</tr>
+<tr>
+<td>404</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.4">Not Found</a></td>
+<td>O recurso solicitado não existe ou não foi implementado.</td>
+<td>None</td>
+</tr>
+<tr>
+<td>405</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.5">Method Not Allowed</a></td>
+<td>O consumidor tentou acessar o recurso com um método não suportado.</td>
+<td>None</td>
+</tr>
+<tr>
+<td>406</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.6">Not Acceptable</a></td>
+<td>A solicitação continha um cabeçalho Accept diferente dos tipos de mídia permitidos ou um conjunto de caracteres diferente de UTF-8.</td>
+<td>None</td>
+</tr>
+<tr>
+<td>410</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.9">Gone</a></td>
+<td>Indica que o recurso não está mais disponível.</td>
+<td>None</td>
+</tr>
+<tr>
+<td>422</td>
+<td><a href="https://tools.ietf.org/html/rfc2518#section-10.3">Unprocessable Entity</a></td>
+<td>A solicitação foi bem formada, mas não pôde ser processada devido à lógica de negócios específica da solicitação.</td>
+<td>None</td>
+</tr>
+<tr>
+<td>429</td>
+<td><a href="https://tools.ietf.org/html/rfc6585#section-4">Too Many Requests</a></td>
+<td>A operação foi recusada, pois muitas solicitações foram feitas dentro de um determinado período ou o limite global de requisições concorrentes foi atingido.</td>
+<td>None</td>
+</tr>
+<tr>
+<td>500</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.1">Internal Server Error</a></td>
+<td>Ocorreu um erro no gateway da API ou no microsserviço.</td>
+<td>None</td>
+</tr>
+<tr>
+<td>503</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.4">Service Unavailable</a></td>
+<td>O serviço está indisponível no momento.</td>
+<td>None</td>
+</tr>
+<tr>
+<td>504</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.5">Gateway Time-out</a></td>
+<td>O servidor não pôde responder em tempo hábil.</td>
+<td>None</td>
+</tr>
+</tbody></table>
+
+<aside class="success">
+This operation does not require authentication
+</aside>
+
 <h1 id="apis-do-open-banking-brasil-api-contas">API - Contas</h1>
 
 <h2 id='apis-diretorio-e-service-desk-identificacao-da-conta'>Identificação da Conta</h2>
@@ -14804,18 +15630,18 @@ This operation does not require authentication
 <a id="tocsaccountslimits"></a></p>
 
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"creditCardAccountId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"XXZTR3459087"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"updateDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"brandName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Organização A"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"companyCnpj"</span><span class="p">:</span><span class="w"> </span><span class="s2">"21128159000166"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"statementCreditCardAccounts"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"creditLimitsLinesIndicator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LIMITE_CREDITO_TOTAL"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"consildationIndicator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CONSOLIDADO"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"limitIndicator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"COM_LIMITE"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"nameLine"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"nameLine"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CREDITO_A_VISTA"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"additionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
-      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"creditLineLimitType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LIMITE_CREDITO_TOTAL"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"consolidationType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CONSOLIDADO"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"lineName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CREDITO_A_VISTA"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"lineNameAdditionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"limitType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"COM_LIMITE"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"balances"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
           </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"VALOR_TOTAL"</span><span class="p">,</span><span class="w">
@@ -14841,16 +15667,28 @@ This operation does not require authentication
 </tr>
 </thead><tbody>
 <tr>
+<td>creditCardAccountId</td>
+<td>string</td>
+<td>true</td>
+<td>Identificador para conta pagamento pós-paga é o creditCardAccountId, chave artificial que permite identificar a conta pagamento pós-paga especifica.</td>
+</tr>
+<tr>
 <td>requestDateTime</td>
 <td>string</td>
 <td>true</td>
 <td>Data e hora da consulta, conforme especificação RFC-3339, formato UTC.</td>
 </tr>
 <tr>
-<td>updateDateTime</td>
+<td>brandName</td>
 <td>string</td>
 <td>true</td>
-<td>Data e hora da atualização do bloco de Relacionamento, conforme especificação RFC-3339, formato UTC.</td>
+<td>Nome da Marca reportada pelo participante do Open Banking. O conceito a que se refere a &#39;marca&#39; é em essência uma promessa da empresa em fornecer uma série específica de atributos, benefícios e serviços uniformes aos clientes.</td>
+</tr>
+<tr>
+<td>companyCnpj</td>
+<td>string</td>
+<td>true</td>
+<td>Número completo do CNPJ da instituição responsável pelo Cadastro - o CNPJ corresponde ao número de inscrição no Cadastro de Pessoa Jurídica. Deve-se ter apenas os números do CNPJ, sem máscara.</td>
 </tr>
 <tr>
 <td>currency</td>
@@ -14861,7 +15699,7 @@ This operation does not require authentication
 <tr>
 <td>statementCreditCardAccounts</td>
 <td>[<a href="#schemacreditcardaccountsstatement">CreditCardAccountsStatement</a>]</td>
-<td>false</td>
+<td>true</td>
 <td>[Lista dos lançamentos referentes aos limites relativos à conta de  pagamento pós-paga]</td>
 </tr>
 </tbody></table>
@@ -22205,18 +23043,18 @@ This operation does not require authentication
       </span><span class="nl">"creditCardAccountsLimits"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="nl">"creditCardAccounts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
           </span><span class="nl">"limits"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"creditCardAccountId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"XXZTR3459087"</span><span class="p">,</span><span class="w">
             </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"updateDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"brandName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Organização A"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"companyCnpj"</span><span class="p">:</span><span class="w"> </span><span class="s2">"21128159000166"</span><span class="p">,</span><span class="w">
             </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="p">,</span><span class="w">
             </span><span class="nl">"statementCreditCardAccounts"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
               </span><span class="p">{</span><span class="w">
-                </span><span class="nl">"creditLimitsLinesIndicator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LIMITE_CREDITO_TOTAL"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"consildationIndicator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CONSOLIDADO"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"limitIndicator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"COM_LIMITE"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"nameLine"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                  </span><span class="nl">"nameLine"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CREDITO_A_VISTA"</span><span class="p">,</span><span class="w">
-                  </span><span class="nl">"additionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
-                </span><span class="p">},</span><span class="w">
+                </span><span class="nl">"creditLineLimitType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LIMITE_CREDITO_TOTAL"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"consolidationType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CONSOLIDADO"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"lineName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CREDITO_A_VISTA"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"lineNameAdditionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"limitType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"COM_LIMITE"</span><span class="p">,</span><span class="w">
                 </span><span class="nl">"balances"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
                   </span><span class="p">{</span><span class="w">
                     </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"VALOR_TOTAL"</span><span class="p">,</span><span class="w">
@@ -22282,18 +23120,18 @@ This operation does not require authentication
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"creditCardAccounts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"limits"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"creditCardAccountId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"XXZTR3459087"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"updateDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"brandName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Organização A"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"companyCnpj"</span><span class="p">:</span><span class="w"> </span><span class="s2">"21128159000166"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"statementCreditCardAccounts"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"creditLimitsLinesIndicator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LIMITE_CREDITO_TOTAL"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"consildationIndicator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CONSOLIDADO"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"limitIndicator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"COM_LIMITE"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"nameLine"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"nameLine"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CREDITO_A_VISTA"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"additionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
-          </span><span class="p">},</span><span class="w">
+          </span><span class="nl">"creditLineLimitType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LIMITE_CREDITO_TOTAL"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"consolidationType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CONSOLIDADO"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"lineName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CREDITO_A_VISTA"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"lineNameAdditionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"limitType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"COM_LIMITE"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"balances"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
             </span><span class="p">{</span><span class="w">
               </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"VALOR_TOTAL"</span><span class="p">,</span><span class="w">
@@ -22421,13 +23259,11 @@ This operation does not require authentication
 <a id="tocScreditcardaccountsstatement"></a>
 <a id="tocscreditcardaccountsstatement"></a></p>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"creditLimitsLinesIndicator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LIMITE_CREDITO_TOTAL"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"consildationIndicator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CONSOLIDADO"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"limitIndicator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"COM_LIMITE"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"nameLine"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"nameLine"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CREDITO_A_VISTA"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"additionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
-  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"creditLineLimitType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LIMITE_CREDITO_TOTAL"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"consolidationType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CONSOLIDADO"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"lineName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CREDITO_A_VISTA"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"lineNameAdditionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"limitType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"COM_LIMITE"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"balances"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"VALOR_TOTAL"</span><span class="p">,</span><span class="w">
@@ -22451,56 +23287,78 @@ This operation does not require authentication
 </tr>
 </thead><tbody>
 <tr>
-<td>creditLimitsLinesIndicator</td>
-<td><a href="#schemaenumcreditcardaccountslimitslinesindicator">EnumCreditCardAccountsLimitsLinesIndicator</a></td>
+<td>creditLineLimitType</td>
+<td><a href="#schemaenumcreditcardaccountslinelimittype">EnumCreditCardAccountsLineLimitType</a></td>
 <td>true</td>
 <td>Indicador do tipo de limite</td>
 </tr>
 <tr>
-<td>consildationIndicator</td>
-<td><a href="#schemaenumcreditcardaccountsconsolidationindicator">EnumCreditCardAccountsConsolidationIndicator</a></td>
-<td>false</td>
+<td>consolidationType</td>
+<td><a href="#schemaenumcreditcardaccountsconsolidationtype">EnumCreditCardAccountsConsolidationType</a></td>
+<td>true</td>
 <td>Indicador que permite informar se o valor do limite é consolidado ou individual.</td>
 </tr>
 <tr>
-<td>limitIndicator</td>
-<td><a href="#schemaenumcreditcardaccountslimitindicator">EnumCreditCardAccountsLimitIndicator</a></td>
-<td>false</td>
-<td>Indicador que permite informar se a operação de crédito é com limite ou com limite flexível</td>
-</tr>
-<tr>
-<td>nameLine</td>
-<td>object</td>
-<td>false</td>
-<td></td>
-</tr>
-<tr>
-<td>» nameLine</td>
-<td><a href="#schemaenumcreditcardaccountsnameline">EnumCreditCardAccountsNameLine</a></td>
+<td>lineName</td>
+<td><a href="#schemaenumcreditcardaccountslinename">EnumCreditCardAccountsLineName</a></td>
 <td>false</td>
 <td>Modalidade de operação - Lista de   Modalidades de Operação relacionadas às Contas de Pagamento Pós-Pagas</td>
 </tr>
 <tr>
-<td>» additionalInfo</td>
+<td>lineNameAdditionalInfo</td>
 <td>string</td>
 <td>false</td>
 <td>Campo de preenchimento obrigatório se selecionada a opção &#39;OUTRAS&#39; em nameLine</td>
 </tr>
 <tr>
+<td>limitType</td>
+<td><a href="#schemaenumcreditcardaccountslimittype">EnumCreditCardAccountsLimitType</a></td>
+<td>false</td>
+<td>Indicador que permite informar se a operação de crédito é com limite ou com limite flexível</td>
+</tr>
+<tr>
 <td>balances</td>
-<td>[object]</td>
+<td>[<a href="#schemacreditcardaccountsstatementbalance">CreditCardAccountsStatementBalance</a>]</td>
 <td>true</td>
 <td>Lista que traz os valores relativos aos saldos do Limite de crédito total da conta de pagamento pós-paga</td>
 </tr>
+</tbody></table>
+
+<h2 id="tocS_CreditCardAccountsStatementBalance">CreditCardAccountsStatementBalance</h2>
+
+<p><a id="schemacreditcardaccountsstatementbalance"></a>
+<a id="schema_CreditCardAccountsStatementBalance"></a>
+<a id="tocScreditcardaccountsstatementbalance"></a>
+<a id="tocscreditcardaccountsstatementbalance"></a></p>
+
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"VALOR_TOTAL"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre></div>
+
+<p>Lista que traz os valores relativos aos saldos do Limite de crédito total da conta de pagamento pós-pa</p>
+
+<h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
+
+<table><thead>
 <tr>
-<td>» type</td>
+<th>Nome</th>
+<th>Tipo</th>
+<th>Obrigatório</th>
+<th>Descrição</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>type</td>
 <td>string</td>
 <td>true</td>
 <td>Traz os tipos dos valores relativos aos saldos  do Limite de crédito total da conta de pagamento pós-paga.</td>
 </tr>
 <tr>
-<td>» amount</td>
-<td>string¦null</td>
+<td>amount</td>
+<td>string</td>
 <td>true</td>
 <td>Valor do limite de crédito informado (total ou por modalidade), relativo ao tipo selecionado. Expresso em valor monetário com 2 casas decimais</td>
 </tr>
@@ -22730,27 +23588,26 @@ This operation does not require authentication
 <a id="tocscreditcardsaccountidentification"></a></p>
 
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"creditCardAccounts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="nl">"identification"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"creditCardAccountId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"XXZTR3459087"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"updateDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cartão Universitário Bem-Vindo"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CLASSIC_NACIONAL"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"additionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"network"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"network"</span><span class="p">:</span><span class="w"> </span><span class="s2">"VISA"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"additionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"brandName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Organização A"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cartão Universitário"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"companyCnpj"</span><span class="p">:</span><span class="w"> </span><span class="s2">"21128159000166"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"productType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CLASSIC_NACIONAL"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"productAdditionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"creditCardNetwork"</span><span class="p">:</span><span class="w"> </span><span class="s2">"VISA"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"networkAdditionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"paymentMethod"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"isCreditDebit"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PRINCIPAL"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"apresentation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"VIRTUAL"</span><span class="w">
+      </span><span class="nl">"identificationNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4453"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"isMultipleCreditCard"</span><span class="p">:</span><span class="w"> </span><span class="s2">"true"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
 </span></code></pre></div>
 
-<p>Conjunto de informações referentes à identificação da conta de pagamento pós-paga</p>
+<p>Conjunto de informações referentes à identificação da conta de pagamento pós-paga.</p>
 
 <h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
 
@@ -22763,10 +23620,16 @@ This operation does not require authentication
 </tr>
 </thead><tbody>
 <tr>
-<td>creditCardAccounts</td>
+<td>identification</td>
 <td>object</td>
 <td>true</td>
 <td>Conjunto de informações de conta de pagamento pós-paga</td>
+</tr>
+<tr>
+<td>» creditCardAccountId</td>
+<td>string</td>
+<td>true</td>
+<td>Identificador para conta pagamento pós-paga é o creditCardAccountId, chave artificial que permite identificar a conta pagamento pós-paga especifica.</td>
 </tr>
 <tr>
 <td>» requestDateTime</td>
@@ -22775,46 +23638,46 @@ This operation does not require authentication
 <td>Data e hora da consulta, conforme especificação RFC-3339, formato UTC.</td>
 </tr>
 <tr>
-<td>» updateDateTime</td>
+<td>» brandName</td>
 <td>string</td>
 <td>true</td>
-<td>Data e hora da atualização do bloco de Relacionamento, conforme especificação RFC-3339, formato UTC.</td>
+<td>Nome da Marca reportada pelo participante do Open Banking. O conceito a que se refere a &#39;marca&#39; é em essência uma promessa da empresa em fornecer uma série específica de atributos, benefícios e serviços uniformes aos clientes.</td>
 </tr>
 <tr>
 <td>» name</td>
 <td>string</td>
 <td>true</td>
-<td>Denominação/Identificação do nome da conta de pagamento pós-paga (cartão). Conforme CIRCULAR Nº 3.680,BCB, 2013: &#39;conta de pagamento pós-paga: destinada à execução de transações de pagamento que independem do aporte prévio de recursos&#39;</td>
+<td>Denominação/Identificação do nome da conta de pagamento pós-paga (cartão). Conforme CIRCULAR Nº 3.680,BCB, 2013: &#39;conta de pagamento pós-paga: destinada à execução de transações de pagamento que independem do aporte prévio de recursos&#39;.</td>
 </tr>
 <tr>
-<td>» type</td>
-<td><a href="#schemaenumcreditcardaccountstype">EnumCreditCardAccountsType</a></td>
+<td>» companyCnpj</td>
+<td>string</td>
+<td>true</td>
+<td>Número completo do CNPJ da instituição responsável pelo Cadastro - o CNPJ corresponde ao número de inscrição no Cadastro de Pessoa Jurídica. Deve-se ter apenas os números do CNPJ, sem máscara.</td>
+</tr>
+<tr>
+<td>» productType</td>
+<td><a href="#schemaenumcreditcardaccountsproducttype">EnumCreditCardAccountsProductType</a></td>
 <td>true</td>
 <td>Categoria atribuída a um cartão de pagamento, sob uma certa denominação, que lhe agrega um conjunto de vantagens, diferenciando-o de acordo com o perfil do portador.</td>
 </tr>
 <tr>
-<td>» additionalInfo</td>
+<td>» productAdditionalInfo</td>
 <td>string</td>
 <td>false</td>
-<td>Texto livre para especificar categoria de bandeira marcada como &#39;OUTRAS&#39;</td>
+<td>Texto livre para especificar categoria de bandeira marcada como &#39;OUTRAS&#39;.</td>
 </tr>
 <tr>
-<td>» network</td>
-<td>object</td>
-<td>true</td>
-<td></td>
-</tr>
-<tr>
-<td>»» network</td>
+<td>» creditCardNetwork</td>
 <td><a href="#schemaenumcreditcardaccountnetwork">EnumCreditCardAccountNetwork</a></td>
-<td>false</td>
+<td>true</td>
 <td>Categoria de Bandeiras de Cartões de Crédito (Instituidor do arranjo de pagamento).<br>Bandeira é a detentora de todos os direitos e deveres da utilização da marca estampada no cartão, inclusive as bandeiras pertencentes aos emissores.</td>
 </tr>
 <tr>
-<td>»» additionalInfo</td>
+<td>» networkAdditionalInfo</td>
 <td>string</td>
 <td>false</td>
-<td>Texto livre para especificar categoria de bandeira marcada como &#39;OUTRAS&#39;</td>
+<td>Texto livre para especificar categoria de bandeira marcada como &#39;OUTRAS&#39;.</td>
 </tr>
 <tr>
 <td>» paymentMethod</td>
@@ -22832,9 +23695,8 @@ This operation does not require authentication
 <a id="tocscreditcardsaccountpaymentmethod"></a></p>
 
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"isCreditDebit"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PRINCIPAL"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"apresentation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"VIRTUAL"</span><span class="w">
+  </span><span class="nl">"identificationNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4453"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"isMultipleCreditCard"</span><span class="p">:</span><span class="w"> </span><span class="s2">"true"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
 </span></code></pre></div>
@@ -22852,22 +23714,16 @@ This operation does not require authentication
 </tr>
 </thead><tbody>
 <tr>
-<td>isCreditDebit</td>
+<td>identificationNumber</td>
+<td>number</td>
+<td>true</td>
+<td>Número de identificação do cartão:  corresponde aos 4 últimos dígitos</td>
+</tr>
+<tr>
+<td>isMultipleCreditCard</td>
 <td>boolean</td>
 <td>true</td>
-<td>Indicador da conta de Pagamento pós paga ser Múltipla. &quot;Cartões  denominados múltiplos possuem tanto a função crédito quanto a débito, devendo o proprietário do cartão, no momento de sua utilização, informar se o pagamento é na função crédito (que leva a um pagamento futuro, por meio de uma fatura do cartão de crédito) ou na função débito&quot;.<br>Fonte: Tipos de cartão - Banco Central do Brasilwww.bcb.gov.br › port ›folder_serie_I_tipos_de_<br>cartao</td>
-</tr>
-<tr>
-<td>type</td>
-<td><a href="#schemaenumcreditcardaccountpaymentmethodtype">EnumCreditCardAccountPaymentMethodType</a></td>
-<td>true</td>
-<td>Enumera os tipos de cartão (conta de pagamento pós-paga)</td>
-</tr>
-<tr>
-<td>apresentation</td>
-<td><a href="#schemaenumcreditcardaccountpaymentmethodapresentation">EnumCreditCardAccountPaymentMethodApresentation</a></td>
-<td>true</td>
-<td>Enumera as formas de disponibilização do cartão (conta de pagamento pós-paga)</td>
+<td>Informa se a conta de Pagamento pós paga é Múltipla. &quot;Cartões  denominados múltiplos possuem tanto a função crédito quanto a débito, devendo o proprietário do cartão, no momento de sua utilização, informar se o pagamento é na função crédito (que leva a um pagamento futuro, por meio de uma fatura do cartão de crédito) ou na função débito&quot;.<br>Fonte: Tipos de cartão - Banco Central do Brasilwww.bcb.gov.br › port ›folder_serie_I_tipos_de_<br>cartao</td>
 </tr>
 </tbody></table>
 
@@ -26107,12 +26963,12 @@ Bandeira é a detentora de todos os direitos e deveres da utilização da marca 
 </tr>
 </tbody></table>
 
-<h2 id="tocS_EnumCreditCardAccountsConsolidationIndicator">EnumCreditCardAccountsConsolidationIndicator</h2>
+<h2 id="tocS_EnumCreditCardAccountsConsolidationType">EnumCreditCardAccountsConsolidationType</h2>
 
-<p><a id="schemaenumcreditcardaccountsconsolidationindicator"></a>
-<a id="schema_EnumCreditCardAccountsConsolidationIndicator"></a>
-<a id="tocSenumcreditcardaccountsconsolidationindicator"></a>
-<a id="tocsenumcreditcardaccountsconsolidationindicator"></a></p>
+<p><a id="schemaenumcreditcardaccountsconsolidationtype"></a>
+<a id="schema_EnumCreditCardAccountsConsolidationType"></a>
+<a id="tocSenumcreditcardaccountsconsolidationtype"></a>
+<a id="tocsenumcreditcardaccountsconsolidationtype"></a></p>
 
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="s2">"CONSOLIDADO"</span><span class="w">
 
@@ -26156,12 +27012,12 @@ Bandeira é a detentora de todos os direitos e deveres da utilização da marca 
 </tr>
 </tbody></table>
 
-<h2 id="tocS_EnumCreditCardAccountsLimitIndicator">EnumCreditCardAccountsLimitIndicator</h2>
+<h2 id="tocS_EnumCreditCardAccountsLimitType">EnumCreditCardAccountsLimitType</h2>
 
-<p><a id="schemaenumcreditcardaccountslimitindicator"></a>
-<a id="schema_EnumCreditCardAccountsLimitIndicator"></a>
-<a id="tocSenumcreditcardaccountslimitindicator"></a>
-<a id="tocsenumcreditcardaccountslimitindicator"></a></p>
+<p><a id="schemaenumcreditcardaccountslimittype"></a>
+<a id="schema_EnumCreditCardAccountsLimitType"></a>
+<a id="tocSenumcreditcardaccountslimittype"></a>
+<a id="tocsenumcreditcardaccountslimittype"></a></p>
 
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="s2">"COM_LIMITE"</span><span class="w">
 
@@ -26205,12 +27061,12 @@ Bandeira é a detentora de todos os direitos e deveres da utilização da marca 
 </tr>
 </tbody></table>
 
-<h2 id="tocS_EnumCreditCardAccountsLimitsLinesIndicator">EnumCreditCardAccountsLimitsLinesIndicator</h2>
+<h2 id="tocS_EnumCreditCardAccountsLineLimitType">EnumCreditCardAccountsLineLimitType</h2>
 
-<p><a id="schemaenumcreditcardaccountslimitslinesindicator"></a>
-<a id="schema_EnumCreditCardAccountsLimitsLinesIndicator"></a>
-<a id="tocSenumcreditcardaccountslimitslinesindicator"></a>
-<a id="tocsenumcreditcardaccountslimitslinesindicator"></a></p>
+<p><a id="schemaenumcreditcardaccountslinelimittype"></a>
+<a id="schema_EnumCreditCardAccountsLineLimitType"></a>
+<a id="tocSenumcreditcardaccountslinelimittype"></a>
+<a id="tocsenumcreditcardaccountslinelimittype"></a></p>
 
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="s2">"LIMITE_CREDITO_TOTAL"</span><span class="w">
 
@@ -26254,12 +27110,12 @@ Bandeira é a detentora de todos os direitos e deveres da utilização da marca 
 </tr>
 </tbody></table>
 
-<h2 id="tocS_EnumCreditCardAccountsNameLine">EnumCreditCardAccountsNameLine</h2>
+<h2 id="tocS_EnumCreditCardAccountsLineName">EnumCreditCardAccountsLineName</h2>
 
-<p><a id="schemaenumcreditcardaccountsnameline"></a>
-<a id="schema_EnumCreditCardAccountsNameLine"></a>
-<a id="tocSenumcreditcardaccountsnameline"></a>
-<a id="tocsenumcreditcardaccountsnameline"></a></p>
+<p><a id="schemaenumcreditcardaccountslinename"></a>
+<a id="schema_EnumCreditCardAccountsLineName"></a>
+<a id="tocSenumcreditcardaccountslinename"></a>
+<a id="tocsenumcreditcardaccountslinename"></a></p>
 
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="s2">"CREDITO_A_VISTA"</span><span class="w">
 
@@ -26372,12 +27228,12 @@ Bandeira é a detentora de todos os direitos e deveres da utilização da marca 
 </tr>
 </tbody></table>
 
-<h2 id="tocS_EnumCreditCardAccountsType">EnumCreditCardAccountsType</h2>
+<h2 id="tocS_EnumCreditCardAccountsProductType">EnumCreditCardAccountsProductType</h2>
 
-<p><a id="schemaenumcreditcardaccountstype"></a>
-<a id="schema_EnumCreditCardAccountsType"></a>
-<a id="tocSenumcreditcardaccountstype"></a>
-<a id="tocsenumcreditcardaccountstype"></a></p>
+<p><a id="schemaenumcreditcardaccountsproducttype"></a>
+<a id="schema_EnumCreditCardAccountsProductType"></a>
+<a id="tocSenumcreditcardaccountsproducttype"></a>
+<a id="tocsenumcreditcardaccountsproducttype"></a></p>
 
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="s2">"CLASSIC_NACIONAL"</span><span class="w">
 
@@ -38536,6 +39392,119 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
 </tr>
 </tbody></table>
 
+<h2 id="tocS_ResponseCreditCardAccountsIdentification">ResponseCreditCardAccountsIdentification</h2>
+
+<p><a id="schemaresponsecreditcardaccountsidentification"></a>
+<a id="schema_ResponseCreditCardAccountsIdentification"></a>
+<a id="tocSresponsecreditcardaccountsidentification"></a>
+<a id="tocsresponsecreditcardaccountsidentification"></a></p>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"brand"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"companies"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Organização A"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"cnpjNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00000000000100"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"creditCardAccountsLimits"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"identification"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"creditCardAccountId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"XXZTR3459087"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"brandName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Organização A"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cartão Universitário"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"companyCnpj"</span><span class="p">:</span><span class="w"> </span><span class="s2">"21128159000166"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"productType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CLASSIC_NACIONAL"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"productAdditionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"creditCardNetwork"</span><span class="p">:</span><span class="w"> </span><span class="s2">"VISA"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"networkAdditionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"paymentMethod"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"identificationNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4453"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"isMultipleCreditCard"</span><span class="p">:</span><span class="w"> </span><span class="s2">"true"</span><span class="w">
+              </span><span class="p">}</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"self"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.banco.com.br/open-banking/&lt;api&gt;/v1/&lt;resource&gt;"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"first"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.banco.com.br/open-banking/&lt;api&gt;/v1/&lt;resource&gt;"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"prev"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"next"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"last"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.banco.com.br/open-banking/&lt;api&gt;/v1/&lt;resource&gt;"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"totalRecords"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"totalPages"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
+<table><thead>
+<tr>
+<th>Nome</th>
+<th>Tipo</th>
+<th>Obrigatório</th>
+<th>Descrição</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>data</td>
+<td>object</td>
+<td>true</td>
+<td></td>
+</tr>
+<tr>
+<td>» brand</td>
+<td>object</td>
+<td>true</td>
+<td></td>
+</tr>
+<tr>
+<td>»» name</td>
+<td>string</td>
+<td>true</td>
+<td>Nome da Marca reportada pelo participante do Open Banking. O conceito a que se refere a &#39;marca&#39; é em essência uma promessa da empresa em fornecer uma série específica de atributos, benefícios e serviços uniformes aos clientes</td>
+</tr>
+<tr>
+<td>»» companies</td>
+<td>[object]</td>
+<td>true</td>
+<td>Companies traz uma lista de todas as instituições da Marca</td>
+</tr>
+<tr>
+<td>»»» name</td>
+<td>string</td>
+<td>true</td>
+<td>Nome da marca selecionada pela Organização</td>
+</tr>
+<tr>
+<td>»»» cnpjNumber</td>
+<td>string</td>
+<td>true</td>
+<td>Número completo do CNPJ da instituição responsável pelo Cadastro - o CNPJ corresponde ao número de inscrição no Cadastro de Pessoa Jurídica.</td>
+</tr>
+<tr>
+<td>»»» creditCardAccountsLimits</td>
+<td><a href="#schemacreditcardsaccountidentification">CreditCardsAccountIdentification</a></td>
+<td>true</td>
+<td>Conjunto de informações referentes à identificação da conta de pagamento pós-paga.</td>
+</tr>
+<tr>
+<td>links</td>
+<td><a href="#schemalinks">Links</a></td>
+<td>true</td>
+<td>Referências para outros recusos da API requisitada.</td>
+</tr>
+<tr>
+<td>meta</td>
+<td><a href="#schemameta">Meta</a></td>
+<td>true</td>
+<td>Meta informações referente a API requisitada.</td>
+</tr>
+</tbody></table>
+
 <h2 id="tocS_ResponseCreditCardAccountsLimits">ResponseCreditCardAccountsLimits</h2>
 
 <p><a id="schemaresponsecreditcardaccountslimits"></a>
@@ -38553,15 +39522,18 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
           </span><span class="nl">"creditCardAccountsLimits"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
             </span><span class="nl">"creditCardAccounts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
               </span><span class="nl">"limits"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"creditCardAccountId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"XXZTR3459087"</span><span class="p">,</span><span class="w">
                 </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"updateDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"brandName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Organização A"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"companyCnpj"</span><span class="p">:</span><span class="w"> </span><span class="s2">"21128159000166"</span><span class="p">,</span><span class="w">
                 </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="p">,</span><span class="w">
                 </span><span class="nl">"statementCreditCardAccounts"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
                   </span><span class="p">{</span><span class="w">
-                    </span><span class="nl">"creditLimitsLinesIndicator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LIMITE_CREDITO_TOTAL"</span><span class="p">,</span><span class="w">
-                    </span><span class="nl">"consildationIndicator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CONSOLIDADO"</span><span class="p">,</span><span class="w">
-                    </span><span class="nl">"limitIndicator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"COM_LIMITE"</span><span class="p">,</span><span class="w">
-                    </span><span class="nl">"nameLine"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+                    </span><span class="nl">"creditLineLimitType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LIMITE_CREDITO_TOTAL"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"consolidationType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CONSOLIDADO"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"lineName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CREDITO_A_VISTA"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"lineNameAdditionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"limitType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"COM_LIMITE"</span><span class="p">,</span><span class="w">
                     </span><span class="nl">"balances"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
                   </span><span class="p">}</span><span class="w">
                 </span><span class="p">]</span><span class="w">
