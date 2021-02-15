@@ -2466,29 +2466,30 @@ components:
         creditCardAccountId:
           type: string
           description: 'Identificador para conta pagamento pós-paga é o creditCardAccountId, chave artificial que permite identificar a conta pagamento pós-paga especifica.'
-          maxLenght: 40
+          maxLength: 40
           example: XXZTR3459087
         requestDateTime:
           type: string
           pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])T(?:[01]\d|2[0123]):(?:[012345]\d):(?:[012345]\d)Z$'
           description: 'Data e hora da consulta, conforme especificação RFC-3339, formato UTC.'
-          maxLenght: 20
+          maxLength: 20
           example: '2020-07-21T08:30:00Z'
         brandName:
           type: string
           pattern: \w*\W*
           description: 'Nome da Marca reportada pelo participante do Open Banking. O conceito a que se refere a ''marca'' é em essência uma promessa da empresa em fornecer uma série específica de atributos, benefícios e serviços uniformes aos clientes.'
-          maxLenght: 80
+          maxLength: 80
           example: Organização A
         companyCnpj:
           type: string
           pattern: '\d{14}|^NA$'
           description: 'Número completo do CNPJ da instituição responsável pelo Cadastro - o CNPJ corresponde ao número de inscrição no Cadastro de Pessoa Jurídica. Deve-se ter apenas os números do CNPJ, sem máscara.'
-          maxLenght: 14
+          maxLength: 14
           example: '21128159000166'
         currency:
           type: string
           description: 'Moeda referente ao valor da transação, segundo modelo ISO-4217.'
+          maxLength: 3
           example: BRL
         statementCreditCardAccounts:
           type: array
@@ -4510,30 +4511,30 @@ components:
           $ref: '#/components/schemas/EnumCreditCardAccountBalance'
         amount:
           type: number
-          maxLenght: 12
+          maxLength: 12
           description: Valor da transação. Expresso em valor monetário com 2 casas decimais
           example: '100.87'
         transactionDate:
           type: string
           pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$'
           description: Data lançamento da transação
-          maxLenght: 10
+          maxLength: 10
           example: 2020-12-30'
         postBillDate:
           type: string
           pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$'
           description: Data de postagem na fatura
-          maxLenght: 10
+          maxLength: 10
           example: 2020-12-30'
         payeeMCC:
           type: number
-          maxLenght: 4
+          maxLength: 4
           description: 'MCC é o Merchant Category Code, ou o código da categoria do estabelecimento comercial. Os MCCs são agrupados segundo suas similaridades'
           example: 8299'
         payeeAdditionalInfo:
           type: string
           pattern: \w*\W*
-          maxLenght: 100
+          maxLength: 100
           description: Identificação do Recebedor da transação
           example: MIYQZ86345'
     CreditCardAccountsBilling:
@@ -4670,86 +4671,24 @@ components:
     CreditCardAccountsLimitsBrand:
       type: object
       required:
-        - name
-        - companies
-      properties:
-        name:
-          type: string
-          pattern: \w*\W*
-          description: 'Nome da Marca reportada pelo participante do Open Banking. O conceito a que se refere a ''marca'' é em essência uma promessa da empresa em fornecer uma série específica de atributos, benefícios e serviços uniformes aos clientes'
-          maxLenght: 80
-        companies:
-          type: array
-          description: Companies traz uma lista de todas as instituições da Marca
-          items:
-            type: object
-            required:
-              - name
-              - cnpjNumber
-              - creditCardAccountsLimits
-            properties:
-              name:
-                type: string
-                maxLength: 80
-                pattern: \w*\W*
-                description: Nome da marca selecionada pela Organização
-                example: Organização A
-              cnpjNumber:
-                type: string
-                maxLength: 14
-                pattern: '\d{14}|^NA$'
-                description: Número completo do CNPJ da instituição responsável pelo Cadastro - o CNPJ corresponde ao número de inscrição no Cadastro de Pessoa Jurídica.
-                example: '00000000000100'
-              creditCardAccountsLimits:
-                $ref: '#/components/schemas/CreditCardAccountsLimits'
-    CreditCardAccountsLimits:
-      type: object
-      required:
         - creditCardAccounts
       properties:
         creditCardAccounts:
-          type: object
-          description: Conjunto de informações de conta de pagamento pós-paga.
-          required:
-            - limits
-          properties:
-            limits:
-              $ref: '#/components/schemas/AccountsLimits'
+          $ref: '#/components/schemas/CreditCardAccountsLimits'
+    CreditCardAccountsLimits:
+      type: object
+      required:
+        - limits
+      properties:
+        limits:
+          $ref: '#/components/schemas/AccountsLimits'
     CreditCardaccountsTransactionsBrand:
       type: object
       required:
-        - name
-        - companies
+        - transactions
       properties:
-        name:
-          type: string
-          pattern: \w*\W*
-          description: 'Nome da Marca reportada pelo participante do Open Banking. O conceito a que se refere a ''marca'' é em essência uma promessa da empresa em fornecer uma série específica de atributos, benefícios e serviços uniformes aos clientes'
-          maxLenght: 80
-        companies:
-          type: array
-          description: Companies traz uma lista de todas as instituições da Marca
-          items:
-            type: object
-            required:
-              - name
-              - cnpjNumber
-              - creditCardAccountsLimits
-            properties:
-              name:
-                type: string
-                maxLength: 80
-                pattern: \w*\W*
-                description: Nome da marca selecionada pela Organização
-                example: Organização A
-              cnpjNumber:
-                type: string
-                maxLength: 14
-                pattern: '\d{14}|^NA$'
-                description: Número completo do CNPJ da instituição responsável pelo Cadastro - o CNPJ corresponde ao número de inscrição no Cadastro de Pessoa Jurídica.
-                example: '00000000000100'
-              creditCardAccountsLimits:
-                $ref: '#/components/schemas/CreditCardAccountsTransactions'
+        transactions:
+          $ref: '#/components/schemas/CreditCardAccountsTransactions'
     CreditCardAccountsStatement:
       type: object
       description: Lista dos lançamentos referentes aos limites relativos à conta de  pagamento pós-paga
@@ -4793,7 +4732,7 @@ components:
         amount:
           type: string
           description: 'Valor do limite de crédito informado (total ou por modalidade), relativo ao tipo selecionado. Expresso em valor monetário com 2 casas decimais'
-          maxLenght: 12
+          maxLength: 12
     CreditCardAccountStatementBilling:
       type: object
       required:
@@ -4828,27 +4767,27 @@ components:
         typeAdditionalInfo:
           type: string
           description: 'Campo livre, de preenchimento obrigatório quando selecionado tipo de transação ''OUTROS'''
-          maxLenght: 50
+          maxLength: 50
         fee:
           $ref: '#/components/schemas/EnumCreditCardAccountFee'
         installmentIdentificator:
           type: string
           description: Identificador da parcela que está sendo informada. Campo de livre preenchimento
-          maxLenght: 50
+          maxLength: 50
           pattern: \w*\W*
         billIdentificator:
           type: string
           description: Identificador da Fatura
-          maxLenght: 50
+          maxLength: 50
           pattern: \w*\W*
         quantityInstallment:
           type: number
           description: Quantidade de parcelas
-          maxLenght: 2
+          maxLength: 2
         transactionIdentication:
           type: string
           description: Identificação da transação na Instituição financeira. Campo de livre preenchimento
-          maxLenght: 50
+          maxLength: 50
         otherCredits:
           type: object
           required:
@@ -4861,7 +4800,7 @@ components:
               type: string
               description: 'Campo livre, de preenchimento obrigatório quando selecionado tipo de crédito ''OUTROS'''
               pattern: \w*\W*
-              maxLenght: 50
+              maxLength: 50
         balances:
           $ref: '#/components/schemas/CreditCardAccountBalances'
     CreditCardAccountsTransactions:
@@ -4895,67 +4834,61 @@ components:
       type: object
       description: Conjunto de informações referentes à identificação da conta de pagamento pós-paga.
       required:
-        - identification
+        - creditCardAccountId
+        - requestDateTime
+        - brandName
+        - companyCnpj
+        - name
+        - productType
+        - creditCardNetwork
+        - paymentMethod
       properties:
-        identification:
-          type: object
-          description: Conjunto de informações de conta de pagamento pós-paga
-          required:
-            - creditCardAccountId
-            - requestDateTime
-            - brandName
-            - companyCnpj
-            - name
-            - productType
-            - creditCardNetwork
-            - paymentMethod
-          properties:
-            creditCardAccountId:
-              type: string
-              description: 'Identificador para conta pagamento pós-paga é o creditCardAccountId, chave artificial que permite identificar a conta pagamento pós-paga especifica.'
-              maxLenght: 40
-              example: XXZTR3459087
-            requestDateTime:
-              type: string
-              pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])T(?:[01]\d|2[0123]):(?:[012345]\d):(?:[012345]\d)Z$'
-              description: 'Data e hora da consulta, conforme especificação RFC-3339, formato UTC.'
-              maxLenght: 20
-              example: '2020-07-21T08:30:00Z'
-            brandName:
-              type: string
-              pattern: \w*\W*
-              description: 'Nome da Marca reportada pelo participante do Open Banking. O conceito a que se refere a ''marca'' é em essência uma promessa da empresa em fornecer uma série específica de atributos, benefícios e serviços uniformes aos clientes.'
-              maxLenght: 80
-              example: Organização A
-            name:
-              type: string
-              pattern: \w*\W*
-              description: |
-                Denominação/Identificação do nome da conta de pagamento pós-paga (cartão). Conforme CIRCULAR Nº 3.680,BCB, 2013: 'conta de pagamento pós-paga: destinada à execução de transações de pagamento que independem do aporte prévio de recursos'.
-              maxLenght: 50
-              example: Cartão Universitário
-            companyCnpj:
-              type: string
-              pattern: '\d{14}|^NA$'
-              description: 'Número completo do CNPJ da instituição responsável pelo Cadastro - o CNPJ corresponde ao número de inscrição no Cadastro de Pessoa Jurídica. Deve-se ter apenas os números do CNPJ, sem máscara.'
-              maxLenght: 14
-              example: '21128159000166'
-            productType:
-              $ref: '#/components/schemas/EnumCreditCardAccountsProductType'
-            productAdditionalInfo:
-              type: string
-              pattern: \w*\W*
-              description: Texto livre para especificar categoria de bandeira marcada como 'OUTRAS'.
-              maxLenght: 50
-            creditCardNetwork:
-              $ref: '#/components/schemas/EnumCreditCardAccountNetwork'
-            networkAdditionalInfo:
-              type: string
-              pattern: \w*\W*
-              description: Texto livre para especificar categoria de bandeira marcada como 'OUTRAS'.
-              maxLenght: 50
-            paymentMethod:
-              $ref: '#/components/schemas/CreditCardsAccountPaymentMethod'
+        creditCardAccountId:
+          type: string
+          description: 'Identificador para conta pagamento pós-paga é o creditCardAccountId, chave artificial que permite identificar a conta pagamento pós-paga especifica.'
+          maxLength: 40
+          example: XXZTR3459087
+        requestDateTime:
+          type: string
+          pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])T(?:[01]\d|2[0123]):(?:[012345]\d):(?:[012345]\d)Z$'
+          description: 'Data e hora da consulta, conforme especificação RFC-3339, formato UTC.'
+          maxLength: 20
+          example: '2020-07-21T08:30:00Z'
+        brandName:
+          type: string
+          pattern: \w*\W*
+          description: 'Nome da Marca reportada pelo participante do Open Banking. O conceito a que se refere a ''marca'' é em essência uma promessa da empresa em fornecer uma série específica de atributos, benefícios e serviços uniformes aos clientes.'
+          maxLength: 80
+          example: Organização A
+        name:
+          type: string
+          pattern: \w*\W*
+          description: |
+            Denominação/Identificação do nome da conta de pagamento pós-paga (cartão). Conforme CIRCULAR Nº 3.680,BCB, 2013: 'conta de pagamento pós-paga: destinada à execução de transações de pagamento que independem do aporte prévio de recursos'.
+          maxLength: 50
+          example: Cartão Universitário
+        companyCnpj:
+          type: string
+          pattern: '\d{14}|^NA$'
+          description: 'Número completo do CNPJ da instituição responsável pelo Cadastro - o CNPJ corresponde ao número de inscrição no Cadastro de Pessoa Jurídica. Deve-se ter apenas os números do CNPJ, sem máscara.'
+          maxLength: 14
+          example: '21128159000166'
+        productType:
+          $ref: '#/components/schemas/EnumCreditCardAccountsProductType'
+        productAdditionalInfo:
+          type: string
+          pattern: \w*\W*
+          description: Texto livre para especificar categoria de bandeira marcada como 'OUTRAS'.
+          maxLength: 50
+        creditCardNetwork:
+          $ref: '#/components/schemas/EnumCreditCardAccountNetwork'
+        networkAdditionalInfo:
+          type: string
+          pattern: \w*\W*
+          description: Texto livre para especificar categoria de bandeira marcada como 'OUTRAS'.
+          maxLength: 50
+        paymentMethod:
+          $ref: '#/components/schemas/CreditCardsAccountPaymentMethod'
     CreditCardsAccountPaymentMethod:
       type: object
       description: Conjunto de informações relativas aos Meios de Pagamento da Conta de pagamento pós-paga
@@ -4967,6 +4900,7 @@ components:
           type: number
           description: |
             Número de identificação do cartão:  corresponde aos 4 últimos dígitos
+          maxLength: 4
           example: '4453'
         isMultipleCreditCard:
           type: boolean
@@ -10395,43 +10329,10 @@ components:
         data:
           type: object
           required:
-            - brand
+            - identification
           properties:
-            brand:
-              type: object
-              required:
-                - name
-                - companies
-              properties:
-                name:
-                  type: string
-                  pattern: \w*\W*
-                  description: 'Nome da Marca reportada pelo participante do Open Banking. O conceito a que se refere a ''marca'' é em essência uma promessa da empresa em fornecer uma série específica de atributos, benefícios e serviços uniformes aos clientes'
-                  maxLenght: 80
-                companies:
-                  type: array
-                  description: Companies traz uma lista de todas as instituições da Marca
-                  items:
-                    type: object
-                    required:
-                      - name
-                      - cnpjNumber
-                      - creditCardAccountsLimits
-                    properties:
-                      name:
-                        type: string
-                        maxLength: 80
-                        pattern: \w*\W*
-                        description: Nome da marca selecionada pela Organização
-                        example: Organização A
-                      cnpjNumber:
-                        type: string
-                        maxLength: 14
-                        pattern: '\d{14}|^NA$'
-                        description: Número completo do CNPJ da instituição responsável pelo Cadastro - o CNPJ corresponde ao número de inscrição no Cadastro de Pessoa Jurídica.
-                        example: '00000000000100'
-                      creditCardAccountsLimits:
-                        $ref: '#/components/schemas/CreditCardsAccountIdentification'
+            identification:
+              $ref: '#/components/schemas/CreditCardsAccountIdentification'
         links:
           $ref: '#/components/schemas/Links'
         meta:
@@ -10507,12 +10408,7 @@ components:
         - meta
       properties:
         data:
-          type: object
-          required:
-            - brand
-          properties:
-            brand:
-              $ref: '#/components/schemas/CreditCardAccountsLimitsBrand'
+          $ref: '#/components/schemas/CreditCardAccountsLimitsBrand'
         links:
           $ref: '#/components/schemas/Links'
         meta:
