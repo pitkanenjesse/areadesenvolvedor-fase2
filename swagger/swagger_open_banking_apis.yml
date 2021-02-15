@@ -2020,7 +2020,6 @@ paths:
 
         ### Visão Geral
 
-        A definir.
         Obtém dados referentes à fatura da conta de pagamento pós-paga.
 
         Tags: A definir [CNPJ (CNPJ Number)](#glossarioCNPJ), [Marca (Brand)](#glossarioMarca), [Instituição Financeira (Company)](#glossarioInstituicaoFinanceira) e [Agência (Branch)](#glossarioAgencia).
@@ -4597,58 +4596,34 @@ components:
           example: MIYQZ86345'
     CreditCardAccountsBilling:
       type: object
-      description: Objeto que agrupa as informações de conta de pagamento pós-paga
+      description: Conjunto de informações de conta de pagamento pós-paga
       required:
         - bill
       properties:
         bill:
           $ref: '#/components/schemas/CreditCardAccountsBillingBill'
-    CreditCardAccountsBillingBalances:
-      type: object
-      required:
-        - type
-        - paymentType
-        - amount
-      properties:
-        type:
-          $ref: '#/components/schemas/EnumCreditCardAccountsBillingBalanceType'
-        paymentType:
-          $ref: '#/components/schemas/EnumCreditCardAccountsBillingBalancePaymentType'
-        amount:
-          type: string
-          maxLength: 12
-          nullable: true
-          format: AmountString
-          description: Valor da transação. Expresso em valor monetário com 2 casas decimais
     CreditCardAccountsBillingBill:
       type: object
-      description: Objeto que agrupa as informações referentes a fatura da conta de  pagamento pós-paga
+      description: Conjunto das informações referentes a fatura associada à conta de pagamento pós-paga
       required:
-        - requestDateTime
-        - updateDateTime
+        - billIdentification
         - dueDate
-        - averageDate
-        - statementCreditCardAccounts
+        - paymentDate
+        - paymentMode
+        - payments
       properties:
-        requestDateTime:
+        billIdentification:
           type: string
-          pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])T(?:[01]\d|2[0123]):(?:[012345]\d):(?:[012345]\d)Z$'
-          description: 'Data e hora da consulta, conforme especificação RFC-3339, formato UTC.'
-          maxLength: 20
-          example: '2020-07-21T08:30:00Z'
-        updateDateTime:
-          type: string
-          pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])T(?:[01]\d|2[0123]):(?:[012345]\d):(?:[012345]\d)Z$'
-          description: 'Data e hora da atualização do bloco, conforme especificação RFC-3339'
-          maxLength: 20
-          example: '2020-07-21T08:30:00Z'
+          description: Informação que identifica a fatura que está sendo consultada
+          maxLength: 40
+          pattern: \w*\W*
         currency:
           type: string
           pattern: '^(\w{3}){1}$'
           maxLength: 3
           format: CurrencyString
           description: |
-            Moeda referente ao valor de todas  transações relacionadas com  fatura da conta de pagamento pós-paga, segundo modelo ISO-4217. p.ex. 'BRL' 
+            Moeda referente ao valor de todas transações relacionadas com fatura da conta de pagamento pós-paga, segundo modelo ISO-4217. p.ex. 'BRL' 
             Todos os saldos informados estão representados com a moeda vigente do Brasil.
           example: BRL
         dueDate:
@@ -4656,65 +4631,37 @@ components:
           pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$'
           maxLength: 10
           format: DateString
-          description: Data de vencimento da Fatura
-        averageDate:
+          description: 'Data de vencimento da Fatura, que aparece para pagamento pelo cliente'
+        paymentDate:
           type: string
           pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$'
           maxLength: 10
           format: DateString
           description: Data efetiva de quando o Pagamento da fatura foi realizado
-        statementCreditCardAccounts:
+        paymentMode:
+          $ref: '#/components/schemas/EnumCreditCardAccountsPaymentMode'
+        payments:
           type: array
           items:
-            $ref: '#/components/schemas/CreditCardAccountStatementBilling'
+            $ref: '#/components/schemas/CreditCardAccountsBillingPayment'
           minItems: 1
+          maxItems: 2
           description: Lista que traz os valores relativos aos pagamentos da Fatura da conta de pagamento pós-paga
-    CreditCardAccountsBillingBrand:
-      type: object
-      description: Objeto que define a Organização controladora do grupo de instituições financeiras
-      required:
-        - name
-        - companies
-      properties:
-        name:
-          type: string
-          pattern: \w*\W*
-          description: 'Nome da Marca reportada pelo participante do Open Banking. O conceito a que se refere a ''marca'' é em essência uma promessa da empresa em fornecer uma série específica de atributos, benefícios e serviços uniformes aos clientes'
-          maxLength: 80
-        companies:
-          type: array
-          description: Companies traz uma lista de todas as instituições da Marca
-          items:
-            $ref: '#/components/schemas/CreditCardAccountsBillingCompanies'
-          minItems: 1
-    CreditCardAccountsBillingCompanies:
+    CreditCardAccountsBillingData:
       type: object
       required:
-        - name
-        - cnpjNumber
-        - creditCardAccounts
+        - creditCardAccount
       properties:
-        name:
-          type: string
-          maxLength: 80
-          pattern: \w*\W*
-          description: Nome da marca selecionada pela Organização
-          example: Organização A
-        cnpjNumber:
-          type: string
-          maxLength: 14
-          pattern: '\d{14}|^NA$'
-          description: Número completo do CNPJ da instituição responsável pelo Cadastro - o CNPJ corresponde ao número de inscrição no Cadastro de Pessoa Jurídica.
-        creditCardAccounts:
+        creditCardAccount:
           $ref: '#/components/schemas/CreditCardAccountsBilling'
-    CreditCardAccountsBillingFee:
+    CreditCardAccountsBillingFinanceCharge:
       type: object
       required:
         - type
         - amount
       properties:
         type:
-          $ref: '#/components/schemas/EnumCreditCardAccountsBillingFeeType'
+          $ref: '#/components/schemas/EnumCreditCardAccountsFinanceChargeType'
         additionalInfo:
           type: string
           maxLength: 60
@@ -4726,6 +4673,32 @@ components:
           nullable: true
           format: AmountString
           description: Valor cobrado pelo encargo. Expresso em valor monetário com 2 casas decimais
+        transactionName:
+          type: string
+          maxLength: 40
+          pattern: \w*\W*
+          description: Campo de livre preenchimento. Literal usada na instituição financeira para identificar a transação
+    CreditCardAccountsBillingPayment:
+      type: object
+      required:
+        - valueType
+        - amount
+        - financeCharges
+      properties:
+        valueType:
+          $ref: '#/components/schemas/EnumCreditCardAccountsBillingValueType'
+        amount:
+          type: string
+          maxLength: 12
+          nullable: true
+          format: AmountString
+          description: Valor da transação. Expresso em valor monetário com 2 casas decimais
+        financeCharges:
+          type: array
+          items:
+            $ref: '#/components/schemas/CreditCardAccountsBillingFinanceCharge'
+          minItems: 1
+          description: Lista dos encargos cobrados na fatura
     CreditCardAccountsLimitsBrand:
       type: object
       required:
@@ -4791,18 +4764,6 @@ components:
           type: string
           description: 'Valor do limite de crédito informado (total ou por modalidade), relativo ao tipo selecionado. Expresso em valor monetário com 2 casas decimais'
           maxLength: 12
-    CreditCardAccountStatementBilling:
-      type: object
-      required:
-        - balances
-      properties:
-        balances:
-          $ref: '#/components/schemas/CreditCardAccountsBillingBalances'
-        fees:
-          type: array
-          items:
-            $ref: '#/components/schemas/CreditCardAccountsBillingFee'
-          description: Lista dos encargos cobrados na fatura
     CreditCardAccountStatementTransaction:
       type: object
       description: Lista que traz os valores relativos aos saldos do Limite de crédito total da conta de pagamento pós-paga
@@ -4880,11 +4841,11 @@ components:
           description: 'Moeda referente ao valor da transação  no Brasil, segundo modelo ISO-4217. p.ex. ''BRL'' Todos os saldos informados estão representados com a moeda vigente do Brasil'
         amount:
           type: number
-          maxLenght: 12
+          maxLength: 12
           description: Valor da transação. Expresso em valor monetário com 2 casas decimais
         currency:
           type: string
-          maxLenght: 3
+          maxLength: 3
           description: 'Moeda referente ao valor da transação, se a opoepração foi efeuatda em moeda  estrangeira, segundo modelo ISO-4217. p.ex. ''EUR'' Todos os saldos informados estão representados com a moeda vigente do Brasil'
         transactionDate:
           type: string
@@ -4895,7 +4856,7 @@ components:
           type: string
           description: Data de postagem na fatura
           pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$'
-          maxLenght: 10
+          maxLength: 10
         payeeMCC:
           type: number
           description: 'MCC é o Merchant Category Code, ou o código da categoria do estabelecimento comercial. Os MCCs são agrupados segundo suas similaridades'
@@ -6028,31 +5989,29 @@ components:
         - PRINCIPAL
         - ADICIONAL
       example: PRINCIPAL
-    EnumCreditCardAccountsBillingBalancePaymentType:
+    EnumCreditCardAccountsBillingValueType:
       type: string
       description: |
-        Traz as formas de efetivação do pagamento realizado: 
-        - Débito em conta corrente
-        - Boleto bancário
-        - Averbação em folha
-        - PIX
-      enum:
-        - DEBITO_CONTA_CORRENTE
-        - BOLETO_BANCARIO
-        - AVERBACAO_FOLHA
-        - PIX
-    EnumCreditCardAccountsBillingBalanceType:
-      type: string
-      description: |
-        Traz os tipos dos valores relativos aos pagamentos da fatura da conta de pagamento pós-paga: 
+        Traz os tipos dos valores relativos aos pagamentos da fatura da conta de pagamento pós-paga:
         - Valor total da fatura
         - Valor de pagamento mínimo da fatura
+        - Valor de pagamento total da fatura 
         - Valor de pagamento da fatura com parcelamento
+        - Outro Valor pago na fatura
       enum:
         - VALOR_TOTAL_FATURA
         - VALOR_PAGAMENTO_MINIMO_FATURA
-        - VALOR_PAGAMENTO_FATURA_PARCELAMENTO
-    EnumCreditCardAccountsBillingFeeType:
+        - VALOR_PAGAMENTO_TOTAL_FATURA
+        - VALOR_PAGAMENTO_FATURA_PARCELADO
+        - OUTRO_VALOR_PAGO_FATURA
+    EnumCreditCardAccountsConsolidationType:
+      type: string
+      description: Indicador que permite informar se o valor do limite é consolidado ou individual.
+      enum:
+        - CONSOLIDADO
+        - INDIVIDUAL
+      example: CONSOLIDADO
+    EnumCreditCardAccountsFinanceChargeType:
       type: string
       description: |
         Traz a denominação dos Encargos que incidem na fatura da conta de pagamento pós-paga.
@@ -6064,6 +6023,7 @@ components:
         - Parcelamento da fatura
         - Empréstimo
         - Outros
+        - NA
       enum:
         - JUROS_REMUNERATORIOS_ATRASO_PAGAMENTO_FATURA
         - MULTA_ATRASO_PAGAMENTO_FATURA
@@ -6073,13 +6033,7 @@ components:
         - PARCELAMENTO_FATURA
         - EMPRÉSTIMO
         - OUTROS
-    EnumCreditCardAccountsConsolidationType:
-      type: string
-      description: Indicador que permite informar se o valor do limite é consolidado ou individual.
-      enum:
-        - CONSOLIDADO
-        - INDIVIDUAL
-      example: CONSOLIDADO
+        - NA
     EnumCreditCardAccountsLimitType:
       type: string
       description: Indicador que permite informar se a operação de crédito é com limite ou com limite flexível
@@ -6170,6 +6124,19 @@ components:
         - OUTROS
       description: 'Canais disponíveis para abertura e encerramento de contas, p.ex. ''DEPENDENCIAS_PROPRIAS'''
       example: DEPENDENCIAS_PROPRIAS
+    EnumCreditCardAccountsPaymentMode:
+      type: string
+      description: |
+        Traz as formas de efetivação do pagamento realizado: 
+        - Débito em conta corrente
+        - Boleto bancário
+        - Averbação em folha
+        - PIX
+      enum:
+        - DEBITO_CONTA_CORRENTE
+        - BOLETO_BANCARIO
+        - AVERBACAO_FOLHA
+        - PIX
     EnumPartiesParticipationDocumentType:
       type: string
       enum:
@@ -10445,52 +10412,33 @@ components:
         - meta
       properties:
         data:
-          type: object
-          required:
-            - brand
-          properties:
-            brand:
-              $ref: '#/components/schemas/CreditCardAccountsBillingBrand'
+          $ref: '#/components/schemas/CreditCardAccountsBillingData'
         links:
           $ref: '#/components/schemas/Links'
         meta:
           $ref: '#/components/schemas/Meta'
       example:
         data:
-          brand:
-            name: Organização A
-            companies:
-              - name: Empresa A
-                cnpjNumber: '21128159000166'
-                creditCardAccounts:
-                  bill:
-                    requestDateTime: '2020-07-21T08:30:00Z'
-                    updateDateTime: '2020-07-21T08:58:00Z'
-                    currency: BRL
-                    dueDate: '2021-03-05'
-                    averageDate: '2021-03-03'
-                    statementCreditCardAccounts:
-                      - balances:
-                          type: VALOR_TOTAL_FATURA
-                          paymentType: DEBITO_CONTA_CORRENTE
-                          amount: '1000.00'
-                        fees:
-                          - type: IOF
-                            amount: '0.00'
-                      - balances:
-                          type: VALOR_PAGAMENTO_MINIMO_FATURA
-                          paymentType: DEBITO_CONTA_CORRENTE
-                          amount: '100.00'
-                        fees:
-                          - type: CREDITO_ROTATIVO
-                            amount: '25.00'
-                      - balances:
-                          type: VALOR_PAGAMENTO_FATURA_PARCELAMENTO
-                          paymentType: DEBITO_CONTA_CORRENTE
-                          amount: '1250.00'
-                        fees:
-                          - type: PARCELAMENTO_FATURA
-                            amount: '250.00'
+          creditCardAccount:
+            bill:
+              billIdentification: 229873ASBCR
+              currency: BRL
+              dueDate: '2021-03-15'
+              paymentDate: '2021-03-17'
+              paymentMode: PIX
+              payments:
+                - valueType: VALOR_TOTAL_FATURA
+                  amount: '567.43'
+                  financeCharges:
+                    - type: OUTROS
+                      additionalInfo: SAQUE UTILIZANDO A FUNÇÃO CRÉDITO
+                      amount: '17.00'
+                      transactionName: CVFDT789650
+                - valueType: VALOR_PAGAMENTO_MINIMO_FATURA
+                  amount: '96.46'
+                  financeCharges:
+                    - type: NA
+                      amount: '0.00'
         links:
           self: 'https://api.banco.com.br/open-banking/<api>/v1/<resource>'
           first: 'https://api.banco.com.br/open-banking/<api>/v1/<resource>'
