@@ -1783,7 +1783,7 @@ paths:
 
         ### Visão de alto de nível das estruturas de dados
 
-        <img class="lazy" src="images/loading.gif" data-src="images/tld/customers/TLD_Personal_Customers_Financial_Relation_v2.png"/>
+        <img class="lazy" src="images/loading.gif" data-src="images/tld/credit_cards/TLD_CreditCardAccount_Identification.png"/>
 
         ### DER - Diagramas de Entidade e Relacionamento
 
@@ -1848,7 +1848,7 @@ paths:
     get:
       tags:
         - API - Cartão de Crédito
-      summary: Identificação de limite de cartão de crédito
+      summary: Limites de cartão de crédito
       description: |
         |Versão|
         |:-----|
@@ -1865,7 +1865,7 @@ paths:
 
         ### Visão de alto de nível das estruturas de dados
 
-        <img class="lazy" src="images/loading.gif" data-src="images/tld/customers/TLD_Personal_Customers_Financial_Relation_v2.png"/>
+        <img class="lazy" src="images/loading.gif" data-src="images/tld/credit_cards/TLD_CreditCardAccount_Limits.png"/>
 
         ### DER - Diagramas de Entidade e Relacionamento
 
@@ -1947,7 +1947,7 @@ paths:
 
         ### Visão de alto de nível das estruturas de dados
 
-        <img class="lazy" src="images/loading.gif" data-src="images/tld/customers/TLD_Personal_Customers_Financial_Relation_v2.png"/>
+        <img class="lazy" src="images/loading.gif" data-src="images/tld/credit_cards/TLD_CreditCardAccounts_Transactions.png"/>
 
         ### DER - Diagramas de Entidade e Relacionamento
 
@@ -2027,15 +2027,15 @@ paths:
 
         ### Visão de alto de nível das estruturas de dados
 
-        A definir 
+        A definir
 
-        <img class="lazy" src="images/loading.gif" data-src="images/tld/accounts/TLD_Cards_Billing.png"/>
+        <img class="lazy" src="images/loading.gif" data-src="images/tld/credit_cards/TLD_CreditCardAccount_Bill.png"/>
 
         ### DER - Diagramas de Entidade e Relacionamento
 
         * DER Conceitual
 
-        A definir 
+        A definir
 
         <img class="lazy" src="images/loading.gif" data-src="images/der/accounts/DER_Cards.png"/>
 
@@ -2043,7 +2043,7 @@ paths:
 
         * DER Lógico
 
-        A definir 
+        A definir
 
         <img class="lazy" src="images/loading.gif" data-src="images/der/accounts/DER_Cards_Billing.png"/>
 
@@ -4807,87 +4807,132 @@ components:
       type: object
       description: Lista que traz os valores relativos aos saldos do Limite de crédito total da conta de pagamento pós-paga
       required:
-        - creditDebitIndicator
-        - type
-        - typeAdditionalInfo
-        - fee
-        - installmentIdentificator
-        - quantityInstallment
-        - transactionIdentication
+        - transactionName
+        - creditDebitType
+        - transactionType
+        - feeType
         - otherCreditsType
-        - otherCreditsAdditionalInfo
+        - chargeIdentificator
+        - charge
+        - brazilianAmount
+        - brazilianCurrency
+        - transactionDate
         - balances
       properties:
-        creditDebitIndicator:
+        transactionName:
+          type: string
+          maxLength: 40
+          description: Campo de livre preenchimento. Literal usada na instituição financeira para identificar a transação
+        billIdentification:
+          type: string
+          maxLength: 40
+          description: Informação que identifica a fatura onde consta a transação informada.
+        creditDebitType:
           $ref: '#/components/schemas/EnumCreditDebitIndicator'
-        type:
+        transactionType:
           $ref: '#/components/schemas/EnumCreditCardTransactionType'
-        typeAdditionalInfo:
+        transactionalAdditionalInfo:
           type: string
           description: 'Campo livre, de preenchimento obrigatório quando selecionado tipo de transação ''OUTROS'''
           maxLength: 50
-        fee:
+        paymentType:
+          type: string
+          description: Traz os tipos de pagamento
+          enum:
+            - A_VISTA
+            - A_PRAZO
+          example: A_VISTA
+        feeType:
           $ref: '#/components/schemas/EnumCreditCardAccountFee'
-        installmentIdentificator:
+        feeTypeAdditionalInfo:
+          type: string
+          maxLength: 50
+          description: 'Campo livre, de preenchimento obrigatório quando selecionada tipo de tarifa ''OUTRA'''
+        otherCreditsType:
+          type: string
+          description: Traz outros tipos de crédito contratados no cartão.
+          enum:
+            - CREDITO_ROTATIVO
+            - PARCELAMENTO_FATURA
+            - EMPRESTIMO
+            - OUTROS
+          example: CREDITO_ROTATIVO
+        otherCreditsAdditionalInfo:
+          type: string
+          maxLength: 50
+          description: 'Campo livre, de preenchimento obrigatório quando selecionado tipo de crédito ''OUTROS'''
+        chargeIdentificator:
           type: string
           description: Identificador da parcela que está sendo informada. Campo de livre preenchimento
           maxLength: 50
           pattern: \w*\W*
-        billIdentificator:
-          type: string
-          description: Identificador da Fatura
-          maxLength: 50
-          pattern: \w*\W*
-        quantityInstallment:
+        charge:
           type: number
           description: Quantidade de parcelas
           maxLength: 2
-        transactionIdentication:
+        brazilianAmount:
+          type: number
+          maxLength: 12
+          description: 'Valor da transação expresso em valor monetário com 2 casas decimais, em moeda corrente do Brasil'
+        brazilianCurrency:
           type: string
-          description: Identificação da transação na Instituição financeira. Campo de livre preenchimento
-          maxLength: 50
-        otherCredits:
-          type: object
-          required:
-            - otherCreditsType
-            - otherCreditsAdditionalInfo
-          properties:
-            otherCreditsType:
-              $ref: '#/components/schemas/EnumCreditCardAccountsOtherCredits'
-            otherCreditsAdditionalInfo:
-              type: string
-              description: 'Campo livre, de preenchimento obrigatório quando selecionado tipo de crédito ''OUTROS'''
-              pattern: \w*\W*
-              maxLength: 50
-        balances:
-          $ref: '#/components/schemas/CreditCardAccountBalances'
+          maxLength: 3
+          description: 'Moeda referente ao valor da transação  no Brasil, segundo modelo ISO-4217. p.ex. ''BRL'' Todos os saldos informados estão representados com a moeda vigente do Brasil'
+        amount:
+          type: number
+          maxLenght: 12
+          description: Valor da transação. Expresso em valor monetário com 2 casas decimais
+        currency:
+          type: string
+          maxLenght: 3
+          description: 'Moeda referente ao valor da transação, se a opoepração foi efeuatda em moeda  estrangeira, segundo modelo ISO-4217. p.ex. ''EUR'' Todos os saldos informados estão representados com a moeda vigente do Brasil'
+        transactionDate:
+          type: string
+          description: Data lançamento da transação
+          pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$'
+          maxLength: 10
+        billPostDate:
+          type: string
+          description: Data de postagem na fatura
+          pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$'
+          maxLenght: 10
+        payeeMCC:
+          type: number
+          description: 'MCC é o Merchant Category Code, ou o código da categoria do estabelecimento comercial. Os MCCs são agrupados segundo suas similaridades'
     CreditCardAccountsTransactions:
       type: object
       description: objeto que agrupa as informações referentes as transações de pagamentos realizadas na conta de  pagamento pós-paga
       required:
-        - limits
+        - requestDateTime
+        - brandName
+        - companyCnpj
+        - statementCreditCardAccounts
       properties:
-        limits:
-          type: object
-          required:
-            - requestDateTime
-            - updateDateTime
-            - statementCreditCardAccounts
-          properties:
-            requestDateTime:
-              type: string
-              pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])T(?:[01]\d|2[0123]):(?:[012345]\d):(?:[012345]\d)Z$'
-              description: 'Data e hora da consulta, conforme especificação RFC-3339, formato UTC.'
-              maxLength: 20
-              example: '2020-07-21T08:30:00Z'
-            updateDateTime:
-              type: string
-              pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])T(?:[01]\d|2[0123]):(?:[012345]\d):(?:[012345]\d)Z$'
-              description: 'Data e hora da atualização do bloco, conforme especificação RFC-3339'
-              maxLength: 20
-              example: '2020-07-21T08:30:00Z'
-            statementCreditCardAccounts:
-              $ref: '#/components/schemas/CreditCardAccountStatementTransaction'
+        creditCardAccountId:
+          type: string
+          description: 'Identificador para conta pagamento pós-paga é o creditCardAccountId, chave artificial que permite identificar a conta pagamento pós-paga especifica.'
+          maxLength: 40
+          example: XXZTR3459087
+        requestDateTime:
+          type: string
+          pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])T(?:[01]\d|2[0123]):(?:[012345]\d):(?:[012345]\d)Z$'
+          description: 'Data e hora da consulta, conforme especificação RFC-3339, formato UTC.'
+          maxLength: 20
+          example: '2020-07-21T08:30:00Z'
+        brandName:
+          type: string
+          pattern: \w*\W*
+          description: 'Nome da Marca reportada pelo participante do Open Banking. O conceito a que se refere a ''marca'' é em essência uma promessa da empresa em fornecer uma série específica de atributos, benefícios e serviços uniformes aos clientes.'
+          maxLength: 80
+          example: Organização A
+        companyCnpj:
+          type: string
+          pattern: '\d{14}|^NA$'
+          description: 'Número completo do CNPJ da instituição responsável pelo Cadastro - o CNPJ corresponde ao número de inscrição no Cadastro de Pessoa Jurídica. Deve-se ter apenas os números do CNPJ, sem máscara.'
+          maxLength: 14
+          example: '21128159000166'
+        statementCreditCardAccounts:
+          $ref: '#/components/schemas/CreditCardAccountStatementTransaction'
     CreditCardsAccountIdentification:
       type: object
       description: Conjunto de informações referentes à identificação da conta de pagamento pós-paga.
@@ -10468,6 +10513,45 @@ components:
           $ref: '#/components/schemas/Links'
         meta:
           $ref: '#/components/schemas/Meta'
+      example:
+        data:
+          creditCardAccount:
+            limits:
+              creditCardAccountId: XXZTR3459087
+              requestDateTime: '2020-07-21T08:30:00Z'
+              brandName: Organização A
+              companyCnpj: '21128159000166'
+              currency: BRL
+              statementCreditCardAccounts:
+                - creditLineLimitType: LIMITE_CREDITO_TOTAL
+                  consolidationType: CONSOLIDADO
+                  balances:
+                    - type: VALOR_TOTAL
+                      amount: '2000.00'
+                    - type: VALOR_UTILIZADO
+                      amount: '1654.00'
+                    - type: VALOR_DISPONIVEL
+                      amount: '1200.00'
+                - creditLineLimitType: LIMITE_CREDITO_MODALIDADE_OPERACAO
+                  consolidationType: INDIVIDUAL
+                  lineName: SAQUE_CREDITO_BRASIL
+                  limitType: COM_LIMITE
+                  balances:
+                    - type: VALOR_TOTAL
+                      amount: '2000.00'
+                    - type: VALOR_UTILIZADO
+                      amount: '1654.00'
+                    - type: VALOR_DISPONIVEL
+                      amount: '1200.00'
+        links:
+          self: 'https://api.banco.com.br/open-banking/<api>/v1/<resource>'
+          first: 'https://api.banco.com.br/open-banking/<api>/v1/<resource>'
+          prev: string
+          next: string
+          last: 'https://api.banco.com.br/open-banking/<api>/v1/<resource>'
+        meta:
+          totalRecords: 1
+          totalPages: 1
     ResponseCreditCardAccountsTransactions:
       type: object
       required:
@@ -10476,12 +10560,7 @@ components:
         - meta
       properties:
         data:
-          type: object
-          required:
-            - brand
-          properties:
-            brand:
-              $ref: '#/components/schemas/CreditCardaccountsTransactionsBrand'
+          $ref: '#/components/schemas/CreditCardaccountsTransactionsBrand'
         links:
           $ref: '#/components/schemas/Links'
         meta:
