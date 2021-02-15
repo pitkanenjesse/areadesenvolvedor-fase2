@@ -2434,6 +2434,13 @@ components:
       properties:
         balances:
           $ref: '#/components/schemas/Balances'
+    AccountBalancesData:
+      type: object
+      required:
+        - account
+      properties:
+        account:
+          $ref: '#/components/schemas/AccountBalances'
     AccountFee:
       type: object
       description: Objeto que reúne informações de tarifas de serviços
@@ -2542,6 +2549,13 @@ components:
       properties:
         overdraftLimits:
           $ref: '#/components/schemas/OverdraftLimits'
+    AccountOverdraftLimitsData:
+      type: object
+      required:
+        - account
+      properties:
+        account:
+          $ref: '#/components/schemas/AccountOverdraftLimits'
     AccountPriorityService:
       type: object
       required:
@@ -2582,6 +2596,13 @@ components:
       properties:
         identification:
           $ref: '#/components/schemas/Identification'
+    AccountIdentificationData:
+      type: object
+      required:
+        - account
+      properties:
+        account:
+          $ref: '#/components/schemas/AccountsIdentification'
     AccountsIncomeRate:
       type: object
       description: Valores dos percentuais de taxas.
@@ -2626,6 +2647,22 @@ components:
           pattern: \w*\W*
           description: Procedimentos de encerramento para o tipo de conta tratado. Possibilidade de inscrição da URL. Endereço eletrônico de acesso ao canal.
           example: 'https://example.com/mobile-banking'
+    AccountTransactions:
+      type: object
+      description: |
+        Conjunto de informações das Contas de: depósito à vista, poupança e de pagamento pré-paga
+      required:
+        - transactions
+      properties:
+        transactions:
+          $ref: '#/components/schemas/Transactions'
+    AccountTransactionsData:
+      type: object
+      required:
+        - account
+      properties:
+        account:
+          $ref: '#/components/schemas/AccountTransactions'
     ApplicationRate:
       type: object
       properties:
@@ -3819,6 +3856,13 @@ components:
         properties:
           financialRelation:
             $ref: '#/components/schemas/FinancialRelation'
+    BusinessFinancialRelationData:
+      type: object
+      required:
+        - brand
+      properties:
+        brand:
+          $ref: '#/components/schemas/BusinessFinancialRelationBrand'
     BusinessFinancing:
       type: object
       required:
@@ -4038,6 +4082,13 @@ components:
       properties:
         identification:
           $ref: '#/components/schemas/BusinessIdentification'
+    BusinessIdentificationData:
+      type: object
+      required:
+        - brand
+      properties:
+        brand:
+          $ref: '#/components/schemas/BusinessIdentificationBrand'
     BusinessInformedPatrimony:
       type: object
       description: Objeto que agrupa informações relativas ao patrimônio da empresa
@@ -4413,6 +4464,13 @@ components:
       properties:
         qualification:
           $ref: '#/components/schemas/BusinessQualification'
+    BusinessQualificationData:
+      type: object
+      required:
+        - brand
+      properties:
+        brand:
+          $ref: '#/components/schemas/BusinessQualificationBrand'
     BusinessUnarrangedAccountOverdraft:
       type: object
       description: Lista de adiantamento a depositante
@@ -5313,77 +5371,7 @@ components:
           example: '55'
           description: Número de DDI (Discagem Direta Internacional) para telefone de acesso ao Cliente - se houver
         areaCode:
-          type: string
-          example: '19'
-          description: Número de DDD (Discagem Direta à Distância) do telefone do cliente - se houver
-          enum:
-            - '11'
-            - '12'
-            - '13'
-            - '14'
-            - '15'
-            - '16'
-            - '17'
-            - '18'
-            - '19'
-            - '21'
-            - '22'
-            - '24'
-            - '27'
-            - '28'
-            - '31'
-            - '32'
-            - '33'
-            - '34'
-            - '35'
-            - '37'
-            - '38'
-            - '41'
-            - '42'
-            - '43'
-            - '44'
-            - '45'
-            - '46'
-            - '47'
-            - '48'
-            - '49'
-            - '51'
-            - '53'
-            - '54'
-            - '55'
-            - '61'
-            - '62'
-            - '63'
-            - '64'
-            - '65'
-            - '66'
-            - '67'
-            - '68'
-            - '69'
-            - '71'
-            - '73'
-            - '74'
-            - '75'
-            - '77'
-            - '79'
-            - '81'
-            - '82'
-            - '83'
-            - '84'
-            - '85'
-            - '86'
-            - '87'
-            - '88'
-            - '89'
-            - '91'
-            - '92'
-            - '93'
-            - '94'
-            - '95'
-            - '96'
-            - '97'
-            - '98'
-            - '99'
+          $ref: '#/components/schemas/EnumAreaCode'
         number:
           type: string
           maxLength: 11
@@ -5443,37 +5431,7 @@ components:
           maxLength: 7
           example: '3550308'
         countrySubDivision:
-          type: string
-          description: 'Enumeração referente a cada sigla da unidade da federação que identifica o estado ou o distrito federal, no qual o endereço está localizado. p.ex. ''AC''. São consideradas apenas as siglas para os estados brasileiros'
-          enum:
-            - AC
-            - AL
-            - AP
-            - AM
-            - BA
-            - CE
-            - DF
-            - ES
-            - GO
-            - MA
-            - MT
-            - MS
-            - MG
-            - PA
-            - PB
-            - PR
-            - PE
-            - PI
-            - RJ
-            - RN
-            - RS
-            - RO
-            - RR
-            - SC
-            - SP
-            - SE
-            - TO
-          example: SP
+          $ref: '#/components/schemas/EnumCountrySubDivision'
         postCode:
           type: string
           description: Código de Endereçamento Postal
@@ -5777,6 +5735,78 @@ components:
       description: |
         Faixas para cobrança da taxa efetiva aplicada pela contratação do crédito, no intervalo informado: 1ª faixa, 2ª faixa, 3ª faixa e 4ª faixa. Segundo Normativa nº32 de 2020: 'Distribuição de frequência relativa dos valores de tarifas e taxas de juros cobrados dos clientes, de que trata o § 2º do art. 3º da Circular nº 4.015, de 2020, deve dar-se com base em quatro faixas de igual tamanho, com explicitação dos valores sobre a mediana e o percentual de clientes em cada uma dessas faixas.
       example: 1_FAIXA
+    EnumAreaCode:
+      type: string
+      example: '19'
+      description: Número de DDD (Discagem Direta à Distância) do telefone do cliente - se houver
+      enum:
+        - '11'
+        - '12'
+        - '13'
+        - '14'
+        - '15'
+        - '16'
+        - '17'
+        - '18'
+        - '19'
+        - '21'
+        - '22'
+        - '24'
+        - '27'
+        - '28'
+        - '31'
+        - '32'
+        - '33'
+        - '34'
+        - '35'
+        - '37'
+        - '38'
+        - '41'
+        - '42'
+        - '43'
+        - '44'
+        - '45'
+        - '46'
+        - '47'
+        - '48'
+        - '49'
+        - '51'
+        - '53'
+        - '54'
+        - '55'
+        - '61'
+        - '62'
+        - '63'
+        - '64'
+        - '65'
+        - '66'
+        - '67'
+        - '68'
+        - '69'
+        - '71'
+        - '73'
+        - '74'
+        - '75'
+        - '77'
+        - '79'
+        - '81'
+        - '82'
+        - '83'
+        - '84'
+        - '85'
+        - '86'
+        - '87'
+        - '88'
+        - '89'
+        - '91'
+        - '92'
+        - '93'
+        - '94'
+        - '95'
+        - '96'
+        - '97'
+        - '98'
+        - '99'
     EnumCustomerPhoneType:
       type: string
       enum:
@@ -5864,6 +5894,46 @@ components:
         Saldo bloqueado não disponível para utilização imediata, por motivo de bloqueio por compensação, ou bloqueio judicial
         Saldo disponível com aplicação automática - saldo disponível para utilização imediata, referente ao tipo de conta que remunera automaticamente o saldo em conta 
       example: SALDO_DISPONIVEL
+    EnumCompletedAuthorisedPaymentIndicator:
+      type: string
+      enum:
+        - TRANSACAO_EFETIVADA
+        - PAGAMENTO_AUTORIZADO
+      description: |
+        Indicador da transação
+      example: TRANSACAO_EFETIVADA
+    EnumCountrySubDivision:
+      type: string
+      description: 'Enumeração referente a cada sigla da unidade da federação que identifica o estado ou o distrito federal, no qual o endereço está localizado. p.ex. ''AC''. São consideradas apenas as siglas para os estados brasileiros'
+      enum:
+        - AC
+        - AL
+        - AP
+        - AM
+        - BA
+        - CE
+        - DF
+        - ES
+        - GO
+        - MA
+        - MT
+        - MS
+        - MG
+        - PA
+        - PB
+        - PR
+        - PE
+        - PI
+        - RJ
+        - RN
+        - RS
+        - RO
+        - RR
+        - SC
+        - SP
+        - SE
+        - TO
+      example: SP
     EnumCreditCardAccountBalance:
       type: string
       description: Traz os tipos dos valores relativos aos saldos  do Limite de crédito total da conta de pagamento pós-paga
@@ -6362,36 +6432,14 @@ components:
         productsServices:
           type: array
           items:
-            type: object
-            required:
-              - type
-            properties:
-              type:
-                $ref: '#/components/schemas/EnumProductServiceType'
+            $ref: '#/components/schemas/ProductService'
           minItems: 1
           maxItems: 14
           description: Lista de produtos e serviços com contratos vigentes
         procurators:
-          type: object
-          properties:
-            type:
-              $ref: '#/components/schemas/EnumProcuratorsType'
-            cpfNumber:
-              type: string
-              pattern: '^\d{11}$'
-              description: 'Número completo do CPF. O CPF é o Cadastro de Pessoa natural. Ele é um documento feito pela Receita Federal e serve para identificar os contribuintes. O CPF é uma numeração com 11 dígitos, que só mudam por decisão judicial. O documento é emitido pela receita federal'
-              example: '00000000000'
-              maxLength: 11
-            civilName:
-              type: string
-              pattern: \w*\W*
-              description: 'Nome civil completo da pessoa natural. (Direito fundamental da pessoa, o nome civil é aquele atribuído à pessoa natural desde o registro de seu nascimento, com o qual será identificada por toda a sua vida, bem como após a sua morte)'
-              maxLength: 70
-            socialName:
-              type: string
-              pattern: \w*\W*
-              description: 'Nome social da pessoa natural, se houver. (aquele pelo qual travestis e transexuais se reconhecem, bem como são identificados por sua comunidade e em seu meio social, conforme Decreto Nº 51.180, de 14 de janeiro de 2010)'
-              maxLength: 70
+          type: array
+          items:
+            $ref: '#/components/schemas/Procurator'
           description: Lista dos representantes. De preenchimento obrigatório se houver representante.
     FinancingInterestRate:
       type: object
@@ -7515,6 +7563,13 @@ components:
       properties:
         financialRelation:
           $ref: '#/components/schemas/FinancialRelation'
+    PersonalFinancialRelationData:
+      type: object
+      required:
+        - brand
+      properties:
+        brand:
+          $ref: '#/components/schemas/PersonalFinancialRelationBrand'
     PersonalFinancing:
       type: object
       required:
@@ -7748,6 +7803,13 @@ components:
       properties:
         identification:
           $ref: '#/components/schemas/PersonalIdentification'
+    PersonalIdentificationData:
+      type: object
+      required:
+        - brand
+      properties:
+        brand:
+          $ref: '#/components/schemas/PersonalIdentificationBrand'
     PersonalInformedPatrimony:
       type: object
       description: Conjunto de informações referentes ao patrimônio informado
@@ -8135,6 +8197,13 @@ components:
       properties:
         qualification:
           $ref: '#/components/schemas/PersonalQualification'
+    PersonalQualificationData:
+      type: object
+      required:
+        - brand
+      properties:
+        brand:
+          $ref: '#/components/schemas/PersonalQualificationBrand'
     PersonalUnarrangedAccountOverdraft:
       type: object
       description: Lista de produtos e serviços referente adiantamento a depositante
@@ -8432,6 +8501,34 @@ components:
             $ref: '#/components/schemas/PhoneChannel'
           minItems: 1
           description: Lista  de canais de atendimento telefônico
+    Procurator:
+      type: object
+      properties:
+        type:
+          $ref: '#/components/schemas/EnumProcuratorsType'
+        cpfNumber:
+          type: string
+          pattern: '^\d{11}$'
+          description: 'Número completo do CPF. O CPF é o Cadastro de Pessoa natural. Ele é um documento feito pela Receita Federal e serve para identificar os contribuintes. O CPF é uma numeração com 11 dígitos, que só mudam por decisão judicial. O documento é emitido pela receita federal'
+          example: '00000000000'
+          maxLength: 11
+        civilName:
+          type: string
+          pattern: \w*\W*
+          description: 'Nome civil completo da pessoa natural. (Direito fundamental da pessoa, o nome civil é aquele atribuído à pessoa natural desde o registro de seu nascimento, com o qual será identificada por toda a sua vida, bem como após a sua morte)'
+          maxLength: 70
+        socialName:
+          type: string
+          pattern: \w*\W*
+          description: 'Nome social da pessoa natural, se houver. (aquele pelo qual travestis e transexuais se reconhecem, bem como são identificados por sua comunidade e em seu meio social, conforme Decreto Nº 51.180, de 14 de janeiro de 2010)'
+          maxLength: 70
+    ProductService:
+      type: object
+      required:
+        - type
+      properties:
+        type:
+          $ref: '#/components/schemas/EnumProductServiceType'
     ResponseAccountBalances:
       type: object
       required:
@@ -8440,12 +8537,7 @@ components:
         - meta
       properties:
         data:
-          type: object
-          required:
-            - account
-          properties:
-            account:
-              $ref: '#/components/schemas/AccountBalances'
+          $ref: '#/components/schemas/AccountBalancesData'
         links:
           $ref: '#/components/schemas/Links'
         meta:
@@ -8458,12 +8550,7 @@ components:
         - meta
       properties:
         data:
-          type: object
-          required:
-            - account
-          properties:
-            account:
-              $ref: '#/components/schemas/AccountsIdentification'
+          $ref: '#/components/schemas/AccountIdentificationData'
         links:
           $ref: '#/components/schemas/Links'
         meta:
@@ -8476,12 +8563,7 @@ components:
         - meta
       properties:
         data:
-          type: object
-          required:
-            - account
-          properties:
-            account:
-              $ref: '#/components/schemas/AccountOverdraftLimits'
+          $ref: '#/components/schemas/AccountOverdraftLimitsData'
         links:
           $ref: '#/components/schemas/Links'
         meta:
@@ -8494,19 +8576,7 @@ components:
         - meta
       properties:
         data:
-          type: object
-          required:
-            - account
-          properties:
-            account:
-              type: object
-              description: |
-                Conjunto de informações das Contas de: depósito à vista, poupança e de pagamento pré-paga
-              required:
-                - transactions
-              properties:
-                transactions:
-                  $ref: '#/components/schemas/Transactions'
+          $ref: '#/components/schemas/AccountTransactionsData'
         links:
           $ref: '#/components/schemas/Links'
         meta:
@@ -9100,12 +9170,7 @@ components:
         - meta
       properties:
         data:
-          type: object
-          required:
-            - brand
-          properties:
-            brand:
-              $ref: '#/components/schemas/BusinessFinancialRelationBrand'
+          $ref: '#/components/schemas/BusinessFinancialRelationData'
         links:
           $ref: '#/components/schemas/Links'
         meta:
@@ -9146,12 +9211,7 @@ components:
         - meta
       properties:
         data:
-          type: object
-          required:
-            - brand
-          properties:
-            brand:
-              $ref: '#/components/schemas/BusinessIdentificationBrand'
+          $ref: '#/components/schemas/BusinessIdentificationData'
         links:
           $ref: '#/components/schemas/Links'
         meta:
@@ -9230,12 +9290,7 @@ components:
         - meta
       properties:
         data:
-          type: object
-          required:
-            - brand
-          properties:
-            brand:
-              $ref: '#/components/schemas/BusinessQualificationBrand'
+          $ref: '#/components/schemas/BusinessQualificationData'
         links:
           $ref: '#/components/schemas/Links'
         meta:
@@ -11122,12 +11177,7 @@ components:
         - meta
       properties:
         data:
-          type: object
-          required:
-            - brand
-          properties:
-            brand:
-              $ref: '#/components/schemas/PersonalFinancialRelationBrand'
+          $ref: '#/components/schemas/PersonalFinancialRelationData'
         links:
           $ref: '#/components/schemas/Links'
         meta:
@@ -11140,12 +11190,7 @@ components:
         - meta
       properties:
         data:
-          type: object
-          required:
-            - brand
-          properties:
-            brand:
-              $ref: '#/components/schemas/PersonalIdentificationBrand'
+          $ref: '#/components/schemas/PersonalIdentificationData'
         links:
           $ref: '#/components/schemas/Links'
         meta:
@@ -11235,12 +11280,7 @@ components:
         - meta
       properties:
         data:
-          type: object
-          required:
-            - brand
-          properties:
-            brand:
-              $ref: '#/components/schemas/PersonalQualificationBrand'
+          $ref: '#/components/schemas/PersonalQualificationData'
         links:
           $ref: '#/components/schemas/Links'
         meta:
@@ -12875,13 +12915,7 @@ components:
         - payee
       properties:
         completedAuthorisedPaymentIndicator:
-          type: string
-          enum:
-            - TRANSACAO_EFETIVADA
-            - PAGAMENTO_AUTORIZADO
-          description: |
-            Indicador da transação
-          example: TRANSACAO_EFETIVADA
+          $ref: '#/components/schemas/EnumCompletedAuthorisedPaymentIndicator'
         creditDebitIndicator:
           $ref: '#/components/schemas/EnumCreditDebitIndicator'
         type:
