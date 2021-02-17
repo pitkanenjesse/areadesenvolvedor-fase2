@@ -15,15 +15,15 @@ paths:
     get:
       tags:
         - Credit Card
-      summary: Obtém os dados de identificação de Cartão de crédito.
-      description: Método para obter os dados de identificação de cartão de crédito.
+      summary: Obtém dados relativos ao conjunto de informações referentes à identificação da conta de pagamento pós-paga.
+      description: Método para obter os dados relativos ao conjunto de informações referentes à identificação da conta de pagamento pós-paga.
       operationId: getCreditCardAccountsIdentification
       parameters:
         - $ref: '#/paths/~1credit-cards~1bill/get/parameters/0'
         - $ref: '#/paths/~1credit-cards~1bill/get/parameters/1'
       responses:
         '200':
-          description: Dados sobre identificação de cartão de crédito
+          description: Dados relativos ao conjunto de informações referentes à identificação da conta de pagamento pós-paga.
           content:
             application/json:
               schema:
@@ -190,15 +190,17 @@ paths:
     get:
       tags:
         - Credit Card
-      summary: Obtém os dados de limites de Cartão de crédito.
-      description: Método para obter os dados de limites de cartão de crédito.
+      summary: |
+        Obtém dados dos limites: de Crédito Total e por Modalidade de Crédito relativos à conta de pagamento pós-paga.
+      description: |
+        Método para obter os dados dos limites: de Crédito Total e por Modalidade de Crédito relativos à conta de pagamento pós-paga.
       operationId: getCreditCardAccountsLimits
       parameters:
         - $ref: '#/paths/~1credit-cards~1bill/get/parameters/0'
         - $ref: '#/paths/~1credit-cards~1bill/get/parameters/1'
       responses:
         '200':
-          description: Limites do cartão de crédito
+          description: Dados dos limites de Crédito Total e por Modalidade de Crédito relativos à conta de pagamento pós-paga.
           content:
             application/json:
               schema:
@@ -395,15 +397,15 @@ paths:
     get:
       tags:
         - Credit Card
-      summary: Obtém os dados de transações do Cartão de crédito.
-      description: Método para obter os dados de transações do cartão de crédito.
+      summary: Obtém dados das transações relativas à conta de pagamento pós-paga.
+      description: Método para obter os dados das transações relativas à conta de pagamento pós-paga.
       operationId: getCreditCardAccountsTransactions
       parameters:
         - $ref: '#/paths/~1credit-cards~1bill/get/parameters/0'
         - $ref: '#/paths/~1credit-cards~1bill/get/parameters/1'
       responses:
         '200':
-          description: Dados sobre Transações do cartão de crédito
+          description: Dados das transações relativas à conta de pagamento pós-paga.
           content:
             application/json:
               schema:
@@ -609,8 +611,8 @@ paths:
     get:
       tags:
         - Credit Card
-      summary: Obtém os dados referentes à fatura da conta de pagamento pós-paga
-      description: Método para obter os dados referentes à fatura da conta de pagamento pós-paga
+      summary: Obtém dados referentes à fatura da conta de pagamento pós-paga.
+      description: Método para obter os dados referentes à fatura da conta de pagamento pós-paga.
       operationId: getCrediCardsBilling
       parameters:
         - name: page
@@ -629,7 +631,7 @@ paths:
             minimum: 1
       responses:
         '200':
-          description: Dados sobre a fatura da conta de pagamento pós-paga
+          description: Dados referentes à fatura da conta de pagamento pós-paga.
           content:
             application/json:
               schema:

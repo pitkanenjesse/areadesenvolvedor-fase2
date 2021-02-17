@@ -462,7 +462,7 @@
                     <a href="#apis-diretorio-e-service-desk-transacoes-de-cartao-de-credito" class="toc-h2 toc-link" data-title="Transações de cartão de crédito">Transações de cartão de crédito</a>
                   </li>
                   <li>
-                    <a href="#apis-diretorio-e-service-desk-fatura-do-cartao-de-credito" class="toc-h2 toc-link" data-title="Fatura do Cartão de Crédito">Fatura do Cartão de Crédito</a>
+                    <a href="#apis-diretorio-e-service-desk-fatura-de-cartao-de-credito" class="toc-h2 toc-link" data-title="Fatura de Cartão de Crédito">Fatura de Cartão de Crédito</a>
                   </li>
               </ul>
           </li>
@@ -13678,9 +13678,7 @@ This operation does not require authentication
 
 <h3 id='apis-diretorio-e-service-desk-identificacao-de-cartao-de-credito-visao-geral'>Visão Geral</h3>
 
-<p>Obtém dados relativos a identificação de cartão de crédito.</p>
-
-<p>Considera-se relacionamento as informações que permitam conhecer desde quando a pessoa consultada é cliente da instituição, bem como um indicador dos produtos e serviços que ela consome atualmente.</p>
+<p>Obtém dados relativos ao conjunto de informações referentes à identificação da conta de pagamento pós-paga.</p>
 
 <p>Tags: <a href="#glossarioBandeira">Bandeira (Credit Card Network)</a>, <a href="#glossarioCartaoMultiplo">Cartão Múltiplo (Multiple CreditCard)</a>, <a href="#glossarioCNPJ">CNPJ (CNPJ Number)</a> e <a href="#glossarioContaPagamentoPosPaga">Conta de pagamento pós-paga (Credit Card)</a>.</p>
 
@@ -13796,7 +13794,7 @@ This operation does not require authentication
 <tr>
 <td>200</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.1">OK</a></td>
-<td>Método para obter os dados de identificação de cartão de crédito.</td>
+<td>Dados relativos ao conjunto de informações referentes à identificação da conta de pagamento pós-paga.</td>
 <td><a href="#schemaresponsecreditcardaccountsidentification">ResponseCreditCardAccountsIdentification</a></td>
 </tr>
 <tr>
@@ -13931,9 +13929,7 @@ This operation does not require authentication
 
 <h3 id='apis-diretorio-e-service-desk-limites-de-cartao-de-credito-visao-geral'>Visão Geral</h3>
 
-<p>Obtém dados relativos ao limite de cartão de crédito.</p>
-
-<p>Considera-se relacionamento as informações que permitam conhecer desde quando a pessoa consultada é cliente da instituição, bem como um indicador dos produtos e serviços que ela consome atualmente.</p>
+<p>Obtém dados dos limites: de Crédito Total e por Modalidade de Crédito relativos à conta de pagamento pós-paga.</p>
 
 <p>Tags: <a href="#glossarioCNPJ">CNPJ (CNPJ Number)</a>, <a href="#glossarioContaPagamentoPosPaga">Conta de pagamento pós-paga (Credit Card)</a>, <a href="#glossarioEmprestimoCartaoConsignado">Empréstimo Cartão Consignado (Payroll Loan)</a> e <a href="#glossarioLimiteFlexivel">Limite Flexível (Flexible Limit)</a>.</p>
 
@@ -14081,7 +14077,7 @@ This operation does not require authentication
 <tr>
 <td>200</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.1">OK</a></td>
-<td>Método para obter os dados de identificação de cartão de crédito.</td>
+<td>Dados dos limites de Crédito Total e por Modalidade de Crédito relativos à conta de pagamento pós-paga.</td>
 <td><a href="#schemaresponsecreditcardaccountslimits">ResponseCreditCardAccountsLimits</a></td>
 </tr>
 <tr>
@@ -14216,9 +14212,7 @@ This operation does not require authentication
 
 <h3 id='apis-diretorio-e-service-desk-transacoes-de-cartao-de-credito-visao-geral'>Visão Geral</h3>
 
-<p>Obtém dados relativos a transações de cartão de crédito.</p>
-
-<p>Considera-se relacionamento as informações que permitam conhecer desde quando a pessoa consultada é cliente da instituição, bem como um indicador dos produtos e serviços que ela consome atualmente.</p>
+<p>Obtém dados das transações relativas à conta de pagamento pós-paga.</p>
 
 <p>Tags: <a href="#glossarioCNPJ">CNPJ (CNPJ Number)</a>, <a href="#glossarioContaPagamentoPosPaga">Conta de pagamento pós-paga (Credit Card)</a>, <a href="#glossarioCreditoRotativo">Crédito Rotativo (Overdraft)</a> e <a href="#glossarioMCC">MCC (Merchant Category Code)</a>.</p>
 
@@ -14346,7 +14340,7 @@ This operation does not require authentication
 <tr>
 <td>200</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.1">OK</a></td>
-<td>Método para obter os dados de identificação de cartão de crédito.</td>
+<td>Dados das transações relativas à conta de pagamento pós-paga.</td>
 <td><a href="#schemaresponsecreditcardaccountstransactions">ResponseCreditCardAccountsTransactions</a></td>
 </tr>
 <tr>
@@ -14427,7 +14421,7 @@ This operation does not require authentication
 This operation does not require authentication
 </aside>
 
-<h2 id='apis-diretorio-e-service-desk-fatura-do-cartao-de-credito'>Fatura do Cartão de Crédito</h2>
+<h2 id='apis-diretorio-e-service-desk-fatura-de-cartao-de-credito'>Fatura de Cartão de Crédito</h2>
 
 <p><a id="opIdgetCrediCardsBilling"></a></p>
 
@@ -14479,17 +14473,17 @@ This operation does not require authentication
 </tr>
 </tbody></table>
 
-<h3 id='apis-diretorio-e-service-desk-fatura-do-cartao-de-credito-visao-geral'>Visão Geral</h3>
+<h3 id='apis-diretorio-e-service-desk-fatura-de-cartao-de-credito-visao-geral'>Visão Geral</h3>
 
 <p>Obtém dados referentes à fatura da conta de pagamento pós-paga.</p>
 
 <p>Tags: <a href="#glossarioCNPJ">CNPJ (CNPJ Number)</a>, <a href="#glossarioContaPagamentoPosPaga">Conta de pagamento pós-paga (Credit Card)</a>, <a href="#glossarioCreditoRotativo">Crédito Rotativo (Overdraft)</a> e <a href="#glossarioFatura">Fatura (Bill)</a>.</p>
 
-<h3 id='apis-diretorio-e-service-desk-fatura-do-cartao-de-credito-visao-de-alto-de-nivel-das-estruturas-de-dados'>Visão de alto de nível das estruturas de dados</h3>
+<h3 id='apis-diretorio-e-service-desk-fatura-de-cartao-de-credito-visao-de-alto-de-nivel-das-estruturas-de-dados'>Visão de alto de nível das estruturas de dados</h3>
 
 <p><img class="lazy" src="images/loading-e35b35a4.gif" data-src="images/tld/credit_cards/TLD_CreditCardAccount_Bill-6de33c88.png"/></p>
 
-<h3 id='apis-diretorio-e-service-desk-fatura-do-cartao-de-credito-der-diagramas-de-entidade-e-relacionamento'>DER - Diagramas de Entidade e Relacionamento</h3>
+<h3 id='apis-diretorio-e-service-desk-fatura-de-cartao-de-credito-der-diagramas-de-entidade-e-relacionamento'>DER - Diagramas de Entidade e Relacionamento</h3>
 
 <ul>
 <li>DER Conceitual</li>
@@ -14507,17 +14501,17 @@ This operation does not require authentication
 
 <p><a href="images/der/credit_cards/DER_CreditCardAccount_Bill-ffb2680c.png" target="_blank">Fazer download do DER Lógico</a></p>
 
-<h3 id='apis-diretorio-e-service-desk-fatura-do-cartao-de-credito-dicionario-de-dados'>Dicionário de dados</h3>
+<h3 id='apis-diretorio-e-service-desk-fatura-de-cartao-de-credito-dicionario-de-dados'>Dicionário de dados</h3>
 
 <p><a href='dictionary/credit_cards_accounts_bill.csv' target="_blank">Fazer download do dicionário de dados</a></p>
 
 <p><a href="dictionary/example/examples_credit_cards_billing.csv" target="_blank">Fazer download dos exemplos</a></p>
 
-<h3 id='apis-diretorio-e-service-desk-fatura-do-cartao-de-credito-especificacao-em-oas-3-0'>Especificação em OAS 3.0</h3>
+<h3 id='apis-diretorio-e-service-desk-fatura-de-cartao-de-credito-especificacao-em-oas-3-0'>Especificação em OAS 3.0</h3>
 
 <p><a href='swagger/swagger_credit_cards_apis.yaml'>Download da Especificação (OAS 3.0)</a></p>
 
-<h3 id="fatura-do-cartão-de-crédito-parameters">Parâmetros</h3>
+<h3 id="fatura-de-cartão-de-crédito-parameters">Parâmetros</h3>
 
 <table><thead>
 <tr>
@@ -14600,7 +14594,7 @@ This operation does not require authentication
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 
-<h3 id="fatura-do-cartão-de-crédito-responses">Resposta</h3>
+<h3 id="fatura-de-cartão-de-crédito-responses">Resposta</h3>
 
 <table><thead>
 <tr>
@@ -14613,7 +14607,7 @@ This operation does not require authentication
 <tr>
 <td>200</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.1">OK</a></td>
-<td>Método para obter os dados referentes à fatura da conta de pagamento pós-paga</td>
+<td>Dados referentes à fatura da conta de pagamento pós-paga.</td>
 <td><a href="#schemaresponsecreditcardaccountsbilling">ResponseCreditCardAccountsBilling</a></td>
 </tr>
 <tr>
