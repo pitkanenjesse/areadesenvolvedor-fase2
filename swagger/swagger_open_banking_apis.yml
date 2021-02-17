@@ -1801,9 +1801,9 @@ paths:
 
         ### Dicionário de dados
 
-        <a href="dictionary/personal_customers_financial_relation.csv" target="_blank">Fazer download do dicionário de dados</a>
+        <a href="dictionary/credit_cards_accounts_identification.csv" target="_blank">Fazer download do dicionário de dados</a>
 
-        <a href="dictionary/example/examples_personal_customers_financial_relation.csv" target="_blank">Fazer download dos exemplos</a>
+        <a href="dictionary/example/examples_credit_cards_accounts_identification.csv" target="_blank">Fazer download dos exemplos</a>
 
 
         ### Especificação em OAS 3.0
@@ -1883,9 +1883,9 @@ paths:
 
         ### Dicionário de dados
 
-        <a href="dictionary/personal_customers_financial_relation.csv" target="_blank">Fazer download do dicionário de dados</a>
+        <a href="dictionary/credit_cards_accounts_limits.csv" target="_blank">Fazer download do dicionário de dados</a>
 
-        <a href="dictionary/example/examples_personal_customers_financial_relation.csv" target="_blank">Fazer download dos exemplos</a>
+        <a href="dictionary/example/examples_credit_cards_accounts_limits.csv" target="_blank">Fazer download dos exemplos</a>
 
 
         ### Especificação em OAS 3.0
@@ -1965,9 +1965,9 @@ paths:
 
         ### Dicionário de dados
 
-        <a href="dictionary/personal_customers_financial_relation.csv" target="_blank">Fazer download do dicionário de dados</a>
+        <a href="dictionary/credit_cards_accounts_transactions.csv" target="_blank">Fazer download do dicionário de dados</a>
 
-        <a href="dictionary/example/examples_personal_customers_financial_relation.csv" target="_blank">Fazer download dos exemplos</a>
+        <a href="dictionary/example/examples_credit_cards_accounts_transactions.csv" target="_blank">Fazer download dos exemplos</a>
 
 
         ### Especificação em OAS 3.0
@@ -4716,10 +4716,10 @@ components:
     CreditCardaccountsTransactionsBrand:
       type: object
       required:
-        - transactions
+        - creditCardAccount
       properties:
-        transactions:
-          $ref: '#/components/schemas/CreditCardAccountsTransactions'
+        creditCardAccount:
+          $ref: '#/components/schemas/CreditCardTransactionAccount'
     CreditCardAccountsStatement:
       type: object
       description: Lista dos lançamentos referentes aos limites relativos à conta de  pagamento pós-paga
@@ -4860,6 +4860,7 @@ components:
         payeeMCC:
           type: number
           description: 'MCC é o Merchant Category Code, ou o código da categoria do estabelecimento comercial. Os MCCs são agrupados segundo suas similaridades'
+          maxLength: 4
     CreditCardAccountsTransactions:
       type: object
       description: objeto que agrupa as informações referentes as transações de pagamentos realizadas na conta de  pagamento pós-paga
@@ -4953,6 +4954,20 @@ components:
           maxLength: 50
         paymentMethod:
           $ref: '#/components/schemas/CreditCardsAccountPaymentMethod'
+    CreditCardAccountIdentificationAccount:
+      type: object
+      required:
+        - identification
+      properties:
+        identification:
+          $ref: '#/components/schemas/CreditCardsAccountIdentification'
+    CreditCardsAccountIdentificationBrand:
+      type: object
+      required:
+        - creditCardAccount
+      properties:
+        creditCardAccount:
+          $ref: '#/components/schemas/CreditCardAccountIdentificationAccount'
     CreditCardsAccountPaymentMethod:
       type: object
       description: Conjunto de informações relativas aos Meios de Pagamento da Conta de pagamento pós-paga
@@ -5257,6 +5272,13 @@ components:
           $ref: '#/components/schemas/MinimumPrice'
         maximum:
           $ref: '#/components/schemas/MaximumPrice'
+    CreditCardTransactionAccount:
+      type: object
+      required:
+        - transactions
+      properties:
+        transactions:
+          $ref: '#/components/schemas/CreditCardAccountsTransactions'
     CreditCardTermsConditions:
       type: object
       description: Informações sobre termos e condições para aquisição e cancelamento
@@ -6040,6 +6062,7 @@ components:
       enum:
         - COM_LIMITE
         - LIMITE_FLEXIVEL
+        - SEM_LIMITE
       example: COM_LIMITE
     EnumCreditCardAccountsLineLimitType:
       type: string
@@ -10394,12 +10417,7 @@ components:
         - meta
       properties:
         data:
-          type: object
-          required:
-            - identification
-          properties:
-            identification:
-              $ref: '#/components/schemas/CreditCardsAccountIdentification'
+          $ref: '#/components/schemas/CreditCardsAccountIdentificationBrand'
         links:
           $ref: '#/components/schemas/Links'
         meta:

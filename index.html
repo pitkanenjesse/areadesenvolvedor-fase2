@@ -757,6 +757,12 @@
                     <a href="#tocS_CreditCardsAccountIdentification" class="toc-h2 toc-link" data-title="CreditCardsAccountIdentification">CreditCardsAccountIdentification</a>
                   </li>
                   <li>
+                    <a href="#tocS_CreditCardAccountIdentificationAccount" class="toc-h2 toc-link" data-title="CreditCardAccountIdentificationAccount">CreditCardAccountIdentificationAccount</a>
+                  </li>
+                  <li>
+                    <a href="#tocS_CreditCardsAccountIdentificationBrand" class="toc-h2 toc-link" data-title="CreditCardsAccountIdentificationBrand">CreditCardsAccountIdentificationBrand</a>
+                  </li>
+                  <li>
                     <a href="#tocS_CreditCardsAccountPaymentMethod" class="toc-h2 toc-link" data-title="CreditCardsAccountPaymentMethod">CreditCardsAccountPaymentMethod</a>
                   </li>
                   <li>
@@ -770,6 +776,9 @@
                   </li>
                   <li>
                     <a href="#tocS_CreditCardService" class="toc-h2 toc-link" data-title="CreditCardService">CreditCardService</a>
+                  </li>
+                  <li>
+                    <a href="#tocS_CreditCardTransactionAccount" class="toc-h2 toc-link" data-title="CreditCardTransactionAccount">CreditCardTransactionAccount</a>
                   </li>
                   <li>
                     <a href="#tocS_CreditCardTermsConditions" class="toc-h2 toc-link" data-title="CreditCardTermsConditions">CreditCardTermsConditions</a>
@@ -13670,9 +13679,9 @@ This operation does not require authentication
 
 <h3 id='apis-diretorio-e-service-desk-identificacao-de-cartao-de-credito-dicionario-de-dados'>Dicionário de dados</h3>
 
-<p><a href="dictionary/personal_customers_financial_relation.csv" target="_blank">Fazer download do dicionário de dados</a></p>
+<p><a href="dictionary/credit_cards_accounts_identification.csv" target="_blank">Fazer download do dicionário de dados</a></p>
 
-<p><a href="dictionary/example/examples_personal_customers_financial_relation.csv" target="_blank">Fazer download dos exemplos</a></p>
+<p><a href="dictionary/example/examples_credit_cards_accounts_identification.csv" target="_blank">Fazer download dos exemplos</a></p>
 
 <h3 id='apis-diretorio-e-service-desk-identificacao-de-cartao-de-credito-especificacao-em-oas-3-0'>Especificação em OAS 3.0</h3>
 
@@ -13713,19 +13722,21 @@ This operation does not require authentication
 
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"identification"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"creditCardAccountId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"XXZTR3459087"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"brandName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Organização A"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cartão Universitário"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"companyCnpj"</span><span class="p">:</span><span class="w"> </span><span class="s2">"21128159000166"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"productType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CLASSIC_NACIONAL"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"productAdditionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"creditCardNetwork"</span><span class="p">:</span><span class="w"> </span><span class="s2">"VISA"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"networkAdditionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"paymentMethod"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"identificationNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4453"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"isMultipleCreditCard"</span><span class="p">:</span><span class="w"> </span><span class="s2">"true"</span><span class="w">
+    </span><span class="nl">"creditCardAccount"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"identification"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"creditCardAccountId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"XXZTR3459087"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"brandName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Organização A"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cartão Universitário"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"companyCnpj"</span><span class="p">:</span><span class="w"> </span><span class="s2">"21128159000166"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"productType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CLASSIC_NACIONAL"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"productAdditionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"creditCardNetwork"</span><span class="p">:</span><span class="w"> </span><span class="s2">"VISA"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"networkAdditionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"paymentMethod"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"identificationNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4453"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"isMultipleCreditCard"</span><span class="p">:</span><span class="w"> </span><span class="s2">"true"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">},</span><span class="w">
@@ -13922,9 +13933,9 @@ This operation does not require authentication
 
 <h3 id='apis-diretorio-e-service-desk-limites-de-cartao-de-credito-dicionario-de-dados'>Dicionário de dados</h3>
 
-<p><a href="dictionary/personal_customers_financial_relation.csv" target="_blank">Fazer download do dicionário de dados</a></p>
+<p><a href="dictionary/credit_cards_accounts_limits.csv" target="_blank">Fazer download do dicionário de dados</a></p>
 
-<p><a href="dictionary/example/examples_personal_customers_financial_relation.csv" target="_blank">Fazer download dos exemplos</a></p>
+<p><a href="dictionary/example/examples_credit_cards_accounts_limits.csv" target="_blank">Fazer download dos exemplos</a></p>
 
 <h3 id='apis-diretorio-e-service-desk-limites-de-cartao-de-credito-especificacao-em-oas-3-0'>Especificação em OAS 3.0</h3>
 
@@ -14208,9 +14219,9 @@ This operation does not require authentication
 
 <h3 id='apis-diretorio-e-service-desk-transacoes-de-cartao-de-credito-dicionario-de-dados'>Dicionário de dados</h3>
 
-<p><a href="dictionary/personal_customers_financial_relation.csv" target="_blank">Fazer download do dicionário de dados</a></p>
+<p><a href="dictionary/credit_cards_accounts_transactions.csv" target="_blank">Fazer download do dicionário de dados</a></p>
 
-<p><a href="dictionary/example/examples_personal_customers_financial_relation.csv" target="_blank">Fazer download dos exemplos</a></p>
+<p><a href="dictionary/example/examples_credit_cards_accounts_transactions.csv" target="_blank">Fazer download dos exemplos</a></p>
 
 <h3 id='apis-diretorio-e-service-desk-transacoes-de-cartao-de-credito-especificacao-em-oas-3-0'>Especificação em OAS 3.0</h3>
 
@@ -14251,31 +14262,33 @@ This operation does not require authentication
 
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"transactions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"creditCardAccountId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"XXZTR3459087"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"brandName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Organização A"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"companyCnpj"</span><span class="p">:</span><span class="w"> </span><span class="s2">"21128159000166"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"statementCreditCardAccounts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"transactionName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"billIdentification"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"creditDebitType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CREDITO"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"transactionType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CASHBACK"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"transactionalAdditionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"paymentType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A_VISTA"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"feeType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ANUIDADE"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"feeTypeAdditionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"otherCreditsType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CREDITO_ROTATIVO"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"otherCreditsAdditionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"chargeIdentificator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"charge"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"brazilianAmount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"brazilianCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"str"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"str"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"transactionDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"billPostDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"payeeMCC"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+    </span><span class="nl">"creditCardAccount"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"transactions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"creditCardAccountId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"XXZTR3459087"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"brandName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Organização A"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"companyCnpj"</span><span class="p">:</span><span class="w"> </span><span class="s2">"21128159000166"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"statementCreditCardAccounts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"transactionName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"billIdentification"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"creditDebitType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CREDITO"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"transactionType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CASHBACK"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"transactionalAdditionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"paymentType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A_VISTA"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"feeType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ANUIDADE"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"feeTypeAdditionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"otherCreditsType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CREDITO_ROTATIVO"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"otherCreditsAdditionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"chargeIdentificator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"charge"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"brazilianAmount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"brazilianCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"str"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"str"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"transactionDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"billPostDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"payeeMCC"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+        </span><span class="p">}</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">},</span><span class="w">
@@ -24221,31 +24234,33 @@ This operation does not require authentication
 <a id="tocScreditcardaccountstransactionsbrand"></a>
 <a id="tocscreditcardaccountstransactionsbrand"></a></p>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"transactions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"creditCardAccountId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"XXZTR3459087"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"brandName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Organização A"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"companyCnpj"</span><span class="p">:</span><span class="w"> </span><span class="s2">"21128159000166"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"statementCreditCardAccounts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"transactionName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"billIdentification"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"creditDebitType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CREDITO"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"transactionType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CASHBACK"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"transactionalAdditionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"paymentType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A_VISTA"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"feeType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ANUIDADE"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"feeTypeAdditionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"otherCreditsType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CREDITO_ROTATIVO"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"otherCreditsAdditionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"chargeIdentificator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"charge"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"brazilianAmount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"brazilianCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"str"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"str"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"transactionDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"billPostDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"payeeMCC"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+  </span><span class="nl">"creditCardAccount"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"transactions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"creditCardAccountId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"XXZTR3459087"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"brandName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Organização A"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"companyCnpj"</span><span class="p">:</span><span class="w"> </span><span class="s2">"21128159000166"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"statementCreditCardAccounts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"transactionName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"billIdentification"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"creditDebitType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CREDITO"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"transactionType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CASHBACK"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"transactionalAdditionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"paymentType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A_VISTA"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"feeType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ANUIDADE"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"feeTypeAdditionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"otherCreditsType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CREDITO_ROTATIVO"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"otherCreditsAdditionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"chargeIdentificator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"charge"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"brazilianAmount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"brazilianCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"str"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"str"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"transactionDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"billPostDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"payeeMCC"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+      </span><span class="p">}</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -24260,10 +24275,10 @@ This operation does not require authentication
 </tr>
 </thead><tbody>
 <tr>
-<td>transactions</td>
-<td><a href="#schemacreditcardaccountstransactions">CreditCardAccountsTransactions</a></td>
+<td>creditCardAccount</td>
+<td><a href="#schemacreditcardtransactionaccount">CreditCardTransactionAccount</a></td>
 <td>true</td>
-<td>objeto que agrupa as informações referentes as transações de pagamentos realizadas na conta de  pagamento pós-paga</td>
+<td></td>
 </tr>
 </tbody></table>
 
@@ -24774,13 +24789,97 @@ This operation does not require authentication
 </tr>
 </tbody></table>
 
+<h2 id="tocS_CreditCardAccountIdentificationAccount">CreditCardAccountIdentificationAccount</h2>
+
+<p><a id="schemacreditcardaccountidentificationaccount"></a>
+<a id="schema_CreditCardAccountIdentificationAccount"></a>
+<a id="tocScreditcardaccountidentificationaccount"></a>
+<a id="tocscreditcardaccountidentificationaccount"></a></p>
+
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"identification"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"creditCardAccountId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"XXZTR3459087"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"brandName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Organização A"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cartão Universitário"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"companyCnpj"</span><span class="p">:</span><span class="w"> </span><span class="s2">"21128159000166"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"productType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CLASSIC_NACIONAL"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"productAdditionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"creditCardNetwork"</span><span class="p">:</span><span class="w"> </span><span class="s2">"VISA"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"networkAdditionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"paymentMethod"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"identificationNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4453"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"isMultipleCreditCard"</span><span class="p">:</span><span class="w"> </span><span class="s2">"true"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
+<table><thead>
+<tr>
+<th>Nome</th>
+<th>Tipo</th>
+<th>Obrigatório</th>
+<th>Descrição</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>identification</td>
+<td><a href="#schemacreditcardsaccountidentification">CreditCardsAccountIdentification</a></td>
+<td>true</td>
+<td>Conjunto de informações referentes à identificação da conta de pagamento pós-paga.</td>
+</tr>
+</tbody></table>
+
+<h2 id="tocS_CreditCardsAccountIdentificationBrand">CreditCardsAccountIdentificationBrand</h2>
+
+<p><a id="schemacreditcardsaccountidentificationbrand"></a>
+<a id="schema_CreditCardsAccountIdentificationBrand"></a>
+<a id="tocScreditcardsaccountidentificationbrand"></a>
+<a id="tocscreditcardsaccountidentificationbrand"></a></p>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"creditCardAccount"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"identification"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"creditCardAccountId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"XXZTR3459087"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"brandName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Organização A"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cartão Universitário"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"companyCnpj"</span><span class="p">:</span><span class="w"> </span><span class="s2">"21128159000166"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"productType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CLASSIC_NACIONAL"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"productAdditionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"creditCardNetwork"</span><span class="p">:</span><span class="w"> </span><span class="s2">"VISA"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"networkAdditionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"paymentMethod"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"identificationNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4453"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"isMultipleCreditCard"</span><span class="p">:</span><span class="w"> </span><span class="s2">"true"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
+<table><thead>
+<tr>
+<th>Nome</th>
+<th>Tipo</th>
+<th>Obrigatório</th>
+<th>Descrição</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>creditCardAccount</td>
+<td><a href="#schemacreditcardaccountidentificationaccount">CreditCardAccountIdentificationAccount</a></td>
+<td>true</td>
+<td></td>
+</tr>
+</tbody></table>
+
 <h2 id="tocS_CreditCardsAccountPaymentMethod">CreditCardsAccountPaymentMethod</h2>
 
 <p><a id="schemacreditcardsaccountpaymentmethod"></a>
 <a id="schema_CreditCardsAccountPaymentMethod"></a>
 <a id="tocScreditcardsaccountpaymentmethod"></a>
 <a id="tocscreditcardsaccountpaymentmethod"></a></p>
-
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"identificationNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4453"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"isMultipleCreditCard"</span><span class="p">:</span><span class="w"> </span><span class="s2">"true"</span><span class="w">
@@ -25511,6 +25610,59 @@ This operation does not require authentication
 <tr>
 <td>code</td>
 <td>SMS</td>
+</tr>
+</tbody></table>
+
+<h2 id="tocS_CreditCardTransactionAccount">CreditCardTransactionAccount</h2>
+
+<p><a id="schemacreditcardtransactionaccount"></a>
+<a id="schema_CreditCardTransactionAccount"></a>
+<a id="tocScreditcardtransactionaccount"></a>
+<a id="tocscreditcardtransactionaccount"></a></p>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"transactions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"creditCardAccountId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"XXZTR3459087"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"brandName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Organização A"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"companyCnpj"</span><span class="p">:</span><span class="w"> </span><span class="s2">"21128159000166"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"statementCreditCardAccounts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"transactionName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"billIdentification"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"creditDebitType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CREDITO"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"transactionType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CASHBACK"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"transactionalAdditionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"paymentType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A_VISTA"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"feeType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ANUIDADE"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"feeTypeAdditionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"otherCreditsType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CREDITO_ROTATIVO"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"otherCreditsAdditionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"chargeIdentificator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"charge"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"brazilianAmount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"brazilianCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"str"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"str"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"transactionDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"billPostDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"payeeMCC"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre></div><h3 id='schemas-limites-da-conta-propriedades'>Propriedades</h3>
+<table><thead>
+<tr>
+<th>Nome</th>
+<th>Tipo</th>
+<th>Obrigatório</th>
+<th>Descrição</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>transactions</td>
+<td><a href="#schemacreditcardaccountstransactions">CreditCardAccountsTransactions</a></td>
+<td>true</td>
+<td>objeto que agrupa as informações referentes as transações de pagamentos realizadas na conta de  pagamento pós-paga</td>
 </tr>
 </tbody></table>
 
@@ -28412,6 +28564,10 @@ Bandeira é a detentora de todos os direitos e deveres da utilização da marca 
 <tr>
 <td>**</td>
 <td>LIMITE_FLEXIVEL</td>
+</tr>
+<tr>
+<td>**</td>
+<td>SEM_LIMITE</td>
 </tr>
 </tbody></table>
 
@@ -41050,19 +41206,21 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
 <a id="tocsresponsecreditcardaccountsidentification"></a></p>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"identification"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"creditCardAccountId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"XXZTR3459087"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"brandName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Organização A"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cartão Universitário"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"companyCnpj"</span><span class="p">:</span><span class="w"> </span><span class="s2">"21128159000166"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"productType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CLASSIC_NACIONAL"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"productAdditionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"creditCardNetwork"</span><span class="p">:</span><span class="w"> </span><span class="s2">"VISA"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"networkAdditionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"paymentMethod"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"identificationNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4453"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"isMultipleCreditCard"</span><span class="p">:</span><span class="w"> </span><span class="s2">"true"</span><span class="w">
+    </span><span class="nl">"creditCardAccount"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"identification"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"creditCardAccountId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"XXZTR3459087"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"brandName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Organização A"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cartão Universitário"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"companyCnpj"</span><span class="p">:</span><span class="w"> </span><span class="s2">"21128159000166"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"productType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CLASSIC_NACIONAL"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"productAdditionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"creditCardNetwork"</span><span class="p">:</span><span class="w"> </span><span class="s2">"VISA"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"networkAdditionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"paymentMethod"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"identificationNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4453"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"isMultipleCreditCard"</span><span class="p">:</span><span class="w"> </span><span class="s2">"true"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">},</span><span class="w">
@@ -41090,15 +41248,9 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
 </thead><tbody>
 <tr>
 <td>data</td>
-<td>object</td>
+<td><a href="#schemacreditcardsaccountidentificationbrand">CreditCardsAccountIdentificationBrand</a></td>
 <td>true</td>
 <td></td>
-</tr>
-<tr>
-<td>» identification</td>
-<td><a href="#schemacreditcardsaccountidentification">CreditCardsAccountIdentification</a></td>
-<td>true</td>
-<td>Conjunto de informações referentes à identificação da conta de pagamento pós-paga.</td>
 </tr>
 <tr>
 <td>links</td>
@@ -41306,31 +41458,33 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
 <a id="tocsresponsecreditcardaccountstransactions"></a></p>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"transactions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"creditCardAccountId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"XXZTR3459087"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"brandName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Organização A"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"companyCnpj"</span><span class="p">:</span><span class="w"> </span><span class="s2">"21128159000166"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"statementCreditCardAccounts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"transactionName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"billIdentification"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"creditDebitType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CREDITO"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"transactionType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CASHBACK"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"transactionalAdditionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"paymentType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A_VISTA"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"feeType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ANUIDADE"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"feeTypeAdditionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"otherCreditsType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CREDITO_ROTATIVO"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"otherCreditsAdditionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"chargeIdentificator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"charge"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"brazilianAmount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"brazilianCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"str"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"str"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"transactionDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"billPostDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"payeeMCC"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+    </span><span class="nl">"creditCardAccount"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"transactions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"creditCardAccountId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"XXZTR3459087"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"brandName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Organização A"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"companyCnpj"</span><span class="p">:</span><span class="w"> </span><span class="s2">"21128159000166"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"statementCreditCardAccounts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"transactionName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"billIdentification"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"creditDebitType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CREDITO"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"transactionType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CASHBACK"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"transactionalAdditionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"paymentType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A_VISTA"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"feeType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ANUIDADE"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"feeTypeAdditionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"otherCreditsType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CREDITO_ROTATIVO"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"otherCreditsAdditionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"chargeIdentificator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"charge"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"brazilianAmount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"brazilianCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"str"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"str"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"transactionDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"billPostDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"payeeMCC"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+        </span><span class="p">}</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">},</span><span class="w">
