@@ -1789,15 +1789,15 @@ paths:
 
         * DER Conceitual
 
-        <img class="lazy" src="images/loading.gif" data-src="images/der/customers/DER_PersonalCustomers.png"/>
+        <img class="lazy" src="images/loading.gif" data-src="images/der/credit_cards/DER_CreditCardAccount.png"/>
 
-        <a href="images/der/customers/DER_PersonalCustomers.png" target="_blank">Fazer download do DER Conceitual</a>
+        <a href="images/der/credit_cards/DER_CreditCardAccount.png" target="_blank">Fazer download do DER Conceitual</a>
 
         * DER Lógico
 
-        <img class="lazy" src="images/loading.gif" data-src="images/der/customers/DER_Personal_Customers_FinancialRelation.png"/>
+        <img class="lazy" src="images/loading.gif" data-src="images/der/credit_cards/DER_CreditCardAccount_Identification.png"/>
 
-        <a href="images/der/customers/DER_Personal_Customers_FinancialRelation.png" target="_blank">Fazer download do DER Lógico</a>
+        <a href="images/der/credit_cards/DER_CreditCardAccount_Identification.png" target="_blank">Fazer download do DER Lógico</a>
 
         ### Dicionário de dados
 
@@ -1871,15 +1871,15 @@ paths:
 
         * DER Conceitual
 
-        <img class="lazy" src="images/loading.gif" data-src="images/der/customers/DER_PersonalCustomers.png"/>
+        <img class="lazy" src="images/loading.gif" data-src="images/der/credit_cards/DER_CreditCardAccount.png"/>
 
-        <a href="images/der/customers/DER_PersonalCustomers.png" target="_blank">Fazer download do DER Conceitual</a>
+        <a href="images/der/credit_cards/DER_CreditCardAccount.png" target="_blank">Fazer download do DER Conceitual</a>
 
         * DER Lógico
 
-        <img class="lazy" src="images/loading.gif" data-src="images/der/customers/DER_Personal_Customers_FinancialRelation.png"/>
+        <img class="lazy" src="images/loading.gif" data-src="images/der/credit_cards/DER_CreditCardAccount_Limits.png"/>
 
-        <a href="images/der/customers/DER_Personal_Customers_FinancialRelation.png" target="_blank">Fazer download do DER Lógico</a>
+        <a href="images/der/credit_cards/DER_CreditCardAccount_Limits.png" target="_blank">Fazer download do DER Lógico</a>
 
         ### Dicionário de dados
 
@@ -1953,15 +1953,15 @@ paths:
 
         * DER Conceitual
 
-        <img class="lazy" src="images/loading.gif" data-src="images/der/customers/DER_PersonalCustomers.png"/>
+        <img class="lazy" src="images/loading.gif" data-src="images/der/credit_cards/DER_CreditCardAccount.png"/>
 
-        <a href="images/der/customers/DER_PersonalCustomers.png" target="_blank">Fazer download do DER Conceitual</a>
+        <a href="images/der/credit_cards/DER_CreditCardAccount.png" target="_blank">Fazer download do DER Conceitual</a>
 
         * DER Lógico
 
-        <img class="lazy" src="images/loading.gif" data-src="images/der/customers/DER_Personal_Customers_FinancialRelation.png"/>
+        <img class="lazy" src="images/loading.gif" data-src="images/der/credit_cards/DER_CreditCardAccount_Transactions.png"/>
 
-        <a href="images/der/customers/DER_Personal_Customers_FinancialRelation.png" target="_blank">Fazer download do DER Lógico</a>
+        <a href="images/der/credit_cards/DER_CreditCardAccount_Transactions.png" target="_blank">Fazer download do DER Lógico</a>
 
         ### Dicionário de dados
 
@@ -2008,7 +2008,7 @@ paths:
           $ref: '#/paths/~1admin~1v1~1metrics/get/responses/503'
         '504':
           $ref: '#/paths/~1admin~1v1~1metrics/get/responses/504'
-  /credit-cards/v1/billing:
+  /credit-card/v1/billing:
     get:
       tags:
         - API - Cartão de Crédito
@@ -2026,7 +2026,6 @@ paths:
 
         ### Visão de alto de nível das estruturas de dados
 
-        A definir
 
         <img class="lazy" src="images/loading.gif" data-src="images/tld/credit_cards/TLD_CreditCardAccount_Bill.png"/>
 
@@ -2034,19 +2033,15 @@ paths:
 
         * DER Conceitual
 
-        A definir
+        <img class="lazy" src="images/loading.gif" data-src="images/der/credit_cards/DER_CreditCardAccount.png"/>
 
-        <img class="lazy" src="images/loading.gif" data-src="images/der/accounts/DER_Cards.png"/>
-
-        <a href="images/der/accounts/DER_Cards.png" target="_blank">Fazer download do DER Conceitual</a>
+        <a href="images/der/credit_cards/DER_CreditCardAccount.png" target="_blank">Fazer download do DER Conceitual</a>
 
         * DER Lógico
 
-        A definir
+        <img class="lazy" src="images/loading.gif" data-src="images/der/credit_cards/DER_CreditCardAccount_Bill.png"/>
 
-        <img class="lazy" src="images/loading.gif" data-src="images/der/accounts/DER_Cards_Billing.png"/>
-
-        <a href="images/der/accounts/DER_Cards_Billing.png" target="_blank">Fazer download do DER Lógico</a>
+        <a href="images/der/credit_cards/DER_CreditCardAccount_Bill.png" target="_blank">Fazer download do DER Lógico</a>
 
         ### Dicionário de dados
 
