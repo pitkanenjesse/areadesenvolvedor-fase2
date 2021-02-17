@@ -19,8 +19,8 @@ paths:
       description: Método para obter os dados de identificação de cartão de crédito.
       operationId: getCreditCardAccountsIdentification
       parameters:
-        - $ref: '#/paths/~1credit-cards~1limits/get/parameters/0'
-        - $ref: '#/paths/~1credit-cards~1limits/get/parameters/1'
+        - $ref: '#/paths/~1credit-cards~1bill/get/parameters/0'
+        - $ref: '#/paths/~1credit-cards~1bill/get/parameters/1'
       responses:
         '200':
           description: Dados sobre identificação de cartão de crédito
@@ -159,33 +159,33 @@ paths:
                                       cartao
                                     example: 'true'
                   links:
-                    $ref: '#/paths/~1credit-cards~1limits/get/responses/200/content/application~1json/schema/properties/links'
+                    $ref: '#/paths/~1credit-cards~1bill/get/responses/200/content/application~1json/schema/properties/links'
                   meta:
-                    $ref: '#/paths/~1credit-cards~1limits/get/responses/200/content/application~1json/schema/properties/meta'
+                    $ref: '#/paths/~1credit-cards~1bill/get/responses/200/content/application~1json/schema/properties/meta'
         '400':
-          $ref: '#/paths/~1credit-cards~1limits/get/responses/400'
+          $ref: '#/paths/~1credit-cards~1bill/get/responses/400'
         '401':
-          $ref: '#/paths/~1credit-cards~1limits/get/responses/401'
+          $ref: '#/paths/~1credit-cards~1bill/get/responses/401'
         '403':
-          $ref: '#/paths/~1credit-cards~1limits/get/responses/403'
+          $ref: '#/paths/~1credit-cards~1bill/get/responses/403'
         '404':
-          $ref: '#/paths/~1credit-cards~1limits/get/responses/404'
+          $ref: '#/paths/~1credit-cards~1bill/get/responses/404'
         '405':
-          $ref: '#/paths/~1credit-cards~1limits/get/responses/405'
+          $ref: '#/paths/~1credit-cards~1bill/get/responses/405'
         '406':
-          $ref: '#/paths/~1credit-cards~1limits/get/responses/406'
+          $ref: '#/paths/~1credit-cards~1bill/get/responses/406'
         '410':
-          $ref: '#/paths/~1credit-cards~1limits/get/responses/410'
+          $ref: '#/paths/~1credit-cards~1bill/get/responses/410'
         '422':
-          $ref: '#/paths/~1credit-cards~1limits/get/responses/422'
+          $ref: '#/paths/~1credit-cards~1bill/get/responses/422'
         '429':
-          $ref: '#/paths/~1credit-cards~1limits/get/responses/429'
+          $ref: '#/paths/~1credit-cards~1bill/get/responses/429'
         '500':
-          $ref: '#/paths/~1credit-cards~1limits/get/responses/500'
+          $ref: '#/paths/~1credit-cards~1bill/get/responses/500'
         '503':
-          $ref: '#/paths/~1credit-cards~1limits/get/responses/503'
+          $ref: '#/paths/~1credit-cards~1bill/get/responses/503'
         '504':
-          $ref: '#/paths/~1credit-cards~1limits/get/responses/504'
+          $ref: '#/paths/~1credit-cards~1bill/get/responses/504'
   /credit-cards/limits:
     get:
       tags:
@@ -194,20 +194,8 @@ paths:
       description: Método para obter os dados de limites de cartão de crédito.
       operationId: getCreditCardAccountsLimits
       parameters:
-        - name: page
-          in: query
-          description: Número da página que está sendo requisitada (o valor da primeira página é 1).
-          schema:
-            type: integer
-            default: 1
-            minimum: 1
-        - name: page-size
-          in: query
-          description: Quantidade total de registros por páginas.
-          schema:
-            type: integer
-            default: 25
-            minimum: 1
+        - $ref: '#/paths/~1credit-cards~1bill/get/parameters/0'
+        - $ref: '#/paths/~1credit-cards~1bill/get/parameters/1'
       responses:
         '200':
           description: Limites do cartão de crédito
@@ -337,49 +325,9 @@ paths:
                                             description: 'Valor do limite de crédito informado (total ou por modalidade), relativo ao tipo selecionado. Expresso em valor monetário com 2 casas decimais'
                                             maxLength: 12
                   links:
-                    type: object
-                    description: Referências para outros recusos da API requisitada.
-                    required:
-                      - self
-                    properties:
-                      self:
-                        type: string
-                        format: URIString
-                        description: URI completo que gerou a resposta atual.
-                        example: 'https://api.banco.com.br/open-banking/<api>/v1/<resource>'
-                      first:
-                        type: string
-                        format: URIString
-                        description: URI da primeira página que originou essa lista de resultados. Restrição - Obrigatório quando não for a primeira página da resposta
-                        example: 'https://api.banco.com.br/open-banking/<api>/v1/<resource>'
-                      prev:
-                        type: string
-                        format: URIString
-                        description: "URI da página anterior dessa lista de resultados. Restrição - \tObrigatório quando não for a primeira página da resposta"
-                      next:
-                        type: string
-                        format: URIString
-                        description: URI da próxima página dessa lista de resultados. Restrição - Obrigatório quando não for a última página da resposta
-                      last:
-                        type: string
-                        format: URIString
-                        description: URI da última página dessa lista de resultados. Restrição - Obrigatório quando não for a última página da resposta
-                        example: 'https://api.banco.com.br/open-banking/<api>/v1/<resource>'
+                    $ref: '#/paths/~1credit-cards~1bill/get/responses/200/content/application~1json/schema/properties/links'
                   meta:
-                    type: object
-                    description: Meta informações referente a API requisitada.
-                    properties:
-                      totalRecords:
-                        type: integer
-                        description: Número total de registros no resultado
-                        example: 1
-                      totalPages:
-                        type: integer
-                        description: Número total de páginas no resultado
-                        example: 1
-                    required:
-                      - totalRecords
-                      - totalPages
+                    $ref: '#/paths/~1credit-cards~1bill/get/responses/200/content/application~1json/schema/properties/meta'
                 example:
                   data:
                     creditCardAccount:
@@ -420,29 +368,29 @@ paths:
                     totalRecords: 1
                     totalPages: 1
         '400':
-          description: 'A requisição foi malformada, omitindo atributos obrigatórios, seja no payload ou através de atributos na URL.'
+          $ref: '#/paths/~1credit-cards~1bill/get/responses/400'
         '401':
-          description: Cabeçalho de autenticação ausente/inválido ou token inválido.
+          $ref: '#/paths/~1credit-cards~1bill/get/responses/401'
         '403':
-          description: O token tem escopo incorreto ou uma política de segurança foi violada.
+          $ref: '#/paths/~1credit-cards~1bill/get/responses/403'
         '404':
-          description: O recurso solicitado não existe ou não foi implementado.
+          $ref: '#/paths/~1credit-cards~1bill/get/responses/404'
         '405':
-          description: O consumidor tentou acessar o recurso com um método não suportado.
+          $ref: '#/paths/~1credit-cards~1bill/get/responses/405'
         '406':
-          description: A solicitação continha um cabeçalho Accept diferente dos tipos de mídia permitidos ou um conjunto de caracteres diferente de UTF-8.
+          $ref: '#/paths/~1credit-cards~1bill/get/responses/406'
         '410':
-          description: Indica que o recurso não está mais disponível.
+          $ref: '#/paths/~1credit-cards~1bill/get/responses/410'
         '422':
-          description: 'A solicitação foi bem formada, mas não pôde ser processada devido à lógica de negócios específica da solicitação.'
+          $ref: '#/paths/~1credit-cards~1bill/get/responses/422'
         '429':
-          description: 'A operação foi recusada, pois muitas solicitações foram feitas dentro de um determinado período ou o limite global de requisições concorrentes foi atingido.'
+          $ref: '#/paths/~1credit-cards~1bill/get/responses/429'
         '500':
-          description: Ocorreu um erro no gateway da API ou no microsserviço.
+          $ref: '#/paths/~1credit-cards~1bill/get/responses/500'
         '503':
-          description: O serviço está indisponível no momento.
+          $ref: '#/paths/~1credit-cards~1bill/get/responses/503'
         '504':
-          description: O servidor não pôde responder em tempo hábil.
+          $ref: '#/paths/~1credit-cards~1bill/get/responses/504'
   /credit-cards/transactions:
     get:
       tags:
@@ -451,8 +399,8 @@ paths:
       description: Método para obter os dados de transações do cartão de crédito.
       operationId: getCreditCardAccountsTransactions
       parameters:
-        - $ref: '#/paths/~1credit-cards~1limits/get/parameters/0'
-        - $ref: '#/paths/~1credit-cards~1limits/get/parameters/1'
+        - $ref: '#/paths/~1credit-cards~1bill/get/parameters/0'
+        - $ref: '#/paths/~1credit-cards~1bill/get/parameters/1'
       responses:
         '200':
           description: Dados sobre Transações do cartão de crédito
@@ -630,34 +578,34 @@ paths:
                                     description: 'MCC é o Merchant Category Code, ou o código da categoria do estabelecimento comercial. Os MCCs são agrupados segundo suas similaridades'
                                     maxLength: 4
                   links:
-                    $ref: '#/paths/~1credit-cards~1limits/get/responses/200/content/application~1json/schema/properties/links'
+                    $ref: '#/paths/~1credit-cards~1bill/get/responses/200/content/application~1json/schema/properties/links'
                   meta:
-                    $ref: '#/paths/~1credit-cards~1limits/get/responses/200/content/application~1json/schema/properties/meta'
+                    $ref: '#/paths/~1credit-cards~1bill/get/responses/200/content/application~1json/schema/properties/meta'
         '400':
-          $ref: '#/paths/~1credit-cards~1limits/get/responses/400'
+          $ref: '#/paths/~1credit-cards~1bill/get/responses/400'
         '401':
-          $ref: '#/paths/~1credit-cards~1limits/get/responses/401'
+          $ref: '#/paths/~1credit-cards~1bill/get/responses/401'
         '403':
-          $ref: '#/paths/~1credit-cards~1limits/get/responses/403'
+          $ref: '#/paths/~1credit-cards~1bill/get/responses/403'
         '404':
-          $ref: '#/paths/~1credit-cards~1limits/get/responses/404'
+          $ref: '#/paths/~1credit-cards~1bill/get/responses/404'
         '405':
-          $ref: '#/paths/~1credit-cards~1limits/get/responses/405'
+          $ref: '#/paths/~1credit-cards~1bill/get/responses/405'
         '406':
-          $ref: '#/paths/~1credit-cards~1limits/get/responses/406'
+          $ref: '#/paths/~1credit-cards~1bill/get/responses/406'
         '410':
-          $ref: '#/paths/~1credit-cards~1limits/get/responses/410'
+          $ref: '#/paths/~1credit-cards~1bill/get/responses/410'
         '422':
-          $ref: '#/paths/~1credit-cards~1limits/get/responses/422'
+          $ref: '#/paths/~1credit-cards~1bill/get/responses/422'
         '429':
-          $ref: '#/paths/~1credit-cards~1limits/get/responses/429'
+          $ref: '#/paths/~1credit-cards~1bill/get/responses/429'
         '500':
-          $ref: '#/paths/~1credit-cards~1limits/get/responses/500'
+          $ref: '#/paths/~1credit-cards~1bill/get/responses/500'
         '503':
-          $ref: '#/paths/~1credit-cards~1limits/get/responses/503'
+          $ref: '#/paths/~1credit-cards~1bill/get/responses/503'
         '504':
-          $ref: '#/paths/~1credit-cards~1limits/get/responses/504'
-  /credit-cards/billing:
+          $ref: '#/paths/~1credit-cards~1bill/get/responses/504'
+  /credit-cards/bill:
     get:
       tags:
         - Credit Card
@@ -665,8 +613,20 @@ paths:
       description: Método para obter os dados referentes à fatura da conta de pagamento pós-paga
       operationId: getCrediCardsBilling
       parameters:
-        - $ref: '#/paths/~1credit-cards~1limits/get/parameters/0'
-        - $ref: '#/paths/~1credit-cards~1limits/get/parameters/1'
+        - name: page
+          in: query
+          description: Número da página que está sendo requisitada (o valor da primeira página é 1).
+          schema:
+            type: integer
+            default: 1
+            minimum: 1
+        - name: page-size
+          in: query
+          description: Quantidade total de registros por páginas.
+          schema:
+            type: integer
+            default: 25
+            minimum: 1
       responses:
         '200':
           description: Dados sobre a fatura da conta de pagamento pós-paga
@@ -822,9 +782,49 @@ paths:
                                 maxItems: 2
                                 description: Lista que traz os valores relativos aos pagamentos da Fatura da conta de pagamento pós-paga
                   links:
-                    $ref: '#/paths/~1credit-cards~1limits/get/responses/200/content/application~1json/schema/properties/links'
+                    type: object
+                    description: Referências para outros recusos da API requisitada.
+                    required:
+                      - self
+                    properties:
+                      self:
+                        type: string
+                        format: URIString
+                        description: URI completo que gerou a resposta atual.
+                        example: 'https://api.banco.com.br/open-banking/<api>/v1/<resource>'
+                      first:
+                        type: string
+                        format: URIString
+                        description: URI da primeira página que originou essa lista de resultados. Restrição - Obrigatório quando não for a primeira página da resposta
+                        example: 'https://api.banco.com.br/open-banking/<api>/v1/<resource>'
+                      prev:
+                        type: string
+                        format: URIString
+                        description: "URI da página anterior dessa lista de resultados. Restrição - \tObrigatório quando não for a primeira página da resposta"
+                      next:
+                        type: string
+                        format: URIString
+                        description: URI da próxima página dessa lista de resultados. Restrição - Obrigatório quando não for a última página da resposta
+                      last:
+                        type: string
+                        format: URIString
+                        description: URI da última página dessa lista de resultados. Restrição - Obrigatório quando não for a última página da resposta
+                        example: 'https://api.banco.com.br/open-banking/<api>/v1/<resource>'
                   meta:
-                    $ref: '#/paths/~1credit-cards~1limits/get/responses/200/content/application~1json/schema/properties/meta'
+                    type: object
+                    description: Meta informações referente a API requisitada.
+                    properties:
+                      totalRecords:
+                        type: integer
+                        description: Número total de registros no resultado
+                        example: 1
+                      totalPages:
+                        type: integer
+                        description: Número total de páginas no resultado
+                        example: 1
+                    required:
+                      - totalRecords
+                      - totalPages
                 example:
                   data:
                     creditCardAccount:
@@ -857,26 +857,26 @@ paths:
                     totalRecords: 1
                     totalPages: 1
         '400':
-          $ref: '#/paths/~1credit-cards~1limits/get/responses/400'
+          description: 'A requisição foi malformada, omitindo atributos obrigatórios, seja no payload ou através de atributos na URL.'
         '401':
-          $ref: '#/paths/~1credit-cards~1limits/get/responses/401'
+          description: Cabeçalho de autenticação ausente/inválido ou token inválido.
         '403':
-          $ref: '#/paths/~1credit-cards~1limits/get/responses/403'
+          description: O token tem escopo incorreto ou uma política de segurança foi violada.
         '404':
-          $ref: '#/paths/~1credit-cards~1limits/get/responses/404'
+          description: O recurso solicitado não existe ou não foi implementado.
         '405':
-          $ref: '#/paths/~1credit-cards~1limits/get/responses/405'
+          description: O consumidor tentou acessar o recurso com um método não suportado.
         '406':
-          $ref: '#/paths/~1credit-cards~1limits/get/responses/406'
+          description: A solicitação continha um cabeçalho Accept diferente dos tipos de mídia permitidos ou um conjunto de caracteres diferente de UTF-8.
         '410':
-          $ref: '#/paths/~1credit-cards~1limits/get/responses/410'
+          description: Indica que o recurso não está mais disponível.
         '422':
-          $ref: '#/paths/~1credit-cards~1limits/get/responses/422'
+          description: 'A solicitação foi bem formada, mas não pôde ser processada devido à lógica de negócios específica da solicitação.'
         '429':
-          $ref: '#/paths/~1credit-cards~1limits/get/responses/429'
+          description: 'A operação foi recusada, pois muitas solicitações foram feitas dentro de um determinado período ou o limite global de requisições concorrentes foi atingido.'
         '500':
-          $ref: '#/paths/~1credit-cards~1limits/get/responses/500'
+          description: Ocorreu um erro no gateway da API ou no microsserviço.
         '503':
-          $ref: '#/paths/~1credit-cards~1limits/get/responses/503'
+          description: O serviço está indisponível no momento.
         '504':
-          $ref: '#/paths/~1credit-cards~1limits/get/responses/504'
+          description: O servidor não pôde responder em tempo hábil.
