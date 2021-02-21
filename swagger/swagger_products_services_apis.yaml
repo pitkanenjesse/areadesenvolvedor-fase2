@@ -492,7 +492,7 @@ paths:
                                         type: object
                                         description: Valores dos percentuais de taxas.
                                         properties:
-                                          savingAccount:
+                                          savingsAccount:
                                             type: string
                                             maxLength: 2000
                                             pattern: \w*\W*
@@ -760,7 +760,7 @@ paths:
                                 elegibilityCriteriaInfo: 'https://empresaa1.com/Accounts_closingProcess'
                                 closingProcessInfo: 'https://empresaa1.com/Accounts_closingProcess'
                               incomeRate:
-                                savingAccount: NA
+                                savingsAccount: NA
                                 prepaidPaymentAccount: NA
                   links:
                     self: 'https://api.banco.com.br/open-banking/products-services/v1/personal-accounts'
@@ -1074,7 +1074,7 @@ paths:
                                 elegibilityCriteriaInfo: 'https://empresaa1.com/Accounts_elegebilityCriteria'
                                 closingProcessInfo: 'https://empresaa1.com/Accounts_closingProcess'
                               incomeRate:
-                                savingAccount: NA
+                                savingsAccount: NA
                                 prepaidPaymentAccount: NA
                   links:
                     self: 'https://api.banco.com.br/open-banking/products-services/v1/business-accounts'

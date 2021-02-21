@@ -452,7 +452,7 @@ paths:
 
         Esta especificação inclui todos os artefatos relevantes para a Especificação de API sobre  Contas de depósito à vista, poupança e de pagamento pré-paga pessoa natural de dados abertos.
 
-        Tags: [Marca (Brand)](#glossarioMarca), [CNPJ (CNPJ Number)](#glossarioCNPJ), [Conta de depósito à vista (Account)](#glossarioContaDepositoVista), [Conta de pagamento pré-paga (Prepaid Payment Account)](#glossarioContaPagamentoPrePaga), [Conta de Poupança (Saving Account)](#glossarioContaPoupanca), [Instituição Financeira (Company)](#glossarioInstituicaoFinanceira), [Pacote de Serviços (Service Bundles)](#glossarioPacoteServicos), [Taxa Referencial – TR (Referential Rate)](#glossarioTaxaReferencial) e [Divulgação dos valores de tarifas e taxas de juros remuneratórias (Disclosure of Fees and Interest Rates)](#api-canais-de-atendimento-divulgacao-dos-valores-de-tarifas-e-taxas-de-juros-remuneratorias).
+        Tags: [Marca (Brand)](#glossarioMarca), [CNPJ (CNPJ Number)](#glossarioCNPJ), [Conta de depósito à vista (Account)](#glossarioContaDepositoVista), [Conta de pagamento pré-paga (Prepaid Payment Account)](#glossarioContaPagamentoPrePaga), [Conta de Poupança (Savings Account)](#glossarioContaPoupanca), [Instituição Financeira (Company)](#glossarioInstituicaoFinanceira), [Pacote de Serviços (Service Bundles)](#glossarioPacoteServicos), [Taxa Referencial – TR (Referential Rate)](#glossarioTaxaReferencial) e [Divulgação dos valores de tarifas e taxas de juros remuneratórias (Disclosure of Fees and Interest Rates)](#api-canais-de-atendimento-divulgacao-dos-valores-de-tarifas-e-taxas-de-juros-remuneratorias).
 
         ### Visão de alto de nível das estruturas de dados
 
@@ -516,7 +516,7 @@ paths:
 
         Esta especificação inclui todos os artefatos relevantes para a Especificação de API sobre  Contas de depósito à vista, poupança e de pagamento pré-paga para pessoa jurídica de dados abertos.
 
-        Tags: [ Marca (Brand) ](#glossarioMarca), [CNPJ (CNPJ Number)](#glossarioCNPJ), [Conta de depósito à vista (Account)](#glossarioContaDepositoVista), [Conta de pagamento pré-paga (Prepaid Payment Account)](#glossarioContaPagamentoPrePaga), [Conta de Poupança (Saving Account)](#glossarioContaPoupanca), [Instituição Financeira (Company)](#glossarioInstituicaoFinanceira), [Pacote de Serviços (Service Bundles)](#glossarioPacoteServicos), [Taxa Referencial – TR (Referential Rate)](#glossarioTaxaReferencial) e [Divulgação dos valores de tarifas e taxas de juros remuneratórias (Disclosure of Fees and Interest Rates)](#api-canais-de-atendimento-divulgacao-dos-valores-de-tarifas-e-taxas-de-juros-remuneratorias).
+        Tags: [ Marca (Brand) ](#glossarioMarca), [CNPJ (CNPJ Number)](#glossarioCNPJ), [Conta de depósito à vista (Account)](#glossarioContaDepositoVista), [Conta de pagamento pré-paga (Prepaid Payment Account)](#glossarioContaPagamentoPrePaga), [Conta de Poupança (Savings Account)](#glossarioContaPoupanca), [Instituição Financeira (Company)](#glossarioInstituicaoFinanceira), [Pacote de Serviços (Service Bundles)](#glossarioPacoteServicos), [Taxa Referencial – TR (Referential Rate)](#glossarioTaxaReferencial) e [Divulgação dos valores de tarifas e taxas de juros remuneratórias (Disclosure of Fees and Interest Rates)](#api-canais-de-atendimento-divulgacao-dos-valores-de-tarifas-e-taxas-de-juros-remuneratorias).
 
         ### Visão de alto de nível das estruturas de dados
 
@@ -2091,7 +2091,7 @@ paths:
         Esta especificação inclui todos os artefatos relevantes para a Especificação de API sobre a Identificação de uma conta de: depósito à vista, poupança ou de pagamento pré-paga referente às informações transacionais de cliente.
 
         Tags: [Código Número (ISPB) (IspbCode)](#glossarioISPB), [Conta individual (Sole Account)](#glossarioContaIndividual), [Conta Conjunta Não-solidária (Joint Account And)](#glossarioContaConjuntaNaoSolidaria), [Conta Conjunta Solidária (Joint Account Or)](#glossarioContaConjuntaSolidaria),
-              [CNPJ (CNPJ Number)](#glossarioCNPJ), [Marca (Brand)](#glossarioMarca), [Instituição Financeira (Company)](#glossarioInstituicaoFinanceira), [Agencia (Agency)](#glossarioAgencia), [Conta depósito à vista (Current Account)](#glossarioContaDepositoVista), [Conta Poupança (Saving Account)](#glossarioContaPoupanca),
+              [CNPJ (CNPJ Number)](#glossarioCNPJ), [Marca (Brand)](#glossarioMarca), [Instituição Financeira (Company)](#glossarioInstituicaoFinanceira), [Agencia (Agency)](#glossarioAgencia), [Conta depósito à vista (Current Account)](#glossarioContaDepositoVista), [Conta Poupança (Savings Account)](#glossarioContaPoupanca),
               [Conta de Pagamento Pré-Paga (Prepayd Payment Account)](#glossarioContaPagamentoPrePaga).
 
         ### Visão de alto de nível das estruturas de dados
@@ -2123,7 +2123,7 @@ paths:
         <a href='swagger/swagger_accounts_apis.yaml'>Download da Especificação (OAS 3.0)</a>
       operationId: getAccountsIdentification
       parameters:
-        - $ref: '#/components/parameters/accountsIspbCode'
+        - $ref: '#/components/parameters/accountsCompeCode'
         - $ref: '#/components/parameters/accountsBranchCode'
         - $ref: '#/components/parameters/accountsNumber'
         - $ref: '#/components/parameters/accountsCheckDigit'
@@ -2205,7 +2205,7 @@ paths:
         <a href='swagger/swagger_accounts_apis.yaml'>Download da Especificação (OAS 3.0)</a>
       operationId: getAccountsBalances
       parameters:
-        - $ref: '#/components/parameters/accountsIspbCode'
+        - $ref: '#/components/parameters/accountsCompeCode'
         - $ref: '#/components/parameters/accountsBranchCode'
         - $ref: '#/components/parameters/accountsNumber'
         - $ref: '#/components/parameters/accountsCheckDigit'
@@ -2256,7 +2256,7 @@ paths:
 
         Esta especificação inclui todos os artefatos relevantes para a Especificação de API sobre as transações efetivadas e os pagamentos autorizados de uma conta de: depósito à vista, poupança ou de pagamento pré-paga referente às informações transacionais de cliente.
 
-        Tags: [Código Número (ISPB) (IspbCode)](#glossarioISPB), [Crédito (Credit)](#glossarioCredito), [Débito (Debit)](#glossarioDebito), [Pagador (Payer)](#glossarioPagador), [Pagamento autorizado (Authorised Payment)](#glossarioPagamentoAutorizado), [Recebedor (Payee)](#glossarioRecebedor), [Transação Agendada (Scheduled Payment)](#glossarioTransacaoAgendada), [Transações Realizadas (Completed Transaction) (Scheduled Payment)](#glossarioTransacaoRealizada), [CNPJ (CNPJ Number)](#glossarioCNPJ), [Marca (Brand)](#glossarioMarca), [Instituição Financeira (Company)](#glossarioInstituicaoFinanceira) e [Agência (Branch)](#glossarioAgencia).
+        Tags: [Código Número (ISPB) (IspbCode)](#glossarioISPB), [Crédito (Credit)](#glossarioCredito), [Débito (Debit)](#glossarioDebito), [Pagador (Payer)](#glossarioPagador), [Pagamento autorizado (Authorised Payment)](#glossarioPagamentoAutorizado), [Recebedor (Payee)](#glossarioRecebedor), [Transação Agendada (Scheduled Payment)](#glossarioTransacaoAgendada), [Transações Realizadas (Completed Transaction)](#glossarioTransacaoRealizada), [CNPJ (CNPJ Number)](#glossarioCNPJ), [Marca (Brand)](#glossarioMarca), [Instituição Financeira (Company)](#glossarioInstituicaoFinanceira) e [Agência (Branch)](#glossarioAgencia).
 
         ### Visão de alto de nível das estruturas de dados
 
@@ -2287,7 +2287,7 @@ paths:
         <a href='swagger/swagger_accounts_apis.yaml'>Download da Especificação (OAS 3.0)</a>
       operationId: getAccountsTransactions
       parameters:
-        - $ref: '#/components/parameters/accountsIspbCode'
+        - $ref: '#/components/parameters/accountsCompeCode'
         - $ref: '#/components/parameters/accountsBranchCode'
         - $ref: '#/components/parameters/accountsNumber'
         - $ref: '#/components/parameters/accountsCheckDigit'
@@ -2369,7 +2369,7 @@ paths:
         <a href='swagger/swagger_accounts_apis.yaml'>Download da Especificação (OAS 3.0)</a>
       operationId: getAccountsOverdraftLimits
       parameters:
-        - $ref: '#/components/parameters/accountsIspbCode'
+        - $ref: '#/components/parameters/accountsCompeCode'
         - $ref: '#/components/parameters/accountsBranchCode'
         - $ref: '#/components/parameters/accountsNumber'
         - $ref: '#/components/parameters/accountsCheckDigit'
@@ -2590,7 +2590,7 @@ components:
       type: object
       description: Valores dos percentuais de taxas.
       properties:
-        savingAccount:
+        savingsAccount:
           type: string
           maxLength: 2000
           pattern: \w*\W*
@@ -2783,7 +2783,7 @@ components:
       description: |
         Traz as informações relativas aos saldos para  Contas de: depósito à vista, poupança e de pagamento pré-paga
       required:
-        - ispbCode
+        - compeCode
         - branchCode
         - number
         - checkDigit
@@ -2791,15 +2791,14 @@ components:
         - companyCnpj
         - requestDateTime
         - currency
-        - statementAccount
       properties:
-        ispbCode:
+        compeCode:
           type: string
-          maxLength: 8
-          pattern: '\d{8}|^NA$'
+          maxLength: 3
+          pattern: '\d{3}|^NA$'
           description: |
             Código identificador atribuído pelo Banco Central do Brasil às instituições participantes do STR (Sistema de Transferência de reservas). O número-código substituiu o antigo código COMPE. Todos os participantes do STR, exceto as Infraestruturas do Mercado Financeiro (IMF) e a Secretaria do Tesouro Nacional, possuem um número-código independentemente de participarem da Centralizadora da Compensação de Cheques (Compe). O campo tem a anotação “n/a” (“não se aplica”) para os participantes do STR aos quais não é atribuído um número-código
-          example: '60701190'
+          example: '001'
         branchCode:
           type: string
           maxLength: 4
@@ -2809,15 +2808,15 @@ components:
           example: '6272'
         number:
           type: string
-          maxLength: 8
-          pattern: '\d{8}|^NA$'
+          maxLength: 20
+          pattern: '\d{20}|^NA$'
           description: |
             Número da conta
           example: '24550245'
         checkDigit:
           type: string
           maxLength: 1
-          pattern: '\d{1}|^NA$'
+          pattern: \w*\W*
           description: |
             Dígito da conta
           example: '4'
@@ -6183,15 +6182,13 @@ components:
     EnumOverdraftLimitType:
       type: string
       enum:
-        - VALOR_CONTRATADO_LIMITE
         - VALOR_UTILIZADO_LIMITE
         - SALDO_DESCOBERTO
       description: |
-        Tipo de Transação relativa ao saldo do limite  informado: (vide Enum)
-        valor utilizado do limite do cheque especial
-        valor disponível do limite do cheque especial
-        saldo a descoberto em conta de depósito a vista (relativo ao adiantamento a depositante 
-      example: VALOR_CONTRATADO_LIMITE
+        Tipo de  saldo informado: (vide Enum)
+        - valor utilizado do limite do cheque especial
+        - saldo a descoberto em conta de depósito à vista (relativo ao excesso do limite de cheque especial ou ao adiantamento a depositante)
+      example: VALOR_UTILIZADO_LIMITE
     EnumPriceIntervals:
       type: string
       enum:
@@ -6280,7 +6277,7 @@ components:
       type: string
       enum:
         - TED
-        - DIC
+        - DOC
         - PIX
         - TRANSFERENCIA_MESMA_INSTITUICAO
         - BOLETO
@@ -6294,7 +6291,6 @@ components:
         - CARTAO
         - JUROS_CHEQUE_ESPECIAL
         - RENDIMENTO
-        - DEBITO_APLICACAO_AUTOMATICA
         - OUTRO
       description: |
         Tipo de Transação
@@ -6579,7 +6575,7 @@ components:
       description: |
         Conjunto dos atributos que caracterizam as Contas de: depósito à vista, poupança e de pagamento pré-paga
       required:
-        - ispbCode
+        - compeCode
         - branchCode
         - number
         - checkDigit
@@ -6591,13 +6587,13 @@ components:
         - subtype
         - personalBusinessIndicator
       properties:
-        ispbCode:
+        compeCode:
           type: string
-          maxLength: 8
-          pattern: '\d{8}|^NA$'
+          maxLength: 3
+          pattern: '\d{3}|^NA$'
           description: |
             Código identificador atribuído pelo Banco Central do Brasil às instituições participantes do STR (Sistema de Transferência de reservas). O número-código substituiu o antigo código COMPE. Todos os participantes do STR, exceto as Infraestruturas do Mercado Financeiro (IMF) e a Secretaria do Tesouro Nacional, possuem um número-código independentemente de participarem da Centralizadora da Compensação de Cheques (Compe). O campo tem a anotação “n/a” (“não se aplica”) para os participantes do STR aos quais não é atribuído um número-código
-          example: '60701190'
+          example: '001'
         branchCode:
           type: string
           maxLength: 4
@@ -6607,15 +6603,15 @@ components:
           example: '6272'
         number:
           type: string
-          maxLength: 8
-          pattern: '\d{8}|^NA$'
+          maxLength: 20
+          pattern: '\d{20}|^NA$'
           description: |
             Número da conta
           example: '24550245'
         checkDigit:
           type: string
           maxLength: 1
-          pattern: '\d{1}|^NA$'
+          pattern: \w*\W*
           description: |
             Dígito da conta
           example: '4'
@@ -6649,8 +6645,6 @@ components:
           $ref: '#/components/schemas/EnumAccountType'
         subtype:
           $ref: '#/components/schemas/EnumAccountSubType'
-        personalBusinessIndicator:
-          $ref: '#/components/schemas/EnumPersonalBusinessIndicator'
     Indexer:
       type: object
       description: 'Percentual que corresponde a mediana da taxa efetiva cobrada do cliente pela contratação do Empréstimo, no intervalo informado.'
@@ -7250,7 +7244,7 @@ components:
       type: object
       description: Conjunto das informações relativas aos Limites referentes ao valor das operações de crédito (Cheque especial e Adiantamento a Depositantes) vinculadas à conta de depósito à vista ou conta corrente
       required:
-        - ispbCode
+        - compeCode
         - branchCode
         - number
         - checkDigit
@@ -7260,13 +7254,13 @@ components:
         - currency
         - balances
       properties:
-        ispbCode:
+        compeCode:
           type: string
-          maxLength: 8
-          pattern: '\d{8}|^NA$'
+          maxLength: 3
+          pattern: '\d{3}|^NA$'
           description: |
             Código identificador atribuído pelo Banco Central do Brasil às instituições participantes do STR (Sistema de Transferência de reservas). O número-código substituiu o antigo código COMPE. Todos os participantes do STR, exceto as Infraestruturas do Mercado Financeiro (IMF) e a Secretaria do Tesouro Nacional, possuem um número-código independentemente de participarem da Centralizadora da Compensação de Cheques (Compe). O campo tem a anotação “n/a” (“não se aplica”) para os participantes do STR aos quais não é atribuído um número-código
-          example: '60701190'
+          example: '001'
         branchCode:
           type: string
           maxLength: 4
@@ -7284,7 +7278,7 @@ components:
         checkDigit:
           type: string
           maxLength: 1
-          pattern: '\d{1}|^NA$'
+          pattern: \w*\W*
           description: |
             Dígito da conta
           example: '4'
@@ -7309,7 +7303,13 @@ components:
           example: '2020-07-21T08:30:00Z'
           description: 'Data e hora da consulta, conforme especificação RFC-3339, formato UTC.'
         currency:
-          $ref: '#/components/schemas/Currency'
+          type: string
+          pattern: '^(\w{3}){1}$'
+          maxLength: 3
+          format: CurrencyString
+          description: |
+            Moeda referente aos valores de Limite de Cheque Especial e de Adiantamento a depositante , segundo modelo ISO-4217. p.ex. 'BRL'. Todos os saldos informados estão representados com a moeda vigente do Brasil.
+          example: BRL
         balances:
           type: array
           items:
@@ -7322,6 +7322,16 @@ components:
         - type
         - amount
       properties:
+        overdraftLimit:
+          type: string
+          description: Faixa de valor que corresponde ao valor monetário do limite de cheque esepciaql contratado. Cada faixa corresponde a um range de valor. São previstos valores diferentes das faixas para Contratos de Cheque Especial de Pessoa Natural e de Pessoa jurídica
+          enum:
+            - FAIXA_1
+            - FAIXA_2
+            - FAIXA_3
+            - FAIXA_4
+            - FAIXA_5
+          example: FAIXA_1
         type:
           $ref: '#/components/schemas/EnumOverdraftLimitType'
         amount:
@@ -7329,7 +7339,7 @@ components:
           nullable: true
           maxLength: 12
           description: Valor do saldo. Expressa em valor monetário com 2 casas decimais.
-          example: 500
+          example: '500.00'
     PeakTPSMetrics:
       type: object
       description: Número máximo de transações por segundo.
@@ -9029,7 +9039,7 @@ components:
                       elegibilityCriteriaInfo: 'https://empresaa1.com/Accounts_elegebilityCriteria'
                       closingProcessInfo: 'https://empresaa1.com/Accounts_closingProcess'
                     incomeRate:
-                      savingAccount: NA
+                      savingsAccount: NA
                       prepaidPaymentAccount: NA
         links:
           self: 'https://api.banco.com.br/open-banking/products-services/v1/business-accounts'
@@ -11044,7 +11054,7 @@ components:
                       elegibilityCriteriaInfo: 'https://empresaa1.com/Accounts_closingProcess'
                       closingProcessInfo: 'https://empresaa1.com/Accounts_closingProcess'
                     incomeRate:
-                      savingAccount: NA
+                      savingsAccount: NA
                       prepaidPaymentAccount: NA
         links:
           self: 'https://api.banco.com.br/open-banking/products-services/v1/personal-accounts'
@@ -12934,8 +12944,9 @@ components:
       description: |
         Agrupador das informações relativas às Transações de crédito e débito realizadas e autorizadas
       required:
-        - completedAuthorisedPaymentIndicator
-        - creditDebitIndicator
+        - completedAuthorisedPaymentType
+        - creditDebitType
+        - transactionIdentification
         - type
         - additionalInfo
         - amount
@@ -12943,10 +12954,15 @@ components:
         - payer
         - payee
       properties:
-        completedAuthorisedPaymentIndicator:
+        completedAuthorisedPaymentType:
           $ref: '#/components/schemas/EnumCompletedAuthorisedPaymentIndicator'
-        creditDebitIndicator:
+        creditDebitType:
           $ref: '#/components/schemas/EnumCreditDebitIndicator'
+        transactionIdentification:
+          type: string
+          maxLength: 60
+          pattern: \w*\W*
+          description: Campo livre que corresponde ao identificador da transação na instituição financeira
         type:
           $ref: '#/components/schemas/EnumTransactionTypes'
         additionalInfo:
@@ -12971,18 +12987,18 @@ components:
           example: '2021-01-07'
         payer:
           type: string
-          maxLength: 100
-          pattern: \w*\W*
+          maxLength: 14
+          pattern: '\d{14}|^NA$'
           description: |
-            Identificação do Pagador da transação
-          example: GSOKS74631
+            Identificação do Pagador da transação (Preencher com o CPF ou CNPJ, sem formatação)
+          example: '3456798700'
         payee:
           type: string
-          maxLength: 100
-          pattern: \w*\W*
+          maxLength: 14
+          pattern: '\d{14}|^NA$'
           description: |
-            Identificação do Recebedor da transação
-          example: RHGTJ37417
+            Identificação do Recebedor da transação (Preencher com o CPF ou CNPJ, sem formatação)
+          example: '2976798722'
     Status:
       type: object
       required:
@@ -13031,7 +13047,7 @@ components:
       description: |
         Conjunto de informações relativas às Transações de crédito e débito realizadas e de pagamento autorizado para  Contas de: depósito à vista, poupança e de pagamento pré-paga
       required:
-        - ispbCode
+        - compeCode
         - branchCode
         - number
         - checkDigit
@@ -13041,13 +13057,13 @@ components:
         - currency
         - statementAccount
       properties:
-        ispbCode:
+        compeCode:
           type: string
-          maxLength: 8
-          pattern: '\d{8}|^NA$'
+          maxLength: 3
+          pattern: '\d{3}|^NA$'
           description: |
             Código identificador atribuído pelo Banco Central do Brasil às instituições participantes do STR (Sistema de Transferência de reservas). O número-código substituiu o antigo código COMPE. Todos os participantes do STR, exceto as Infraestruturas do Mercado Financeiro (IMF) e a Secretaria do Tesouro Nacional, possuem um número-código independentemente de participarem da Centralizadora da Compensação de Cheques (Compe). O campo tem a anotação “n/a” (“não se aplica”) para os participantes do STR aos quais não é atribuído um número-código
-          example: '60701190'
+          example: '001'
         branchCode:
           type: string
           maxLength: 4
@@ -13057,15 +13073,15 @@ components:
           example: '6272'
         number:
           type: string
-          maxLength: 8
-          pattern: '\d{8}|^NA$'
+          maxLength: 20
+          pattern: '\d{20}|^NA$'
           description: |
             Número da conta
           example: '24550245'
         checkDigit:
           type: string
           maxLength: 1
-          pattern: '\d{1}|^NA$'
+          pattern: \w*\W*
           description: |
             Dígito da conta
           example: '4'
@@ -13244,17 +13260,17 @@ components:
       description: Dígito da conta
       schema:
         type: string
-        maxLength: 2
-        pattern: '^\d{1}$|^NA$'
+        maxLength: 1
+        pattern: \w*\W*
       required: true
-    accountsIspbCode:
-      name: ispbCode
+    accountsCompeCode:
+      name: compeCode
       in: query
       description: 'Código identificador atribuído pelo Banco Central do Brasil às instituições participantes do STR (Sistema de Transferência de reservas). O número-código substituiu o antigo código COMPE. Todos os participantes do STR, exceto as Infraestruturas do Mercado Financeiro (IMF) e a Secretaria do Tesouro Nacional, possuem um número-código independentemente de participarem da Centralizadora da Compensação de Cheques (Compe). O campo tem a anotação “n/a” (“não se aplica”) para os participantes do STR aos quais não é atribuído um número-código'
       schema:
         type: string
-        maxLength: 8
-        pattern: '\d{8}|^NA$'
+        maxLength: 3
+        pattern: '\d{3}|^NA$'
       required: true
     accountsNumber:
       name: number
