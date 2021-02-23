@@ -2411,7 +2411,7 @@ paths:
     get:
       tags:
         - API - Operações de Crédito
-      summary: Garantias
+      summary: Garantias do Contrato
       description: |
         |Versão|
         |:-----|
@@ -2439,10 +2439,9 @@ paths:
 
         * DER Lógico
 
-        A definir.
-        <img class="lazy" src="images/loading.gif" data-src="images/der/bank_borrowing/DER_BankBorrowing_Warranties.v1.png"/>
+        <img class="lazy" src="images/loading.gif" data-src="images/der/bank_borrowing/DER_BankBorrowing_Warranties.png"/>
 
-        <a href="images/der/bank_borrowing/DER_BankBorrowing_Warranties.v1.png" target="_blank">Fazer download do DER Lógico</a>
+        <a href="images/der/bank_borrowing/DER_BankBorrowing_Warranties.png" target="_blank">Fazer download do DER Lógico</a>
 
         ### Dicionário de dados
 
@@ -2932,6 +2931,83 @@ components:
           minItems: 1
           description: |
             Lista os saldos referentes às contas de: depósito à vista, poupança ou de pagamento pré-paga
+    BankBorrowingContractedWarranty:
+      type: object
+      description: Conjunto de informações referentes às garantias que avalizam a operação de crédito contratada
+      required:
+        - warrantyType
+        - warrantySubType
+        - warrantyAmount
+      properties:
+        warrantyType:
+          $ref: '#/components/schemas/EnumBankBorrowingWarrantyType'
+        warrantySubType:
+          $ref: '#/components/schemas/EnumBankBorrowingWarrantySubType'
+        warrantyAmount:
+          type: string
+          maxLength: 12
+          format: AmountString
+          nullable: true
+          description: 'Valor original da garantia. Valor monetário, expresso com 2 casas decimais'
+    BankBorrowingWarranties:
+      type: object
+      description: Conjunto de informações referentes às garantias que avalizam a operação de crédito contratada
+      required:
+        - contractId
+        - requestDateTime
+        - currency
+      properties:
+        contractId:
+          type: string
+          maxLength: 67
+          description: |
+            Número padronizado do contrato - IPOC (Identificação Padronizada da Operação de Crédito). Segundo DOC 3040, composta por: 
+            - **CNPJ da instituição:** 8 (oito) posições iniciais;
+            - **Modalidade da operação:** 4 (quatro) posições;
+            - **Tipo do cliente:** 1 (uma) posição( 1 = pessoa natural - CPF, 2= pessoa jurídica – CNPJ, 3 = pessoa física no exterior, 4 = pessoa jurídica no exterior, 5 = pessoa natural sem CPF e 6 = pessoa jurídica sem CNPJ);
+            - **Código do cliente:** O número de posições varia conforme o tipo do cliente:
+              1. Para clientes pessoa física com CPF (tipo de cliente = 1), informar as 11 (onze) posições do CPF;
+              2. Para clientes pessoa jurídica com CNPJ (tipo de cliente = 2), informar as 8 (oito) posições iniciais do CNPJ;
+              3. Para os demais clientes (tipos de cliente 3, 4, 5 e 6), informar 14 (catorze) posições com complemento de zeros à esquerda se a identificação tiver tamanho inferior;
+            - **Código do contrato:** 1 (uma) até 40 (quarenta) posições, sem complemento de caracteres.
+        requestDateTime:
+          type: string
+          maxLength: 20
+          format: DateTimeString
+          pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])T(?:[01]\d|2[0123]):(?:[012345]\d):(?:[012345]\d)Z$'
+          example: '2020-07-21T08:30:00Z'
+          description: 'Data e hora da consulta, conforme especificação RFC-3339, formato UTC.'
+        currency:
+          type: string
+          pattern: '^(\w{3}){1}$'
+          maxLength: 3
+          format: CurrencyString
+          description: |
+            Moeda referente ao valor da garantia, segundo modelo ISO-4217. p.ex. 'BRL' 
+            Todos os valores monetários informados estão representados com a moeda vigente do Brasil
+          example: BRL
+        contractedWarranties:
+          type: array
+          items:
+            $ref: '#/components/schemas/BankBorrowingContractedWarranty'
+          minItems: 1
+          description: Lista das garantias que avalizam a operação de crédito contratada
+    BankBorrowingWarrantiesBank:
+      type: object
+      description: |
+        Conjunto de informações de operações de crédito contratadas
+      required:
+        - warranties
+      properties:
+        warranties:
+          $ref: '#/components/schemas/BankBorrowingWarranties'
+    BankBorrowingWarrantiesData:
+      type: object
+      required:
+        - bankBorrowing
+      properties:
+        bankBorrowing:
+          $ref: '#/components/schemas/BankBorrowingWarrantiesBank'
     BankingAgent:
       type: object
       required:
@@ -4816,24 +4892,6 @@ components:
           minItems: 1
           maxItems: 31
           description: Lista das Tarifas cobradas sobre Serviços Prioritários
-    ContractedWarranty:
-      type: object
-      description: Conjunto de informações referentes às garantias que avalizam a operação de crédito contratada
-      required:
-        - warrantyType
-        - warrantySubType
-        - warrantyAmount
-      properties:
-        warrantyType:
-          $ref: '#/components/schemas/EnumBankBorrowingWarrantyType'
-        warrantySubType:
-          $ref: '#/components/schemas/EnumBankBorrowingWarrantySubType'
-        warrantyAmount:
-          type: string
-          maxLength: 12
-          format: AmountString
-          nullable: true
-          description: 'Valor original da garantia. Valor monetário, expresso com 2 casas decimais'
     CreditCardAccountBalances:
       type: object
       required:
@@ -9034,7 +9092,7 @@ components:
         - meta
       properties:
         data:
-          $ref: '#/components/schemas/WarrantiesData'
+          $ref: '#/components/schemas/BankBorrowingWarrantiesData'
         links:
           $ref: '#/components/schemas/Links'
         meta:
@@ -13626,65 +13684,6 @@ components:
         maximum:
           value: '2200.00'
           currency: BRL
-    Warranties:
-      type: object
-      description: Conjunto de informações referentes às garantias que avalizam a operação de crédito contratada
-      required:
-        - contractId
-        - requestDateTime
-        - currency
-      properties:
-        contractId:
-          type: string
-          maxLength: 67
-          description: |
-            Número padronizado do contrato - IPOC (Identificação Padronizada da Operação de Crédito). Segundo DOC 3040, composta por: 
-            - **CNPJ da instituição:** 8 (oito) posições iniciais;
-            - **Modalidade da operação:** 4 (quatro) posições;
-            - **Tipo do cliente:** 1 (uma) posição( 1 = pessoa natural - CPF, 2= pessoa jurídica – CNPJ, 3 = pessoa física no exterior, 4 = pessoa jurídica no exterior, 5 = pessoa natural sem CPF e 6 = pessoa jurídica sem CNPJ);
-            - **Código do cliente:** O número de posições varia conforme o tipo do cliente:
-              1. Para clientes pessoa física com CPF (tipo de cliente = 1), informar as 11 (onze) posições do CPF;
-              2. Para clientes pessoa jurídica com CNPJ (tipo de cliente = 2), informar as 8 (oito) posições iniciais do CNPJ;
-              3. Para os demais clientes (tipos de cliente 3, 4, 5 e 6), informar 14 (catorze) posições com complemento de zeros à esquerda se a identificação tiver tamanho inferior;
-            - **Código do contrato:** 1 (uma) até 40 (quarenta) posições, sem complemento de caracteres.
-        requestDateTime:
-          type: string
-          maxLength: 20
-          format: DateTimeString
-          pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])T(?:[01]\d|2[0123]):(?:[012345]\d):(?:[012345]\d)Z$'
-          example: '2020-07-21T08:30:00Z'
-          description: 'Data e hora da consulta, conforme especificação RFC-3339, formato UTC.'
-        currency:
-          type: string
-          pattern: '^(\w{3}){1}$'
-          maxLength: 3
-          format: CurrencyString
-          description: |
-            Moeda referente ao valor da garantia, segundo modelo ISO-4217. p.ex. 'BRL' 
-            Todos os valores monetários informados estão representados com a moeda vigente do Brasil
-          example: BRL
-        contractedWarranties:
-          type: array
-          items:
-            $ref: '#/components/schemas/ContractedWarranty'
-          minItems: 1
-          description: Lista das garantias que avalizam a operação de crédito contratada
-    WarrantiesBankBorrowing:
-      type: object
-      description: |
-        Conjunto de informações de operações de crédito contratadas
-      required:
-        - warranties
-      properties:
-        warranties:
-          $ref: '#/components/schemas/Warranties'
-    WarrantiesData:
-      type: object
-      required:
-        - bankBorrowing
-      properties:
-        bankBorrowing:
-          $ref: '#/components/schemas/WarrantiesBankBorrowing'
   parameters:
     accountsBranchCode:
       name: branchCode
