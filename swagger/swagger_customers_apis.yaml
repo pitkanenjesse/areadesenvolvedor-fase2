@@ -1062,7 +1062,7 @@ paths:
                                         - filiation
                                         - birthDate
                                         - maritalStatusCode
-                                        - gender
+                                        - sex
                                         - contacts
                                       properties:
                                         requestDateTime:
@@ -1165,15 +1165,17 @@ paths:
                                             hasBrazilianNationality:
                                               type: boolean
                                               description: Informa se o Cliente tem nacionalidade brasileira.
-                                              example: false
+                                              example: 'false'
                                             otherNationality:
                                               type: object
+                                              description: Conjunto de informações específicas para cliente que possue nacionalidade diferente da brasileira
                                               properties:
                                                 additionalInfo:
                                                   type: string
-                                                  description: Campo de preenchimento obrigatório caso o cliente não possua nacionalidade brasileira. Preencher utilizando o código de pais de acordo com o código “alpha3” do ISO-3166.
+                                                  description: |
+                                                    Campo de preenchimento obrigatório caso o cliente não possua nacionalidade brasileira. Preencher indicando todas suas demais nacionalidades utilizando o código de pais de acordo com o código “alpha3” do ISO-3166.p.ex.'CAN'
                                                   maxLength: 3
-                                                  example: USA
+                                                  example: CAN
                                                 complementaryDocuments:
                                                   type: array
                                                   description: Lista que traz relação de documentos complementares de pessoas com nacionalidade diferente de brasileira
@@ -1222,15 +1224,9 @@ paths:
                                                 description: |
                                                   Tipo de filiação.
                                                 enum:
-                                                  - PAI
-                                                  - MAE
-                                                  - OUTRA
-                                                example: MAE
-                                              additionalInfo:
-                                                type: string
-                                                description: 'Campo livre para complementar a informação relativa a filiação, quando selecionada a natureza da filiação igual `OUTRA`'
-                                                pattern: \w*\W*
-                                                maxLength: 70
+                                                  - 1_FILIACAO
+                                                  - 2_FILIACAO
+                                                example: 1_FILIACAO
                                               civilName:
                                                 type: string
                                                 description: 'Nome civil completo da pessoa relativa à filiação. (Direito fundamental da pessoa, o nome civil é aquele atribuído à pessoa natural desde o registro de seu nascimento, com o qual será identificada por toda a sua vida, bem como após a sua morte)'
@@ -1268,10 +1264,10 @@ paths:
                                           description: 'Campo livre para complementar a informação relativa ao estado civil, quando selecionada a opção `OUTROS`'
                                           pattern: \w*\W*
                                           maxLength: 50
-                                        gender:
+                                        sex:
                                           type: string
                                           description: |
-                                            Informar sexo
+                                            “Conjunto de características anatomofisiológicas que distinguem o homem e a mulher: Sexo masculino; sexo feminino”. No caso de não ser feminino nem masculino é classificado como outros.
                                           enum:
                                             - FEMININO
                                             - MASCULINO
