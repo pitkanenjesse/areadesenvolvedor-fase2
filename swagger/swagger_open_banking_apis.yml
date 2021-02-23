@@ -15,6 +15,7 @@ tags:
   - name: API - Dados Cadastrais
   - name: API - Cartão de Crédito
   - name: API - Contas
+  - name: API - Operações de Crédito
 paths:
   /discovery/v1/status:
     get:
@@ -2406,6 +2407,88 @@ paths:
           $ref: '#/paths/~1admin~1v1~1metrics/get/responses/503'
         '504':
           $ref: '#/paths/~1admin~1v1~1metrics/get/responses/504'
+  /bank-borrowing/v1/warranties:
+    get:
+      tags:
+        - API - Operações de Crédito
+      summary: Garantias
+      description: |
+        |Versão|
+        |:-----|
+        |1     |
+
+        ### Visão Geral
+
+        A definir.
+        Obtém dados referentes às garantias que avalizam a operação de crédito contratada.
+
+        A definir.
+        Tags: [CNPJ (CNPJ Number)](#glossarioCNPJ).
+
+        ### Visão de alto de nível das estruturas de dados
+
+        <img class="lazy" src="images/loading.gif" data-src="images/tld/bank_borrowing/TLD_BankBorrowing_Warranties.png"/>
+
+        ### DER - Diagramas de Entidade e Relacionamento
+
+        * DER Conceitual
+
+        <img class="lazy" src="images/loading.gif" data-src="images/der/bank_borrowing/DER_BankBorrowing.png"/>
+
+        <a href="images/der/bank_borrowing/DER_BankBorrowing.png" target="_blank">Fazer download do DER Conceitual</a>
+
+        * DER Lógico
+
+        A definir.
+        <img class="lazy" src="images/loading.gif" data-src="images/der/bank_borrowing/DER_BankBorrowing_Warranties.v1.png"/>
+
+        <a href="images/der/bank_borrowing/DER_BankBorrowing_Warranties.v1.png" target="_blank">Fazer download do DER Lógico</a>
+
+        ### Dicionário de dados
+
+        <a href='dictionary/bank_borrowing_warranties.csv' target="_blank">Fazer download do dicionário de dados</a>
+
+        A definir.
+        <a href="dictionary/example/examples_bank_borrowing_warranties.csv" target="_blank">Fazer download dos exemplos</a>
+
+        ### Especificação em OAS 3.0
+
+        <a href='swagger/swagger_bank_borrowing_apis.yaml'>Download da Especificação (OAS 3.0)</a>
+      operationId: getBankBorrowingWarranties
+      parameters:
+        - $ref: '#/components/parameters/page'
+        - $ref: '#/components/parameters/pageSize'
+      responses:
+        '200':
+          description: Método para obter dados referentes às garantias que avalizam a operação de crédito contratada.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseBankBorrowingWarranties'
+        '400':
+          $ref: '#/paths/~1admin~1v1~1metrics/get/responses/400'
+        '401':
+          $ref: '#/paths/~1admin~1v1~1metrics/get/responses/401'
+        '403':
+          $ref: '#/paths/~1admin~1v1~1metrics/get/responses/403'
+        '404':
+          $ref: '#/paths/~1admin~1v1~1metrics/get/responses/404'
+        '405':
+          $ref: '#/paths/~1admin~1v1~1metrics/get/responses/405'
+        '406':
+          $ref: '#/paths/~1admin~1v1~1metrics/get/responses/406'
+        '410':
+          $ref: '#/paths/~1admin~1v1~1metrics/get/responses/410'
+        '422':
+          $ref: '#/paths/~1admin~1v1~1metrics/get/responses/422'
+        '429':
+          $ref: '#/paths/~1admin~1v1~1metrics/get/responses/429'
+        '500':
+          $ref: '#/paths/~1admin~1v1~1metrics/get/responses/500'
+        '503':
+          $ref: '#/paths/~1admin~1v1~1metrics/get/responses/503'
+        '504':
+          $ref: '#/paths/~1admin~1v1~1metrics/get/responses/504'
 components:
   schemas:
     AccountBalances:
@@ -4733,6 +4816,24 @@ components:
           minItems: 1
           maxItems: 31
           description: Lista das Tarifas cobradas sobre Serviços Prioritários
+    ContractedWarranty:
+      type: object
+      description: Conjunto de informações referentes às garantias que avalizam a operação de crédito contratada
+      required:
+        - warrantyType
+        - warrantySubType
+        - warrantyAmount
+      properties:
+        warrantyType:
+          $ref: '#/components/schemas/EnumBankBorrowingWarrantyType'
+        warrantySubType:
+          $ref: '#/components/schemas/EnumBankBorrowingWarrantySubType'
+        warrantyAmount:
+          type: string
+          maxLength: 12
+          format: AmountString
+          nullable: true
+          description: 'Valor original da garantia. Valor monetário, expresso com 2 casas decimais'
     CreditCardAccountBalances:
       type: object
       required:
@@ -6014,6 +6115,82 @@ components:
         - '97'
         - '98'
         - '99'
+    EnumBankBorrowingWarrantySubType:
+      type: string
+      description: |
+        Denominação/Identificação do sub tipo da garantia que avaliza a Modalidade da Operação de Crédito contratada (Doc 3040, Anexo 12)
+      enum:
+        - ACOES_DEBENTURES
+        - APLICACOES_FINANCEIRAS_RENDA_FIXA
+        - APLICACOES_FINANCEIRAS_RENDA_VARIAVEL
+        - APOLICES_CREDITO_EXPORTACAO
+        - CCR_CONVENIO _CREDITOS_RECIPROCOS
+        - CHEQUES
+        - CIVIL
+        - DIREITOS_SOBRE_ALUGUEIS
+        - DEPOSITOS_A_VISTA_A_PRAZO_POUPANCA_OURO_TITULOS_PUBLICOS_FEDERAIS_ART_36
+        - DEPOSITO_TITULOS_EMITIDOS_ENTIDADES_ART_23
+        - DUPLICATAS
+        - EMD_ENTIDADES_MULTILATERAIS_DESENVOLVIMENTO_ART_37
+        - EQUIPAMENTOS FATURA_CARTAO_CREDITO
+        - ESTADUAL_OU_DISTRITAL
+        - FATURA_CARTAO_CREDITO
+        - FEDERAL
+        - FCVS_FUNDO_COMPENSACAO_VARIACOES_SALARIAIS
+        - FGI_FUNDO_GARANTIDOR_INVESTIMENTOS
+        - FGPC_FUNDO_GARANTIA_PROMOCAO_COMPETIT
+        - FGTS_FUNDO_GARANTIA_TEMPO_SERVICO
+        - FUNDO_GARANTIDOR_AVAL
+        - GARANTIA_PRESTADA_FGPC_LEI_9531_ART_37
+        - GARANTIA_PRESTADA_FUNDOS_QUAISQUER_OUTROS_MECANISMOS_COBERTURA_RISCO_CREDITO_ART_37
+        - GARANTIA_PRESTADA_TESOURO_NACIONAL_OU_BACEN_ART_37BENS_DIREITOS_INTEGRANTES_PATRIMONIO_AFETACAO
+        - IMOVEIS
+        - IMOVEIS_RESIDENCIAIS
+        - MITIGADORAS
+        - MUNICIPAL
+        - NAO_MITIGADORAS
+        - NOTAS_PROMISSORIAS_OUTROS_DIREITOS_CREDITO
+        - OUTRAS
+        - OUTROS
+        - OUTROS_BENS
+        - OUTROS_GRAUS
+        - OUTROS_IMOVEIS
+        - OUTROS_SEGUROS_ASSEMELHADOS OUTROS_BENS
+        - PESSOA_FISICA
+        - PESSOA_FISICA_EXTERIOR
+        - PESSOA_JURIDICA
+        - PESSOA_JURIDICA_EXTERIOR
+        - PRIMEIRO_GRAU_BENS_DIREITOS_INTEGRANTES_PATRIMONIO_AFETACAO
+        - PRIMEIRO_GRAU_IMOVEIS_RESIDENCIAIS
+        - PRIMEIRO_GRAU_OUTROS
+        - PRODUTOS_AGROPECUARIOS_COM_WARRANT
+        - PRODUTOS_AGROPECUARIOS_SEM_WARRANT
+        - SBCE_SOCIEDADE_BRASILEIRA_CREDITO_EXPORTAÇÃO
+        - SEGURO_RURAL
+        - TRIBUTOS_RECEITAS_ORCAMENTARIAS
+        - VEICULOS
+        - VEICULOS_AUTOMOTORES
+      example: ACOES_DEBENTURES
+    EnumBankBorrowingWarrantyType:
+      type: string
+      description: |
+        Denominação/Identificação do tipo da garantia que avaliza a Modalidade da Operação de Crédito contratada  (Doc 3040, Anexo 12)
+      enum:
+        - CESSAO_DIREITOS_CREDITORIOS
+        - CAUCAO
+        - PENHOR
+        - ALIENACAO_FIDUCIARIA
+        - HIPOTECA
+        - OPERACOES_GARANTIDAS_PELO_GOVERNO
+        - OUTRAS_GARANTIAS_NAO_FIDEJUSSORIAS
+        - SEGUROS_ASSEMELHADOS
+        - GARANTIA_FIDEJUSSORIA
+        - BENS_ARRENDADOS
+        - GARANTIAS_INTERNACIONAIS
+        - OPERACOES_GARANTIDAS_OUTRAS_ENTIDADES
+        - ACORDOS_COMPENSACAO
+        - NAO_APLICAVEL
+      example: CESSAO_DIREITOS_CREDITORIOS
     EnumCustomerPhoneType:
       type: string
       enum:
@@ -8849,6 +9026,19 @@ components:
           description: 'Número de chamadas rejeitadas nos dias anteriores. O primeiro item do array é referente a ontem, e assim por diante. Devem ser retornados no máximo sete dias caso estejam disponíveis.'
           items:
             type: integer
+    ResponseBankBorrowingWarranties:
+      type: object
+      required:
+        - data
+        - links
+        - meta
+      properties:
+        data:
+          $ref: '#/components/schemas/WarrantiesData'
+        links:
+          $ref: '#/components/schemas/Links'
+        meta:
+          $ref: '#/components/schemas/Meta'
     ResponseBankingAgentsList:
       type: object
       required:
@@ -13436,6 +13626,65 @@ components:
         maximum:
           value: '2200.00'
           currency: BRL
+    Warranties:
+      type: object
+      description: Conjunto de informações referentes às garantias que avalizam a operação de crédito contratada
+      required:
+        - contractId
+        - requestDateTime
+        - currency
+      properties:
+        contractId:
+          type: string
+          maxLength: 67
+          description: |
+            Número padronizado do contrato - IPOC (Identificação Padronizada da Operação de Crédito). Segundo DOC 3040, composta por: 
+            - **CNPJ da instituição:** 8 (oito) posições iniciais;
+            - **Modalidade da operação:** 4 (quatro) posições;
+            - **Tipo do cliente:** 1 (uma) posição( 1 = pessoa natural - CPF, 2= pessoa jurídica – CNPJ, 3 = pessoa física no exterior, 4 = pessoa jurídica no exterior, 5 = pessoa natural sem CPF e 6 = pessoa jurídica sem CNPJ);
+            - **Código do cliente:** O número de posições varia conforme o tipo do cliente:
+              1. Para clientes pessoa física com CPF (tipo de cliente = 1), informar as 11 (onze) posições do CPF;
+              2. Para clientes pessoa jurídica com CNPJ (tipo de cliente = 2), informar as 8 (oito) posições iniciais do CNPJ;
+              3. Para os demais clientes (tipos de cliente 3, 4, 5 e 6), informar 14 (catorze) posições com complemento de zeros à esquerda se a identificação tiver tamanho inferior;
+            - **Código do contrato:** 1 (uma) até 40 (quarenta) posições, sem complemento de caracteres.
+        requestDateTime:
+          type: string
+          maxLength: 20
+          format: DateTimeString
+          pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])T(?:[01]\d|2[0123]):(?:[012345]\d):(?:[012345]\d)Z$'
+          example: '2020-07-21T08:30:00Z'
+          description: 'Data e hora da consulta, conforme especificação RFC-3339, formato UTC.'
+        currency:
+          type: string
+          pattern: '^(\w{3}){1}$'
+          maxLength: 3
+          format: CurrencyString
+          description: |
+            Moeda referente ao valor da garantia, segundo modelo ISO-4217. p.ex. 'BRL' 
+            Todos os valores monetários informados estão representados com a moeda vigente do Brasil
+          example: BRL
+        contractedWarranties:
+          type: array
+          items:
+            $ref: '#/components/schemas/ContractedWarranty'
+          minItems: 1
+          description: Lista das garantias que avalizam a operação de crédito contratada
+    WarrantiesBankBorrowing:
+      type: object
+      description: |
+        Conjunto de informações de operações de crédito contratadas
+      required:
+        - warranties
+      properties:
+        warranties:
+          $ref: '#/components/schemas/Warranties'
+    WarrantiesData:
+      type: object
+      required:
+        - bankBorrowing
+      properties:
+        bankBorrowing:
+          $ref: '#/components/schemas/WarrantiesBankBorrowing'
   parameters:
     accountsBranchCode:
       name: branchCode

@@ -1,0 +1,257 @@
+openapi: 3.0.0
+info:
+  title: API's OpenData do Open Banking Brasil
+  description: As API's descritas neste documento são referentes as API's da fase OpenData do Open Banking Brasil.
+  version: 1.0.0-rc
+  contact:
+    email: apiteam@swagger.io
+servers:
+  - url: 'http://api.banco.com.br/open-banking/bank-borrowing/v1'
+tags:
+  - name: Bank Borrowing
+paths:
+  /warranties:
+    get:
+      tags:
+        - Bank Borrowing
+      summary: Obtém dados referentes às garantias que avalizam a operação de crédito contratada.
+      description: Método para obter os dados referentes às garantias que avalizam a operação de crédito contratada.
+      operationId: getBankBorrowingWarranties
+      parameters:
+        - name: page
+          in: query
+          description: Número da página que está sendo requisitada (o valor da primeira página é 1).
+          schema:
+            type: integer
+            default: 1
+            minimum: 1
+        - name: page-size
+          in: query
+          description: Quantidade total de registros por páginas.
+          schema:
+            type: integer
+            default: 25
+            minimum: 1
+      responses:
+        '200':
+          description: Dados sobre garantias que avalizam a operação de crédito contratada.
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - data
+                  - links
+                  - meta
+                properties:
+                  data:
+                    type: object
+                    required:
+                      - bankBorrowing
+                    properties:
+                      bankBorrowing:
+                        type: object
+                        description: |
+                          Conjunto de informações de operações de crédito contratadas
+                        required:
+                          - warranties
+                        properties:
+                          warranties:
+                            type: object
+                            description: Conjunto de informações referentes às garantias que avalizam a operação de crédito contratada
+                            required:
+                              - contractId
+                              - requestDateTime
+                              - currency
+                            properties:
+                              contractId:
+                                type: string
+                                maxLength: 67
+                                description: |
+                                  Número padronizado do contrato - IPOC (Identificação Padronizada da Operação de Crédito). Segundo DOC 3040, composta por: 
+                                  - **CNPJ da instituição:** 8 (oito) posições iniciais;
+                                  - **Modalidade da operação:** 4 (quatro) posições;
+                                  - **Tipo do cliente:** 1 (uma) posição( 1 = pessoa natural - CPF, 2= pessoa jurídica – CNPJ, 3 = pessoa física no exterior, 4 = pessoa jurídica no exterior, 5 = pessoa natural sem CPF e 6 = pessoa jurídica sem CNPJ);
+                                  - **Código do cliente:** O número de posições varia conforme o tipo do cliente:
+                                    1. Para clientes pessoa física com CPF (tipo de cliente = 1), informar as 11 (onze) posições do CPF;
+                                    2. Para clientes pessoa jurídica com CNPJ (tipo de cliente = 2), informar as 8 (oito) posições iniciais do CNPJ;
+                                    3. Para os demais clientes (tipos de cliente 3, 4, 5 e 6), informar 14 (catorze) posições com complemento de zeros à esquerda se a identificação tiver tamanho inferior;
+                                  - **Código do contrato:** 1 (uma) até 40 (quarenta) posições, sem complemento de caracteres.
+                              requestDateTime:
+                                type: string
+                                maxLength: 20
+                                format: DateTimeString
+                                pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])T(?:[01]\d|2[0123]):(?:[012345]\d):(?:[012345]\d)Z$'
+                                example: '2020-07-21T08:30:00Z'
+                                description: 'Data e hora da consulta, conforme especificação RFC-3339, formato UTC.'
+                              currency:
+                                type: string
+                                pattern: '^(\w{3}){1}$'
+                                maxLength: 3
+                                format: CurrencyString
+                                description: |
+                                  Moeda referente ao valor da garantia, segundo modelo ISO-4217. p.ex. 'BRL' 
+                                  Todos os valores monetários informados estão representados com a moeda vigente do Brasil
+                                example: BRL
+                              contractedWarranties:
+                                type: array
+                                items:
+                                  type: object
+                                  description: Conjunto de informações referentes às garantias que avalizam a operação de crédito contratada
+                                  required:
+                                    - warrantyType
+                                    - warrantySubType
+                                    - warrantyAmount
+                                  properties:
+                                    warrantyType:
+                                      type: string
+                                      description: |
+                                        Denominação/Identificação do tipo da garantia que avaliza a Modalidade da Operação de Crédito contratada  (Doc 3040, Anexo 12)
+                                      enum:
+                                        - CESSAO_DIREITOS_CREDITORIOS
+                                        - CAUCAO
+                                        - PENHOR
+                                        - ALIENACAO_FIDUCIARIA
+                                        - HIPOTECA
+                                        - OPERACOES_GARANTIDAS_PELO_GOVERNO
+                                        - OUTRAS_GARANTIAS_NAO_FIDEJUSSORIAS
+                                        - SEGUROS_ASSEMELHADOS
+                                        - GARANTIA_FIDEJUSSORIA
+                                        - BENS_ARRENDADOS
+                                        - GARANTIAS_INTERNACIONAIS
+                                        - OPERACOES_GARANTIDAS_OUTRAS_ENTIDADES
+                                        - ACORDOS_COMPENSACAO
+                                        - NAO_APLICAVEL
+                                      example: CESSAO_DIREITOS_CREDITORIOS
+                                    warrantySubType:
+                                      type: string
+                                      description: |
+                                        Denominação/Identificação do sub tipo da garantia que avaliza a Modalidade da Operação de Crédito contratada (Doc 3040, Anexo 12)
+                                      enum:
+                                        - ACOES_DEBENTURES
+                                        - APLICACOES_FINANCEIRAS_RENDA_FIXA
+                                        - APLICACOES_FINANCEIRAS_RENDA_VARIAVEL
+                                        - APOLICES_CREDITO_EXPORTACAO
+                                        - CCR_CONVENIO _CREDITOS_RECIPROCOS
+                                        - CHEQUES
+                                        - CIVIL
+                                        - DIREITOS_SOBRE_ALUGUEIS
+                                        - DEPOSITOS_A_VISTA_A_PRAZO_POUPANCA_OURO_TITULOS_PUBLICOS_FEDERAIS_ART_36
+                                        - DEPOSITO_TITULOS_EMITIDOS_ENTIDADES_ART_23
+                                        - DUPLICATAS
+                                        - EMD_ENTIDADES_MULTILATERAIS_DESENVOLVIMENTO_ART_37
+                                        - EQUIPAMENTOS FATURA_CARTAO_CREDITO
+                                        - ESTADUAL_OU_DISTRITAL
+                                        - FATURA_CARTAO_CREDITO
+                                        - FEDERAL
+                                        - FCVS_FUNDO_COMPENSACAO_VARIACOES_SALARIAIS
+                                        - FGI_FUNDO_GARANTIDOR_INVESTIMENTOS
+                                        - FGPC_FUNDO_GARANTIA_PROMOCAO_COMPETIT
+                                        - FGTS_FUNDO_GARANTIA_TEMPO_SERVICO
+                                        - FUNDO_GARANTIDOR_AVAL
+                                        - GARANTIA_PRESTADA_FGPC_LEI_9531_ART_37
+                                        - GARANTIA_PRESTADA_FUNDOS_QUAISQUER_OUTROS_MECANISMOS_COBERTURA_RISCO_CREDITO_ART_37
+                                        - GARANTIA_PRESTADA_TESOURO_NACIONAL_OU_BACEN_ART_37BENS_DIREITOS_INTEGRANTES_PATRIMONIO_AFETACAO
+                                        - IMOVEIS
+                                        - IMOVEIS_RESIDENCIAIS
+                                        - MITIGADORAS
+                                        - MUNICIPAL
+                                        - NAO_MITIGADORAS
+                                        - NOTAS_PROMISSORIAS_OUTROS_DIREITOS_CREDITO
+                                        - OUTRAS
+                                        - OUTROS
+                                        - OUTROS_BENS
+                                        - OUTROS_GRAUS
+                                        - OUTROS_IMOVEIS
+                                        - OUTROS_SEGUROS_ASSEMELHADOS OUTROS_BENS
+                                        - PESSOA_FISICA
+                                        - PESSOA_FISICA_EXTERIOR
+                                        - PESSOA_JURIDICA
+                                        - PESSOA_JURIDICA_EXTERIOR
+                                        - PRIMEIRO_GRAU_BENS_DIREITOS_INTEGRANTES_PATRIMONIO_AFETACAO
+                                        - PRIMEIRO_GRAU_IMOVEIS_RESIDENCIAIS
+                                        - PRIMEIRO_GRAU_OUTROS
+                                        - PRODUTOS_AGROPECUARIOS_COM_WARRANT
+                                        - PRODUTOS_AGROPECUARIOS_SEM_WARRANT
+                                        - SBCE_SOCIEDADE_BRASILEIRA_CREDITO_EXPORTAÇÃO
+                                        - SEGURO_RURAL
+                                        - TRIBUTOS_RECEITAS_ORCAMENTARIAS
+                                        - VEICULOS
+                                        - VEICULOS_AUTOMOTORES
+                                      example: ACOES_DEBENTURES
+                                    warrantyAmount:
+                                      type: string
+                                      maxLength: 12
+                                      format: AmountString
+                                      nullable: true
+                                      description: 'Valor original da garantia. Valor monetário, expresso com 2 casas decimais'
+                                minItems: 1
+                                description: Lista das garantias que avalizam a operação de crédito contratada
+                  links:
+                    type: object
+                    description: Referências para outros recusos da API requisitada.
+                    required:
+                      - self
+                    properties:
+                      self:
+                        type: string
+                        format: URIString
+                        description: URI completo que gerou a resposta atual.
+                        example: 'https://api.banco.com.br/open-banking/<api>/v1/<resource>'
+                      first:
+                        type: string
+                        format: URIString
+                        description: URI da primeira página que originou essa lista de resultados. Restrição - Obrigatório quando não for a primeira página da resposta
+                        example: 'https://api.banco.com.br/open-banking/<api>/v1/<resource>'
+                      prev:
+                        type: string
+                        format: URIString
+                        description: "URI da página anterior dessa lista de resultados. Restrição - \tObrigatório quando não for a primeira página da resposta"
+                      next:
+                        type: string
+                        format: URIString
+                        description: URI da próxima página dessa lista de resultados. Restrição - Obrigatório quando não for a última página da resposta
+                      last:
+                        type: string
+                        format: URIString
+                        description: URI da última página dessa lista de resultados. Restrição - Obrigatório quando não for a última página da resposta
+                        example: 'https://api.banco.com.br/open-banking/<api>/v1/<resource>'
+                  meta:
+                    type: object
+                    description: Meta informações referente a API requisitada.
+                    properties:
+                      totalRecords:
+                        type: integer
+                        description: Número total de registros no resultado
+                        example: 1
+                      totalPages:
+                        type: integer
+                        description: Número total de páginas no resultado
+                        example: 1
+                    required:
+                      - totalRecords
+                      - totalPages
+        '400':
+          description: 'A requisição foi malformada, omitindo atributos obrigatórios, seja no payload ou através de atributos na URL.'
+        '401':
+          description: Cabeçalho de autenticação ausente/inválido ou token inválido.
+        '403':
+          description: O token tem escopo incorreto ou uma política de segurança foi violada.
+        '404':
+          description: O recurso solicitado não existe ou não foi implementado.
+        '405':
+          description: O consumidor tentou acessar o recurso com um método não suportado.
+        '406':
+          description: A solicitação continha um cabeçalho Accept diferente dos tipos de mídia permitidos ou um conjunto de caracteres diferente de UTF-8.
+        '410':
+          description: Indica que o recurso não está mais disponível.
+        '422':
+          description: 'A solicitação foi bem formada, mas não pôde ser processada devido à lógica de negócios específica da solicitação.'
+        '429':
+          description: 'A operação foi recusada, pois muitas solicitações foram feitas dentro de um determinado período ou o limite global de requisições concorrentes foi atingido.'
+        '500':
+          description: Ocorreu um erro no gateway da API ou no microsserviço.
+        '503':
+          description: O serviço está indisponível no momento.
+        '504':
+          description: O servidor não pôde responder em tempo hábil.
