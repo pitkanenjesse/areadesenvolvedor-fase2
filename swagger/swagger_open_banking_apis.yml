@@ -2488,6 +2488,168 @@ paths:
           $ref: '#/paths/~1admin~1v1~1metrics/get/responses/503'
         '504':
           $ref: '#/paths/~1admin~1v1~1metrics/get/responses/504'
+  /bank-borrowing/v1/payments:
+    get:
+      tags:
+        - API - Operações de Crédito
+      summary: Pagamentos do Contrato
+      description: |
+        |Versão|
+        |:-----|
+        |1     |
+
+        ### Visão Geral
+
+        A definir.
+        Obtém dados referentes às garantias que avalizam a operação de crédito contratada.
+
+        A definir.
+        Tags: [CNPJ (CNPJ Number)](#glossarioCNPJ).
+
+        ### Visão de alto de nível das estruturas de dados
+
+        <img class="lazy" src="images/loading.gif" data-src="images/tld/bank_borrowing/TLD_BankBorrowing_Warranties.png"/>
+
+        ### DER - Diagramas de Entidade e Relacionamento
+
+        * DER Conceitual
+
+        <img class="lazy" src="images/loading.gif" data-src="images/der/bank_borrowing/DER_BankBorrowing.png"/>
+
+        <a href="images/der/bank_borrowing/DER_BankBorrowing.png" target="_blank">Fazer download do DER Conceitual</a>
+
+        * DER Lógico
+
+        <img class="lazy" src="images/loading.gif" data-src="images/der/bank_borrowing/DER_BankBorrowing_Payments.png"/>
+
+        <a href="images/der/bank_borrowing/DER_BankBorrowing_Payments.png" target="_blank">Fazer download do DER Lógico</a>
+
+        ### Dicionário de dados
+
+        <a href='dictionary/bank_borrowing_payments.csv' target="_blank">Fazer download do dicionário de dados</a>
+
+        A definir.
+        <a href="dictionary/example/examples_bank_borrowing_payments.csv" target="_blank">Fazer download dos exemplos</a>
+
+        ### Especificação em OAS 3.0
+
+        <a href='swagger/swagger_bank_borrowing_apis.yaml'>Download da Especificação (OAS 3.0)</a>
+      operationId: getBankBorrowingWarranties
+      parameters:
+        - $ref: '#/components/parameters/page'
+        - $ref: '#/components/parameters/pageSize'
+      responses:
+        '200':
+          description: Método para obter dados referentes às garantias que avalizam a operação de crédito contratada.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseBankBorrowingPayments'
+        '400':
+          $ref: '#/paths/~1admin~1v1~1metrics/get/responses/400'
+        '401':
+          $ref: '#/paths/~1admin~1v1~1metrics/get/responses/401'
+        '403':
+          $ref: '#/paths/~1admin~1v1~1metrics/get/responses/403'
+        '404':
+          $ref: '#/paths/~1admin~1v1~1metrics/get/responses/404'
+        '405':
+          $ref: '#/paths/~1admin~1v1~1metrics/get/responses/405'
+        '406':
+          $ref: '#/paths/~1admin~1v1~1metrics/get/responses/406'
+        '410':
+          $ref: '#/paths/~1admin~1v1~1metrics/get/responses/410'
+        '422':
+          $ref: '#/paths/~1admin~1v1~1metrics/get/responses/422'
+        '429':
+          $ref: '#/paths/~1admin~1v1~1metrics/get/responses/429'
+        '500':
+          $ref: '#/paths/~1admin~1v1~1metrics/get/responses/500'
+        '503':
+          $ref: '#/paths/~1admin~1v1~1metrics/get/responses/503'
+        '504':
+          $ref: '#/paths/~1admin~1v1~1metrics/get/responses/504'
+  /bank-borrowing/v1/instalments:
+    get:
+      tags:
+        - API - Operações de Crédito
+      summary: Parcelas do Contrato
+      description: |
+        |Versão|
+        |:-----|
+        |1     |
+
+        ### Visão Geral
+
+        A definir.
+        Obtém dados referentes às parcelas / prestações da operação de crédito contratada.
+
+        A definir.
+        Tags: [CNPJ (CNPJ Number)](#glossarioCNPJ).
+
+        ### Visão de alto de nível das estruturas de dados
+
+        <img class="lazy" src="images/loading.gif" data-src="images/tld/bank_borrowing/TLD_BankBorrowing_Warranties.png"/>
+
+        ### DER - Diagramas de Entidade e Relacionamento
+
+        * DER Conceitual
+
+        <img class="lazy" src="images/loading.gif" data-src="images/der/bank_borrowing/DER_BankBorrowing.png"/>
+
+        <a href="images/der/bank_borrowing/DER_BankBorrowing.png" target="_blank">Fazer download do DER Conceitual</a>
+
+        * DER Lógico
+
+        <img class="lazy" src="images/loading.gif" data-src="images/der/bank_borrowing/DER_BankBorrowing_Instalments.png"/>
+
+        <a href="images/der/bank_borrowing/DER_BankBorrowing_Instalments.png" target="_blank">Fazer download do DER Lógico</a>
+
+        ### Dicionário de dados
+
+        <a href='dictionary/bank_borrowing_instalments.csv' target="_blank">Fazer download do dicionário de dados</a>
+
+        A definir.
+        <a href="dictionary/example/examples_bank_borrowing_instalments.csv" target="_blank">Fazer download dos exemplos</a>
+
+        ### Especificação em OAS 3.0
+
+        <a href='swagger/swagger_bank_borrowing_apis.yaml'>Download da Especificação (OAS 3.0)</a>
+      operationId: getBankBorrowingWarranties
+      parameters:
+        - $ref: '#/components/parameters/page'
+        - $ref: '#/components/parameters/pageSize'
+      responses:
+        '200':
+          description: Método para obter dados referentes às garantias que avalizam a operação de crédito contratada.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseBankBorrowingPayments'
+        '400':
+          $ref: '#/paths/~1admin~1v1~1metrics/get/responses/400'
+        '401':
+          $ref: '#/paths/~1admin~1v1~1metrics/get/responses/401'
+        '403':
+          $ref: '#/paths/~1admin~1v1~1metrics/get/responses/403'
+        '404':
+          $ref: '#/paths/~1admin~1v1~1metrics/get/responses/404'
+        '405':
+          $ref: '#/paths/~1admin~1v1~1metrics/get/responses/405'
+        '406':
+          $ref: '#/paths/~1admin~1v1~1metrics/get/responses/406'
+        '410':
+          $ref: '#/paths/~1admin~1v1~1metrics/get/responses/410'
+        '422':
+          $ref: '#/paths/~1admin~1v1~1metrics/get/responses/422'
+        '429':
+          $ref: '#/paths/~1admin~1v1~1metrics/get/responses/429'
+        '500':
+          $ref: '#/paths/~1admin~1v1~1metrics/get/responses/500'
+        '503':
+          $ref: '#/paths/~1admin~1v1~1metrics/get/responses/503'
+        '504':
+          $ref: '#/paths/~1admin~1v1~1metrics/get/responses/504'
 components:
   schemas:
     AccountBalances:
@@ -3349,10 +3511,12 @@ components:
           type: string
           pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$'
           description: 'Traz a data de vencimento da parcela não regular  a vencer do contrato da modalidade de crédito consultada, conforme especificação RFC-3339'
+          example: '2020-01-10'
         amount:
           type: string
           nullable: true
           description: Valor monetário da parcela não regular a vencer.  Expresso em valor monetário com 2 casas decimais
+          example: '200.00'
     BankBorrowingBallonPayment:
       type: object
       description: Conjunto de informações relativas às parcelas não regulares do contrato da modalidade de crédito consultada
@@ -3408,34 +3572,49 @@ components:
             Para clientes pessoa jurídica com CNPJ (tipo de cliente = 2), informar as 8 (oito) posições iniciais do CNPJ;
             3. Para os demais clientes (tipos de cliente 3, 4, 5 e 6), informar 14 (catorze) posições com complemento de zeros à esquerda se a identificação tiver tamanho inferior;
             - Código do contrato: 1 (uma) até 40 (quarenta) posições, sem complemento de caracteres.
+          example: '92792126019929279212650822221989319252576'
         requestDateTime:
           type: string
           maxLength: 20
           pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])T(?:[01]\d|2[0123]):(?:[012345]\d):(?:[012345]\d)Z$'
-          example: '2020-07-21T08:30:00Z'
+          example: '2020-01-05T08:30:00Z'
           description: 'Data e hora da consulta, conforme especificação RFC-3339, formato UTC.'
         totalNumberOfInstalments:
           type: number
           maxLength: 3
           description: Prazo Total em meses do contrato referente à Modalidade de Crédito informada
+          example: '130'
         contractRemainingMonths:
           type: number
           maxLength: 3
           description: Prazo Remanescente em meses do contrato referente à Modalidade de Crédito informada
+          example: '57'
         dueInstalments:
           type: number
           maxLength: 3
           description: 'Quantidade de prestações a vencer. (No caso de modalidades que não possuam parcelas, o número de prestações é igual a zero)'
+          example: '57'
         pastDueInstalments:
           type: number
           maxLength: 3
           description: 'Quantidade de prestações vencidas. (No caso de modalidades que não possuam parcelas, o número de prestações é igual a zero)'
+          example: '73'
         paidInstalments:
           type: number
           maxLength: 3
           description: 'Quantidade de prestações pagas. (No caso de modalidades que não possuam parcelas, o número de prestações é igual a zero)'
+          example: '73'
         ballonPayment:
           $ref: '#/components/schemas/BankBorrowingBallonPayment'
+    BankBorrowingPaymantBank:
+      type: object
+      description: |
+        Conjunto de informações dos pagamentos referentes às operações de crédito contratadas
+      required:
+        - payments
+      properties:
+        payments:
+          $ref: '#/components/schemas/BankingBorrowingPayments'
     BankingBorrowingPayments:
       type: object
       description: Conjunto de informações dos pagamentos referentes às operações de crédito contratadas
@@ -3518,6 +3697,13 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/BankingBorrowingCompletedPayment'
+    BankBorrowingPaymentsData:
+      type: object
+      required:
+        - bankBorrowing
+      properties:
+        bankBorrowing:
+          $ref: '#/components/schemas/BankBorrowingPaymantBank'
     BankingBorrowingReleases:
       type: object
       description: Lista dos pagamentos realizados no período
@@ -9084,6 +9270,19 @@ components:
           description: 'Número de chamadas rejeitadas nos dias anteriores. O primeiro item do array é referente a ontem, e assim por diante. Devem ser retornados no máximo sete dias caso estejam disponíveis.'
           items:
             type: integer
+    ResponseBankBorrowingPayments:
+      type: object
+      required:
+        - data
+        - links
+        - meta
+      properties:
+        data:
+          $ref: '#/components/schemas/BankBorrowingPaymentsData'
+        links:
+          $ref: '#/components/schemas/Links'
+        meta:
+          $ref: '#/components/schemas/Meta'
     ResponseBankBorrowingWarranties:
       type: object
       required:
