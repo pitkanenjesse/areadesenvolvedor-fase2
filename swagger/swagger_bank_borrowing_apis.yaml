@@ -673,27 +673,35 @@ paths:
                                   Para clientes pessoa jurídica com CNPJ (tipo de cliente = 2), informar as 8 (oito) posições iniciais do CNPJ;
                                   3. Para os demais clientes (tipos de cliente 3, 4, 5 e 6), informar 14 (catorze) posições com complemento de zeros à esquerda se a identificação tiver tamanho inferior;
                                   - Código do contrato: 1 (uma) até 40 (quarenta) posições, sem complemento de caracteres.
+                                example: '92792126019929279212650822221989319252576'
                               requestDateTime:
                                 type: string
                                 maxLength: 20
                                 pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])T(?:[01]\d|2[0123]):(?:[012345]\d):(?:[012345]\d)Z$'
-                                example: '2020-07-21T08:30:00Z'
+                                example: '2020-01-05T08:30:00Z'
                                 description: 'Data e hora da consulta, conforme especificação RFC-3339, formato UTC.'
                               paidInstalments:
                                 type: number
                                 maxLength: 3
                                 description: Quantidade total de parcelas pagas do contrato referente à Modalidade de Crédito informada
+                                example: '73'
                               nonRegulatedCharge:
-                                type: string
-                                pattern: '^(\w{3}){1}$'
-                                maxLength: 3
-                                format: CurrencyString
-                                description: 'Moeda referente ao valor mínimo da Tarifa, segundo modelo ISO-4217'
-                                example: BRL
+                                type: object
+                                required:
+                                  - currency
+                                properties:
+                                  currency:
+                                    type: string
+                                    pattern: '^(\w{3}){1}$'
+                                    maxLength: 3
+                                    format: CurrencyString
+                                    description: 'Moeda referente ao valor mínimo da Tarifa, segundo modelo ISO-4217'
+                                    example: BRL
                               contractOutstandingBalance:
                                 type: string
                                 maxLenght: 12
                                 description: 'Saldo devedor Remanescente, divulgado nos canais eletrônicos, do contrato referente à Modalidade de Crédito informada. Expresso em valor monetário com 2 casas decimais'
+                                example: '11400.00'
                               releases:
                                 type: object
                                 description: Lista dos pagamentos realizados no período
@@ -747,9 +755,9 @@ paths:
                                 pattern: \w*\W*
                               completedPayment:
                                 type: array
+                                description: Lista que traz as datas de vencimento e o valor monetário do pagamento do contrato da modalidade de crédito consultada
                                 items:
                                   type: object
-                                  description: Lista que traz as datas de vencimento e o valor monetário do pagamento do contrato da modalidade de crédito consultada
                                   required:
                                     - paymentDate
                                     - dueAmount
@@ -759,10 +767,12 @@ paths:
                                       description: 'Traz as datas de vencimento do pagamento do contrato da modalidade de crédito consultada, conforme especificação RFC-3339'
                                       pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$'
                                       maxLength: 10
+                                      example: '2020-01-10'
                                     dueAmount:
                                       type: string
                                       description: Traz o valor do pagamento do contrato da modalidade de crédito consultada. Expresso em valor monetário com 2 casas decimais
                                       maxLength: 12
+                                      example: '200.00'
                   links:
                     $ref: '#/paths/~1contract/get/responses/200/content/application~1json/schema/properties/links'
                   meta:
@@ -815,6 +825,7 @@ paths:
                 properties:
                   data:
                     type: object
+                    description: Conjunto de informações de operação de crédito contratadas
                     required:
                       - bankBorrowing
                     properties:
@@ -823,9 +834,9 @@ paths:
                         description: |
                           Conjunto de informações referentes às parcelas / prestações da operação de crédito contratada
                         required:
-                          - instalment
+                          - instalments
                         properties:
-                          instalment:
+                          instalments:
                             type: object
                             description: Conjunto de informações referentes às parcelas / prestações da operação de crédito contratada
                             required:
@@ -891,12 +902,12 @@ paths:
                                   - instalments
                                 properties:
                                   currency:
-                                    $ref: '#/paths/~1payments/get/responses/200/content/application~1json/schema/properties/data/properties/bankBorrowing/properties/payments/properties/nonRegulatedCharge'
+                                    $ref: '#/paths/~1payments/get/responses/200/content/application~1json/schema/properties/data/properties/bankBorrowing/properties/payments/properties/nonRegulatedCharge/properties/currency'
                                   instalments:
                                     type: array
+                                    description: Lista que traz as datas de vencimento e valor das parcelas não regulares  do contrato da modalidade de crédito consultada
                                     items:
                                       type: object
-                                      description: Lista que traz as datas de vencimento e valor das parcelas não regulares  do contrato da modalidade de crédito consultada
                                       required:
                                         - dueDate
                                         - amount
@@ -905,11 +916,13 @@ paths:
                                           type: string
                                           pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$'
                                           description: 'Traz a data de vencimento da parcela não regular  a vencer do contrato da modalidade de crédito consultada, conforme especificação RFC-3339'
+                                          maxLength: 10
                                           example: '2020-01-10'
                                         amount:
                                           type: string
                                           nullable: true
                                           description: Valor monetário da parcela não regular a vencer.  Expresso em valor monetário com 2 casas decimais
+                                          maxLength: 12
                                           example: '200.00'
                   links:
                     $ref: '#/paths/~1contract/get/responses/200/content/application~1json/schema/properties/links'

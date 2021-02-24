@@ -603,6 +603,9 @@
                     <a href="#tocS_BankBorrowingPaymentsData" class="toc-h2 toc-link" data-title="BankBorrowingPaymentsData">BankBorrowingPaymentsData</a>
                   </li>
                   <li>
+                    <a href="#tocS_BankBorrowingNonRegulatedCharge" class="toc-h2 toc-link" data-title="BankBorrowingNonRegulatedCharge">BankBorrowingNonRegulatedCharge</a>
+                  </li>
+                  <li>
                     <a href="#tocS_BankBorrowingReleases" class="toc-h2 toc-link" data-title="BankBorrowingReleases">BankBorrowingReleases</a>
                   </li>
                   <li>
@@ -16599,11 +16602,13 @@ Tags: <a href="#glossarioCNPJ">CNPJ (CNPJ Number)</a>.</p>
   </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"bankBorrowing"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="nl">"payments"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"contractId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"paidInstalments"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"nonRegulatedCharge"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"contractOutstandingBalance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"contractId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"92792126019929279212650822221989319252576"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-01-05T08:30:00Z"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"paidInstalments"</span><span class="p">:</span><span class="w"> </span><span class="s2">"73"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"nonRegulatedCharge"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"contractOutstandingBalance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11400.00"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"releases"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
           </span><span class="nl">"paymentType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PARCELA_REGULAR"</span><span class="w">
         </span><span class="p">},</span><span class="w">
@@ -16614,8 +16619,8 @@ Tags: <a href="#glossarioCNPJ">CNPJ (CNPJ Number)</a>.</p>
         </span><span class="nl">"financeChargeAdditionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"completedPayment"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
           </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"paymentDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"dueAmount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+            </span><span class="nl">"paymentDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-01-10"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"dueAmount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"200.00"</span><span class="w">
           </span><span class="p">}</span><span class="w">
         </span><span class="p">]</span><span class="w">
       </span><span class="p">}</span><span class="w">
@@ -16858,7 +16863,7 @@ Tags: <a href="#glossarioCNPJ">CNPJ (CNPJ Number)</a>.</p>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"bankBorrowing"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"instalment"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"instalments"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="nl">"contractId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"92792126019929279212650822221989319252576"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-01-05T08:30:00Z"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"totalNumberOfInstalments"</span><span class="p">:</span><span class="w"> </span><span class="s2">"130"</span><span class="p">,</span><span class="w">
@@ -18272,12 +18277,7 @@ This operation does not require authentication
   </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"200.00"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div>
-
-<p>Lista que traz as datas de vencimento e valor das parcelas não regulares  do contrato da modalidade de crédito consultada</p>
-
-<h3 id='schemas-parcelas-do-contrato-propriedades'>Propriedades</h3>
-
+</span></code></pre></div><h3 id='schemas-parcelas-do-contrato-propriedades'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -18306,7 +18306,6 @@ This operation does not require authentication
 <a id="schema_BankBorrowingBallonPayment"></a>
 <a id="tocSbankborrowingballonpayment"></a>
 <a id="tocsbankborrowingballonpayment"></a></p>
-
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"instalments"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
@@ -18341,7 +18340,7 @@ This operation does not require authentication
 <td>instalments</td>
 <td>[<a href="#schemabankborrowingballoninstalments">BankBorrowingBallonInstalments</a>]</td>
 <td>true</td>
-<td>[Lista que traz as datas de vencimento e valor das parcelas não regulares  do contrato da modalidade de crédito consultada]</td>
+<td>Lista que traz as datas de vencimento e valor das parcelas não regulares  do contrato da modalidade de crédito consultada</td>
 </tr>
 </tbody></table>
 
@@ -18353,16 +18352,11 @@ This operation does not require authentication
 <a id="tocsbankborrowingcompletedpayment"></a></p>
 
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"paymentDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"dueAmount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+  </span><span class="nl">"paymentDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-01-10"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"dueAmount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"200.00"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div>
-
-<p>Lista que traz as datas de vencimento e o valor monetário do pagamento do contrato da modalidade de crédito consultada</p>
-
-<h3 id='schemas-parcelas-do-contrato-propriedades'>Propriedades</h3>
-
+</span></code></pre></div><h3 id='schemas-parcelas-do-contrato-propriedades'>Propriedades</h3>
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -18391,7 +18385,6 @@ This operation does not require authentication
 <a id="schema_BankBorrowingContract"></a>
 <a id="tocSbankborrowingcontract"></a>
 <a id="tocsbankborrowingcontract"></a></p>
-
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"contractId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
@@ -18927,7 +18920,7 @@ This operation does not require authentication
 <a id="tocsbankborrowinginstalmentsbank"></a></p>
 
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"instalment"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="nl">"instalments"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"contractId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"92792126019929279212650822221989319252576"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-01-05T08:30:00Z"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"totalNumberOfInstalments"</span><span class="p">:</span><span class="w"> </span><span class="s2">"130"</span><span class="p">,</span><span class="w">
@@ -18962,7 +18955,7 @@ This operation does not require authentication
 </tr>
 </thead><tbody>
 <tr>
-<td>instalment</td>
+<td>instalments</td>
 <td><a href="#schemabankborrowinginstalments">BankBorrowingInstalments</a></td>
 <td>true</td>
 <td>Conjunto de informações referentes às parcelas / prestações da operação de crédito contratada</td>
@@ -18978,7 +18971,7 @@ This operation does not require authentication
 
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"bankBorrowing"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"instalment"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"instalments"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="nl">"contractId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"92792126019929279212650822221989319252576"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-01-05T08:30:00Z"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"totalNumberOfInstalments"</span><span class="p">:</span><span class="w"> </span><span class="s2">"130"</span><span class="p">,</span><span class="w">
@@ -18999,7 +18992,12 @@ This operation does not require authentication
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='schemas-parcelas-do-contrato-propriedades'>Propriedades</h3>
+</span></code></pre></div>
+
+<p>Conjunto de informações de operação de crédito contratadas</p>
+
+<h3 id='schemas-parcelas-do-contrato-propriedades'>Propriedades</h3>
+
 <table><thead>
 <tr>
 <th>Nome</th>
@@ -19022,13 +19020,16 @@ This operation does not require authentication
 <a id="schema_BankBorrowingPaymentBank"></a>
 <a id="tocSbankborrowingpaymentbank"></a>
 <a id="tocsbankborrowingpaymentbank"></a></p>
+
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"payments"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"contractId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"paidInstalments"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"nonRegulatedCharge"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"contractOutstandingBalance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"contractId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"92792126019929279212650822221989319252576"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-01-05T08:30:00Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"paidInstalments"</span><span class="p">:</span><span class="w"> </span><span class="s2">"73"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"nonRegulatedCharge"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"contractOutstandingBalance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11400.00"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"releases"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="nl">"paymentType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PARCELA_REGULAR"</span><span class="w">
     </span><span class="p">},</span><span class="w">
@@ -19039,8 +19040,8 @@ This operation does not require authentication
     </span><span class="nl">"financeChargeAdditionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"completedPayment"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
       </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"paymentDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"dueAmount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+        </span><span class="nl">"paymentDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-01-10"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"dueAmount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"200.00"</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">]</span><span class="w">
   </span><span class="p">}</span><span class="w">
@@ -19076,11 +19077,13 @@ This operation does not require authentication
 <a id="tocsbankborrowingpayments"></a></p>
 
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"contractId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"paidInstalments"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"nonRegulatedCharge"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"contractOutstandingBalance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"contractId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"92792126019929279212650822221989319252576"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-01-05T08:30:00Z"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"paidInstalments"</span><span class="p">:</span><span class="w"> </span><span class="s2">"73"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"nonRegulatedCharge"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"contractOutstandingBalance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11400.00"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"releases"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"paymentType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PARCELA_REGULAR"</span><span class="w">
   </span><span class="p">},</span><span class="w">
@@ -19091,8 +19094,8 @@ This operation does not require authentication
   </span><span class="nl">"financeChargeAdditionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"completedPayment"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"paymentDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"dueAmount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+      </span><span class="nl">"paymentDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-01-10"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"dueAmount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"200.00"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -19131,9 +19134,9 @@ This operation does not require authentication
 </tr>
 <tr>
 <td>nonRegulatedCharge</td>
-<td><a href="#schemacurrency">Currency</a></td>
+<td><a href="#schemabankborrowingnonregulatedcharge">BankBorrowingNonRegulatedCharge</a></td>
 <td>true</td>
-<td>Moeda referente ao valor mínimo da Tarifa, segundo modelo ISO-4217</td>
+<td></td>
 </tr>
 <tr>
 <td>contractOutstandingBalance</td>
@@ -19181,7 +19184,7 @@ This operation does not require authentication
 <td>completedPayment</td>
 <td>[<a href="#schemabankborrowingcompletedpayment">BankBorrowingCompletedPayment</a>]</td>
 <td>true</td>
-<td>[Lista que traz as datas de vencimento e o valor monetário do pagamento do contrato da modalidade de crédito consultada]</td>
+<td>Lista que traz as datas de vencimento e o valor monetário do pagamento do contrato da modalidade de crédito consultada</td>
 </tr>
 </tbody></table>
 
@@ -19195,11 +19198,13 @@ This operation does not require authentication
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"bankBorrowing"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"payments"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"contractId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"paidInstalments"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"nonRegulatedCharge"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"contractOutstandingBalance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"contractId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"92792126019929279212650822221989319252576"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-01-05T08:30:00Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"paidInstalments"</span><span class="p">:</span><span class="w"> </span><span class="s2">"73"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"nonRegulatedCharge"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"contractOutstandingBalance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11400.00"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"releases"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="nl">"paymentType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PARCELA_REGULAR"</span><span class="w">
       </span><span class="p">},</span><span class="w">
@@ -19210,8 +19215,8 @@ This operation does not require authentication
       </span><span class="nl">"financeChargeAdditionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"completedPayment"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"paymentDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"dueAmount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+          </span><span class="nl">"paymentDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-01-10"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"dueAmount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"200.00"</span><span class="w">
         </span><span class="p">}</span><span class="w">
       </span><span class="p">]</span><span class="w">
     </span><span class="p">}</span><span class="w">
@@ -19232,6 +19237,33 @@ This operation does not require authentication
 <td><a href="#schemabankborrowingpaymentbank">BankBorrowingPaymentBank</a></td>
 <td>true</td>
 <td>Conjunto de informações dos pagamentos referentes às operações de crédito contratadas</td>
+</tr>
+</tbody></table>
+
+<h2 id="tocS_BankBorrowingNonRegulatedCharge">BankBorrowingNonRegulatedCharge</h2>
+
+<p><a id="schemabankborrowingnonregulatedcharge"></a>
+<a id="schema_BankBorrowingNonRegulatedCharge"></a>
+<a id="tocSbankborrowingnonregulatedcharge"></a>
+<a id="tocsbankborrowingnonregulatedcharge"></a></p>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre></div><h3 id='schemas-parcelas-do-contrato-propriedades'>Propriedades</h3>
+<table><thead>
+<tr>
+<th>Nome</th>
+<th>Tipo</th>
+<th>Obrigatório</th>
+<th>Descrição</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>currency</td>
+<td><a href="#schemacurrency">Currency</a></td>
+<td>true</td>
+<td>Moeda referente ao valor mínimo da Tarifa, segundo modelo ISO-4217</td>
 </tr>
 </tbody></table>
 
@@ -41791,7 +41823,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"bankBorrowing"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"instalment"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"instalments"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="nl">"contractId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"92792126019929279212650822221989319252576"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-01-05T08:30:00Z"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"totalNumberOfInstalments"</span><span class="p">:</span><span class="w"> </span><span class="s2">"130"</span><span class="p">,</span><span class="w">
@@ -41837,7 +41869,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
 <td>data</td>
 <td><a href="#schemabankborrowinginstalmentsdata">BankBorrowingInstalmentsData</a></td>
 <td>true</td>
-<td></td>
+<td>Conjunto de informações de operação de crédito contratadas</td>
 </tr>
 <tr>
 <td>links</td>
@@ -41863,11 +41895,13 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
   </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"bankBorrowing"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="nl">"payments"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"contractId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"paidInstalments"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"nonRegulatedCharge"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"contractOutstandingBalance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"contractId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"92792126019929279212650822221989319252576"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-01-05T08:30:00Z"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"paidInstalments"</span><span class="p">:</span><span class="w"> </span><span class="s2">"73"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"nonRegulatedCharge"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"contractOutstandingBalance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11400.00"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"releases"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
           </span><span class="nl">"paymentType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PARCELA_REGULAR"</span><span class="w">
         </span><span class="p">},</span><span class="w">
@@ -41878,8 +41912,8 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
         </span><span class="nl">"financeChargeAdditionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"completedPayment"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
           </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"paymentDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"dueAmount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+            </span><span class="nl">"paymentDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-01-10"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"dueAmount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"200.00"</span><span class="w">
           </span><span class="p">}</span><span class="w">
         </span><span class="p">]</span><span class="w">
       </span><span class="p">}</span><span class="w">
