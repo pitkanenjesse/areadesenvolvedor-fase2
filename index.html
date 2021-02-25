@@ -1189,6 +1189,41 @@ prazos definidos para lançamento e implementação de novas versões <em>major<
 <td style="text-align: left">Condiciona o resultado da requisição para que o recurso só seja enviado caso tenha sido atualizado após a data fornecida. Utiliza o padrão da RFC 7232, sessão 3.3: <em>If-Modified-Since</em> do protocolo HTTP.</td>
 <td style="text-align: left">Não</td>
 </tr>
+<tr>
+<td style="text-align: left"><strong>x-fapi-auth-date</strong></td>
+<td style="text-align: left">Data em que o usuário logou pela última vez com o receptor</td>
+<td style="text-align: left">Condicional</td>
+</tr>
+<tr>
+<td style="text-align: left"><strong>x-fapi-customer-ip-address</strong></td>
+<td style="text-align: left">O endereço IP do usuário se estiver atualmente logado com o receptor</td>
+<td style="text-align: left">Condicional</td>
+</tr>
+<tr>
+<td style="text-align: left"><strong>x-fapi-interaction-id</strong></td>
+<td style="text-align: left">Um UID RFC4122 usado como um ID de correlação. Se fornecido, o transmissor deve &quot;reproduzir&quot; esse valor no cabeçalho de resposta</td>
+<td style="text-align: left">Não</td>
+</tr>
+<tr>
+<td style="text-align: left"><strong>Authorization</strong></td>
+<td style="text-align: left">Cabeçalho HTTP padrão. Permite que as credenciais sejam fornecidas dependendo do tipo de recurso solicitado</td>
+<td style="text-align: left">Sim</td>
+</tr>
+<tr>
+<td style="text-align: left"><strong>x-idempotency-key</strong></td>
+<td style="text-align: left">Cabeçalho HTTP personalizado. Identificador de solicitação exclusivo para suportar a idempotência</td>
+<td style="text-align: left">Condicional</td>
+</tr>
+<tr>
+<td style="text-align: left"><strong>x-jws-signature</strong></td>
+<td style="text-align: left">Cabeçalho contendo uma assinatura JWS separada do corpo do payload</td>
+<td style="text-align: left">Condicional</td>
+</tr>
+<tr>
+<td style="text-align: left"><strong>x-customer-user-agent</strong></td>
+<td style="text-align: left">Indica o user agent que o usuário utiliza</td>
+<td style="text-align: left">Condicional</td>
+</tr>
 </tbody></table>
 
 <h3 id='introducao-cabecalhos-http-cabecalho-de-resposta'>Cabeçalho de resposta</h3>
@@ -1224,6 +1259,31 @@ prazos definidos para lançamento e implementação de novas versões <em>major<
 <td style="text-align: left"><strong>Last-Modified</strong></td>
 <td style="text-align: left">Informa a data e hora em que o recurso foi modificado pela última vez. Utiliza o padrão da RFC 7232, sessão 2.2: <em>Last-Modified</em> do protocolo HTTP.</td>
 <td style="text-align: left">Não</td>
+</tr>
+<tr>
+<td style="text-align: left"><strong>x-jws-signature</strong></td>
+<td style="text-align: left">Cabeçalho contendo uma assinatura JWS separada do corpo do payload</td>
+<td style="text-align: left">Condicional</td>
+</tr>
+<tr>
+<td style="text-align: left"><strong>x-fapi-interaction-id</strong></td>
+<td style="text-align: left">Um UID RFC4122 usado como um ID de correlação. O transmissor deve usar o mesmo valor recebido na requisição para o cabeçalho de resposta recebido na requisição, caso não tenha sido fornecido, deve se usar um UUID RFC4122</td>
+<td style="text-align: left">Não</td>
+</tr>
+<tr>
+<td style="text-align: left"><strong>x-rate-limit</strong></td>
+<td style="text-align: left">Indica o limite de requisições na API no tempo</td>
+<td style="text-align: left">Condicional</td>
+</tr>
+<tr>
+<td style="text-align: left"><strong>x-rate-limit-remaining</strong></td>
+<td style="text-align: left">Indica o número de requisições restantes</td>
+<td style="text-align: left">Condicional</td>
+</tr>
+<tr>
+<td style="text-align: left"><strong>x-rate-limit-time</strong></td>
+<td style="text-align: left">Informa o tempo do limite ou tempo para reset desse limite</td>
+<td style="text-align: left">Condicional</td>
 </tr>
 </tbody></table>
 
