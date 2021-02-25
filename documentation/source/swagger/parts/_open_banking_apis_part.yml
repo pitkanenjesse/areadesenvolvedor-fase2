@@ -65,8 +65,8 @@ paths:
 
       operationId: getBusinessCustomersIdentification
       parameters:
-        - $ref: '#/components/parameters/page'
-        - $ref: '#/components/parameters/pageSize'
+        - $ref: '#/components/parameters/Page'
+        - $ref: '#/components/parameters/PageSize'
       responses:
         '200':
           description: Método para obter os dados de identificação da pessoa jurídica na transmissora.
@@ -149,8 +149,8 @@ paths:
 
       operationId: getBusinessCustomersQualification
       parameters:
-        - $ref: '#/components/parameters/page'
-        - $ref: '#/components/parameters/pageSize'
+        - $ref: '#/components/parameters/Page'
+        - $ref: '#/components/parameters/PageSize'
       responses:
         '200':
           description: Método para obter os dados de qualificação da pessoa jurídica na transmissora.
@@ -233,8 +233,8 @@ paths:
 
       operationId: getBusinessCustomersFinancialRelation
       parameters:
-        - $ref: '#/components/parameters/page'
-        - $ref: '#/components/parameters/pageSize'
+        - $ref: '#/components/parameters/Page'
+        - $ref: '#/components/parameters/PageSize'
       responses:
         '200':
           description: Método para obter os dados de relacionamento financeiro da pessoa jurídica na transmissora.
@@ -316,8 +316,8 @@ paths:
 
       operationId: getPersonalCustomersIdentification
       parameters:
-        - $ref: '#/components/parameters/page'
-        - $ref: '#/components/parameters/pageSize'
+        - $ref: '#/components/parameters/Page'
+        - $ref: '#/components/parameters/PageSize'
       responses:
         '200':
           description: Método para obter os dados de identificação da pessoa natural na transmissora.
@@ -400,8 +400,8 @@ paths:
 
       operationId: getPersonalCustomersQualification
       parameters:
-        - $ref: '#/components/parameters/page'
-        - $ref: '#/components/parameters/pageSize'
+        - $ref: '#/components/parameters/Page'
+        - $ref: '#/components/parameters/PageSize'
       responses:
         '200':
           description: Método para obter os dados de qualificação da pessoa natural na transmissora.
@@ -484,8 +484,8 @@ paths:
 
       operationId: getPersonalCustomersFinancialRelation
       parameters:
-        - $ref: '#/components/parameters/page'
-        - $ref: '#/components/parameters/pageSize'
+        - $ref: '#/components/parameters/Page'
+        - $ref: '#/components/parameters/PageSize'
       responses:
         '200':
           description: Método para obter os dados de relacionamento financeiro da pessoa natural na transmissora.
@@ -565,8 +565,9 @@ paths:
 
       operationId: getCreditCardAccountsIdentification
       parameters:
-        - $ref: '#/components/parameters/page'
-        - $ref: '#/components/parameters/pageSize'
+        - $ref: '#/components/parameters/Page'
+        - $ref: '#/components/parameters/PageSize'
+        - $ref: '#/components/parameters/CreditCardNetwork'
       responses:
         '200':
           description: Dados relativos ao conjunto de informações referentes à identificação da conta de pagamento pós-paga.
@@ -646,8 +647,8 @@ paths:
 
       operationId: getCreditCardAccountsLimits
       parameters:
-        - $ref: '#/components/parameters/page'
-        - $ref: '#/components/parameters/pageSize'
+        - $ref: '#/components/parameters/Page'
+        - $ref: '#/components/parameters/PageSize'
       responses:
         '200':
           description: Dados dos limites de Crédito Total e por Modalidade de Crédito relativos à conta de pagamento pós-paga.
@@ -727,8 +728,12 @@ paths:
 
       operationId: getCreditCardAccountsTransaction
       parameters:
-        - $ref: '#/components/parameters/page'
-        - $ref: '#/components/parameters/pageSize'
+        - $ref: '#/components/parameters/Page'
+        - $ref: '#/components/parameters/PageSize'
+        - $ref: '#/components/parameters/FromTransactionDate'
+        - $ref: '#/components/parameters/ToTransactionDate'
+        - $ref: '#/components/parameters/CreditCardTransactionType'
+        - $ref: '#/components/parameters/CreditCardPayeeMCC'
       responses:
         '200':
           description: Dados das transações relativas à conta de pagamento pós-paga.
@@ -807,8 +812,10 @@ paths:
 
       operationId: "getCrediCardsBilling"
       parameters:
-        - $ref: "#/components/parameters/page"
-        - $ref: "#/components/parameters/pageSize"
+        - $ref: "#/components/parameters/Page"
+        - $ref: "#/components/parameters/PageSize"
+        - $ref: "#/components/parameters/FromDueDate"
+        - $ref: "#/components/parameters/ToDueDate"
       responses:
         '200':
           description: Dados referentes à fatura da conta de pagamento pós-paga.
@@ -889,12 +896,13 @@ paths:
 
         operationId: "getAccountsIdentification"
         parameters:
-          - $ref: "#/components/parameters/accountsCompeCode"
-          - $ref: "#/components/parameters/accountsBranchCode"
-          - $ref: "#/components/parameters/accountsNumber"
-          - $ref: "#/components/parameters/accountsCheckDigit"
-          - $ref: "#/components/parameters/page"
-          - $ref: "#/components/parameters/pageSize"
+          - $ref: "#/components/parameters/AccountsCompeCode"
+          - $ref: "#/components/parameters/AccountsBranchCode"
+          - $ref: "#/components/parameters/AccountsNumber"
+          - $ref: "#/components/parameters/AccountsCheckDigit"
+          - $ref: "#/components/parameters/Page"
+          - $ref: "#/components/parameters/PageSize"
+          - $ref: "#/components/parameters/AccountsType"
         responses:
           '200':
             description: Método para obter os dados de identificação da conta na transmissora.
@@ -973,12 +981,12 @@ paths:
 
       operationId: "getAccountsBalances"
       parameters:
-        - $ref: "#/components/parameters/accountsCompeCode"
-        - $ref: "#/components/parameters/accountsBranchCode"
-        - $ref: "#/components/parameters/accountsNumber"
-        - $ref: "#/components/parameters/accountsCheckDigit"
-        - $ref: "#/components/parameters/page"
-        - $ref: "#/components/parameters/pageSize"
+        - $ref: "#/components/parameters/AccountsCompeCode"
+        - $ref: "#/components/parameters/AccountsBranchCode"
+        - $ref: "#/components/parameters/AccountsNumber"
+        - $ref: "#/components/parameters/AccountsCheckDigit"
+        - $ref: "#/components/parameters/Page"
+        - $ref: "#/components/parameters/PageSize"
       responses:
         '200':
           description: Método para obter os dados da conta na transmissora.
@@ -1057,12 +1065,15 @@ paths:
 
       operationId: "getAccountsTransactions"
       parameters:
-        - $ref: "#/components/parameters/accountsCompeCode"
-        - $ref: "#/components/parameters/accountsBranchCode"
-        - $ref: "#/components/parameters/accountsNumber"
-        - $ref: "#/components/parameters/accountsCheckDigit"
-        - $ref: "#/components/parameters/page"
-        - $ref: "#/components/parameters/pageSize"
+        - $ref: "#/components/parameters/AccountsCompeCode"
+        - $ref: "#/components/parameters/AccountsBranchCode"
+        - $ref: "#/components/parameters/AccountsNumber"
+        - $ref: "#/components/parameters/AccountsCheckDigit"
+        - $ref: "#/components/parameters/Page"
+        - $ref: "#/components/parameters/PageSize"
+        - $ref: "#/components/parameters/FromBookingDate"
+        - $ref: "#/components/parameters/ToBookingDate"
+        - $ref: "#/components/parameters/AccountsCreditDebitIndicator"
       responses:
         '200':
           description: Método para obter a lista de transações da conta na transmissora.
@@ -1141,12 +1152,12 @@ paths:
 
       operationId: "getAccountsOverdraftLimits"
       parameters:
-        - $ref: "#/components/parameters/accountsCompeCode"
-        - $ref: "#/components/parameters/accountsBranchCode"
-        - $ref: "#/components/parameters/accountsNumber"
-        - $ref: "#/components/parameters/accountsCheckDigit"
-        - $ref: "#/components/parameters/page"
-        - $ref: "#/components/parameters/pageSize"
+        - $ref: "#/components/parameters/AccountsCompeCode"
+        - $ref: "#/components/parameters/AccountsBranchCode"
+        - $ref: "#/components/parameters/AccountsNumber"
+        - $ref: "#/components/parameters/AccountsCheckDigit"
+        - $ref: "#/components/parameters/Page"
+        - $ref: "#/components/parameters/PageSize"
       responses:
         '200':
           description: Método para obter os dados de cheque especial e de adiantamento a depositante  da conta na transmissora.
@@ -1178,6 +1189,7 @@ paths:
           $ref: './schemas/ErrorHTTP.yaml#/503'
         '504':
           $ref: './schemas/ErrorHTTP.yaml#/504'
+
   /bank-borrowing/v1/contract:
     get:
       tags:
@@ -1227,8 +1239,8 @@ paths:
 
       operationId: "getBankBorrowingContract"
       parameters:
-        - $ref: "#/components/parameters/page"
-        - $ref: "#/components/parameters/pageSize"
+        - $ref: "#/components/parameters/Page"
+        - $ref: "#/components/parameters/PageSize"
       responses:
         '200':
           description: Método para obter dados referentes à identificação da operação de crédito.
@@ -1310,8 +1322,8 @@ paths:
 
       operationId: "getBankBorrowingWarranties"
       parameters:
-        - $ref: "#/components/parameters/page"
-        - $ref: "#/components/parameters/pageSize"
+        - $ref: "#/components/parameters/Page"
+        - $ref: "#/components/parameters/PageSize"
       responses:
         '200':
           description: Método para obter dados referentes às garantias que avalizam a operação de crédito contratada.
@@ -1393,8 +1405,8 @@ paths:
 
       operationId: "getBankBorrowingPayments"
       parameters:
-        - $ref: "#/components/parameters/page"
-        - $ref: "#/components/parameters/pageSize"
+        - $ref: "#/components/parameters/Page"
+        - $ref: "#/components/parameters/PageSize"
       responses:
         '200':
           description: Método para obter dados dos pagamentos referentes às operações de crédito contratadas
@@ -1476,8 +1488,8 @@ paths:
 
       operationId: "getBankBorrowingInstalments"
       parameters:
-        - $ref: "#/components/parameters/page"
-        - $ref: "#/components/parameters/pageSize"
+        - $ref: "#/components/parameters/Page"
+        - $ref: "#/components/parameters/PageSize"
       responses:
         '200':
           description: Método para obter dados referentes às garantias que avalizam a operação de crédito contratada.
@@ -1857,15 +1869,37 @@ components:
     Transactions:
       $ref: ./schemas/accounts_apis/Transactions.yaml
   parameters:
-    accountsBranchCode:
+    AccountsBranchCode:
       $ref: ./parameters/AccountsBranchCode.yaml
-    accountsCheckDigit:
+    AccountsCheckDigit:
       $ref: ./parameters/AccountsCheckDigit.yaml
-    accountsCompeCode:
+    AccountsCompeCode:
       $ref: ./parameters/AccountsCompeCode.yaml
-    accountsNumber:
+    AccountsCreditDebitIndicator:
+      $ref: ./parameters/AccountsCreditDebitIndicator.yaml
+    AccountsNumber:
       $ref: ./parameters/AccountsNumber.yaml
-    page:
+    AccountsType:
+      $ref: ./parameters/AccountsType.yaml
+    CreditCardNetwork:
+      $ref: ./parameters/CreditCardNetwork.yaml
+    CreditCardPayeeMCC:
+      $ref: ./parameters/CreditCardPayeeMCC.yaml
+    CreditCardTransactionType:
+      $ref: ./parameters/CreditCardTransactionType.yaml
+    FromBookingDate:
+      $ref: ./parameters/FromBookingDate.yaml
+    FromDueDate:
+      $ref: ./parameters/FromDueDate.yaml
+    FromTransactionDate:
+      $ref: ./parameters/FromTransactionDate.yaml
+    Page:
       $ref: ./parameters/Page.yaml
-    pageSize:
+    PageSize:
       $ref: ./parameters/PageSize.yaml
+    ToBookingDate:
+      $ref: ./parameters/ToBookingDate.yaml
+    ToDueDate:
+      $ref: ./parameters/ToDueDate.yaml
+    ToTransactionDate:
+      $ref: ./parameters/ToTransactionDate.yaml
