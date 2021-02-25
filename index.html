@@ -255,7 +255,7 @@
                     <a href="#introducao-paginacao" class="toc-h2 toc-link" data-title="Paginação">Paginação</a>
                   </li>
                   <li>
-                    <a href="#introducao-estabilidade-do-id" class="toc-h2 toc-link" data-title="Estabilidade do ID">Estabilidade do ID</a>
+                    <a href="#introducao-formacao-e-estabilidade-do-id" class="toc-h2 toc-link" data-title="Formação e Estabilidade do ID">Formação e Estabilidade do ID</a>
                   </li>
                   <li>
                     <a href="#introducao-extensibilidade" class="toc-h2 toc-link" data-title="Extensibilidade">Extensibilidade</a>
@@ -1268,6 +1268,14 @@ prazos definidos para lançamento e implementação de novas versões <em>major<
 <td style="text-align: left">Sim</td>
 </tr>
 <tr>
+<td style="text-align: left">A resposta não foi modificada desde a última chamada</td>
+<td style="text-align: left">304 Not Modified</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Não</td>
+<td style="text-align: left">Sim</td>
+<td style="text-align: left">Não</td>
+</tr>
+<tr>
 <td style="text-align: left">A requisição foi malformada, omitindo atributos obrigatórios, seja no <em>payload</em> ou através de atributos na URL.</td>
 <td style="text-align: left">400 Bad Request.</td>
 <td style="text-align: left">A operação solicitada não será realizada.</td>
@@ -1745,7 +1753,7 @@ Para cada um desses atributos o tamanho da página especificado na requisição 
 <code>Unprocessable Entity</code>, indicando que o servidor entendeu a requisição, mas não é possível processá-la conforme foi solicitado.</li>
 </ul>
 
-<h2 id='introducao-estabilidade-do-id'>Estabilidade do ID</h2>
+<h2 id='introducao-formacao-e-estabilidade-do-id'>Formação e Estabilidade do ID</h2>
 
 <p>Dentro desses padrões, a serem melhor especificados a partir da Fase 2 do Open Banking no Brasil, os IDs de recursos são necessários para atender ao seguinte:</p>
 
@@ -1753,9 +1761,19 @@ Para cada um desses atributos o tamanho da página especificado na requisição 
 <li>O ID de um recurso deve ser especificado no <em>endpoint</em> de uma API apenas para obter detalhes do recurso ou para realizar alterações no mesmo.</li>
 <li>Se o ID for especificado nos padrões do Open Banking, então ele é obrigatório e deverá ser fornecido pela entidade implementadora da API de acordo com o padrão definido.</li>
 <li>Se um ID for especificado, o mesmo deverá ser totalmente desconectado de significados com outras entidades. Por exemplo, um ID não deve ser uma combinação de outros campos ou uma <em>string</em> que possa ter conteúdo sensível que possa ser extraído.</li>
-<li>Os IDs devem ser únicos, e sua padronização será detalhada a partir da Fase 2 do Open Banking no Brasil, porém sua unicidade pode estar dentro de um contexto. Por exemplo, um ID de conta corrente deve ser único, porém apenas dentro do contexto de conta corrente. </li>
+<li>Os IDs devem ser únicos, e sua padronização será detalhada a partir da Fase 2 do Open Banking no Brasil, porém sua unicidade pode estar dentro de um contexto. Por exemplo, um ID de conta corrente deve ser único, porém apenas dentro do contexto de conta corrente.</li>
 <li>Nos <em>payloads</em> o nome de campo &quot;id&quot; nunca deverá ser utilizado. Cada campo ID deverá ter um nome significativo, dessa forma independentemente de onde o ID for utilizado entre múltiplos <em>endpoints</em>, ele sempre irá se referir ao seu objeto principal. Por exemplo, IDs para conta deverão ser representados no JSON como &quot;accountId&quot;.</li>
 </ul>
+
+<h3 id='introducao-formacao-e-estabilidade-do-id-idempotencia-principio-adicional'>Idempotência (princípio adicional)</h3>
+
+<p>APIs serão definidas como idempotentes para não causar uma experiência ruim ao consumidor ou aumentar os indicadores de risco falso positivo.
+Trata-se de recurso necessário para garantir que não haja duplicidade em caso deperda de comunicação e não deve se limitar aos verbos HTTP, devendo ser aplicado ao design completo da API.</p>
+
+<h3 id='introducao-formacao-e-estabilidade-do-id-identificadores-unicos-principio-ja-existente'>Identificadores únicos (princípio já existente)</h3>
+
+<p>Um recurso REST deverá ter um identificador exclusivo que possa ser usado para identificar o recurso alvoda API.
+Este identificador será usado para criar URLs que permitam endereçar recursos específicos,obedecendo aos padrões definidos nesta documentação,no item Formação e estabilidade do ID.</p>
 
 <h2 id='introducao-extensibilidade'>Extensibilidade</h2>
 
