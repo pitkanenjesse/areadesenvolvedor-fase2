@@ -39,7 +39,7 @@ O OAuth 2.0, define 4 papéis.
 
 O OAuth 2.0 faz o uso de diversos tokens, entre eles, o access token, refresh token e Authorization "code".
 
-* Access token: Um token de acesso é utilizado por um client para acessar um recurso, geralmente possuem ciclo de vida curto (minutos ou horas), sendo consumidos durante uma sessão. O Access token indica que o client está autorizado a consumir um recurso protegido, respeitando os scopes para qual o token foi emitido. O token pode ser renovado através de um refresh token. O tipo de Access Token será o "Bearer" OAuth Access Token, referenciado em [RFC 6750].
+* Access token: Um token de acesso é utilizado por um client para acessar um recurso, geralmente possuem ciclo de vida curto (minutos ou horas), sendo consumidos durante uma sessão. O Access token indica que o client está autorizado a consumir um recurso protegido, respeitando os scopes para qual o token foi emitido. O token pode ser renovado através de um refresh token. O tipo de Access Token será o "Bearer" OAuth Access Token, referenciado em <a href='[RFC 6750]'target="_blank"> https://tools.ietf.org/html/rfc6750</a>.
 * Refresh token: Representa uma autorização de longa duração de um client. Esses tokens são trocados entre o client e o Authorization Server e são utilizados para obter (“atualizar”) novos tokens de acesso. 
 * Authorization code: É um código de autorização que representa o resultado do processo de autorização bem sucedido do usuário final e é utilizado pelo client para obter acesso e atualizar status dos tokens. 
 
@@ -51,7 +51,7 @@ Início do fluxo de uma API com a obtenção de um Access Token.
 
 <img class='lazy' src='images/loading.gif' data-src='images/security/Signed_JWT_Flow.png'/>
 
-Diagrama 1 – Obtendo um Access Token.
+Diagrama – Obtendo um Access Token.
 
 1.	Estabelece conexão TLS 1.2 entre o usuário e o client.
 2.	Estabelece conexão mTLS 1.2 entre o client e o Authorization Server.
@@ -114,6 +114,7 @@ Pragma: no-cache
 }
 
 ### JWT
+
 O formato JWT (JSON Web Token) é projetado para transmitir claims entre duas partes. O JWT consiste em um Header, um payload e uma assinatura. O cabeçalho do ID Token contém informações sobre o tipo de objeto (JWT) e o algoritmo de assinatura utilizado para proteger a integridade dos claims do payload. O algoritmo de assinatura exigido é o PS256 (RSASSA-PSS utilizando SHA-256 e MGF1 com SHA-256).  A seção do payload contém as claims sobre um usuário e o evento de autenticação. A seção de assinatura contém uma assinatura digital com base no payload do ID Token e uma chave secreta conhecida pelo provedor OpenID. 
 
 O JWT é formado por três seções: Header, Payload e Signature.
@@ -124,6 +125,7 @@ O Header contém somente a informação tipo e algoritmo:
 }
 
 ### Payload
+
 O Payload é um objeto JSON com as Claims da entidade tratada, normalmente o usuário autenticado.
 Claims são informações afirmadas sobre um sujeito, por exemplo um ID Token, pode conter uma claim chamada name que afirma que o usuário autenticado é quem diz ser. Em um JWT uma claim aparece como um par nome/valor em que o nome é sempre uma string e o valor pode conter qualquer conteúdo JSON.
 Essas claims podem ser de 3 tipos:
@@ -168,6 +170,7 @@ Conjunto de claims para um ID Token do Open Banking:
 }
 
 ### Assinatura
+
 A assinatura é o header e o payload criptografados com um secret.
 
 PS256-RSASSA-PSS(
@@ -212,8 +215,10 @@ Financial-grade API, o FAPI, é uma especificação técnica desenvolvida pelo G
 IMAGEM AQUI
 
 ### FAPI: Read and Write API Security Profile
+
 É obrigatório o uso do perfil de segurança FAPI-Financial-grade API: Read and Write API Security Profile, referenciado no endereço: https://openid.net/specs/openid-financial-api-part-2-wd-06.html .
 
 ### FAPI: CIBA-Client Initiated Backchannel Authentication Profile
+
 A autenticação pelo CIBA fornece um fluxo desacoplado, possibilitando autorizar um pagamento por exemplo em um terminal de ponto de venda ou em um posto de combustível.
 O perfil de segurança CIBA: Client Initiated Backchannel Authentication Profle será opcional pelos participantes do Open Banking, referenciado no endereço: https://openid.net/specs/openid-financial-api-ciba.html .
