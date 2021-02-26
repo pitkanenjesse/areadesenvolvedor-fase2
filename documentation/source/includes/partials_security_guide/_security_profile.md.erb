@@ -81,17 +81,18 @@ O OIDC utiliza o *authorization code*, *access token* e *refresh token* descrito
 
 * *ID Token*: Um token utilizado para transmitir *claims* sobre um evento de autenticação e um usuário autenticado *(End-user)* para um *client*. Tokens de identificação são codificados em JSON Web Token (JWT) e deve estar em conformidade com a LGPD.
 
-<div><p style="color: white; background-color: black">
-{
-  "iss": "http://YOUR_DOMAIN/",
-  "sub": "xpto|123456",
-  "aud": "YOUR_CLIENT_ID",
-  "exp": 1311281970,
-  "iat": 1311280970,
-  "id": 1234567,
-}
-</p>
-</div>
+<span >
+<span style="color:white" style="background-color:black">
+{<br>
+  "iss": "http://YOUR_DOMAIN/",<br>
+  "sub": "xpto|123456",<br>
+  "aud": "YOUR_CLIENT_ID",<br>
+  "exp": 1311281970,<br>
+  "iat": 1311280970,<br>
+  "id": 1234567,<br>
+}<br>
+</span>
+</span>
 
 *UserInfo Endpoint*: Retorna *claims* sobre um usuário autenticado. Chamar o *endpoint* requer um *Access Token* e as *claims* retornadas são regidos pelo *Access Token*.
 Exemplo de resposta bem-sucedida  contendo um *ID Token* assinado:
