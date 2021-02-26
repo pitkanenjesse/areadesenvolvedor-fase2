@@ -138,35 +138,34 @@ Este bloco demonstra como gerar um CSR válido por um client que requer um Certi
 O seguinte arquivo de configuração é utilizado para gerar um CSR para um certificado de transporte usando OpenSSL.
 
 Arquivo CNF OPENSSL Transporte apenas de exemplo, as configurações podem variar de acordo com a Autoridade Certificadora e para quem será emitido o certificado, alterar os campos como CNPJ e NOME da instituição:
-# OPENSSL CSR REQUEST CONFIGURATION FILE
-# ======================================
+\# OPENSSL CSR REQUEST CONFIGURATION FILE
+\# ======================================
 otherName = 2.16.76.1.3.3 
 otherName = 2.16.76.1.3.8
-#otherName = 2.16.76.1.3.X #OID a ser confirmado com a informação dos endpoints
+\#otherName = 2.16.76.1.3.X #OID a ser confirmado com a informação dos endpoints
 subjectAltName=@san
-#CNPJ
+\#CNPJ
 otherName.1=2.16.76.1.3.3;UTF8:64721803000118
-#Nome conforme consta no CNPJ
+\#Nome conforme consta no CNPJ
 otherName.2=2.16.76.1.3.8;UTF8:Nome da instituicao
-#Endpoints
-#otherName.3=2.16.76.1.3.X;UTF8:Endpoints
-# OpenSSL may not recognize this OID so need to add.
+\#Endpoints
+\#otherName.3=2.16.76.1.3.X;UTF8:Endpoints
+\# OpenSSL may not recognize this OID so need to add.
 [ req ]
 default_bits = 2048
-#ou
-#default_bits = 4096
-# RSA key size
+\#ou
+\#default_bits = 4096
+\# RSA key size
 encrypt_key = yes
-# Protect private key: yes or no. yes recommended
+\# Protect private key: yes or no. yes recommended
 default_md = sha256
-# MD to use. sha256 recommended
+\# MD to use. sha256 recommended
 utf8 = yes
-# Input is UTF-8.
+\# Input is UTF-8.
 string_mask = utf8only
-# Emit UTF-8 strings
+\# Emit UTF-8 strings
 distinguished_name = client_dn
 req_extensions = client_reqext
-#
 [ client_dn ]
 countryName = "BR"
 [ client_reqext ]
@@ -181,32 +180,31 @@ O seguinte arquivo de configuração é utilizado para gerar um CSR para um cert
 
 Arquivo CNF OPENSSL de Assinatura apenas de exemplo, as configurações podem variar de acordo com a Autoridade Certificadora e para quem será emitido o certificado, alterar os campos como CNPJ e NOME da instituição::
 
-# OPENSSL CSR REQUEST CONFIGURATION FILE
-# ======================================
+\# OPENSSL CSR REQUEST CONFIGURATION FILE
+\# ======================================
 otherName = 2.16.76.1.3.3 
 otherName = 2.16.76.1.3.8
 subjectAltName=@san
-#CNPJ
+\#CNPJ
 otherName.1=2.16.76.1.3.3;UTF8:64721803000118
-#Nome conforme consta no CNPJ
+\#Nome conforme consta no CNPJ
 otherName.2=2.16.76.1.3.8;UTF8:Nome da instituicao
-# OpenSSL may not recognize this OID so need to add.
+\# OpenSSL may not recognize this OID so need to add.
 [ req ]
 default_bits = 2048
-#ou
-#default_bits = 4096
-# RSA key size
+\#ou
+\#default_bits = 4096
+\# RSA key size
 encrypt_key = yes
-# Protect private key: yes or no. yes recommended
+\# Protect private key: yes or no. yes recommended
 default_md = sha256
-# MD to use. sha256 recommended
+\# MD to use. sha256 recommended
 utf8 = yes
-# Input is UTF-8.
+\# Input is UTF-8.
 string_mask = utf8only
-# Emit UTF-8 strings
+\# Emit UTF-8 strings
 distinguished_name = client_dn
 req_extensions = client_reqext
-#
 [ client_dn ]
 countryName = "BR"
 [ client_reqext ]
