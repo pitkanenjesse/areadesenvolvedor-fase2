@@ -27,21 +27,21 @@ Para melhor entendimento do FAPI-Read and Write API Profile e do CIBA-Financial-
 OAuth 2.0 é um framework de autorização que habilita um aplicativo a obter acesso limitado para um serviço de terceiro, introduzindo uma camada de autorização e segmentando as funções do client.
 Ao invés de utilizar credenciais fornecidas pelo proprietário do recurso, o client recebe um Access Token, contendo o escopo do acesso, tempo de vida, entre outros atributos. Os Access Tokens são emitidos para clients terceiros por um servidor de autorização com a aprovação do proprietário do recurso. 
 
-    O OAuth 2.0, define 4 papéis. 
-    •	End-User: Uma entidade capaz de conceder acesso a recursos protegidos. Quando o proprietário do recurso é um usuário, ele provê o nível de acesso, limitando o escopo de autorização (leitura ou escrita).  
-    •	Resource Server: Servidor que hospeda os recursos protegidos, capaz de aceitar e responder a solicitações de recursos protegidos utilizando tokens de acesso.
-    •	Client: Um aplicativo que faz solicitações a recursos protegidos em nome do proprietário do recurso, com a sua autorização. 
-    •	Authorization Server: É o servidor que emite tokens de acesso ao client, após autenticar com sucesso e obter autorização do End-User. 
+O OAuth 2.0, define 4 papéis. 
+* End-User: Uma entidade capaz de conceder acesso a recursos protegidos. Quando o proprietário do recurso é um usuário, ele provê o nível de acesso, limitando o escopo de autorização (leitura ou escrita).  
+* Resource Server: Servidor que hospeda os recursos protegidos, capaz de aceitar e responder a solicitações de recursos protegidos utilizando tokens de acesso.
+* Client: Um aplicativo que faz solicitações a recursos protegidos em nome do proprietário do recurso, com a sua autorização. 
+* Authorization Server: É o servidor que emite tokens de acesso ao client, após autenticar com sucesso e obter autorização do End-User. 
      
-Tokens 
+### Tokens 
 
 O OAuth 2.0 faz o uso de diversos tokens, entre eles, o access token, refresh token e Authorization "code".
-    •	Access token: Um token de acesso é utilizado por um client para acessar um recurso, geralmente possuem ciclo de vida curto (minutos ou horas), sendo consumidos durante uma sessão. O Access token indica que o client está autorizado a consumir um recurso protegido, respeitando os scopes para qual o token foi emitido. O token pode ser renovado através de um refresh token. O tipo de Access Token será o "Bearer" OAuth Access Token, referenciado em [RFC 6750].
-    •	Refresh token: Representa uma autorização de longa duração de um client. Esses tokens são trocados entre o client e o Authorization Server e são utilizados para obter (“atualizar”) novos tokens de acesso. 
-    •	Authorization code: É um código de autorização que representa o resultado do processo de autorização bem sucedido do usuário final e é utilizado pelo client para obter acesso e atualizar status dos tokens. 
-    É necessário a implementação de um endpoint adicional no Authorization Server que possibilita a revogação do Access Token e do Refresh Token. Um request de revogação invalidará um ou mais Tokens (se aplicável), baseados na mesma concessão de acesso, conforme [RFC 7009].
-    Também será adotado o OAuth Token Introspection que define um método para um recurso protegido consultar um Authorization Server sobre o estado e os metadados de um Token, conforme [RFC 7662].
-    Devido a ampla aplicação do uso do OAuth 2.0, as melhores práticas de segurança do OAuth 2.0 estão em constate atualização e podem ser consultadas neste endereço https://tools.ietf.org/html/draft-ietf-oauth-security-topics-16 .
+* Access token: Um token de acesso é utilizado por um client para acessar um recurso, geralmente possuem ciclo de vida curto (minutos ou horas), sendo consumidos durante uma sessão. O Access token indica que o client está autorizado a consumir um recurso protegido, respeitando os scopes para qual o token foi emitido. O token pode ser renovado através de um refresh token. O tipo de Access Token será o "Bearer" OAuth Access Token, referenciado em [RFC 6750].
+* Refresh token: Representa uma autorização de longa duração de um client. Esses tokens são trocados entre o client e o Authorization Server e são utilizados para obter (“atualizar”) novos tokens de acesso. 
+* Authorization code: É um código de autorização que representa o resultado do processo de autorização bem sucedido do usuário final e é utilizado pelo client para obter acesso e atualizar status dos tokens. 
+É necessário a implementação de um endpoint adicional no Authorization Server que possibilita a revogação do Access Token e do Refresh Token. Um request de revogação invalidará um ou mais Tokens (se aplicável), baseados na mesma concessão de acesso, conforme [RFC 7009].
+Também será adotado o OAuth Token Introspection que define um método para um recurso protegido consultar um Authorization Server sobre o estado e os metadados de um Token, conforme [RFC 7662].
+Devido a ampla aplicação do uso do OAuth 2.0, as melhores práticas de segurança do OAuth 2.0 estão em constate atualização e podem ser consultadas neste endereço https://tools.ietf.org/html/draft-ietf-oauth-security-topics-16 .
     
 Início do fluxo de uma API com a obtenção de um Access Token.
 
@@ -64,14 +64,14 @@ Diagrama 1 – Obtendo um Access Token.
 O OpenID Connect é uma camada de identidade sobre o protocolo OAuth 2.0, que permite a identificação de um usuário final com base na autenticação realizada por um Authorization Server. 
 OpenID Connect permite uma grande variedade de tipos de clients, sendo, clients Web, clients móveis e JavaScript, oferecendo suporte a recursos opcionais, como criptografia de dados de identidade, descoberta de provedores de OpenID e gerenciamento de sessão.
 Existem três papéis envolvendo uma solução de OIDC: 
-•	End User: É o sujeito a ser autenticado.  
-•	OpenID Provider - OP: O provedor OpenID é um servidor de autorização OAuth 2.0 que implementa OIDC e pode autenticar um usuário e retornar claims sobre o usuário autenticado e o evento de autenticação para uma parte confiável, geralmente um aplicativo.
-•	Relying Party – RP: Um client OAuth 2.0 que delega a autenticação de usuários para um provedor de OpenID e solicita claims sobre o usuário do provedor OpenID, geralmente denominado, client.
+* End User: É o sujeito a ser autenticado.  
+* OpenID Provider - OP: O provedor OpenID é um servidor de autorização OAuth 2.0 que implementa OIDC e pode autenticar um usuário e retornar claims sobre o usuário autenticado e o evento de autenticação para uma parte confiável, geralmente um aplicativo.
+* Relying Party – RP: Um client OAuth 2.0 que delega a autenticação de usuários para um provedor de OpenID e solicita claims sobre o usuário do provedor OpenID, geralmente denominado, client.
  
-ID Token 
+### ID Token 
 
 O OIDC utiliza o authorization code, access token e refresh token descrito na seção anterior sobre OAuth e define um outro tipo de Token, o ID Token. 
-•	ID Token: Um token utilizado para transmitir claims sobre um evento de autenticação e um usuário autenticado (End-user) para um client. Tokens de identificação são codificados em JSON Web Token (JWT) e deve estar em conformidade com a LGPD.
+* ID Token: Um token utilizado para transmitir claims sobre um evento de autenticação e um usuário autenticado (End-user) para um client. Tokens de identificação são codificados em JSON Web Token (JWT) e deve estar em conformidade com a LGPD.
 
 {
   "iss": "http://YOUR_DOMAIN/",
@@ -106,7 +106,7 @@ Pragma: no-cache
      XUVrWOLrLl0nx7RkKU8NXNHq-rvKMzqg"
 }
 
-JWT
+### JWT
 O formato JWT (JSON Web Token) é projetado para transmitir claims entre duas partes. O JWT consiste em um Header, um payload e uma assinatura. O cabeçalho do ID Token contém informações sobre o tipo de objeto (JWT) e o algoritmo de assinatura utilizado para proteger a integridade dos claims do payload. O algoritmo de assinatura exigido é o PS256 (RSASSA-PSS utilizando SHA-256 e MGF1 com SHA-256).  A seção do payload contém as claims sobre um usuário e o evento de autenticação. A seção de assinatura contém uma assinatura digital com base no payload do ID Token e uma chave secreta conhecida pelo provedor OpenID. 
 
 O JWT é formado por três seções: Header, Payload e Signature.
@@ -116,7 +116,7 @@ O Header contém somente a informação tipo e algoritmo:
     "alg": " PS256"
 }
 
-Payload
+### Payload
 O Payload é um objeto JSON com as Claims da entidade tratada, normalmente o usuário autenticado.
 Claims são informações afirmadas sobre um sujeito, por exemplo um ID Token, pode conter uma claim chamada name que afirma que o usuário autenticado é quem diz ser. Em um JWT uma claim aparece como um par nome/valor em que o nome é sempre uma string e o valor pode conter qualquer conteúdo JSON.
 Essas claims podem ser de 3 tipos:
@@ -141,7 +141,7 @@ Private claims: são claims personalizadas e contém atributos definidos  para c
     "admin": "true"
 }
 
-	Conjunto de claims para um ID Token do Open Banking:
+Conjunto de claims para um ID Token do Open Banking:
 
 {
 " iss": Emissor do token
@@ -160,7 +160,7 @@ Private claims: são claims personalizadas e contém atributos definidos  para c
 "c_hash": Code hash value
 }
 
-Assinatura
+### Assinatura
 A assinatura é o header e o payload criptografados com um secret.
 
 PS256-RSASSA-PSS(
@@ -177,12 +177,12 @@ Este token JWT deve ser enviado no cabeçalho Authentication HTTP usando o esque
 Authorization: Bearer <token>
 
 
-Fluxo OpenID Connect (OIDC) 
+### Fluxo OpenID Connect (OIDC) 
 
 O OpenID Connect define os seguintes fluxos: 
-•	Authorization Code Flow: Para autenticar um usuário, o client redireciona o usuário para um provedor de OpenID. O provedor OpenID autentica o usuário e redireciona o usuário de volta para o cliente com um código de autorização. O aplicativo usa o código de autorização para obter um ID Token, Access Token e, opcionalmente, um Refresh Token do endpoint do provedor OpenID. 
-•	Implicit flow: Todos os tokens são retornados pelo endpoint de autorização, o Endpoint de Token não é utilizado, esse tipo de fluxo é usado principalmente por Clients implementados em um navegador utilizando uma linguagem de script. O Access Token e o ID Token são devolvidos diretamente ao Client, que pode expô-los ao usuário final e aos aplicativos que têm acesso 
-•	Hybrid flow: O Hybrid Flow, combina elementos do Authorization Code Flow e Implicit Flow, esse modelo permite retornar um ID Token e um Authorization Code como uma resposta ao front-end do client, deixando o backend obter um Access Token e opcionalmente um Refresh Token do endpoint de token utilizando o Authorization Code. Esse padrão de autenticação foi escolhido como mandatório pelo Open Banking e pode ser observado no diagrama a seguir. 
+* Authorization Code Flow: Para autenticar um usuário, o client redireciona o usuário para um provedor de OpenID. O provedor OpenID autentica o usuário e redireciona o usuário de volta para o cliente com um código de autorização. O aplicativo usa o código de autorização para obter um ID Token, Access Token e, opcionalmente, um Refresh Token do endpoint do provedor OpenID. 
+* Implicit flow: Todos os tokens são retornados pelo endpoint de autorização, o Endpoint de Token não é utilizado, esse tipo de fluxo é usado principalmente por Clients implementados em um navegador utilizando uma linguagem de script. O Access Token e o ID Token são devolvidos diretamente ao Client, que pode expô-los ao usuário final e aos aplicativos que têm acesso 
+* Hybrid flow: O Hybrid Flow, combina elementos do Authorization Code Flow e Implicit Flow, esse modelo permite retornar um ID Token e um Authorization Code como uma resposta ao front-end do client, deixando o backend obter um Access Token e opcionalmente um Refresh Token do endpoint de token utilizando o Authorization Code. Esse padrão de autenticação foi escolhido como mandatório pelo Open Banking e pode ser observado no diagrama a seguir. 
 
 Diagrama 2 - Flyxo Hybrid Flow
 
@@ -196,18 +196,17 @@ Diagrama 2 - Flyxo Hybrid Flow
 8.	O Client valida o ID Token e busca o Subject Identifier do End-User. O Authorization Server deve suportar request objects conforme especificado na seção 6.1 (Request Object) do OIDC. 
 
 
-### Financial-grade API (FAPI)
+## Financial-grade API (FAPI)
 
-Sobre o FAPI
 
 Financial-grade API, o FAPI, é uma especificação técnica desenvolvida pelo Grupo de Trabalho Financial-grade API da OpenID Foundation. Ele utiliza OAuth 2.0 e OpenID Connect (OIDC) como sua base e define requisitos técnicos adicionais para o setor financeiro e outros setores que exigem maior segurança.
 
 IMAGEM AQUI
 
-FAPI: Read and Write API Security Profile
+### FAPI: Read and Write API Security Profile
 É obrigatório o uso do perfil de segurança FAPI-Financial-grade API: Read and Write API Security Profile, referenciado no endereço: https://openid.net/specs/openid-financial-api-part-2-wd-06.html .
 
-FAPI: CIBA-Client Initiated Backchannel Authentication Profile
+### FAPI: CIBA-Client Initiated Backchannel Authentication Profile
 A autenticação pelo CIBA fornece um fluxo desacoplado, possibilitando autorizar um pagamento por exemplo em um terminal de ponto de venda ou em um posto de combustível.
 O perfil de segurança CIBA: Client Initiated Backchannel Authentication Profle será opcional pelos participantes do Open Banking, referenciado no endereço: https://openid.net/specs/openid-financial-api-ciba.html .
 
