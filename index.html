@@ -2491,17 +2491,24 @@ Existem três papéis envolvendo uma solução de OIDC: </p>
 <li><em>Relying Party</em> – RP: Um <em>client</em> OAuth 2.0 que delega a autenticação de usuários para um provedor de OpenID e solicita <em>claims</em> sobre o usuário do provedor OpenID, geralmente denominado, <em>client</em>.</li>
 </ul>
 <h3 id='seguranca-participantes-perfil-de-seguranca-id-token'>ID Token</h3>
-<p>O OIDC utiliza o <em>authorization code</em>, <em>access token</em> e <em>refresh token</em> descrito na seção anterior sobre OAuth e define um outro tipo de Token, o <em>ID Token</em>. 
-<em>ID Token</em>: Um token utilizado para transmitir <em>claims</em> sobre um evento de autenticação e um usuário autenticado <em>(End-user)</em> para um <em>client</em>. Tokens de identificação são codificados em JSON Web Token (JWT) e deve estar em conformidade com a LGPD.</p>
+<p>O OIDC utiliza o <em>authorization code</em>, <em>access token</em> e <em>refresh token</em> descrito na seção anterior sobre OAuth e define um outro tipo de Token, o <em>ID Token</em>. </p>
 
-<p>{
+<ul>
+<li><em>ID Token</em>: Um token utilizado para transmitir <em>claims</em> sobre um evento de autenticação e um usuário autenticado <em>(End-user)</em> para um <em>client</em>. Tokens de identificação são codificados em JSON Web Token (JWT) e deve estar em conformidade com a LGPD.</li>
+</ul>
+
+<p><span style="background-color:black">
+<span style="color:white">
+{
   &quot;iss&quot;: &quot;http://YOUR_DOMAIN/&quot;,
   &quot;sub&quot;: &quot;xpto|123456&quot;,
   &quot;aud&quot;: &quot;YOUR_CLIENT_ID&quot;,
   &quot;exp&quot;: 1311281970,
   &quot;iat&quot;: 1311280970,
   &quot;id&quot;: 1234567,
-}</p>
+}
+</span>
+</span></p>
 
 <p><em>UserInfo Endpoint</em>: Retorna <em>claims</em> sobre um usuário autenticado. Chamar o <em>endpoint</em> requer um <em>Access Token</em> e as <em>claims</em> retornadas são regidos pelo <em>Access Token</em>.
 Exemplo de resposta bem-sucedida  contendo um <em>ID Token</em> assinado:
