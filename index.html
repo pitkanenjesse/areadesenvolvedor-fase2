@@ -2307,7 +2307,8 @@ A informação de quais possibilidades estarão disponíveis (<em>query paramete
 <p><h2 id='seguranca-consumo-reacao'>Reação</h2><h3 id='seguranca-consumo-reacao-sobre'>Sobre</h3>
 <p>Esta área será oportunamente detalhada nas próximas fases do Open Banking.</p></p>
 <h1 id='seguranca-guia'>Segurança - Guia</h1>
-<h2 id='seguranca-participantes-introducao'>Introdução</h2><h3 id='seguranca-participantes-introducao-sobre-a-secao'>Sobre a seção</h3>
+<h2 id='seguranca-participantes-introducao'>Introdução</h2>
+
 <p>Esta seção tem como finalidade auxiliar na auto avaliação aos cumprimentos dos requisitos de segurança da informação relacionados a autorização e autenticação de APIs e End-Users, emissão de certificados digitais e requisitos para o onboarding no Diretório de participantes para as Instituições participantes do Open Banking.</p>
 
 <p>As instituições participantes do Open Banking possuem a obrigação de acompanhar a edição e a revogação de eventuais normas com impacto no tema de forma a estar permanentemente em dia com as determinações legais.
@@ -2374,31 +2375,63 @@ Compõem, de forma não exaustiva, o rol de atos normativos cuja observância é
 <h2 id='seguranca-participantes-perfil-de-seguranca'>Perfil de segurança</h2><h3 id='seguranca-participantes-perfil-de-seguranca-sobre-os-padroes-de-perfil-de-seguranca-de-api'>Sobre os padrões de perfil de segurança de API.</h3>
 <p>É necessário que os participantes do Open Banking adotem padrões de autenticação e autorização para as APIs e End-Users, utilizando frameworks e mecanismos aprovados pelo mercado, garantindo assim, a integridade, a confidencialidade e a disponibilidade dos dados.</p>
 
-<p>Conjunto de referências normativas adotadas pelo Open Banking:
-    FAPI-RW
-    Financial-grade API - Part 2: Read and Write API Security Profile
-    CIBA (opcional)
-    OpenID Connect Client Initiated Backchannel Authentication Flow - Core 1.0
-    JSON
-    The JavaScript Object Notation (JSON) Data Interchange Format
-    JWT
-    JSON Web Token (JWT)
-    JWS
-    JSON Web Signature
-    MTLS
-    OAuth 2.0 Mutual TLS Client, Authentication and Certificate Bound, Access Tokens
-    OAUTH2
-    The OAuth 2.0 Authorization Framework
-    OIDC
-    OpenID Connect Core 1.0 incorporating errata set 1
-    RFC7009
-    OAuth 2.0 Token Revocation
-    RFC7662
-    OAuth 2.0 Token Introspection
-    RFC6750
-    The OAuth 2.0 Authorization Framework: Bearer Token Usage
-    RFC7591
-    OAuth 2.0 Dynamic Client Registration Protocol</p>
+<p>Conjunto de referências normativas adotadas pelo Open Banking:</p>
+
+<table><thead>
+<tr>
+<th>Referência</th>
+<th>Link</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>FAPI-RW - Financial-grade API - Part 2: Read and Write API Security Profile</td>
+<td><a href='https://openid.net/specs/openid-financial-api-part-2.html'target="_blank"> https://openid.net/specs/openid-financial-api-part-2.html</a></td>
+</tr>
+<tr>
+<td>CIBA (opcional) - OpenID Connect Client Initiated Backchannel Authentication Flow - Core 1.0</td>
+<td><a href='https://openid.net/specs/openid-client-initiated-backchannel-authentication-core-1_0.html'target="_blank"> https://openid.net/specs/openid-client-initiated-backchannel-authentication-core-1_0.html</a></td>
+</tr>
+<tr>
+<td>JSON - The JavaScript Object Notation (JSON) Data Interchange Format</td>
+<td><a href='https://tools.ietf.org/html/rfc8259'target="_blank"> https://tools.ietf.org/html/rfc8259</a></td>
+</tr>
+<tr>
+<td>JWT - JSON Web Token (JWT)</td>
+<td><a href='https://tools.ietf.org/html/rfc7519'target="_blank"> https://tools.ietf.org/html/rfc7519</a></td>
+</tr>
+<tr>
+<td>JWS - JSON Web Signature</td>
+<td><a href='https://tools.ietf.org/html/rfc7797'target="_blank"> https://tools.ietf.org/html/rfc7797</a></td>
+</tr>
+<tr>
+<td>MTLS - OAuth 2.0 Mutual TLS Client, Authentication and Certificate Bound, Access Tokens</td>
+<td><a href='https://tools.ietf.org/html/draft-ietf-oauth-mtls-17'target="_blank"> https://tools.ietf.org/html/draft-ietf-oauth-mtls-17</a></td>
+</tr>
+<tr>
+<td>OAUTH2 - The OAuth 2.0 Authorization Framework</td>
+<td><a href='https://tools.ietf.org/html/rfc6749'target="_blank"> https://tools.ietf.org/html/rfc6749</a></td>
+</tr>
+<tr>
+<td>OIDC - OpenID Connect Core 1.0 incorporating errata set 1</td>
+<td><a href='http://openid.net/specs/openid-connect-core-1_0.html'target="_blank"> http://openid.net/specs/openid-connect-core-1_0.html</a></td>
+</tr>
+<tr>
+<td>RFC7009 - OAuth 2.0 Token Revocation</td>
+<td><a href='https://tools.ietf.org/html/rfc7009'target="_blank"> https://tools.ietf.org/html/rfc7009</a></td>
+</tr>
+<tr>
+<td>RFC7662 - OAuth 2.0 Token Introspection</td>
+<td><a href='https://tools.ietf.org/html/rfc7662'target="_blank"> https://tools.ietf.org/html/rfc7662</a></td>
+</tr>
+<tr>
+<td>RFC6750 - The OAuth 2.0 Authorization Framework: Bearer Token Usage</td>
+<td><a href='https://tools.ietf.org/html/rfc6750'target="_blank"> https://tools.ietf.org/html/rfc6750</a></td>
+</tr>
+<tr>
+<td>RFC7591 - OAuth 2.0 Dynamic Client Registration Protocol</td>
+<td><a href='https://tools.ietf.org/html/rfc7591'target="_blank"> https://tools.ietf.org/html/rfc7591</a></td>
+</tr>
+</tbody></table>
 
 <p>Para melhor entendimento do FAPI-Read and Write API Profile e do CIBA-Financial-grade API: Client Initiated Backchannel Authentication Profile,  é preciso ter conhecimento sobre OAuth e OpenID Connect.</p>
 <h3 id='seguranca-participantes-perfil-de-seguranca-oauth-2-0'>OAuth 2.0</h3>
