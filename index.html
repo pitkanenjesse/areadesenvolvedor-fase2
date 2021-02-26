@@ -2497,18 +2497,18 @@ Existem três papéis envolvendo uma solução de OIDC: </p>
 <li><em>ID Token</em>: Um token utilizado para transmitir <em>claims</em> sobre um evento de autenticação e um usuário autenticado <em>(End-user)</em> para um <em>client</em>. Tokens de identificação são codificados em JSON Web Token (JWT) e deve estar em conformidade com a LGPD.</li>
 </ul>
 
-<div><p style="color: white; background-color: black">
-{
-  "iss": "http://YOUR_DOMAIN/",
-  "sub": "xpto|123456",
-  "aud": "YOUR_CLIENT_ID",
-  "exp": 1311281970,
-  "iat": 1311280970,
-  "id": 1234567,
-}
-</p>
-
-<p></div></p>
+<p><span >
+<span style="color:white" style="background-color:black">
+{<br>
+  &quot;iss&quot;: &quot;http://YOUR_DOMAIN/&quot;,<br>
+  &quot;sub&quot;: &quot;xpto|123456&quot;,<br>
+  &quot;aud&quot;: &quot;YOUR_CLIENT_ID&quot;,<br>
+  &quot;exp&quot;: 1311281970,<br>
+  &quot;iat&quot;: 1311280970,<br>
+  &quot;id&quot;: 1234567,<br>
+}<br>
+</span>
+</span></p>
 
 <p><em>UserInfo Endpoint</em>: Retorna <em>claims</em> sobre um usuário autenticado. Chamar o <em>endpoint</em> requer um <em>Access Token</em> e as <em>claims</em> retornadas são regidos pelo <em>Access Token</em>.
 Exemplo de resposta bem-sucedida  contendo um <em>ID Token</em> assinado:
@@ -2533,9 +2533,7 @@ Pragma: no-cache</p>
      K5hoDalrcvRYLSrQAZZKflyuVCyixEoV9GfNQC3_osjzw2PAithfubEEBLuVVk4
      XUVrWOLrLl0nx7RkKU8NXNHq-rvKMzqg&quot;
 }</p>
-
 <h3 id='seguranca-participantes-perfil-de-seguranca-jwt'>JWT</h3>
-
 <p>O formato JWT (JSON Web Token) é projetado para transmitir <em>claims</em> entre duas partes. O JWT consiste em um <em>Header</em>, um <em>payload</em> e uma assinatura. O cabeçalho do <em>ID Token</em> contém informações sobre o tipo de objeto (JWT) e o algoritmo de assinatura utilizado para proteger a integridade dos <em>claims</em> do <em>payload</em>. O algoritmo de assinatura exigido é o PS256 (RSASSA-PSS utilizando SHA-256 e MGF1 com SHA-256). A seção do <em>payload</em> contém as <em>claims</em> sobre um usuário e o evento de autenticação. A seção de assinatura contém uma assinatura digital com base no <em>payload</em> do <em>ID Token</em> e uma chave secreta conhecida pelo provedor OpenID. </p>
 
 <p>O JWT é formado por três seções: <em>Header, Payload</em> e <em>Signature</em>.
@@ -2544,9 +2542,7 @@ O <em>Header</em> contém somente a informação tipo e algoritmo:
     &quot;typ&quot;: &quot;JWT&quot;,
     &quot;alg&quot;: &quot; PS256&quot;
 }</p>
-
 <h3 id='seguranca-participantes-perfil-de-seguranca-payload'><em>Payload</em></h3>
-
 <p>O <em>Payload</em> é um objeto JSON com as <em>Claims</em> da entidade tratada, normalmente o usuário autenticado.
 <em>Claims</em> são informações afirmadas sobre um sujeito, por exemplo um <em>ID Token</em>, pode conter uma <em>claim</em> chamada <em>name</em> que afirma que o usuário autenticado é quem diz ser. Em um JWT uma claim aparece como um par nome/valor em que o nome é sempre uma <em>string</em> e o valor pode conter qualquer conteúdo JSON.
 Essas <em>claims</em> podem ser de 3 tipos:
@@ -2589,9 +2585,7 @@ permissions</p>
 &quot;at_hash&quot;: Access Token hash value
 &quot;c_hash&quot;: Code hash value
 }</p>
-
 <h3 id='seguranca-participantes-perfil-de-seguranca-assinatura'>Assinatura</h3>
-
 <p>A assinatura é o <em>header</em> e o <em>payload</em> criptografados com um <em>secret</em>.</p>
 
 <p>PS256-RSASSA-PSS(
@@ -2606,9 +2600,7 @@ secret)</p>
 <p>Este token JWT deve ser enviado no cabeçalho <em>Authentication</em> HTTP usando o esquema <em>Bearer</em>. O conteúdo do cabeçalho deve seguir este formato:</p>
 
 <p>Authorization: Bearer <token></p>
-
 <h3 id='seguranca-participantes-perfil-de-seguranca-fluxo-openid-connect-oidc'>Fluxo OpenID Connect (OIDC)</h3>
-
 <p>O OpenID Connect define os seguintes fluxos: </p>
 
 <ul>
@@ -2629,7 +2621,6 @@ secret)</p>
 <li> O <em>Authorization Server</em> responde com o <em>ID Token</em> e um <em>Access Token</em>. </li>
 <li> O <em>Client</em> valida o <em>ID Token</em> e busca o <em>Subject Identifier</em> do <em>End-User</em>. O <em>Authorization Server</em> deve suportar <em>request objects</em> conforme especificado na seção 6.1 (Request Object) do OIDC. </li>
 </ol>
-
 <h2 id='seguranca-participantes-financial-grade-api-fapi'>Financial-grade API (FAPI)</h2>
 
 <p>Financial-grade API, o FAPI, é uma especificação técnica desenvolvida pelo Grupo de Trabalho Financial-grade API da OpenID Foundation. Ele utiliza OAuth 2.0 e OpenID Connect (OIDC) como sua base e define requisitos técnicos adicionais para o setor financeiro e outros setores que exigem maior segurança.</p>
