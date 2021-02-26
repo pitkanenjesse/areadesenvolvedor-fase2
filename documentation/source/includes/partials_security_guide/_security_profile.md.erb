@@ -128,10 +128,15 @@ O formato JWT (JSON Web Token) é projetado para transmitir *claims* entre duas 
 
 O JWT é formado por três seções: *Header, Payload* e *Signature*.
 O *Header* contém somente a informação tipo e algoritmo:
-{
-    "typ": "JWT",
-    "alg": " PS256"
-}
+
+<span style="background-color:black">
+<span style="color:white">
+{<br>
+    "typ": "JWT",<br>
+    "alg": " PS256"<br>
+}<br>
+</span>
+</span>
 
 ### *Payload*
 
@@ -139,53 +144,77 @@ O *Payload* é um objeto JSON com as *Claims* da entidade tratada, normalmente o
 *Claims* são informações afirmadas sobre um sujeito, por exemplo um *ID Token*, pode conter uma *claim* chamada *name* que afirma que o usuário autenticado é quem diz ser. Em um JWT uma claim aparece como um par nome/valor em que o nome é sempre uma *string* e o valor pode conter qualquer conteúdo JSON.
 Essas *claims* podem ser de 3 tipos:
 *Reserved claims*: São *claims* definidas pela especificação do JWT e contém atributos não obrigatórios (mais recomendados) que são usados na validação do token pelos protocolos de segurança das APIs. É possível verificar a lista completa de *Reserved Claims* em [IANA JSON Web Token Claims Registry].
-sub (subject) = Entidade à quem o token pertence, normalmente o ID do usuário;
-iss (issuer) = Emissor do token;
-exp (expiration) = Timestamp de quando o token irá expirar;
-iat (issued at) = Timestamp de quando o token foi criado;
-aud (audience) = Destinatário do token, representa a aplicação que irá usá-lo.
+
+<span style="background-color:black">
+<span style="color:white">
+sub (subject) = Entidade à quem o token pertence, normalmente o ID do usuário;<br>
+iss (issuer) = Emissor do token;<br>
+exp (expiration) = Timestamp de quando o token irá expirar;<br>
+iat (issued at) = Timestamp de quando o token foi criado;<br>
+aud (audience) = Destinatário do token, representa a aplicação que irá usá-lo.<br>
+</span>
+</span>
+
 
 *Public claims*: atributos utilizados nas aplicações. Normalmente armazenamos as informações do usuário autenticado na aplicação.
 
-name
-roles
-permissions
+<span style="background-color:black">
+<span style="color:white">
+name<br>
+roles<br>
+permissions<br>
+</span>
+</span>
 
 *Private claims*: são *claims* personalizadas e contém atributos definidos  para compartilhar informações entre aplicações.
 
-{
-    "sub": "1234567890",
-    "name": "Jose Doe"
-    "admin": "true"
-}
+<span style="background-color:black">
+<span style="color:white">
+{<br>
+    "sub": "1234567890",<br>
+    "name": "Jose Doe"<br>
+    "admin": "true"<br>
+}<br>
+</span>
+</span>
 
 Conjunto de *claims* para um *ID Token* do Open Banking:
 
-{
-" iss": Emissor do token
-"sub": Identificador único do subject
-"openbanking_intent_id": Intent ID da solicitação
-"aud": Público alvo para o qual o ID Token é destinado (deve incluir o Client ID)
-"exp": Data/hora de expiração do token
-"iat": Data/hora de emissão do token
-"auth_time": Data/hora de autenticação do End-user
-"nonce": Valor string que associa uma sessão do cliente com um ID Token usado para ajudar na mitigação de ataques de replay
-"acr": Authentication Context Class Reference
-"amr": Authentication Methods References
-"azp": Authorized party
-"s_hash": State hash value
-"at_hash": Access Token hash value
-"c_hash": Code hash value
-}
+<span style="background-color:black">
+<span style="color:white">
+{<br>
+" iss": Emissor do token<br>
+"sub": Identificador único do subject<br>
+"openbanking_intent_id": Intent ID da solicitação<br>
+"aud": Público alvo para o qual o ID Token é destinado (deve incluir o Client ID)<br>
+"exp": Data/hora de expiração do token<br>
+"iat": Data/hora de emissão do token<br>
+"auth_time": Data/hora de autenticação do End-user<br>
+"nonce": Valor string que associa uma sessão do cliente com um ID Token usado para ajudar na mitigação de ataques de replay<br>
+"acr": Authentication Context Class Reference<br>
+"amr": Authentication Methods References<br>
+"azp": Authorized party<br>
+"s_hash": State hash value<br>
+"at_hash": Access Token hash value<br>
+"c_hash": Code hash value<br>
+}<br>
+</span>
+</span>
+
+
 
 ### Assinatura
 
 A assinatura é o *header* e o *payload* criptografados com um *secret*.
 
-PS256-RSASSA-PSS(
-base64UrlEncode(header) + "." +    
-base64UrlEncode(payload),
-secret)
+<span style="background-color:black">
+<span style="color:white">
+PS256-RSASSA-PSS(<br>
+base64UrlEncode(header) + "." +<br>
+base64UrlEncode(payload),<br>
+secret)<br>
+</span>
+</span>
 
 Para obter o token JWT, as três seções *(header, payload, signature)* são codificadas com Base64-URL e unidas por pontos.
 
