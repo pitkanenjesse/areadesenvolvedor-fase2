@@ -221,11 +221,12 @@ Para obter o token JWT, as três seções *(header, payload, signature)* são co
 
 <img class='lazy' src='images/loading.gif' data-src='images/security/JWT_sample.png'/>
 
+<font size="6">
 <span style="color:red">eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9</span>.<span style="color:purple">ey</span><br>
 <span style="color:purple">eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6Ikpva</span><br>
 <span style="color:purple">G4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ</span><span style="color:blue">SflKx</span>.<br>
 <span style="color:blue">wRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c</span>.<br>
-
+</font>
 
 Este token JWT deve ser enviado no cabeçalho *Authentication* HTTP usando o esquema *Bearer*. O conteúdo do cabeçalho deve seguir este formato:
 
@@ -239,6 +240,8 @@ O OpenID Connect define os seguintes fluxos:
 * *Authorization Code Flow*: Para autenticar um usuário, o *client* redireciona o usuário para um provedor de OpenID. O provedor OpenID autentica o usuário e redireciona o usuário de volta para o *client* com um código de autorização. O aplicativo usa o código de autorização para obter um *ID Token*, *Access Token* e, opcionalmente, um *Refresh Token* do *endpoint* do provedor OpenID. 
 * *Implicit flow*: Todos os tokens são retornados pelo *endpoint* de autorização, o *Endpoint* de Token não é utilizado, esse tipo de fluxo é usado principalmente por *Clients* implementados em um navegador utilizando uma linguagem de script. O *Access Token* e o *ID Token* são devolvidos diretamente ao *Client*, que pode expô-los ao usuário final e aos aplicativos que têm acesso 
 * *Hybrid flow*: O *Hybrid Flow*, combina elementos do *Authorization Code Flow* e *Implicit Flow*, esse modelo permite retornar um *ID Token* e um *Authorization Code* como uma resposta ao *front-end* do *client*, deixando o *backend* obter um *Access Token* e opcionalmente um *Refresh Token* do *endpoint* de token utilizando o *Authorization Code*. Esse padrão de autenticação foi escolhido como mandatório pelo Open Banking e pode ser observado no diagrama a seguir. 
+
+<img class='lazy' src='images/loading.gif' data-src='images/security/Hybrid_Flow.png'/>
 
 Diagrama - Fluxo *Hybrid Flow*
 
@@ -257,7 +260,7 @@ Diagrama - Fluxo *Hybrid Flow*
 
 Financial-grade API, o FAPI, é uma especificação técnica desenvolvida pelo Grupo de Trabalho Financial-grade API da OpenID Foundation. Ele utiliza OAuth 2.0 e OpenID Connect (OIDC) como sua base e define requisitos técnicos adicionais para o setor financeiro e outros setores que exigem maior segurança.
 
-IMAGEM AQUI
+<img class='lazy' src='images/loading.gif' data-src='images/security/FAPI.png'/>
 
 ### FAPI: Read and Write API Security Profile
 
