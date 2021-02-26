@@ -2547,8 +2547,9 @@ O <em>Header</em> contém somente a informação tipo e algoritmo:</p>
 <h3 id='seguranca-participantes-perfil-de-seguranca-payload'><em>Payload</em></h3>
 <p>O <em>Payload</em> é um objeto JSON com as <em>Claims</em> da entidade tratada, normalmente o usuário autenticado.
 <em>Claims</em> são informações afirmadas sobre um sujeito, por exemplo um <em>ID Token</em>, pode conter uma <em>claim</em> chamada <em>name</em> que afirma que o usuário autenticado é quem diz ser. Em um JWT uma claim aparece como um par nome/valor em que o nome é sempre uma <em>string</em> e o valor pode conter qualquer conteúdo JSON.
-Essas <em>claims</em> podem ser de 3 tipos:
-<em>Reserved claims</em>: São <em>claims</em> definidas pela especificação do JWT e contém atributos não obrigatórios (mais recomendados) que são usados na validação do token pelos protocolos de segurança das APIs. É possível verificar a lista completa de <em>Reserved Claims</em> em [IANA JSON Web Token Claims Registry].</p>
+Essas <em>claims</em> podem ser de 3 tipos:</p>
+
+<p><em><strong>Reserved claims</strong></em>: São <em>claims</em> definidas pela especificação do JWT e contém atributos não obrigatórios (mais recomendados) que são usados na validação do token pelos protocolos de segurança das APIs. É possível verificar a lista completa de <em>Reserved Claims</em> em [IANA JSON Web Token Claims Registry].</p>
 
 <p><span style="background-color:black">
 <span style="color:white">
@@ -2560,7 +2561,7 @@ aud (audience) = Destinatário do token, representa a aplicação que irá usá-
 </span>
 </span></p>
 
-<p><em>Public claims</em>: atributos utilizados nas aplicações. Normalmente armazenamos as informações do usuário autenticado na aplicação.</p>
+<p><em><strong>Public claims</strong></em>: atributos utilizados nas aplicações. Normalmente armazenamos as informações do usuário autenticado na aplicação.</p>
 
 <p><span style="background-color:black">
 <span style="color:white">
@@ -2570,7 +2571,7 @@ permissions<br>
 </span>
 </span></p>
 
-<p><em>Private claims</em>: são <em>claims</em> personalizadas e contém atributos definidos  para compartilhar informações entre aplicações.</p>
+<p><em><strong>Private claims</strong></em>: são <em>claims</em> personalizadas e contém atributos definidos  para compartilhar informações entre aplicações.</p>
 
 <p><span style="background-color:black">
 <span style="color:white">
