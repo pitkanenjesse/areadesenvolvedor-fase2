@@ -2541,61 +2541,87 @@ Pragma: no-cache</p>
 <p>O formato JWT (JSON Web Token) é projetado para transmitir <em>claims</em> entre duas partes. O JWT consiste em um <em>Header</em>, um <em>payload</em> e uma assinatura. O cabeçalho do <em>ID Token</em> contém informações sobre o tipo de objeto (JWT) e o algoritmo de assinatura utilizado para proteger a integridade dos <em>claims</em> do <em>payload</em>. O algoritmo de assinatura exigido é o PS256 (RSASSA-PSS utilizando SHA-256 e MGF1 com SHA-256). A seção do <em>payload</em> contém as <em>claims</em> sobre um usuário e o evento de autenticação. A seção de assinatura contém uma assinatura digital com base no <em>payload</em> do <em>ID Token</em> e uma chave secreta conhecida pelo provedor OpenID. </p>
 
 <p>O JWT é formado por três seções: <em>Header, Payload</em> e <em>Signature</em>.
-O <em>Header</em> contém somente a informação tipo e algoritmo:
-{
-    &quot;typ&quot;: &quot;JWT&quot;,
-    &quot;alg&quot;: &quot; PS256&quot;
-}</p>
+O <em>Header</em> contém somente a informação tipo e algoritmo:</p>
+
+<p><span style="background-color:black">
+<span style="color:white">
+{<br>
+    &quot;typ&quot;: &quot;JWT&quot;,<br>
+    &quot;alg&quot;: &quot; PS256&quot;<br>
+}<br>
+</span>
+</span></p>
 <h3 id='seguranca-participantes-perfil-de-seguranca-payload'><em>Payload</em></h3>
 <p>O <em>Payload</em> é um objeto JSON com as <em>Claims</em> da entidade tratada, normalmente o usuário autenticado.
 <em>Claims</em> são informações afirmadas sobre um sujeito, por exemplo um <em>ID Token</em>, pode conter uma <em>claim</em> chamada <em>name</em> que afirma que o usuário autenticado é quem diz ser. Em um JWT uma claim aparece como um par nome/valor em que o nome é sempre uma <em>string</em> e o valor pode conter qualquer conteúdo JSON.
 Essas <em>claims</em> podem ser de 3 tipos:
-<em>Reserved claims</em>: São <em>claims</em> definidas pela especificação do JWT e contém atributos não obrigatórios (mais recomendados) que são usados na validação do token pelos protocolos de segurança das APIs. É possível verificar a lista completa de <em>Reserved Claims</em> em [IANA JSON Web Token Claims Registry].
-sub (subject) = Entidade à quem o token pertence, normalmente o ID do usuário;
-iss (issuer) = Emissor do token;
-exp (expiration) = Timestamp de quando o token irá expirar;
-iat (issued at) = Timestamp de quando o token foi criado;
-aud (audience) = Destinatário do token, representa a aplicação que irá usá-lo.</p>
+<em>Reserved claims</em>: São <em>claims</em> definidas pela especificação do JWT e contém atributos não obrigatórios (mais recomendados) que são usados na validação do token pelos protocolos de segurança das APIs. É possível verificar a lista completa de <em>Reserved Claims</em> em [IANA JSON Web Token Claims Registry].</p>
+
+<p><span style="background-color:black">
+<span style="color:white">
+sub (subject) = Entidade à quem o token pertence, normalmente o ID do usuário;<br>
+iss (issuer) = Emissor do token;<br>
+exp (expiration) = Timestamp de quando o token irá expirar;<br>
+iat (issued at) = Timestamp de quando o token foi criado;<br>
+aud (audience) = Destinatário do token, representa a aplicação que irá usá-lo.<br>
+</span>
+</span></p>
 
 <p><em>Public claims</em>: atributos utilizados nas aplicações. Normalmente armazenamos as informações do usuário autenticado na aplicação.</p>
 
-<p>name
-roles
-permissions</p>
+<p><span style="background-color:black">
+<span style="color:white">
+name<br>
+roles<br>
+permissions<br>
+</span>
+</span></p>
 
 <p><em>Private claims</em>: são <em>claims</em> personalizadas e contém atributos definidos  para compartilhar informações entre aplicações.</p>
 
-<p>{
-    &quot;sub&quot;: &quot;1234567890&quot;,
-    &quot;name&quot;: &quot;Jose Doe&quot;
-    &quot;admin&quot;: &quot;true&quot;
-}</p>
+<p><span style="background-color:black">
+<span style="color:white">
+{<br>
+    &quot;sub&quot;: &quot;1234567890&quot;,<br>
+    &quot;name&quot;: &quot;Jose Doe&quot;<br>
+    &quot;admin&quot;: &quot;true&quot;<br>
+}<br>
+</span>
+</span></p>
 
 <p>Conjunto de <em>claims</em> para um <em>ID Token</em> do Open Banking:</p>
 
-<p>{
-&quot; iss&quot;: Emissor do token
-&quot;sub&quot;: Identificador único do subject
-&quot;openbanking_intent_id&quot;: Intent ID da solicitação
-&quot;aud&quot;: Público alvo para o qual o ID Token é destinado (deve incluir o Client ID)
-&quot;exp&quot;: Data/hora de expiração do token
-&quot;iat&quot;: Data/hora de emissão do token
-&quot;auth_time&quot;: Data/hora de autenticação do End-user
-&quot;nonce&quot;: Valor string que associa uma sessão do cliente com um ID Token usado para ajudar na mitigação de ataques de replay
-&quot;acr&quot;: Authentication Context Class Reference
-&quot;amr&quot;: Authentication Methods References
-&quot;azp&quot;: Authorized party
-&quot;s_hash&quot;: State hash value
-&quot;at_hash&quot;: Access Token hash value
-&quot;c_hash&quot;: Code hash value
-}</p>
+<p><span style="background-color:black">
+<span style="color:white">
+{<br>
+&quot; iss&quot;: Emissor do token<br>
+&quot;sub&quot;: Identificador único do subject<br>
+&quot;openbanking_intent_id&quot;: Intent ID da solicitação<br>
+&quot;aud&quot;: Público alvo para o qual o ID Token é destinado (deve incluir o Client ID)<br>
+&quot;exp&quot;: Data/hora de expiração do token<br>
+&quot;iat&quot;: Data/hora de emissão do token<br>
+&quot;auth_time&quot;: Data/hora de autenticação do End-user<br>
+&quot;nonce&quot;: Valor string que associa uma sessão do cliente com um ID Token usado para ajudar na mitigação de ataques de replay<br>
+&quot;acr&quot;: Authentication Context Class Reference<br>
+&quot;amr&quot;: Authentication Methods References<br>
+&quot;azp&quot;: Authorized party<br>
+&quot;s_hash&quot;: State hash value<br>
+&quot;at_hash&quot;: Access Token hash value<br>
+&quot;c_hash&quot;: Code hash value<br>
+}<br>
+</span>
+</span></p>
 <h3 id='seguranca-participantes-perfil-de-seguranca-assinatura'>Assinatura</h3>
 <p>A assinatura é o <em>header</em> e o <em>payload</em> criptografados com um <em>secret</em>.</p>
 
-<p>PS256-RSASSA-PSS(
+<p><span style="background-color:black">
+<span style="color:white">
+PS256-RSASSA-PSS(<br>
 base64UrlEncode(header) + &quot;.&quot; +<br>
-base64UrlEncode(payload),
-secret)</p>
+base64UrlEncode(payload),<br>
+secret)<br>
+</span>
+</span></p>
 
 <p>Para obter o token JWT, as três seções <em>(header, payload, signature)</em> são codificadas com Base64-URL e unidas por pontos.</p>
 
