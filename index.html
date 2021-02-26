@@ -2497,8 +2497,7 @@ Existem três papéis envolvendo uma solução de OIDC: </p>
 <li><em>ID Token</em>: Um token utilizado para transmitir <em>claims</em> sobre um evento de autenticação e um usuário autenticado <em>(End-user)</em> para um <em>client</em>. Tokens de identificação são codificados em JSON Web Token (JWT) e deve estar em conformidade com a LGPD.</li>
 </ul>
 
-<p><span style="background-color:black">
-<span style="color:white">
+<p><span style="color:white" style="background-color:black">
 {
   &quot;iss&quot;: &quot;http://YOUR_DOMAIN/&quot;,
   &quot;sub&quot;: &quot;xpto|123456&quot;,
@@ -2507,7 +2506,6 @@ Existem três papéis envolvendo uma solução de OIDC: </p>
   &quot;iat&quot;: 1311280970,
   &quot;id&quot;: 1234567,
 }
-</span>
 </span></p>
 
 <p><em>UserInfo Endpoint</em>: Retorna <em>claims</em> sobre um usuário autenticado. Chamar o <em>endpoint</em> requer um <em>Access Token</em> e as <em>claims</em> retornadas são regidos pelo <em>Access Token</em>.
