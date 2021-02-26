@@ -203,7 +203,6 @@ Conjunto de *claims* para um *ID Token* do Open Banking:
 </span>
 
 
-
 ### Assinatura
 
 A assinatura é o *header* e o *payload* criptografados com um *secret*.
@@ -219,18 +218,20 @@ secret)<br>
 
 Para obter o token JWT, as três seções *(header, payload, signature)* são codificadas com Base64-URL e unidas por pontos.
 
-<img class='lazy' src='images/loading.gif' data-src='images/security/JWT_sample.png'/>
-
 <font size="6">
-<span style="color:red">eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9</span>.<span style="color:purple">ey</span><br>
-<span style="color:purple">eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6Ikpva</span><br>
-<span style="color:purple">G4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ</span><span style="color:blue">SflKx</span>.<br>
-<span style="color:blue">wRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c</span>.<br>
+<span style="color:red">eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9</span>.<span style="color:purple">eyJz</span><br>
+<span style="color:purple">dWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4g</span><br>
+<span style="color:purple">RG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ</span>.<span style="color:blue">SflKxwRJSM</span><br>
+<span style="color:blue">eKKF2QT4fwpMeJf36POk6yJV_adQssw5c</span>.<br>
 </font>
 
 Este token JWT deve ser enviado no cabeçalho *Authentication* HTTP usando o esquema *Bearer*. O conteúdo do cabeçalho deve seguir este formato:
 
+<span style="background-color:black">
+<span style="color:white">
 Authorization: Bearer <token>
+</span>
+</span>
 
 
 ### Fluxo OpenID Connect (OIDC) 
