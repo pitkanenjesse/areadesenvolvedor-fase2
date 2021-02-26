@@ -2619,18 +2619,20 @@ secret)<br>
 
 <p>Para obter o token JWT, as três seções <em>(header, payload, signature)</em> são codificadas com Base64-URL e unidas por pontos.</p>
 
-<p><img class='lazy' src='images/loading-e35b35a4.gif' data-src='images/security/JWT_sample-600e5220.png'/></p>
-
 <p><font size="6">
-<span style="color:red">eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9</span>.<span style="color:purple">ey</span><br>
-<span style="color:purple">eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6Ikpva</span><br>
-<span style="color:purple">G4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ</span><span style="color:blue">SflKx</span>.<br>
-<span style="color:blue">wRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c</span>.<br>
+<span style="color:red">eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9</span>.<span style="color:purple">eyJz</span><br>
+<span style="color:purple">dWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4g</span><br>
+<span style="color:purple">RG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ</span>.<span style="color:blue">SflKxwRJSM</span><br>
+<span style="color:blue">eKKF2QT4fwpMeJf36POk6yJV_adQssw5c</span>.<br>
 </font></p>
 
 <p>Este token JWT deve ser enviado no cabeçalho <em>Authentication</em> HTTP usando o esquema <em>Bearer</em>. O conteúdo do cabeçalho deve seguir este formato:</p>
 
-<p>Authorization: Bearer <token></p>
+<p><span style="background-color:black">
+<span style="color:white">
+Authorization: Bearer <token>
+</span>
+</span></p>
 <h3 id='seguranca-participantes-perfil-de-seguranca-fluxo-openid-connect-oidc'>Fluxo OpenID Connect (OIDC)</h3>
 <p>O OpenID Connect define os seguintes fluxos: </p>
 
@@ -2640,7 +2642,7 @@ secret)<br>
 <li><em>Hybrid flow</em>: O <em>Hybrid Flow</em>, combina elementos do <em>Authorization Code Flow</em> e <em>Implicit Flow</em>, esse modelo permite retornar um <em>ID Token</em> e um <em>Authorization Code</em> como uma resposta ao <em>front-end</em> do <em>client</em>, deixando o <em>backend</em> obter um <em>Access Token</em> e opcionalmente um <em>Refresh Token</em> do <em>endpoint</em> de token utilizando o <em>Authorization Code</em>. Esse padrão de autenticação foi escolhido como mandatório pelo Open Banking e pode ser observado no diagrama a seguir. </li>
 </ul>
 
-<p><img class='lazy' src='images/loading-e35b35a4.gif' data-src='images/security/Hybrid_Flow.png'/></p>
+<p><img class='lazy' src='images/loading-e35b35a4.gif' data-src='images/security/Hybrid_Flow-92fc9bf7.png'/></p>
 
 <p>Diagrama - Fluxo <em>Hybrid Flow</em></p>
 
@@ -2658,7 +2660,7 @@ secret)<br>
 
 <p>Financial-grade API, o FAPI, é uma especificação técnica desenvolvida pelo Grupo de Trabalho Financial-grade API da OpenID Foundation. Ele utiliza OAuth 2.0 e OpenID Connect (OIDC) como sua base e define requisitos técnicos adicionais para o setor financeiro e outros setores que exigem maior segurança.</p>
 
-<p><img class='lazy' src='images/loading-e35b35a4.gif' data-src='images/security/FAPI-95ee9181.png'/></p>
+<p><img class='lazy' src='images/loading-e35b35a4.gif' data-src='images/security/FAPI-d288dca4.png'/></p>
 
 <h3 id='seguranca-participantes-financial-grade-api-fapi-fapi-read-and-write-api-security-profile'>FAPI: Read and Write API Security Profile</h3>
 
