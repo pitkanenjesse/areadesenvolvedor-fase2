@@ -2438,19 +2438,19 @@ Compõem, de forma não exaustiva, o rol de atos normativos cuja observância é
 
 <p>Para melhor entendimento do FAPI-Read and Write API Profile e do CIBA-Financial-grade API: Client Initiated Backchannel Authentication Profile,  é preciso ter conhecimento sobre OAuth e OpenID Connect.</p>
 <h3 id='seguranca-participantes-perfil-de-seguranca-oauth-2-0'>OAuth 2.0</h3>
-<p>OAuth 2.0 é um framework de autorização que habilita um aplicativo a obter acesso limitado para um serviço de terceiro, introduzindo uma camada de autorização e segmentando as funções do client.
-Ao invés de utilizar credenciais fornecidas pelo proprietário do recurso, o client recebe um Access Token, contendo o escopo do acesso, tempo de vida, entre outros atributos. Os Access Tokens são emitidos para clients terceiros por um servidor de autorização com a aprovação do proprietário do recurso. </p>
+<p>OAuth 2.0 é um framework de autorização que habilita um aplicativo a obter acesso limitado para um serviço de terceiro, introduzindo uma camada de autorização e segmentando as funções do <em>client</em>.
+Ao invés de utilizar credenciais fornecidas pelo proprietário do recurso, o <em>client</em> recebe um <em>Access Token</em>, contendo o escopo do acesso, tempo de vida, entre outros atributos. Os <em>Access Tokens</em> são emitidos para <em>clients</em> terceiros por um servidor de autorização com a aprovação do proprietário do recurso. </p>
 
 <p>O OAuth 2.0, define 4 papéis. </p>
 
 <ul>
-<li>End-User: Uma entidade capaz de conceder acesso a recursos protegidos. Quando o proprietário do recurso é um usuário, ele provê o nível de acesso, limitando o escopo de autorização (leitura ou escrita).<br></li>
-<li>Resource Server: Servidor que hospeda os recursos protegidos, capaz de aceitar e responder a solicitações de recursos protegidos utilizando tokens de acesso.</li>
-<li>Client: Um aplicativo que faz solicitações a recursos protegidos em nome do proprietário do recurso, com a sua autorização. </li>
-<li>Authorization Server: É o servidor que emite tokens de acesso ao client, após autenticar com sucesso e obter autorização do End-User. </li>
+<li><em>End-User</em>: Uma entidade capaz de conceder acesso a recursos protegidos. Quando o proprietário do recurso é um usuário, ele provê o nível de acesso, limitando o escopo de autorização (leitura ou escrita).<br></li>
+<li><em>Resource Server</em>: Servidor que hospeda os recursos protegidos, capaz de aceitar e responder a solicitações de recursos protegidos utilizando tokens de acesso.</li>
+<li><em>Client</em>: Um aplicativo que faz solicitações a recursos protegidos em nome do proprietário do recurso, com a sua autorização. </li>
+<li><em>Authorization Server</em>: É o servidor que emite tokens de acesso ao <em>client</em>, após autenticar com sucesso e obter autorização do <em>End-User</em>. </li>
 </ul>
 <h3 id='seguranca-participantes-perfil-de-seguranca-tokens'>Tokens</h3>
-<p>O OAuth 2.0 faz o uso de diversos tokens, entre eles, o access token, refresh token e Authorization &quot;code&quot;.</p>
+<p>O OAuth 2.0 faz o uso de diversos tokens, entre eles, o <em>access token</em>, <em>refresh token</em> e <em>Authorization &quot;code&quot;</em>.</p>
 
 <ul>
 <li>Access token: Um token de acesso é utilizado por um client para acessar um recurso, geralmente possuem ciclo de vida curto (minutos ou horas), sendo consumidos durante uma sessão. O Access token indica que o client está autorizado a consumir um recurso protegido, respeitando os scopes para qual o token foi emitido. O token pode ser renovado através de um refresh token. O tipo de Access Token será o &quot;Bearer&quot; OAuth Access Token, referenciado em <a href='https://tools.ietf.org/html/rfc6750'target="_blank">[RFC 6750]</a>.</li>
