@@ -2768,99 +2768,208 @@ A instituição receptora de dados detentora de consentimentos e de tokens de au
 <p>Essa seção descreve o padrão Lodging Intent, utilizado para parametrizar solicitações de autorização OAuth complexas de maneira confiável e segura.<br>
 O OAuth por si, suporta apenas autorizar ações simples de leitura, o parâmetro scope é definido por uma lista delimitada por espaços contendo strings simples, quando se trata de autorizações mais complexas, como o início de um pagamento, o suporte integrado do OAuth não é suficiente.
 O padrão Lodging Intent pode ser utilizado para passar informações de forma confiável para o processo de autorização, independente das restrições de comprimento de URL, enquanto as informações também são protegidas contra modificação sem a necessidade de assiná-las digitalmente, reduzindo os custos de implementação.
-Executar um processo de autorização utilizando o padrão Lodging Intent e o Code Flow, funciona da seguinte maneira:
-• O <em>client</em> cria um recurso contendo todos os dados necessários para informar o processo de autorização no Authorization Server, a criação do Lodging Intent pode exigir uma autorização própria, nesse caso, o <em>client</em> precisa obter antecipadamente um Access Token com o escopo adequado, normalmente usando a concessão do <em>Client</em> Credentials com o Authorization Server.
-• O serviço de Lodging Intent responde ao <em>client</em> com um id e/ou link para o recurso criado.
-• O <em>client</em> então envia a referência do recurso com o pedido de autorização para o Authorization Server. O Authorization Server obtém os dados da transação do recurso de hospedagem e depois de autenticar o usuário, utiliza-os para apresentar uma interface de consentimento. Por exemplo, no caso de um pagamento, o Authorization Server mostra ao devedor, o valor e informações adicionais sobre a transação de pagamento ao usuário e pede o seu consentimento.
-• Se o usuário consentir com a autorização solicitada, o Authorization Server associa os dados de autorização à concessão criada (ou atualizada) e os respectivos Access Tokens emitidos com base nessa concessão. Por último, o Authorization Server precisa fornecer os dados de autorização ao respectivo Resource Server, para que seja incorporado no Access Token ou na resposta de Introspection do Token.
-Mais detalhes sobre o funcionamento do padrão Lodging Intent pode ser consultado em <a href='https://bitbucket.org/openid/fapi/src/master/Financial_API_Lodging_Intent.md'target="_blank">https://bitbucket.org/openid/fapi/src/master/Financial_API_Lodging_Intent.md </a>.</p>
+Executar um processo de autorização utilizando o padrão Lodging Intent e o Code Flow, funciona da seguinte maneira:</p>
+
+<ul>
+<li>O <em>client</em> cria um recurso contendo todos os dados necessários para informar o processo de autorização no Authorization Server, a criação do Lodging Intent pode exigir uma autorização própria, nesse caso, o <em>client</em> precisa obter antecipadamente um Access Token com o escopo adequado, normalmente usando a concessão do <em>Client</em> Credentials com o Authorization Server.</li>
+<li>O serviço de Lodging Intent responde ao <em>client</em> com um id e/ou link para o recurso criado.</li>
+<li>O <em>client</em> então envia a referência do recurso com o pedido de autorização para o Authorization Server. O Authorization Server obtém os dados da transação do recurso de hospedagem e depois de autenticar o usuário, utiliza-os para apresentar uma interface de consentimento. Por exemplo, no caso de um pagamento, o Authorization Server mostra ao devedor, o valor e informações adicionais sobre a transação de pagamento ao usuário e pede o seu consentimento.</li>
+<li>Se o usuário consentir com a autorização solicitada, o Authorization Server associa os dados de autorização à concessão criada (ou atualizada) e os respectivos Access Tokens emitidos com base nessa concessão. Por último, o Authorization Server precisa fornecer os dados de autorização ao respectivo Resource Server, para que seja incorporado no Access Token ou na resposta de Introspection do Token.</li>
+</ul>
+
+<p>Mais detalhes sobre o funcionamento do padrão Lodging Intent pode ser consultado em <a href='https://bitbucket.org/openid/fapi/src/master/Financial_API_Lodging_Intent.md'target="_blank">https://bitbucket.org/openid/fapi/src/master/Financial_API_Lodging_Intent.md </a>.</p>
 
 <h2 id='seguranca-participantes-assinatura-de-mensagens'>Assinatura de mensagens</h2>
 
 <p>A assinatura de mensagens deve ser aplicada a APIs específicas, de acordo com a necessidade e a criticidade, levantamento a ser feito junto com o GT de Dados.
 Para a assinatura de mensagens, deve ser suportado o uso de um JWT assinado (JWS).  JWS representa o conteúdo protegido com assinaturas digitais ou com Message Authentication Codes (MACs) utilizando estruturas de dados JSON, referenciado em [RFC 7515]. </p>
 
-<p>IMAGEMM</p>
+<p><img class='lazy' src='images/loading-e35b35a4.gif' data-src='images/security/JWS-7563da2c.png'/></p>
 
 <p>Estrutura de um token com JWS.</p>
 
 <h2 id='seguranca-participantes-certificados'>Certificados</h2>
 
 <p>Dois tipos de certificados serão emitidos pelo ICP-Brasil para serem utilizados no Open Banking  com as funções de transporte e  assinatura. 
-Atributos comuns a ambos os certificados</p>
+Atributos comuns a ambos os certificados:</p>
 
-<p>Atributo    Utilização
-Data de validade    Intervalo de tempo para qual o certificado será válido.
-Data de emissão    Data em que foi emitido o certificado.
-Autoridade Certificadora    AC- Autoridade Certificadora, entidade pública ou privada, subordinada à hierarquia da ICP-Brasil, responsável por emitir, distribuir, renovar, revogar e gerenciar certificados digitais.
-Chave pública e privada    Chaves públicas e privadas.
-Tipo    A1 ou A2 ou A3.
-Código de registro do participante 2.16.76.1.3.3? otherName Código que identifica o participante do Open Banking (CNPJ).
-Nome do participante    2.16.76.1.3.8? otherName Nome que identifica o participante do Open Banking (Nome que consta no CNPJ?).
-Código do Diretório (OID 2.16.76.1.3.X)   Campo otherName em certificado de pessoa jurídica, contendo identificação do código de participante junto ao diretório do Open Banking. OID a ser definido.</p>
+<table><thead>
+<tr>
+<th>Atributo</th>
+<th>Utilização</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Data de validade</td>
+<td>Intervalo de tempo para qual o certificado será válido.</td>
+</tr>
+<tr>
+<td>Data de emissão</td>
+<td>Data em que foi emitido o certificado.</td>
+</tr>
+<tr>
+<td>Autoridade Certificadora</td>
+<td>AC- Autoridade Certificadora, entidade pública ou privada, subordinada à hierarquia da ICP-Brasil, responsável por emitir, distribuir, renovar, revogar e gerenciar certificados digitais.</td>
+</tr>
+<tr>
+<td>Chave pública e privada</td>
+<td>Chaves públicas e privadas.</td>
+</tr>
+<tr>
+<td>Tipo</td>
+<td>A1 ou A2 ou A3.</td>
+</tr>
+<tr>
+<td>Código de registro do participante</td>
+<td>2.16.76.1.3.3 otherName Código que identifica o participante do Open Banking (CNPJ).</td>
+</tr>
+<tr>
+<td>Nome do participante</td>
+<td>2.16.76.1.3.8 otherName Nome que identifica o participante do Open Banking (Nome que consta no CNPJ).</td>
+</tr>
+<tr>
+<td>Código do Diretório (OID 2.16.76.1.3.X)</td>
+<td>Campo otherName em certificado de pessoa jurídica, contendo identificação do código de participante junto ao diretório do Open Banking. OID a ser definido.</td>
+</tr>
+</tbody></table>
 
 <h3 id='seguranca-participantes-certificados-transporte'>Transporte</h3>
 
 <p>Certificado de transporte para a proteção e autenticação do canal (mTLS) e será utilizado para criptografar requisições e respostas entre Third Parties e bancos.
-Atributos específicos do certificado de transporte
-Atributo    Utilização
-Endpoint (OID 2.16.76.1.3.X)    Campo otherName em certificado de pessoa jurídica, contendo endereço de endpoints associados ao Open Banking. OID a ser definido.
-Key Usage   critical, digitalSignature
-extendedKeyUsage    clientAuth, serverAuth </p>
+Atributos específicos do certificado de transporte:</p>
+
+<table><thead>
+<tr>
+<th>Atributo</th>
+<th>Utilização</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Endpoint (OID 2.16.76.1.3.X)</td>
+<td>Campo otherName em certificado de pessoa jurídica, contendo endereço de endpoints associados ao Open Banking. OID a ser definido.</td>
+</tr>
+<tr>
+<td>Key Usage</td>
+<td>critical, digitalSignature</td>
+</tr>
+<tr>
+<td>extendedKeyUsage</td>
+<td>clientAuth, serverAuth</td>
+</tr>
+</tbody></table>
 
 <h3 id='seguranca-participantes-certificados-assinatura'>Assinatura</h3>
 
 <p>O certificado de assinatura de mensagens é utilizado para criar o JWS para assinar o payload JWT durante o processo de onboarding e authorization.
-Atributos específicos do certificado de assinatura
-Atributo    Utilização
-Key Usage   critical, digitalSignature, nonRepudiation</p>
+Atributos específicos do certificado de assinatura:</p>
+
+<table><thead>
+<tr>
+<th>Atributo</th>
+<th>Utilização</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Key Usage</td>
+<td>critical, digitalSignature, nonRepudiation</td>
+</tr>
+</tbody></table>
 
 <h3 id='seguranca-participantes-certificados-algoritmo-de-criptorgrafia'>Algoritmo de criptorgrafia</h3>
 
-<p>Algoritmo   Bits
-RSA 2048bits ou 4096bits
-(PS256) RSASSA-PSS  SHA-256 e MGF1 com SHA-256</p>
+<table><thead>
+<tr>
+<th>Algoritmo</th>
+<th>Bits</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>RSA</td>
+<td>2048bits ou 4096bits</td>
+</tr>
+<tr>
+<td>(PS256) RSASSA-PSS</td>
+<td>SHA-256 e MGF1 com SHA-256</td>
+</tr>
+</tbody></table>
 
 <h3 id='seguranca-participantes-certificados-tipos-de-certificados'>Tipos de certificados</h3>
 
-<p>Tipo    Validade    Processo de geração   Armazenamento
-A1  1 ano   Software    Repositório protegido por senha e/ou identificação biométrica, cifrado por software.
-A2  Até 2 anos Software    Cartão Inteligente ou Token, ambos sem capacidade de geração de chave e protegidos por senha e/ou identificação biométrico
-A3  Até 5 anos Hardware    Hardware criptográfico, homologado junto à ICP-Brasil ou com certificação INMETRO.</p>
+<table><thead>
+<tr>
+<th>Tipo</th>
+<th>Validade</th>
+<th>Processo de geração</th>
+<th>Armazenamento</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>A1</td>
+<td>1 ano</td>
+<td>Software</td>
+<td>Repositório protegido por senha e/ou identificação biométrica, cifrado por software.</td>
+</tr>
+<tr>
+<td>A2</td>
+<td>Até 2 anos</td>
+<td>Software</td>
+<td>Cartão Inteligente ou Token, ambos sem capacidade de geração de chave e protegidos por senha e/ou identificação biométrico</td>
+</tr>
+<tr>
+<td>A3</td>
+<td>Até 5 anos</td>
+<td>Hardware</td>
+<td>Hardware criptográfico, homologado junto à ICP-Brasil ou com certificação INMETRO.</td>
+</tr>
+</tbody></table>
 
 <h3 id='seguranca-participantes-certificados-requisitos-adicionais'>Requisitos adicionais</h3>
 
-<p>• Protocolo HTTP versão 1.1.
-• Criptografia TLS versão 1.2 suportando somente as seguintes cifras:
-    o   TLS_DHE_RSA_WITH_AES_128_GCM_SHA256
-    o   TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256
-    o   TLS_DHE_RSA_WITH_AES_256_GCM_SHA384
-    o   TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
-• Autenticação mútua.
-• Algoritmo ECDSA.
-• Algoritmo de troca de chaves de curva elíptica ECDHE.
-• Criptografia simétrica AES com chave de 128 bits
-• MAC com SHA de chaves de 256 bits.</p>
+<ul>
+<li>Protocolo HTTP versão 1.1.</li>
+<li>Criptografia TLS versão 1.2 suportando somente as seguintes cifras:
+
+<ul>
+<li>TLS_DHE_RSA_WITH_AES_128_GCM_SHA256</li>
+<li>TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256</li>
+<li>TLS_DHE_RSA_WITH_AES_256_GCM_SHA384</li>
+<li>TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384</li>
+</ul></li>
+<li>Autenticação mútua.</li>
+<li>Algoritmo ECDSA.</li>
+<li>Algoritmo de troca de chaves de curva elíptica ECDHE.</li>
+<li>Criptografia simétrica AES com chave de 128 bits</li>
+<li>MAC com SHA de chaves de 256 bits.</li>
+</ul>
 
 <h3 id='seguranca-participantes-certificados-definicoes'>Definições</h3>
 
 <p>A ICP-Brasil (Infraestrutura de Chaves Públicas Brasileira) consiste em uma cadeia hierárquica composta por uma autoridade gestora de políticas e autoridades certificadoras que utilizam um conjunto de tecnologias, práticas, técnicas e procedimentos para realizar a transação de documentos eletrônicos com segurança. O objetivo da ICP é fazer com que a utilização de criptografia de chaves públicas se torne mais fácil, tendo como principais componentes as autoridades certificadoras, autoridades de registro e o repositório.
-Sua hierarquia se dá da seguinte forma:
-• 1º. Comitê Gestor (CG);
-• 2º. Autoridade Certificadora (AC Raiz);
-• 3º. Autoridades Certificadoras de 1º e 2º nível (ACs);
-• 4º. Autoridades de Registros (ARs);
-• 5º. usuário final.</p>
+Sua hierarquia se dá da seguinte forma:</p>
 
-<p>A validação requer um par de chaves, sendo que uma delas é de conhecimento geral, ou seja, de acesso ao público, e a outra de conhecimento apenas do proprietário. Por isso, seus dados precisam estar contidos em um certificado digital para que seja possível fazer a tramitação do documento.
-Além disso, é preciso que a entidade certificadora seja integrante da infraestrutura do governo e receba uma classificação quanto ao seu nível de segurança. Desse modo, é possível garantir a validade jurídica dos documentos eletrônicos, bem como sua autenticidade e integridade.
-As Autoridades Certificadoras (ACs) são responsáveis por gerenciar o ciclo de vida dos certificados digitais, controlando os processos de solicitação, emissão e revogação dos mesmos. 
-A Autoridade de Registro (AR) e o Repositório de Certificados Digitais também recebem tarefas delegadas da AC Raiz. À AR cabe a tarefa de verificar o conteúdo de requisições de certificados, enquanto o Repositório de Certificados Digitais tem como objetivo publicar os certificados digitais e as listas de certificados revogados emitidos por uma ou mais ACs.
-No Brasil, a hierarquia da Certificação Digital obedece ao ICP-Brasil, que deve ser:
-• 1º nível – Autoridades Certificadoras Raiz (AC Raiz): Instituto Nacional de Tecnologia da Informação.
-• 2º Nível – Autoridades Certificadoras de primeiro nível: Responsável pela emissão, revogação e gerenciamento dos Certificados Digitais de AC.
-• 3º nível – Autoridades Certificadoras de segundo nível: Responsável pela emissão, revogação e gerenciamento dos Certificados Digitais.
-• 4º nível – Autoridades de Registro: Responsável por identificar o usuário e solicitar e emitir os certificados.</p>
+<ul>
+<li>1º. Comitê Gestor (CG);</li>
+<li>2º. Autoridade Certificadora (AC Raiz);</li>
+<li>3º. Autoridades Certificadoras de 1º e 2º nível (ACs);</li>
+<li>4º. Autoridades de Registros (ARs);</li>
+<li>5º. usuário final.</li>
+</ul>
+
+<p>A validação requer um par de chaves, sendo que uma delas é de conhecimento geral, ou seja, de acesso ao público, e a outra de conhecimento apenas do proprietário. Por isso, seus dados precisam estar contidos em um certificado digital para que seja possível fazer a tramitação do documento.</p>
+
+<p>Além disso, é preciso que a entidade certificadora seja integrante da infraestrutura do governo e receba uma classificação quanto ao seu nível de segurança. Desse modo, é possível garantir a validade jurídica dos documentos eletrônicos, bem como sua autenticidade e integridade.</p>
+
+<p>As Autoridades Certificadoras (ACs) são responsáveis por gerenciar o ciclo de vida dos certificados digitais, controlando os processos de solicitação, emissão e revogação dos mesmos. </p>
+
+<p>A Autoridade de Registro (AR) e o Repositório de Certificados Digitais também recebem tarefas delegadas da AC Raiz. À AR cabe a tarefa de verificar o conteúdo de requisições de certificados, enquanto o Repositório de Certificados Digitais tem como objetivo publicar os certificados digitais e as listas de certificados revogados emitidos por uma ou mais ACs.
+No Brasil, a hierarquia da Certificação Digital obedece ao ICP-Brasil, que deve ser:</p>
+
+<ul>
+<li>1º nível – Autoridades Certificadoras Raiz (AC Raiz): Instituto Nacional de Tecnologia da Informação.</li>
+<li>2º Nível – Autoridades Certificadoras de primeiro nível: Responsável pela emissão, revogação e gerenciamento dos Certificados Digitais de AC.</li>
+<li>3º nível – Autoridades Certificadoras de segundo nível: Responsável pela emissão, revogação e gerenciamento dos Certificados Digitais.</li>
+<li>4º nível – Autoridades de Registro: Responsável por identificar o usuário e solicitar e emitir os certificados.</li>
+</ul>
 
 <p>Após o prazo de encerramento do Certificado Digital, ele é automaticamente expirado e, qualquer documento assinado após a data de vencimento não possui qualquer validade legal. Já os documentos que forem assinados dentro do período de validade do certificado, tem sua validade assegurada por tempo indeterminado.</p>
 
@@ -2872,35 +2981,35 @@ No Brasil, a hierarquia da Certificação Digital obedece ao ICP-Brasil, que dev
 
 <h3 id='seguranca-participantes-certificados-guia-das-etapas-de-solicitacao'>Guia das Etapas de Solicitação</h3>
 
-<p>Diagrama 5 - Solicitação de um certificado digital.</p>
+<p><img class='lazy' src='images/loading-e35b35a4.gif' data-src='images/security/ICPBrasil_flow-8b6f8a34.png'/></p>
 
-<p>A obtenção de um Certificado Digital compreende 4 etapas:
-1.  Solicitação
-O interessado (pessoa física ou jurídica) deve acessar uma das Autoridades Certificadoras, escolher o tipo e a validade do Certificado Digital e encaminhar para o processo de compra.
-2.  Identificação Presencial
-Após feita a solicitação, o interessado deve providenciar os documentos necessários para a emissão do certificado escolhido e agendar uma visita presencial em uma das Autoridades de Registro para realizar a identificação.
-3.  Validação e Verificação dos documentos
-Depois de apresentar os documentos obrigatórios, o interessado deve aguardar a liberação da validação e verificação realizadas pela Autoridade de Registro. Caso esteja em conformidade com as exigências, é possível seguir para o processo de emissão.
-4.  Emissão</p>
+<p>Diagrama - Solicitação de um certificado digital.</p>
 
-<p>Na emissão, é gerado um par de chaves RSA com tamanho de 2048 bits e algoritmo de assinatura SHA 256 na mídia criptográfica do usuário.
-Contudo, antes de requerer um Certificado Digital, o interessado deve analisar qual a finalidade de uso, a forma de armazenamento e o período de validade no qual deve obter seu documento para, então, solicitar o tipo de certificado adequado. É imprescindível que o interessado conheça as características de cada certificado antes de comprá-lo pelo site em uma das Autoridades Certificadoras habilitadas.</p>
+<p>A obtenção de um Certificado Digital compreende 4 etapas:</p>
+
+<ol>
+<li> Solicitação: O interessado (pessoa física ou jurídica) deve acessar uma das Autoridades Certificadoras, escolher o tipo e a validade do Certificado Digital e encaminhar para o processo de compra.</li>
+<li> Identificação Presencial: Após feita a solicitação, o interessado deve providenciar os documentos necessários para a emissão do certificado escolhido e agendar uma visita presencial em uma das Autoridades de Registro para realizar a identificação.</li>
+<li> Validação e Verificação dos documentos: Depois de apresentar os documentos obrigatórios, o interessado deve aguardar a liberação da validação e verificação realizadas pela Autoridade de Registro. Caso esteja em conformidade com as exigências, é possível seguir para o processo de emissão.</li>
+<li> Emissão: Na emissão, é gerado um par de chaves RSA com tamanho de 2048 bits e algoritmo de assinatura SHA 256 na mídia criptográfica do usuário.</li>
+</ol>
+
+<p>Contudo, antes de requerer um Certificado Digital, o interessado deve analisar qual a finalidade de uso, a forma de armazenamento e o período de validade no qual deve obter seu documento para, então, solicitar o tipo de certificado adequado. É imprescindível que o interessado conheça as características de cada certificado antes de comprá-lo pelo site em uma das Autoridades Certificadoras habilitadas.</p>
 
 <h3 id='seguranca-participantes-certificados-emissao-de-certificados-pelo-diretorio-de-participantes'>Emissão de certificados pelo Diretório de Participantes</h3>
 
 <p>O Diretório de Participantes foi escolhido como uma alternativa para a emissão de certificados, tornando-se uma Autoridade Certificadora para emissão de certificados para Clients (aplicativos).</p>
 
-<p>Diagrama 6 - Emitindo um certificado pelo Diretório</p>
+<p><img class='lazy' src='images/loading-e35b35a4.gif' data-src='images/security/Directory_cert_flow-b8c65455.png'/></p>
 
-<p>A obtenção de um Certificado Digital pelo Diretório, compreende 3 etapas:
-1. Solicitação
-O solicitante deve assinar a solicitação (CSR) utilizando o e-CNPJ e efetuar o upload no Diretório de Participantes.</p>
+<p>Diagrama - Emitindo um certificado pelo Diretório</p>
+
+<p>A obtenção de um Certificado Digital pelo Diretório, compreende 3 etapas:</p>
 
 <ol>
-<li><p>Verificação 
-O Diretório realiza a verificação, estando em conformidade, prossegue para o processo de emissão.</p></li>
-<li><p>Emissão
-O Diretório emite um certificado e retorna para o solicitante. </p></li>
+<li>Solicitação: O solicitante deve assinar a solicitação (CSR) utilizando o e-CNPJ e efetuar o upload no Diretório de Participantes.</li>
+<li>Verificação: O Diretório realiza a verificação, estando em conformidade, prossegue para o processo de emissão.</li>
+<li>Emissão: O Diretório emite um certificado e retorna para o solicitante. </li>
 </ol>
 
 <h3 id='seguranca-participantes-certificados-csr'>CSR</h3>
@@ -2917,7 +3026,7 @@ $ openssl req -new -config assinatura.cnf -out assinatura.csr -keyout assinatura
 
 <p>Exemplo</p>
 
-<p>IMAGEM</p>
+<p><img class='lazy' src='images/loading-e35b35a4.gif' data-src='images/security/Generate_CSR-e9a8a729.png'/></p>
 
 <p>O CSR resultante deve ser carregado para o Open Banking PKI para emitir um certificado público de transporte ou assinatura associado à sua chave privada. Os arquivos resultantes devem ser protegidos pelas políticas de segurança da instituição. </p>
 
@@ -2926,8 +3035,9 @@ $ openssl req -new -config assinatura.cnf -out assinatura.csr -keyout assinatura
 <p>Este bloco demonstra como gerar um CSR válido por um client que requer um Certificado de transporte X.509 utilizando um arquivo .cnf como base.
 O seguinte arquivo de configuração é utilizado para gerar um CSR para um certificado de transporte usando OpenSSL.</p>
 
-<p>Arquivo CNF OPENSSL Transporte apenas de exemplo, as configurações podem variar de acordo com a Autoridade Certificadora e para quem será emitido o certificado, alterar os campos como CNPJ e NOME da instituição:
-# OPENSSL CSR REQUEST CONFIGURATION FILE
+<p>Arquivo CNF OPENSSL Transporte apenas de exemplo, as configurações podem variar de acordo com a Autoridade Certificadora e para quem será emitido o certificado, alterar os campos como CNPJ e NOME da instituição:</p>
+
+<p># OPENSSL CSR REQUEST CONFIGURATION FILE
 # ======================================
 otherName = 2.16.76.1.3.3 
 otherName = 2.16.76.1.3.8
@@ -3006,105 +3116,144 @@ subjectKeyIdentifier = hash</p>
 
 <p><h2 id='seguranca-participantes-diretorio-de-participantes'>Diretório de participantes</h2><h3 id='seguranca-participantes-diretorio-de-participantes-introducao'>Introdução</h3>
 <p>O Diretório de Participantes do Open Banking é o principal componente de arquitetura que permite que Instituições Provedoras (TPPs) se registrem e iniciem interações por meio de APIs com Instituições Transmissoras (ASPSPs), também fornece um ambiente de testes.
-    O Diretório é um serviço de gerenciamento de identidade e acesso que fornece informações de identidade que dão suporte aos participantes do Ecossistema do Open Banking.
-    O Diretório de Participantes disponibiliza os recursos funcionais necessários para que as Instituições Provedoras (TPPs) possam se autenticar no Open Banking e também recursos para identificar as Instituições Transmissoras (ASPSPs). 
-    O Registro dos Provedores é obrigatório para usar as APIs fornecidas pelas Instituições Transmissoras (ASPSPs).
-    As instituições Transmissoras devem utilizar as informações técnicas contidas no Diretório para realizar o gerenciamento da identidade e da autorização das aplicações das instituições Participantes, que abrange a identificação, a autorização e a revogação de certificados utilizados no compartilhamento de dados e serviços do escopo do Open Banking.</p></p>
+O Diretório é um serviço de gerenciamento de identidade e acesso que fornece informações de identidade que dão suporte aos participantes do Ecossistema do Open Banking.
+O Diretório de Participantes disponibiliza os recursos funcionais necessários para que as Instituições Provedoras (TPPs) possam se autenticar no Open Banking e também recursos para identificar as Instituições Transmissoras (ASPSPs). 
+O Registro dos Provedores é obrigatório para usar as APIs fornecidas pelas Instituições Transmissoras (ASPSPs).
+As instituições Transmissoras devem utilizar as informações técnicas contidas no Diretório para realizar o gerenciamento da identidade e da autorização das aplicações das instituições Participantes, que abrange a identificação, a autorização e a revogação de certificados utilizados no compartilhamento de dados e serviços do escopo do Open Banking.</p></p>
 
 <p>Recursos funcionais do Diretório de Participantes:
-    *   Gerenciar identidades e acesso: a capacidade de emitir e gerenciar registros de identidade para organizações e pessoas físicas que interagem com o Diretório.
-    *   Gerenciar certificados e chaves: A capacidade de fazer upload, gerenciar e remover certificados, chaves de assinatura e chaves de criptografia. A capacidade de emitir, gerenciar e revogar certificados digitais do Open Banking.
-    *   Gerenciar informações do Diretório: a capacidade de atualizar e localizar informações mantidas no diretório - por meio de APIs e/ou uma interface de usuário (IU).</p>
+* Gerenciar identidades e acesso: a capacidade de emitir e gerenciar registros de identidade para organizações e pessoas físicas que interagem com o Diretório.
+* Gerenciar certificados e chaves: A capacidade de fazer upload, gerenciar e remover certificados, chaves de assinatura e chaves de criptografia. A capacidade de emitir, gerenciar e revogar certificados digitais do Open Banking.
+* Gerenciar informações do Diretório: a capacidade de atualizar e localizar informações mantidas no diretório - por meio de APIs e/ou uma interface de usuário (IU).</p>
 
-<p>### Padrões </p>
+<h3 id='seguranca-participantes-diretorio-de-participantes-padroes'>Padrões</h3>
 
-<p>*   Adoção de padrões abertos 
-        o   O design do Diretório de Participantes do Open Banking será baseado em padrões abertos e amplamente adotados, como  API Restful, OpenID Connect e OAuth2.
-    *   Participantes devem estar registrados
-        o   Os participantes devem ser autorizados e registrados na autoridade competente. 
-    *   Uso de certificados 
-        o    Os participantes que possuem um certificado válido podem se registrar no diretório mais rapidamente e sem a necessidade de realizar etapas manuais.</p>
+<ul>
+<li>Adoção de padrões abertos 
 
-<p>### Registro de uma Instituição Provedora</p>
+<ul>
+<li>O design do Diretório de Participantes do Open Banking será baseado em padrões abertos e amplamente adotados, como  API Restful, <a href='https://openid.net/connect/'target="_blank">OpenID Connect</a> e <a href='https://tools.ietf.org/html/rfc6749'target="_blank">OAuth2</a>.</li>
+</ul></li>
+<li>Participantes devem estar registrados
 
-<p>O Diretório deverá realizar validações para o Registro de uma TPP, depois destas validações, solicitações e respostas de API e/ou dados de contas podem ser compartilhadas com segurança entre as duas partes. O diretório deve validar, se:
-    *   O TPP está utilizando um certificado digital.
-    *   O certificado se encontra em conformidade com os padrões do Open Banking Brasil.
-    *   O certificado não está expirado.
-    *   O certificado foi emitido por uma Entidade Emissora válida.
-    *   O certificado não foi revogado. 
-    Depois que todas as verificações forem realizadas, será estabelecido uma conexão TLS segura, mutuamente autenticada entre o Diretório e o TPP. </p>
+<ul>
+<li>Os participantes devem ser autorizados e registrados na autoridade competente. </li>
+</ul></li>
+<li>Uso de certificados 
 
-<p>### Funções Operacionais dos Participantes</p>
+<ul>
+<li>Os participantes que possuem um certificado válido podem se registrar no diretório mais rapidamente e sem a necessidade de realizar etapas manuais.</li>
+</ul></li>
+</ul>
+
+<h3 id='seguranca-participantes-diretorio-de-participantes-registro-de-uma-instituicao-provedora'>Registro de uma Instituição Provedora</h3>
+
+<p>O Diretório deverá realizar validações para o Registro de uma TPP, depois destas validações, solicitações e respostas de API e/ou dados de contaspodem ser compartilhadas com segurança entre as duas partes. O diretório deve validar, se:</p>
+
+<ul>
+<li>O TPP está utilizando um certificado digital.</li>
+<li>O certificado se encontra em conformidade com os padrões do Open Banking Brasil.</li>
+<li>O certificado não está expirado.</li>
+<li>O certificado foi emitido por uma Entidade Emissora válida.</li>
+<li>O certificado não foi revogado. </li>
+</ul>
+
+<p>Depois que todas as verificações forem realizadas, será estabelecido uma conexão TLS segura, mutuamente autenticada entre o Diretório e o TPP. </p>
+
+<h3 id='seguranca-participantes-diretorio-de-participantes-funcoes-operacionais-dos-participantes'>Funções Operacionais dos Participantes</h3>
 
 <p>Fluxos para Instituições Provedoras (TPP)</p>
 
-<p>IMAGEM</p>
+<p><img class='lazy' src='images/loading-e35b35a4.gif' data-src='images/security/TPP-72dc7342.png'/></p>
 
 <p>Fluxos para Instituições Transmissoras (ASPSP)</p>
 
-<p>IMAGEM</p>
+<p><img class='lazy' src='images/loading-e35b35a4.gif' data-src='images/security/ASPPSP-ab9ca183.png'/></p>
 
-<p>### Registro no diretório de participantes</p>
+<h3 id='seguranca-participantes-diretorio-de-participantes-registro-no-diretorio-de-participantes'>Registro no diretório de participantes</h3>
 
 <p>Para poder consumir APIs disponibilizadas por um ASPSP, um TPP deverá realizar um registro junto ao ASPSP, esse processo de autenticação do participante deve ser feita de forma centralizada no Diretório de Participantes, sendo necessário a federação do seu portal ao Diretório.
-    O ASPSP deve implementar um processo de integração do TPP ao seu sistema, esse processo deve:
-    *   Validar se o TPP é autorizado por uma autoridade competente.
-    *   Validar as informações do TPP.
-    Após o TPP realizar o registro no Diretório de Participantes o mesmo poderá realizar o registro de clients (aplicações) na ASPSP.
-    Para a realização do registro de clients no Open Banking, é mandatório a disponibilização de dois processos: 
-    *   Registo de Client dinâmico, conforme <a href="preferencial">RFC 7591</a>.
-    *   Registro Manual via Portal do Desenvolvedor (backup).</p>
+O ASPSP deve implementar um processo de integração do TPP ao seu sistema, esse processo deve:</p>
 
-<p>### Registro de client dinâmico</p>
+<ul>
+<li>Validar se o TPP é autorizado por uma autoridade competente.</li>
+<li>Validar as informações do TPP.</li>
+</ul>
+
+<p>Após o TPP realizar o registro no Diretório de Participantes o mesmo poderá realizar o registro de clients (aplicações) na ASPSP.
+Para a realização do registro de clients no Open Banking, é mandatório a disponibilização de dois processos:</p>
+
+<ul>
+<li>Registo de Client dinâmico, conforme <a href="preferencial">RFC 7591</a>.</li>
+<li>Registro Manual via Portal do Desenvolvedor (backup).</li>
+</ul>
+
+<h3 id='seguranca-participantes-diretorio-de-participantes-registro-de-client-dinamico'>Registro de client dinâmico</h3>
 
 <p>O Registro Dinâmico de Client é mandatório para os participantes do Open Banking e deve ser utilizado preferencialmente. 
-    Com uma API de registro de client dinâmico do Open Banking, utilizando o padrão de segurança OpenID Connect, os TPPs podem se registrar junto aos ASPSPs.<br>
-    *   Para usar o Registro dinâmico de client, um TPP deve se registrar no Diretório de Participantes e obter um SSA e demais certificados digitais. 
-    *   O Client envia o SSA a um ASPSP para registro dinâmico no ASPSP. 
-    O diagrama abaixo mostra o fluxo do registro dinâmico de um TPP. </p>
+Com uma API de registro de client dinâmico do Open Banking, utilizando o padrão de segurança OpenID Connect, os TPPs podem se registrar junto aos ASPSPs.  </p>
 
-<p>Diagrama 7 - Fluxo de registro dinâmico.</p>
+<ul>
+<li>Para usar o Registro dinâmico de client, um TPP deve se registrar no Diretório de Participantes e obter um SSA e demais certificados digitais. </li>
+<li>O Client envia o SSA a um ASPSP para registro dinâmico no ASPSP. </li>
+</ul>
+
+<p>O diagrama abaixo mostra o fluxo do registro dinâmico de um TPP. </p>
+
+<p><img class='lazy' src='images/loading-e35b35a4.gif' data-src='images/security/RegistroDinamicoFluxo-a57fe7f6.png'/></p>
+
+<p>Diagrama - Fluxo de registro dinâmico.</p>
 
 <p>Os TPPs precisam obter o SSA do Diretório de Participantes do Open Banking.<br>
-    Uma API de Registro dinâmico consiste em endpoints, que realizam a concessão de credencias do client e a autenticação mútua de TLS para autenticar o TPP. A API deve permitir que as seguintes operações sejam realizadas:
-    *   Registro de um Client. 
-    *   Recuperar um Client.
-    *   Atualizar um Client.
-    *   Excluir um Client.</p>
+Uma API de Registro dinâmico consiste em endpoints, que realizam a concessão de credencias do client e a autenticação mútua de TLS para autenticar o TPP. A API deve permitir que as seguintes operações sejam realizadas:</p>
 
-<p>### Registro Manual via Portal do Desenvolvedor</p>
+<ul>
+<li>Registro de um Client. </li>
+<li>Recuperar um Client.</li>
+<li>Atualizar um Client.</li>
+<li>Excluir um Client.</li>
+</ul>
+
+<h3 id='seguranca-participantes-diretorio-de-participantes-registro-manual-via-portal-do-desenvolvedor'>Registro Manual via Portal do Desenvolvedor</h3>
 
 <p>Para que uma TPP comece a consumir serviços de Open Banking, ela deve estar registrada no Diretório de Participantes junto ao órgão regulador que autoriza e supervisiona os serviços Open Banking fornecidos pela TPP.
-    A realização de um registro manual deve ser feita apenas quando o registro dinâmico estiver indisponível, onde o TPP deverá solicitar via portal do ASPSP, na qual o ASPSP solicita informações do TPP através de um formulário durante o processo de inscrição e permite que o TPP utilize o ambiente de teste, sandbox e produção. 
-    O ASPSP aprovará o TPP com base em suas informações e permitirá que os aplicativos usem as APIs.
-    Segue um exemplo de processo de integração do TPP com o ASPSP via Portal do Desenvolvedor.</p>
+A realização de um registro manual deve ser feita apenas quando o registro dinâmico estiver indisponível, onde o TPP deverá solicitar via portal do ASPSP, na qual o ASPSP solicita informações do TPP através de um formulário durante o processo de inscrição e permite que o TPP utilize o ambiente de teste, sandbox e produção. 
+O ASPSP aprovará o TPP com base em suas informações e permitirá que os aplicativos usem as APIs.
+Segue um exemplo de processo de integração do TPP com o ASPSP via Portal do Desenvolvedor.</p>
 
-<p>Diagrama 8 – Fluxo de registro manual.</p>
+<p><img class='lazy' src='images/loading-e35b35a4.gif' data-src='images/security/RegistroPortalDesenvolvedor-1ca65369.png'/></p>
 
-<p>### Teste e homologação</p>
+<p>Diagrama – Fluxo de registro manual.</p>
+
+<h3 id='seguranca-participantes-diretorio-de-participantes-teste-e-homologacao'>Teste e homologação</h3>
 
 <p>A fase de teste e homologação, tem como finalidade, garantir que os participantes que desejam operar no Ecossistema do Open Banking, possam fazer isso de forma assertiva e segura. Isso incluí o suporte aos TPPs com a capacidade de testar seus produtos e serviços desde o lançamento, quanto nas atualizações, fornecendo uma série de ferramentas e infraestrutura no serviço de Diretório para garantir que seus produtos tenham sido testados tempestivamente antes de entrar em produção.
-    É obrigatório o teste e a homologação para TPPs e ASPSPs. Instituições receptoras devem utilizar o serviço de Sandbox fornecido pelo Diretório.
-    As ASPSPs devem prover um ambiente de teste que possibilite TPPs autorizados a realizarem testes de conexão e testes funcionais de seus produtos e serviços. Este recurso deve refletir ao máximo o ambiente de produção e deve fornecer o acesso aos desenvolvedores com os seguintes aspectos:
-    *   Funcionalidade: Deve incluir todas as funcionalidades da interface de produção relacionadas aos casos de uso. Deve funcionar de maneira equivalente ou representativa para a interface de produção, incluindo casos de uso negativos e códigos de erro.
-    *   Segurança: Deve utilizar o mesmo perfil de segurança das APIs em produção.
-    *    On-boarding: Deve replicar o processo de on-boarding das instalações de produção do ASPSP, incluindo o on-boarding e a troca de certificados para identificação e assinatura de mensagem.
-    *    Certificados: Deve permitir o uso de certificados de teste (que têm o mesmo formato/estrutura dos certificados de produção) de modo que os TPPs possam replicar a funcionalidade relacionados à troca de certificados para identificação e assinatura de mensagens.
-    *   Dados de teste: Não deve incluir quaisquer dados reais de usuários finais. O volume e a variação dos dados devem ser suficientes para dar suporte a todos os testes técnicos e funcionais, incluindo paginação (onde for compatível com a interface dedicada).
-    *   Contas de teste: Deve fornecer aos TPPs um número de contas de teste que habilitem a funcionalidade e o acesso aos dados que os usuários reais experimentarão na produção.
-    *   Autenticação: O ASPSP deve fornecer recurso que permita que os TPPs testem os procedimentos de autenticação, inclusive em produção, utilizando suas próprias contas e/ou contas de teste.
-    *    Disponibilidade e desempenho: Não deve lidar com volumes de produção (ou seja, não deve ser usada por ASPSPs ou TPPs para teste de estresse), no entanto, deve ter disponibilidade, capacidade, desempenho e outras características suficientes para facilitar a conexão eficaz e realista a testes funcionais do TPP.
-    *   Suporte: A instalação deve ter um nível apropriado de suporte para permitir a comunicação de problemas ou questões por TPPs para ASPSPs e fornecer soluções eficientes e eficazes. 
-    *   Documentação: ASPSPs devem publicar externamente um resumo das especificações da instalação de teste em seu site, incluindo detalhes de acesso e cobertura de teste. </p>
+É obrigatório o teste e a homologação para TPPs e ASPSPs. Instituições receptoras devem utilizar o serviço de Sandbox fornecido pelo Diretório.
+As ASPSPs devem prover um ambiente de teste que possibilite TPPs autorizados a realizarem testes de conexão e testes funcionais de seus produtos e serviços. Este recurso deve refletir ao máximo o ambiente de produção e deve fornecer o acesso aos desenvolvedores com os seguintes aspectos:</p>
+
+<ul>
+<li>Funcionalidade: Deve incluir todas as funcionalidades da interface de produção relacionadas aos casos de uso. Deve funcionar de maneira equivalente ou representativa para a interface de produção, incluindo casos de uso negativos e códigos de erro.</li>
+<li>Segurança: Deve utilizar o mesmo perfil de segurança das APIs em produção.</li>
+<li> On-boarding: Deve replicar o processo de on-boarding das instalações de produção do ASPSP, incluindo o on-boarding e a troca de certificados para identificação e assinatura de mensagem.</li>
+<li> Certificados: Deve permitir o uso de certificados de teste (que têm o mesmo formato/estrutura dos certificados de produção) de modo que os TPPs possam replicar a funcionalidade relacionados à troca de certificados para identificação e assinatura de mensagens.</li>
+<li>Dados de teste: Não deve incluir quaisquer dados reais de usuários finais. O volume e a variação dos dados devem ser suficientes para dar suporte a todos os testes técnicos e funcionais, incluindo paginação (onde for compatível com a interface dedicada).</li>
+<li>Contas de teste: Deve fornecer aos TPPs um número de contas de teste que habilitem a funcionalidade e o acesso aos dados que os usuários reais experimentarão na produção.</li>
+<li>Autenticação: O ASPSP deve fornecer recurso que permita que os TPPs testem os procedimentos de autenticação, inclusive em produção, utilizando suas próprias contas e/ou contas de teste.</li>
+<li> Disponibilidade e desempenho: Não deve lidar com volumes de produção (ou seja, não deve ser usada por ASPSPs ou TPPs para teste de estresse), no entanto, deve ter disponibilidade, capacidade, desempenho e outras características suficientes para facilitar a conexão eficaz e realista a testes funcionais do TPP.</li>
+<li>Suporte: A instalação deve ter um nível apropriado de suporte para permitir a comunicação de problemas ou questões por TPPs para ASPSPs e fornecer soluções eficientes e eficazes. </li>
+<li>Documentação: ASPSPs devem publicar externamente um resumo das especificações da instalação de teste em seu site, incluindo detalhes de acesso e cobertura de teste. </li>
+</ul>
 
 <p>Os testes devem garantir escopo mínimo para cobrir todos os casos de uso e de requisitos de segurança, evidenciados de forma que seja possível garantir que o processo de homologação foi efetuado.
-    Os testes para TPPs devem acontecer em 3 etapas:
-    *   Testes de integração: Testes utilizando APIs de um Banco de exemplo no Sandbox do Diretório.
-    *   Testes no Ecossistema: Testes realizados no ecossistema apenas em Sandbox para validar novas funcionalidades ou melhorias.
-    *   Testes de primeira ocorrência: Testes baseados em acordos entre transmissoras e receptoras efetuados no ambiente de produção.</p>
+Os testes para TPPs devem acontecer em 3 etapas:</p>
 
-<p>Ainda, recomenda-se que seja feito o teste de conformidade ao FAPI, disponível em https://openid.net/certification/fapi_op_testing/ .</p>
+<ul>
+<li>Testes de integração: Testes utilizando APIs de um Banco de exemplo no Sandbox do Diretório.</li>
+<li>Testes no Ecossistema: Testes realizados no ecossistema apenas em Sandbox para validar novas funcionalidades ou melhorias.</li>
+<li>Testes de primeira ocorrência: Testes baseados em acordos entre transmissoras e receptoras efetuados no ambiente de produção.</li>
+</ul>
+
+<p>Ainda, recomenda-se que seja feito o teste de conformidade ao FAPI, disponível em  <a href='https://openid.net/certification/fapi_op_testing/'target="_blank">https://openid.net/certification/fapi_op_testing/</a>.</p>
 <h1 id='especificacoes-de-registro-de-participantes'>Especificações de registro de participantes</h1>
 <p>Live do Cadastramento - acesse neste link o tutorial em vídeo (link: <a href="https://www.youtube.com/watch?v=ARUcxUIL1DQ&feature=youtu.be">https://www.youtube.com/watch?v=ARUcxUIL1DQ&amp;feature=youtu.be</a>)</p>
 
