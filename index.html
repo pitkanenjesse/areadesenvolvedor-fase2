@@ -323,7 +323,7 @@
                     <a href="#seguranca-participantes-openid-connect-oidc" class="toc-h2 toc-link" data-title="OpenID Connect (OIDC)">OpenID Connect (OIDC)</a>
                   </li>
                   <li>
-                    <a href="#seguranca-participantes-fluxo-openid-connect-oidc" class="toc-h2 toc-link" data-title="Fluxo OpenID Connect (OIDC)">Fluxo OpenID Connect (OIDC)</a>
+                    <a href="#seguranca-participantes-jwt" class="toc-h2 toc-link" data-title="JWT">JWT</a>
                   </li>
                   <li>
                     <a href="#seguranca-guia-fluxo-openid-connect-oidc" class="toc-h2 toc-link" data-title="Fluxo OpenID Connect (OIDC)">Fluxo OpenID Connect (OIDC)</a>
@@ -2475,7 +2475,7 @@ Devido a ampla aplicação do uso do OAuth 2.0, as melhores práticas de seguran
 
 <p>Início do fluxo de uma API com a obtenção de um <em>Access Token</em>.</p>
 
-<p><img class='lazy' src='images/loading-e35b35a4.gif' data-src='images/security/Initial_API_Flow_Getting_Access_Token-2780c090.png'/></p>
+<p><img class='lazy' src='images/loading-e35b35a4.gif' data-src='images/security/Initial_API_Flow_Getting_Access_Token-23e01fc0.png'/></p>
 
 <p>Diagrama – Obtendo um <em>Access Token</em>.</p>
 
@@ -2554,30 +2554,114 @@ Pragma: no-cache<br></p>
 </span>
 </span></p>
 
-<h2 id='seguranca-participantes-fluxo-openid-connect-oidc'>Fluxo OpenID Connect (OIDC)</h2>
+<h2 id='seguranca-participantes-jwt'>JWT</h2>
 
-<p>O OpenID Connect define os seguintes fluxos: </p>
+<p>O formato JWT (JSON Web Token) é projetado para transmitir <em>claims</em> entre duas partes. O JWT consiste em um <em>Header</em>, um <em>payload</em> e uma assinatura. O cabeçalho do <em>ID Token</em> contém informações sobre o tipo de objeto (JWT) e o algoritmo de assinatura utilizado para proteger a integridade dos <em>claims</em> do <em>payload</em>. O algoritmo de assinatura exigido é o PS256 (RSASSA-PSS utilizando SHA-256 e MGF1 com SHA-256). A seção do <em>payload</em> contém as <em>claims</em> sobre um usuário e o evento de autenticação. A seção de assinatura contém uma assinatura digital com base no <em>payload</em> do <em>ID Token</em> e uma chave secreta conhecida pelo provedor OpenID. </p>
 
-<ul>
-<li><em>Authorization Code Flow</em>: Para autenticar um usuário, o <em>client</em> redireciona o usuário para um provedor de OpenID. O provedor OpenID autentica o usuário e redireciona o usuário de volta para o <em>client</em> com um código de autorização. O aplicativo usa o código de autorização para obter um <em>ID Token</em>, <em>Access Token</em> e, opcionalmente, um <em>Refresh Token</em> do <em>endpoint</em> do provedor OpenID. </li>
-<li><em>Implicit flow</em>: Todos os tokens são retornados pelo <em>endpoint</em> de autorização, o <em>Endpoint</em> de Token não é utilizado, esse tipo de fluxo é usado principalmente por <em>Clients</em> implementados em um navegador utilizando uma linguagem de script. O <em>Access Token</em> e o <em>ID Token</em> são devolvidos diretamente ao <em>Client</em>, que pode expô-los ao usuário final e aos aplicativos que têm acesso </li>
-<li><em>Hybrid flow</em>: O <em>Hybrid Flow</em>, combina elementos do <em>Authorization Code Flow</em> e <em>Implicit Flow</em>, esse modelo permite retornar um <em>ID Token</em> e um <em>Authorization Code</em> como uma resposta ao <em>front-end</em> do <em>client</em>, deixando o <em>backend</em> obter um <em>Access Token</em> e opcionalmente um <em>Refresh Token</em> do <em>endpoint</em> de token utilizando o <em>Authorization Code</em>. Esse padrão de autenticação foi escolhido como mandatório pelo Open Banking e pode ser observado no diagrama a seguir. </li>
-</ul>
+<p>O JWT é formado por três seções: <em>Header, Payload</em> e <em>Signature</em>.<br>
+O <em>Header</em> contém somente a informação tipo e algoritmo:</p>
 
-<p><img class='lazy' src='images/loading-e35b35a4.gif' data-src='images/security/Hybrid_Flow-59c3a369.png'/></p>
+<p><span style="background-color:black">
+<span style="color:white">
+{<br>
+    &quot;typ&quot;: &quot;JWT&quot;,<br>
+    &quot;alg&quot;: &quot; PS256&quot;<br>
+}<br>
+</span>
+</span></p>
 
-<p>Diagrama - Fluxo <em>Hybrid Flow</em></p>
+<h3 id='seguranca-participantes-jwt-payload'><em>Payload</em></h3>
 
-<ol>
-<li> Usuário acessa o aplicativo e faz requisições ao <em>Client</em>. </li>
-<li> <em>Client</em> redireciona a requisição de autenticação ao <em>Authorization Server</em>. </li>
-<li> O <em>Authorization Server</em> interage com o usuário com a requisição de autenticação e o consentimento sobre o escopo. </li>
-<li> Usuário efetua a autenticação e provê o consentimento, o <em>Authorization Server</em> cria ou atualiza uma sessão para o usuário. </li>
-<li> <em>Authorization Server</em> direciona o <em>End-User</em> de volta ao <em>client</em> com um código de autorização e, dependendo do tipo da resposta, com parâmetros adicionais. </li>
-<li> O <em>Client</em> solicita uma resposta ao <em>Authorization Server</em> com o código de autorização para obter os demais tokens. </li>
-<li> O <em>Authorization Server</em> responde com o <em>ID Token</em> e um <em>Access Token</em>. </li>
-<li> O <em>Client</em> valida o <em>ID Token</em> e busca o <em>Subject Identifier</em> do <em>End-User</em>. O <em>Authorization Server</em> deve suportar <em>request objects</em> conforme especificado na seção 6.1 (Request Object) do OIDC.</li>
-</ol>
+<p>O <em>Payload</em> é um objeto JSON com as <em>Claims</em> da entidade tratada, normalmente o usuário autenticado.<br>
+<em>Claims</em> são informações afirmadas sobre um sujeito, por exemplo um <em>ID Token</em>, pode conter uma <em>claim</em> chamada <em>name</em> que afirma que o usuário autenticado é quem diz ser. Em um JWT uma claim aparece como um par nome/valor em que o nome é sempre uma <em>string</em> e o valor pode conter qualquer conteúdo JSON.
+Essas <em>claims</em> podem ser de 3 tipos:</p>
+
+<p><em><strong>Reserved claims</strong></em>: São <em>claims</em> definidas pela especificação do JWT e contém atributos não obrigatórios (mais recomendados) que são usados na validação do token pelos protocolos de segurança das APIs. É possível verificar a lista completa de <em>Reserved Claims</em> em <a href='https://www.iana.org/assignments/jwt/jwt.xhtml#claims'target="_blank">[IANA JSON Web Token Claims Registry]</a>.</p>
+
+<p><span style="background-color:black">
+<span style="color:white">
+sub (subject) = Entidade à quem o token pertence, normalmente o ID do usuário;<br>
+iss (issuer) = Emissor do token;<br>
+exp (expiration) = Timestamp de quando o token irá expirar;<br>
+iat (issued at) = Timestamp de quando o token foi criado;<br>
+aud (audience) = Destinatário do token, representa a aplicação que irá usá-lo.<br>
+</span>
+</span></p>
+
+<p><em><strong>Public claims</strong></em>: atributos utilizados nas aplicações. Normalmente armazenamos as informações do usuário autenticado na aplicação.</p>
+
+<p><span style="background-color:black">
+<span style="color:white">
+name<br>
+roles<br>
+permissions<br>
+</span>
+</span></p>
+
+<p><em><strong>Private claims</strong></em>: são <em>claims</em> personalizadas e contém atributos definidos  para compartilhar informações entre aplicações.</p>
+
+<p><span style="background-color:black">
+<span style="color:white">
+{<br>
+    &quot;sub&quot;: &quot;1234567890&quot;,<br>
+    &quot;name&quot;: &quot;Jose Doe&quot;<br>
+    &quot;admin&quot;: &quot;true&quot;<br>
+}<br>
+</span>
+</span></p>
+
+<p>Conjunto de <em>claims</em> para um <em>ID Token</em> do Open Banking:</p>
+
+<p><span style="background-color:black">
+<span style="color:white">
+{<br>
+&quot; iss&quot;: Emissor do token<br>
+&quot;sub&quot;: Identificador único do subject<br>
+&quot;openbanking_intent_id&quot;: Intent ID da solicitação<br>
+&quot;aud&quot;: Público alvo para o qual o ID Token é destinado (deve incluir o Client ID)<br>
+&quot;exp&quot;: Data/hora de expiração do token<br>
+&quot;iat&quot;: Data/hora de emissão do token<br>
+&quot;auth_time&quot;: Data/hora de autenticação do End-user<br>
+&quot;nonce&quot;: Valor string que associa uma sessão do cliente com um ID Token usado para ajudar na mitigação de ataques de replay<br>
+&quot;acr&quot;: Authentication Context Class Reference<br>
+&quot;amr&quot;: Authentication Methods References<br>
+&quot;azp&quot;: Authorized party<br>
+&quot;s_hash&quot;: State hash value<br>
+&quot;at_hash&quot;: Access Token hash value<br>
+&quot;c_hash&quot;: Code hash value<br>
+}<br>
+</span>
+</span></p>
+
+<h3 id='seguranca-participantes-jwt-assinatura'>Assinatura</h3>
+
+<p>A assinatura é o <em>header</em> e o <em>payload</em> criptografados com um <em>secret</em>.</p>
+
+<p><span style="background-color:black">
+<span style="color:white">
+PS256-RSASSA-PSS(<br>
+base64UrlEncode(header) + &quot;.&quot; +<br>
+base64UrlEncode(payload),<br>
+secret)<br>
+</span>
+</span></p>
+
+<p>Para obter o token JWT, as três seções <em>(header, payload, signature)</em> são codificadas com Base64-URL e unidas por pontos.</p>
+
+<p><font size="6">
+<span style="color:red">eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9</span>.<span style="color:purple">eyJz</span><br>
+<span style="color:purple">dWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4g</span><br>
+<span style="color:purple">RG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ</span>.<span style="color:blue">SflKxwRJSM</span><br>
+<span style="color:blue">eKKF2QT4fwpMeJf36POk6yJV_adQssw5c</span><br>
+</font></p>
+
+<p>Este token JWT deve ser enviado no cabeçalho <em>Authentication</em> HTTP usando o esquema <em>Bearer</em>. O conteúdo do cabeçalho deve seguir este formato:</p>
+
+<p><span style="background-color:black">
+<span style="color:white">
+Authorization: Bearer <token>
+</span>
+</span></p>
 <h2 id='seguranca-guia-fluxo-openid-connect-oidc'>Fluxo OpenID Connect (OIDC)</h2>
 <p>O OpenID Connect define os seguintes fluxos: </p>
 
@@ -2587,7 +2671,7 @@ Pragma: no-cache<br></p>
 <li><em>Hybrid flow</em>: O <em>Hybrid Flow</em>, combina elementos do <em>Authorization Code Flow</em> e <em>Implicit Flow</em>, esse modelo permite retornar um <em>ID Token</em> e um <em>Authorization Code</em> como uma resposta ao <em>front-end</em> do <em>client</em>, deixando o <em>backend</em> obter um <em>Access Token</em> e opcionalmente um <em>Refresh Token</em> do <em>endpoint</em> de token utilizando o <em>Authorization Code</em>. Esse padrão de autenticação foi escolhido como mandatório pelo Open Banking e pode ser observado no diagrama a seguir. </li>
 </ul>
 
-<p><img class='lazy' src='images/loading-e35b35a4.gif' data-src='images/security/Hybrid_Flow-59c3a369.png'/></p>
+<p><img class='lazy' src='images/loading-e35b35a4.gif' data-src='images/security/Hybrid_Flow-fa9b68b4.png'/></p>
 
 <p>Diagrama - Fluxo <em>Hybrid Flow</em></p>
 
