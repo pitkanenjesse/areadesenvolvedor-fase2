@@ -127,14 +127,14 @@ A obtenção de um Certificado Digital pelo Diretório, compreende 3 etapas:
 
 ###	CSR
 
-Esse bloco consiste em um exemplo de como gerar o Certificate Signing Requests (CSR) para o PKI do Open Banking. 
-Existem vários utilitários para gerar CSRs para serem enviados a uma autoridade certificadora, neste exemplo vamos utilizar OpenSSL para demonstrar como um CSR válido é gerado para enviar ao Open Banking para emitir um certificado x509 de transporte ou assinatura.
-OpenSSL é compatível com Windows ou Linux, podendo ser emitido no sistema operacional preferido:
+Esse bloco consiste em um exemplo de como gerar o Certificate Signing Requests (CSR) para o PKI do Open Banking.<br>
+Existem vários utilitários para gerar CSRs para serem enviados a uma autoridade certificadora, neste exemplo vamos utilizar OpenSSL para demonstrar como um CSR válido é gerado para enviar ao Open Banking para emitir um certificado x509 de transporte ou assinatura.<br>
+OpenSSL é compatível com Windows ou Linux, podendo ser emitido no sistema operacional preferido:<br>
 
-Gerando CSR de transporte
+Gerando CSR de transporte<br>
 $ openssl req -new -config transporte.cnf -out transporte.csr -keyout transporte.key
 
-Gerando CSR de assinatura
+Gerando CSR de assinatura<br>
 $ openssl req -new -config assinatura.cnf -out assinatura.csr -keyout assinatura.key
 
 Exemplo
@@ -145,7 +145,7 @@ O CSR resultante deve ser carregado para o Open Banking PKI para emitir um certi
 
 ###	Perfil de solicitação de assinatura de certificado X509 de transporte
 
-Este bloco demonstra como gerar um CSR válido por um client que requer um Certificado de transporte X.509 utilizando um arquivo .cnf como base.
+Este bloco demonstra como gerar um CSR válido por um client que requer um Certificado de transporte X.509 utilizando um arquivo .cnf como base.<br>
 O seguinte arquivo de configuração é utilizado para gerar um CSR para um certificado de transporte usando OpenSSL.
 
 Arquivo CNF OPENSSL Transporte apenas de exemplo, as configurações podem variar de acordo com a Autoridade Certificadora e para quem será emitido o certificado, alterar os campos como CNPJ e NOME da instituição:
@@ -189,10 +189,10 @@ extendedKeyUsage = clientAuth, serverAuth<br>
 
 ###	Perfil de solicitação de assinatura de certificado X509 de assinatura
 
-Este bloco demonstra como gerar um CSR válido por um client que requer um Certificado de assinatura X.509 utilizando um arquivo .cnf como base.
-O seguinte arquivo de configuração é utilizado para gerar um CSR para um certificado de assinatura usando OpenSSL.
+Este bloco demonstra como gerar um CSR válido por um client que requer um Certificado de assinatura X.509 utilizando um arquivo .cnf como base.<br>
+O seguinte arquivo de configuração é utilizado para gerar um CSR para um certificado de assinatura usando OpenSSL.<br>
 
-Arquivo CNF OPENSSL de Assinatura apenas de exemplo, as configurações podem variar de acordo com a Autoridade Certificadora e para quem será emitido o certificado, alterar os campos como CNPJ e NOME da instituição::
+Arquivo CNF OPENSSL de Assinatura apenas de exemplo, as configurações podem variar de acordo com a Autoridade Certificadora e para quem será emitido o certificado, alterar os campos como CNPJ e NOME da instituição:<br>
 
 <span style="font-family: Courier New">
 \# OPENSSL CSR REQUEST CONFIGURATION FILE<br>
@@ -230,4 +230,3 @@ subjectKeyIdentifier = hash<br>
 O arquivo CSR OPENSSL resultante pode ser analisado com o seguinte comando:
 
 $ openssl req -new -config assinatura.cnf -out assinatura.csr -keyout assinatura.key
-
