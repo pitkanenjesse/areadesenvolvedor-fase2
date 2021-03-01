@@ -3079,36 +3079,36 @@ O seguinte arquivo de configuração é utilizado para gerar um CSR para um cert
 
 <p>Arquivo CNF OPENSSL de Assinatura apenas de exemplo, as configurações podem variar de acordo com a Autoridade Certificadora e para quem será emitido o certificado, alterar os campos como CNPJ e NOME da instituição::</p>
 
-<p># OPENSSL CSR REQUEST CONFIGURATION FILE
-# ======================================
-otherName = 2.16.76.1.3.3 
-otherName = 2.16.76.1.3.8
-subjectAltName=@san
-#CNPJ
-otherName.1=2.16.76.1.3.3;UTF8:64721803000118
-#Nome conforme consta no CNPJ
-otherName.2=2.16.76.1.3.8;UTF8:Nome da instituicao
-# OpenSSL may not recognize this OID so need to add.
-[ req ]
-default_bits = 2048
-#ou
-#default_bits = 4096
-# RSA key size
-encrypt_key = yes
-# Protect private key: yes or no. yes recommended
-default_md = sha256
-# MD to use. sha256 recommended
-utf8 = yes
-# Input is UTF-8.
-string_mask = utf8only
-# Emit UTF-8 strings
-distinguished_name = client_dn
-req_extensions = client_reqext
-[ client_dn ]
-countryName = &quot;BR&quot;
-[ client_reqext ]
-keyUsage = critical,digitalSignature,nonRepudiation
-subjectKeyIdentifier = hash</p>
+<p># OPENSSL CSR REQUEST CONFIGURATION FILE<br>
+# ======================================<br>
+otherName = 2.16.76.1.3.3<br>
+otherName = 2.16.76.1.3.8<br>
+subjectAltName=@san<br>
+#CNPJ<br>
+otherName.1=2.16.76.1.3.3;UTF8:64721803000118<br>
+#Nome conforme consta no CNPJ<br>
+otherName.2=2.16.76.1.3.8;UTF8:Nome da instituicao<br>
+# OpenSSL may not recognize this OID so need to add.<br>
+[ req ]<br>
+default_bits = 2048<br>
+#ou<br>
+#default_bits = 4096<br>
+# RSA key size<br>
+encrypt_key = yes<br>
+# Protect private key: yes or no. yes recommended<br>
+default_md = sha256<br>
+# MD to use. sha256 recommended<br>
+utf8 = yes<br>
+# Input is UTF-8.<br>
+string_mask = utf8only<br>
+# Emit UTF-8 strings<br>
+distinguished_name = client_dn<br>
+req_extensions = client_reqext<br>
+[ client_dn ]<br>
+countryName = &quot;BR&quot;<br>
+[ client_reqext ]<br>
+keyUsage = critical,digitalSignature,nonRepudiation<br>
+subjectKeyIdentifier = hash<br></p>
 
 <p>O arquivo CSR OPENSSL resultante pode ser analisado com o seguinte comando:</p>
 
