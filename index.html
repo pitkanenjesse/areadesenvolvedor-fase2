@@ -320,9 +320,6 @@
                     <a href="#seguranca-participantes-perfil-de-seguranca" class="toc-h2 toc-link" data-title="Perfil de segurança">Perfil de segurança</a>
                   </li>
                   <li>
-                    <a href="#seguranca-participantes-financial-grade-api-fapi" class="toc-h2 toc-link" data-title="Financial-grade API (FAPI)">Financial-grade API (FAPI)</a>
-                  </li>
-                  <li>
                     <a href="#seguranca-participantes-fluxos-de-autenticacao-e-autorizacao" class="toc-h2 toc-link" data-title="Fluxos de autenticação e autorização">Fluxos de autenticação e autorização</a>
                   </li>
                   <li>
@@ -2451,8 +2448,8 @@ Ao invés de utilizar credenciais fornecidas pelo proprietário do recurso, o <e
 <li><em>Authorization code</em>: É um código de autorização que representa o resultado do processo de autorização bem sucedido do usuário final e é utilizado pelo <em>client</em> para obter acesso e atualizar status dos tokens. </li>
 </ul>
 
-<p>É necessário a implementação de um <em>endpoint</em> adicional no <em>Authorization Server</em> que possibilita a revogação do <em>Access Token</em> e do <em>Refresh Token</em>. Um <em>request</em> de revogação invalidará um ou mais Tokens (se aplicável), baseados na mesma concessão de acesso, conforme <a href='https://tools.ietf.org/html/rfc7009'target="_blank">[RFC 7009]</a>.
-Também será adotado o <em>OAuth Token Introspection</em> que define um método para um recurso protegido consultar um <em>Authorization Server</em> sobre o estado e os metadados de um Token, conforme <a href='https://tools.ietf.org/html/rfc7662'target="_blank">[RFC 7662]</a>.
+<p>É necessário a implementação de um <em>endpoint</em> adicional no <em>Authorization Server</em> que possibilita a revogação do <em>Access Token</em> e do <em>Refresh Token</em>. Um <em>request</em> de revogação invalidará um ou mais Tokens (se aplicável), baseados na mesma concessão de acesso, conforme <a href='https://tools.ietf.org/html/rfc7009'target="_blank">[RFC 7009]</a>.<br>
+Também será adotado o <em>OAuth Token Introspection</em> que define um método para um recurso protegido consultar um <em>Authorization Server</em> sobre o estado e os metadados de um Token, conforme <a href='https://tools.ietf.org/html/rfc7662'target="_blank">[RFC 7662]</a>.<br>
 Devido a ampla aplicação do uso do OAuth 2.0, as melhores práticas de segurança do OAuth 2.0 estão em constate atualização e podem ser consultadas neste endereço <a href='https://tools.ietf.org/html/draft-ietf-oauth-security-topics-16'target="_blank">https://tools.ietf.org/html/draft-ietf-oauth-security-topics-16</a>.</p>
 
 <p>Início do fluxo de uma API com a obtenção de um <em>Access Token</em>.</p>
@@ -2475,7 +2472,7 @@ Devido a ampla aplicação do uso do OAuth 2.0, as melhores práticas de seguran
 </ol>
 <h3 id='seguranca-participantes-perfil-de-seguranca-openid-connect-oidc'>OpenID Connect (OIDC)</h3>
 <p>O OpenID Connect é uma camada de identidade sobre o protocolo OAuth 2.0, que permite a identificação de um usuário final com base na autenticação realizada por um <em>Authorization Server</em>. 
-OpenID Connect permite uma grande variedade de tipos de <em>clients</em>, sendo, <em>clients</em> Web, <em>clients</em> móveis e JavaScript, oferecendo suporte a recursos opcionais, como criptografia de dados de identidade, descoberta de provedores de OpenID e gerenciamento de sessão.
+OpenID Connect permite uma grande variedade de tipos de <em>clients</em>, sendo, <em>clients</em> Web, <em>clients</em> móveis e JavaScript, oferecendo suporte a recursos opcionais, como criptografia de dados de identidade, descoberta de provedores de OpenID e gerenciamento de sessão.<br>
 Existem três papéis envolvendo uma solução de OIDC: </p>
 
 <ul>
@@ -2503,12 +2500,13 @@ Existem três papéis envolvendo uma solução de OIDC: </p>
 </span>
 </span></p>
 
-<p><em>UserInfo Endpoint</em>: Retorna <em>claims</em> sobre um usuário autenticado. Chamar o <em>endpoint</em> requer um <em>Access Token</em> e as <em>claims</em> retornadas são regidos pelo <em>Access Token</em>.
-Exemplo de resposta bem-sucedida  contendo um <em>ID Token</em> assinado:
-HTTP/1.1 200 OK
-Content-Type: application/json
-Cache-Control: no-store
-Pragma: no-cache</p>
+<p><em>UserInfo Endpoint</em>: Retorna <em>claims</em> sobre um usuário autenticado. Chamar o <em>endpoint</em> requer um <em>Access Token</em> e as <em>claims</em> retornadas são regidos pelo <em>Access Token</em>.<br>
+Exemplo de resposta bem-sucedida  contendo um <em>ID Token</em> assinado:<br></p>
+
+<p>HTTP/1.1 200 OK<br>
+Content-Type: application/json<br>
+Cache-Control: no-store<br>
+Pragma: no-cache<br></p>
 
 <p><span style="background-color:black">
 <span style="color:white">
@@ -2533,7 +2531,7 @@ Pragma: no-cache</p>
 <h3 id='seguranca-participantes-perfil-de-seguranca-jwt'>JWT</h3>
 <p>O formato JWT (JSON Web Token) é projetado para transmitir <em>claims</em> entre duas partes. O JWT consiste em um <em>Header</em>, um <em>payload</em> e uma assinatura. O cabeçalho do <em>ID Token</em> contém informações sobre o tipo de objeto (JWT) e o algoritmo de assinatura utilizado para proteger a integridade dos <em>claims</em> do <em>payload</em>. O algoritmo de assinatura exigido é o PS256 (RSASSA-PSS utilizando SHA-256 e MGF1 com SHA-256). A seção do <em>payload</em> contém as <em>claims</em> sobre um usuário e o evento de autenticação. A seção de assinatura contém uma assinatura digital com base no <em>payload</em> do <em>ID Token</em> e uma chave secreta conhecida pelo provedor OpenID. </p>
 
-<p>O JWT é formado por três seções: <em>Header, Payload</em> e <em>Signature</em>.
+<p>O JWT é formado por três seções: <em>Header, Payload</em> e <em>Signature</em>.<br>
 O <em>Header</em> contém somente a informação tipo e algoritmo:</p>
 
 <p><span style="background-color:black">
@@ -2545,7 +2543,7 @@ O <em>Header</em> contém somente a informação tipo e algoritmo:</p>
 </span>
 </span></p>
 <h3 id='seguranca-participantes-perfil-de-seguranca-payload'><em>Payload</em></h3>
-<p>O <em>Payload</em> é um objeto JSON com as <em>Claims</em> da entidade tratada, normalmente o usuário autenticado.
+<p>O <em>Payload</em> é um objeto JSON com as <em>Claims</em> da entidade tratada, normalmente o usuário autenticado.<br>
 <em>Claims</em> são informações afirmadas sobre um sujeito, por exemplo um <em>ID Token</em>, pode conter uma <em>claim</em> chamada <em>name</em> que afirma que o usuário autenticado é quem diz ser. Em um JWT uma claim aparece como um par nome/valor em que o nome é sempre uma <em>string</em> e o valor pode conter qualquer conteúdo JSON.
 Essas <em>claims</em> podem ser de 3 tipos:</p>
 
@@ -2656,24 +2654,19 @@ Authorization: Bearer <token>
 <li> O <em>Authorization Server</em> responde com o <em>ID Token</em> e um <em>Access Token</em>. </li>
 <li> O <em>Client</em> valida o <em>ID Token</em> e busca o <em>Subject Identifier</em> do <em>End-User</em>. O <em>Authorization Server</em> deve suportar <em>request objects</em> conforme especificado na seção 6.1 (Request Object) do OIDC. </li>
 </ol>
-<h2 id='seguranca-participantes-financial-grade-api-fapi'>Financial-grade API (FAPI)</h2>
-
+<h3 id='seguranca-participantes-perfil-de-seguranca-financial-grade-api-fapi'>Financial-grade API (FAPI)</h3>
 <p>Financial-grade API, o FAPI, é uma especificação técnica desenvolvida pelo Grupo de Trabalho Financial-grade API da OpenID Foundation. Ele utiliza OAuth 2.0 e OpenID Connect (OIDC) como sua base e define requisitos técnicos adicionais para o setor financeiro e outros setores que exigem maior segurança.</p>
 
 <p><img class='lazy' src='images/loading-e35b35a4.gif' data-src='images/security/FAPI-d288dca4.png'/></p>
-
-<h3 id='seguranca-participantes-financial-grade-api-fapi-fapi-read-and-write-api-security-profile'>FAPI: Read and Write API Security Profile</h3>
-
+<h3 id='seguranca-participantes-perfil-de-seguranca-fapi-read-and-write-api-security-profile'>FAPI: Read and Write API Security Profile</h3>
 <p>É obrigatório o uso do perfil de segurança FAPI-Financial-grade API: Read and Write API Security Profile, referenciado no endereço: <a href='https://openid.net/specs/openid-financial-api-part-2-wd-06.html'target="_blank">https://openid.net/specs/openid-financial-api-part-2-wd-06.html</a>.</p>
-
-<h3 id='seguranca-participantes-financial-grade-api-fapi-fapi-ciba-client-initiated-backchannel-authentication-profile'>FAPI: CIBA-Client Initiated Backchannel Authentication Profile</h3>
-
+<h3 id='seguranca-participantes-perfil-de-seguranca-fapi-ciba-client-initiated-backchannel-authentication-profile'>FAPI: CIBA-Client Initiated Backchannel Authentication Profile</h3>
 <p>A autenticação pelo CIBA fornece um fluxo desacoplado, possibilitando autorizar um pagamento por exemplo em um terminal de ponto de venda ou em um posto de combustível.
 O perfil de segurança CIBA: Client Initiated Backchannel Authentication Profle será opcional pelos participantes do Open Banking, referenciado no endereço: <a href='https://openid.net/specs/openid-financial-api-ciba.html'target="_blank">https://openid.net/specs/openid-financial-api-ciba.html</a>.</p>
 
 <h2 id='seguranca-participantes-fluxos-de-autenticacao-e-autorizacao'>Fluxos de autenticação e autorização</h2>
 
-<p>Um Autorizador deve usar o protocolo <a href='https://openid.net/connect/'target="_blank">OpenID Connect (OIDC)</a> e o <a href='https://auth0.com/docs/protocols/protocol-oauth2'target="_blank">OAuth 2.0 Authorization Framework</a> para autenticar usuários e obter sua autorização para acessar recursos protegidos. 
+<p>Um Autorizador deve usar o protocolo <a href='https://openid.net/connect/'target="_blank">OpenID Connect (OIDC)</a> e o <a href='https://auth0.com/docs/protocols/protocol-oauth2'target="_blank">OAuth 2.0 Authorization Framework</a> para autenticar usuários e obter sua autorização para acessar recursos protegidos.<br>
 A autenticação e a autorização representam funções fundamentalmente diferentes, conforme comparativo abaixo:</p>
 
 <table><thead>
@@ -2781,7 +2774,7 @@ Executar um processo de autorização utilizando o padrão Lodging Intent e o Co
 
 <h2 id='seguranca-participantes-assinatura-de-mensagens'>Assinatura de mensagens</h2>
 
-<p>A assinatura de mensagens deve ser aplicada a APIs específicas, de acordo com a necessidade e a criticidade, levantamento a ser feito junto com o GT de Dados.
+<p>A assinatura de mensagens deve ser aplicada a APIs específicas, de acordo com a necessidade e a criticidade, levantamento a ser feito junto com o GT de Dados.<br>
 Para a assinatura de mensagens, deve ser suportado o uso de um JWT assinado (JWS).  JWS representa o conteúdo protegido com assinaturas digitais ou com Message Authentication Codes (MACs) utilizando estruturas de dados JSON, referenciado em [RFC 7515]. </p>
 
 <p><img class='lazy' src='images/loading-e35b35a4.gif' data-src='images/security/JWS-7563da2c.png'/></p>
@@ -3014,14 +3007,14 @@ No Brasil, a hierarquia da Certificação Digital obedece ao ICP-Brasil, que dev
 
 <h3 id='seguranca-participantes-certificados-csr'>CSR</h3>
 
-<p>Esse bloco consiste em um exemplo de como gerar o Certificate Signing Requests (CSR) para o PKI do Open Banking. 
-Existem vários utilitários para gerar CSRs para serem enviados a uma autoridade certificadora, neste exemplo vamos utilizar OpenSSL para demonstrar como um CSR válido é gerado para enviar ao Open Banking para emitir um certificado x509 de transporte ou assinatura.
-OpenSSL é compatível com Windows ou Linux, podendo ser emitido no sistema operacional preferido:</p>
+<p>Esse bloco consiste em um exemplo de como gerar o Certificate Signing Requests (CSR) para o PKI do Open Banking.<br>
+Existem vários utilitários para gerar CSRs para serem enviados a uma autoridade certificadora, neste exemplo vamos utilizar OpenSSL para demonstrar como um CSR válido é gerado para enviar ao Open Banking para emitir um certificado x509 de transporte ou assinatura.<br>
+OpenSSL é compatível com Windows ou Linux, podendo ser emitido no sistema operacional preferido:<br></p>
 
-<p>Gerando CSR de transporte
+<p>Gerando CSR de transporte<br>
 $ openssl req -new -config transporte.cnf -out transporte.csr -keyout transporte.key</p>
 
-<p>Gerando CSR de assinatura
+<p>Gerando CSR de assinatura<br>
 $ openssl req -new -config assinatura.cnf -out assinatura.csr -keyout assinatura.key</p>
 
 <p>Exemplo</p>
@@ -3032,7 +3025,7 @@ $ openssl req -new -config assinatura.cnf -out assinatura.csr -keyout assinatura
 
 <h3 id='seguranca-participantes-certificados-perfil-de-solicitacao-de-assinatura-de-certificado-x509-de-transporte'>Perfil de solicitação de assinatura de certificado X509 de transporte</h3>
 
-<p>Este bloco demonstra como gerar um CSR válido por um client que requer um Certificado de transporte X.509 utilizando um arquivo .cnf como base.
+<p>Este bloco demonstra como gerar um CSR válido por um client que requer um Certificado de transporte X.509 utilizando um arquivo .cnf como base.<br>
 O seguinte arquivo de configuração é utilizado para gerar um CSR para um certificado de transporte usando OpenSSL.</p>
 
 <p>Arquivo CNF OPENSSL Transporte apenas de exemplo, as configurações podem variar de acordo com a Autoridade Certificadora e para quem será emitido o certificado, alterar os campos como CNPJ e NOME da instituição:</p>
@@ -3076,10 +3069,10 @@ extendedKeyUsage = clientAuth, serverAuth<br>
 
 <h3 id='seguranca-participantes-certificados-perfil-de-solicitacao-de-assinatura-de-certificado-x509-de-assinatura'>Perfil de solicitação de assinatura de certificado X509 de assinatura</h3>
 
-<p>Este bloco demonstra como gerar um CSR válido por um client que requer um Certificado de assinatura X.509 utilizando um arquivo .cnf como base.
-O seguinte arquivo de configuração é utilizado para gerar um CSR para um certificado de assinatura usando OpenSSL.</p>
+<p>Este bloco demonstra como gerar um CSR válido por um client que requer um Certificado de assinatura X.509 utilizando um arquivo .cnf como base.<br>
+O seguinte arquivo de configuração é utilizado para gerar um CSR para um certificado de assinatura usando OpenSSL.<br></p>
 
-<p>Arquivo CNF OPENSSL de Assinatura apenas de exemplo, as configurações podem variar de acordo com a Autoridade Certificadora e para quem será emitido o certificado, alterar os campos como CNPJ e NOME da instituição::</p>
+<p>Arquivo CNF OPENSSL de Assinatura apenas de exemplo, as configurações podem variar de acordo com a Autoridade Certificadora e para quem será emitido o certificado, alterar os campos como CNPJ e NOME da instituição:<br></p>
 
 <p><span style="font-family: Courier New">
 # OPENSSL CSR REQUEST CONFIGURATION FILE<br>
@@ -3119,11 +3112,11 @@ subjectKeyIdentifier = hash<br>
 <p>$ openssl req -new -config assinatura.cnf -out assinatura.csr -keyout assinatura.key</p>
 
 <p><h2 id='seguranca-participantes-diretorio-de-participantes'>Diretório de participantes</h2><h3 id='seguranca-participantes-diretorio-de-participantes-introducao'>Introdução</h3>
-<p>O Diretório de Participantes do Open Banking é o principal componente de arquitetura que permite que Instituições Provedoras (TPPs) se registrem e iniciem interações por meio de APIs com Instituições Transmissoras (ASPSPs), também fornece um ambiente de testes.
-O Diretório é um serviço de gerenciamento de identidade e acesso que fornece informações de identidade que dão suporte aos participantes do Ecossistema do Open Banking.
-O Diretório de Participantes disponibiliza os recursos funcionais necessários para que as Instituições Provedoras (TPPs) possam se autenticar no Open Banking e também recursos para identificar as Instituições Transmissoras (ASPSPs). 
-O Registro dos Provedores é obrigatório para usar as APIs fornecidas pelas Instituições Transmissoras (ASPSPs).
-As instituições Transmissoras devem utilizar as informações técnicas contidas no Diretório para realizar o gerenciamento da identidade e da autorização das aplicações das instituições Participantes, que abrange a identificação, a autorização e a revogação de certificados utilizados no compartilhamento de dados e serviços do escopo do Open Banking.</p></p>
+<p>O Diretório de Participantes do Open Banking é o principal componente de arquitetura que permite que Instituições Provedoras (TPPs) se registrem e iniciem interações por meio de APIs com Instituições Transmissoras (ASPSPs), também fornece um ambiente de testes.<br>
+O Diretório é um serviço de gerenciamento de identidade e acesso que fornece informações de identidade que dão suporte aos participantes do Ecossistema do Open Banking.<br>
+O Diretório de Participantes disponibiliza os recursos funcionais necessários para que as Instituições Provedoras (TPPs) possam se autenticar no Open Banking e também recursos para identificar as Instituições Transmissoras (ASPSPs).<br>
+O Registro dos Provedores é obrigatório para usar as APIs fornecidas pelas Instituições Transmissoras (ASPSPs).<br>
+As instituições Transmissoras devem utilizar as informações técnicas contidas no Diretório para realizar o gerenciamento da identidade e da autorização das aplicações das instituições Participantes, que abrange a identificação, a autorização e a revogação de certificados utilizados no compartilhamento de dados e serviços do escopo do Open Banking.<br></p></p>
 
 <p>Recursos funcionais do Diretório de Participantes:
 * Gerenciar identidades e acesso: a capacidade de emitir e gerenciar registros de identidade para organizações e pessoas físicas que interagem com o Diretório.
@@ -3220,10 +3213,10 @@ Uma API de Registro dinâmico consiste em endpoints, que realizam a concessão d
 
 <h3 id='seguranca-participantes-diretorio-de-participantes-registro-manual-via-portal-do-desenvolvedor'>Registro Manual via Portal do Desenvolvedor</h3>
 
-<p>Para que uma TPP comece a consumir serviços de Open Banking, ela deve estar registrada no Diretório de Participantes junto ao órgão regulador que autoriza e supervisiona os serviços Open Banking fornecidos pela TPP.
-A realização de um registro manual deve ser feita apenas quando o registro dinâmico estiver indisponível, onde o TPP deverá solicitar via portal do ASPSP, na qual o ASPSP solicita informações do TPP através de um formulário durante o processo de inscrição e permite que o TPP utilize o ambiente de teste, sandbox e produção. 
-O ASPSP aprovará o TPP com base em suas informações e permitirá que os aplicativos usem as APIs.
-Segue um exemplo de processo de integração do TPP com o ASPSP via Portal do Desenvolvedor.</p>
+<p>Para que uma TPP comece a consumir serviços de Open Banking, ela deve estar registrada no Diretório de Participantes junto ao órgão regulador que autoriza e supervisiona os serviços Open Banking fornecidos pela TPP.<br>
+A realização de um registro manual deve ser feita apenas quando o registro dinâmico estiver indisponível, onde o TPP deverá solicitar via portal do ASPSP, na qual o ASPSP solicita informações do TPP através de um formulário durante o processo de inscrição e permite que o TPP utilize o ambiente de teste, sandbox e produção.<br>
+O ASPSP aprovará o TPP com base em suas informações e permitirá que os aplicativos usem as APIs.<br>
+Segue um exemplo de processo de integração do TPP com o ASPSP via Portal do Desenvolvedor.<br></p>
 
 <p><img class='lazy' src='images/loading-e35b35a4.gif' data-src='images/security/RegistroPortalDesenvolvedor-1ca65369.png'/></p>
 
@@ -3231,8 +3224,8 @@ Segue um exemplo de processo de integração do TPP com o ASPSP via Portal do De
 
 <h3 id='seguranca-participantes-diretorio-de-participantes-teste-e-homologacao'>Teste e homologação</h3>
 
-<p>A fase de teste e homologação, tem como finalidade, garantir que os participantes que desejam operar no Ecossistema do Open Banking, possam fazer isso de forma assertiva e segura. Isso incluí o suporte aos TPPs com a capacidade de testar seus produtos e serviços desde o lançamento, quanto nas atualizações, fornecendo uma série de ferramentas e infraestrutura no serviço de Diretório para garantir que seus produtos tenham sido testados tempestivamente antes de entrar em produção.
-É obrigatório o teste e a homologação para TPPs e ASPSPs. Instituições receptoras devem utilizar o serviço de Sandbox fornecido pelo Diretório.
+<p>A fase de teste e homologação, tem como finalidade, garantir que os participantes que desejam operar no Ecossistema do Open Banking, possam fazer isso de forma assertiva e segura. Isso incluí o suporte aos TPPs com a capacidade de testar seus produtos e serviços desde o lançamento, quanto nas atualizações, fornecendo uma série de ferramentas e infraestrutura no serviço de Diretório para garantir que seus produtos tenham sido testados tempestivamente antes de entrar em produção.<br>
+É obrigatório o teste e a homologação para TPPs e ASPSPs. Instituições receptoras devem utilizar o serviço de Sandbox fornecido pelo Diretório.<br>
 As ASPSPs devem prover um ambiente de teste que possibilite TPPs autorizados a realizarem testes de conexão e testes funcionais de seus produtos e serviços. Este recurso deve refletir ao máximo o ambiente de produção e deve fornecer o acesso aos desenvolvedores com os seguintes aspectos:</p>
 
 <ul>
@@ -3248,7 +3241,7 @@ As ASPSPs devem prover um ambiente de teste que possibilite TPPs autorizados a r
 <li>Documentação: ASPSPs devem publicar externamente um resumo das especificações da instalação de teste em seu site, incluindo detalhes de acesso e cobertura de teste. </li>
 </ul>
 
-<p>Os testes devem garantir escopo mínimo para cobrir todos os casos de uso e de requisitos de segurança, evidenciados de forma que seja possível garantir que o processo de homologação foi efetuado.
+<p>Os testes devem garantir escopo mínimo para cobrir todos os casos de uso e de requisitos de segurança, evidenciados de forma que seja possível garantir que o processo de homologação foi efetuado.<br>
 Os testes para TPPs devem acontecer em 3 etapas:</p>
 
 <ul>
@@ -3257,7 +3250,7 @@ Os testes para TPPs devem acontecer em 3 etapas:</p>
 <li>Testes de primeira ocorrência: Testes baseados em acordos entre transmissoras e receptoras efetuados no ambiente de produção.</li>
 </ul>
 
-<p>Ainda, recomenda-se que seja feito o teste de conformidade ao FAPI, disponível em  <a href='https://openid.net/certification/fapi_op_testing/'target="_blank">https://openid.net/certification/fapi_op_testing/</a>.</p>
+<p>Ainda, recomenda-se que seja feito o teste de conformidade ao FAPI, disponível em <a href='https://openid.net/certification/fapi_op_testing/'target="_blank">https://openid.net/certification/fapi_op_testing/</a>.</p>
 <h1 id='especificacoes-de-registro-de-participantes'>Especificações de registro de participantes</h1>
 <p>Live do Cadastramento - acesse neste link o tutorial em vídeo (link: <a href="https://www.youtube.com/watch?v=ARUcxUIL1DQ&feature=youtu.be">https://www.youtube.com/watch?v=ARUcxUIL1DQ&amp;feature=youtu.be</a>)</p>
 
