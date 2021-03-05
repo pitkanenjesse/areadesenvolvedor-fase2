@@ -2645,18 +2645,16 @@ Existem três papéis envolvendo uma solução de OIDC: </p>
 
 <p><span style="background-color:black">
 <span style="color:white">
-{<br>
-  &quot;iss&quot;: &quot;http://YOUR_DOMAIN/&quot;,<br>
-  &quot;sub&quot;: &quot;xpto|123456&quot;,<br>
-  &quot;aud&quot;: &quot;YOUR_CLIENT_ID&quot;,<br>
-  &quot;exp&quot;: 1311281970,<br>
-  &quot;iat&quot;: 1311280970,<br>
-  &quot;id&quot;: 1234567,<br>
-}<br>
+{&quot;iss&quot;: &quot;http://YOUR_DOMAIN/&quot;,<br>
+&quot;sub&quot;: &quot;xpto|123456&quot;,<br>
+&quot;aud&quot;: &quot;YOUR_CLIENT_ID&quot;,<br>
+&quot;exp&quot;: &quot;1311281970&quot;,<br>
+&quot;iat&quot;: &quot;1311280970&quot;,<br>
+&quot;id&quot;: &quot;1234567&quot;}<br>
 </span>
 </span></p>
 
-<p><em>UserInfo Endpoint</em>: Retorna <em>claims</em> sobre um usuário autenticado. Chamar o <em>endpoint</em> requer um <em>Access Token</em> e as <em>claims</em> retornadas são regidos pelo <em>Access Token</em>.<br>
+<p><em><strong>UserInfo Endpoint</strong></em>: Retorna <em>claims</em> sobre um usuário autenticado. Chamar o <em>endpoint</em> requer um <em>Access Token</em> e as <em>claims</em> retornadas são regidos pelo <em>Access Token</em>.<br>
 Exemplo de resposta bem-sucedida  contendo um <em>ID Token</em> assinado:<br></p>
 
 <p>HTTP/1.1 200 OK<br>
@@ -2666,21 +2664,20 @@ Pragma: no-cache<br></p>
 
 <p><span style="background-color:black">
 <span style="color:white">
-{<br>
-   &quot;access_token&quot;: &quot;SlAV32hkKG&quot;,<br>
-   &quot;token_type&quot;: &quot;Bearer&quot;,<br>
-   &quot;refresh_token&quot;: &quot;8xLOxBtZp8&quot;,<br>
-   &quot;expires_in&quot;: 3600,<br>
-   &quot;id_token&quot;: &quot;eyJhbGciOiJSUzI1NiIsImtpZCI6IjFlOWdkazcifQ.ewogImlzc<br>
-     yI6ICJodHRwOi8vc2VydmVyLmV4YW1wbGUuY29tIiwKICJzdWIiOiAiMjQ4Mjg5<br>
-     NzYxMDAxIiwKICJhdWQiOiAiczZCaGRSa3F0MyIsCiAibm9uY2UiOiAibi0wUzZ<br>
-     fV3pBMk1qIiwKICJleHAiOiAxMzExMjgxOTcwLAogImlhdCI6IDEzMTEyODA5Nz<br>
-     AKfQ.ggW8hZ1EuVLuxNuuIJKX_V8a_OMXzR0EHR9R6jgdqrOOF4daGU96Sr_P6q<br>
-     Jp6IcmD3HP99Obi1PRs-cwh3LO-p146waJ8IhehcwL7F09JdijmBqkvPeB2T9CJ<br>
-     NqeGpe-gccMg4vfKjkM8FcGvnzZUN4_KSP0aAp1tOJ1zZwgjxqGByKHiOtX7Tpd<br>
-     QyHE5lcMiKPXfEIQILVq0pc_E2DzL7emopWoaoZTF_m0_N0YzFC6g6EJbOEoRoS<br>
-     K5hoDalrcvRYLSrQAZZKflyuVCyixEoV9GfNQC3_osjzw2PAithfubEEBLuVVk4<br>
-     XUVrWOLrLl0nx7RkKU8NXNHq-rvKMzqg&quot;<br>
+{&quot;access_token&quot;: &quot;SlAV32hkKG&quot;,<br>
+&quot;token_type&quot;: &quot;Bearer&quot;,<br>
+&quot;refresh_token&quot;: &quot;8xLOxBtZp8&quot;,<br>
+&quot;expires_in&quot;: &quot;3600&quot;,<br>
+&quot;id_token&quot;: &quot;eyJhbGciOiJSUzI1NiIsImtpZCI6IjFlOWdkazcifQ.ewogImlzc<br>
+  yI6ICJodHRwOi8vc2VydmVyLmV4YW1wbGUuY29tIiwKICJzdWIiOiAiMjQ4Mjg5<br>
+  NzYxMDAxIiwKICJhdWQiOiAiczZCaGRSa3F0MyIsCiAibm9uY2UiOiAibi0wUzZ<br>
+  fV3pBMk1qIiwKICJleHAiOiAxMzExMjgxOTcwLAogImlhdCI6IDEzMTEyODA5Nz<br>
+  AKfQ.ggW8hZ1EuVLuxNuuIJKX_V8a_OMXzR0EHR9R6jgdqrOOF4daGU96Sr_P6q<br>
+  Jp6IcmD3HP99Obi1PRs-cwh3LO-p146waJ8IhehcwL7F09JdijmBqkvPeB2T9CJ<br>
+  NqeGpe-gccMg4vfKjkM8FcGvnzZUN4_KSP0aAp1tOJ1zZwgjxqGByKHiOtX7Tpd<br>
+  QyHE5lcMiKPXfEIQILVq0pc_E2DzL7emopWoaoZTF_m0_N0YzFC6g6EJbOEoRoS<br>
+  K5hoDalrcvRYLSrQAZZKflyuVCyixEoV9GfNQC3_osjzw2PAithfubEEBLuVVk4<br>
+  XUVrWOLrLl0nx7RkKU8NXNHq-rvKMzqg&quot;<br>
 }<br>
 </span>
 </span></p>
@@ -2764,7 +2761,7 @@ Essas <em>claims</em> podem ser de 3 tipos:</p>
 
 <p><span style="background-color:black">
 <span style="color:white">
-PS256-RSASSA-PSS(<br>
+PS256(<br>
 base64UrlEncode(header) + &quot;.&quot; +<br>
 base64UrlEncode(payload),<br>
 secret)<br>
