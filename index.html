@@ -2643,16 +2643,14 @@ Existem três papéis envolvendo uma solução de OIDC: </p>
 <li><em>ID Token</em>: Um token utilizado para transmitir <em>claims</em> sobre um evento de autenticação e um usuário autenticado <em>(End-user)</em> para um <em>client</em>. Tokens de identificação são codificados em JSON Web Token (JWT) e deve estar em conformidade com a LGPD.</li>
 </ul>
 
-<p><span style="background-color:black">
-<span style="color:white">
-{&quot;iss&quot;: &quot;http://YOUR_DOMAIN/&quot;,<br>
-&quot;sub&quot;: &quot;xpto|123456&quot;,<br>
-&quot;aud&quot;: &quot;YOUR_CLIENT_ID&quot;,<br>
-&quot;exp&quot;: &quot;1311281970&quot;,<br>
-&quot;iat&quot;: &quot;1311280970&quot;,<br>
-&quot;id&quot;: &quot;1234567&quot;}<br>
-</span>
-</span></p>
+<p><span style="font-family: Courier New">
+<strong>{&quot;iss&quot;: &quot;http://YOUR_DOMAIN/&quot;,</strong><br>
+<strong>&quot;sub&quot;: &quot;xpto|123456&quot;,</strong><br>
+<strong>&quot;aud&quot;: &quot;YOUR_CLIENT_ID&quot;,</strong><br>
+<strong>&quot;exp&quot;: &quot;1311281970&quot;,</strong><br>
+<strong>&quot;iat&quot;: &quot;1311280970&quot;,</strong><br>
+<strong>&quot;id&quot;: &quot;1234567&quot;}</strong><br>
+&lt;\span&gt;</p>
 
 <p><em><strong>UserInfo Endpoint</strong></em>: Retorna <em>claims</em> sobre um usuário autenticado. Chamar o <em>endpoint</em> requer um <em>Access Token</em> e as <em>claims</em> retornadas são regidos pelo <em>Access Token</em>.<br>
 Exemplo de resposta bem-sucedida  contendo um <em>ID Token</em> assinado:<br></p>
@@ -2662,8 +2660,7 @@ Content-Type: application/json<br>
 Cache-Control: no-store<br>
 Pragma: no-cache<br></p>
 
-<p><span style="background-color:black">
-<span style="color:white">
+<p><span style="font-family: Courier New">
 {&quot;access_token&quot;: &quot;SlAV32hkKG&quot;,<br>
 &quot;token_type&quot;: &quot;Bearer&quot;,<br>
 &quot;refresh_token&quot;: &quot;8xLOxBtZp8&quot;,<br>
@@ -2677,10 +2674,8 @@ Pragma: no-cache<br></p>
   NqeGpe-gccMg4vfKjkM8FcGvnzZUN4_KSP0aAp1tOJ1zZwgjxqGByKHiOtX7Tpd<br>
   QyHE5lcMiKPXfEIQILVq0pc_E2DzL7emopWoaoZTF_m0_N0YzFC6g6EJbOEoRoS<br>
   K5hoDalrcvRYLSrQAZZKflyuVCyixEoV9GfNQC3_osjzw2PAithfubEEBLuVVk4<br>
-  XUVrWOLrLl0nx7RkKU8NXNHq-rvKMzqg&quot;<br>
-}<br>
-</span>
-</span></p>
+  XUVrWOLrLl0nx7RkKU8NXNHq-rvKMzqg&quot;}<br>
+&lt;\span&gt;</p>
 
 <h2 id='seguranca-participantes-jwt'>JWT</h2>
 
