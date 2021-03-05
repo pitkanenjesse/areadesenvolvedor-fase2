@@ -2709,11 +2709,11 @@ Essas <em>claims</em> podem ser de 3 tipos:</p>
 
 <p><span style="background-color:black">
 <span style="color:white">
-sub (subject) = Entidade à quem o token pertence, normalmente o ID do usuário;<br>
-iss (issuer) = Emissor do token;<br>
-exp (expiration) = Timestamp de quando o token irá expirar;<br>
-iat (issued at) = Timestamp de quando o token foi criado;<br>
-aud (audience) = Destinatário do token, representa a aplicação que irá usá-lo.<br>
+{&quot;sub&quot;: &quot;Subject, entidade à quem o token pertence, normalmente o ID do usuário&quot;,<br>
+&quot;iss&quot;: &quot;Issuer, emissor do token&quot;,<br>
+&quot;exp&quot;: &quot;Expiration, timestamp de quando o token irá expirar&quot;,<br>
+&quot;iat&quot;: &quot;Issued at, timestamp de quando o token foi criado&quot;,<br>
+&quot;aud&quot;: &quot;Audience, destinatário do token, representa a aplicação que irá usá-lo&quot;}<br>
 </span>
 </span></p>
 
@@ -2721,9 +2721,9 @@ aud (audience) = Destinatário do token, representa a aplicação que irá usá-
 
 <p><span style="background-color:black">
 <span style="color:white">
-name<br>
-roles<br>
-permissions<br>
+{&quot;name&quot;: <br>
+&quot;roles&quot;: <br>
+&quot;permissions&quot;: }<br>
 </span>
 </span></p>
 
@@ -2741,7 +2741,7 @@ permissions<br>
 
 <p><span style="background-color:black">
 <span style="color:white">
-{&quot; iss&quot;: Emissor do token<br>
+{&quot;iss&quot;: Emissor do token<br>
 &quot;sub&quot;: Identificador único do subject<br>
 &quot;openbanking_intent_id&quot;: Intent ID da solicitação<br>
 &quot;aud&quot;: Público alvo para o qual o ID Token é destinado (deve incluir o Client ID)<br>
