@@ -22,11 +22,11 @@ Essas *claims* podem ser de 3 tipos:
 
 <span style="background-color:black">
 <span style="color:white">
-sub (subject) = Entidade à quem o token pertence, normalmente o ID do usuário;<br>
-iss (issuer) = Emissor do token;<br>
-exp (expiration) = Timestamp de quando o token irá expirar;<br>
-iat (issued at) = Timestamp de quando o token foi criado;<br>
-aud (audience) = Destinatário do token, representa a aplicação que irá usá-lo.<br>
+{"sub": "Subject, entidade à quem o token pertence, normalmente o ID do usuário",<br>
+"iss": "Issuer, emissor do token",<br>
+"exp": "Expiration, timestamp de quando o token irá expirar",<br>
+"iat": "Issued at, timestamp de quando o token foi criado",<br>
+"aud": "Audience, destinatário do token, representa a aplicação que irá usá-lo"}<br>
 </span>
 </span>
 
@@ -35,9 +35,9 @@ aud (audience) = Destinatário do token, representa a aplicação que irá usá-
 
 <span style="background-color:black">
 <span style="color:white">
-name<br>
-roles<br>
-permissions<br>
+{"name": <br>
+"roles": <br>
+"permissions": }<br>
 </span>
 </span>
 
@@ -55,7 +55,7 @@ Conjunto de *claims* para um *ID Token* do Open Banking:
 
 <span style="background-color:black">
 <span style="color:white">
-{" iss": Emissor do token<br>
+{"iss": Emissor do token<br>
 "sub": Identificador único do subject<br>
 "openbanking_intent_id": Intent ID da solicitação<br>
 "aud": Público alvo para o qual o ID Token é destinado (deve incluir o Client ID)<br>
