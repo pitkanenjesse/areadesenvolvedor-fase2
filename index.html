@@ -2777,7 +2777,7 @@ secret)<br>
 </span>
 </span></p>
 
-<p>Para obter o token JWT, as três seções <em>(header, payload, signature)</em> são codificadas com Base64-URL e unidas por pontos.</p>
+<p>Para obter o token JWT, as três seções <em>header</em> (vermelho), <em>payload</em> (roxo), e <em>signature</em> (azul) são codificadas com Base64-URL e unidas por pontos.</p>
 
 <p><font size="4">
 <span style="color:red">eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9</span>.<span style="color:purple">eyJz</span><br>
@@ -2785,6 +2785,10 @@ secret)<br>
 <span style="color:purple">RG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ</span>.<span style="color:blue">SflKxwRJSM</span><br>
 <span style="color:blue">eKKF2QT4fwpMeJf36POk6yJV_adQssw5c</span><br>
 </font></p>
+
+<p>eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9. -&gt; <em>Header</em> <br>
+eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ. -&gt; <em>Payload</em> <br>
+SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c -&gt; <em>Signature</em> <br></p>
 
 <p>Este token JWT deve ser enviado no cabeçalho <em>Authentication</em> HTTP usando o esquema <em>Bearer</em>. O conteúdo do cabeçalho deve seguir este formato:</p>
 
