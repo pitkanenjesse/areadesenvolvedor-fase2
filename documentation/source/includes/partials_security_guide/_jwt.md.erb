@@ -92,7 +92,7 @@ secret)<br>
 </span>
 </span>
 
-Para obter o token JWT, as três seções *(header, payload, signature)* são codificadas com Base64-URL e unidas por pontos.
+Para obter o token JWT, as três seções *header* (vermelho), *payload* (roxo), e *signature* (azul) são codificadas com Base64-URL e unidas por pontos.
 
 <font size="4">
 <span style="color:red">eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9</span>.<span style="color:purple">eyJz</span><br>
@@ -100,6 +100,10 @@ Para obter o token JWT, as três seções *(header, payload, signature)* são co
 <span style="color:purple">RG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ</span>.<span style="color:blue">SflKxwRJSM</span><br>
 <span style="color:blue">eKKF2QT4fwpMeJf36POk6yJV_adQssw5c</span><br>
 </font>
+
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9. -> *Header* <br>
+eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ. -> *Payload* <br>
+SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c -> *Signature* <br>
 
 Este token JWT deve ser enviado no cabeçalho *Authentication* HTTP usando o esquema *Bearer*. O conteúdo do cabeçalho deve seguir este formato:
 
