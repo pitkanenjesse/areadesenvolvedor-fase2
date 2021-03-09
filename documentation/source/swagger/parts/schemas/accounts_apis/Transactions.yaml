@@ -9,7 +9,12 @@ required:
   - amount
   - transactionDate
   - payer
-  - payee
+  - payeeCnpjCpf
+  - payerCheckDigit
+  - payerNumber
+  - payerBranchCode
+  - payerCompeCode
+  - payerPersonType
 properties:
   completedAuthorisedPaymentType:
     $ref: ../enum/EnumCompletedAuthorisedPaymentIndicator.yaml
