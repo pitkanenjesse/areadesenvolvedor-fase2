@@ -663,7 +663,12 @@ components:
                     - amount
                     - transactionDate
                     - payer
-                    - payee
+                    - payeeCnpjCpf
+                    - payerCheckDigit
+                    - payerNumber
+                    - payerBranchCode
+                    - payerCompeCode
+                    - payerPersonType
                   properties:
                     completedAuthorisedPaymentType:
                       type: string
