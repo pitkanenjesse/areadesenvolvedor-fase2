@@ -49,7 +49,7 @@ properties:
        LANCAMENTO_FUTURO - corresponde a data prevista de efetivação da transação
     example: "2021-01-07"
   payerPersonType:
-    $ref: ../enum/EnumPayerPersonTypeIndicator.yaml
+    $ref: ../enum/EnumPayerPersonType.yaml
   payerCompeCode:
     type: string
     maxLength: 3
