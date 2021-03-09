@@ -1,0 +1,7 @@
+name: fromDueDate
+description: Data inicial de filtragem.
+required: false
+in: query
+schema:
+  type: string
+  format: DateString

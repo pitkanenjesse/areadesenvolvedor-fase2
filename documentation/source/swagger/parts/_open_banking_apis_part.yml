@@ -2,272 +2,27 @@ openapi: 3.0.0
 info:
   title: APIs do Open Banking Brasil
   description: ""
-  version: 1.1.0-rc
+  version: 1.0.0
   contact:
-    email: apiteam@swagger.io
+    name: Governança do Open Banking Brasil - Interfaces
+    email: gt-interfaces@openbankingbr.org
+    url: https://openbanking-brasil.github.io/areadesenvolvedor/
 servers:
   - url: http://api.banco.com.br/open-banking
+    description: Servidor de Produção
+  - url: https://apih.banco.com.br/open-banking
+    description: Servidor de Homologação
 tags:
   - name: API - Dados Cadastrais
   - name: API - Cartão de Crédito
   - name: API - Contas
-  - name: API - Operações de Crédito
+  - name: API - Operações de Crédito - Empréstimos
+  - name: API - Operações de Crédito - Financiamentos
+  - name: API - Operações de Crédito - Adiantamento a Depositantes
+  - name: API - Operações de Crédito - Direitos Creditórios Descontados
 
 paths:
-  /customers/v1/business-customers/identification:
-    get:
-      tags:
-        - API - Dados Cadastrais
-      summary: Identificação Pessoa Jurídica
-      description: |
-        |Versão|
-        |:-----|
-        |1     |
-
-        ### Visão Geral
-
-        Obtém dados cadastrais relativos à identificação pessoa jurídica
-
-        Esta especificação inclui todos os itens relevantes que permitam a ação e o efeito de identificar de forma única a pessoa jurídica através de seus dados cadastrais.
-
-        Tags: [CPF - Cadastro de Pessoa Física (Cpf Number)](#glossarioCPF), [Identificação (Identification)](#glossarioIdentificacao), [Nome Civil Completo (Civil Name)](#glossarioNomeCivil), [Nome Social (Social Name)](#glossarioNomeSocial), [Razão Social (Company Name)](#glossarioRazaoSocial),
-              [CNPJ (CNPJ Number)](#glossarioCNPJ), [Marca (Brand)](#glossarioMarca) e [Instituição Financeira (Company)](#glossarioInstituicaoFinanceira).
-
-
-        ### Visão de alto de nível das estruturas de dados
-
-        <img class="lazy" src="images/loading.gif" data-src="images/tld/customers/TLD_Business_Customers_Identification_v2.png"/>
-
-        ### DER - Diagramas de Entidade e Relacionamento
-
-        * DER Conceitual
-
-        <img class="lazy" src="images/loading.gif" data-src="images/der/customers/DER_Business_Customers.png"/>
-
-        <a href="images/der/customers/DER_Business_Customers.png" target="_blank">Fazer download do DER Conceitual</a>
-
-        * DER Lógico
-
-        <img class="lazy" src="images/loading.gif" data-src="images/der/customers/DER_Business_Customers_Identification.v1.png"/>
-
-        <a href="images/der/customers/DER_Business_Customers_Identification.v1.png" target="_blank">Fazer download do DER Lógico</a>
-
-        ### Dicionário de dados
-
-        <a href="dictionary/business_customers_identification.csv" target="_blank">Fazer download do dicionário de dados</a>
-
-        <a href="dictionary/example/examples_business_customers_identification.csv" target="_blank">Fazer download dos exemplos</a>
-
-
-        ### Especificação em OAS 3.0
-
-        <a href="swagger/swagger_customers_apis.yaml">Download da Especificação (OAS 3.0)</a>
-
-      operationId: getBusinessCustomersIdentification
-      parameters:
-        - $ref: '#/components/parameters/page'
-        - $ref: '#/components/parameters/pageSize'
-      responses:
-        '200':
-          description: Método para obter os dados de identificação da pessoa jurídica na transmissora.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ResponseBusinessCustomersIdentification'
-        '400':
-          $ref: './schemas/ErrorHTTP.yaml#/400'
-        '401':
-          $ref: './schemas/ErrorHTTP.yaml#/401'
-        '403':
-          $ref: './schemas/ErrorHTTP.yaml#/403'
-        '404':
-          $ref: './schemas/ErrorHTTP.yaml#/404'
-        '405':
-          $ref: './schemas/ErrorHTTP.yaml#/405'
-        '406':
-          $ref: './schemas/ErrorHTTP.yaml#/406'
-        '410':
-          $ref: './schemas/ErrorHTTP.yaml#/410'
-        '422':
-          $ref: './schemas/ErrorHTTP.yaml#/422'
-        '429':
-          $ref: './schemas/ErrorHTTP.yaml#/429'
-        '500':
-          $ref: './schemas/ErrorHTTP.yaml#/500'
-        '503':
-          $ref: './schemas/ErrorHTTP.yaml#/503'
-        '504':
-          $ref: './schemas/ErrorHTTP.yaml#/504'
-
-  /customers/v1/business-customers/qualification:
-    get:
-      tags:
-        - API - Dados Cadastrais
-      summary: Qualificação Pessoa Jurídica
-      description: |
-        |Versão|
-        |:-----|
-        |1     |
-
-        ### Visão Geral
-
-        Obtém dados cadastrais relativos ao processo de qualificação pessoa jurídica
-
-        Esta especificação inclui todos os itens relevantes, que permitam as instituições apreciar, avaliar, caracterizar e classificar o cliente com a finalidade de conhecer o seu perfil de risco e sua capacidade econômico-financeira.
-
-        Tags: [CNAE (Cnae Code)](#glossarioCNAE), [CPF - Cadastro de Pessoa Física (Cpf Number)](#glossarioCPF), [Qualificação (Qualification)](#glossarioQualificacao),
-              [CNPJ (CNPJ Number)](#glossarioCNPJ), [Marca (Brand)](#glossarioMarca) e [Instituição Financeira (Company)](#glossarioInstituicaoFinanceira).
-
-        ### Visão de alto de nível das estruturas de dados
-
-        <img class="lazy" src="images/loading.gif" data-src="images/tld/customers/TLD_Business_Customers_Qualification_v2.png"/>
-
-        ### DER - Diagramas de Entidade e Relacionamento
-
-        * DER Conceitual
-
-        <img class="lazy" src="images/loading.gif" data-src="images/der/customers/DER_Business_Customers.png"/>
-
-        <a href="images/der/customers/DER_Business_Customers.png" target="_blank">Fazer download do DER Conceitual</a>
-
-        * DER Lógico
-
-        <img class="lazy" src="images/loading.gif" data-src="images/der/customers/DER_Business_Customers_Qualification.v1.png"/>
-
-        <a href="images/der/customers/DER_Business_Customers_Qualification.v1.png" target="_blank">Fazer download do DER Lógico</a>
-
-        ### Dicionário de dados
-
-        <a href="dictionary/business_customers_qualification.csv" target="_blank">Fazer download do dicionário de dados</a>
-
-        <a href="dictionary/example/examples_business_customers_qualification.csv" target="_blank">Fazer download dos exemplos</a>
-
-
-        ### Especificação em OAS 3.0
-
-        <a href="swagger/swagger_customers_apis.yaml">Download da Especificação (OAS 3.0)</a>
-
-      operationId: getBusinessCustomersQualification
-      parameters:
-        - $ref: '#/components/parameters/page'
-        - $ref: '#/components/parameters/pageSize'
-      responses:
-        '200':
-          description: Método para obter os dados de qualificação da pessoa jurídica na transmissora.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ResponseBusinessCustomersQualification'
-        '400':
-          $ref: './schemas/ErrorHTTP.yaml#/400'
-        '401':
-          $ref: './schemas/ErrorHTTP.yaml#/401'
-        '403':
-          $ref: './schemas/ErrorHTTP.yaml#/403'
-        '404':
-          $ref: './schemas/ErrorHTTP.yaml#/404'
-        '405':
-          $ref: './schemas/ErrorHTTP.yaml#/405'
-        '406':
-          $ref: './schemas/ErrorHTTP.yaml#/406'
-        '410':
-          $ref: './schemas/ErrorHTTP.yaml#/410'
-        '422':
-          $ref: './schemas/ErrorHTTP.yaml#/422'
-        '429':
-          $ref: './schemas/ErrorHTTP.yaml#/429'
-        '500':
-          $ref: './schemas/ErrorHTTP.yaml#/500'
-        '503':
-          $ref: './schemas/ErrorHTTP.yaml#/503'
-        '504':
-          $ref: './schemas/ErrorHTTP.yaml#/504'
-
-  /customers/v1/business-customers/financial-relation:
-    get:
-      tags:
-        - API - Dados Cadastrais
-      summary: Relacionamento Pessoa Jurídica
-      description: |
-        |Versão|
-        |:-----|
-        |1     |
-
-        ### Visão Geral
-
-        Obtém dados cadastrais relativos ao relacionamento pessoa jurídica com a sua instituição.
-
-        Considera-se relacionamento as informações que permitam conhecer desde quando a pessoa consultada é cliente da instituição, bem como um indicador dos produtos e serviços que ela consome atualmente.
-
-        Tags: [CPF - Cadastro de Pessoa Física (Cpf Number)](#glossarioCPF), [Nome Civil Completo (Civil Name)](#glossarioNomeCivil), [Nome Social (Social Name)](#glossarioNomeSocial), [Procurador (Procurator)](#glossarioProcurador), [Relacionamento (Financial Relation)](#glossarioRelacionamento), [Representante Legal (Legal Representative)](#glossarioRepresentanteLegal),
-              [CNPJ (CNPJ Number)](#glossarioCNPJ), [Marca (Brand)](#glossarioMarca) e [Instituição Financeira (Company)](#glossarioInstituicaoFinanceira).
-
-        ### Visão de alto de nível das estruturas de dados
-
-        <img class="lazy" src="images/loading.gif" data-src="images/tld/customers/TLD_Business_Customers_Financial_Relation_v2.png"/>
-
-        ### DER - Diagramas de Entidade e Relacionamento
-
-        * DER Conceitual
-
-        <img class="lazy" src="images/loading.gif" data-src="images/der/customers/DER_Business_Customers.png"/>
-
-        <a href="images/der/customers/DER_Business_Customers.png" target="_blank">Fazer download do DER Conceitual</a>
-
-        * DER Lógico
-
-        <img class="lazy" src="images/loading.gif" data-src="images/der/customers/DER_Business_Customers_FinancialRelation.v1.png"/>
-
-        <a href="images/der/customers/DER_Business_Customers_FinancialRelation.v1.png" target="_blank">Fazer download do DER Lógico</a>
-
-        ### Dicionário de dados
-
-        <a href="dictionary/business_customers_financial_relation.csv" target="_blank">Fazer download do dicionário de dados</a>
-
-        <a href="dictionary/example/examples_business_customers_financial_relation.csv" target="_blank">Fazer download dos exemplos</a>
-
-
-        ### Especificação em OAS 3.0
-
-        <a href="swagger/swagger_customers_apis.yaml">Download da Especificação (OAS 3.0)</a>
-
-      operationId: getBusinessCustomersFinancialRelation
-      parameters:
-        - $ref: '#/components/parameters/page'
-        - $ref: '#/components/parameters/pageSize'
-      responses:
-        '200':
-          description: Método para obter os dados de relacionamento financeiro da pessoa jurídica na transmissora.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ResponseBusinessCustomersFinancialRelation'
-        '400':
-          $ref: './schemas/ErrorHTTP.yaml#/400'
-        '401':
-          $ref: './schemas/ErrorHTTP.yaml#/401'
-        '403':
-          $ref: './schemas/ErrorHTTP.yaml#/403'
-        '404':
-          $ref: './schemas/ErrorHTTP.yaml#/404'
-        '405':
-          $ref: './schemas/ErrorHTTP.yaml#/405'
-        '406':
-          $ref: './schemas/ErrorHTTP.yaml#/406'
-        '410':
-          $ref: './schemas/ErrorHTTP.yaml#/410'
-        '422':
-          $ref: './schemas/ErrorHTTP.yaml#/422'
-        '429':
-          $ref: './schemas/ErrorHTTP.yaml#/429'
-        '500':
-          $ref: './schemas/ErrorHTTP.yaml#/500'
-        '503':
-          $ref: './schemas/ErrorHTTP.yaml#/503'
-        '504':
-          $ref: './schemas/ErrorHTTP.yaml#/504'
-
-  /customers/v1/personal-customers/identification:
+  /customers/v1/personal/identifications:
     get:
       tags:
         - API - Dados Cadastrais
@@ -279,7 +34,7 @@ paths:
 
         ### Visão Geral
 
-        Obtém dados cadastrais relativos à identificação pessoa natural
+        Obtém os registros de identificação da pessoa natural
 
         Esta especificação inclui todos os itens relevantes que permitam a ação e o efeito de identificar de forma única a pessoa natural através de seus dados cadastrais.
 
@@ -314,8 +69,13 @@ paths:
 
         <a href="swagger/swagger_customers_apis.yaml">Download da Especificação (OAS 3.0)</a>
 
-      operationId: getPersonalCustomersIdentification
+      operationId: getPersonalCustomersIdentifications
       parameters:
+        - $ref: '#/components/parameters/Authorization'
+        - $ref: '#/components/parameters/xFapiAuthDate'
+        - $ref: '#/components/parameters/xFapiCustomerIpAddress'
+        - $ref: '#/components/parameters/xFapiInteractionId'
+        - $ref: '#/components/parameters/xCustomerUserAgent'
         - $ref: '#/components/parameters/page'
         - $ref: '#/components/parameters/pageSize'
       responses:
@@ -337,20 +97,16 @@ paths:
           $ref: './schemas/ErrorHTTP.yaml#/405'
         '406':
           $ref: './schemas/ErrorHTTP.yaml#/406'
-        '410':
-          $ref: './schemas/ErrorHTTP.yaml#/410'
-        '422':
-          $ref: './schemas/ErrorHTTP.yaml#/422'
         '429':
           $ref: './schemas/ErrorHTTP.yaml#/429'
         '500':
           $ref: './schemas/ErrorHTTP.yaml#/500'
-        '503':
-          $ref: './schemas/ErrorHTTP.yaml#/503'
-        '504':
-          $ref: './schemas/ErrorHTTP.yaml#/504'
+      security:
+        - OpenId:
+            - openId
+            - customers
 
-  /customers/v1/personal-customers/qualification:
+  /customers/v1/personal/qualifications:
     get:
       tags:
         - API - Dados Cadastrais
@@ -362,12 +118,11 @@ paths:
 
         ### Visão Geral
 
-        Obtém dados cadastrais relativos ao processo de qualificação pessoa natural
+        Obtém os registros de qualificação da pessoa natural
 
         Esta especificação inclui todos os itens relevantes, que permitam as instituições apreciar, avaliar, caracterizar e classificar o cliente com a finalidade de conhecer o seu perfil de risco e sua capacidade econômico-financeira.
 
-        Tags: [CBO (Cbo Code)](#glossarioCBO), [CPF - Cadastro de Pessoa Física (Cpf Number)](#glossarioCPF), [Qualificação (Qualification)](#glossarioQualificacao),
-              [CNPJ (CNPJ Number)](#glossarioCNPJ), [Marca (Brand)](#glossarioMarca) e [Instituição Financeira (Company)](#glossarioInstituicaoFinanceira).
+        Tags: [CBO (Cbo Code)](#glossarioCBO), [CNPJ (CNPJ Number)](#glossarioCNPJ), [Código Ocupação Receita Federal – Receita Federal Code](#glossarioCodigoOcupacaoRF), [CPF - Cadastro de Pessoa Física (CPF Number)](#glossarioCPF), [Instituição Financeira (Company)](#glossarioInstituicaoFinanceira), [Marca (Brand)](#glossarioMarca) e [Qualificação (Qualification)](#glossarioQualificacao).
 
         ### Visão de alto de nível das estruturas de dados
 
@@ -398,8 +153,13 @@ paths:
 
         <a href="swagger/swagger_customers_apis.yaml">Download da Especificação (OAS 3.0)</a>
 
-      operationId: getPersonalCustomersQualification
+      operationId: getPersonalCustomersQualifications
       parameters:
+        - $ref: '#/components/parameters/Authorization'
+        - $ref: '#/components/parameters/xFapiAuthDate'
+        - $ref: '#/components/parameters/xFapiCustomerIpAddress'
+        - $ref: '#/components/parameters/xFapiInteractionId'
+        - $ref: '#/components/parameters/xCustomerUserAgent'
         - $ref: '#/components/parameters/page'
         - $ref: '#/components/parameters/pageSize'
       responses:
@@ -421,20 +181,16 @@ paths:
           $ref: './schemas/ErrorHTTP.yaml#/405'
         '406':
           $ref: './schemas/ErrorHTTP.yaml#/406'
-        '410':
-          $ref: './schemas/ErrorHTTP.yaml#/410'
-        '422':
-          $ref: './schemas/ErrorHTTP.yaml#/422'
         '429':
           $ref: './schemas/ErrorHTTP.yaml#/429'
         '500':
           $ref: './schemas/ErrorHTTP.yaml#/500'
-        '503':
-          $ref: './schemas/ErrorHTTP.yaml#/503'
-        '504':
-          $ref: './schemas/ErrorHTTP.yaml#/504'
+      security:
+        - OpenId:
+            - openId
+            - customers
 
-  /customers/v1/personal-customers/financial-relation:
+  /customers/v1/personal/finantial-relations:
     get:
       tags:
         - API - Dados Cadastrais
@@ -446,12 +202,11 @@ paths:
 
         ### Visão Geral
 
-        Obtém dados cadastrais relativos ao relacionamento da pessoa natural com a sua instituição.
+        Obtém os registros de relacionamentos com a instituição financeira e de representantes da pessoa natural.
 
         Considera-se relacionamento as informações que permitam conhecer desde quando a pessoa consultada é cliente da instituição, bem como um indicador dos produtos e serviços que ela consome atualmente.
 
-        Tags: [CPF - Cadastro de Pessoa Física (Cpf Number)](#glossarioCPF), [Nome Civil Completo (Civil Name)](#glossarioNomeCivil), [Nome Social (Social Name)](#glossarioNomeSocial), [Procurador (Procurator)](#glossarioProcurador), [Relacionamento (Financial Relation)](#glossarioRelacionamento), [Representante Legal (Legal Representative)](#glossarioRepresentanteLegal),
-              [CNPJ (CNPJ Number)](#glossarioCNPJ), [Marca (Brand)](#glossarioMarca) e [Instituição Financeira (Company)](#glossarioInstituicaoFinanceira).
+        Tags: [CNPJ (CNPJ Number)](#glossarioCNPJ), [CPF - Cadastro de Pessoa Física (CPF Number)](#glossarioCPF), [Instituição Financeira (Company)](#glossarioInstituicaoFinanceira), [Nome Civil Completo (Civil Name)](#glossarioNomeCivil), [Nome Social (Social Name)](#glossarioNomeSocial), [Procurador (Procurator)](#glossarioProcurador), [Relacionamento (Financial Relation)](#glossarioRelacionamento) e [Representante Legal (Legal Representative)](#glossarioRepresentanteLegal).
 
         ### Visão de alto de nível das estruturas de dados
 
@@ -482,8 +237,13 @@ paths:
 
         <a href="swagger/swagger_customers_apis.yaml">Download da Especificação (OAS 3.0)</a>
 
-      operationId: getPersonalCustomersFinancialRelation
+      operationId: getCustomersPersonalRelationships
       parameters:
+        - $ref: '#/components/parameters/Authorization'
+        - $ref: '#/components/parameters/xFapiAuthDate'
+        - $ref: '#/components/parameters/xFapiCustomerIpAddress'
+        - $ref: '#/components/parameters/xFapiInteractionId'
+        - $ref: '#/components/parameters/xCustomerUserAgent'
         - $ref: '#/components/parameters/page'
         - $ref: '#/components/parameters/pageSize'
       responses:
@@ -505,20 +265,267 @@ paths:
           $ref: './schemas/ErrorHTTP.yaml#/405'
         '406':
           $ref: './schemas/ErrorHTTP.yaml#/406'
-        '410':
-          $ref: './schemas/ErrorHTTP.yaml#/410'
-        '422':
-          $ref: './schemas/ErrorHTTP.yaml#/422'
         '429':
           $ref: './schemas/ErrorHTTP.yaml#/429'
         '500':
           $ref: './schemas/ErrorHTTP.yaml#/500'
-        '503':
-          $ref: './schemas/ErrorHTTP.yaml#/503'
-        '504':
-          $ref: './schemas/ErrorHTTP.yaml#/504'
+      security:
+        - OpenId:
+            - openId
+            - customers
 
-  /credit-card/v1/accounts/identification:
+  /customers/v1/business/identifications:
+    get:
+      tags:
+        - API - Dados Cadastrais
+      summary: Identificação Pessoa Jurídica
+      description: |
+        |Versão|
+        |:-----|
+        |1     |
+
+        ### Visão Geral
+
+        Obtém os registros de identificação da pessoa jurídica
+
+        Esta especificação inclui todos os itens relevantes que permitam a ação e o efeito de identificar de forma única a pessoa jurídica através de seus dados cadastrais.
+
+        Tags: [CNPJ (CNPJ Number)](#glossarioCNPJ), [CPF - Cadastro de Pessoa Física (CPF Number)](#glossarioCPF), [Identificação (Identification)](#glossarioIdentificacao), [Instituição Financeira (Company)](#glossarioInstituicaoFinanceira), [Marca (Brand)](#glossarioMarca), [Nome Civil Completo (Civil Name)](#glossarioNomeCivil), [Nome Social (Social Name)](#glossarioNomeSocial) e [Razão Social (Company Name)](#glossarioRazaoSocial).
+
+        ### Visão de alto de nível das estruturas de dados
+
+        <img class="lazy" src="images/loading.gif" data-src="images/tld/customers/TLD_Business_Customers_Identification_v2.png"/>
+
+        ### DER - Diagramas de Entidade e Relacionamento
+
+        * DER Conceitual
+
+        <img class="lazy" src="images/loading.gif" data-src="images/der/customers/DER_Business_Customers.png"/>
+
+        <a href="images/der/customers/DER_Business_Customers.png" target="_blank">Fazer download do DER Conceitual</a>
+
+        * DER Lógico
+
+        <img class="lazy" src="images/loading.gif" data-src="images/der/customers/DER_Business_Customers_Identification.v1.png"/>
+
+        <a href="images/der/customers/DER_Business_Customers_Identification.v1.png" target="_blank">Fazer download do DER Lógico</a>
+
+        ### Dicionário de dados
+
+        <a href="dictionary/business_customers_identification.csv" target="_blank">Fazer download do dicionário de dados</a>
+
+        <a href="dictionary/example/examples_business_customers_identification.csv" target="_blank">Fazer download dos exemplos</a>
+
+        ### Especificação em OAS 3.0
+
+        <a href="swagger/swagger_customers_apis.yaml">Download da Especificação (OAS 3.0)</a>
+
+      operationId: getBusinessCustomersIdentifications
+      parameters:
+        - $ref: '#/components/parameters/Authorization'
+        - $ref: '#/components/parameters/xFapiAuthDate'
+        - $ref: '#/components/parameters/xFapiCustomerIpAddress'
+        - $ref: '#/components/parameters/xFapiInteractionId'
+        - $ref: '#/components/parameters/xCustomerUserAgent'
+        - $ref: '#/components/parameters/page'
+        - $ref: '#/components/parameters/pageSize'
+      responses:
+        '200':
+          description: Método para obter os dados de identificação da pessoa jurídica na transmissora.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseBusinessCustomersIdentification'
+        '400':
+          $ref: './schemas/ErrorHTTP.yaml#/400'
+        '401':
+          $ref: './schemas/ErrorHTTP.yaml#/401'
+        '403':
+          $ref: './schemas/ErrorHTTP.yaml#/403'
+        '404':
+          $ref: './schemas/ErrorHTTP.yaml#/404'
+        '405':
+          $ref: './schemas/ErrorHTTP.yaml#/405'
+        '406':
+          $ref: './schemas/ErrorHTTP.yaml#/406'
+        '429':
+          $ref: './schemas/ErrorHTTP.yaml#/429'
+        '500':
+          $ref: './schemas/ErrorHTTP.yaml#/500'
+      security:
+        - OpenId:
+            - openId
+            - customers
+
+  /customers/v1/business/qualifications:
+    get:
+      tags:
+        - API - Dados Cadastrais
+      summary: Qualificação Pessoa Jurídica
+      description: |
+        |Versão|
+        |:-----|
+        |1     |
+
+        ### Visão Geral
+
+        Obtém os registros de qualificação da pessoa jurídica
+
+        Esta especificação inclui todos os itens relevantes, que permitam as instituições apreciar, avaliar, caracterizar e classificar o cliente com a finalidade de conhecer o seu perfil de risco e sua capacidade econômico-financeira.
+
+        Tags: [CNAE (Cnae Code)](#glossarioCNAE), [CNPJ (CNPJ Number)](#glossarioCNPJ), [CPF - Cadastro de Pessoa Física (CPF Number)](#glossarioCPF), [Instituição Financeira (Company)](#glossarioInstituicaoFinanceira), [Marca (Brand)](#glossarioMarca) e [Qualificação (Qualification)](#glossarioQualificacao).
+
+        ### Visão de alto de nível das estruturas de dados
+
+        <img class="lazy" src="images/loading.gif" data-src="images/tld/customers/TLD_Business_Customers_Qualification_v2.png"/>
+
+        ### DER - Diagramas de Entidade e Relacionamento
+
+        * DER Conceitual
+
+        <img class="lazy" src="images/loading.gif" data-src="images/der/customers/DER_Business_Customers.png"/>
+
+        <a href="images/der/customers/DER_Business_Customers.png" target="_blank">Fazer download do DER Conceitual</a>
+
+        * DER Lógico
+
+        <img class="lazy" src="images/loading.gif" data-src="images/der/customers/DER_Business_Customers_Qualification.v1.png"/>
+
+        <a href="images/der/customers/DER_Business_Customers_Qualification.v1.png" target="_blank">Fazer download do DER Lógico</a>
+
+        ### Dicionário de dados
+
+        <a href="dictionary/business_customers_qualification.csv" target="_blank">Fazer download do dicionário de dados</a>
+
+        <a href="dictionary/example/examples_business_customers_qualification.csv" target="_blank">Fazer download dos exemplos</a>
+
+
+        ### Especificação em OAS 3.0
+
+        <a href="swagger/swagger_customers_apis.yaml">Download da Especificação (OAS 3.0)</a>
+
+      operationId: getBusinessCustomersQualifications
+      parameters:
+        - $ref: '#/components/parameters/Authorization'
+        - $ref: '#/components/parameters/xFapiAuthDate'
+        - $ref: '#/components/parameters/xFapiCustomerIpAddress'
+        - $ref: '#/components/parameters/xFapiInteractionId'
+        - $ref: '#/components/parameters/xCustomerUserAgent'
+        - $ref: '#/components/parameters/page'
+        - $ref: '#/components/parameters/pageSize'
+      responses:
+        '200':
+          description: Método para obter os dados de qualificação da pessoa jurídica na transmissora.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseBusinessCustomersQualification'
+        '400':
+          $ref: './schemas/ErrorHTTP.yaml#/400'
+        '401':
+          $ref: './schemas/ErrorHTTP.yaml#/401'
+        '403':
+          $ref: './schemas/ErrorHTTP.yaml#/403'
+        '404':
+          $ref: './schemas/ErrorHTTP.yaml#/404'
+        '405':
+          $ref: './schemas/ErrorHTTP.yaml#/405'
+        '406':
+          $ref: './schemas/ErrorHTTP.yaml#/406'
+        '429':
+          $ref: './schemas/ErrorHTTP.yaml#/429'
+        '500':
+          $ref: './schemas/ErrorHTTP.yaml#/500'
+      security:
+        - OpenId:
+            - openId
+            - customers
+
+  /customers/v1/business/finantial-relations:
+    get:
+      tags:
+        - API - Dados Cadastrais
+      summary: Relacionamento Pessoa Jurídica
+      description: |
+        |Versão|
+        |:-----|
+        |1     |
+
+        ### Visão Geral
+
+        Obtém os registros de relacionamentos com a instituição financeira e de representantes da pessoa jurídica
+
+        Considera-se relacionamento as informações que permitam conhecer desde quando a pessoa consultada é cliente da instituição, bem como um indicador dos produtos e serviços que ela consome atualmente.
+
+        Tags: [CNPJ (CNPJ Number)](#glossarioCNPJ), [CPF - Cadastro de Pessoa Física (CPF Number)](#glossarioCPF), [Instituição Financeira (Company)](#glossarioInstituicaoFinanceira), [Marca (Brand)](#glossarioMarca), [Nome Civil Completo (Civil Name)](#glossarioNomeCivil), [Nome Social (Social Name)](#glossarioNomeSocial), [Procurador (Procurator)](#glossarioProcurador), [Relacionamento (Financial Relation)](#glossarioRelacionamento) e [Representante Legal (Legal Representative)](#glossarioRepresentanteLegal).
+
+        ### Visão de alto de nível das estruturas de dados
+
+        <img class="lazy" src="images/loading.gif" data-src="images/tld/customers/TLD_Business_Customers_Financial_Relation_v2.png"/>
+
+        ### DER - Diagramas de Entidade e Relacionamento
+
+        * DER Conceitual
+
+        <img class="lazy" src="images/loading.gif" data-src="images/der/customers/DER_Business_Customers.png"/>
+
+        <a href="images/der/customers/DER_Business_Customers.png" target="_blank">Fazer download do DER Conceitual</a>
+
+        * DER Lógico
+
+        <img class="lazy" src="images/loading.gif" data-src="images/der/customers/DER_Business_Customers_FinancialRelation.v1.png"/>
+
+        <a href="images/der/customers/DER_Business_Customers_FinancialRelation.v1.png" target="_blank">Fazer download do DER Lógico</a>
+
+        ### Dicionário de dados
+
+        <a href="dictionary/business_customers_financial_relation.csv" target="_blank">Fazer download do dicionário de dados</a>
+
+        <a href="dictionary/example/examples_business_customers_financial_relation.csv" target="_blank">Fazer download dos exemplos</a>
+
+
+        ### Especificação em OAS 3.0
+
+        <a href="swagger/swagger_customers_apis.yaml">Download da Especificação (OAS 3.0)</a>
+
+      operationId: getBusinessCustomersRelationships
+      parameters:
+        - $ref: '#/components/parameters/Authorization'
+        - $ref: '#/components/parameters/xFapiAuthDate'
+        - $ref: '#/components/parameters/xFapiCustomerIpAddress'
+        - $ref: '#/components/parameters/xFapiInteractionId'
+        - $ref: '#/components/parameters/xCustomerUserAgent'
+        - $ref: '#/components/parameters/page'
+        - $ref: '#/components/parameters/pageSize'
+      responses:
+        '200':
+          description: Método para obter os dados de relacionamento financeiro da pessoa jurídica na transmissora.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseBusinessCustomersFinancialRelation'
+        '400':
+          $ref: './schemas/ErrorHTTP.yaml#/400'
+        '401':
+          $ref: './schemas/ErrorHTTP.yaml#/401'
+        '403':
+          $ref: './schemas/ErrorHTTP.yaml#/403'
+        '404':
+          $ref: './schemas/ErrorHTTP.yaml#/404'
+        '405':
+          $ref: './schemas/ErrorHTTP.yaml#/405'
+        '406':
+          $ref: './schemas/ErrorHTTP.yaml#/406'
+        '429':
+          $ref: './schemas/ErrorHTTP.yaml#/429'
+        '500':
+          $ref: './schemas/ErrorHTTP.yaml#/500'
+      security:
+        - OpenId:
+            - openId
+            - customers
+
+  /credit-cards-accounts/v1/accounts/{creditCardAccountId}:
     get:
       tags:
         - API - Cartão de Crédito
@@ -530,7 +537,7 @@ paths:
 
         ### Visão Geral
 
-        Obtém dados relativos ao conjunto de informações referentes à identificação da conta de pagamento pós-paga.
+        Obtém dados relativos ao conjunto de informações referentes à identificação da conta de pagamento pós-paga
 
         Tags: [Bandeira (Credit Card Network)](#glossarioBandeira), [Cartão Múltiplo (Multiple CreditCard)](#glossarioCartaoMultiplo), [CNPJ (CNPJ Number)](#glossarioCNPJ) e [Conta de pagamento pós-paga (Credit Card)](#glossarioContaPagamentoPosPaga).
 
@@ -563,13 +570,17 @@ paths:
 
         <a href="swagger/swagger_credit_cards_apis.yaml">Download da Especificação (OAS 3.0)</a>
 
-      operationId: getCreditCardAccountsIdentification
+      operationId: getAccountsCreditCardAccountId
       parameters:
-        - $ref: '#/components/parameters/page'
-        - $ref: '#/components/parameters/pageSize'
+        - $ref: "#/components/parameters/Authorization"
+        - $ref: "#/components/parameters/xFapiAuthDate"
+        - $ref: "#/components/parameters/xFapiCustomerIpAddress"
+        - $ref: "#/components/parameters/xFapiInteractionId"
+        - $ref: "#/components/parameters/xCustomerUserAgent"
+        - $ref: '#/components/parameters/creditCardAccountId'
       responses:
         '200':
-          description: Dados relativos ao conjunto de informações referentes à identificação da conta de pagamento pós-paga.
+          description: Dados de identificação da conta identificada por creditCardAccountId obtidos com sucesso.
           content:
             application/json:
               schema:
@@ -586,20 +597,16 @@ paths:
           $ref: './schemas/ErrorHTTP.yaml#/405'
         '406':
           $ref: './schemas/ErrorHTTP.yaml#/406'
-        '410':
-          $ref: './schemas/ErrorHTTP.yaml#/410'
-        '422':
-          $ref: './schemas/ErrorHTTP.yaml#/422'
         '429':
           $ref: './schemas/ErrorHTTP.yaml#/429'
         '500':
           $ref: './schemas/ErrorHTTP.yaml#/500'
-        '503':
-          $ref: './schemas/ErrorHTTP.yaml#/503'
-        '504':
-          $ref: './schemas/ErrorHTTP.yaml#/504'
+      security:
+        - OpenId:
+            - openId
+            - credit-card
 
-  /credit-card/v1/accounts/limits:
+  /credit-cards-accounts/v1/accounts/{creditCardAccountId}/limits:
     get:
       tags:
         - API - Cartão de Crédito
@@ -644,13 +651,17 @@ paths:
 
         <a href="swagger/swagger_credit_cards_apis.yaml">Download da Especificação (OAS 3.0)</a>
 
-      operationId: getCreditCardAccountsLimits
+      operationId: getAccountsCreditCardAccountIdLimits
       parameters:
-        - $ref: '#/components/parameters/page'
-        - $ref: '#/components/parameters/pageSize'
+        - $ref: "#/components/parameters/Authorization"
+        - $ref: "#/components/parameters/xFapiAuthDate"
+        - $ref: "#/components/parameters/xFapiCustomerIpAddress"
+        - $ref: "#/components/parameters/xFapiInteractionId"
+        - $ref: "#/components/parameters/xCustomerUserAgent"
+        - $ref: '#/components/parameters/creditCardAccountId'
       responses:
         '200':
-          description: Dados dos limites de Crédito Total e por Modalidade de Crédito relativos à conta de pagamento pós-paga.
+          description: Dados dos limites da conta identificada por creditCardAccountId obtidos com sucesso.
           content:
             application/json:
               schema:
@@ -667,20 +678,16 @@ paths:
           $ref: './schemas/ErrorHTTP.yaml#/405'
         '406':
           $ref: './schemas/ErrorHTTP.yaml#/406'
-        '410':
-          $ref: './schemas/ErrorHTTP.yaml#/410'
-        '422':
-          $ref: './schemas/ErrorHTTP.yaml#/422'
         '429':
           $ref: './schemas/ErrorHTTP.yaml#/429'
         '500':
           $ref: './schemas/ErrorHTTP.yaml#/500'
-        '503':
-          $ref: './schemas/ErrorHTTP.yaml#/503'
-        '504':
-          $ref: './schemas/ErrorHTTP.yaml#/504'
+      security:
+        - OpenId:
+            - openId
+            - credit-card
 
-  /credit-card/v1/accounts/transactions:
+  /credit-cards-accounts/v1/accounts/{creditCardAccountId}/transactions:
     get:
       tags:
         - API - Cartão de Crédito
@@ -725,13 +732,23 @@ paths:
 
         <a href="swagger/swagger_credit_cards_apis.yaml">Download da Especificação (OAS 3.0)</a>
 
-      operationId: getCreditCardAccountsTransaction
+      operationId: getAccountsCreditCardAccountIdTransactions
       parameters:
+        - $ref: "#/components/parameters/Authorization"
+        - $ref: "#/components/parameters/xFapiAuthDate"
+        - $ref: "#/components/parameters/xFapiCustomerIpAddress"
+        - $ref: "#/components/parameters/xFapiInteractionId"
+        - $ref: "#/components/parameters/xCustomerUserAgent"
+        - $ref: '#/components/parameters/creditCardAccountId'
         - $ref: '#/components/parameters/page'
         - $ref: '#/components/parameters/pageSize'
+        - $ref: '#/components/parameters/fromTransactionDate'
+        - $ref: '#/components/parameters/toTransactionDate'
+        - $ref: '#/components/parameters/creditCardTransactionType'
+        - $ref: '#/components/parameters/creditCardPayeeMCC'
       responses:
         '200':
-          description: Dados das transações relativas à conta de pagamento pós-paga.
+          description: Dados das lista de transações da conta identificada por creditCardAccountId obtidos com sucesso.
           content:
             application/json:
               schema:
@@ -748,20 +765,16 @@ paths:
           $ref: './schemas/ErrorHTTP.yaml#/405'
         '406':
           $ref: './schemas/ErrorHTTP.yaml#/406'
-        '410':
-          $ref: './schemas/ErrorHTTP.yaml#/410'
-        '422':
-          $ref: './schemas/ErrorHTTP.yaml#/422'
         '429':
           $ref: './schemas/ErrorHTTP.yaml#/429'
         '500':
           $ref: './schemas/ErrorHTTP.yaml#/500'
-        '503':
-          $ref: './schemas/ErrorHTTP.yaml#/503'
-        '504':
-          $ref: './schemas/ErrorHTTP.yaml#/504'
+      security:
+        - OpenId:
+            - openId
+            - credit-card
 
-  /credit-card/v1/accounts/bill:
+  /credit-cards-accounts/v1/accounts/{creditCardAccountId}/bills:
     get:
       tags:
         - API - Cartão de Crédito
@@ -805,13 +818,21 @@ paths:
 
         <a href='swagger/swagger_credit_cards_apis.yaml'>Download da Especificação (OAS 3.0)</a>
 
-      operationId: "getCrediCardsBilling"
+      operationId: "getAccountsCreditCardAccountIdBills"
       parameters:
-        - $ref: "#/components/parameters/page"
-        - $ref: "#/components/parameters/pageSize"
+        - $ref: "#/components/parameters/Authorization"
+        - $ref: "#/components/parameters/xFapiAuthDate"
+        - $ref: "#/components/parameters/xFapiCustomerIpAddress"
+        - $ref: "#/components/parameters/xFapiInteractionId"
+        - $ref: "#/components/parameters/xCustomerUserAgent"
+        - $ref: '#/components/parameters/creditCardAccountId'
+        - $ref: '#/components/parameters/page'
+        - $ref: '#/components/parameters/pageSize'
+        - $ref: '#/components/parameters/fromDueDate'
+        - $ref: '#/components/parameters/toDueDate'
       responses:
         '200':
-          description: Dados referentes à fatura da conta de pagamento pós-paga.
+          description: Dados referentes à lista de faturas da conta identificada por creditCardAccountId obtidos com sucesso.
           content:
             application/json:
               schema:
@@ -828,20 +849,108 @@ paths:
           $ref: './schemas/ErrorHTTP.yaml#/405'
         '406':
           $ref: './schemas/ErrorHTTP.yaml#/406'
-        '410':
-          $ref: './schemas/ErrorHTTP.yaml#/410'
-        '422':
-          $ref: './schemas/ErrorHTTP.yaml#/422'
         '429':
           $ref: './schemas/ErrorHTTP.yaml#/429'
         '500':
           $ref: './schemas/ErrorHTTP.yaml#/500'
-        '503':
-          $ref: './schemas/ErrorHTTP.yaml#/503'
-        '504':
-          $ref: './schemas/ErrorHTTP.yaml#/504'
+      security:
+        - OpenId:
+            - openId
+            - credit-card
 
-  /accounts/v1/accounts/identification:
+  /accounts/v1/accounts:
+    get:
+      tags:
+        - API - Contas
+      summary: Contas
+      description: |
+        |Versão|
+        |:-----|
+        |1     |
+
+        ### Visão Geral
+
+        Obtém a lista de contas consentidas pelo cliente.
+
+        Método para obter a lista de contas depósito à vista, poupança e pagamento pré-pagas mantidas pelo cliente na instituição transmissora e para as quais ele tenha fornecido consentimento.
+
+        Tags: [Código Número (ISPB) (IspbCode)](#glossarioISPB), [Conta individual (Sole Account)](#glossarioContaIndividual), [Conta Conjunta Não-solidária (Joint Account And)](#glossarioContaConjuntaNaoSolidaria), [Conta Conjunta Solidária (Joint Account Or)](#glossarioContaConjuntaSolidaria),
+              [CNPJ (CNPJ Number)](#glossarioCNPJ), [Marca (Brand)](#glossarioMarca), [Instituição Financeira (Company)](#glossarioInstituicaoFinanceira), [Agencia (Agency)](#glossarioAgencia), [Conta depósito à vista (Current Account)](#glossarioContaDepositoVista), [Conta Poupança (Savings Account)](#glossarioContaPoupanca),
+              [Conta de Pagamento Pré-Paga (Prepayd Payment Account)](#glossarioContaPagamentoPrePaga).
+
+        ### Visão de alto de nível das estruturas de dados
+
+        <img class="lazy" src="images/loading.gif" data-src="images/tld/accounts/TLD_Accounts_Lista.png"/>
+
+        ### DER - Diagramas de Entidade e Relacionamento
+
+        * DER Conceitual
+
+        <img class="lazy" src="images/loading.gif" data-src="images/der/accounts/DER_Accounts.v2.png"/>
+
+        <a href="images/der/accounts/DER_Accounts.v2.png" target="_blank">Fazer download do DER Conceitual</a>
+
+        * DER Lógico
+
+        <img class="lazy" src="images/loading.gif" data-src="images/der/accounts/DER_Lista_Accounts.png"/>
+
+        <a href="images/der/accounts/DER_Lista_Accounts.png" target="_blank">Fazer download do DER Lógico</a>
+
+        ### Dicionário de dados
+
+        <a href='dictionary/accounts.csv' target="_blank">Fazer download do dicionário de dados</a>
+
+        <a href="dictionary/example/examples_accounts.csv" target="_blank">Fazer download dos exemplos</a>
+
+        ### Especificação em OAS 3.0
+
+        <a href='swagger/swagger_accounts_apis.yaml'>Download da Especificação (OAS 3.0)</a>
+
+      operationId: "getAccounts"
+      parameters:
+        - $ref: "#/components/parameters/Authorization"
+        - $ref: "#/components/parameters/xFapiAuthDate"
+        - $ref: "#/components/parameters/xFapiCustomerIpAddress"
+        - $ref: "#/components/parameters/xFapiInteractionId"
+        - $ref: "#/components/parameters/xCustomerUserAgent"
+        - $ref: "#/components/parameters/accountId"
+        - $ref: "#/components/parameters/accountsCompeCode"
+        - $ref: "#/components/parameters/accountsBranchCode"
+        - $ref: "#/components/parameters/accountsNumber"
+        - $ref: "#/components/parameters/accountsCheckDigit"
+        - $ref: "#/components/parameters/fromBookingDate"
+        - $ref: "#/components/parameters/toBookingDate"
+        - $ref: "#/components/parameters/creditDebitIndicator"
+
+      responses:
+        '200':
+          description: Dados de identificação da conta identificada por accountId obtidos com sucesso.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseAccount'
+        '400':
+          $ref: './schemas/ErrorHTTP.yaml#/400'
+        '401':
+          $ref: './schemas/ErrorHTTP.yaml#/401'
+        '403':
+          $ref: './schemas/ErrorHTTP.yaml#/403'
+        '404':
+          $ref: './schemas/ErrorHTTP.yaml#/404'
+        '405':
+          $ref: './schemas/ErrorHTTP.yaml#/405'
+        '406':
+          $ref: './schemas/ErrorHTTP.yaml#/406'
+        '429':
+          $ref: './schemas/ErrorHTTP.yaml#/429'
+        '500':
+          $ref: './schemas/ErrorHTTP.yaml#/500'
+      security:
+        - OpenId:
+            - openId
+            - accounts
+
+  /accounts/v1/accounts/{accountId}:
       get:
         tags:
           - API - Contas
@@ -853,6 +962,8 @@ paths:
 
           ### Visão Geral
 
+          Obtém os dados de identificação da conta mantidos na instituição transmissora
+
           Esta especificação inclui todos os artefatos relevantes para a Especificação de API sobre a Identificação de uma conta de: depósito à vista, poupança ou de pagamento pré-paga referente às informações transacionais de cliente.
 
           Tags: [Código Número (ISPB) (IspbCode)](#glossarioISPB), [Conta individual (Sole Account)](#glossarioContaIndividual), [Conta Conjunta Não-solidária (Joint Account And)](#glossarioContaConjuntaNaoSolidaria), [Conta Conjunta Solidária (Joint Account Or)](#glossarioContaConjuntaSolidaria),
@@ -861,21 +972,21 @@ paths:
 
           ### Visão de alto de nível das estruturas de dados
 
-          <img class="lazy" src="images/loading.gif" data-src="images/tld/accounts/TLD_Accounts_Identification.png"/>
+          <img class="lazy" src="images/loading.gif" data-src="images/tld/accounts/TLD_Accounts_Identification.v1.png"/>
 
           ### DER - Diagramas de Entidade e Relacionamento
 
           * DER Conceitual
 
-          <img class="lazy" src="images/loading.gif" data-src="images/der/accounts/DER_Accounts.png"/>
+          <img class="lazy" src="images/loading.gif" data-src="images/der/accounts/DER_Accounts.v2.png"/>
 
-          <a href="images/der/accounts/DER_Accounts.png" target="_blank">Fazer download do DER Conceitual</a>
+          <a href="images/der/accounts/DER_Accounts.v2.png" target="_blank">Fazer download do DER Conceitual</a>
 
           * DER Lógico
 
-          <img class="lazy" src="images/loading.gif" data-src="images/der/accounts/DER_Accounts_Identification.v1.png"/>
+          <img class="lazy" src="images/loading.gif" data-src="images/der/accounts/DER_Accounts_Identification.v2.png"/>
 
-          <a href="images/der/accounts/DER_Accounts_Identification.v1.png" target="_blank">Fazer download do DER Lógico</a>
+          <a href="images/der/accounts/DER_Accounts_Identification.v2.png" target="_blank">Fazer download do DER Lógico</a>
 
           ### Dicionário de dados
 
@@ -887,17 +998,24 @@ paths:
 
           <a href='swagger/swagger_accounts_apis.yaml'>Download da Especificação (OAS 3.0)</a>
 
-        operationId: "getAccountsIdentification"
+        operationId: "getAccountsAccountId"
         parameters:
+          - $ref: "#/components/parameters/Authorization"
+          - $ref: "#/components/parameters/xFapiAuthDate"
+          - $ref: "#/components/parameters/xFapiCustomerIpAddress"
+          - $ref: "#/components/parameters/xFapiInteractionId"
+          - $ref: "#/components/parameters/xCustomerUserAgent"
           - $ref: "#/components/parameters/accountsCompeCode"
           - $ref: "#/components/parameters/accountsBranchCode"
           - $ref: "#/components/parameters/accountsNumber"
           - $ref: "#/components/parameters/accountsCheckDigit"
-          - $ref: "#/components/parameters/page"
-          - $ref: "#/components/parameters/pageSize"
+          - $ref: "#/components/parameters/fromBookingDate"
+          - $ref: "#/components/parameters/toBookingDate"
+          - $ref: "#/components/parameters/creditDebitIndicator"
+
         responses:
           '200':
-            description: Método para obter os dados de identificação da conta na transmissora.
+            description: Dados de identificação da conta identificada por accountId obtidos com sucesso.
             content:
               application/json:
                 schema:
@@ -914,20 +1032,16 @@ paths:
             $ref: './schemas/ErrorHTTP.yaml#/405'
           '406':
             $ref: './schemas/ErrorHTTP.yaml#/406'
-          '410':
-            $ref: './schemas/ErrorHTTP.yaml#/410'
-          '422':
-            $ref: './schemas/ErrorHTTP.yaml#/422'
           '429':
             $ref: './schemas/ErrorHTTP.yaml#/429'
           '500':
             $ref: './schemas/ErrorHTTP.yaml#/500'
-          '503':
-            $ref: './schemas/ErrorHTTP.yaml#/503'
-          '504':
-            $ref: './schemas/ErrorHTTP.yaml#/504'
+        security:
+          - OpenId:
+              - openId
+              - accounts
 
-  /accounts/v1/accounts/balances:
+  /accounts/v1/accounts/{accountId}/balances:
     get:
       tags:
         - API - Contas
@@ -939,27 +1053,29 @@ paths:
 
         ### Visão Geral
 
+        Obtém os saldos da conta mantidos na instituição transmissora
+
         Esta especificação inclui todos os artefatos relevantes para a Especificação de API sobre os saldos de uma conta de: depósito à vista, poupança ou de pagamento pré-paga referente às informações transacionais de cliente.
 
         Tags: [Agência (Branch)](#glossarioAgencia), [Código Número (ISPB) (IspbCode)](#glossarioISPB), [Saldo (Account Balance)](#glossarioSaldo), [Saldo Bloqueado (Cash Blocked)](#glossarioSaldoBloqueado), [Saldo Disponível (Cash Amount)](#glossarioSaldoDisponivel), [CNPJ (CNPJ Number)](#glossarioCNPJ), [Marca (Brand)](#glossarioMarca) e [Instituição Financeira (Company)](#glossarioInstituicaoFinanceira).
 
         ### Visão de alto de nível das estruturas de dados
 
-        <img class="lazy" src="images/loading.gif" data-src="images/tld/accounts/TLD_Accounts_Balances.png"/>
+        <img class="lazy" src="images/loading.gif" data-src="images/tld/accounts/TLD_Accounts_Balances.v1.png"/>
 
         ### DER - Diagramas de Entidade e Relacionamento
 
         * DER Conceitual
 
-        <img class="lazy" src="images/loading.gif" data-src="images/der/accounts/DER_Accounts.png"/>
+        <img class="lazy" src="images/loading.gif" data-src="images/der/accounts/DER_Accounts.v2.png"/>
 
-        <a href="images/der/accounts/DER_Accounts.png" target="_blank">Fazer download do DER Conceitual</a>
+        <a href="images/der/accounts/DER_Accounts.v2.png" target="_blank">Fazer download do DER Conceitual</a>
 
         * DER Lógico
 
-        <img class="lazy" src="images/loading.gif" data-src="images/der/accounts/DER_Accounts_Balances.v1.png"/>
+        <img class="lazy" src="images/loading.gif" data-src="images/der/accounts/DER_Accounts_Balances.v2.png"/>
 
-        <a href="images/der/accounts/DER_Accounts_Balances.v1.png" target="_blank">Fazer download do DER Lógico</a>
+        <a href="images/der/accounts/DER_Accounts_Balances.v2.png" target="_blank">Fazer download do DER Lógico</a>
 
         ### Dicionário de dados
 
@@ -971,17 +1087,21 @@ paths:
 
         <a href='swagger/swagger_accounts_apis.yaml'>Download da Especificação (OAS 3.0)</a>
 
-      operationId: "getAccountsBalances"
+      operationId: "getAccountsAccountIdBalances"
       parameters:
+        - $ref: "#/components/parameters/Authorization"
+        - $ref: "#/components/parameters/xFapiAuthDate"
+        - $ref: "#/components/parameters/xFapiCustomerIpAddress"
+        - $ref: "#/components/parameters/xFapiInteractionId"
+        - $ref: "#/components/parameters/xCustomerUserAgent"
+        - $ref: "#/components/parameters/accountId"
         - $ref: "#/components/parameters/accountsCompeCode"
         - $ref: "#/components/parameters/accountsBranchCode"
         - $ref: "#/components/parameters/accountsNumber"
         - $ref: "#/components/parameters/accountsCheckDigit"
-        - $ref: "#/components/parameters/page"
-        - $ref: "#/components/parameters/pageSize"
       responses:
         '200':
-          description: Método para obter os dados da conta na transmissora.
+          description: Dados relativos aos saldos da conta identificada por accountId obtidos com sucesso.
           content:
             application/json:
               schema:
@@ -998,20 +1118,16 @@ paths:
           $ref: './schemas/ErrorHTTP.yaml#/405'
         '406':
           $ref: './schemas/ErrorHTTP.yaml#/406'
-        '410':
-          $ref: './schemas/ErrorHTTP.yaml#/410'
-        '422':
-          $ref: './schemas/ErrorHTTP.yaml#/422'
         '429':
           $ref: './schemas/ErrorHTTP.yaml#/429'
         '500':
           $ref: './schemas/ErrorHTTP.yaml#/500'
-        '503':
-          $ref: './schemas/ErrorHTTP.yaml#/503'
-        '504':
-          $ref: './schemas/ErrorHTTP.yaml#/504'
+      security:
+        - OpenId:
+            - openId
+            - accounts
 
-  /accounts/v1/accounts/transactions:
+  /accounts/v1/accounts/{accountId}/transactions:
     get:
       tags:
         - API - Contas
@@ -1023,27 +1139,29 @@ paths:
 
         ### Visão Geral
 
+        Obtém a lista de transações da conta mantidos na instituição transmissora
+
         Esta especificação inclui todos os artefatos relevantes para a Especificação de API sobre as transações efetivadas e os pagamentos autorizados de uma conta de: depósito à vista, poupança ou de pagamento pré-paga referente às informações transacionais de cliente.
 
         Tags: [Código Número (ISPB) (IspbCode)](#glossarioISPB), [Crédito (Credit)](#glossarioCredito), [Débito (Debit)](#glossarioDebito), [Pagador (Payer)](#glossarioPagador), [Pagamento autorizado (Authorised Payment)](#glossarioPagamentoAutorizado), [Recebedor (Payee)](#glossarioRecebedor), [Transação Agendada (Scheduled Payment)](#glossarioTransacaoAgendada), [Transações Realizadas (Completed Transaction)](#glossarioTransacaoRealizada), [CNPJ (CNPJ Number)](#glossarioCNPJ), [Marca (Brand)](#glossarioMarca), [Instituição Financeira (Company)](#glossarioInstituicaoFinanceira) e [Agência (Branch)](#glossarioAgencia).
 
         ### Visão de alto de nível das estruturas de dados
 
-        <img class="lazy" src="images/loading.gif" data-src="images/tld/accounts/TLD_Accounts_Transactions.png"/>
+        <img class="lazy" src="images/loading.gif" data-src="images/tld/accounts/TLD_Accounts_Transactions.v1.png"/>
 
         ### DER - Diagramas de Entidade e Relacionamento
 
         * DER Conceitual
 
-        <img class="lazy" src="images/loading.gif" data-src="images/der/accounts/DER_Accounts.png"/>
+        <img class="lazy" src="images/loading.gif" data-src="images/der/accounts/DER_Accounts.v2.png"/>
 
-        <a href="images/der/accounts/DER_Accounts.png" target="_blank">Fazer download do DER Conceitual</a>
+        <a href="images/der/accounts/DER_Accounts.v2.png" target="_blank">Fazer download do DER Conceitual</a>
 
         * DER Lógico
 
-        <img class="lazy" src="images/loading.gif" data-src="images/der/accounts/DER_Accounts_Transactions.v1.png"/>
+        <img class="lazy" src="images/loading.gif" data-src="images/der/accounts/DER_Accounts_Transactions.v2.png"/>
 
-        <a href="images/der/accounts/DER_Accounts_Transactions.v1.png" target="_blank">Fazer download do DER Lógico</a>
+        <a href="images/der/accounts/DER_Accounts_Transactions.v2.png" target="_blank">Fazer download do DER Lógico</a>
 
         ### Dicionário de dados
 
@@ -1055,17 +1173,26 @@ paths:
 
         <a href='swagger/swagger_accounts_apis.yaml'>Download da Especificação (OAS 3.0)</a>
 
-      operationId: "getAccountsTransactions"
+      operationId: "getAccountsAccountIdTransactions"
       parameters:
+        - $ref: "#/components/parameters/Authorization"
+        - $ref: "#/components/parameters/xFapiAuthDate"
+        - $ref: "#/components/parameters/xFapiCustomerIpAddress"
+        - $ref: "#/components/parameters/xFapiInteractionId"
+        - $ref: "#/components/parameters/xCustomerUserAgent"
+        - $ref: "#/components/parameters/accountId"
         - $ref: "#/components/parameters/accountsCompeCode"
         - $ref: "#/components/parameters/accountsBranchCode"
         - $ref: "#/components/parameters/accountsNumber"
         - $ref: "#/components/parameters/accountsCheckDigit"
         - $ref: "#/components/parameters/page"
         - $ref: "#/components/parameters/pageSize"
+        - $ref: "#/components/parameters/fromBookingDate"
+        - $ref: "#/components/parameters/toBookingDate"
+        - $ref: "#/components/parameters/creditDebitIndicator"
       responses:
         '200':
-          description: Método para obter a lista de transações da conta na transmissora.
+          description: Dados da lista de transações da conta identificada por accountId obtidos com sucesso.
           content:
             application/json:
               schema:
@@ -1082,20 +1209,16 @@ paths:
           $ref: './schemas/ErrorHTTP.yaml#/405'
         '406':
           $ref: './schemas/ErrorHTTP.yaml#/406'
-        '410':
-          $ref: './schemas/ErrorHTTP.yaml#/410'
-        '422':
-          $ref: './schemas/ErrorHTTP.yaml#/422'
         '429':
           $ref: './schemas/ErrorHTTP.yaml#/429'
         '500':
           $ref: './schemas/ErrorHTTP.yaml#/500'
-        '503':
-          $ref: './schemas/ErrorHTTP.yaml#/503'
-        '504':
-          $ref: './schemas/ErrorHTTP.yaml#/504'
+      security:
+        - OpenId:
+            - openId
+            - accounts
 
-  /accounts/v1/accounts/overdraft-limits:
+  /accounts/v1/accounts/{accountId}/overdraft-limits:
     get:
       tags:
         - API - Contas
@@ -1107,27 +1230,29 @@ paths:
 
         ### Visão Geral
 
+        Obtém os dados de limite de cheque especial e de adiantamento a depositante  da conta mantidos na instituição transmissora
+
         Esta especificação inclui todos os artefatos relevantes para a Especificação de API sobre os valores utilizado e disponível do limite do Cheque Especial e o valor em excesso (Adiantamento a depositante) de uma conta de depósito à vista, referente às informações transacionais de cliente.
 
         Tags: [Adiantamento a Depositante (Unarranged Account Overdraft)](#glossarioAdiantamentoDepositante), [Cheque Especial (Arranged Overdraft)](#glossarioChequeEspecial), [Código Número (ISPB) (IspbCode)](#glossarioISPB), [Saldo (Account Balance)](#glossarioSaldo), [CNPJ (CNPJ Number)](#glossarioCNPJ), [Marca (Brand)](#glossarioMarca), [Instituição Financeira (Company)](#glossarioInstituicaoFinanceira), [Agência (Branch)](#glossarioAgencia) e [Conta de depósito à vista (Account)](#glossarioContaDepositoVista).
 
         ### Visão de alto de nível das estruturas de dados
 
-        <img class="lazy" src="images/loading.gif" data-src="images/tld/accounts/TLD_Accounts_OverdraftLimits.png"/>
+        <img class="lazy" src="images/loading.gif" data-src="images/tld/accounts/TLD_Accounts_OverdraftLimits.v1.png"/>
 
         ### DER - Diagramas de Entidade e Relacionamento
 
         * DER Conceitual
 
-        <img class="lazy" src="images/loading.gif" data-src="images/der/accounts/DER_Accounts.png"/>
+        <img class="lazy" src="images/loading.gif" data-src="images/der/accounts/DER_Accounts.v2.png"/>
 
-        <a href="images/der/accounts/DER_Accounts.png" target="_blank">Fazer download do DER Conceitual</a>
+        <a href="images/der/accounts/DER_Accounts.v2.png" target="_blank">Fazer download do DER Conceitual</a>
 
         * DER Lógico
 
-        <img class="lazy" src="images/loading.gif" data-src="images/der/accounts/DER_Accounts_OverdraftLimits.v1.png"/>
+        <img class="lazy" src="images/loading.gif" data-src="images/der/accounts/DER_Accounts_OverdraftLimits.v2.png"/>
 
-        <a href="images/der/accounts/DER_Accounts_OverdraftLimits.v1.png" target="_blank">Fazer download do DER Lógico</a>
+        <a href="images/der/accounts/DER_Accounts_OverdraftLimits.v2.png" target="_blank">Fazer download do DER Lógico</a>
 
         ### Dicionário de dados
 
@@ -1139,17 +1264,21 @@ paths:
 
         <a href='swagger/swagger_accounts_apis.yaml'>Download da Especificação (OAS 3.0)</a>
 
-      operationId: "getAccountsOverdraftLimits"
+      operationId: "getAccountsAccountIdOverdraftLimits"
       parameters:
+        - $ref: "#/components/parameters/Authorization"
+        - $ref: "#/components/parameters/xFapiAuthDate"
+        - $ref: "#/components/parameters/xFapiCustomerIpAddress"
+        - $ref: "#/components/parameters/xFapiInteractionId"
+        - $ref: "#/components/parameters/xCustomerUserAgent"
+        - $ref: "#/components/parameters/accountId"
         - $ref: "#/components/parameters/accountsCompeCode"
         - $ref: "#/components/parameters/accountsBranchCode"
         - $ref: "#/components/parameters/accountsNumber"
         - $ref: "#/components/parameters/accountsCheckDigit"
-        - $ref: "#/components/parameters/page"
-        - $ref: "#/components/parameters/pageSize"
       responses:
         '200':
-          description: Método para obter os dados de cheque especial e de adiantamento a depositante  da conta na transmissora.
+          description: Dados de limites da conta identificada por accountId obtidos com sucesso.
           content:
             application/json:
               schema:
@@ -1166,23 +1295,20 @@ paths:
           $ref: './schemas/ErrorHTTP.yaml#/405'
         '406':
           $ref: './schemas/ErrorHTTP.yaml#/406'
-        '410':
-          $ref: './schemas/ErrorHTTP.yaml#/410'
-        '422':
-          $ref: './schemas/ErrorHTTP.yaml#/422'
         '429':
           $ref: './schemas/ErrorHTTP.yaml#/429'
         '500':
           $ref: './schemas/ErrorHTTP.yaml#/500'
-        '503':
-          $ref: './schemas/ErrorHTTP.yaml#/503'
-        '504':
-          $ref: './schemas/ErrorHTTP.yaml#/504'
-  /bank-borrowing/v1/contract:
+      security:
+        - OpenId:
+            - openId
+            - accounts
+
+  /loans/v1/contract/{contractId}:
     get:
       tags:
-        - API - Operações de Crédito
-      summary: Contrato
+        - API - Operações de Crédito - Empréstimos
+      summary: Empréstimos - Contrato
       description: |
         |Versão|
         |:-----|
@@ -1190,52 +1316,53 @@ paths:
 
         ### Visão Geral
 
-        A definir.
-        Obtém dados referentes à identificação da operação de crédito.
+        Obtém dados referentes à identificação da operação de crédito de Empréstimos
 
-        A definir.
-        Tags: [CNPJ (CNPJ Number)](#glossarioCNPJ).
+        Tags: [CNPJ (CNPJ Number)](#glossarioCNPJ), [Custo Efetivo Total (CET)](#glossarioCET), [Empréstimo (Loan)](#glossarioEmprestimo), [Encargo (Charge)](#glossarioEncargo), [Ente Consignante (CnpjConsignee)](#glossarioEnteConsignante), [Identificador padronizado da operação de crédito – Ipoc Code](#glossarioIPOC), [Indexador (Indexer)](#glossarioIndexador), [Sistema de Amortização Constante (SAC)](#glossarioSAC), [Sistema Francês de Amortização (Price)](#glossarioPrice), [Sociedade de arrendamento mercantil  (SAM)](#glossarioSAM), [Tarifa (Fee)](#glossarioTarifa), [Taxa Efetiva (EffectiveTax)](#glossarioTaxaEfetiva) e [Taxa nominal (NominalTax)](#glossarioTaxaNominal).
 
         ### Visão de alto de nível das estruturas de dados
 
-        <img class="lazy" src="images/loading.gif" data-src="images/tld/bank_borrowing/TLD_BankBorrowing_Contract.png"/>
+        <img class="lazy" src="images/loading.gif" data-src="images/tld/loans/TLD_Loans_Contract.png"/>
 
         ### DER - Diagramas de Entidade e Relacionamento
 
         * DER Conceitual
 
-        <img class="lazy" src="images/loading.gif" data-src="images/der/bank_borrowing/DER_BankBorrowing.png"/>
+        <img class="lazy" src="images/loading.gif" data-src="images/der/loans/DER_Loans.png"/>
 
-        <a href="images/der/bank_borrowing/DER_BankBorrowing.png" target="_blank">Fazer download do DER Conceitual</a>
+        <a href="images/der/loans/DER_Loans.png" target="_blank">Fazer download do DER Conceitual</a>
 
         * DER Lógico
 
-        <img class="lazy" src="images/loading.gif" data-src="images/der/bank_borrowing/DER_BankBorrowing_Contract.png"/>
+        <img class="lazy" src="images/loading.gif" data-src="images/der/loans/DER_Loans_Contract.png"/>
 
-        <a href="images/der/bank_borrowing/DER_BankBorrowing_Contract.png" target="_blank">Fazer download do DER Lógico</a>
+        <a href="images/der/loans/DER_Loans_Contract.png" target="_blank">Fazer download do DER Lógico</a>
 
         ### Dicionário de dados
 
-        <a href='dictionary/bank_borrowing_contract.csv' target="_blank">Fazer download do dicionário de dados</a>
+        <a href='dictionary/loans_contract.csv' target="_blank">Fazer download do dicionário de dados</a>
 
-        A definir.
-        <a href="dictionary/example/examples_bank_borrowing_contract.csv" target="_blank">Fazer download dos exemplos</a>
+        <a href="dictionary/example/examples_loans_contract.csv" target="_blank">Fazer download dos exemplos</a>
 
         ### Especificação em OAS 3.0
 
-        <a href='swagger/swagger_bank_borrowing_apis.yaml'>Download da Especificação (OAS 3.0)</a>
+        <a href='swagger/swagger_loans_apis.yaml'>Download da Especificação (OAS 3.0)</a>
 
-      operationId: "getBankBorrowingContract"
+      operationId: "getContractsContractId"
       parameters:
-        - $ref: "#/components/parameters/page"
-        - $ref: "#/components/parameters/pageSize"
+        - $ref: "#/components/parameters/contractId"
+        - $ref: "#/components/parameters/Authorization"
+        - $ref: "#/components/parameters/xFapiAuthDate"
+        - $ref: "#/components/parameters/xFapiCustomerIpAddress"
+        - $ref: "#/components/parameters/xFapiInteractionId"
+        - $ref: "#/components/parameters/xCustomerUserAgent"
       responses:
         '200':
-          description: Método para obter dados referentes à identificação da operação de crédito.
+          description: Dados do contrato de empréstimo identificado por `contractId`
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ResponseBankBorrowingContract'
+                $ref: '#/components/schemas/ResponseLoansContract'
         '400':
           $ref: './schemas/ErrorHTTP.yaml#/400'
         '401':
@@ -1248,24 +1375,16 @@ paths:
           $ref: './schemas/ErrorHTTP.yaml#/405'
         '406':
           $ref: './schemas/ErrorHTTP.yaml#/406'
-        '410':
-          $ref: './schemas/ErrorHTTP.yaml#/410'
-        '422':
-          $ref: './schemas/ErrorHTTP.yaml#/422'
         '429':
           $ref: './schemas/ErrorHTTP.yaml#/429'
         '500':
           $ref: './schemas/ErrorHTTP.yaml#/500'
-        '503':
-          $ref: './schemas/ErrorHTTP.yaml#/503'
-        '504':
-          $ref: './schemas/ErrorHTTP.yaml#/504'
 
-  /bank-borrowing/v1/warranties:
+  /loans/v1/contract/{contractId}/warranties:
     get:
       tags:
-        - API - Operações de Crédito
-      summary: Garantias do Contrato
+        - API - Operações de Crédito - Empréstimos
+      summary: Empréstimos - Garantias do Contrato
       description: |
         |Versão|
         |:-----|
@@ -1273,52 +1392,55 @@ paths:
 
         ### Visão Geral
 
-        A definir.
-        Obtém dados referentes às garantias que avalizam a operação de crédito contratada.
+        Obtém dados referentes às garantias que avalizam a operação de crédito de Empréstimos contratada
 
-        A definir.
-        Tags: [CNPJ (CNPJ Number)](#glossarioCNPJ).
+        Tags: [Empréstimo (Loan)](#glossarioEmprestimo) e [Garantia (Warranty)](#glossarioGarantia).
 
         ### Visão de alto de nível das estruturas de dados
 
-        <img class="lazy" src="images/loading.gif" data-src="images/tld/bank_borrowing/TLD_BankBorrowing_Warranties.png"/>
+        <img class="lazy" src="images/loading.gif" data-src="images/tld/loans/TLD_Loans_Warranties.png"/>
 
         ### DER - Diagramas de Entidade e Relacionamento
 
         * DER Conceitual
 
-        <img class="lazy" src="images/loading.gif" data-src="images/der/bank_borrowing/DER_BankBorrowing.png"/>
+        <img class="lazy" src="images/loading.gif" data-src="images/der/loans/DER_Loans.png"/>
 
-        <a href="images/der/bank_borrowing/DER_BankBorrowing.png" target="_blank">Fazer download do DER Conceitual</a>
+        <a href="images/der/loans/DER_Loans.png" target="_blank">Fazer download do DER Conceitual</a>
 
         * DER Lógico
 
-        <img class="lazy" src="images/loading.gif" data-src="images/der/bank_borrowing/DER_BankBorrowing_Warranties.png"/>
+        <img class="lazy" src="images/loading.gif" data-src="images/der/loans/DER_Loans_Warranties.png"/>
 
-        <a href="images/der/bank_borrowing/DER_BankBorrowing_Warranties.png" target="_blank">Fazer download do DER Lógico</a>
+        <a href="images/der/loans/DER_Loans_Warranties.png" target="_blank">Fazer download do DER Lógico</a>
 
         ### Dicionário de dados
 
-        <a href='dictionary/bank_borrowing_warranties.csv' target="_blank">Fazer download do dicionário de dados</a>
+        <a href='dictionary/loans_warranties.csv' target="_blank">Fazer download do dicionário de dados</a>
 
-        A definir.
-        <a href="dictionary/example/examples_bank_borrowing_warranties.csv" target="_blank">Fazer download dos exemplos</a>
+        <a href="dictionary/example/examples_loans_warranties.csv" target="_blank">Fazer download dos exemplos</a>
 
         ### Especificação em OAS 3.0
 
-        <a href='swagger/swagger_bank_borrowing_apis.yaml'>Download da Especificação (OAS 3.0)</a>
+        <a href='swagger/swagger_loans_apis.yaml'>Download da Especificação (OAS 3.0)</a>
 
-      operationId: "getBankBorrowingWarranties"
+      operationId: "getContractsContractIdWarranties"
       parameters:
+        - $ref: "#/components/parameters/contractId"
         - $ref: "#/components/parameters/page"
         - $ref: "#/components/parameters/pageSize"
+        - $ref: "#/components/parameters/Authorization"
+        - $ref: "#/components/parameters/xFapiAuthDate"
+        - $ref: "#/components/parameters/xFapiCustomerIpAddress"
+        - $ref: "#/components/parameters/xFapiInteractionId"
+        - $ref: "#/components/parameters/xCustomerUserAgent"
       responses:
         '200':
-          description: Método para obter dados referentes às garantias que avalizam a operação de crédito contratada.
+          description: Lista de garantias vinculadas ao contrato de empréstimo identificado por `contractId`
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ResponseBankBorrowingWarranties'
+                $ref: '#/components/schemas/ResponseLoansWarranties'
         '400':
           $ref: './schemas/ErrorHTTP.yaml#/400'
         '401':
@@ -1331,24 +1453,16 @@ paths:
           $ref: './schemas/ErrorHTTP.yaml#/405'
         '406':
           $ref: './schemas/ErrorHTTP.yaml#/406'
-        '410':
-          $ref: './schemas/ErrorHTTP.yaml#/410'
-        '422':
-          $ref: './schemas/ErrorHTTP.yaml#/422'
         '429':
           $ref: './schemas/ErrorHTTP.yaml#/429'
         '500':
           $ref: './schemas/ErrorHTTP.yaml#/500'
-        '503':
-          $ref: './schemas/ErrorHTTP.yaml#/503'
-        '504':
-          $ref: './schemas/ErrorHTTP.yaml#/504'
 
-  /bank-borrowing/v1/payments:
+  /loans/v1/contract/{contractId}/payments:
     get:
       tags:
-        - API - Operações de Crédito
-      summary: Pagamentos do Contrato
+        - API - Operações de Crédito - Empréstimos
+      summary: Empréstimos - Pagamentos do Contrato
       description: |
         |Versão|
         |:-----|
@@ -1356,52 +1470,55 @@ paths:
 
         ### Visão Geral
 
-        A definir.
-        Obtém dados dos pagamentos referentes às operações de crédito contratadas.
+        Obtém dados dos pagamentos referentes às operações de crédito de Empréstimos contratadas
 
-        A definir.
-        Tags: [CNPJ (CNPJ Number)](#glossarioCNPJ).
+        Tags: [Empréstimo (Loan)](#glossarioEmprestimo), [Encargo (Charge)](#glossarioEncargo), [Saldo Devedor (Outstanding Balance)](#glossarioSaldoDevedor) e [Tarifa (Fee)](#glossarioTarifa).
 
         ### Visão de alto de nível das estruturas de dados
 
-        <img class="lazy" src="images/loading.gif" data-src="images/tld/bank_borrowing/TLD_BankBorrowing_Payments.png"/>
+        <img class="lazy" src="images/loading.gif" data-src="images/tld/loans/TLD_Loans_Payments.png"/>
 
         ### DER - Diagramas de Entidade e Relacionamento
 
         * DER Conceitual
 
-        <img class="lazy" src="images/loading.gif" data-src="images/der/bank_borrowing/DER_BankBorrowing.png"/>
+        <img class="lazy" src="images/loading.gif" data-src="images/der/loans/DER_Loans.png"/>
 
-        <a href="images/der/bank_borrowing/DER_BankBorrowing.png" target="_blank">Fazer download do DER Conceitual</a>
+        <a href="images/der/loans/DER_Loans.png" target="_blank">Fazer download do DER Conceitual</a>
 
         * DER Lógico
 
-        <img class="lazy" src="images/loading.gif" data-src="images/der/bank_borrowing/DER_BankBorrowing_Payments.png"/>
+        <img class="lazy" src="images/loading.gif" data-src="images/der/loans/DER_Loans_Payments.png"/>
 
-        <a href="images/der/bank_borrowing/DER_BankBorrowing_Payments.png" target="_blank">Fazer download do DER Lógico</a>
+        <a href="images/der/loans/DER_Loans_Payments.png" target="_blank">Fazer download do DER Lógico</a>
 
         ### Dicionário de dados
 
-        <a href='dictionary/bank_borrowing_payments.csv' target="_blank">Fazer download do dicionário de dados</a>
+        <a href='dictionary/loans_payments.csv' target="_blank">Fazer download do dicionário de dados</a>
 
-        A definir.
-        <a href="dictionary/example/examples_bank_borrowing_payments.csv" target="_blank">Fazer download dos exemplos</a>
+        <a href="dictionary/example/examples_loans_payments.csv" target="_blank">Fazer download dos exemplos</a>
 
         ### Especificação em OAS 3.0
 
-        <a href='swagger/swagger_bank_borrowing_apis.yaml'>Download da Especificação (OAS 3.0)</a>
+        <a href='swagger/swagger_loans_apis.yaml'>Download da Especificação (OAS 3.0)</a>
 
-      operationId: "getBankBorrowingPayments"
+      operationId: "getContractsContractIdPayments"
       parameters:
+        - $ref: "#/components/parameters/contractId"
         - $ref: "#/components/parameters/page"
         - $ref: "#/components/parameters/pageSize"
+        - $ref: "#/components/parameters/Authorization"
+        - $ref: "#/components/parameters/xFapiAuthDate"
+        - $ref: "#/components/parameters/xFapiCustomerIpAddress"
+        - $ref: "#/components/parameters/xFapiInteractionId"
+        - $ref: "#/components/parameters/xCustomerUserAgent"
       responses:
         '200':
-          description: Método para obter dados dos pagamentos referentes às operações de crédito contratadas
+          description: Dados de pagamentos do contrato de empréstimo identificado por `contractId`
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ResponseBankBorrowingPayments'
+                $ref: '#/components/schemas/ResponseLoansPayments'
         '400':
           $ref: './schemas/ErrorHTTP.yaml#/400'
         '401':
@@ -1414,24 +1531,16 @@ paths:
           $ref: './schemas/ErrorHTTP.yaml#/405'
         '406':
           $ref: './schemas/ErrorHTTP.yaml#/406'
-        '410':
-          $ref: './schemas/ErrorHTTP.yaml#/410'
-        '422':
-          $ref: './schemas/ErrorHTTP.yaml#/422'
         '429':
           $ref: './schemas/ErrorHTTP.yaml#/429'
         '500':
           $ref: './schemas/ErrorHTTP.yaml#/500'
-        '503':
-          $ref: './schemas/ErrorHTTP.yaml#/503'
-        '504':
-          $ref: './schemas/ErrorHTTP.yaml#/504'
 
-  /bank-borrowing/v1/instalments:
+  /loans/v1/contract/{contractId}/instalments:
     get:
       tags:
-        - API - Operações de Crédito
-      summary: Parcelas do Contrato
+        - API - Operações de Crédito - Empréstimos
+      summary: Empréstimos - Parcelas do Contrato
       description: |
         |Versão|
         |:-----|
@@ -1439,52 +1548,55 @@ paths:
 
         ### Visão Geral
 
-        A definir.
-        Obtém dados referentes às parcelas / prestações da operação de crédito contratada.
+        Obtém dados referentes às parcelas / prestações da operação de crédito de Empréstimos contratadas
 
-        A definir.
-        Tags: [CNPJ (CNPJ Number)](#glossarioCNPJ).
+        Tags: [Empréstimo (Loan)](#glossarioEmprestimo) e [Prestação Regular (Instalment)](#glossarioPrestacaoRegular).
 
         ### Visão de alto de nível das estruturas de dados
 
-        <img class="lazy" src="images/loading.gif" data-src="images/tld/bank_borrowing/TLD_BankBorrowing_Instalments.png"/>
+        <img class="lazy" src="images/loading.gif" data-src="images/tld/loans/TLD_Loans_Instalments.png"/>
 
         ### DER - Diagramas de Entidade e Relacionamento
 
         * DER Conceitual
 
-        <img class="lazy" src="images/loading.gif" data-src="images/der/bank_borrowing/DER_BankBorrowing.png"/>
+        <img class="lazy" src="images/loading.gif" data-src="images/der/loans/DER_Loans.png"/>
 
-        <a href="images/der/bank_borrowing/DER_BankBorrowing.png" target="_blank">Fazer download do DER Conceitual</a>
+        <a href="images/der/loans/DER_Loans.png" target="_blank">Fazer download do DER Conceitual</a>
 
         * DER Lógico
 
-        <img class="lazy" src="images/loading.gif" data-src="images/der/bank_borrowing/DER_BankBorrowing_Instalments.png"/>
+        <img class="lazy" src="images/loading.gif" data-src="images/der/loans/DER_Loans_Instalments.png"/>
 
-        <a href="images/der/bank_borrowing/DER_BankBorrowing_Instalments.png" target="_blank">Fazer download do DER Lógico</a>
+        <a href="images/der/loans/DER_Loans_Instalments.png" target="_blank">Fazer download do DER Lógico</a>
 
         ### Dicionário de dados
 
-        <a href='dictionary/bank_borrowing_instalments.csv' target="_blank">Fazer download do dicionário de dados</a>
+        <a href='dictionary/loans_instalments.csv' target="_blank">Fazer download do dicionário de dados</a>
 
-        A definir.
-        <a href="dictionary/example/examples_bank_borrowing_instalments.csv" target="_blank">Fazer download dos exemplos</a>
+        <a href="dictionary/example/examples_loans_instalments.csv" target="_blank">Fazer download dos exemplos</a>
 
         ### Especificação em OAS 3.0
 
-        <a href='swagger/swagger_bank_borrowing_apis.yaml'>Download da Especificação (OAS 3.0)</a>
+        <a href='swagger/swagger_loans_apis.yaml'>Download da Especificação (OAS 3.0)</a>
 
-      operationId: "getBankBorrowingInstalments"
+      operationId: "getContractsContractIdInstalments"
       parameters:
+        - $ref: "#/components/parameters/contractId"
         - $ref: "#/components/parameters/page"
         - $ref: "#/components/parameters/pageSize"
+        - $ref: "#/components/parameters/Authorization"
+        - $ref: "#/components/parameters/xFapiAuthDate"
+        - $ref: "#/components/parameters/xFapiCustomerIpAddress"
+        - $ref: "#/components/parameters/xFapiInteractionId"
+        - $ref: "#/components/parameters/xCustomerUserAgent"
       responses:
         '200':
-          description: Método para obter dados referentes às garantias que avalizam a operação de crédito contratada.
+          description: Dados do cronograma de parcelas do contrato de empréstimo identificado por `contractId`
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ResponseBankBorrowingInstalments'
+                $ref: '#/components/schemas/ResponseLoansInstalments'
         '400':
           $ref: './schemas/ErrorHTTP.yaml#/400'
         '401':
@@ -1497,21 +1609,945 @@ paths:
           $ref: './schemas/ErrorHTTP.yaml#/405'
         '406':
           $ref: './schemas/ErrorHTTP.yaml#/406'
-        '410':
-          $ref: './schemas/ErrorHTTP.yaml#/410'
-        '422':
-          $ref: './schemas/ErrorHTTP.yaml#/422'
         '429':
           $ref: './schemas/ErrorHTTP.yaml#/429'
         '500':
           $ref: './schemas/ErrorHTTP.yaml#/500'
-        '503':
-          $ref: './schemas/ErrorHTTP.yaml#/503'
-        '504':
-          $ref: './schemas/ErrorHTTP.yaml#/504'
+
+  /financings/v1/contract/{contractId}:
+    get:
+      tags:
+        - API - Operações de Crédito - Financiamentos
+      summary: Financiamentos - Contrato
+      description: |
+        |Versão|
+        |:-----|
+        |1     |
+
+        ### Visão Geral
+
+        Obtém dados referentes à identificação da operação de crédito de Financiamentos
+
+        Tags: [Custo Efetivo Total (CET)](#glossarioCET), [Encargo (Charge)](#glossarioEncargo), [Ente Consignante (CnpjConsignee)](#glossarioEnteConsignante), [Financiamento (Financing)](#glossarioFinanciamento), [Identificador padronizado da operação de crédito – Ipoc Code](#glossarioIPOC), [Indexador (Indexer)](#glossarioIndexador), [Sistema de Amortização Constante (SAC)](#glossarioSAC), [Sistema Francês de Amortização (Price)](#glossarioPrice), [Sociedade de arrendamento mercantil  (SAM)](#glossarioSAM), [Tarifa (Fee)](#glossarioTarifa), [Taxa Efetiva (EffectiveTax)](#glossarioTaxaEfetiva) e [Taxa nominal (NominalTax)](#glossarioTaxaNominal).
+
+        ### Visão de alto de nível das estruturas de dados
+
+        <img class="lazy" src="images/loading.gif" data-src="images/tld/financings/TLD_Financings_Contract.png"/>
+
+        ### DER - Diagramas de Entidade e Relacionamento
+
+        * DER Conceitual
+
+        <img class="lazy" src="images/loading.gif" data-src="images/der/financings/DER_Financings.png"/>
+
+        <a href="images/der/financings/DER_Financings.png" target="_blank">Fazer download do DER Conceitual</a>
+
+        * DER Lógico
+
+        <img class="lazy" src="images/loading.gif" data-src="images/der/financings/DER_Financings_Contract.png"/>
+
+        <a href="images/der/financings/DER_Financings_Contract.png" target="_blank">Fazer download do DER Lógico</a>
+
+        ### Dicionário de dados
+
+        <a href='dictionary/financings_contract.csv' target="_blank">Fazer download do dicionário de dados</a>
+
+        <a href="dictionary/example/examples_financings_contract.csv" target="_blank">Fazer download dos exemplos</a>
+
+        ### Especificação em OAS 3.0
+
+        <a href='swagger/swagger_financings_apis.yaml'>Download da Especificação (OAS 3.0)</a>
+
+      operationId: "getContractsContractId"
+      parameters:
+        - $ref: "#/components/parameters/contractId"
+        - $ref: "#/components/parameters/Authorization"
+        - $ref: "#/components/parameters/xFapiAuthDate"
+        - $ref: "#/components/parameters/xFapiCustomerIpAddress"
+        - $ref: "#/components/parameters/xFapiInteractionId"
+        - $ref: "#/components/parameters/xCustomerUserAgent"
+      responses:
+        '200':
+          description: Dados do contrato de financiamento identificado por `contractId`
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseFinancingsContract'
+        '400':
+          $ref: './schemas/ErrorHTTP.yaml#/400'
+        '401':
+          $ref: './schemas/ErrorHTTP.yaml#/401'
+        '403':
+          $ref: './schemas/ErrorHTTP.yaml#/403'
+        '404':
+          $ref: './schemas/ErrorHTTP.yaml#/404'
+        '405':
+          $ref: './schemas/ErrorHTTP.yaml#/405'
+        '406':
+          $ref: './schemas/ErrorHTTP.yaml#/406'
+        '429':
+          $ref: './schemas/ErrorHTTP.yaml#/429'
+        '500':
+          $ref: './schemas/ErrorHTTP.yaml#/500'
+
+  /financings/v1/contract/{contractId}/warranties:
+    get:
+      tags:
+        - API - Operações de Crédito - Financiamentos
+      summary: Financiamentos - Garantias do Contrato
+      description: |
+        |Versão|
+        |:-----|
+        |1     |
+
+        ### Visão Geral
+
+        Obtém dados referentes às garantias que avalizam a operação de crédito de Financiamentos contratada
+
+        Tags: [Financiamento (Financing)](#glossarioFinanciamento) e [Garantia (Warranty)](#glossarioGarantia).
+
+        ### Visão de alto de nível das estruturas de dados
+
+        <img class="lazy" src="images/loading.gif" data-src="images/tld/financings/TLD_Financings_Warranties.png"/>
+
+        ### DER - Diagramas de Entidade e Relacionamento
+
+        * DER Conceitual
+
+        <img class="lazy" src="images/loading.gif" data-src="images/der/financings/DER_Financings.png"/>
+
+        <a href="images/der/financings/DER_Financings.png" target="_blank">Fazer download do DER Conceitual</a>
+
+        * DER Lógico
+
+        <img class="lazy" src="images/loading.gif" data-src="images/der/financings/DER_Financings_Warranties.png"/>
+
+        <a href="images/der/financings/DER_Financings_Warranties.png" target="_blank">Fazer download do DER Lógico</a>
+
+        ### Dicionário de dados
+
+        <a href='dictionary/financings_warranties.csv' target="_blank">Fazer download do dicionário de dados</a>
+
+        <a href="dictionary/example/examples_financings_warranties.csv" target="_blank">Fazer download dos exemplos</a>
+
+        ### Especificação em OAS 3.0
+
+        <a href='swagger/swagger_financings_apis.yaml'>Download da Especificação (OAS 3.0)</a>
+
+      operationId: "getContractsContractIdWarranties"
+      parameters:
+        - $ref: "#/components/parameters/contractId"
+        - $ref: "#/components/parameters/page"
+        - $ref: "#/components/parameters/pageSize"
+        - $ref: "#/components/parameters/Authorization"
+        - $ref: "#/components/parameters/xFapiAuthDate"
+        - $ref: "#/components/parameters/xFapiCustomerIpAddress"
+        - $ref: "#/components/parameters/xFapiInteractionId"
+        - $ref: "#/components/parameters/xCustomerUserAgent"
+      responses:
+        '200':
+          description: Lista de garantias vinculadas ao contrato de financiamento identificado por `contractId`
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseFinancingsWarranties'
+        '400':
+          $ref: './schemas/ErrorHTTP.yaml#/400'
+        '401':
+          $ref: './schemas/ErrorHTTP.yaml#/401'
+        '403':
+          $ref: './schemas/ErrorHTTP.yaml#/403'
+        '404':
+          $ref: './schemas/ErrorHTTP.yaml#/404'
+        '405':
+          $ref: './schemas/ErrorHTTP.yaml#/405'
+        '406':
+          $ref: './schemas/ErrorHTTP.yaml#/406'
+        '429':
+          $ref: './schemas/ErrorHTTP.yaml#/429'
+        '500':
+          $ref: './schemas/ErrorHTTP.yaml#/500'
+
+  /financings/v1/contract/{contractId}/payments:
+    get:
+      tags:
+        - API - Operações de Crédito - Financiamentos
+      summary: Financiamentos - Pagamentos do Contrato
+      description: |
+        |Versão|
+        |:-----|
+        |1     |
+
+        ### Visão Geral
+
+        Obtém dados dos pagamentos referentes às operações de crédito de Financiamentos contratadas
+
+        Tags: [Encargo (Charge)](#glossarioEncargo), [Financiamento (Financing)](#glossarioFinanciamento), [Saldo Devedor (Outstanding Balance)](#glossarioSaldoDevedor) e [Tarifa (Fee)](#glossarioTarifa).
+
+        ### Visão de alto de nível das estruturas de dados
+
+        <img class="lazy" src="images/loading.gif" data-src="images/tld/financings/TLD_Financings_Payments.png"/>
+
+        ### DER - Diagramas de Entidade e Relacionamento
+
+        * DER Conceitual
+
+        <img class="lazy" src="images/loading.gif" data-src="images/der/financings/DER_Financings.png"/>
+
+        <a href="images/der/financings/DER_Financings.png" target="_blank">Fazer download do DER Conceitual</a>
+
+        * DER Lógico
+
+        <img class="lazy" src="images/loading.gif" data-src="images/der/financings/DER_Financings_Payments.png"/>
+
+        <a href="images/der/financings/DER_Financings_Payments.png" target="_blank">Fazer download do DER Lógico</a>
+
+        ### Dicionário de dados
+
+        <a href='dictionary/financings_payments.csv' target="_blank">Fazer download do dicionário de dados</a>
+
+        <a href="dictionary/example/examples_financings_payments.csv" target="_blank">Fazer download dos exemplos</a>
+
+        ### Especificação em OAS 3.0
+
+        <a href='swagger/swagger_financings_apis.yaml'>Download da Especificação (OAS 3.0)</a>
+
+      operationId: "getContractsContractIdPayments"
+      parameters:
+        - $ref: "#/components/parameters/contractId"
+        - $ref: "#/components/parameters/page"
+        - $ref: "#/components/parameters/pageSize"
+        - $ref: "#/components/parameters/Authorization"
+        - $ref: "#/components/parameters/xFapiAuthDate"
+        - $ref: "#/components/parameters/xFapiCustomerIpAddress"
+        - $ref: "#/components/parameters/xFapiInteractionId"
+        - $ref: "#/components/parameters/xCustomerUserAgent"
+      responses:
+        '200':
+          description: Dados de pagamentos do contrato de financiamento identificado por `contractId`
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseFinancingsPayments'
+        '400':
+          $ref: './schemas/ErrorHTTP.yaml#/400'
+        '401':
+          $ref: './schemas/ErrorHTTP.yaml#/401'
+        '403':
+          $ref: './schemas/ErrorHTTP.yaml#/403'
+        '404':
+          $ref: './schemas/ErrorHTTP.yaml#/404'
+        '405':
+          $ref: './schemas/ErrorHTTP.yaml#/405'
+        '406':
+          $ref: './schemas/ErrorHTTP.yaml#/406'
+        '429':
+          $ref: './schemas/ErrorHTTP.yaml#/429'
+        '500':
+          $ref: './schemas/ErrorHTTP.yaml#/500'
+
+  /financings/v1/contract/{contractId}/instalments:
+    get:
+      tags:
+        - API - Operações de Crédito - Financiamentos
+      summary: Financiamentos - Parcelas do Contrato
+      description: |
+        |Versão|
+        |:-----|
+        |1     |
+
+        ### Visão Geral
+
+        Obtém dados referentes às parcelas / prestações da operação de crédito de Financiamentos contratadas
+
+        Tags: [Financiamento (Financing)](#glossarioFinanciamento) e [Prestação Regular (Instalment)](#glossarioPrestacaoRegular).
+
+        ### Visão de alto de nível das estruturas de dados
+
+        <img class="lazy" src="images/loading.gif" data-src="images/tld/financings/TLD_Financings_Instalments.png"/>
+
+        ### DER - Diagramas de Entidade e Relacionamento
+
+        * DER Conceitual
+
+        <img class="lazy" src="images/loading.gif" data-src="images/der/financings/DER_Financings.png"/>
+
+        <a href="images/der/financings/DER_Financings.png" target="_blank">Fazer download do DER Conceitual</a>
+
+        * DER Lógico
+
+        <img class="lazy" src="images/loading.gif" data-src="images/der/financings/DER_Financings_Instalments.png"/>
+
+        <a href="images/der/financings/DER_Financings_Instalments.png" target="_blank">Fazer download do DER Lógico</a>
+
+        ### Dicionário de dados
+
+        <a href='dictionary/financings_instalments.csv' target="_blank">Fazer download do dicionário de dados</a>
+
+        <a href="dictionary/example/examples_financings_instalments.csv" target="_blank">Fazer download dos exemplos</a>
+
+        ### Especificação em OAS 3.0
+
+        <a href='swagger/swagger_financings_apis.yaml'>Download da Especificação (OAS 3.0)</a>
+
+      operationId: "getContractsContractIdInstalments"
+      parameters:
+        - $ref: "#/components/parameters/contractId"
+        - $ref: "#/components/parameters/page"
+        - $ref: "#/components/parameters/pageSize"
+        - $ref: "#/components/parameters/Authorization"
+        - $ref: "#/components/parameters/xFapiAuthDate"
+        - $ref: "#/components/parameters/xFapiCustomerIpAddress"
+        - $ref: "#/components/parameters/xFapiInteractionId"
+        - $ref: "#/components/parameters/xCustomerUserAgent"
+      responses:
+        '200':
+          description: Dados do cronograma de parcelas do contrato de financiamento identificado por `contractId`
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseFinancingsInstalments'
+        '400':
+          $ref: './schemas/ErrorHTTP.yaml#/400'
+        '401':
+          $ref: './schemas/ErrorHTTP.yaml#/401'
+        '403':
+          $ref: './schemas/ErrorHTTP.yaml#/403'
+        '404':
+          $ref: './schemas/ErrorHTTP.yaml#/404'
+        '405':
+          $ref: './schemas/ErrorHTTP.yaml#/405'
+        '406':
+          $ref: './schemas/ErrorHTTP.yaml#/406'
+        '429':
+          $ref: './schemas/ErrorHTTP.yaml#/429'
+        '500':
+          $ref: './schemas/ErrorHTTP.yaml#/500'
+
+  /unarranged-accounts-overdraft/v1/contract/{contractId}:
+    get:
+      tags:
+        - API - Operações de Crédito - Adiantamento a Depositantes
+      summary: Adiantamento a Depositantes - Contrato
+      description: |
+        |Versão|
+        |:-----|
+        |1     |
+
+        ### Visão Geral
+
+        Obtém dados referentes à identificação da operação de crédito de Adiantamento a Depositantes
+
+        Tags: [Adiantamento a Depositante (Unarranged Account Overdraft)](#glossarioAdiantamentoDepositante), [Custo Efetivo Total (CET)](#glossarioCET), [Encargo (Charge)](#glossarioEncargo), [Identificador padronizado da operação de crédito – Ipoc Code](#glossarioIPOC), [Indexador (Indexer)](#glossarioIndexador), [Sistema de Amortização Constante (SAC)](#glossarioSAC), [Sistema Francês de Amortização (Price)](#glossarioPrice), [Sociedade de arrendamento mercantil  (SAM)](#glossarioSAM), [Tarifa (Fee)](#glossarioTarifa), [Taxa Efetiva (EffectiveTax)](#glossarioTaxaEfetiva) e [Taxa nominal (NominalTax)](#glossarioTaxaNominal).
+
+        ### Visão de alto de nível das estruturas de dados
+
+        <img class="lazy" src="images/loading.gif" data-src="images/tld/unarranged_accounts_overdraft/TLD_UnarrangedAccountsOverdraft_Contract.png"/>
+
+        ### DER - Diagramas de Entidade e Relacionamento
+
+        * DER Conceitual
+
+        <img class="lazy" src="images/loading.gif" data-src="images/der/unarranged_accounts_overdraft/DER_UnarrangedAccountsOverdraft.png"/>
+
+        <a href="images/der/unarranged_accounts_overdraft/DER_UnarrangedAccountsOverdraft.png" target="_blank">Fazer download do DER Conceitual</a>
+
+        * DER Lógico
+
+        <img class="lazy" src="images/loading.gif" data-src="images/der/unarranged_accounts_overdraft/DER_UnarrangedAccountsOverdraft_Contract.png"/>
+
+        <a href="images/der/unarranged_accounts_overdraft/DER_UnarrangedAccountsOverdraft_Contract.png" target="_blank">Fazer download do DER Lógico</a>
+
+        ### Dicionário de dados
+
+        <a href='dictionary/unarranged_accounts_overdraft_contract.csv' target="_blank">Fazer download do dicionário de dados</a>
+
+        <a href="dictionary/example/examples_unarranged_accounts_overdraft_contract.csv" target="_blank">Fazer download dos exemplos</a>
+
+        ### Especificação em OAS 3.0
+
+        <a href='swagger/swagger_unarranged_accounts_overdraft_apis.yaml'>Download da Especificação (OAS 3.0)</a>
+
+      operationId: "getContractsContractId"
+      parameters:
+        - $ref: "#/components/parameters/contractId"
+        - $ref: "#/components/parameters/Authorization"
+        - $ref: "#/components/parameters/xFapiAuthDate"
+        - $ref: "#/components/parameters/xFapiCustomerIpAddress"
+        - $ref: "#/components/parameters/xFapiInteractionId"
+        - $ref: "#/components/parameters/xCustomerUserAgent"
+      responses:
+        '200':
+          description: Dados do contrato de adiantamento a depositantes identificado por `contractId`
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseUnarrangedAccountOverdraftContract'
+        '400':
+          $ref: './schemas/ErrorHTTP.yaml#/400'
+        '401':
+          $ref: './schemas/ErrorHTTP.yaml#/401'
+        '403':
+          $ref: './schemas/ErrorHTTP.yaml#/403'
+        '404':
+          $ref: './schemas/ErrorHTTP.yaml#/404'
+        '405':
+          $ref: './schemas/ErrorHTTP.yaml#/405'
+        '406':
+          $ref: './schemas/ErrorHTTP.yaml#/406'
+        '429':
+          $ref: './schemas/ErrorHTTP.yaml#/429'
+        '500':
+          $ref: './schemas/ErrorHTTP.yaml#/500'
+
+  /unarranged-accounts-overdraft/v1/contract/{contractId}/warranties:
+    get:
+      tags:
+        - API - Operações de Crédito - Adiantamento a Depositantes
+      summary: Adiantamento a Depositantes - Garantias do Contrato
+      description: |
+        |Versão|
+        |:-----|
+        |1     |
+
+        ### Visão Geral
+
+        Obtém dados referentes às garantias que avalizam a operação de crédito de Adiantamento a Depositantes contratada
+
+        Tags: [Adiantamento a Depositante (Unarranged Account Overdraft)](#glossarioAdiantamentoDepositante) e [Garantia (Warranty)](#glossarioGarantia).
+
+        ### Visão de alto de nível das estruturas de dados
+
+        <img class="lazy" src="images/loading.gif" data-src="images/tld/unarranged_accounts_overdraft/TLD_UnarrangedAccountsOverdraft_Warranties.png"/>
+
+        ### DER - Diagramas de Entidade e Relacionamento
+
+        * DER Conceitual
+
+        <img class="lazy" src="images/loading.gif" data-src="images/der/unarranged_accounts_overdraft/DER_UnarrangedAccountsOverdraft.png"/>
+
+        <a href="images/der/unarranged_accounts_overdraft/DER_UnarrangedAccountsOverdraft.png" target="_blank">Fazer download do DER Conceitual</a>
+
+        * DER Lógico
+
+        <img class="lazy" src="images/loading.gif" data-src="images/der/unarranged_accounts_overdraft/DER_UnarrangedAccountsOverdraft_Warranties.png"/>
+
+        <a href="images/der/unarranged_accounts_overdraft/DER_UnarrangedAccountsOverdraft_Warranties.png" target="_blank">Fazer download do DER Lógico</a>
+
+        ### Dicionário de dados
+
+        <a href='dictionary/unarranged_accounts_overdraft_warranties.csv' target="_blank">Fazer download do dicionário de dados</a>
+
+        <a href="dictionary/example/examples_unarranged_accounts_overdraft_warranties.csv" target="_blank">Fazer download dos exemplos</a>
+
+        ### Especificação em OAS 3.0
+
+        <a href='swagger/swagger_unarranged_accounts_overdraft_apis.yaml'>Download da Especificação (OAS 3.0)</a>
+
+      operationId: "getContractsContractIdWarranties"
+      parameters:
+        - $ref: "#/components/parameters/contractId"
+        - $ref: "#/components/parameters/page"
+        - $ref: "#/components/parameters/pageSize"
+        - $ref: "#/components/parameters/Authorization"
+        - $ref: "#/components/parameters/xFapiAuthDate"
+        - $ref: "#/components/parameters/xFapiCustomerIpAddress"
+        - $ref: "#/components/parameters/xFapiInteractionId"
+        - $ref: "#/components/parameters/xCustomerUserAgent"
+      responses:
+        '200':
+          description: Lista de garantias vinculadas ao contrato de adiantamento a depositantes identificado por `contractId`
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseUnarrangedAccountOverdraftWarranties'
+        '400':
+          $ref: './schemas/ErrorHTTP.yaml#/400'
+        '401':
+          $ref: './schemas/ErrorHTTP.yaml#/401'
+        '403':
+          $ref: './schemas/ErrorHTTP.yaml#/403'
+        '404':
+          $ref: './schemas/ErrorHTTP.yaml#/404'
+        '405':
+          $ref: './schemas/ErrorHTTP.yaml#/405'
+        '406':
+          $ref: './schemas/ErrorHTTP.yaml#/406'
+        '429':
+          $ref: './schemas/ErrorHTTP.yaml#/429'
+        '500':
+          $ref: './schemas/ErrorHTTP.yaml#/500'
+
+  /unarranged-accounts-overdraft/v1/contract/{contractId}/payments:
+    get:
+      tags:
+        - API - Operações de Crédito - Adiantamento a Depositantes
+      summary: Adiantamento a Depositantes - Pagamentos do Contrato
+      description: |
+        |Versão|
+        |:-----|
+        |1     |
+
+        ### Visão Geral
+
+        Obtém dados dos pagamentos referentes às operações de crédito de Adiantamento a Depositantes contratadas
+
+        Tags: [Adiantamento a Depositante (Unarranged Account Overdraft)](#glossarioAdiantamentoDepositante), [Encargo (Charge)](#glossarioEncargo), [Saldo Devedor (Outstanding Balance)](#glossarioSaldoDevedor) e [Tarifa (Fee)](#glossarioTarifa).
+
+        ### Visão de alto de nível das estruturas de dados
+
+        <img class="lazy" src="images/loading.gif" data-src="images/tld/unarranged_accounts_overdraft/TLD_UnarrangedAccountsOverdraft_Payments.png"/>
+
+        ### DER - Diagramas de Entidade e Relacionamento
+
+        * DER Conceitual
+
+        <img class="lazy" src="images/loading.gif" data-src="images/der/unarranged_accounts_overdraft/DER_UnarrangedAccountsOverdraft.png"/>
+
+        <a href="images/der/unarranged_accounts_overdraft/DER_UnarrangedAccountsOverdraft.png" target="_blank">Fazer download do DER Conceitual</a>
+
+        * DER Lógico
+
+        <img class="lazy" src="images/loading.gif" data-src="images/der/unarranged_accounts_overdraft/DER_UnarrangedAccountsOverdraft_Payments.png"/>
+
+        <a href="images/der/unarranged_accounts_overdraft/DER_UnarrangedAccountsOverdraft_Payments.png" target="_blank">Fazer download do DER Lógico</a>
+
+        ### Dicionário de dados
+
+        <a href='dictionary/unarranged_accounts_overdraft_payments.csv' target="_blank">Fazer download do dicionário de dados</a>
+
+        <a href="dictionary/example/examples_unarranged_accounts_overdraft_payments.csv" target="_blank">Fazer download dos exemplos</a>
+
+        ### Especificação em OAS 3.0
+
+        <a href='swagger/swagger_unarranged_accounts_overdraft_apis.yaml'>Download da Especificação (OAS 3.0)</a>
+
+      operationId: "getContractsContractIdPayments"
+      parameters:
+        - $ref: "#/components/parameters/contractId"
+        - $ref: "#/components/parameters/page"
+        - $ref: "#/components/parameters/pageSize"
+        - $ref: "#/components/parameters/Authorization"
+        - $ref: "#/components/parameters/xFapiAuthDate"
+        - $ref: "#/components/parameters/xFapiCustomerIpAddress"
+        - $ref: "#/components/parameters/xFapiInteractionId"
+        - $ref: "#/components/parameters/xCustomerUserAgent"
+      responses:
+        '200':
+          description: Dados de pagamentos do contrato de adiantamento a depositantes identificado por `contractId`
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseUnarrangedAccountOverdraftPayments'
+        '400':
+          $ref: './schemas/ErrorHTTP.yaml#/400'
+        '401':
+          $ref: './schemas/ErrorHTTP.yaml#/401'
+        '403':
+          $ref: './schemas/ErrorHTTP.yaml#/403'
+        '404':
+          $ref: './schemas/ErrorHTTP.yaml#/404'
+        '405':
+          $ref: './schemas/ErrorHTTP.yaml#/405'
+        '406':
+          $ref: './schemas/ErrorHTTP.yaml#/406'
+        '429':
+          $ref: './schemas/ErrorHTTP.yaml#/429'
+        '500':
+          $ref: './schemas/ErrorHTTP.yaml#/500'
+
+  /unarranged-accounts-overdraft/v1/contract/{contractId}/instalments:
+    get:
+      tags:
+        - API - Operações de Crédito - Adiantamento a Depositantes
+      summary: Adiantamento a Depositantes - Parcelas do Contrato
+      description: |
+        |Versão|
+        |:-----|
+        |1     |
+
+        ### Visão Geral
+
+        Obtém dados referentes às parcelas / prestações da operação de crédito de Adiantamento a Depositantes contratadas
+
+        Tags: [Adiantamento a Depositante (Unarranged Account Overdraft)](#glossarioAdiantamentoDepositante).
+
+        ### Visão de alto de nível das estruturas de dados
+
+        <img class="lazy" src="images/loading.gif" data-src="images/tld/unarranged_accounts_overdraft/TLD_UnarrangedAccountsOverdraft_Instalments.png"/>
+
+        ### DER - Diagramas de Entidade e Relacionamento
+
+        * DER Conceitual
+
+        <img class="lazy" src="images/loading.gif" data-src="images/der/unarranged_accounts_overdraft/DER_UnarrangedAccountsOverdraft.png"/>
+
+        <a href="images/der/unarranged_accounts_overdraft/DER_UnarrangedAccountsOverdraft.png" target="_blank">Fazer download do DER Conceitual</a>
+
+        * DER Lógico
+
+        <img class="lazy" src="images/loading.gif" data-src="images/der/unarranged_accounts_overdraft/DER_UnarrangedAccountsOverdraft_Instalments.png"/>
+
+        <a href="images/der/unarranged_accounts_overdraft/DER_UnarrangedAccountsOverdraft_Instalments.png" target="_blank">Fazer download do DER Lógico</a>
+
+        ### Dicionário de dados
+
+        <a href='dictionary/unarranged_accounts_overdraft_instalments.csv' target="_blank">Fazer download do dicionário de dados</a>
+
+        <a href="dictionary/example/examples_unarranged_accounts_overdraft_instalments.csv" target="_blank">Fazer download dos exemplos</a>
+
+        ### Especificação em OAS 3.0
+
+        <a href='swagger/swagger_unarranged_accounts_overdraft_apis.yaml'>Download da Especificação (OAS 3.0)</a>
+
+      operationId: "getContractsContractIdInstalments"
+      parameters:
+        - $ref: "#/components/parameters/contractId"
+        - $ref: "#/components/parameters/page"
+        - $ref: "#/components/parameters/pageSize"
+        - $ref: "#/components/parameters/Authorization"
+        - $ref: "#/components/parameters/xFapiAuthDate"
+        - $ref: "#/components/parameters/xFapiCustomerIpAddress"
+        - $ref: "#/components/parameters/xFapiInteractionId"
+        - $ref: "#/components/parameters/xCustomerUserAgent"
+      responses:
+        '200':
+          description: Dados do cronograma de parcelas do contrato de adiantamento a depositantes identificado por `contractId`
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseUnarrangedAccountOverdraftInstalments'
+        '400':
+          $ref: './schemas/ErrorHTTP.yaml#/400'
+        '401':
+          $ref: './schemas/ErrorHTTP.yaml#/401'
+        '403':
+          $ref: './schemas/ErrorHTTP.yaml#/403'
+        '404':
+          $ref: './schemas/ErrorHTTP.yaml#/404'
+        '405':
+          $ref: './schemas/ErrorHTTP.yaml#/405'
+        '406':
+          $ref: './schemas/ErrorHTTP.yaml#/406'
+        '429':
+          $ref: './schemas/ErrorHTTP.yaml#/429'
+        '500':
+          $ref: './schemas/ErrorHTTP.yaml#/500'
+
+  /invoice-financings/v1/contract/{contractId}:
+    get:
+      tags:
+        - API - Operações de Crédito - Direitos Creditórios Descontados
+      summary: Direitos Creditórios Descontados - Contrato
+      description: |
+        |Versão|
+        |:-----|
+        |1     |
+
+        ### Visão Geral
+
+        Obtém dados referentes à identificação da operação de crédito de Direitos Creditórios Descontados
+
+        Tags: [Custo Efetivo Total (CET)](#glossarioCET), [Direito Creditório Descontado (Invoice Financing)](#glossarioDireitoCreditorioDescontado), [Encargo (Charge)](#glossarioEncargo), [Ente Consignante (CnpjConsignee)](#glossarioEnteConsignante), [Identificador padronizado da operação de crédito – Ipoc Code](#glossarioIPOC), [Indexador (Indexer)](#glossarioIndexador), [Sistema de Amortização Constante (SAC)](#glossarioSAC), [Sistema Francês de Amortização (Price)](#glossarioPrice), [Sociedade de arrendamento mercantil  (SAM)](#glossarioSAM), [Tarifa (Fee)](#glossarioTarifa), [Taxa Efetiva (EffectiveTax)](#glossarioTaxaEfetiva) e [Taxa nominal (NominalTax)](#glossarioTaxaNominal).
+
+        ### Visão de alto de nível das estruturas de dados
+
+        <img class="lazy" src="images/loading.gif" data-src="images/tld/invoice_financings/TLD_InvoiceFinancings_Contract.png"/>
+
+        ### DER - Diagramas de Entidade e Relacionamento
+
+        * DER Conceitual
+
+        <img class="lazy" src="images/loading.gif" data-src="images/der/invoice_financings/DER_InvoiceFinancings.png"/>
+
+        <a href="images/der/invoice_financings/DER_InvoiceFinancings_.png" target="_blank">Fazer download do DER Conceitual</a>
+
+        * DER Lógico
+
+        <img class="lazy" src="images/loading.gif" data-src="images/der/invoice_financings/DER_InvoiceFinancings_Contract.png"/>
+
+        <a href="images/der/invoice_financings/DER_InvoiceFinancings_Contract.png" target="_blank">Fazer download do DER Lógico</a>
+
+        ### Dicionário de dados
+
+        <a href='dictionary/invoice_financings_contract.csv' target="_blank">Fazer download do dicionário de dados</a>
+
+        <a href="dictionary/example/examples_invoice_financings_contract.csv" target="_blank">Fazer download dos exemplos</a>
+
+        ### Especificação em OAS 3.0
+
+        <a href='swagger/swagger_invoice_financings_apis.yaml'>Download da Especificação (OAS 3.0)</a>
+
+      operationId: "getContractsContractId"
+      parameters:
+        - $ref: "#/components/parameters/contractId"
+        - $ref: "#/components/parameters/Authorization"
+        - $ref: "#/components/parameters/xFapiAuthDate"
+        - $ref: "#/components/parameters/xFapiCustomerIpAddress"
+        - $ref: "#/components/parameters/xFapiInteractionId"
+        - $ref: "#/components/parameters/xCustomerUserAgent"
+      responses:
+        '200':
+          description: Dados do contrato de antecipação de recebíveis identificado por `contractId`
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseInvoiceFinancingsContract'
+        '400':
+          $ref: './schemas/ErrorHTTP.yaml#/400'
+        '401':
+          $ref: './schemas/ErrorHTTP.yaml#/401'
+        '403':
+          $ref: './schemas/ErrorHTTP.yaml#/403'
+        '404':
+          $ref: './schemas/ErrorHTTP.yaml#/404'
+        '405':
+          $ref: './schemas/ErrorHTTP.yaml#/405'
+        '406':
+          $ref: './schemas/ErrorHTTP.yaml#/406'
+        '429':
+          $ref: './schemas/ErrorHTTP.yaml#/429'
+        '500':
+          $ref: './schemas/ErrorHTTP.yaml#/500'
+
+  /invoice-financings/v1/contract/{contractId}/warranties:
+    get:
+      tags:
+        - API - Operações de Crédito - Direitos Creditórios Descontados
+      summary: Direitos Creditórios Descontados - Garantias do Contrato
+      description: |
+        |Versão|
+        |:-----|
+        |1     |
+
+        ### Visão Geral
+
+        Obtém dados referentes às garantias que avalizam a operação de crédito de Direitos Creditórios Descontados contratada
+
+        Tags: [Direito Creditório Descontado (Invoice Financing)](#glossarioDireitoCreditorioDescontado) e [Garantia (Warranty)](#glossarioGarantia).
+
+        ### Visão de alto de nível das estruturas de dados
+
+        <img class="lazy" src="images/loading.gif" data-src="images/tld/invoice_financings/TLD_InvoiceFinancings_Warranties.png"/>
+
+        ### DER - Diagramas de Entidade e Relacionamento
+
+        * DER Conceitual
+
+        <img class="lazy" src="images/loading.gif" data-src="images/der/invoice_financings/DER_InvoiceFinancings.png"/>
+
+        <a href="images/der/invoice_financings/DER_InvoiceFinancings.png" target="_blank">Fazer download do DER Conceitual</a>
+
+        * DER Lógico
+
+        <img class="lazy" src="images/loading.gif" data-src="images/der/invoice_financings/DER_InvoiceFinancings_Warranties.png"/>
+
+        <a href="images/der/invoice_financings/DER_InvoiceFinancings_Warranties.png" target="_blank">Fazer download do DER Lógico</a>
+
+        ### Dicionário de dados
+
+        <a href='dictionary/invoice_financings_warranties.csv' target="_blank">Fazer download do dicionário de dados</a>
+
+        <a href="dictionary/example/examples_invoice_financings_warranties.csv" target="_blank">Fazer download dos exemplos</a>
+
+        ### Especificação em OAS 3.0
+
+        <a href='swagger/swagger_invoice_financings_apis.yaml'>Download da Especificação (OAS 3.0)</a>
+
+      operationId: "getContractsContractIdWarranties"
+      parameters:
+        - $ref: "#/components/parameters/contractId"
+        - $ref: "#/components/parameters/page"
+        - $ref: "#/components/parameters/pageSize"
+        - $ref: "#/components/parameters/Authorization"
+        - $ref: "#/components/parameters/xFapiAuthDate"
+        - $ref: "#/components/parameters/xFapiCustomerIpAddress"
+        - $ref: "#/components/parameters/xFapiInteractionId"
+        - $ref: "#/components/parameters/xCustomerUserAgent"
+      responses:
+        '200':
+          description: Lista de garantias vinculadas ao contrato de antecipação de recebíveis identificado por `contractId`
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseInvoiceFinancingsWarranties'
+        '400':
+          $ref: './schemas/ErrorHTTP.yaml#/400'
+        '401':
+          $ref: './schemas/ErrorHTTP.yaml#/401'
+        '403':
+          $ref: './schemas/ErrorHTTP.yaml#/403'
+        '404':
+          $ref: './schemas/ErrorHTTP.yaml#/404'
+        '405':
+          $ref: './schemas/ErrorHTTP.yaml#/405'
+        '406':
+          $ref: './schemas/ErrorHTTP.yaml#/406'
+        '429':
+          $ref: './schemas/ErrorHTTP.yaml#/429'
+        '500':
+          $ref: './schemas/ErrorHTTP.yaml#/500'
+
+  /invoice-financings/v1/contract/{contractId}/payments:
+    get:
+      tags:
+        - API - Operações de Crédito - Direitos Creditórios Descontados
+      summary: Direitos Creditórios Descontados - Pagamentos do Contrato
+      description: |
+        |Versão|
+        |:-----|
+        |1     |
+
+        ### Visão Geral
+
+        Obtém dados dos pagamentos referentes às operações de crédito de Direitos Creditórios Descontados contratadas
+
+        Tags: [Direito Creditório Descontado (Invoice Financing)](#glossarioDireitoCreditorioDescontado), [Encargo (Charge)](#glossarioEncargo), [Saldo Devedor (Outstanding Balance)](#glossarioSaldoDevedor) e [Tarifa (Fee)](#glossarioTarifa).
+
+        ### Visão de alto de nível das estruturas de dados
+
+        <img class="lazy" src="images/loading.gif" data-src="images/tld/invoice_financings/TLD_InvoiceFinancings_Payments.png"/>
+
+        ### DER - Diagramas de Entidade e Relacionamento
+
+        * DER Conceitual
+
+        <img class="lazy" src="images/loading.gif" data-src="images/der/invoice_financings/DER_InvoiceFinancings.png"/>
+
+        <a href="images/der/invoice_financings/DER_InvoiceFinancings.png" target="_blank">Fazer download do DER Conceitual</a>
+
+        * DER Lógico
+
+        <img class="lazy" src="images/loading.gif" data-src="images/der/invoice_financings/DER_InvoiceFinancings_Payments.png"/>
+
+        <a href="images/der/invoice_financings/DER_InvoiceFinancings_Payments.png" target="_blank">Fazer download do DER Lógico</a>
+
+        ### Dicionário de dados
+
+        <a href='dictionary/invoice_financings_payments.csv' target="_blank">Fazer download do dicionário de dados</a>
+
+        <a href="dictionary/example/examples_invoice_financings_payments.csv" target="_blank">Fazer download dos exemplos</a>
+
+        ### Especificação em OAS 3.0
+
+        <a href='swagger/swagger_invoice_financings_apis.yaml'>Download da Especificação (OAS 3.0)</a>
+
+      operationId: "getContractsContractIdPayments"
+      parameters:
+        - $ref: "#/components/parameters/contractId"
+        - $ref: "#/components/parameters/page"
+        - $ref: "#/components/parameters/pageSize"
+        - $ref: "#/components/parameters/Authorization"
+        - $ref: "#/components/parameters/xFapiAuthDate"
+        - $ref: "#/components/parameters/xFapiCustomerIpAddress"
+        - $ref: "#/components/parameters/xFapiInteractionId"
+        - $ref: "#/components/parameters/xCustomerUserAgent"
+      responses:
+        '200':
+          description: Dados de pagamentos do contrato de antecipação de recebíveis identificado por `contractId`
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseInvoiceFinancingsPayments'
+        '400':
+          $ref: './schemas/ErrorHTTP.yaml#/400'
+        '401':
+          $ref: './schemas/ErrorHTTP.yaml#/401'
+        '403':
+          $ref: './schemas/ErrorHTTP.yaml#/403'
+        '404':
+          $ref: './schemas/ErrorHTTP.yaml#/404'
+        '405':
+          $ref: './schemas/ErrorHTTP.yaml#/405'
+        '406':
+          $ref: './schemas/ErrorHTTP.yaml#/406'
+        '429':
+          $ref: './schemas/ErrorHTTP.yaml#/429'
+        '500':
+          $ref: './schemas/ErrorHTTP.yaml#/500'
+
+  /invoice-financings/v1/contract/{contractId}/instalments:
+    get:
+      tags:
+        - API - Operações de Crédito - Direitos Creditórios Descontados
+      summary: Direitos Creditórios Descontados - Parcelas do Contrato
+      description: |
+        |Versão|
+        |:-----|
+        |1     |
+
+        ### Visão Geral
+
+        Obtém dados referentes às parcelas / prestações da operação de crédito de Direitos Creditórios Descontados contratadas
+
+        Tags: [Direito Creditório Descontado (Invoice Financing)](#glossarioDireitoCreditorioDescontado).
+
+        ### Visão de alto de nível das estruturas de dados
+
+        <img class="lazy" src="images/loading.gif" data-src="images/tld/invoice_financings/TLD_InvoiceFinancings_Instalments.png"/>
+
+        ### DER - Diagramas de Entidade e Relacionamento
+
+        * DER Conceitual
+
+        <img class="lazy" src="images/loading.gif" data-src="images/der/invoice_financings/DER_InvoiceFinancings.png"/>
+
+        <a href="images/der/invoice_financings/DER_InvoiceFinancings.png" target="_blank">Fazer download do DER Conceitual</a>
+
+        * DER Lógico
+
+        <img class="lazy" src="images/loading.gif" data-src="images/der/invoice_financings/DER_InvoiceFinancings_Instalments.png"/>
+
+        <a href="images/der/invoice_financings/DER_InvoiceFinancings_Instalments.png" target="_blank">Fazer download do DER Lógico</a>
+
+        ### Dicionário de dados
+
+        <a href='dictionary/invoice_financings_instalments.csv' target="_blank">Fazer download do dicionário de dados</a>
+
+        <a href="dictionary/example/examples_invoice_financings_instalments.csv" target="_blank">Fazer download dos exemplos</a>
+
+        ### Especificação em OAS 3.0
+
+        <a href='swagger/swagger_invoice_financings_apis.yaml'>Download da Especificação (OAS 3.0)</a>
+
+      operationId: "getContractsContractIdInstalments"
+      parameters:
+        - $ref: "#/components/parameters/contractId"
+        - $ref: "#/components/parameters/page"
+        - $ref: "#/components/parameters/pageSize"
+        - $ref: "#/components/parameters/Authorization"
+        - $ref: "#/components/parameters/xFapiAuthDate"
+        - $ref: "#/components/parameters/xFapiCustomerIpAddress"
+        - $ref: "#/components/parameters/xFapiInteractionId"
+        - $ref: "#/components/parameters/xCustomerUserAgent"
+      responses:
+        '200':
+          description: Dados do cronograma de parcelas do contrato de antecipação de recebíveis identificado por `contractId`
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseInvoiceFinancingsInstalments'
+        '400':
+          $ref: './schemas/ErrorHTTP.yaml#/400'
+        '401':
+          $ref: './schemas/ErrorHTTP.yaml#/401'
+        '403':
+          $ref: './schemas/ErrorHTTP.yaml#/403'
+        '404':
+          $ref: './schemas/ErrorHTTP.yaml#/404'
+        '405':
+          $ref: './schemas/ErrorHTTP.yaml#/405'
+        '406':
+          $ref: './schemas/ErrorHTTP.yaml#/406'
+        '429':
+          $ref: './schemas/ErrorHTTP.yaml#/429'
+        '500':
+          $ref: './schemas/ErrorHTTP.yaml#/500'
 
 components:
   schemas:
+    Account:
+      $ref: ./schemas/accounts_apis/Account.yaml
     AccountBalances:
       $ref: ./schemas/accounts_apis/AccountBalances.yaml
     AccountBalancesData:
@@ -1532,44 +2568,6 @@ components:
       $ref: ./schemas/accounts_apis/AccountTransactionsData.yaml
     Balances:
       $ref: ./schemas/accounts_apis/Balances.yaml
-    BankBorrowingBallonInstalments:
-      $ref: ./schemas/bank_borrowing_apis/BankBorrowingBallonInstalments.yaml
-    BankBorrowingBallonPayment:
-      $ref: ./schemas/bank_borrowing_apis/BankBorrowingBallonPayment.yaml
-    BankBorrowingCompletedPayment:
-      $ref: ./schemas/bank_borrowing_apis/BankBorrowingCompletedPayment.yaml
-    BankBorrowingContract:
-      $ref: ./schemas/bank_borrowing_apis/BankBorrowingContract.yaml
-    BankBorrowingContractBank:
-      $ref: ./schemas/bank_borrowing_apis/BankBorrowingContractBank.yaml
-    BankBorrowingContractData:
-      $ref: ./schemas/bank_borrowing_apis/BankBorrowingContractData.yaml
-    BankBorrowingContractedWarranty:
-      $ref: ./schemas/bank_borrowing_apis/BankBorrowingContractedWarranty.yaml
-    BankBorrowingContractInterestRate:
-      $ref: ./schemas/bank_borrowing_apis/BankBorrowingContractInterestRate.yaml
-    BankBorrowingInstalments:
-      $ref: ./schemas/bank_borrowing_apis/BankBorrowingInstalments.yaml
-    BankBorrowingInstalmentsBank:
-      $ref: ./schemas/bank_borrowing_apis/BankBorrowingInstalmentsBank.yaml
-    BankBorrowingInstalmentsData:
-      $ref: ./schemas/bank_borrowing_apis/BankBorrowingInstalmentsData.yaml
-    BankBorrowingPaymentBank:
-      $ref: ./schemas/bank_borrowing_apis/BankBorrowingPaymentBank.yaml
-    BankBorrowingPayments:
-      $ref: ./schemas/bank_borrowing_apis/BankBorrowingPayments.yaml
-    BankBorrowingPaymentsData:
-      $ref: ./schemas/bank_borrowing_apis/BankBorrowingPaymentsData.yaml
-    BankBorrowingNonRegulatedCharge:
-      $ref: ./schemas/bank_borrowing_apis/BankBorrowingNonRegulatedCharge.yaml
-    BankBorrowingReleases:
-      $ref: ./schemas/bank_borrowing_apis/BankBorrowingReleases.yaml
-    BankBorrowingWarranties:
-      $ref: ./schemas/bank_borrowing_apis/BankBorrowingWarranties.yaml
-    BankBorrowingWarrantiesBank:
-      $ref: ./schemas/bank_borrowing_apis/BankBorrowingWarrantiesBank.yaml
-    BankBorrowingWarrantiesData:
-      $ref: ./schemas/bank_borrowing_apis/BankBorrowingWarrantiesData.yaml
     BusinessFinancialRelationBrand:
       $ref: ./schemas/customers_apis/BusinessFinancialRelationBrand.yaml
     BusinessFinancialRelationCompany:
@@ -1638,8 +2636,6 @@ components:
       $ref: ./schemas/credit_cards_apis/CreditCardsAccountsPaymentMethod.yaml
     CreditCardTransactionAccount:
       $ref: ./schemas/credit_cards_apis/CreditCardTransactionAccount.yaml
-    Currency:
-      $ref: ./schemas/Currency.yaml
     CustomerContacts:
       $ref: ./schemas/customers_apis/CustomerContacts.yaml
     CustomerEmail:
@@ -1660,6 +2656,10 @@ components:
       $ref: ./schemas/enum/EnumBankBorrowingContractAmortizationSchedule.yaml
     EnumBankBorrowingContractCalculation:
       $ref: ./schemas/enum/EnumBankBorrowingContractCalculation.yaml
+    EnumBankBorrowingContractFeeCharge:
+      $ref: ./schemas/enum/EnumBankBorrowingContractFeeCharge.yaml
+    EnumBankBorrowingContractFeeChargeType:
+      $ref: ./schemas/enum/EnumBankBorrowingContractFeeChargeType.yaml
     EnumBankBorrowingContractFinanceChargeType:
       $ref: ./schemas/enum/EnumBankBorrowingContractFinanceChargeType.yaml
     EnumBankBorrowingContractInstalmentPeriodicity:
@@ -1668,8 +2668,12 @@ components:
       $ref: ./schemas/enum/EnumBankBorrowingContractInterestRateType.yaml
     EnumBankBorrowingContractProductType:
       $ref: ./schemas/enum/EnumBankBorrowingContractProductType.yaml
+    EnumBankBorrowingContractProductSubType:
+      $ref: ./schemas/enum/EnumBankBorrowingContractProductSubType.yaml
     EnumBankBorrowingContractReferentialRateIndexerType:
       $ref: ./schemas/enum/EnumBankBorrowingContractReferentialRateIndexerType.yaml
+    EnumBankBorrowingContractReferentialRateIndexerSubType:
+      $ref: ./schemas/enum/EnumBankBorrowingContractReferentialRateIndexerSubType.yaml
     EnumBankBorrowingContractTaxPeriodicity:
       $ref: ./schemas/enum/EnumBankBorrowingContractTaxPeriodicity.yaml
     EnumBankBorrowingContractTaxType:
@@ -1684,6 +2688,8 @@ components:
       $ref: ./schemas/enum/EnumBankBorrowingWarrantyType.yaml
     EnumCustomerPhoneType:
       $ref: ./schemas/enum/EnumCustomerPhoneType.yaml
+    EnumTaxType:
+      $ref: ./schemas/enum/EnumTaxType.yaml
     EnumFiliationType:
       $ref: ./schemas/enum/EnumFiliationType.yaml
     EnumGender:
@@ -1700,6 +2706,18 @@ components:
       $ref: ./schemas/enum/EnumBalanceType.yaml
     EnumCompletedAuthorisedPaymentIndicator:
       $ref: ./schemas/enum/EnumCompletedAuthorisedPaymentIndicator.yaml
+    EnumContractProductSubTypeFinancings:
+      $ref: ./schemas/enum/EnumContractProductSubTypeFinancings.yaml
+    EnumContractProductSubTypeInvoiceFinancings:
+      $ref: ./schemas/enum/EnumContractProductSubTypeInvoiceFinancings.yaml
+    EnumContractProductSubTypeLoans:
+      $ref: ./schemas/enum/EnumContractProductSubTypeLoans.yaml
+    EnumContractProductTypeFinancings:
+      $ref: ./schemas/enum/EnumContractProductTypeFinancings.yaml
+    EnumContractProductTypeInvoiceFinancings:
+      $ref: ./schemas/enum/EnumContractProductTypeInvoiceFinancings.yaml
+    EnumContractProductTypeLoans:
+      $ref: ./schemas/enum/EnumContractProductTypeLoans.yaml
     EnumCountrySubDivision:
       $ref: ./schemas/enum/EnumCountrySubDivision.yaml
     EnumCreditCardAccountBalance:
@@ -1748,10 +2766,62 @@ components:
       $ref: ./schemas/enum/EnumProductServiceType.yaml
     EnumTransactionTypes:
       $ref: ./schemas/enum/EnumTransactionTypes.yaml
+    EnumTypeAccount:
+      $ref: ./schemas/enum/EnumTypeAccount.yaml
+    EnumUnarrangedAccountOverdraftProductType:
+      $ref: ./schemas/enum/EnumUnarrangedAccountOverdraftProductType.yaml
+    EnumUnarrangedAccountOverdraftSubProductType:
+      $ref: ./schemas/enum/EnumUnarrangedAccountOverdraftSubProductType.yaml
     Filiation:
       $ref: ./schemas/customers_apis/Filiation.yaml
     FinancialRelation:
       $ref: ./schemas/customers_apis/FinancialRelation.yaml
+    FinancingsBalloonInstalments:
+      $ref: ./schemas/financings_apis/FinancingsBalloonInstalments.yaml
+    FinancingsBalloonPayment:
+      $ref: ./schemas/financings_apis/FinancingsBalloonPayment.yaml
+    FinancingsChargeOverParcel:
+      $ref: ./schemas/financings_apis/FinancingsChargeOverParcel.yaml
+    FinancingsCompletedPayment:
+      $ref: ./schemas/financings_apis/FinancingsCompletedPayment.yaml
+    FinancingsContract:
+      $ref: ./schemas/financings_apis/FinancingsContract.yaml
+    FinancingsContractBank:
+      $ref: ./schemas/financings_apis/FinancingsContractBank.yaml
+    FinancingsContractData:
+      $ref: ./schemas/financings_apis/FinancingsContractData.yaml
+    FinancingsContractedFee:
+      $ref: ./schemas/financings_apis/FinancingsContractedFee.yaml
+    FinancingsContractedWarranty:
+      $ref: ./schemas/financings_apis/FinancingsContractedWarranty.yaml
+    FinancingsContractInterestRate:
+      $ref: ./schemas/financings_apis/FinancingsContractInterestRate.yaml
+    FinancingsFinanceCharge:
+      $ref: ./schemas/financings_apis/FinancingsFinanceCharge.yaml
+    FinancingsInstalments:
+      $ref: ./schemas/financings_apis/FinancingsInstalments.yaml
+    FinancingsInstalmentsBank:
+      $ref: ./schemas/financings_apis/FinancingsInstalmentsBank.yaml
+    FinancingsInstalmentsData:
+      $ref: ./schemas/financings_apis/FinancingsInstalmentsData.yaml
+    FinancingsNonRegulatedCharge:
+      $ref: ./schemas/financings_apis/FinancingsNonRegulatedCharge.yaml
+    FinancingsPaymentBank:
+      $ref: ./schemas/financings_apis/FinancingsPaymentBank.yaml
+    FinancingsPayments:
+      $ref: ./schemas/financings_apis/FinancingsPayments.yaml
+    FinancingsPaymentsData:
+      $ref: ./schemas/financings_apis/FinancingsPaymentsData.yaml
+    FinancingsReleases:
+      $ref: ./schemas/financings_apis/FinancingsReleases.yaml
+    FinancingsTaxesOverParcel:
+      $ref: ./schemas/financings_apis/FinancingsTaxesOverParcel.yaml
+    FinancingsWarranties:
+      $ref: ./schemas/financings_apis/FinancingsWarranties.yaml
+    FinancingsWarrantiesBank:
+      $ref: ./schemas/financings_apis/FinancingsWarrantiesBank.yaml
+    FinancingsWarrantiesData:
+      $ref: ./schemas/financings_apis/FinancingsWarrantiesData.yaml
     GeographicCoordinates:
       $ref: ./schemas/GeographicCoordinates.yaml
     Identification:
@@ -1760,8 +2830,104 @@ components:
       $ref: ./schemas/customers_apis/InformedIncome.yaml
     InformedRevenue:
       $ref: ./schemas/customers_apis/InformedRevenue.yaml
+    InvoiceFinancingsBalloonInstalments:
+      $ref: ./schemas/invoice_financings_apis/InvoiceFinancingsBalloonInstalments.yaml
+    InvoiceFinancingsBalloonPayment:
+      $ref: ./schemas/invoice_financings_apis/InvoiceFinancingsBalloonPayment.yaml
+    InvoiceFinancingsBorrowingWarranties:
+      $ref: ./schemas/invoice_financings_apis/InvoiceFinancingsBorrowingWarranties.yaml
+    InvoiceFinancingsChargeOverParcel:
+      $ref: ./schemas/invoice_financings_apis/InvoiceFinancingsChargeOverParcel.yaml
+    InvoiceFinancingsCompletedPayment:
+      $ref: ./schemas/invoice_financings_apis/InvoiceFinancingsCompletedPayment.yaml
+    InvoiceFinancingsContract:
+      $ref: ./schemas/invoice_financings_apis/InvoiceFinancingsContract.yaml
+    InvoiceFinancingsContractBank:
+      $ref: ./schemas/invoice_financings_apis/InvoiceFinancingsContractBank.yaml
+    InvoiceFinancingsContractData:
+      $ref: ./schemas/invoice_financings_apis/InvoiceFinancingsContractData.yaml
+    InvoiceFinancingsContractedFee:
+      $ref: ./schemas/invoice_financings_apis/InvoiceFinancingsContractedFee.yaml
+    InvoiceFinancingsContractedWarranty:
+      $ref: ./schemas/invoice_financings_apis/InvoiceFinancingsContractedWarranty.yaml
+    InvoiceFinancingsContractInterestRate:
+      $ref: ./schemas/invoice_financings_apis/InvoiceFinancingsContractInterestRate.yaml
+    InvoiceFinancingsFinanceCharge:
+      $ref: ./schemas/invoice_financings_apis/InvoiceFinancingsFinanceCharge.yaml
+    InvoiceFinancingsInstalments:
+      $ref: ./schemas/invoice_financings_apis/InvoiceFinancingsInstalments.yaml
+    InvoiceFinancingsInstalmentsBank:
+      $ref: ./schemas/invoice_financings_apis/InvoiceFinancingsInstalmentsBank.yaml
+    InvoiceFinancingsInstalmentsData:
+      $ref: ./schemas/invoice_financings_apis/InvoiceFinancingsInstalmentsData.yaml
+    InvoiceFinancingsNonRegulatedCharge:
+      $ref: ./schemas/invoice_financings_apis/InvoiceFinancingsNonRegulatedCharge.yaml
+    InvoiceFinancingsPaymentBank:
+      $ref: ./schemas/invoice_financings_apis/InvoiceFinancingsPaymentBank.yaml
+    InvoiceFinancingsPayments:
+      $ref: ./schemas/invoice_financings_apis/InvoiceFinancingsPayments.yaml
+    InvoiceFinancingsPaymentsData:
+      $ref: ./schemas/invoice_financings_apis/InvoiceFinancingsPaymentsData.yaml
+    InvoiceFinancingsReleases:
+      $ref: ./schemas/invoice_financings_apis/InvoiceFinancingsReleases.yaml
+    InvoiceFinancingsTaxesOverParcel:
+      $ref: ./schemas/invoice_financings_apis/InvoiceFinancingsTaxesOverParcel.yaml
+    InvoiceFinancingsWarranties:
+      $ref: ./schemas/invoice_financings_apis/InvoiceFinancingsWarranties.yaml
+    InvoiceFinancingsWarrantiesBank:
+      $ref: ./schemas/invoice_financings_apis/InvoiceFinancingsWarrantiesBank.yaml
+    InvoiceFinancingsWarrantiesData:
+      $ref: ./schemas/invoice_financings_apis/InvoiceFinancingsWarrantiesData.yaml
     Links:
       $ref: ./schemas/Links.yaml
+    LoansBalloonInstalments:
+      $ref: ./schemas/loans_apis/LoansBalloonInstalments.yaml
+    LoansBalloonPayment:
+      $ref: ./schemas/loans_apis/LoansBalloonPayment.yaml
+    LoansBank:
+      $ref: ./schemas/loans_apis/LoansBank.yaml
+    LoansChargeOverParcel:
+      $ref: ./schemas/loans_apis/LoansChargeOverParcel.yaml
+    LoansCompletedPayment:
+      $ref: ./schemas/loans_apis/LoansCompletedPayment.yaml
+    LoansContract:
+      $ref: ./schemas/loans_apis/LoansContract.yaml
+    LoansContractBank:
+      $ref: ./schemas/loans_apis/LoansContractBank.yaml
+    LoansContractData:
+      $ref: ./schemas/loans_apis/LoansContractData.yaml
+    LoansContractedFee:
+      $ref: ./schemas/loans_apis/LoansContractedFee.yaml
+    LoansContractedWarranty:
+      $ref: ./schemas/loans_apis/LoansContractedWarranty.yaml
+    LoansContractInterestRate:
+      $ref: ./schemas/loans_apis/LoansContractInterestRate.yaml
+    LoansFinanceCharge:
+      $ref: ./schemas/loans_apis/LoansFinanceCharge.yaml
+    LoansInstalments:
+      $ref: ./schemas/loans_apis/LoansInstalments.yaml
+    LoansInstalmentsBank:
+      $ref: ./schemas/loans_apis/LoansInstalmentsBank.yaml
+    LoansInstalmentsData:
+      $ref: ./schemas/loans_apis/LoansInstalmentsData.yaml
+    LoansNonRegulatedCharge:
+      $ref: ./schemas/loans_apis/LoansNonRegulatedCharge.yaml
+    LoansPaymentBank:
+      $ref: ./schemas/loans_apis/LoansPaymentBank.yaml
+    LoansPayments:
+      $ref: ./schemas/loans_apis/LoansPayments.yaml
+    LoansPaymentsData:
+      $ref: ./schemas/loans_apis/LoansPaymentsData.yaml
+    LoansReleases:
+      $ref: ./schemas/loans_apis/LoansReleases.yaml
+    LoansTaxesOverParcel:
+      $ref: ./schemas/loans_apis/LoansTaxesOverParcel.yaml
+    LoansWarranties:
+      $ref: ./schemas/loans_apis/LoansWarranties.yaml
+    LoansWarrantiesBank:
+      $ref: ./schemas/loans_apis/LoansWarrantiesBank.yaml
+    LoansWarrantiesData:
+      $ref: ./schemas/loans_apis/LoansWarrantiesData.yaml
     Meta:
       $ref: ./schemas/Meta.yaml
     Nationality:
@@ -1814,6 +2980,8 @@ components:
       $ref: ./schemas/customers_apis/Procurator.yaml
     ProductService:
       $ref: ./schemas/customers_apis/ProductService.yaml
+    ResponseAccount:
+      $ref: ./schemas/accounts_apis/ResponseAccount.yaml
     ResponseAccountBalances:
       $ref: ./schemas/accounts_apis/ResponseAccountBalances.yaml
     ResponseAccountIdentification:
@@ -1822,14 +2990,6 @@ components:
       $ref: ./schemas/accounts_apis/ResponseAccountOverdraftLimits.yaml
     ResponseAccountTransactions:
       $ref: ./schemas/accounts_apis/ResponseAccountTransactions.yaml
-    ResponseBankBorrowingContract:
-      $ref: ./schemas/bank_borrowing_apis/ResponseBankBorrowingContract.yaml
-    ResponseBankBorrowingInstalments:
-      $ref: ./schemas/bank_borrowing_apis/ResponseBankBorrowingInstalments.yaml
-    ResponseBankBorrowingPayments:
-      $ref: ./schemas/bank_borrowing_apis/ResponseBankBorrowingPayments.yaml
-    ResponseBankBorrowingWarranties:
-      $ref: ./schemas/bank_borrowing_apis/ResponseBankBorrowingWarranties.yaml
     ResponseBusinessCustomersFinancialRelation:
       $ref: ./schemas/customers_apis/ResponseBusinessCustomersFinancialRelation.yaml
     ResponseBusinessCustomersIdentification:
@@ -1850,22 +3010,140 @@ components:
       $ref: ./schemas/customers_apis/ResponsePersonalCustomersIdentification.yaml
     ResponsePersonalCustomersQualification:
       $ref: ./schemas/customers_apis/ResponsePersonalCustomersQualification.yaml
+    ResponseFinancingsContract:
+      $ref: ./schemas/financings_apis/ResponseFinancingsContract.yaml
+    ResponseFinancingsInstalments:
+      $ref: ./schemas/financings_apis/ResponseFinancingsInstalments.yaml
+    ResponseFinancingsPayments:
+      $ref: ./schemas/financings_apis/ResponseFinancingsPayments.yaml
+    ResponseFinancingsWarranties:
+      $ref: ./schemas/financings_apis/ResponseFinancingsWarranties.yaml
+    ResponseLoansContract:
+      $ref: ./schemas/loans_apis/ResponseLoansContract.yaml
+    ResponseLoansInstalments:
+      $ref: ./schemas/loans_apis/ResponseLoansInstalments.yaml
+    ResponseLoansPayments:
+      $ref: ./schemas/loans_apis/ResponseLoansPayments.yaml
+    ResponseLoansWarranties:
+      $ref: ./schemas/loans_apis/ResponseLoansWarranties.yaml
+    ResponseInvoiceFinancingsContract:
+      $ref: ./schemas/invoice_financings_apis/ResponseInvoiceFinancingsContract.yaml
+    ResponseInvoiceFinancingsInstalments:
+      $ref: ./schemas/invoice_financings_apis/ResponseInvoiceFinancingsInstalments.yaml
+    ResponseInvoiceFinancingsPayments:
+      $ref: ./schemas/invoice_financings_apis/ResponseInvoiceFinancingsPayments.yaml
+    ResponseInvoiceFinancingsWarranties:
+      $ref: ./schemas/invoice_financings_apis/ResponseInvoiceFinancingsWarranties.yaml
+    ResponseUnarrangedAccountOverdraftContract:
+      $ref: ./schemas/unarranged_account_overdraft_apis/ResponseUnarrangedAccountOverdraftContract.yaml
+    ResponseUnarrangedAccountOverdraftInstalments:
+      $ref: ./schemas/unarranged_account_overdraft_apis/ResponseUnarrangedAccountOverdraftInstalments.yaml
+    ResponseUnarrangedAccountOverdraftPayments:
+      $ref: ./schemas/unarranged_account_overdraft_apis/ResponseUnarrangedAccountOverdraftPayments.yaml
+    ResponseUnarrangedAccountOverdraftWarranties:
+      $ref: ./schemas/unarranged_account_overdraft_apis/ResponseUnarrangedAccountOverdraftWarranties.yaml
     StatementAccountBalance:
       $ref: ./schemas/accounts_apis/StatementAccountBalance.yaml
-    StatementAccountTransaction:
-      $ref: ./schemas/accounts_apis/StatementAccountTransaction.yaml
     Transactions:
       $ref: ./schemas/accounts_apis/Transactions.yaml
+    UnarrangedAccountOverdraftBalloonInstalments:
+      $ref: ./schemas/unarranged_account_overdraft_apis/UnarrangedAccountOverdraftBalloonInstalments.yaml
+    UnarrangedAccountOverdraftBalloonPayment:
+      $ref: ./schemas/unarranged_account_overdraft_apis/UnarrangedAccountOverdraftBalloonPayment.yaml
+    UnarrangedAccountOverdraftChargeOverParcel:
+      $ref: ./schemas/unarranged_account_overdraft_apis/UnarrangedAccountOverdraftChargeOverParcel.yaml
+    UnarrangedAccountOverdraftCompletedPayment:
+      $ref: ./schemas/unarranged_account_overdraft_apis/UnarrangedAccountOverdraftCompletedPayment.yaml
+    UnarrangedAccountOverdraftContract:
+      $ref: ./schemas/unarranged_account_overdraft_apis/UnarrangedAccountOverdraftContract.yaml
+    UnarrangedAccountOverdraftContractBank:
+      $ref: ./schemas/unarranged_account_overdraft_apis/UnarrangedAccountOverdraftContractBank.yaml
+    UnarrangedAccountOverdraftContractData:
+      $ref: ./schemas/unarranged_account_overdraft_apis/UnarrangedAccountOverdraftContractData.yaml
+    UnarrangedAccountOverdraftContractedFee:
+      $ref: ./schemas/unarranged_account_overdraft_apis/UnarrangedAccountOverdraftContractedFee.yaml
+    UnarrangedAccountOverdraftContractedWarranty:
+      $ref: ./schemas/unarranged_account_overdraft_apis/UnarrangedAccountOverdraftContractedWarranty.yaml
+    UnarrangedAccountOverdraftContractInterestRate:
+      $ref: ./schemas/unarranged_account_overdraft_apis/UnarrangedAccountOverdraftContractInterestRate.yaml
+    UnarrangedAccountOverdraftFinanceCharge:
+      $ref: ./schemas/unarranged_account_overdraft_apis/UnarrangedAccountOverdraftFinanceCharge.yaml
+    UnarrangedAccountOverdraftInstalments:
+      $ref: ./schemas/unarranged_account_overdraft_apis/UnarrangedAccountOverdraftInstalments.yaml
+    UnarrangedAccountOverdraftInstalmentsBank:
+      $ref: ./schemas/unarranged_account_overdraft_apis/UnarrangedAccountOverdraftInstalmentsBank.yaml
+    UnarrangedAccountOverdraftInstalmentsData:
+      $ref: ./schemas/unarranged_account_overdraft_apis/UnarrangedAccountOverdraftInstalmentsData.yaml
+    UnarrangedAccountOverdraftNonRegulatedCharge:
+      $ref: ./schemas/unarranged_account_overdraft_apis/UnarrangedAccountOverdraftNonRegulatedCharge.yaml
+    UnarrangedAccountOverdraftPaymentBank:
+      $ref: ./schemas/unarranged_account_overdraft_apis/UnarrangedAccountOverdraftPaymentBank.yaml
+    UnarrangedAccountOverdraftPayments:
+      $ref: ./schemas/unarranged_account_overdraft_apis/UnarrangedAccountOverdraftPayments.yaml
+    UnarrangedAccountOverdraftPaymentsData:
+      $ref: ./schemas/unarranged_account_overdraft_apis/UnarrangedAccountOverdraftPaymentsData.yaml
+    UnarrangedAccountOverdraftReleases:
+      $ref: ./schemas/unarranged_account_overdraft_apis/UnarrangedAccountOverdraftReleases.yaml
+    UnarrangedAccountOverdraftTaxesOverParcel:
+      $ref: ./schemas/unarranged_account_overdraft_apis/UnarrangedAccountOverdraftTaxesOverParcel.yaml
+    UnarrangedAccountOverdraftWarranties:
+      $ref: ./schemas/unarranged_account_overdraft_apis/UnarrangedAccountOverdraftWarranties.yaml
+    UnarrangedAccountOverdraftWarrantiesBank:
+      $ref: ./schemas/unarranged_account_overdraft_apis/UnarrangedAccountOverdraftWarrantiesBank.yaml
+    UnarrangedAccountOverdraftWarrantiesData:
+      $ref: ./schemas/unarranged_account_overdraft_apis/UnarrangedAccountOverdraftWarrantiesData.yaml
   parameters:
+    accountId:
+      $ref: ./parameters/AccountId.yaml
     accountsBranchCode:
       $ref: ./parameters/AccountsBranchCode.yaml
     accountsCheckDigit:
       $ref: ./parameters/AccountsCheckDigit.yaml
     accountsCompeCode:
       $ref: ./parameters/AccountsCompeCode.yaml
+    accountsCreditDebitIndicator:
+      $ref: ./parameters/AccountsCreditDebitIndicator.yaml
     accountsNumber:
       $ref: ./parameters/AccountsNumber.yaml
+    Authorization:
+      $ref: ./parameters/Authorization.yaml
+    contractId:
+      $ref: ./parameters/ContractId.yaml
+    creditDebitIndicator:
+      $ref: ./parameters/CreditCardDebitIndicator.yaml
+    creditCardAccountId:
+      $ref: ./parameters/CreditCardAccountId.yaml
+    creditCardNetwork:
+      $ref: ./parameters/CreditCardNetwork.yaml
+    creditCardPayeeMCC:
+      $ref: ./parameters/CreditCardPayeeMCC.yaml
+    creditCardTransactionType:
+      $ref: ./parameters/CreditCardTransactionType.yaml
+    fromBookingDate:
+      $ref: ./parameters/FromBookingDate.yaml
+    fromDueDate:
+      $ref: ./parameters/FromDueDate.yaml
+    fromTransactionDate:
+      $ref: ./parameters/FromTransactionDate.yaml
     page:
       $ref: ./parameters/Page.yaml
     pageSize:
       $ref: ./parameters/PageSize.yaml
+    toBookingDate:
+      $ref: ./parameters/ToBookingDate.yaml
+    toDueDate:
+      $ref: ./parameters/ToDueDate.yaml
+    toTransactionDate:
+      $ref: ./parameters/ToTransactionDate.yaml
+    xCustomerUserAgent:
+      $ref: ./parameters/XCustomerUserAgent.yaml
+    xFapiAuthDate:
+      $ref: ./parameters/XFapiAuthDate.yaml
+    xFapiCustomerIpAddress:
+      $ref: ./parameters/XFapiCustomerIpAddress.yaml
+    xFapiInteractionId:
+      $ref: ./parameters/XFapiInteractionId.yaml
+  securitySchemes:
+    OpenId:
+      type: openIdConnect
+      openIdConnectUrl: "https://authserver.example/.well-known/openid-configuration" 

@@ -1,33 +1,48 @@
 openapi: 3.0.0
 info:
-  title: API's OpenData do Open Banking Brasil
-  description: As API's descritas neste documento são referentes as API's da fase OpenData do Open Banking Brasil.
-  version: 1.0.0-rc
+  title: API de contas de pagamento pós-pagas do Open Banking Brasil – Fase 2.
+  description: |
+    API que retorna informações de contas de pagamento pós-paga mantidas nas instituições transmissoras por seus clientes, incluindo dados como denominação, produto, bandeira, limites de crédito, informações sobre transações de pagamento efetuadas e faturas.\
+    Não possui segregação entre pessoa natural e pessoa jurídica.\
+    Requer consentimento do cliente para todos os endpoints.
+  version: 1.0.0
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0
   contact:
-    email: apiteam@swagger.io
+    name: Governança do Open Banking Brasil – Interfaces
+    email: gt-interfaces@openbankingbr.org
+    url: https://openbanking-brasil.github.io/areadesenvolvedor/
 servers:
-  - url: http://api.banco.com.br/open-banking/credit-cards/v1
+    - url: 'https://api.banco.com.br/open-banking/credit-cards-accounts/v1'
+      description: Servidor de Produção
+    - url: 'https://apih.banco.com.br/open-banking/credit-cards-accounts/v1'
+      description: Servidor de Homologação
 tags:
   - name: Credit Card
     description: Operações para listagem das informações de Cartão de Crédito
 paths:
-  /credit-cards/identification:
+  /accounts/{creditCardAccountId}:
     get:
       tags:
         - Credit Card
-      summary: Obtém dados relativos ao conjunto de informações referentes à identificação da conta de pagamento pós-paga.
-      description: Método para obter os dados relativos ao conjunto de informações referentes à identificação da conta de pagamento pós-paga.
-      operationId: getCreditCardAccountsIdentification
+      summary: Obtém os dados de identificação da conta identificada por creditCardAccountId.
+      description: Método para obter os dados de identificação da conta de pagamento pós-paga identificada por creditCardAccountId mantida pelo cliente na instituição transmissora.
+      operationId: getAccountsCreditCardAccountId
       parameters:
-        - $ref: ./parameters/Page.yaml
-        - $ref: ./parameters/PageSize.yaml
+        - $ref: '#/components/parameters/Authorization'
+        - $ref: '#/components/parameters/xFapiAuthDate'
+        - $ref: '#/components/parameters/xFapiCustomerIpAddress'
+        - $ref: '#/components/parameters/xFapiInteractionId'
+        - $ref: '#/components/parameters/xCustomerUserAgent'
+        - $ref: '#/components/parameters/creditCardAccountId'
       responses:
         '200':
-          description: Dados relativos ao conjunto de informações referentes à identificação da conta de pagamento pós-paga.
+          description: Dados de identificação da conta identificada por creditCardAccountId obtidos com sucesso.
           content:
             application/json:
               schema:
-                $ref: ./schemas/credit_cards_apis/ResponseCreditCardAccountsIdentification.yaml
+                $ref: '#/components/schemas/ResponseCreditCardAccountsIdentification'
         '400':
           $ref: './schemas/ErrorHTTP.yaml#/400'
         '401':
@@ -40,38 +55,84 @@ paths:
           $ref: './schemas/ErrorHTTP.yaml#/405'
         '406':
           $ref: './schemas/ErrorHTTP.yaml#/406'
-        '410':
-          $ref: './schemas/ErrorHTTP.yaml#/410'
-        '422':
-          $ref: './schemas/ErrorHTTP.yaml#/422'
         '429':
           $ref: './schemas/ErrorHTTP.yaml#/429'
         '500':
           $ref: './schemas/ErrorHTTP.yaml#/500'
-        '503':
-          $ref: './schemas/ErrorHTTP.yaml#/503'
-        '504':
-          $ref: './schemas/ErrorHTTP.yaml#/504'
+      security:
+        - OpenId:
+            - openId
+            - credit-card
 
-  /credit-cards/limits:
+  /accounts/{creditCardAccountId}/bills:
+    get:
+      tags:
+        - Credit Card
+      summary: Obtém a lista de faturas da conta identificada por creditCardAccountId.
+      description: Método para obter a lista de faturas da conta de pagamento pós-paga identificada por creditCardAccountId mantida pelo cliente na instituição transmissora.
+      operationId: getAccountsCreditCardAccountIdBills
+      parameters:
+        - $ref: '#/components/parameters/Authorization'
+        - $ref: '#/components/parameters/xFapiAuthDate'
+        - $ref: '#/components/parameters/xFapiCustomerIpAddress'
+        - $ref: '#/components/parameters/xFapiInteractionId'
+        - $ref: '#/components/parameters/xCustomerUserAgent'
+        - $ref: '#/components/parameters/creditCardAccountId'
+        - $ref: '#/components/parameters/page'
+        - $ref: '#/components/parameters/pageSize'
+        - $ref: '#/components/parameters/fromDueDate'
+        - $ref: '#/components/parameters/toDueDate'
+      responses:
+        '200':
+          description: Dados referentes à lista de faturas da conta identificada por creditCardAccountId obtidos com sucesso.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseCreditCardAccountsBilling'
+        '400':
+          $ref: './schemas/ErrorHTTP.yaml#/400'
+        '401':
+          $ref: './schemas/ErrorHTTP.yaml#/401'
+        '403':
+          $ref: './schemas/ErrorHTTP.yaml#/403'
+        '404':
+          $ref: './schemas/ErrorHTTP.yaml#/404'
+        '405':
+          $ref: './schemas/ErrorHTTP.yaml#/405'
+        '406':
+          $ref: './schemas/ErrorHTTP.yaml#/406'
+        '429':
+          $ref: './schemas/ErrorHTTP.yaml#/429'
+        '500':
+          $ref: './schemas/ErrorHTTP.yaml#/500'
+      security:
+        - OpenId:
+            - openId
+            - credit-card
+
+  /accounts/{creditCardAccountId}/limits:
     get:
       tags:
         - Credit Card
       summary: | 
-        Obtém dados dos limites: de Crédito Total e por Modalidade de Crédito relativos à conta de pagamento pós-paga.
+        Obtém os limites da conta identificada por creditCardAccountId.
       description: | 
-        Método para obter os dados dos limites: de Crédito Total e por Modalidade de Crédito relativos à conta de pagamento pós-paga.
-      operationId: getCreditCardAccountsLimits
+        Método para obter os limites da conta de pagamento pós-paga identificada por creditCardAccountId mantida pelo cliente na instituição transmissora.
+      operationId: getAccountsCreditCardAccountIdLimits
       parameters:
-        - $ref: ./parameters/Page.yaml
-        - $ref: ./parameters/PageSize.yaml
+        - $ref: '#/components/parameters/Authorization'
+        - $ref: '#/components/parameters/xFapiAuthDate'
+        - $ref: '#/components/parameters/xFapiCustomerIpAddress'
+        - $ref: '#/components/parameters/xFapiInteractionId'
+        - $ref: '#/components/parameters/xCustomerUserAgent'
+        - $ref: '#/components/parameters/creditCardAccountId'
       responses:
         '200':
-          description: Dados dos limites de Crédito Total e por Modalidade de Crédito relativos à conta de pagamento pós-paga.
+          description: Dados dos limites da conta identificada por creditCardAccountId obtidos com sucesso.
           content:
             application/json:
               schema:
-                $ref: ./schemas/credit_cards_apis/ResponseCreditCardAccountsLimits.yaml
+                $ref: '#/components/schemas/ResponseCreditCardAccountsLimits'
         '400':
           $ref: './schemas/ErrorHTTP.yaml#/400'
         '401':
@@ -84,36 +145,42 @@ paths:
           $ref: './schemas/ErrorHTTP.yaml#/405'
         '406':
           $ref: './schemas/ErrorHTTP.yaml#/406'
-        '410':
-          $ref: './schemas/ErrorHTTP.yaml#/410'
-        '422':
-          $ref: './schemas/ErrorHTTP.yaml#/422'
         '429':
           $ref: './schemas/ErrorHTTP.yaml#/429'
         '500':
           $ref: './schemas/ErrorHTTP.yaml#/500'
-        '503':
-          $ref: './schemas/ErrorHTTP.yaml#/503'
-        '504':
-          $ref: './schemas/ErrorHTTP.yaml#/504'
+      security:
+        - OpenId:
+            - openId
+            - credit-card
 
-  /credit-cards/transactions:
+  /accounts/{creditCardAccountId}/transactions:
     get:
       tags:
         - Credit Card
-      summary: Obtém dados das transações relativas à conta de pagamento pós-paga.
-      description: Método para obter os dados das transações relativas à conta de pagamento pós-paga.
-      operationId: getCreditCardAccountsTransactions
+      summary: Obtém a lista de transações da conta identificada por creditCardAccountId.
+      description: Método para obter a lista de transações da conta de pagamento pós-paga identificada por creditCardAccountId mantida pelo cliente na instituição transmissora.
+      operationId: getAccountsCreditCardAccountIdTransactions
       parameters:
-        - $ref: ./parameters/Page.yaml
-        - $ref: ./parameters/PageSize.yaml
+        - $ref: '#/components/parameters/Authorization'
+        - $ref: '#/components/parameters/xFapiAuthDate'
+        - $ref: '#/components/parameters/xFapiCustomerIpAddress'
+        - $ref: '#/components/parameters/xFapiInteractionId'
+        - $ref: '#/components/parameters/xCustomerUserAgent'
+        - $ref: '#/components/parameters/creditCardAccountId'
+        - $ref: '#/components/parameters/page'
+        - $ref: '#/components/parameters/pageSize'
+        - $ref: '#/components/parameters/fromTransactionDate'
+        - $ref: '#/components/parameters/toTransactionDate'
+        - $ref: '#/components/parameters/creditCardTransactionType'
+        - $ref: '#/components/parameters/creditCardPayeeMCC'
       responses:
         '200':
-          description: Dados das transações relativas à conta de pagamento pós-paga.
+          description: Dados das lista de transações da conta identificada por creditCardAccountId obtidos com sucesso.
           content:
             application/json:
               schema:
-                $ref: ./schemas/credit_cards_apis/ResponseCreditCardAccountsTransactions.yaml
+                $ref: '#/components/schemas/ResponseCreditCardAccountsTransactions'
         '400':
           $ref: './schemas/ErrorHTTP.yaml#/400'
         '401':
@@ -126,56 +193,55 @@ paths:
           $ref: './schemas/ErrorHTTP.yaml#/405'
         '406':
           $ref: './schemas/ErrorHTTP.yaml#/406'
-        '410':
-          $ref: './schemas/ErrorHTTP.yaml#/410'
-        '422':
-          $ref: './schemas/ErrorHTTP.yaml#/422'
         '429':
           $ref: './schemas/ErrorHTTP.yaml#/429'
         '500':
           $ref: './schemas/ErrorHTTP.yaml#/500'
-        '503':
-          $ref: './schemas/ErrorHTTP.yaml#/503'
-        '504':
-          $ref: './schemas/ErrorHTTP.yaml#/504'
-  /credit-cards/bill:
-    get:
-      tags:
-        - Credit Card
-      summary: Obtém dados referentes à fatura da conta de pagamento pós-paga.
-      description: Método para obter os dados referentes à fatura da conta de pagamento pós-paga.
-      operationId: getCrediCardsBilling
-      parameters:
-        - $ref: ./parameters/Page.yaml
-        - $ref: ./parameters/PageSize.yaml
-      responses:
-        '200':
-          description: Dados referentes à fatura da conta de pagamento pós-paga.
-          content:
-            application/json:
-              schema:
-                $ref: ./schemas/credit_cards_apis/ResponseCreditCardAccountsBilling.yaml
-        '400':
-          $ref: './schemas/ErrorHTTP.yaml#/400'
-        '401':
-          $ref: './schemas/ErrorHTTP.yaml#/401'
-        '403':
-          $ref: './schemas/ErrorHTTP.yaml#/403'
-        '404':
-          $ref: './schemas/ErrorHTTP.yaml#/404'
-        '405':
-          $ref: './schemas/ErrorHTTP.yaml#/405'
-        '406':
-          $ref: './schemas/ErrorHTTP.yaml#/406'
-        '410':
-          $ref: './schemas/ErrorHTTP.yaml#/410'
-        '422':
-          $ref: './schemas/ErrorHTTP.yaml#/422'
-        '429':
-          $ref: './schemas/ErrorHTTP.yaml#/429'
-        '500':
-          $ref: './schemas/ErrorHTTP.yaml#/500'
-        '503':
-          $ref: './schemas/ErrorHTTP.yaml#/503'
-        '504':
-          $ref: './schemas/ErrorHTTP.yaml#/504'
+      security:
+        - OpenId:
+            - openId
+            - credit-card
+
+components:
+  schemas:
+    ResponseCreditCardAccountsBilling:
+      $ref: ./schemas/credit_cards_apis/ResponseCreditCardAccountsBilling.yaml
+    ResponseCreditCardAccountsIdentification:
+      $ref: ./schemas/credit_cards_apis/ResponseCreditCardAccountsIdentification.yaml
+    ResponseCreditCardAccountsLimits:
+      $ref: ./schemas/credit_cards_apis/ResponseCreditCardAccountsLimits.yaml
+    ResponseCreditCardAccountsTransactions:
+      $ref: ./schemas/credit_cards_apis/ResponseCreditCardAccountsTransactions.yaml
+  parameters:
+    Authorization:
+      $ref: ./parameters/Authorization.yaml
+    creditCardAccountId:
+      $ref: ./parameters/CreditCardAccountId.yaml
+    creditCardPayeeMCC:
+      $ref: ./parameters/CreditCardPayeeMCC.yaml
+    creditCardTransactionType:
+      $ref: ./parameters/CreditCardTransactionType.yaml
+    fromDueDate:
+      $ref: ./parameters/FromDueDate.yaml
+    fromTransactionDate:
+      $ref: ./parameters/FromTransactionDate.yaml
+    page:
+      $ref: ./parameters/Page.yaml
+    pageSize:
+      $ref: ./parameters/PageSize.yaml
+    toDueDate:
+      $ref: ./parameters/ToDueDate.yaml
+    toTransactionDate:
+      $ref: ./parameters/ToTransactionDate.yaml
+    xCustomerUserAgent:
+      $ref: ./parameters/XCustomerUserAgent.yaml
+    xFapiAuthDate:
+      $ref: ./parameters/XFapiAuthDate.yaml
+    xFapiCustomerIpAddress:
+      $ref: ./parameters/XFapiCustomerIpAddress.yaml
+    xFapiInteractionId:
+      $ref: ./parameters/XFapiInteractionId.yaml
+  securitySchemes:
+    OpenId:
+      type: openIdConnect
+      openIdConnectUrl: "https://authserver.example/.well-known/openid-configuration" 
