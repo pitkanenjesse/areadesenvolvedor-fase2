@@ -914,10 +914,6 @@ paths:
         - $ref: "#/components/parameters/xFapiInteractionId"
         - $ref: "#/components/parameters/xCustomerUserAgent"
         - $ref: "#/components/parameters/accountId"
-        - $ref: "#/components/parameters/accountsCompeCode"
-        - $ref: "#/components/parameters/accountsBranchCode"
-        - $ref: "#/components/parameters/accountsNumber"
-        - $ref: "#/components/parameters/accountsCheckDigit"
         - $ref: "#/components/parameters/fromBookingDate"
         - $ref: "#/components/parameters/toBookingDate"
         - $ref: "#/components/parameters/creditDebitIndicator"
@@ -1005,10 +1001,6 @@ paths:
           - $ref: "#/components/parameters/xFapiCustomerIpAddress"
           - $ref: "#/components/parameters/xFapiInteractionId"
           - $ref: "#/components/parameters/xCustomerUserAgent"
-          - $ref: "#/components/parameters/accountsCompeCode"
-          - $ref: "#/components/parameters/accountsBranchCode"
-          - $ref: "#/components/parameters/accountsNumber"
-          - $ref: "#/components/parameters/accountsCheckDigit"
           - $ref: "#/components/parameters/fromBookingDate"
           - $ref: "#/components/parameters/toBookingDate"
           - $ref: "#/components/parameters/creditDebitIndicator"
@@ -2756,6 +2748,8 @@ components:
       $ref: ./schemas/enum/EnumPartiesParticipationDocumentType.yaml
     EnumPartiesParticipationType:
       $ref: ./schemas/enum/EnumPartiesParticipationType.yaml
+    EnumPayerPersonType.yaml:
+      $ref: ./schemas/enum/EnumPayerPersonType.yaml
     EnumPersonalOtherDocumentType:
       $ref: ./schemas/enum/EnumPersonalOtherDocumentType.yaml
     EnumOverdraftLimitType:
