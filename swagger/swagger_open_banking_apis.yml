@@ -84,21 +84,21 @@ paths:
               schema:
                 $ref: '#/components/schemas/ResponsePersonalCustomersIdentification'
         '400':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/400'
+          $ref: '#/components/responses/BadRequest'
         '401':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/401'
+          $ref: '#/components/responses/Unauthorized'
         '403':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/403'
+          $ref: '#/components/responses/Forbidden'
         '404':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/404'
+          $ref: '#/components/responses/NotFound'
         '405':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/405'
+          $ref: '#/components/responses/MethodNotAllowed'
         '406':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/406'
+          $ref: '#/components/responses/NotAcceptable'
         '429':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/429'
+          $ref: '#/components/responses/TooManyRequests'
         '500':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/500'
+          $ref: '#/components/responses/InternalServerError'
       security:
         - OpenId:
             - openId
@@ -166,21 +166,21 @@ paths:
               schema:
                 $ref: '#/components/schemas/ResponsePersonalCustomersQualification'
         '400':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/400'
+          $ref: '#/components/responses/BadRequest'
         '401':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/401'
+          $ref: '#/components/responses/Unauthorized'
         '403':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/403'
+          $ref: '#/components/responses/Forbidden'
         '404':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/404'
+          $ref: '#/components/responses/NotFound'
         '405':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/405'
+          $ref: '#/components/responses/MethodNotAllowed'
         '406':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/406'
+          $ref: '#/components/responses/NotAcceptable'
         '429':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/429'
+          $ref: '#/components/responses/TooManyRequests'
         '500':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/500'
+          $ref: '#/components/responses/InternalServerError'
       security:
         - OpenId:
             - openId
@@ -248,21 +248,21 @@ paths:
               schema:
                 $ref: '#/components/schemas/ResponsePersonalCustomersFinancialRelation'
         '400':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/400'
+          $ref: '#/components/responses/BadRequest'
         '401':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/401'
+          $ref: '#/components/responses/Unauthorized'
         '403':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/403'
+          $ref: '#/components/responses/Forbidden'
         '404':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/404'
+          $ref: '#/components/responses/NotFound'
         '405':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/405'
+          $ref: '#/components/responses/MethodNotAllowed'
         '406':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/406'
+          $ref: '#/components/responses/NotAcceptable'
         '429':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/429'
+          $ref: '#/components/responses/TooManyRequests'
         '500':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/500'
+          $ref: '#/components/responses/InternalServerError'
       security:
         - OpenId:
             - openId
@@ -329,21 +329,21 @@ paths:
               schema:
                 $ref: '#/components/schemas/ResponseBusinessCustomersIdentification'
         '400':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/400'
+          $ref: '#/components/responses/BadRequest'
         '401':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/401'
+          $ref: '#/components/responses/Unauthorized'
         '403':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/403'
+          $ref: '#/components/responses/Forbidden'
         '404':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/404'
+          $ref: '#/components/responses/NotFound'
         '405':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/405'
+          $ref: '#/components/responses/MethodNotAllowed'
         '406':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/406'
+          $ref: '#/components/responses/NotAcceptable'
         '429':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/429'
+          $ref: '#/components/responses/TooManyRequests'
         '500':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/500'
+          $ref: '#/components/responses/InternalServerError'
       security:
         - OpenId:
             - openId
@@ -411,21 +411,21 @@ paths:
               schema:
                 $ref: '#/components/schemas/ResponseBusinessCustomersQualification'
         '400':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/400'
+          $ref: '#/components/responses/BadRequest'
         '401':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/401'
+          $ref: '#/components/responses/Unauthorized'
         '403':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/403'
+          $ref: '#/components/responses/Forbidden'
         '404':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/404'
+          $ref: '#/components/responses/NotFound'
         '405':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/405'
+          $ref: '#/components/responses/MethodNotAllowed'
         '406':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/406'
+          $ref: '#/components/responses/NotAcceptable'
         '429':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/429'
+          $ref: '#/components/responses/TooManyRequests'
         '500':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/500'
+          $ref: '#/components/responses/InternalServerError'
       security:
         - OpenId:
             - openId
@@ -493,21 +493,21 @@ paths:
               schema:
                 $ref: '#/components/schemas/ResponseBusinessCustomersFinancialRelation'
         '400':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/400'
+          $ref: '#/components/responses/BadRequest'
         '401':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/401'
+          $ref: '#/components/responses/Unauthorized'
         '403':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/403'
+          $ref: '#/components/responses/Forbidden'
         '404':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/404'
+          $ref: '#/components/responses/NotFound'
         '405':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/405'
+          $ref: '#/components/responses/MethodNotAllowed'
         '406':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/406'
+          $ref: '#/components/responses/NotAcceptable'
         '429':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/429'
+          $ref: '#/components/responses/TooManyRequests'
         '500':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/500'
+          $ref: '#/components/responses/InternalServerError'
       security:
         - OpenId:
             - openId
@@ -572,21 +572,21 @@ paths:
               schema:
                 $ref: '#/components/schemas/ResponseCreditCardAccountsIdentification'
         '400':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/400'
+          $ref: '#/components/responses/BadRequest'
         '401':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/401'
+          $ref: '#/components/responses/Unauthorized'
         '403':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/403'
+          $ref: '#/components/responses/Forbidden'
         '404':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/404'
+          $ref: '#/components/responses/NotFound'
         '405':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/405'
+          $ref: '#/components/responses/MethodNotAllowed'
         '406':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/406'
+          $ref: '#/components/responses/NotAcceptable'
         '429':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/429'
+          $ref: '#/components/responses/TooManyRequests'
         '500':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/500'
+          $ref: '#/components/responses/InternalServerError'
       security:
         - OpenId:
             - openId
@@ -892,10 +892,6 @@ paths:
         - $ref: '#/components/parameters/xFapiInteractionId'
         - $ref: '#/components/parameters/xCustomerUserAgent'
         - $ref: '#/components/parameters/accountId'
-        - $ref: '#/components/parameters/accountsCompeCode'
-        - $ref: '#/components/parameters/accountsBranchCode'
-        - $ref: '#/components/parameters/accountsNumber'
-        - $ref: '#/components/parameters/accountsCheckDigit'
         - $ref: '#/components/parameters/fromBookingDate'
         - $ref: '#/components/parameters/toBookingDate'
         - $ref: '#/components/parameters/creditDebitIndicator'
@@ -980,10 +976,6 @@ paths:
         - $ref: '#/components/parameters/xFapiCustomerIpAddress'
         - $ref: '#/components/parameters/xFapiInteractionId'
         - $ref: '#/components/parameters/xCustomerUserAgent'
-        - $ref: '#/components/parameters/accountsCompeCode'
-        - $ref: '#/components/parameters/accountsBranchCode'
-        - $ref: '#/components/parameters/accountsNumber'
-        - $ref: '#/components/parameters/accountsCheckDigit'
         - $ref: '#/components/parameters/fromBookingDate'
         - $ref: '#/components/parameters/toBookingDate'
         - $ref: '#/components/parameters/creditDebitIndicator'
@@ -1632,21 +1624,21 @@ paths:
               schema:
                 $ref: '#/components/schemas/ResponseFinancingsContract'
         '400':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/400'
+          $ref: '#/components/responses/BadRequest'
         '401':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/401'
+          $ref: '#/components/responses/Unauthorized'
         '403':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/403'
+          $ref: '#/components/responses/Forbidden'
         '404':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/404'
+          $ref: '#/components/responses/NotFound'
         '405':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/405'
+          $ref: '#/components/responses/MethodNotAllowed'
         '406':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/406'
+          $ref: '#/components/responses/NotAcceptable'
         '429':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/429'
+          $ref: '#/components/responses/TooManyRequests'
         '500':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/500'
+          $ref: '#/components/responses/InternalServerError'
   '/financings/v1/contract/{contractId}/warranties':
     get:
       tags:
@@ -1708,21 +1700,21 @@ paths:
               schema:
                 $ref: '#/components/schemas/ResponseFinancingsWarranties'
         '400':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/400'
+          $ref: '#/components/responses/BadRequest'
         '401':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/401'
+          $ref: '#/components/responses/Unauthorized'
         '403':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/403'
+          $ref: '#/components/responses/Forbidden'
         '404':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/404'
+          $ref: '#/components/responses/NotFound'
         '405':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/405'
+          $ref: '#/components/responses/MethodNotAllowed'
         '406':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/406'
+          $ref: '#/components/responses/NotAcceptable'
         '429':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/429'
+          $ref: '#/components/responses/TooManyRequests'
         '500':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/500'
+          $ref: '#/components/responses/InternalServerError'
   '/financings/v1/contract/{contractId}/payments':
     get:
       tags:
@@ -1784,21 +1776,21 @@ paths:
               schema:
                 $ref: '#/components/schemas/ResponseFinancingsPayments'
         '400':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/400'
+          $ref: '#/components/responses/BadRequest'
         '401':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/401'
+          $ref: '#/components/responses/Unauthorized'
         '403':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/403'
+          $ref: '#/components/responses/Forbidden'
         '404':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/404'
+          $ref: '#/components/responses/NotFound'
         '405':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/405'
+          $ref: '#/components/responses/MethodNotAllowed'
         '406':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/406'
+          $ref: '#/components/responses/NotAcceptable'
         '429':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/429'
+          $ref: '#/components/responses/TooManyRequests'
         '500':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/500'
+          $ref: '#/components/responses/InternalServerError'
   '/financings/v1/contract/{contractId}/instalments':
     get:
       tags:
@@ -1860,21 +1852,21 @@ paths:
               schema:
                 $ref: '#/components/schemas/ResponseFinancingsInstalments'
         '400':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/400'
+          $ref: '#/components/responses/BadRequest'
         '401':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/401'
+          $ref: '#/components/responses/Unauthorized'
         '403':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/403'
+          $ref: '#/components/responses/Forbidden'
         '404':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/404'
+          $ref: '#/components/responses/NotFound'
         '405':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/405'
+          $ref: '#/components/responses/MethodNotAllowed'
         '406':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/406'
+          $ref: '#/components/responses/NotAcceptable'
         '429':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/429'
+          $ref: '#/components/responses/TooManyRequests'
         '500':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/500'
+          $ref: '#/components/responses/InternalServerError'
   '/unarranged-accounts-overdraft/v1/contract/{contractId}':
     get:
       tags:
@@ -2481,48 +2473,6 @@ paths:
           $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/500'
 components:
   schemas:
-    Account:
-      type: object
-      required:
-        - type
-        - compeCode
-        - branchCode
-        - number
-        - checkDigit
-        - accountID
-      properties:
-        type:
-          $ref: '#/components/schemas/EnumTypeAccount'
-        compeCode:
-          type: string
-          description: 'Código identificador atribuído pelo Banco Central do Brasil às instituições participantes do STR (Sistema de Transferência de reservas).O Compe (Sistema de Compensação de Cheques e Outros Papéis) é um sistema que identifica e processa as compensações bancárias. Ele é representado por um código de três dígitos que serve como identificador de bancos, sendo assim, cada instituição bancária possui um número exclusivo'
-          pattern: '\d{3}|^NA$'
-          maxLength: 3
-          example: '001'
-        branchCode:
-          type: string
-          description: 'Código da Agência detentora da conta. (Agência é a dependência destinada ao atendimento aos clientes, ao público em geral e aos associados de cooperativas de crédito, no exercício de atividades da instituição, não podendo ser móvel ou transitória)'
-          pattern: '\d{4}|^NA$'
-          maxLength: 4
-          example: '6272'
-        number:
-          type: string
-          description: Número da conta
-          pattern: '^\d{8,20}$|^NA$'
-          maxLength: 20
-          example: '94088392'
-        checkDigit:
-          type: string
-          description: Dígito da conta
-          pattern: \w*\W*
-          maxLength: 1
-          example: '4'
-        accountID:
-          type: string
-          description: Um identificador único e imutável usado para identificar o recurso do contrato da operação de crédito. Este identificador não tem significado para oproprietário da conta
-          pattern: \w*\W*
-          maxLength: 100
-          example: '92792126019929279212650822221989319252576'
     AccountBalances:
       type: object
       description: |
@@ -2614,12 +2564,16 @@ components:
       description: |
         Conjunto de informações das Contas de: depósito à vista, poupança e de pagamento pré-paga
       required:
-        - account
+        - accountId
         - transactions
         - requestDateTime
       properties:
-        account:
-          $ref: '#/components/schemas/Balances/properties/accounts'
+        accountId:
+          type: string
+          description: Um identificador único e imutável usado para identificar o recurso do contrato da operação de crédito. Este identificador não tem significado para oproprietário da conta
+          pattern: \w*\W*
+          maxLength: 100
+          example: '92792126019929279212650822221989319252576'
         requestDateTime:
           type: string
           maxLength: 20
@@ -2647,23 +2601,18 @@ components:
       description: |
         Traz as informações relativas aos saldos para  Contas de: depósito à vista, poupança e de pagamento pré-paga
       required:
-        - accounts
+        - accountId
         - requestDateTime
         - avaiableAmount
         - blockedAmount
         - automaticallyInvestedAmount
       properties:
-        accounts:
-          type: object
-          required:
-            - accountId
-          properties:
-            accountID:
-              type: string
-              description: Um identificador único e imutável usado para identificar o recurso do contrato da operação de crédito. Este identificador não tem significado para oproprietário da conta
-              pattern: \w*\W*
-              maxLength: 100
-              example: '92792126019929279212650822221989319252576'
+        accountId:
+          type: string
+          description: Um identificador único e imutável usado para identificar o recurso do contrato da operação de crédito. Este identificador não tem significado para oproprietário da conta
+          pattern: \w*\W*
+          maxLength: 100
+          example: '92792126019929279212650822221989319252576'
         requestDateTime:
           type: string
           maxLength: 20
@@ -4499,6 +4448,22 @@ components:
       enum:
         - ADIANTAMENTO_A_DEPOSITANTES
       example: ADIANTAMENTO_A_DEPOSITANTES
+    Errors:
+      type: object
+      required:
+        - code
+        - title
+        - detail
+      properties:
+        code:
+          description: Código de erro específico do endpoint
+          type: string
+        title:
+          description: Título legível por humanos do erro deste erro específico
+          type: string
+        detail:
+          description: Descrição legível por humanos deste erro específico
+          type: string
     Filiation:
       type: object
       required:
@@ -5154,7 +5119,7 @@ components:
       description: |
         Conjunto dos atributos que caracterizam as Contas de: depósito à vista, poupança e de pagamento pré-paga
       required:
-        - accounts
+        - accountId
         - compeCode
         - branchCode
         - number
@@ -5166,8 +5131,12 @@ components:
         - subtype
         - personalBusinessIndicator
       properties:
-        accounts:
-          $ref: '#/components/schemas/Balances/properties/accounts'
+        accountId:
+          type: string
+          description: Um identificador único e imutável usado para identificar o recurso do contrato da operação de crédito. Este identificador não tem significado para oproprietário da conta
+          pattern: \w*\W*
+          maxLength: 100
+          example: '92792126019929279212650822221989319252576'
         compeCode:
           type: string
           maxLength: 3
@@ -6644,14 +6613,18 @@ components:
       type: object
       description: Conjunto das informações relativas aos Limites referentes ao valor das operações de crédito (Cheque especial e Adiantamento a Depositantes) vinculadas à conta de depósito à vista ou conta corrente
       required:
-        - accounts
+        - accountId
         - requestDateTime
         - currency
         - overdraftLimit
         - balances
       properties:
-        accounts:
-          $ref: '#/components/schemas/Balances/properties/accounts'
+        accountId:
+          type: string
+          description: Um identificador único e imutável usado para identificar o recurso do contrato da operação de crédito. Este identificador não tem significado para oproprietário da conta
+          pattern: \w*\W*
+          maxLength: 100
+          example: '92792126019929279212650822221989319252576'
         requestDateTime:
           type: string
           maxLength: 20
@@ -7089,7 +7062,47 @@ components:
               type: array
               description: 'Lista de contas depósito à vista, poupança e pagamento pré-pagas mantidas pelo cliente na instituição transmissora e para as quais ele tenha fornecido consentimento'
               items:
-                $ref: '#/components/schemas/Account'
+                type: object
+                required:
+                  - type
+                  - compeCode
+                  - branchCode
+                  - number
+                  - checkDigit
+                  - accountID
+                properties:
+                  type:
+                    $ref: '#/components/schemas/EnumTypeAccount'
+                  compeCode:
+                    type: string
+                    description: 'Código identificador atribuído pelo Banco Central do Brasil às instituições participantes do STR (Sistema de Transferência de reservas).O Compe (Sistema de Compensação de Cheques e Outros Papéis) é um sistema que identifica e processa as compensações bancárias. Ele é representado por um código de três dígitos que serve como identificador de bancos, sendo assim, cada instituição bancária possui um número exclusivo'
+                    pattern: '\d{3}|^NA$'
+                    maxLength: 3
+                    example: '001'
+                  branchCode:
+                    type: string
+                    description: 'Código da Agência detentora da conta. (Agência é a dependência destinada ao atendimento aos clientes, ao público em geral e aos associados de cooperativas de crédito, no exercício de atividades da instituição, não podendo ser móvel ou transitória)'
+                    pattern: '\d{4}|^NA$'
+                    maxLength: 4
+                    example: '6272'
+                  number:
+                    type: string
+                    description: Número da conta
+                    pattern: '^\d{8,20}$|^NA$'
+                    maxLength: 20
+                    example: '94088392'
+                  checkDigit:
+                    type: string
+                    description: Dígito da conta
+                    pattern: \w*\W*
+                    maxLength: 1
+                    example: '4'
+                  accountID:
+                    type: string
+                    description: Um identificador único e imutável usado para identificar o recurso do contrato da operação de crédito. Este identificador não tem significado para oproprietário da conta
+                    pattern: \w*\W*
+                    maxLength: 100
+                    example: '92792126019929279212650822221989319252576'
               minItems: 1
         links:
           $ref: '#/components/schemas/Links'
@@ -7116,7 +7129,7 @@ components:
         - meta
       properties:
         data:
-          $ref: '#/components/schemas/AccountIdentificationData'
+          $ref: '#/components/schemas/Identification'
         links:
           $ref: '#/components/schemas/Links'
         meta:
@@ -7142,7 +7155,7 @@ components:
         - meta
       properties:
         data:
-          $ref: '#/components/schemas/AccountTransactionsData'
+          $ref: '#/components/schemas/Transactions'
         links:
           $ref: '#/components/schemas/Links'
         meta:
@@ -7279,7 +7292,7 @@ components:
         - meta
       properties:
         data:
-          $ref: '#/components/schemas/CreditCardsAccountIdentificationBrand'
+          $ref: '#/components/schemas/CreditCardsAccountIdentification'
         links:
           $ref: '#/components/schemas/Links'
         meta:
@@ -7391,6 +7404,17 @@ components:
           $ref: '#/components/schemas/CreditCardaccountsTransactionsBrand'
         links:
           $ref: '#/components/schemas/Links'
+        meta:
+          $ref: '#/components/schemas/Meta'
+    ResponseError:
+      type: object
+      required:
+        - errors
+      properties:
+        errors:
+          type: array
+          items:
+            $ref: '#/components/schemas/Errors'
         meta:
           $ref: '#/components/schemas/Meta'
     ResponsePersonalCustomersFinancialRelation:
@@ -8622,4 +8646,54 @@ components:
   securitySchemes:
     OpenId:
       type: openIdConnect
+      description: 'O OpenID Connect é uma camada de identidade sobre o protocolo OAuth 2.0, que permite a identificação de um usuário final com base na autenticação realizada por um Authorization Server.'
       openIdConnectUrl: 'https://authserver.example/.well-known/openid-configuration'
+  responses:
+    BadRequest:
+      description: 'A requisição foi malformada, omitindo atributos obrigatórios, seja no payload ou através de atributos na URL.'
+      content:
+        application/json; charset=utf-8:
+          schema:
+            $ref: '#/components/schemas/ResponseError'
+    Forbidden:
+      description: O token tem escopo incorreto ou uma política de segurança foi violada
+      content:
+        application/json; charset=utf-8:
+          schema:
+            $ref: '#/components/schemas/ResponseError'
+    InternalServerError:
+      description: Ocorreu um erro no gateway da API ou no microsserviço
+      content:
+        application/json; charset=utf-8:
+          schema:
+            $ref: '#/components/schemas/ResponseError'
+    MethodNotAllowed:
+      description: O consumidor tentou acessar o recurso com um método não suportado
+      content:
+        application/json; charset=utf-8:
+          schema:
+            $ref: '#/components/schemas/ResponseError'
+    NotAcceptable:
+      description: A solicitação continha um cabeçalho Accept diferente dos tipos de mídia permitidos ou um conjunto de caracteres diferente de UTF-8
+      content:
+        application/json; charset=utf-8:
+          schema:
+            $ref: '#/components/schemas/ResponseError'
+    NotFound:
+      description: O recurso solicitado não existe ou não foi implementado
+      content:
+        application/json; charset=utf-8:
+          schema:
+            $ref: '#/components/schemas/ResponseError'
+    TooManyRequests:
+      description: 'A operação foi recusada, pois muitas solicitações foram feitas dentro de um determinado período ou o limite global de requisições concorrentes foi atingido'
+      content:
+        application/json; charset=utf-8:
+          schema:
+            $ref: '#/components/schemas/ResponseError'
+    Unauthorized:
+      description: Cabeçalho de autenticação ausente/inválido ou token inválido
+      content:
+        application/json; charset=utf-8:
+          schema:
+            $ref: '#/components/schemas/ResponseError'
