@@ -4390,7 +4390,7 @@ components:
       enum:
         - SOCIO
         - ADMINISTRADOR
-    EnumPayerPersonType.yaml:
+    EnumPayerPersonType:
       type: string
       description: Identificação do Tipo de Pessoa do Pagador da transação
       enum:
@@ -7771,7 +7771,7 @@ components:
              LANCAMENTO_FUTURO - corresponde a data prevista de efetivação da transação
           example: '2021-01-07'
         payerPersonType:
-          $ref: '#/components/schemas/EnumPayerPersonType.yaml'
+          $ref: '#/components/schemas/EnumPayerPersonType'
         payerCompeCode:
           type: string
           maxLength: 3
