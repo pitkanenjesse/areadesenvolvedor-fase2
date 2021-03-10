@@ -3031,20 +3031,20 @@ Cache-Control: no-store<br>
 Pragma: no-cache<br></p>
 
 <p><span style="font-family: Courier New">
-{&quot;access_token&quot;: &quot;SlAV32hkKG&quot;,<br>
-&quot;token_type&quot;: &quot;Bearer&quot;,<br>
-&quot;refresh_token&quot;: &quot;8xLOxBtZp8&quot;,<br>
-&quot;expires_in&quot;: &quot;3600&quot;,<br>
-&quot;id_token&quot;: &quot;eyJhbGciOiJSUzI1NiIsImtpZCI6IjFlOWdkazcifQ.ewogImlzc<br>
-  yI6ICJodHRwOi8vc2VydmVyLmV4YW1wbGUuY29tIiwKICJzdWIiOiAiMjQ4Mjg5<br>
-  NzYxMDAxIiwKICJhdWQiOiAiczZCaGRSa3F0MyIsCiAibm9uY2UiOiAibi0wUzZ<br>
-  fV3pBMk1qIiwKICJleHAiOiAxMzExMjgxOTcwLAogImlhdCI6IDEzMTEyODA5Nz<br>
-  AKfQ.ggW8hZ1EuVLuxNuuIJKX_V8a_OMXzR0EHR9R6jgdqrOOF4daGU96Sr_P6q<br>
-  Jp6IcmD3HP99Obi1PRs-cwh3LO-p146waJ8IhehcwL7F09JdijmBqkvPeB2T9CJ<br>
-  NqeGpe-gccMg4vfKjkM8FcGvnzZUN4_KSP0aAp1tOJ1zZwgjxqGByKHiOtX7Tpd<br>
-  QyHE5lcMiKPXfEIQILVq0pc_E2DzL7emopWoaoZTF_m0_N0YzFC6g6EJbOEoRoS<br>
-  K5hoDalrcvRYLSrQAZZKflyuVCyixEoV9GfNQC3_osjzw2PAithfubEEBLuVVk4<br>
-  XUVrWOLrLl0nx7RkKU8NXNHq-rvKMzqg&quot;}<br>
+<strong>{&quot;access_token&quot;: &quot;SlAV32hkKG&quot;,</strong><br>
+<strong>&quot;token_type&quot;: &quot;Bearer&quot;,</strong><br>
+<strong>&quot;refresh_token&quot;: &quot;8xLOxBtZp8&quot;,</strong><br>
+<strong>&quot;expires_in&quot;: &quot;3600&quot;,</strong><br>
+<strong>&quot;id_token&quot;: &quot;eyJhbGciOiJSUzI1NiIsImtpZCI6IjFlOWdkazcifQ.ewogImlzc</strong><br>
+  <strong>yI6ICJodHRwOi8vc2VydmVyLmV4YW1wbGUuY29tIiwKICJzdWIiOiAiMjQ4Mjg5</strong><br>
+  <strong>NzYxMDAxIiwKICJhdWQiOiAiczZCaGRSa3F0MyIsCiAibm9uY2UiOiAibi0wUzZ</strong><br>
+  <strong>fV3pBMk1qIiwKICJleHAiOiAxMzExMjgxOTcwLAogImlhdCI6IDEzMTEyODA5Nz</strong><br>
+  <strong>AKfQ.ggW8hZ1EuVLuxNuuIJKX_V8a_OMXzR0EHR9R6jgdqrOOF4daGU96Sr_P6q</strong><br>
+  <strong>Jp6IcmD3HP99Obi1PRs-cwh3LO-p146waJ8IhehcwL7F09JdijmBqkvPeB2T9CJ</strong><br>
+  <strong>NqeGpe-gccMg4vfKjkM8FcGvnzZUN4_KSP0aAp1tOJ1zZwgjxqGByKHiOtX7Tpd</strong><br>
+  <strong>QyHE5lcMiKPXfEIQILVq0pc_E2DzL7emopWoaoZTF_m0_N0YzFC6g6EJbOEoRoS</strong><br>
+  <strong>K5hoDalrcvRYLSrQAZZKflyuVCyixEoV9GfNQC3_osjzw2PAithfubEEBLuVVk4</strong><br>
+  <strong>XUVrWOLrLl0nx7RkKU8NXNHq-rvKMzqg&quot;}</strong><br>
 </span></p>
 
 <h2 id='jwt'>JWT</h2>
@@ -3054,11 +3054,9 @@ Pragma: no-cache<br></p>
 <p>O JWT é formado por três seções: <em>Header, Payload</em> e <em>Signature</em>.<br>
 O <em>Header</em> contém somente a informação tipo e algoritmo:</p>
 
-<p><span style="background-color:black">
-<span style="color:white">
-{&quot;typ&quot;: &quot;JWT&quot;,<br>
-&quot;alg&quot;: &quot; PS256&quot;}<br>
-</span>
+<p><span style="font-family: Courier New">
+<strong>{&quot;typ&quot;: &quot;JWT&quot;,</strong><br>
+<strong>&quot;alg&quot;: &quot; PS256&quot;}</strong><br>
 </span></p>
 
 <h3 id='payload'><em>Payload</em></h3>
@@ -3069,68 +3067,58 @@ Essas <em>claims</em> podem ser de 3 tipos:</p>
 
 <p><em><strong>Reserved claims</strong></em>: São <em>claims</em> definidas pela especificação do JWT e contém atributos não obrigatórios (mais recomendados) que são usados na validação do token pelos protocolos de segurança das APIs. É possível verificar a lista completa de <em>Reserved Claims</em> em <a href='https://www.iana.org/assignments/jwt/jwt.xhtml#claims'target="_blank">[IANA JSON Web Token Claims Registry]</a>.</p>
 
-<p><span style="background-color:black">
-<span style="color:white">
-{&quot;sub&quot;: &quot;Subject, entidade à quem o token pertence, normalmente o ID do usuário&quot;,<br>
-&quot;iss&quot;: &quot;Issuer, emissor do token&quot;,<br>
-&quot;exp&quot;: &quot;Expiration, timestamp de quando o token irá expirar&quot;,<br>
-&quot;iat&quot;: &quot;Issued at, timestamp de quando o token foi criado&quot;,<br>
-&quot;aud&quot;: &quot;Audience, destinatário do token, representa a aplicação que irá usá-lo&quot;}<br>
-</span>
+<p><span style="font-family: Courier New">
+<strong>{&quot;sub&quot;: &quot;Subject, entidade à quem o token pertence, normalmente o ID do usuário&quot;,</strong><br>
+<strong>&quot;iss&quot;: &quot;Issuer, emissor do token&quot;,</strong><br>
+<strong>&quot;exp&quot;: &quot;Expiration, timestamp de quando o token irá expirar&quot;,</strong><br>
+<strong>&quot;iat&quot;: &quot;Issued at, timestamp de quando o token foi criado&quot;,</strong><br>
+<strong>&quot;aud&quot;: &quot;Audience, destinatário do token, representa a aplicação que irá usá-lo&quot;}</strong><br>
 </span></p>
 
 <p><em><strong>Public claims</strong></em>: atributos utilizados nas aplicações. Normalmente armazenamos as informações do usuário autenticado na aplicação.</p>
 
-<p><span style="background-color:black">
-<span style="color:white">
-{&quot;name&quot;: &quot;Joe&quot;,<br>
-&quot;roles&quot;: &quot;Administrator&quot;,<br>
-&quot;permissions&quot;: &quot;Full&quot;}<br>
-</span>
+<p><span style="font-family: Courier New">
+<strong>{&quot;name&quot;: &quot;Joe&quot;,</strong><br>
+<strong>&quot;roles&quot;: &quot;Administrator&quot;,</strong><br>
+<strong>&quot;permissions&quot;: &quot;Full&quot;}</strong><br>
 </span></p>
 
 <p><em><strong>Private claims</strong></em>: são <em>claims</em> personalizadas e contém atributos definidos  para compartilhar informações entre aplicações.</p>
 
-<p><span style="background-color:black">
-<span style="color:white">
-{&quot;sub&quot;: &quot;1234567890&quot;,<br>
-&quot;name&quot;: &quot;Jose Doe&quot;<br>
-&quot;admin&quot;: &quot;true&quot;}<br>
-</span>
+<p><span style="font-family: Courier New">
+<strong>{&quot;sub&quot;: &quot;1234567890&quot;,</strong><br>
+<strong>&quot;name&quot;: &quot;Jose Doe&quot;</strong><br>
+<strong>&quot;admin&quot;: &quot;true&quot;}</strong><br>
 </span></p>
 
 <p>Conjunto de <em>claims</em> para um <em>ID Token</em> do Open Banking:</p>
 
-<p><span style="background-color:black">
-<span style="color:white">
-{&quot;iss&quot;: &quot;Emissor do token&quot;,<br>
-&quot;sub&quot;: &quot;Identificador único do subject&quot;,<br>
-&quot;openbanking_intent_id&quot;: &quot;Intent ID da solicitação&quot;,<br>
-&quot;aud&quot;: &quot;Público alvo para o qual o ID Token é destinado (deve incluir o Client ID)&quot;,<br>
-&quot;exp&quot;: &quot;Data/hora de expiração do token&quot;,<br>
-&quot;iat&quot;: &quot;Data/hora de emissão do token&quot;,<br>
-&quot;auth_time&quot;: &quot;Data/hora de autenticação do End-user&quot;,<br>
-&quot;nonce&quot;: &quot;Valor string que associa uma sessão do cliente com um ID Token usado para ajudar na mitigação de ataques de replay&quot;,<br>
-&quot;acr&quot;: &quot;Authentication Context Class Reference&quot;,<br>
-&quot;amr&quot;: &quot;Authentication Methods References&quot;,<br>
-&quot;azp&quot;: &quot;Authorized party&quot;,<br>
-&quot;s_hash&quot;: &quot;State hash value&quot;,<br>
-&quot;at_hash&quot;: &quot;Access Token hash value&quot;,<br>
-&quot;c_hash&quot;: &quot;Code hash value&quot;}<br>
-</span>
+<p><span style="font-family: Courier New">
+<strong>{&quot;iss&quot;: &quot;Emissor do token&quot;,</strong><br>
+<strong>&quot;sub&quot;: &quot;Identificador único do subject&quot;,</strong><br>
+<strong>&quot;openbanking_intent_id&quot;: &quot;Intent ID da solicitação&quot;,</strong><br>
+<strong>&quot;aud&quot;: &quot;Público alvo para o qual o ID Token é destinado (deve incluir o Client ID)&quot;,</strong><br>
+<strong>&quot;exp&quot;: &quot;Data/hora de expiração do token&quot;,</strong><br>
+<strong>&quot;iat&quot;: &quot;Data/hora de emissão do token&quot;,</strong><br>
+<strong>&quot;auth_time&quot;: &quot;Data/hora de autenticação do End-user&quot;,</strong><br>
+<strong>&quot;nonce&quot;: &quot;Valor string que associa uma sessão do cliente com um ID Token usado para ajudar na mitigação de ataques de replay&quot;,</strong><br>
+<strong>&quot;acr&quot;: &quot;Authentication Context Class Reference&quot;,</strong><br>
+<strong>&quot;amr&quot;: &quot;Authentication Methods References&quot;,</strong><br>
+<strong>&quot;azp&quot;: &quot;Authorized party&quot;,</strong><br>
+<strong>&quot;s_hash&quot;: &quot;State hash value&quot;,</strong><br>
+<strong>&quot;at_hash&quot;: &quot;Access Token hash value&quot;,</strong><br>
+<strong>&quot;c_hash&quot;: &quot;Code hash value&quot;}</strong><br>
 </span></p>
 
 <h3 id='assinatura'>Assinatura</h3>
 
 <p>A assinatura é o <em>header</em> e o <em>payload</em> criptografados com um <em>secret</em>.</p>
 
-<p><span style="background-color:black">
-<span style="color:white">
-PS256(<br>
-base64UrlEncode(header) + &quot;.&quot; +<br>
-base64UrlEncode(payload),<br>
-secret)<br>
-</span>
+<p><span style="font-family: Courier New">
+<strong>PS256(</strong><br>
+<strong>base64UrlEncode(header) + &quot;.&quot; +</strong><br>
+<strong>base64UrlEncode(payload),</strong><br>
+<strong>secret)</strong><br>
 </span></p>
 
 <p>Para obter o token JWT, as três seções <em>header</em> (vermelho), <em>payload</em> (roxo) e <em>signature</em> (azul) são codificadas com Base64-URL e unidas por pontos.</p>
@@ -3148,10 +3136,8 @@ secret)<br>
 
 <p>Este token JWT deve ser enviado no cabeçalho <em>Authentication</em> HTTP usando o esquema <em>Bearer</em>. O conteúdo do cabeçalho deve seguir este formato:</p>
 
-<p><span style="background-color:black">
-<span style="color:white">
-Authorization: Bearer <token>
-</span>
+<p><span style="font-family: Courier New">
+<strong>Authorization: Bearer <token></strong>
 </span></p>
 <h2 id='fluxo-openid-connect-oidc'>Fluxo OpenID Connect (OIDC)</h2>
 <p>O OpenID Connect define os seguintes fluxos: </p>
@@ -3685,7 +3671,7 @@ As instituições Transmissoras devem utilizar as informações técnicas contid
 <p><br><br>
 <strong>Fluxos para Instituições Provedoras (TPP)</strong></p>
 
-<p><img class='lazy' src='images/loading-e35b35a4.gif' data-src='images/security/TPP-72dc7342.png'/></p>
+<p><img class='lazy' src='images/loading-e35b35a4.gif' data-src='images/security/TPP-5cb9012a.png'/></p>
 
 <p><br>
 <br>
@@ -3705,17 +3691,12 @@ O ASPSP deve implementar um processo de integração do TPP ao seu sistema, esse
 <li>Validar as informações do TPP.</li>
 </ul>
 
-<p>Após o TPP realizar o registro no Diretório de Participantes o mesmo poderá realizar o registro de clients (aplicações) na ASPSP.
-Para a realização do registro de <em>clients</em> no Open Banking, é mandatório a disponibilização de dois processos:</p>
-
-<ul>
-<li>Registo de <em>Client</em> dinâmico, conforme <a href="preferencial">RFC 7591</a>.</li>
-<li>Registro Manual via Portal do Desenvolvedor (backup).</li>
-</ul>
+<p>Após o TPP realizar o registro no Diretório de Participantes o mesmo poderá realizar o registro de <em>clients</em> (aplicações) na ASPSP.
+Para a realização do registro de <em>clients</em> no Open Banking, é mandatório a disponibilização do processo de registro de <em>Client</em> dinâmico, conforme <a href='https://tools.ietf.org/html/rfc7591'target="_blank">[RFC 7591]</a>.  </p>
 
 <h2 id='registro-de-client-dinamico'>Registro de client dinâmico</h2>
 
-<p>O Registro Dinâmico de <em>Client</em> é mandatório para os participantes do Open Banking e deve ser utilizado preferencialmente. 
+<p>O registro de Client dinâmico é mandatório para os participantes do Open. 
 Com uma API de registro de client dinâmico do Open Banking, utilizando o padrão de segurança OpenID Connect, os TPPs podem se registrar junto aos ASPSPs.  </p>
 
 <ul>
@@ -3738,17 +3719,6 @@ Uma API de Registro dinâmico consiste em <em>endpoints</em>, que realizam a con
 <li>Atualizar um <em>Client</em>.</li>
 <li>Excluir um <em>Client</em>.</li>
 </ul>
-
-<h3 id='registro-manual-via-portal-do-desenvolvedor'>Registro Manual via Portal do Desenvolvedor</h3>
-
-<p>Para que uma TPP comece a consumir serviços de Open Banking, ela deve estar registrada no Diretório de Participantes junto ao órgão regulador que autoriza e supervisiona os serviços Open Banking fornecidos pela TPP.<br>
-A realização de um registro manual deve ser feita apenas quando o registro dinâmico estiver indisponível, onde o TPP deverá solicitar via portal do ASPSP, na qual o ASPSP solicita informações do TPP através de um formulário durante o processo de inscrição e permite que o TPP utilize o ambiente de teste, <em>sandbox</em> e produção.<br>
-O ASPSP aprovará o TPP com base em suas informações e permitirá que os aplicativos usem as APIs.<br>
-Segue um exemplo de processo de integração do TPP com o ASPSP via Portal do Desenvolvedor.<br></p>
-
-<p><img class='lazy' src='images/loading-e35b35a4.gif' data-src='images/security/RegistroPortalDesenvolvedor-6b4cb556.png'/></p>
-
-<p>Diagrama – Fluxo de registro manual.</p>
 
 <h2 id='teste-e-homologacao'>Teste e homologação</h2>
 
