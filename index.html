@@ -2778,13 +2778,154 @@ A informação de quais possibilidades estarão disponíveis (<em>query paramete
 
 <h2 id='glossario-de-seguranca'>Glossário de Segurança</h2>
 
-<ul>
-<li><strong>API</strong>: Application Programming Interface.</li>
-<li><strong>JSON</strong>: JavaScript Object Notation.</li>
-<li><strong>REST</strong>: Representational State Transfer.</li>
-<li><strong>JWKS</strong>: JSON Web Key Set.</li>
-<li><strong>JWS</strong>: JSON Web Signature.</li>
-</ul>
+<table><thead>
+<tr>
+<th>Sigla</th>
+<th>Descrição</th>
+<th>Informação</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>API</td>
+<td>Interface de programação de aplicativo</td>
+<td>Uma interface de programação de aplicativo é um conjunto de rotinas, protocolos e ferramentas para construir aplicativos de software. Uma API especifica como os componentes de software devem interagir.</td>
+</tr>
+<tr>
+<td>FAPI</td>
+<td>Financial API</td>
+<td>Especificação técnica de API  e define requisitos técnicos adicionais para o setor financeiro</td>
+</tr>
+<tr>
+<td>CIBA</td>
+<td>Client Initiated Backchannel Authentication</td>
+<td>A autenticação de backchannel iniciada pelo cliente (CIBA) é um dos padrões mais recentes da OpenID Foundation.  são categorizados como &quot;fluxo desacoplado&quot;,  Ele permite novas maneiras de obter o consentimento do usuário final</td>
+</tr>
+<tr>
+<td>Oauth</td>
+<td></td>
+<td>O OAuth é um protocolo de autorização para API&#39;s web voltado a permitir que aplicações client acessem um recurso protegido em nome de um usuário.</td>
+</tr>
+<tr>
+<td>OIDC</td>
+<td>OpenID Connect</td>
+<td>OpenID Connect é um protocolo de identidade simples com padrão aberto</td>
+</tr>
+<tr>
+<td>JWT</td>
+<td>JSON Web Token</td>
+<td>é uma técnica definida na RFC 7519 para autenticação remota entre duas partes. Ele é uma das formas mais utilizadas para autenticar usuários em APIs RESTful.</td>
+</tr>
+<tr>
+<td>JWS</td>
+<td>JSON Web Signature</td>
+<td>é uma forma de garantir a integridade das informações em um formato altamente serializado</td>
+</tr>
+<tr>
+<td>SHA256</td>
+<td>Secure Hash Algorithm</td>
+<td>é um conjunto de funções criptográficas de hash</td>
+</tr>
+<tr>
+<td>PKCE</td>
+<td>Proof Key for Code Exchange</td>
+<td>Chave de prova para troca de código por clientes públicos Oauth</td>
+</tr>
+<tr>
+<td>MAC</td>
+<td>Código de Autenticação de Mensagem</td>
+<td>Permite que as declarações sejam assinadas digitalmente ou protegidas por integridade utilizando JWS</td>
+</tr>
+<tr>
+<td>ICP-Brasil</td>
+<td>Infraestrutura de Chaves Públicas Brasileira</td>
+<td>na definição oficial, “uma cadeia hierárquica de confiança que viabiliza a emissão de certificados digitais para identificação virtual do cidadão</td>
+</tr>
+<tr>
+<td>AC</td>
+<td>Autoridade Certificadora</td>
+<td></td>
+</tr>
+<tr>
+<td>AR</td>
+<td>Autoridade de Registro</td>
+<td></td>
+</tr>
+<tr>
+<td>TLS</td>
+<td>Transport Layer Security</td>
+<td></td>
+</tr>
+<tr>
+<td>ECDSA</td>
+<td>Elliptic Curve Digital Signature Algorithm</td>
+<td>é um algoritmo de  método de assinatura digital de documentos utilizando criptografia baseada em curvas elípticas.</td>
+</tr>
+<tr>
+<td>ECDHE</td>
+<td>Elliptic-curve Diffie–Hellman</td>
+<td>é um protocolo de contrato chave que permite que duas partes, cada uma com um par de chaves público-privado de curva elíptica, estabeleçam um segredo compartilhado em um canal inseguro</td>
+</tr>
+<tr>
+<td>AES</td>
+<td>Advanced Encryption Standard</td>
+<td>algoritmos de criptografia de bloco simétrico com uma chave de criptografia de 256 bits</td>
+</tr>
+<tr>
+<td>Autenticação mútua</td>
+<td></td>
+<td>Chamamos de autenticação mútua quando ambos cliente e servidor apresentam certificados para serem validados pelo par.</td>
+</tr>
+<tr>
+<td>CSR</td>
+<td>Certificate Signing Request</td>
+<td>Contém informação que irá ser incluída no seu certificado como o nome da empresa/organização, common name (domínio), localidade e país. Também contém a chave pública (public key) que será incluída no seu certificado. Normalmente é também criada uma chave privada (private key) ao mesmo tempo que é criado o CSR</td>
+</tr>
+<tr>
+<td>TPP</td>
+<td>Instituições Provedoras - Provedores terceirizados</td>
+<td>As instituições provedoras são organizações que usam APIs desenvolvidas pelos ASPSP para acessar contas de clientes, a fim de fornecer serviços de informações de contas</td>
+</tr>
+<tr>
+<td>ASPSP</td>
+<td>Instituições Transmissoras - Provedor de serviços de pagamento de manutenção de contas</td>
+<td>Um ASPSP é qualquer instituição financeira que oferece uma conta de pagamento com acesso online. Os ASPSPs devem fornecer acesso para permitir que terceiros (TPP) registrados acessem as informações da conta através de APIs</td>
+</tr>
+<tr>
+<td>SSA</td>
+<td>Software Statement Assertion</td>
+<td>SSA é um JSON Web Token (JWT) que contém metadados sobre uma instância de aplicativo client desenvolvida por um TPP. O JWT é emitido e assinado pelo OpenBanking Directory.</td>
+</tr>
+<tr>
+<td>End User</td>
+<td></td>
+<td>Identificação de usuário final que possui as informações que se deseja acessar</td>
+</tr>
+<tr>
+<td>Back-End</td>
+<td></td>
+<td>Aplicação ou código que da inteligência de negocio as ações solicitadas via API , código que efetivamente realiza a função desejada</td>
+</tr>
+<tr>
+<td>Json</td>
+<td>JavaScript Object Notation</td>
+<td>Json é um modelo para armazenamento e transmissão de informações no formato texto.</td>
+</tr>
+<tr>
+<td>Claims</td>
+<td></td>
+<td>São escopos/declarações usadas em uma API durante a autenticação para autorizar o acesso aos detalhes de um usuário, como nome e imagem por exemplo. Cada escopo retorna um conjunto de atributos do usuário, que são chamados de declarações.</td>
+</tr>
+<tr>
+<td>Header</td>
+<td></td>
+<td>É o  cabeçalho de uma solicitação ou resposta que transmite contexto e metadados adicionais sobre a solicitação ou resposta. Por exemplo, em uma mensagem de solicitação podem ser usados para fornecer credenciais de autenticação.</td>
+</tr>
+<tr>
+<td>Payload</td>
+<td></td>
+<td>O Payload é a Carga Útil do token JWT. É aqui que você coloca informações como a quem o token pertence, qual a expiração dele, quando ele foi criado, entre outras coisas</td>
+</tr>
+</tbody></table>
 
 <h2 id='referencias-normativas'>Referências normativas</h2>
 
