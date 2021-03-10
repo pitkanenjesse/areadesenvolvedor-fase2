@@ -4,4 +4,4 @@ enum:
   - LANCAMENTO_FUTURO
 description: |
   Indicador da transação
-example: TRANSACAO_EFETIVADA
+example: "TRANSACAO_EFETIVADA"
