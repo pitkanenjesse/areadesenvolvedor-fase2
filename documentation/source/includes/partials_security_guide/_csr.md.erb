@@ -4,7 +4,7 @@ Esse bloco consiste em um exemplo de como gerar o *Certificate Signing Requests*
 Existem vários utilitários para gerar CSRs para serem enviados a uma autoridade certificadora, neste exemplo vamos utilizar OpenSSL para demonstrar como um CSR válido é gerado para enviar ao Open Banking para emitir um certificado x509 de transporte ou assinatura.<br>
 OpenSSL é compatível com Windows ou Linux, podendo ser emitido no sistema operacional preferido:<br>
 
-Gerando CSR de transporte<br>
+Gerando CSR de transporte <br>
 $ openssl req -new -config transporte.cnf -out transporte.csr -keyout transporte.key
 
 Gerando CSR de assinatura<br>
