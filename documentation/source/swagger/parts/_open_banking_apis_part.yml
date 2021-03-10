@@ -2757,7 +2757,7 @@ components:
     EnumPartiesParticipationType:
       $ref: ./schemas/enum/EnumPartiesParticipationType.yaml
     EnumPayerPersonType.yaml:
-      $ref: ./schemas/enum/EnumPayerPersonType.yaml
+      $ref: ./schemas/enum/EnumPayerPersonTypeIndicator.yaml
     EnumPersonalOtherDocumentType:
       $ref: ./schemas/enum/EnumPersonalOtherDocumentType.yaml
     EnumOverdraftLimitType:
