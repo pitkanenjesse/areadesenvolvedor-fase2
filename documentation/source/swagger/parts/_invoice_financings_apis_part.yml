@@ -43,21 +43,25 @@ paths:
               schema:
                 $ref: '#/components/schemas/ResponseInvoiceFinancingsContract'
         '400':
-          $ref: './schemas/ErrorHTTP.yaml#/400'
+          $ref: '#/components/responses/BadRequest'
         '401':
-          $ref: './schemas/ErrorHTTP.yaml#/401'
+          $ref: '#/components/responses/Unauthorized'
         '403':
-          $ref: './schemas/ErrorHTTP.yaml#/403'
+          $ref: '#/components/responses/Forbidden'
         '404':
-          $ref: './schemas/ErrorHTTP.yaml#/404'
+          $ref: '#/components/responses/NotFound'
         '405':
-          $ref: './schemas/ErrorHTTP.yaml#/405'
+          $ref: '#/components/responses/MethodNotAllowed'
         '406':
-          $ref: './schemas/ErrorHTTP.yaml#/406'
+          $ref: '#/components/responses/NotAcceptable'
         '429':
-          $ref: './schemas/ErrorHTTP.yaml#/429'
+          $ref: '#/components/responses/TooManyRequests'
         '500':
-          $ref: './schemas/ErrorHTTP.yaml#/500'
+          $ref: '#/components/responses/InternalServerError'
+      security:
+        - OpenId:
+            - openId
+            - invoice-financings
 
   /contracts/{contractId}/warranties:
     get:
@@ -83,21 +87,25 @@ paths:
               schema:
                 $ref: '#/components/schemas/ResponseInvoiceFinancingsWarranties'
         '400':
-          $ref: './schemas/ErrorHTTP.yaml#/400'
+          $ref: '#/components/responses/BadRequest'
         '401':
-          $ref: './schemas/ErrorHTTP.yaml#/401'
+          $ref: '#/components/responses/Unauthorized'
         '403':
-          $ref: './schemas/ErrorHTTP.yaml#/403'
+          $ref: '#/components/responses/Forbidden'
         '404':
-          $ref: './schemas/ErrorHTTP.yaml#/404'
+          $ref: '#/components/responses/NotFound'
         '405':
-          $ref: './schemas/ErrorHTTP.yaml#/405'
+          $ref: '#/components/responses/MethodNotAllowed'
         '406':
-          $ref: './schemas/ErrorHTTP.yaml#/406'
+          $ref: '#/components/responses/NotAcceptable'
         '429':
-          $ref: './schemas/ErrorHTTP.yaml#/429'
+          $ref: '#/components/responses/TooManyRequests'
         '500':
-          $ref: './schemas/ErrorHTTP.yaml#/500'
+          $ref: '#/components/responses/InternalServerError'
+      security:
+        - OpenId:
+            - openId
+            - invoice-financings
 
   /contracts/{contractId}/instalments:
     get:
@@ -123,21 +131,25 @@ paths:
               schema:
                 $ref: '#/components/schemas/ResponseInvoiceFinancingsInstalments'
         '400':
-          $ref: './schemas/ErrorHTTP.yaml#/400'
+          $ref: '#/components/responses/BadRequest'
         '401':
-          $ref: './schemas/ErrorHTTP.yaml#/401'
+          $ref: '#/components/responses/Unauthorized'
         '403':
-          $ref: './schemas/ErrorHTTP.yaml#/403'
+          $ref: '#/components/responses/Forbidden'
         '404':
-          $ref: './schemas/ErrorHTTP.yaml#/404'
+          $ref: '#/components/responses/NotFound'
         '405':
-          $ref: './schemas/ErrorHTTP.yaml#/405'
+          $ref: '#/components/responses/MethodNotAllowed'
         '406':
-          $ref: './schemas/ErrorHTTP.yaml#/406'
+          $ref: '#/components/responses/NotAcceptable'
         '429':
-          $ref: './schemas/ErrorHTTP.yaml#/429'
+          $ref: '#/components/responses/TooManyRequests'
         '500':
-          $ref: './schemas/ErrorHTTP.yaml#/500'
+          $ref: '#/components/responses/InternalServerError'
+      security:
+        - OpenId:
+            - openId
+            - invoice-financings
 
   /contracts/{contractId}/payments:
     get:
@@ -163,23 +175,106 @@ paths:
               schema:
                 $ref: '#/components/schemas/ResponseInvoiceFinancingsPayments'
         '400':
-          $ref: './schemas/ErrorHTTP.yaml#/400'
+          $ref: '#/components/responses/BadRequest'
         '401':
-          $ref: './schemas/ErrorHTTP.yaml#/401'
+          $ref: '#/components/responses/Unauthorized'
         '403':
-          $ref: './schemas/ErrorHTTP.yaml#/403'
+          $ref: '#/components/responses/Forbidden'
         '404':
-          $ref: './schemas/ErrorHTTP.yaml#/404'
+          $ref: '#/components/responses/NotFound'
         '405':
-          $ref: './schemas/ErrorHTTP.yaml#/405'
+          $ref: '#/components/responses/MethodNotAllowed'
         '406':
-          $ref: './schemas/ErrorHTTP.yaml#/406'
+          $ref: '#/components/responses/NotAcceptable'
         '429':
-          $ref: './schemas/ErrorHTTP.yaml#/429'
+          $ref: '#/components/responses/TooManyRequests'
         '500':
-          $ref: './schemas/ErrorHTTP.yaml#/500'
+          $ref: '#/components/responses/InternalServerError'
+      security:
+        - OpenId:
+            - openId
+            - invoice-financings
+
 components:
   schemas:
+    EnumBankBorrowingContractAmortizationSchedule:
+      $ref: ./schemas/enum/EnumBankBorrowingContractAmortizationSchedule.yaml
+    EnumBankBorrowingContractCalculation:
+      $ref: ./schemas/enum/EnumBankBorrowingContractCalculation.yaml
+    InvoiceFinancingsContractedFee:
+      $ref: ./schemas/invoice_financings_apis/InvoiceFinancingsContractedFee.yaml
+    EnumBankBorrowingContractFeeCharge:
+      $ref: ./schemas/enum/EnumBankBorrowingContractFeeCharge.yaml
+    EnumBankBorrowingContractFeeChargeType:
+      $ref: ./schemas/enum/EnumBankBorrowingContractFeeChargeType.yaml
+    EnumBankBorrowingContractFinanceChargeType:
+      $ref: ./schemas/enum/EnumBankBorrowingContractFinanceChargeType.yaml
+    EnumBankBorrowingContractInterestRateType:
+      $ref: ./schemas/enum/EnumBankBorrowingContractInterestRateType.yaml
+    EnumBankBorrowingContractReferentialRateIndexerSubType:
+      $ref: ./schemas/enum/EnumBankBorrowingContractReferentialRateIndexerSubType.yaml
+    EnumBankBorrowingContractReferentialRateIndexerType:
+      $ref: ./schemas/enum/EnumBankBorrowingContractReferentialRateIndexerType.yaml
+    EnumBankBorrowingContractTaxPeriodicity:
+      $ref: ./schemas/enum/EnumBankBorrowingContractTaxPeriodicity.yaml
+    EnumBankBorrowingContractTaxType:
+      $ref: ./schemas/enum/EnumBankBorrowingContractTaxType.yaml
+    EnumBankBorrowingContractInstalmentPeriodicity:
+      $ref: ./schemas/enum/EnumBankBorrowingContractInstalmentPeriodicity.yaml
+    EnumBankBorrowingWarrantySubType:
+      $ref: ./schemas/enum/EnumBankBorrowingWarrantySubType.yaml
+    EnumBankBorrowingWarrantyType:
+      $ref: ./schemas/enum/EnumBankBorrowingWarrantyType.yaml
+    EnumContractProductSubTypeInvoiceFinancings:
+      $ref: ./schemas/enum/EnumContractProductSubTypeInvoiceFinancings.yaml
+    EnumContractProductTypeInvoiceFinancings:
+      $ref: ./schemas/enum/EnumContractProductTypeInvoiceFinancings.yaml
+    EnumTaxType:
+      $ref: ./schemas/enum/EnumTaxType.yaml
+    InvoiceFinancingsContract:
+      $ref: ./schemas/invoice_financings_apis/InvoiceFinancingsContract.yaml
+    InvoiceFinancingsContractedWarranty:
+      $ref: ./schemas/invoice_financings_apis/InvoiceFinancingsContractedWarranty.yaml
+    InvoiceFinancingsContractInterestRate:
+      $ref: ./schemas/invoice_financings_apis/InvoiceFinancingsContractInterestRate.yaml
+    InvoiceFinancingsChargeOverParcel:
+      $ref: ./schemas/invoice_financings_apis/InvoiceFinancingsChargeOverParcel.yaml
+    InvoiceFinancingsFinanceCharge:
+      $ref: ./schemas/invoice_financings_apis/InvoiceFinancingsFinanceCharge.yaml
+    InvoiceFinancingsBalloonInstalments:
+      $ref: ./schemas/invoice_financings_apis/InvoiceFinancingsBalloonInstalments.yaml
+    InvoiceFinancingsBalloonPayment:
+      $ref: ./schemas/invoice_financings_apis/InvoiceFinancingsBalloonPayment.yaml
+    InvoiceFinancingsInstalments:
+      $ref: ./schemas/invoice_financings_apis/InvoiceFinancingsInstalments.yaml
+    InvoiceFinancingsInstalmentsBank:
+      $ref: ./schemas/invoice_financings_apis/InvoiceFinancingsInstalmentsBank.yaml
+    InvoiceFinancingsInstalmentsData:
+      $ref: ./schemas/invoice_financings_apis/InvoiceFinancingsInstalmentsData.yaml
+    InvoiceFinancingsNonRegulatedCharge:
+      $ref: ./schemas/invoice_financings_apis/InvoiceFinancingsNonRegulatedCharge.yaml
+    InvoiceFinancingsPayments:
+      $ref: ./schemas/invoice_financings_apis/InvoiceFinancingsPayments.yaml
+    InvoiceFinancingsPaymentBank:
+      $ref: ./schemas/invoice_financings_apis/InvoiceFinancingsPaymentBank.yaml
+    InvoiceFinancingsPaymentsData:
+      $ref: ./schemas/invoice_financings_apis/InvoiceFinancingsPaymentsData.yaml
+    InvoiceFinancingsReleases:
+      $ref: ./schemas/invoice_financings_apis/InvoiceFinancingsReleases.yaml
+    InvoiceFinancingsTaxesOverParcel:
+      $ref: ./schemas/invoice_financings_apis/InvoiceFinancingsTaxesOverParcel.yaml
+    InvoiceFinancingsWarranties:
+      $ref: ./schemas/invoice_financings_apis/InvoiceFinancingsWarranties.yaml
+    InvoiceFinancingsWarrantiesBank:
+      $ref: ./schemas/invoice_financings_apis/InvoiceFinancingsWarrantiesBank.yaml
+    InvoiceFinancingsWarrantiesData:
+      $ref: ./schemas/invoice_financings_apis/InvoiceFinancingsWarrantiesData.yaml
+    Links:
+      $ref: ./schemas/Links.yaml
+    Meta:
+      $ref: ./schemas/Meta.yaml
+    ResponseError:
+      $ref: ./schemas/ResponseError.yaml
     ResponseInvoiceFinancingsContract:
       $ref: ./schemas/invoice_financings_apis/ResponseInvoiceFinancingsContract.yaml
     ResponseInvoiceFinancingsInstalments:
@@ -205,4 +300,25 @@ components:
       $ref: ./parameters/XFapiCustomerIpAddress.yaml
     xFapiInteractionId:
       $ref: ./parameters/XFapiInteractionId.yaml
+  securitySchemes:
+    OpenId:
+      type: openIdConnect
+      openIdConnectUrl: "https://authserver.example/.well-known/openid-configuration"
+  responses:
+    BadRequest:
+      $ref: ./responses/BadRequest.yaml
+    Forbidden:
+      $ref: ./responses/Forbidden.yaml
+    InternalServerError:
+      $ref: ./responses/InternalServerError.yaml
+    MethodNotAllowed:
+      $ref: ./responses/MethodNotAllowed.yaml
+    NotAcceptable:
+      $ref: ./responses/NotAcceptable.yaml
+    NotFound:
+      $ref: ./responses/NotFound.yaml
+    TooManyRequests:
+      $ref: ./responses/TooManyRequests.yaml
+    Unauthorized:
+      $ref: ./responses/Unauthorized.yaml
 

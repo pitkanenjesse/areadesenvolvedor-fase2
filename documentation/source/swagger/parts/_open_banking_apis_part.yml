@@ -525,6 +525,87 @@ paths:
             - openId
             - customers
 
+  /credit-cards-accounts/v1/accounts:
+    get:
+      tags:
+        - API - Cartão de Crédito
+      summary: Lista de cartões de crédito
+      description: |
+        |Versão|
+        |:-----|
+        |1     |
+
+        ### Visão Geral
+
+        Método para obter a lista de contas de pagamento pós-paga mantidas pelo cliente na instituição transmissora e para as quais ele tenha fornecido consentimento
+
+        Tags: [Bandeira (Credit Card Network)](#glossarioBandeira), [Cartão Múltiplo (Multiple CreditCard)](#glossarioCartaoMultiplo), [CNPJ (CNPJ Number)](#glossarioCNPJ) e [Conta de pagamento pós-paga (Credit Card)](#glossarioContaPagamentoPosPaga).
+
+        ### Visão de alto de nível das estruturas de dados
+
+        <img class="lazy" src="images/loading.gif" data-src="images/tld/credit_cards/TLD_CreditCardAccount_Identification.png"/>
+
+        ### DER - Diagramas de Entidade e Relacionamento
+
+        * DER Conceitual
+
+        <img class="lazy" src="images/loading.gif" data-src="images/der/credit_cards/DER_CreditCardAccount.png"/>
+
+        <a href="images/der/credit_cards/DER_CreditCardAccount.png" target="_blank">Fazer download do DER Conceitual</a>
+
+        * DER Lógico
+
+        <img class="lazy" src="images/loading.gif" data-src="images/der/credit_cards/DER_CreditCardAccount_Identification.png"/>
+
+        <a href="images/der/credit_cards/DER_CreditCardAccount_Identification.png" target="_blank">Fazer download do DER Lógico</a>
+
+        ### Dicionário de dados
+
+        <a href="dictionary/credit_cards_accounts_identification.csv" target="_blank">Fazer download do dicionário de dados</a>
+
+        <a href="dictionary/example/examples_credit_cards_accounts_identification.csv" target="_blank">Fazer download dos exemplos</a>
+
+
+        ### Especificação em OAS 3.0
+
+        <a href="swagger/swagger_credit_cards_apis.yaml">Download da Especificação (OAS 3.0)</a>
+
+      operationId: getAccountsCreditCard
+      parameters:
+        - $ref: "#/components/parameters/Authorization"
+        - $ref: "#/components/parameters/xFapiAuthDate"
+        - $ref: "#/components/parameters/xFapiCustomerIpAddress"
+        - $ref: "#/components/parameters/xFapiInteractionId"
+        - $ref: "#/components/parameters/xCustomerUserAgent"
+        - $ref: '#/components/parameters/creditCardAccountId'
+      responses:
+        '200':
+          description: Dados de identificação da conta identificada por creditCardAccountId obtidos com sucesso.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseCreditCardAccounts'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '405':
+          $ref: '#/components/responses/MethodNotAllowed'
+        '406':
+          $ref: '#/components/responses/NotAcceptable'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+      security:
+        - OpenId:
+            - openId
+            - credit-card
+
   /credit-cards-accounts/v1/accounts/{creditCardAccountId}:
     get:
       tags:
@@ -667,21 +748,21 @@ paths:
               schema:
                 $ref: '#/components/schemas/ResponseCreditCardAccountsLimits'
         '400':
-          $ref: './schemas/ErrorHTTP.yaml#/400'
+          $ref: '#/components/responses/BadRequest'
         '401':
-          $ref: './schemas/ErrorHTTP.yaml#/401'
+          $ref: '#/components/responses/Unauthorized'
         '403':
-          $ref: './schemas/ErrorHTTP.yaml#/403'
+          $ref: '#/components/responses/Forbidden'
         '404':
-          $ref: './schemas/ErrorHTTP.yaml#/404'
+          $ref: '#/components/responses/NotFound'
         '405':
-          $ref: './schemas/ErrorHTTP.yaml#/405'
+          $ref: '#/components/responses/MethodNotAllowed'
         '406':
-          $ref: './schemas/ErrorHTTP.yaml#/406'
+          $ref: '#/components/responses/NotAcceptable'
         '429':
-          $ref: './schemas/ErrorHTTP.yaml#/429'
+          $ref: '#/components/responses/TooManyRequests'
         '500':
-          $ref: './schemas/ErrorHTTP.yaml#/500'
+          $ref: '#/components/responses/InternalServerError'
       security:
         - OpenId:
             - openId
@@ -754,21 +835,21 @@ paths:
               schema:
                 $ref: '#/components/schemas/ResponseCreditCardAccountsTransactions'
         '400':
-          $ref: './schemas/ErrorHTTP.yaml#/400'
+          $ref: '#/components/responses/BadRequest'
         '401':
-          $ref: './schemas/ErrorHTTP.yaml#/401'
+          $ref: '#/components/responses/Unauthorized'
         '403':
-          $ref: './schemas/ErrorHTTP.yaml#/403'
+          $ref: '#/components/responses/Forbidden'
         '404':
-          $ref: './schemas/ErrorHTTP.yaml#/404'
+          $ref: '#/components/responses/NotFound'
         '405':
-          $ref: './schemas/ErrorHTTP.yaml#/405'
+          $ref: '#/components/responses/MethodNotAllowed'
         '406':
-          $ref: './schemas/ErrorHTTP.yaml#/406'
+          $ref: '#/components/responses/NotAcceptable'
         '429':
-          $ref: './schemas/ErrorHTTP.yaml#/429'
+          $ref: '#/components/responses/TooManyRequests'
         '500':
-          $ref: './schemas/ErrorHTTP.yaml#/500'
+          $ref: '#/components/responses/InternalServerError'
       security:
         - OpenId:
             - openId
@@ -838,21 +919,21 @@ paths:
               schema:
                 $ref: '#/components/schemas/ResponseCreditCardAccountsBilling'
         '400':
-          $ref: './schemas/ErrorHTTP.yaml#/400'
+          $ref: '#/components/responses/BadRequest'
         '401':
-          $ref: './schemas/ErrorHTTP.yaml#/401'
+          $ref: '#/components/responses/Unauthorized'
         '403':
-          $ref: './schemas/ErrorHTTP.yaml#/403'
+          $ref: '#/components/responses/Forbidden'
         '404':
-          $ref: './schemas/ErrorHTTP.yaml#/404'
+          $ref: '#/components/responses/NotFound'
         '405':
-          $ref: './schemas/ErrorHTTP.yaml#/405'
+          $ref: '#/components/responses/MethodNotAllowed'
         '406':
-          $ref: './schemas/ErrorHTTP.yaml#/406'
+          $ref: '#/components/responses/NotAcceptable'
         '429':
-          $ref: './schemas/ErrorHTTP.yaml#/429'
+          $ref: '#/components/responses/TooManyRequests'
         '500':
-          $ref: './schemas/ErrorHTTP.yaml#/500'
+          $ref: '#/components/responses/InternalServerError'
       security:
         - OpenId:
             - openId
@@ -926,21 +1007,21 @@ paths:
               schema:
                 $ref: '#/components/schemas/ResponseAccount'
         '400':
-          $ref: './schemas/ErrorHTTP.yaml#/400'
+          $ref: '#/components/responses/BadRequest'
         '401':
-          $ref: './schemas/ErrorHTTP.yaml#/401'
+          $ref: '#/components/responses/Unauthorized'
         '403':
-          $ref: './schemas/ErrorHTTP.yaml#/403'
+          $ref: '#/components/responses/Forbidden'
         '404':
-          $ref: './schemas/ErrorHTTP.yaml#/404'
+          $ref: '#/components/responses/NotFound'
         '405':
-          $ref: './schemas/ErrorHTTP.yaml#/405'
+          $ref: '#/components/responses/MethodNotAllowed'
         '406':
-          $ref: './schemas/ErrorHTTP.yaml#/406'
+          $ref: '#/components/responses/NotAcceptable'
         '429':
-          $ref: './schemas/ErrorHTTP.yaml#/429'
+          $ref: '#/components/responses/TooManyRequests'
         '500':
-          $ref: './schemas/ErrorHTTP.yaml#/500'
+          $ref: '#/components/responses/InternalServerError'
       security:
         - OpenId:
             - openId
@@ -1001,6 +1082,7 @@ paths:
           - $ref: "#/components/parameters/xFapiCustomerIpAddress"
           - $ref: "#/components/parameters/xFapiInteractionId"
           - $ref: "#/components/parameters/xCustomerUserAgent"
+          - $ref: "#/components/parameters/accountId"
           - $ref: "#/components/parameters/fromBookingDate"
           - $ref: "#/components/parameters/toBookingDate"
           - $ref: "#/components/parameters/creditDebitIndicator"
@@ -1013,21 +1095,21 @@ paths:
                 schema:
                   $ref: '#/components/schemas/ResponseAccountIdentification'
           '400':
-            $ref: './schemas/ErrorHTTP.yaml#/400'
+            $ref: '#/components/responses/BadRequest'
           '401':
-            $ref: './schemas/ErrorHTTP.yaml#/401'
+            $ref: '#/components/responses/Unauthorized'
           '403':
-            $ref: './schemas/ErrorHTTP.yaml#/403'
+            $ref: '#/components/responses/Forbidden'
           '404':
-            $ref: './schemas/ErrorHTTP.yaml#/404'
+            $ref: '#/components/responses/NotFound'
           '405':
-            $ref: './schemas/ErrorHTTP.yaml#/405'
+            $ref: '#/components/responses/MethodNotAllowed'
           '406':
-            $ref: './schemas/ErrorHTTP.yaml#/406'
+            $ref: '#/components/responses/NotAcceptable'
           '429':
-            $ref: './schemas/ErrorHTTP.yaml#/429'
+            $ref: '#/components/responses/TooManyRequests'
           '500':
-            $ref: './schemas/ErrorHTTP.yaml#/500'
+            $ref: '#/components/responses/InternalServerError'
         security:
           - OpenId:
               - openId
@@ -1099,21 +1181,21 @@ paths:
               schema:
                 $ref: '#/components/schemas/ResponseAccountBalances'
         '400':
-          $ref: './schemas/ErrorHTTP.yaml#/400'
+          $ref: '#/components/responses/BadRequest'
         '401':
-          $ref: './schemas/ErrorHTTP.yaml#/401'
+          $ref: '#/components/responses/Unauthorized'
         '403':
-          $ref: './schemas/ErrorHTTP.yaml#/403'
+          $ref: '#/components/responses/Forbidden'
         '404':
-          $ref: './schemas/ErrorHTTP.yaml#/404'
+          $ref: '#/components/responses/NotFound'
         '405':
-          $ref: './schemas/ErrorHTTP.yaml#/405'
+          $ref: '#/components/responses/MethodNotAllowed'
         '406':
-          $ref: './schemas/ErrorHTTP.yaml#/406'
+          $ref: '#/components/responses/NotAcceptable'
         '429':
-          $ref: './schemas/ErrorHTTP.yaml#/429'
+          $ref: '#/components/responses/TooManyRequests'
         '500':
-          $ref: './schemas/ErrorHTTP.yaml#/500'
+          $ref: '#/components/responses/InternalServerError'
       security:
         - OpenId:
             - openId
@@ -1190,21 +1272,21 @@ paths:
               schema:
                 $ref: '#/components/schemas/ResponseAccountTransactions'
         '400':
-          $ref: './schemas/ErrorHTTP.yaml#/400'
+          $ref: '#/components/responses/BadRequest'
         '401':
-          $ref: './schemas/ErrorHTTP.yaml#/401'
+          $ref: '#/components/responses/Unauthorized'
         '403':
-          $ref: './schemas/ErrorHTTP.yaml#/403'
+          $ref: '#/components/responses/Forbidden'
         '404':
-          $ref: './schemas/ErrorHTTP.yaml#/404'
+          $ref: '#/components/responses/NotFound'
         '405':
-          $ref: './schemas/ErrorHTTP.yaml#/405'
+          $ref: '#/components/responses/MethodNotAllowed'
         '406':
-          $ref: './schemas/ErrorHTTP.yaml#/406'
+          $ref: '#/components/responses/NotAcceptable'
         '429':
-          $ref: './schemas/ErrorHTTP.yaml#/429'
+          $ref: '#/components/responses/TooManyRequests'
         '500':
-          $ref: './schemas/ErrorHTTP.yaml#/500'
+          $ref: '#/components/responses/InternalServerError'
       security:
         - OpenId:
             - openId
@@ -1276,27 +1358,27 @@ paths:
               schema:
                 $ref: '#/components/schemas/ResponseAccountOverdraftLimits'
         '400':
-          $ref: './schemas/ErrorHTTP.yaml#/400'
+          $ref: '#/components/responses/BadRequest'
         '401':
-          $ref: './schemas/ErrorHTTP.yaml#/401'
+          $ref: '#/components/responses/Unauthorized'
         '403':
-          $ref: './schemas/ErrorHTTP.yaml#/403'
+          $ref: '#/components/responses/Forbidden'
         '404':
-          $ref: './schemas/ErrorHTTP.yaml#/404'
+          $ref: '#/components/responses/NotFound'
         '405':
-          $ref: './schemas/ErrorHTTP.yaml#/405'
+          $ref: '#/components/responses/MethodNotAllowed'
         '406':
-          $ref: './schemas/ErrorHTTP.yaml#/406'
+          $ref: '#/components/responses/NotAcceptable'
         '429':
-          $ref: './schemas/ErrorHTTP.yaml#/429'
+          $ref: '#/components/responses/TooManyRequests'
         '500':
-          $ref: './schemas/ErrorHTTP.yaml#/500'
+          $ref: '#/components/responses/InternalServerError'
       security:
         - OpenId:
             - openId
             - accounts
 
-  /loans/v1/contract/{contractId}:
+  /loans/v1/contracts/{contractId}:
     get:
       tags:
         - API - Operações de Crédito - Empréstimos
@@ -1356,23 +1438,27 @@ paths:
               schema:
                 $ref: '#/components/schemas/ResponseLoansContract'
         '400':
-          $ref: './schemas/ErrorHTTP.yaml#/400'
+          $ref: '#/components/responses/BadRequest'
         '401':
-          $ref: './schemas/ErrorHTTP.yaml#/401'
+          $ref: '#/components/responses/Unauthorized'
         '403':
-          $ref: './schemas/ErrorHTTP.yaml#/403'
+          $ref: '#/components/responses/Forbidden'
         '404':
-          $ref: './schemas/ErrorHTTP.yaml#/404'
+          $ref: '#/components/responses/NotFound'
         '405':
-          $ref: './schemas/ErrorHTTP.yaml#/405'
+          $ref: '#/components/responses/MethodNotAllowed'
         '406':
-          $ref: './schemas/ErrorHTTP.yaml#/406'
+          $ref: '#/components/responses/NotAcceptable'
         '429':
-          $ref: './schemas/ErrorHTTP.yaml#/429'
+          $ref: '#/components/responses/TooManyRequests'
         '500':
-          $ref: './schemas/ErrorHTTP.yaml#/500'
+          $ref: '#/components/responses/InternalServerError'
+      security:
+        - OpenId:
+            - openId
+            - loans
 
-  /loans/v1/contract/{contractId}/warranties:
+  /loans/v1/contracts/{contractId}/warranties:
     get:
       tags:
         - API - Operações de Crédito - Empréstimos
@@ -1434,23 +1520,27 @@ paths:
               schema:
                 $ref: '#/components/schemas/ResponseLoansWarranties'
         '400':
-          $ref: './schemas/ErrorHTTP.yaml#/400'
+          $ref: '#/components/responses/BadRequest'
         '401':
-          $ref: './schemas/ErrorHTTP.yaml#/401'
+          $ref: '#/components/responses/Unauthorized'
         '403':
-          $ref: './schemas/ErrorHTTP.yaml#/403'
+          $ref: '#/components/responses/Forbidden'
         '404':
-          $ref: './schemas/ErrorHTTP.yaml#/404'
+          $ref: '#/components/responses/NotFound'
         '405':
-          $ref: './schemas/ErrorHTTP.yaml#/405'
+          $ref: '#/components/responses/MethodNotAllowed'
         '406':
-          $ref: './schemas/ErrorHTTP.yaml#/406'
+          $ref: '#/components/responses/NotAcceptable'
         '429':
-          $ref: './schemas/ErrorHTTP.yaml#/429'
+          $ref: '#/components/responses/TooManyRequests'
         '500':
-          $ref: './schemas/ErrorHTTP.yaml#/500'
+          $ref: '#/components/responses/InternalServerError'
+      security:
+        - OpenId:
+            - openId
+            - loans
 
-  /loans/v1/contract/{contractId}/payments:
+  /loans/v1/contracts/{contractId}/payments:
     get:
       tags:
         - API - Operações de Crédito - Empréstimos
@@ -1512,23 +1602,27 @@ paths:
               schema:
                 $ref: '#/components/schemas/ResponseLoansPayments'
         '400':
-          $ref: './schemas/ErrorHTTP.yaml#/400'
+          $ref: '#/components/responses/BadRequest'
         '401':
-          $ref: './schemas/ErrorHTTP.yaml#/401'
+          $ref: '#/components/responses/Unauthorized'
         '403':
-          $ref: './schemas/ErrorHTTP.yaml#/403'
+          $ref: '#/components/responses/Forbidden'
         '404':
-          $ref: './schemas/ErrorHTTP.yaml#/404'
+          $ref: '#/components/responses/NotFound'
         '405':
-          $ref: './schemas/ErrorHTTP.yaml#/405'
+          $ref: '#/components/responses/MethodNotAllowed'
         '406':
-          $ref: './schemas/ErrorHTTP.yaml#/406'
+          $ref: '#/components/responses/NotAcceptable'
         '429':
-          $ref: './schemas/ErrorHTTP.yaml#/429'
+          $ref: '#/components/responses/TooManyRequests'
         '500':
-          $ref: './schemas/ErrorHTTP.yaml#/500'
+          $ref: '#/components/responses/InternalServerError'
+      security:
+        - OpenId:
+            - openId
+            - loans
 
-  /loans/v1/contract/{contractId}/instalments:
+  /loans/v1/contracts/{contractId}/instalments:
     get:
       tags:
         - API - Operações de Crédito - Empréstimos
@@ -1590,23 +1684,27 @@ paths:
               schema:
                 $ref: '#/components/schemas/ResponseLoansInstalments'
         '400':
-          $ref: './schemas/ErrorHTTP.yaml#/400'
+          $ref: '#/components/responses/BadRequest'
         '401':
-          $ref: './schemas/ErrorHTTP.yaml#/401'
+          $ref: '#/components/responses/Unauthorized'
         '403':
-          $ref: './schemas/ErrorHTTP.yaml#/403'
+          $ref: '#/components/responses/Forbidden'
         '404':
-          $ref: './schemas/ErrorHTTP.yaml#/404'
+          $ref: '#/components/responses/NotFound'
         '405':
-          $ref: './schemas/ErrorHTTP.yaml#/405'
+          $ref: '#/components/responses/MethodNotAllowed'
         '406':
-          $ref: './schemas/ErrorHTTP.yaml#/406'
+          $ref: '#/components/responses/NotAcceptable'
         '429':
-          $ref: './schemas/ErrorHTTP.yaml#/429'
+          $ref: '#/components/responses/TooManyRequests'
         '500':
-          $ref: './schemas/ErrorHTTP.yaml#/500'
+          $ref: '#/components/responses/InternalServerError'
+      security:
+        - OpenId:
+            - openId
+            - loans
 
-  /financings/v1/contract/{contractId}:
+  /financings/v1/contracts/{contractId}:
     get:
       tags:
         - API - Operações de Crédito - Financiamentos
@@ -1681,8 +1779,12 @@ paths:
           $ref: '#/components/responses/TooManyRequests'
         '500':
           $ref: '#/components/responses/InternalServerError'
+      security:
+        - OpenId:
+            - openId
+            - financings
 
-  /financings/v1/contract/{contractId}/warranties:
+  /financings/v1/contracts/{contractId}/warranties:
     get:
       tags:
         - API - Operações de Crédito - Financiamentos
@@ -1759,8 +1861,12 @@ paths:
           $ref: '#/components/responses/TooManyRequests'
         '500':
           $ref: '#/components/responses/InternalServerError'
+      security:
+        - OpenId:
+            - openId
+            - financings
 
-  /financings/v1/contract/{contractId}/payments:
+  /financings/v1/contracts/{contractId}/payments:
     get:
       tags:
         - API - Operações de Crédito - Financiamentos
@@ -1837,8 +1943,12 @@ paths:
           $ref: '#/components/responses/TooManyRequests'
         '500':
           $ref: '#/components/responses/InternalServerError'
+      security:
+        - OpenId:
+            - openId
+            - financings
 
-  /financings/v1/contract/{contractId}/instalments:
+  /financings/v1/contracts/{contractId}/instalments:
     get:
       tags:
         - API - Operações de Crédito - Financiamentos
@@ -1915,8 +2025,12 @@ paths:
           $ref: '#/components/responses/TooManyRequests'
         '500':
           $ref: '#/components/responses/InternalServerError'
+      security:
+        - OpenId:
+            - openId
+            - financings
 
-  /unarranged-accounts-overdraft/v1/contract/{contractId}:
+  /unarranged-accounts-overdraft/v1/contracts/{contractId}:
     get:
       tags:
         - API - Operações de Crédito - Adiantamento a Depositantes
@@ -1976,23 +2090,27 @@ paths:
               schema:
                 $ref: '#/components/schemas/ResponseUnarrangedAccountOverdraftContract'
         '400':
-          $ref: './schemas/ErrorHTTP.yaml#/400'
+          $ref: '#/components/responses/BadRequest'
         '401':
-          $ref: './schemas/ErrorHTTP.yaml#/401'
+          $ref: '#/components/responses/Unauthorized'
         '403':
-          $ref: './schemas/ErrorHTTP.yaml#/403'
+          $ref: '#/components/responses/Forbidden'
         '404':
-          $ref: './schemas/ErrorHTTP.yaml#/404'
+          $ref: '#/components/responses/NotFound'
         '405':
-          $ref: './schemas/ErrorHTTP.yaml#/405'
+          $ref: '#/components/responses/MethodNotAllowed'
         '406':
-          $ref: './schemas/ErrorHTTP.yaml#/406'
+          $ref: '#/components/responses/NotAcceptable'
         '429':
-          $ref: './schemas/ErrorHTTP.yaml#/429'
+          $ref: '#/components/responses/TooManyRequests'
         '500':
-          $ref: './schemas/ErrorHTTP.yaml#/500'
+          $ref: '#/components/responses/InternalServerError'
+      security:
+        - OpenId:
+            - openId
+            - financings
 
-  /unarranged-accounts-overdraft/v1/contract/{contractId}/warranties:
+  /unarranged-accounts-overdraft/v1/contracts/{contractId}/warranties:
     get:
       tags:
         - API - Operações de Crédito - Adiantamento a Depositantes
@@ -2054,23 +2172,27 @@ paths:
               schema:
                 $ref: '#/components/schemas/ResponseUnarrangedAccountOverdraftWarranties'
         '400':
-          $ref: './schemas/ErrorHTTP.yaml#/400'
+          $ref: '#/components/responses/BadRequest'
         '401':
-          $ref: './schemas/ErrorHTTP.yaml#/401'
+          $ref: '#/components/responses/Unauthorized'
         '403':
-          $ref: './schemas/ErrorHTTP.yaml#/403'
+          $ref: '#/components/responses/Forbidden'
         '404':
-          $ref: './schemas/ErrorHTTP.yaml#/404'
+          $ref: '#/components/responses/NotFound'
         '405':
-          $ref: './schemas/ErrorHTTP.yaml#/405'
+          $ref: '#/components/responses/MethodNotAllowed'
         '406':
-          $ref: './schemas/ErrorHTTP.yaml#/406'
+          $ref: '#/components/responses/NotAcceptable'
         '429':
-          $ref: './schemas/ErrorHTTP.yaml#/429'
+          $ref: '#/components/responses/TooManyRequests'
         '500':
-          $ref: './schemas/ErrorHTTP.yaml#/500'
+          $ref: '#/components/responses/InternalServerError'
+      security:
+        - OpenId:
+            - openId
+            - financings
 
-  /unarranged-accounts-overdraft/v1/contract/{contractId}/payments:
+  /unarranged-accounts-overdraft/v1/contracts/{contractId}/payments:
     get:
       tags:
         - API - Operações de Crédito - Adiantamento a Depositantes
@@ -2132,23 +2254,27 @@ paths:
               schema:
                 $ref: '#/components/schemas/ResponseUnarrangedAccountOverdraftPayments'
         '400':
-          $ref: './schemas/ErrorHTTP.yaml#/400'
+          $ref: '#/components/responses/BadRequest'
         '401':
-          $ref: './schemas/ErrorHTTP.yaml#/401'
+          $ref: '#/components/responses/Unauthorized'
         '403':
-          $ref: './schemas/ErrorHTTP.yaml#/403'
+          $ref: '#/components/responses/Forbidden'
         '404':
-          $ref: './schemas/ErrorHTTP.yaml#/404'
+          $ref: '#/components/responses/NotFound'
         '405':
-          $ref: './schemas/ErrorHTTP.yaml#/405'
+          $ref: '#/components/responses/MethodNotAllowed'
         '406':
-          $ref: './schemas/ErrorHTTP.yaml#/406'
+          $ref: '#/components/responses/NotAcceptable'
         '429':
-          $ref: './schemas/ErrorHTTP.yaml#/429'
+          $ref: '#/components/responses/TooManyRequests'
         '500':
-          $ref: './schemas/ErrorHTTP.yaml#/500'
+          $ref: '#/components/responses/InternalServerError'
+      security:
+        - OpenId:
+            - openId
+            - unarranged-accounts-overdraft
 
-  /unarranged-accounts-overdraft/v1/contract/{contractId}/instalments:
+  /unarranged-accounts-overdraft/v1/contracts/{contractId}/instalments:
     get:
       tags:
         - API - Operações de Crédito - Adiantamento a Depositantes
@@ -2210,23 +2336,27 @@ paths:
               schema:
                 $ref: '#/components/schemas/ResponseUnarrangedAccountOverdraftInstalments'
         '400':
-          $ref: './schemas/ErrorHTTP.yaml#/400'
+          $ref: '#/components/responses/BadRequest'
         '401':
-          $ref: './schemas/ErrorHTTP.yaml#/401'
+          $ref: '#/components/responses/Unauthorized'
         '403':
-          $ref: './schemas/ErrorHTTP.yaml#/403'
+          $ref: '#/components/responses/Forbidden'
         '404':
-          $ref: './schemas/ErrorHTTP.yaml#/404'
+          $ref: '#/components/responses/NotFound'
         '405':
-          $ref: './schemas/ErrorHTTP.yaml#/405'
+          $ref: '#/components/responses/MethodNotAllowed'
         '406':
-          $ref: './schemas/ErrorHTTP.yaml#/406'
+          $ref: '#/components/responses/NotAcceptable'
         '429':
-          $ref: './schemas/ErrorHTTP.yaml#/429'
+          $ref: '#/components/responses/TooManyRequests'
         '500':
-          $ref: './schemas/ErrorHTTP.yaml#/500'
+          $ref: '#/components/responses/InternalServerError'
+      security:
+        - OpenId:
+            - openId
+            - unarranged-accounts-overdraft
 
-  /invoice-financings/v1/contract/{contractId}:
+  /invoice-financings/v1/contracts/{contractId}:
     get:
       tags:
         - API - Operações de Crédito - Direitos Creditórios Descontados
@@ -2286,23 +2416,27 @@ paths:
               schema:
                 $ref: '#/components/schemas/ResponseInvoiceFinancingsContract'
         '400':
-          $ref: './schemas/ErrorHTTP.yaml#/400'
+          $ref: '#/components/responses/BadRequest'
         '401':
-          $ref: './schemas/ErrorHTTP.yaml#/401'
+          $ref: '#/components/responses/Unauthorized'
         '403':
-          $ref: './schemas/ErrorHTTP.yaml#/403'
+          $ref: '#/components/responses/Forbidden'
         '404':
-          $ref: './schemas/ErrorHTTP.yaml#/404'
+          $ref: '#/components/responses/NotFound'
         '405':
-          $ref: './schemas/ErrorHTTP.yaml#/405'
+          $ref: '#/components/responses/MethodNotAllowed'
         '406':
-          $ref: './schemas/ErrorHTTP.yaml#/406'
+          $ref: '#/components/responses/NotAcceptable'
         '429':
-          $ref: './schemas/ErrorHTTP.yaml#/429'
+          $ref: '#/components/responses/TooManyRequests'
         '500':
-          $ref: './schemas/ErrorHTTP.yaml#/500'
+          $ref: '#/components/responses/InternalServerError'
+      security:
+        - OpenId:
+            - openId
+            - invoice-financings
 
-  /invoice-financings/v1/contract/{contractId}/warranties:
+  /invoice-financings/v1/contracts/{contractId}/warranties:
     get:
       tags:
         - API - Operações de Crédito - Direitos Creditórios Descontados
@@ -2364,23 +2498,27 @@ paths:
               schema:
                 $ref: '#/components/schemas/ResponseInvoiceFinancingsWarranties'
         '400':
-          $ref: './schemas/ErrorHTTP.yaml#/400'
+          $ref: '#/components/responses/BadRequest'
         '401':
-          $ref: './schemas/ErrorHTTP.yaml#/401'
+          $ref: '#/components/responses/Unauthorized'
         '403':
-          $ref: './schemas/ErrorHTTP.yaml#/403'
+          $ref: '#/components/responses/Forbidden'
         '404':
-          $ref: './schemas/ErrorHTTP.yaml#/404'
+          $ref: '#/components/responses/NotFound'
         '405':
-          $ref: './schemas/ErrorHTTP.yaml#/405'
+          $ref: '#/components/responses/MethodNotAllowed'
         '406':
-          $ref: './schemas/ErrorHTTP.yaml#/406'
+          $ref: '#/components/responses/NotAcceptable'
         '429':
-          $ref: './schemas/ErrorHTTP.yaml#/429'
+          $ref: '#/components/responses/TooManyRequests'
         '500':
-          $ref: './schemas/ErrorHTTP.yaml#/500'
+          $ref: '#/components/responses/InternalServerError'
+      security:
+        - OpenId:
+            - openId
+            - invoice-financings
 
-  /invoice-financings/v1/contract/{contractId}/payments:
+  /invoice-financings/v1/contracts/{contractId}/payments:
     get:
       tags:
         - API - Operações de Crédito - Direitos Creditórios Descontados
@@ -2442,23 +2580,27 @@ paths:
               schema:
                 $ref: '#/components/schemas/ResponseInvoiceFinancingsPayments'
         '400':
-          $ref: './schemas/ErrorHTTP.yaml#/400'
+          $ref: '#/components/responses/BadRequest'
         '401':
-          $ref: './schemas/ErrorHTTP.yaml#/401'
+          $ref: '#/components/responses/Unauthorized'
         '403':
-          $ref: './schemas/ErrorHTTP.yaml#/403'
+          $ref: '#/components/responses/Forbidden'
         '404':
-          $ref: './schemas/ErrorHTTP.yaml#/404'
+          $ref: '#/components/responses/NotFound'
         '405':
-          $ref: './schemas/ErrorHTTP.yaml#/405'
+          $ref: '#/components/responses/MethodNotAllowed'
         '406':
-          $ref: './schemas/ErrorHTTP.yaml#/406'
+          $ref: '#/components/responses/NotAcceptable'
         '429':
-          $ref: './schemas/ErrorHTTP.yaml#/429'
+          $ref: '#/components/responses/TooManyRequests'
         '500':
-          $ref: './schemas/ErrorHTTP.yaml#/500'
+          $ref: '#/components/responses/InternalServerError'
+      security:
+        - OpenId:
+            - openId
+            - invoice-financings
 
-  /invoice-financings/v1/contract/{contractId}/instalments:
+  /invoice-financings/v1/contracts/{contractId}/instalments:
     get:
       tags:
         - API - Operações de Crédito - Direitos Creditórios Descontados
@@ -2520,34 +2662,40 @@ paths:
               schema:
                 $ref: '#/components/schemas/ResponseInvoiceFinancingsInstalments'
         '400':
-          $ref: './schemas/ErrorHTTP.yaml#/400'
+          $ref: '#/components/responses/BadRequest'
         '401':
-          $ref: './schemas/ErrorHTTP.yaml#/401'
+          $ref: '#/components/responses/Unauthorized'
         '403':
-          $ref: './schemas/ErrorHTTP.yaml#/403'
+          $ref: '#/components/responses/Forbidden'
         '404':
-          $ref: './schemas/ErrorHTTP.yaml#/404'
+          $ref: '#/components/responses/NotFound'
         '405':
-          $ref: './schemas/ErrorHTTP.yaml#/405'
+          $ref: '#/components/responses/MethodNotAllowed'
         '406':
-          $ref: './schemas/ErrorHTTP.yaml#/406'
+          $ref: '#/components/responses/NotAcceptable'
         '429':
-          $ref: './schemas/ErrorHTTP.yaml#/429'
+          $ref: '#/components/responses/TooManyRequests'
         '500':
-          $ref: './schemas/ErrorHTTP.yaml#/500'
+          $ref: '#/components/responses/InternalServerError'
+      security:
+        - OpenId:
+            - openId
+            - invoice-financings
 
 components:
   schemas:
+    Account:
+      $ref: ./schemas/accounts_apis/Account.yaml
     AccountBalances:
       $ref: ./schemas/accounts_apis/AccountBalances.yaml
     AccountBalancesData:
       $ref: ./schemas/accounts_apis/AccountBalancesData.yaml
+    AccountBrand:
+      $ref: ./schemas/accounts_apis/AccountBrand.yaml
     AccountsLimits:
       $ref: ./schemas/credit_cards_apis/AccountsLimits.yaml
     AccountOverdraftLimits:
       $ref: ./schemas/accounts_apis/AccountOverdraftLimits.yaml
-    AccountOverdraftLimitsData:
-      $ref: ./schemas/accounts_apis/AccountOverdraftLimitsData.yaml
     AccountsIdentification:
       $ref: ./schemas/accounts_apis/AccountIdentification.yaml
     AccountIdentificationData:
@@ -2608,10 +2756,6 @@ components:
       $ref: ./schemas/credit_cards_apis/CreditCardAccountsLimits.yaml
     CreditCardaccountsTransactionsBrand:
       $ref: ./schemas/credit_cards_apis/CreditCardAccountsTransactionsBrand.yaml
-    CreditCardAccountsStatement:
-      $ref: ./schemas/credit_cards_apis/CreditCardAccountsStatement.yaml
-    CreditCardAccountsStatementBalance:
-      $ref: ./schemas/credit_cards_apis/CreditCardAccountsStatementBalance.yaml
     CreditCardAccountStatementTransaction:
       $ref: ./schemas/credit_cards_apis/CreditCardAccountStatementTransaction.yaml
     CreditCardAccountsTransactions:
@@ -2734,6 +2878,10 @@ components:
       $ref: ./schemas/enum/EnumCreditCardAccountsLineName.yaml
     EnumCreditCardAccountsOtherCredits:
       $ref: ./schemas/enum/EnumCreditCardAccountsOtherCredits.yaml
+    EnumCreditCardAccountsOtherCreditType:
+      $ref: ./schemas/enum/EnumCreditCardAccountsOtherCreditType.yaml
+    EnumCreditCardAccountsPaymentType:
+      $ref: ./schemas/enum/EnumCreditCardAccountsPaymentType.yaml
     EnumCreditCardAccountsProductType:
       $ref: ./schemas/enum/EnumCreditCardAccountsProductType.yaml
     EnumCreditCardTransactionType:
@@ -2742,6 +2890,8 @@ components:
       $ref: ./schemas/enum/EnumCreditDebitIndicator.yaml
     EnumCreditCardAccountsPaymentMode:
       $ref: ./schemas/enum/EnumCreditCardAccountsPaymentMode.yaml
+    EnumOverdraftLimit:
+      $ref: ./schemas/enum/EnumOverdraftLimit.yaml
     EnumPartiesParticipationDocumentType:
       $ref: ./schemas/enum/EnumPartiesParticipationDocumentType.yaml
     EnumPartiesParticipationType:
@@ -2782,10 +2932,6 @@ components:
       $ref: ./schemas/financings_apis/FinancingsCompletedPayment.yaml
     FinancingsContract:
       $ref: ./schemas/financings_apis/FinancingsContract.yaml
-    FinancingsContractBank:
-      $ref: ./schemas/financings_apis/FinancingsContractBank.yaml
-    FinancingsContractData:
-      $ref: ./schemas/financings_apis/FinancingsContractData.yaml
     FinancingsContractedFee:
       $ref: ./schemas/financings_apis/FinancingsContractedFee.yaml
     FinancingsContractedWarranty:
@@ -2838,10 +2984,6 @@ components:
       $ref: ./schemas/invoice_financings_apis/InvoiceFinancingsCompletedPayment.yaml
     InvoiceFinancingsContract:
       $ref: ./schemas/invoice_financings_apis/InvoiceFinancingsContract.yaml
-    InvoiceFinancingsContractBank:
-      $ref: ./schemas/invoice_financings_apis/InvoiceFinancingsContractBank.yaml
-    InvoiceFinancingsContractData:
-      $ref: ./schemas/invoice_financings_apis/InvoiceFinancingsContractData.yaml
     InvoiceFinancingsContractedFee:
       $ref: ./schemas/invoice_financings_apis/InvoiceFinancingsContractedFee.yaml
     InvoiceFinancingsContractedWarranty:
@@ -2888,10 +3030,6 @@ components:
       $ref: ./schemas/loans_apis/LoansCompletedPayment.yaml
     LoansContract:
       $ref: ./schemas/loans_apis/LoansContract.yaml
-    LoansContractBank:
-      $ref: ./schemas/loans_apis/LoansContractBank.yaml
-    LoansContractData:
-      $ref: ./schemas/loans_apis/LoansContractData.yaml
     LoansContractedFee:
       $ref: ./schemas/loans_apis/LoansContractedFee.yaml
     LoansContractedWarranty:
@@ -2992,6 +3130,8 @@ components:
       $ref: ./schemas/customers_apis/ResponseBusinessCustomersIdentification.yaml
     ResponseBusinessCustomersQualification:
       $ref: ./schemas/customers_apis/ResponseBusinessCustomersQualification.yaml
+    ResponseCreditCardAccounts:
+      $ref: ./schemas/credit_cards_apis/ResponseCreditCardAccounts.yaml
     ResponseCreditCardAccountsIdentification:
       $ref: ./schemas/credit_cards_apis/ResponseCreditCardAccountsIdentification.yaml
     ResponseCreditCardAccountsBilling:
@@ -3054,10 +3194,6 @@ components:
       $ref: ./schemas/unarranged_account_overdraft_apis/UnarrangedAccountOverdraftCompletedPayment.yaml
     UnarrangedAccountOverdraftContract:
       $ref: ./schemas/unarranged_account_overdraft_apis/UnarrangedAccountOverdraftContract.yaml
-    UnarrangedAccountOverdraftContractBank:
-      $ref: ./schemas/unarranged_account_overdraft_apis/UnarrangedAccountOverdraftContractBank.yaml
-    UnarrangedAccountOverdraftContractData:
-      $ref: ./schemas/unarranged_account_overdraft_apis/UnarrangedAccountOverdraftContractData.yaml
     UnarrangedAccountOverdraftContractedFee:
       $ref: ./schemas/unarranged_account_overdraft_apis/UnarrangedAccountOverdraftContractedFee.yaml
     UnarrangedAccountOverdraftContractedWarranty:
@@ -3145,7 +3281,7 @@ components:
     OpenId:
       type: openIdConnect
       description: O OpenID Connect é uma camada de identidade sobre o protocolo OAuth 2.0, que permite a identificação de um usuário final com base na autenticação realizada por um Authorization Server.
-      openIdConnectUrl: "https://authserver.example/.well-known/openid-configuration" 
+      openIdConnectUrl: "https://authserver.example/.well-known/openid-configuration"
   responses:
     BadRequest:
       $ref: ./responses/BadRequest.yaml
