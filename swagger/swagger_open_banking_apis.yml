@@ -512,6 +512,85 @@ paths:
         - OpenId:
             - openId
             - customers
+  /credit-cards-accounts/v1/accounts:
+    get:
+      tags:
+        - API - Cartão de Crédito
+      summary: Lista de cartões de crédito
+      description: |
+        |Versão|
+        |:-----|
+        |1     |
+
+        ### Visão Geral
+
+        Método para obter a lista de contas de pagamento pós-paga mantidas pelo cliente na instituição transmissora e para as quais ele tenha fornecido consentimento
+
+        Tags: [Bandeira (Credit Card Network)](#glossarioBandeira), [Cartão Múltiplo (Multiple CreditCard)](#glossarioCartaoMultiplo), [CNPJ (CNPJ Number)](#glossarioCNPJ) e [Conta de pagamento pós-paga (Credit Card)](#glossarioContaPagamentoPosPaga).
+
+        ### Visão de alto de nível das estruturas de dados
+
+        <img class="lazy" src="images/loading.gif" data-src="images/tld/credit_cards/TLD_CreditCardAccount_Identification.png"/>
+
+        ### DER - Diagramas de Entidade e Relacionamento
+
+        * DER Conceitual
+
+        <img class="lazy" src="images/loading.gif" data-src="images/der/credit_cards/DER_CreditCardAccount.png"/>
+
+        <a href="images/der/credit_cards/DER_CreditCardAccount.png" target="_blank">Fazer download do DER Conceitual</a>
+
+        * DER Lógico
+
+        <img class="lazy" src="images/loading.gif" data-src="images/der/credit_cards/DER_CreditCardAccount_Identification.png"/>
+
+        <a href="images/der/credit_cards/DER_CreditCardAccount_Identification.png" target="_blank">Fazer download do DER Lógico</a>
+
+        ### Dicionário de dados
+
+        <a href="dictionary/credit_cards_accounts_identification.csv" target="_blank">Fazer download do dicionário de dados</a>
+
+        <a href="dictionary/example/examples_credit_cards_accounts_identification.csv" target="_blank">Fazer download dos exemplos</a>
+
+
+        ### Especificação em OAS 3.0
+
+        <a href="swagger/swagger_credit_cards_apis.yaml">Download da Especificação (OAS 3.0)</a>
+      operationId: getAccountsCreditCard
+      parameters:
+        - $ref: '#/components/parameters/Authorization'
+        - $ref: '#/components/parameters/xFapiAuthDate'
+        - $ref: '#/components/parameters/xFapiCustomerIpAddress'
+        - $ref: '#/components/parameters/xFapiInteractionId'
+        - $ref: '#/components/parameters/xCustomerUserAgent'
+        - $ref: '#/components/parameters/creditCardAccountId'
+      responses:
+        '200':
+          description: Dados de identificação da conta identificada por creditCardAccountId obtidos com sucesso.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseCreditCardAccounts'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '405':
+          $ref: '#/components/responses/MethodNotAllowed'
+        '406':
+          $ref: '#/components/responses/NotAcceptable'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+      security:
+        - OpenId:
+            - openId
+            - credit-card
   '/credit-cards-accounts/v1/accounts/{creditCardAccountId}':
     get:
       tags:
@@ -651,21 +730,21 @@ paths:
               schema:
                 $ref: '#/components/schemas/ResponseCreditCardAccountsLimits'
         '400':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/400'
+          $ref: '#/components/responses/BadRequest'
         '401':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/401'
+          $ref: '#/components/responses/Unauthorized'
         '403':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/403'
+          $ref: '#/components/responses/Forbidden'
         '404':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/404'
+          $ref: '#/components/responses/NotFound'
         '405':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/405'
+          $ref: '#/components/responses/MethodNotAllowed'
         '406':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/406'
+          $ref: '#/components/responses/NotAcceptable'
         '429':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/429'
+          $ref: '#/components/responses/TooManyRequests'
         '500':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/500'
+          $ref: '#/components/responses/InternalServerError'
       security:
         - OpenId:
             - openId
@@ -736,21 +815,21 @@ paths:
               schema:
                 $ref: '#/components/schemas/ResponseCreditCardAccountsTransactions'
         '400':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/400'
+          $ref: '#/components/responses/BadRequest'
         '401':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/401'
+          $ref: '#/components/responses/Unauthorized'
         '403':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/403'
+          $ref: '#/components/responses/Forbidden'
         '404':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/404'
+          $ref: '#/components/responses/NotFound'
         '405':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/405'
+          $ref: '#/components/responses/MethodNotAllowed'
         '406':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/406'
+          $ref: '#/components/responses/NotAcceptable'
         '429':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/429'
+          $ref: '#/components/responses/TooManyRequests'
         '500':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/500'
+          $ref: '#/components/responses/InternalServerError'
       security:
         - OpenId:
             - openId
@@ -818,21 +897,21 @@ paths:
               schema:
                 $ref: '#/components/schemas/ResponseCreditCardAccountsBilling'
         '400':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/400'
+          $ref: '#/components/responses/BadRequest'
         '401':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/401'
+          $ref: '#/components/responses/Unauthorized'
         '403':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/403'
+          $ref: '#/components/responses/Forbidden'
         '404':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/404'
+          $ref: '#/components/responses/NotFound'
         '405':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/405'
+          $ref: '#/components/responses/MethodNotAllowed'
         '406':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/406'
+          $ref: '#/components/responses/NotAcceptable'
         '429':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/429'
+          $ref: '#/components/responses/TooManyRequests'
         '500':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/500'
+          $ref: '#/components/responses/InternalServerError'
       security:
         - OpenId:
             - openId
@@ -903,21 +982,21 @@ paths:
               schema:
                 $ref: '#/components/schemas/ResponseAccount'
         '400':
-          description: 'A requisição foi malformada, omitindo atributos obrigatórios, seja no payload ou através de atributos na URL.'
+          $ref: '#/components/responses/BadRequest'
         '401':
-          description: Cabeçalho de autenticação ausente/inválido ou token inválido.
+          $ref: '#/components/responses/Unauthorized'
         '403':
-          description: O token tem escopo incorreto ou uma política de segurança foi violada.
+          $ref: '#/components/responses/Forbidden'
         '404':
-          description: O recurso solicitado não existe ou não foi implementado.
+          $ref: '#/components/responses/NotFound'
         '405':
-          description: O consumidor tentou acessar o recurso com um método não suportado.
+          $ref: '#/components/responses/MethodNotAllowed'
         '406':
-          description: A solicitação continha um cabeçalho Accept diferente dos tipos de mídia permitidos ou um conjunto de caracteres diferente de UTF-8.
+          $ref: '#/components/responses/NotAcceptable'
         '429':
-          description: 'A operação foi recusada, pois muitas solicitações foram feitas dentro de um determinado período ou o limite global de requisições concorrentes foi atingido.'
+          $ref: '#/components/responses/TooManyRequests'
         '500':
-          description: Ocorreu um erro no gateway da API ou no microsserviço.
+          $ref: '#/components/responses/InternalServerError'
       security:
         - OpenId:
             - openId
@@ -976,6 +1055,7 @@ paths:
         - $ref: '#/components/parameters/xFapiCustomerIpAddress'
         - $ref: '#/components/parameters/xFapiInteractionId'
         - $ref: '#/components/parameters/xCustomerUserAgent'
+        - $ref: '#/components/parameters/accountId'
         - $ref: '#/components/parameters/fromBookingDate'
         - $ref: '#/components/parameters/toBookingDate'
         - $ref: '#/components/parameters/creditDebitIndicator'
@@ -987,21 +1067,21 @@ paths:
               schema:
                 $ref: '#/components/schemas/ResponseAccountIdentification'
         '400':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/400'
+          $ref: '#/components/responses/BadRequest'
         '401':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/401'
+          $ref: '#/components/responses/Unauthorized'
         '403':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/403'
+          $ref: '#/components/responses/Forbidden'
         '404':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/404'
+          $ref: '#/components/responses/NotFound'
         '405':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/405'
+          $ref: '#/components/responses/MethodNotAllowed'
         '406':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/406'
+          $ref: '#/components/responses/NotAcceptable'
         '429':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/429'
+          $ref: '#/components/responses/TooManyRequests'
         '500':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/500'
+          $ref: '#/components/responses/InternalServerError'
       security:
         - OpenId:
             - openId
@@ -1071,21 +1151,21 @@ paths:
               schema:
                 $ref: '#/components/schemas/ResponseAccountBalances'
         '400':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/400'
+          $ref: '#/components/responses/BadRequest'
         '401':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/401'
+          $ref: '#/components/responses/Unauthorized'
         '403':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/403'
+          $ref: '#/components/responses/Forbidden'
         '404':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/404'
+          $ref: '#/components/responses/NotFound'
         '405':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/405'
+          $ref: '#/components/responses/MethodNotAllowed'
         '406':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/406'
+          $ref: '#/components/responses/NotAcceptable'
         '429':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/429'
+          $ref: '#/components/responses/TooManyRequests'
         '500':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/500'
+          $ref: '#/components/responses/InternalServerError'
       security:
         - OpenId:
             - openId
@@ -1160,21 +1240,21 @@ paths:
               schema:
                 $ref: '#/components/schemas/ResponseAccountTransactions'
         '400':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/400'
+          $ref: '#/components/responses/BadRequest'
         '401':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/401'
+          $ref: '#/components/responses/Unauthorized'
         '403':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/403'
+          $ref: '#/components/responses/Forbidden'
         '404':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/404'
+          $ref: '#/components/responses/NotFound'
         '405':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/405'
+          $ref: '#/components/responses/MethodNotAllowed'
         '406':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/406'
+          $ref: '#/components/responses/NotAcceptable'
         '429':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/429'
+          $ref: '#/components/responses/TooManyRequests'
         '500':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/500'
+          $ref: '#/components/responses/InternalServerError'
       security:
         - OpenId:
             - openId
@@ -1244,26 +1324,26 @@ paths:
               schema:
                 $ref: '#/components/schemas/ResponseAccountOverdraftLimits'
         '400':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/400'
+          $ref: '#/components/responses/BadRequest'
         '401':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/401'
+          $ref: '#/components/responses/Unauthorized'
         '403':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/403'
+          $ref: '#/components/responses/Forbidden'
         '404':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/404'
+          $ref: '#/components/responses/NotFound'
         '405':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/405'
+          $ref: '#/components/responses/MethodNotAllowed'
         '406':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/406'
+          $ref: '#/components/responses/NotAcceptable'
         '429':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/429'
+          $ref: '#/components/responses/TooManyRequests'
         '500':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/500'
+          $ref: '#/components/responses/InternalServerError'
       security:
         - OpenId:
             - openId
             - accounts
-  '/loans/v1/contract/{contractId}':
+  '/loans/v1/contracts/{contractId}':
     get:
       tags:
         - API - Operações de Crédito - Empréstimos
@@ -1322,22 +1402,26 @@ paths:
               schema:
                 $ref: '#/components/schemas/ResponseLoansContract'
         '400':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/400'
+          $ref: '#/components/responses/BadRequest'
         '401':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/401'
+          $ref: '#/components/responses/Unauthorized'
         '403':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/403'
+          $ref: '#/components/responses/Forbidden'
         '404':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/404'
+          $ref: '#/components/responses/NotFound'
         '405':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/405'
+          $ref: '#/components/responses/MethodNotAllowed'
         '406':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/406'
+          $ref: '#/components/responses/NotAcceptable'
         '429':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/429'
+          $ref: '#/components/responses/TooManyRequests'
         '500':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/500'
-  '/loans/v1/contract/{contractId}/warranties':
+          $ref: '#/components/responses/InternalServerError'
+      security:
+        - OpenId:
+            - openId
+            - loans
+  '/loans/v1/contracts/{contractId}/warranties':
     get:
       tags:
         - API - Operações de Crédito - Empréstimos
@@ -1398,22 +1482,26 @@ paths:
               schema:
                 $ref: '#/components/schemas/ResponseLoansWarranties'
         '400':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/400'
+          $ref: '#/components/responses/BadRequest'
         '401':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/401'
+          $ref: '#/components/responses/Unauthorized'
         '403':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/403'
+          $ref: '#/components/responses/Forbidden'
         '404':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/404'
+          $ref: '#/components/responses/NotFound'
         '405':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/405'
+          $ref: '#/components/responses/MethodNotAllowed'
         '406':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/406'
+          $ref: '#/components/responses/NotAcceptable'
         '429':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/429'
+          $ref: '#/components/responses/TooManyRequests'
         '500':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/500'
-  '/loans/v1/contract/{contractId}/payments':
+          $ref: '#/components/responses/InternalServerError'
+      security:
+        - OpenId:
+            - openId
+            - loans
+  '/loans/v1/contracts/{contractId}/payments':
     get:
       tags:
         - API - Operações de Crédito - Empréstimos
@@ -1474,22 +1562,26 @@ paths:
               schema:
                 $ref: '#/components/schemas/ResponseLoansPayments'
         '400':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/400'
+          $ref: '#/components/responses/BadRequest'
         '401':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/401'
+          $ref: '#/components/responses/Unauthorized'
         '403':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/403'
+          $ref: '#/components/responses/Forbidden'
         '404':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/404'
+          $ref: '#/components/responses/NotFound'
         '405':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/405'
+          $ref: '#/components/responses/MethodNotAllowed'
         '406':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/406'
+          $ref: '#/components/responses/NotAcceptable'
         '429':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/429'
+          $ref: '#/components/responses/TooManyRequests'
         '500':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/500'
-  '/loans/v1/contract/{contractId}/instalments':
+          $ref: '#/components/responses/InternalServerError'
+      security:
+        - OpenId:
+            - openId
+            - loans
+  '/loans/v1/contracts/{contractId}/instalments':
     get:
       tags:
         - API - Operações de Crédito - Empréstimos
@@ -1550,22 +1642,26 @@ paths:
               schema:
                 $ref: '#/components/schemas/ResponseLoansInstalments'
         '400':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/400'
+          $ref: '#/components/responses/BadRequest'
         '401':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/401'
+          $ref: '#/components/responses/Unauthorized'
         '403':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/403'
+          $ref: '#/components/responses/Forbidden'
         '404':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/404'
+          $ref: '#/components/responses/NotFound'
         '405':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/405'
+          $ref: '#/components/responses/MethodNotAllowed'
         '406':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/406'
+          $ref: '#/components/responses/NotAcceptable'
         '429':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/429'
+          $ref: '#/components/responses/TooManyRequests'
         '500':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/500'
-  '/financings/v1/contract/{contractId}':
+          $ref: '#/components/responses/InternalServerError'
+      security:
+        - OpenId:
+            - openId
+            - loans
+  '/financings/v1/contracts/{contractId}':
     get:
       tags:
         - API - Operações de Crédito - Financiamentos
@@ -1639,7 +1735,11 @@ paths:
           $ref: '#/components/responses/TooManyRequests'
         '500':
           $ref: '#/components/responses/InternalServerError'
-  '/financings/v1/contract/{contractId}/warranties':
+      security:
+        - OpenId:
+            - openId
+            - financings
+  '/financings/v1/contracts/{contractId}/warranties':
     get:
       tags:
         - API - Operações de Crédito - Financiamentos
@@ -1715,7 +1815,11 @@ paths:
           $ref: '#/components/responses/TooManyRequests'
         '500':
           $ref: '#/components/responses/InternalServerError'
-  '/financings/v1/contract/{contractId}/payments':
+      security:
+        - OpenId:
+            - openId
+            - financings
+  '/financings/v1/contracts/{contractId}/payments':
     get:
       tags:
         - API - Operações de Crédito - Financiamentos
@@ -1791,7 +1895,11 @@ paths:
           $ref: '#/components/responses/TooManyRequests'
         '500':
           $ref: '#/components/responses/InternalServerError'
-  '/financings/v1/contract/{contractId}/instalments':
+      security:
+        - OpenId:
+            - openId
+            - financings
+  '/financings/v1/contracts/{contractId}/instalments':
     get:
       tags:
         - API - Operações de Crédito - Financiamentos
@@ -1867,7 +1975,11 @@ paths:
           $ref: '#/components/responses/TooManyRequests'
         '500':
           $ref: '#/components/responses/InternalServerError'
-  '/unarranged-accounts-overdraft/v1/contract/{contractId}':
+      security:
+        - OpenId:
+            - openId
+            - financings
+  '/unarranged-accounts-overdraft/v1/contracts/{contractId}':
     get:
       tags:
         - API - Operações de Crédito - Adiantamento a Depositantes
@@ -1926,22 +2038,26 @@ paths:
               schema:
                 $ref: '#/components/schemas/ResponseUnarrangedAccountOverdraftContract'
         '400':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/400'
+          $ref: '#/components/responses/BadRequest'
         '401':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/401'
+          $ref: '#/components/responses/Unauthorized'
         '403':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/403'
+          $ref: '#/components/responses/Forbidden'
         '404':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/404'
+          $ref: '#/components/responses/NotFound'
         '405':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/405'
+          $ref: '#/components/responses/MethodNotAllowed'
         '406':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/406'
+          $ref: '#/components/responses/NotAcceptable'
         '429':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/429'
+          $ref: '#/components/responses/TooManyRequests'
         '500':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/500'
-  '/unarranged-accounts-overdraft/v1/contract/{contractId}/warranties':
+          $ref: '#/components/responses/InternalServerError'
+      security:
+        - OpenId:
+            - openId
+            - financings
+  '/unarranged-accounts-overdraft/v1/contracts/{contractId}/warranties':
     get:
       tags:
         - API - Operações de Crédito - Adiantamento a Depositantes
@@ -2002,22 +2118,26 @@ paths:
               schema:
                 $ref: '#/components/schemas/ResponseUnarrangedAccountOverdraftWarranties'
         '400':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/400'
+          $ref: '#/components/responses/BadRequest'
         '401':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/401'
+          $ref: '#/components/responses/Unauthorized'
         '403':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/403'
+          $ref: '#/components/responses/Forbidden'
         '404':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/404'
+          $ref: '#/components/responses/NotFound'
         '405':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/405'
+          $ref: '#/components/responses/MethodNotAllowed'
         '406':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/406'
+          $ref: '#/components/responses/NotAcceptable'
         '429':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/429'
+          $ref: '#/components/responses/TooManyRequests'
         '500':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/500'
-  '/unarranged-accounts-overdraft/v1/contract/{contractId}/payments':
+          $ref: '#/components/responses/InternalServerError'
+      security:
+        - OpenId:
+            - openId
+            - financings
+  '/unarranged-accounts-overdraft/v1/contracts/{contractId}/payments':
     get:
       tags:
         - API - Operações de Crédito - Adiantamento a Depositantes
@@ -2078,22 +2198,26 @@ paths:
               schema:
                 $ref: '#/components/schemas/ResponseUnarrangedAccountOverdraftPayments'
         '400':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/400'
+          $ref: '#/components/responses/BadRequest'
         '401':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/401'
+          $ref: '#/components/responses/Unauthorized'
         '403':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/403'
+          $ref: '#/components/responses/Forbidden'
         '404':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/404'
+          $ref: '#/components/responses/NotFound'
         '405':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/405'
+          $ref: '#/components/responses/MethodNotAllowed'
         '406':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/406'
+          $ref: '#/components/responses/NotAcceptable'
         '429':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/429'
+          $ref: '#/components/responses/TooManyRequests'
         '500':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/500'
-  '/unarranged-accounts-overdraft/v1/contract/{contractId}/instalments':
+          $ref: '#/components/responses/InternalServerError'
+      security:
+        - OpenId:
+            - openId
+            - unarranged-accounts-overdraft
+  '/unarranged-accounts-overdraft/v1/contracts/{contractId}/instalments':
     get:
       tags:
         - API - Operações de Crédito - Adiantamento a Depositantes
@@ -2154,22 +2278,26 @@ paths:
               schema:
                 $ref: '#/components/schemas/ResponseUnarrangedAccountOverdraftInstalments'
         '400':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/400'
+          $ref: '#/components/responses/BadRequest'
         '401':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/401'
+          $ref: '#/components/responses/Unauthorized'
         '403':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/403'
+          $ref: '#/components/responses/Forbidden'
         '404':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/404'
+          $ref: '#/components/responses/NotFound'
         '405':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/405'
+          $ref: '#/components/responses/MethodNotAllowed'
         '406':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/406'
+          $ref: '#/components/responses/NotAcceptable'
         '429':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/429'
+          $ref: '#/components/responses/TooManyRequests'
         '500':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/500'
-  '/invoice-financings/v1/contract/{contractId}':
+          $ref: '#/components/responses/InternalServerError'
+      security:
+        - OpenId:
+            - openId
+            - unarranged-accounts-overdraft
+  '/invoice-financings/v1/contracts/{contractId}':
     get:
       tags:
         - API - Operações de Crédito - Direitos Creditórios Descontados
@@ -2228,22 +2356,26 @@ paths:
               schema:
                 $ref: '#/components/schemas/ResponseInvoiceFinancingsContract'
         '400':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/400'
+          $ref: '#/components/responses/BadRequest'
         '401':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/401'
+          $ref: '#/components/responses/Unauthorized'
         '403':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/403'
+          $ref: '#/components/responses/Forbidden'
         '404':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/404'
+          $ref: '#/components/responses/NotFound'
         '405':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/405'
+          $ref: '#/components/responses/MethodNotAllowed'
         '406':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/406'
+          $ref: '#/components/responses/NotAcceptable'
         '429':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/429'
+          $ref: '#/components/responses/TooManyRequests'
         '500':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/500'
-  '/invoice-financings/v1/contract/{contractId}/warranties':
+          $ref: '#/components/responses/InternalServerError'
+      security:
+        - OpenId:
+            - openId
+            - invoice-financings
+  '/invoice-financings/v1/contracts/{contractId}/warranties':
     get:
       tags:
         - API - Operações de Crédito - Direitos Creditórios Descontados
@@ -2304,22 +2436,26 @@ paths:
               schema:
                 $ref: '#/components/schemas/ResponseInvoiceFinancingsWarranties'
         '400':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/400'
+          $ref: '#/components/responses/BadRequest'
         '401':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/401'
+          $ref: '#/components/responses/Unauthorized'
         '403':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/403'
+          $ref: '#/components/responses/Forbidden'
         '404':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/404'
+          $ref: '#/components/responses/NotFound'
         '405':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/405'
+          $ref: '#/components/responses/MethodNotAllowed'
         '406':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/406'
+          $ref: '#/components/responses/NotAcceptable'
         '429':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/429'
+          $ref: '#/components/responses/TooManyRequests'
         '500':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/500'
-  '/invoice-financings/v1/contract/{contractId}/payments':
+          $ref: '#/components/responses/InternalServerError'
+      security:
+        - OpenId:
+            - openId
+            - invoice-financings
+  '/invoice-financings/v1/contracts/{contractId}/payments':
     get:
       tags:
         - API - Operações de Crédito - Direitos Creditórios Descontados
@@ -2380,22 +2516,26 @@ paths:
               schema:
                 $ref: '#/components/schemas/ResponseInvoiceFinancingsPayments'
         '400':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/400'
+          $ref: '#/components/responses/BadRequest'
         '401':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/401'
+          $ref: '#/components/responses/Unauthorized'
         '403':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/403'
+          $ref: '#/components/responses/Forbidden'
         '404':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/404'
+          $ref: '#/components/responses/NotFound'
         '405':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/405'
+          $ref: '#/components/responses/MethodNotAllowed'
         '406':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/406'
+          $ref: '#/components/responses/NotAcceptable'
         '429':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/429'
+          $ref: '#/components/responses/TooManyRequests'
         '500':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/500'
-  '/invoice-financings/v1/contract/{contractId}/instalments':
+          $ref: '#/components/responses/InternalServerError'
+      security:
+        - OpenId:
+            - openId
+            - invoice-financings
+  '/invoice-financings/v1/contracts/{contractId}/instalments':
     get:
       tags:
         - API - Operações de Crédito - Direitos Creditórios Descontados
@@ -2456,23 +2596,69 @@ paths:
               schema:
                 $ref: '#/components/schemas/ResponseInvoiceFinancingsInstalments'
         '400':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/400'
+          $ref: '#/components/responses/BadRequest'
         '401':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/401'
+          $ref: '#/components/responses/Unauthorized'
         '403':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/403'
+          $ref: '#/components/responses/Forbidden'
         '404':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/404'
+          $ref: '#/components/responses/NotFound'
         '405':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/405'
+          $ref: '#/components/responses/MethodNotAllowed'
         '406':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/406'
+          $ref: '#/components/responses/NotAcceptable'
         '429':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/429'
+          $ref: '#/components/responses/TooManyRequests'
         '500':
-          $ref: '#/paths/~1accounts~1v1~1accounts/get/responses/500'
+          $ref: '#/components/responses/InternalServerError'
+      security:
+        - OpenId:
+            - openId
+            - invoice-financings
 components:
   schemas:
+    Account:
+      type: object
+      required:
+        - type
+        - compeCode
+        - branchCode
+        - number
+        - checkDigit
+        - accountID
+      properties:
+        type:
+          $ref: '#/components/schemas/EnumTypeAccount'
+        compeCode:
+          type: string
+          description: 'Código identificador atribuído pelo Banco Central do Brasil às instituições participantes do STR (Sistema de Transferência de reservas).O Compe (Sistema de Compensação de Cheques e Outros Papéis) é um sistema que identifica e processa as compensações bancárias. Ele é representado por um código de três dígitos que serve como identificador de bancos, sendo assim, cada instituição bancária possui um número exclusivo'
+          pattern: '\d{3}|^NA$'
+          maxLength: 3
+          example: '001'
+        branchCode:
+          type: string
+          description: 'Código da Agência detentora da conta. (Agência é a dependência destinada ao atendimento aos clientes, ao público em geral e aos associados de cooperativas de crédito, no exercício de atividades da instituição, não podendo ser móvel ou transitória)'
+          pattern: '\d{4}|^NA$'
+          maxLength: 4
+          example: '6272'
+        number:
+          type: string
+          description: Número da conta
+          pattern: '^\d{8,20}$|^NA$'
+          maxLength: 20
+          example: '94088392'
+        checkDigit:
+          type: string
+          description: Dígito da conta
+          pattern: \w*\W*
+          maxLength: 1
+          example: '4'
+        accountID:
+          type: string
+          description: Um identificador único e imutável usado para identificar o recurso do contrato da operação de crédito. Este identificador não tem significado para oproprietário da conta
+          pattern: \w*\W*
+          maxLength: 100
+          example: '92792126019929279212650822221989319252576'
     AccountBalances:
       type: object
       description: |
@@ -2489,48 +2675,73 @@ components:
       properties:
         account:
           $ref: '#/components/schemas/Balances'
+    AccountBrand:
+      type: object
+      required:
+        - brandName
+        - companyCnpj
+        - accounts
+      properties:
+        brandName:
+          type: string
+          description: 'Nome da Marca reportada pelo participante do Open Banking. O conceito a que se refere a ''marca'' é em essência uma promessa da empresa em fornecer uma série específica de atributos, benefícios e serviços uniformes aos clientes.'
+          maxLength: 80
+          pattern: \w*\W*
+          example: Organização A
+        companyCnpj:
+          type: string
+          maxLength: 14
+          pattern: '\d{14}|^NA$'
+          description: 'Número completo do CNPJ da instituição responsável pelo Cadastro - o CNPJ corresponde ao número de inscrição no Cadastro de Pessoa Jurídica. Deve-se ter apenas os números do CNPJ, sem máscara'
+          example: '21128159000166'
+        accounts:
+          type: array
+          description: 'Lista de contas depósito à vista, poupança e pagamento pré-pagas mantidas pelo cliente na instituição transmissora e para as quais ele tenha fornecido consentimento'
+          items:
+            $ref: '#/components/schemas/Account'
+          minItems: 1
     AccountsLimits:
       type: object
       description: Conjunto de informações referentes aos limites da conta de  pagamento pós-paga.
       required:
-        - creditCardAccountId
-        - requestDateTime
-        - brandName
-        - companyCnpj
-        - statementCreditCardAccounts
+        - creditLineLimitType
+        - consolidationType
+        - lineName
+        - limitType
+        - limitAmount
+        - avaiableAmount
+        - usededAmount
       properties:
-        creditCardAccountId:
-          type: string
-          description: 'Identificador para conta pagamento pós-paga é o creditCardAccountId, chave artificial que permite identificar a conta pagamento pós-paga especifica.'
-          maxLength: 40
-          example: XXZTR3459087
-        requestDateTime:
-          type: string
-          pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])T(?:[01]\d|2[0123]):(?:[012345]\d):(?:[012345]\d)Z$'
-          description: 'Data e hora da consulta, conforme especificação RFC-3339, formato UTC.'
-          maxLength: 20
-          example: '2020-07-21T08:30:00Z'
-        brandName:
+        creditLineLimitType:
+          $ref: '#/components/schemas/EnumCreditCardAccountsLineLimitType'
+        consolidationType:
+          $ref: '#/components/schemas/EnumCreditCardAccountsConsolidationType'
+        lineName:
+          $ref: '#/components/schemas/EnumCreditCardAccountsLineName'
+        lineNameAdditionalInfo:
           type: string
           pattern: \w*\W*
-          description: 'Nome da Marca reportada pelo participante do Open Banking. O conceito a que se refere a ''marca'' é em essência uma promessa da empresa em fornecer uma série específica de atributos, benefícios e serviços uniformes aos clientes.'
-          maxLength: 80
-          example: Organização A
-        companyCnpj:
-          type: string
-          pattern: '\d{14}|^NA$'
-          description: 'Número completo do CNPJ da instituição responsável pelo Cadastro - o CNPJ corresponde ao número de inscrição no Cadastro de Pessoa Jurídica. Deve-se ter apenas os números do CNPJ, sem máscara.'
-          maxLength: 14
-          example: '21128159000166'
-        currency:
-          type: string
-          description: 'Moeda referente ao valor da transação, segundo modelo ISO-4217.'
-          maxLength: 3
-          example: BRL
-        statementCreditCardAccounts:
-          type: array
-          items:
-            $ref: '#/components/schemas/CreditCardAccountsStatement'
+          description: Campo de preenchimento obrigatório se selecionada a opção 'OUTRAS' em lineName
+        limitType:
+          $ref: '#/components/schemas/EnumCreditCardAccountsLimitType'
+        limitAmount:
+          type: number
+          nullable: true
+          description: Valor total do limite informado Expresso em valor monetário com 4 casas decimais
+          maxLength: 19
+          example: 2000
+        avaiableAmount:
+          type: number
+          nullable: true
+          description: Valor disponível do limite informado.  Expresso em valor monetário com 4 casas decimais
+          maxLength: 19
+          example: 2000
+        usededAmount:
+          type: number
+          nullable: true
+          description: Valor utilizado do limite informado Expresso em valor monetário com 4 casas decimais
+          maxLength: 19
+          example: 2000
     AccountOverdraftLimits:
       type: object
       description: |
@@ -2539,13 +2750,6 @@ components:
         - overdraftLimits
       properties:
         overdraftLimits:
-          $ref: '#/components/schemas/OverdraftLimits'
-    AccountOverdraftLimitsData:
-      type: object
-      required:
-        - account
-      properties:
-        account:
           $ref: '#/components/schemas/OverdraftLimits'
     AccountsIdentification:
       type: object
@@ -2609,16 +2813,23 @@ components:
       properties:
         accountId:
           type: string
-          description: Um identificador único e imutável usado para identificar o recurso do contrato da operação de crédito. Este identificador não tem significado para oproprietário da conta
+          description: 'Um identificador único e imutável usado para identificar o recurso da conta (de depósito à vista, poupança ou de pagamento pré-paga). Este identificador não tem significado para o proprietário da conta.'
           pattern: \w*\W*
           maxLength: 100
           example: '92792126019929279212650822221989319252576'
         requestDateTime:
           type: string
-          maxLength: 20
-          pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])T(?:[01]\d|2[0123]):(?:[012345]\d):(?:[012345]\d)Z$'
-          example: '2020-07-21T08:30:00Z'
           description: 'Data e hora da consulta, conforme especificação RFC-3339, formato UTC.'
+          pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])T(?:[01]\d|2[0123]):(?:[012345]\d):(?:[012345]\d)Z$'
+          maxLength: 20
+          example: '2020-07-21T08:30:00Z'
+        currency:
+          type: string
+          description: 'Moeda referente ao valor da garantia, segundo modelo ISO-4217. p.ex. ''BRL'' Todos os valores monetários informados estão representados com a moeda vigente do Brasil'
+          maxLength: 3
+          format: CurrencyString
+          pattern: '^(\w{3}){1}$'
+          example: BRL
         avaiableAmount:
           type: number
           nullable: true
@@ -2698,8 +2909,12 @@ components:
       required:
         - requestDateTime
         - updateDateTime
+        - businessId
+        - brandName
+        - companyCnpjNumber
         - cnpjNumber
         - companyName
+        - incorporationDate
         - parties
         - contacts
       properties:
@@ -2715,10 +2930,33 @@ components:
           description: 'Data e hora da atualização do bloco, conforme especificação RFC-3339'
           maxLength: 20
           example: '2020-07-21T08:30:00Z'
-        cnpjNumber:
-          description: 'Número completo do CNPJ da instituição responsável pelo Cadastro - o CNPJ corresponde ao número de inscrição no Cadastro de Pessoa Jurídica. Deve-se ter apenas os números do CNPJ, sem máscara'
+        businessId:
           type: string
-          pattern: '^(\d{14})$|^NA$'
+          pattern: \w*\W*
+          description: Um identificador único e imutável usado para identificar o recurso cliente pessoa jurídica. Este identificador não tem significado para o cliente que deu o consentimento
+          maxLength: 100
+          example: 578-psd-71md6971kjh-2d414
+        brandName:
+          type: string
+          pattern: \w*\W*
+          description: |
+            Nome da Marca reportada pelo participante do Open Banking. O conceito a que se refere a 'marca' é em essência uma promessa da empresa em fornecer uma série específica de atributos, benefícios e serviços uniformes aos clientes
+          maxLength: 80
+          example: Organização A
+        companyCnpjNumber:
+          type: string
+          pattern: '\d{14}|^NA$'
+          description: |
+            Número completo do CNPJ da instituição responsável pelo Cadastro - o CNPJ corresponde ao número de inscrição no Cadastro de Pessoa Jurídica. 
+            Deve-se ter apenas os números do CNPJ, sem máscara
+          maxLength: 14
+          example: 05670609000191
+        cnpjNumber:
+          description: |
+            Número completo do CNPJ da instituição responsável pelo Cadastro - o CNPJ corresponde ao número de inscrição no Cadastro de Pessoa Jurídica. 
+            Deve-se ter apenas os números do CNPJ, sem máscara
+          type: string
+          pattern: '\d{14}|^NA$'
           maxLength: 14
           example: '50685362000135'
         otherDocuments:
@@ -2732,11 +2970,13 @@ components:
           maxLength: 70
           pattern: \w*\W*
           description: Razão social da empresa consultada é o termo registrado sob o qual uma pessoa jurídica (PJ) se individualiza e exerce suas atividades. Também pode ser chamada por denominação social ou firma empresarial
+          example: Luiza e Benjamin Assessoria Jurídica Ltda
         tradeName:
           type: string
           maxLength: 70
           pattern: \w*\W*
           description: 'Nome fantasia da pessoa jurídica, se houver. (É o nome popular da empresa, utilizado para divulgação da empresa e melhor fixação com o público). De preenchimento obrigatório se houver'
+          example: Mundo da Eletronica
         incorporationDate:
           type: string
           pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$'
@@ -2842,15 +3082,17 @@ components:
           type: string
           maxLength: 20
           pattern: \w*\W*
-          description: 'Tipo do outro documento informado. De preenchimento obrigatório, para a Pessoa jurídica com domicílio ou sede no exterior, desobrigada de inscrição no CNPJ'
+          description: 'Número do Tipo de documento informado. De preenchimento obrigatório, para a Pessoa jurídica com domicílio ou sede no exterior, desobrigada de inscrição no CNPJ'
+          example: EIN
         number:
           type: string
           maxLength: 20
           pattern: \w*\W*
           description: 'Número do outro documento. De preenchimento obrigatório, para a Pessoa jurídica com domicílio ou sede no exterior, desobrigada de inscrição no CNPJ'
+          example: '128328453'
         country:
           type: string
-          description: Campo de preenchimento obrigatório caso o cliente não possua nacionalidade brasileira. Preencher utilizando o código de pais de acordo com o código “alpha3” do ISO-3166.
+          description: Pais de emissão do tipo de documento informado. Código do pais de acordo com o código “alpha3” do ISO-3166
           maxLength: 3
           example: CAN
         expirationDate:
@@ -2858,7 +3100,7 @@ components:
           pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$'
           format: DateString
           maxLength: 10
-          description: 'Data de validade do documento informado, conforme especificação RFC-3339.'
+          description: 'Data vigência do tipo de  documento informado, conforme especificação RFC-3339'
           example: '2014-03-19'
     BusinessQualification:
       type: object
@@ -3102,8 +3344,27 @@ components:
     CreditCardAccountsLimits:
       type: object
       required:
+        - creditCardAccountId
+        - requestDateTime
+        - currency
         - limits
       properties:
+        creditCardAccountId:
+          type: string
+          description: 'Identificador para conta pagamento pós-paga é o creditCardAccountId, chave artificial que permite identificar a conta pagamento pós-paga especifica.'
+          maxLength: 40
+          example: XXZTR3459087
+        requestDateTime:
+          type: string
+          pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])T(?:[01]\d|2[0123]):(?:[012345]\d):(?:[012345]\d)Z$'
+          description: 'Data e hora da consulta, conforme especificação RFC-3339, formato UTC.'
+          maxLength: 20
+          example: '2020-07-21T08:30:00Z'
+        currency:
+          type: string
+          description: 'Moeda referente ao valor da transação, segundo modelo ISO-4217.'
+          maxLength: 3
+          example: BRL
         limits:
           $ref: '#/components/schemas/AccountsLimits'
     CreditCardaccountsTransactionsBrand:
@@ -3113,50 +3374,6 @@ components:
       properties:
         creditCardAccount:
           $ref: '#/components/schemas/CreditCardTransactionAccount'
-    CreditCardAccountsStatement:
-      type: object
-      description: Lista dos lançamentos referentes aos limites relativos à conta de  pagamento pós-paga
-      required:
-        - creditLineLimitType
-        - consolidationType
-        - balances
-      properties:
-        creditLineLimitType:
-          $ref: '#/components/schemas/EnumCreditCardAccountsLineLimitType'
-        consolidationType:
-          $ref: '#/components/schemas/EnumCreditCardAccountsConsolidationType'
-        lineName:
-          $ref: '#/components/schemas/EnumCreditCardAccountsLineName'
-        lineNameAdditionalInfo:
-          type: string
-          pattern: \w*\W*
-          description: Campo de preenchimento obrigatório se selecionada a opção 'OUTRAS' em nameLine
-        limitType:
-          $ref: '#/components/schemas/EnumCreditCardAccountsLimitType'
-        balances:
-          type: array
-          description: Lista que traz os valores relativos aos saldos do Limite de crédito total da conta de pagamento pós-paga
-          items:
-            $ref: '#/components/schemas/CreditCardAccountsStatementBalance'
-    CreditCardAccountsStatementBalance:
-      type: object
-      description: Lista que traz os valores relativos aos saldos do Limite de crédito total da conta de pagamento pós-pa
-      required:
-        - type
-        - amount
-      properties:
-        type:
-          type: string
-          description: Traz os tipos dos valores relativos aos saldos  do Limite de crédito total da conta de pagamento pós-paga.
-          enum:
-            - VALOR_TOTAL
-            - VALOR_UTILIZADO
-            - VALOR_DISPONIVEL
-          example: VALOR_TOTAL
-        amount:
-          type: string
-          description: 'Valor do limite de crédito informado (total ou por modalidade), relativo ao tipo selecionado. Expresso em valor monetário com 2 casas decimais'
-          maxLength: 12
     CreditCardAccountStatementTransaction:
       type: object
       description: Lista que traz os valores relativos aos saldos do Limite de crédito total da conta de pagamento pós-paga
@@ -3190,12 +3407,7 @@ components:
           description: 'Campo livre, de preenchimento obrigatório quando selecionado tipo de transação ''OUTROS'''
           maxLength: 50
         paymentType:
-          type: string
-          description: Traz os tipos de pagamento
-          enum:
-            - A_VISTA
-            - A_PRAZO
-          example: A_VISTA
+          $ref: '#/components/schemas/EnumCreditCardAccountsPaymentType'
         feeType:
           $ref: '#/components/schemas/EnumCreditCardAccountFee'
         feeTypeAdditionalInfo:
@@ -3203,14 +3415,7 @@ components:
           maxLength: 50
           description: 'Campo livre, de preenchimento obrigatório quando selecionada tipo de tarifa ''OUTRA'''
         otherCreditsType:
-          type: string
-          description: Traz outros tipos de crédito contratados no cartão.
-          enum:
-            - CREDITO_ROTATIVO
-            - PARCELAMENTO_FATURA
-            - EMPRESTIMO
-            - OUTROS
-          example: CREDITO_ROTATIVO
+          $ref: '#/components/schemas/EnumCreditCardAccountsOtherCreditType'
         otherCreditsAdditionalInfo:
           type: string
           maxLength: 50
@@ -3303,7 +3508,7 @@ components:
       properties:
         creditCardAccountId:
           type: string
-          description: 'Identificador para conta pagamento pós-paga é o creditCardAccountId, chave artificial que permite identificar a conta pagamento pós-paga especifica.'
+          description: Um identificador único e imutável usado para identificar o recurso da conta de pagamento pós paga. Este identificador não tem significado para o proprietário da conta
           maxLength: 40
           example: XXZTR3459087
         requestDateTime:
@@ -3318,6 +3523,12 @@ components:
           description: 'Nome da Marca reportada pelo participante do Open Banking. O conceito a que se refere a ''marca'' é em essência uma promessa da empresa em fornecer uma série específica de atributos, benefícios e serviços uniformes aos clientes.'
           maxLength: 80
           example: Organização A
+        companyCnpj:
+          type: string
+          pattern: '\d{14}|^NA$'
+          description: 'Número completo do CNPJ da instituição responsável pelo Cadastro - o CNPJ corresponde ao número de inscrição no Cadastro de Pessoa Jurídica. Deve-se ter apenas os números do CNPJ, sem máscara.'
+          maxLength: 14
+          example: '21128159000166'
         name:
           type: string
           pattern: \w*\W*
@@ -3325,12 +3536,6 @@ components:
             Denominação/Identificação do nome da conta de pagamento pós-paga (cartão). Conforme CIRCULAR Nº 3.680,BCB, 2013: 'conta de pagamento pós-paga: destinada à execução de transações de pagamento que independem do aporte prévio de recursos'.
           maxLength: 50
           example: Cartão Universitário
-        companyCnpj:
-          type: string
-          pattern: '\d{14}|^NA$'
-          description: 'Número completo do CNPJ da instituição responsável pelo Cadastro - o CNPJ corresponde ao número de inscrição no Cadastro de Pessoa Jurídica. Deve-se ter apenas os números do CNPJ, sem máscara.'
-          maxLength: 14
-          example: '21128159000166'
         productType:
           $ref: '#/components/schemas/EnumCreditCardAccountsProductType'
         productAdditionalInfo:
@@ -3401,13 +3606,13 @@ components:
           items:
             $ref: '#/components/schemas/CustomerPostalAddress'
           minItems: 1
-          description: Lista de endereços
+          description: Lista de endereços da pessoa jurídica
         phones:
           type: array
           items:
             $ref: '#/components/schemas/CustomerPhone'
           minItems: 1
-          description: Lista com telefones de contato
+          description: Lista com telefones de contato da pessoa jurídica
         emails:
           type: array
           items:
@@ -3453,7 +3658,7 @@ components:
         countryCallingCode:
           type: string
           maxLength: 4
-          pattern: '^\d{1,4}$|^NA$'
+          pattern: '^\d{2,4}$'
           example: '55'
           description: Número de DDI (Discagem Direta Internacional) para telefone de acesso ao Cliente - se houver
         areaCode:
@@ -3461,14 +3666,15 @@ components:
         number:
           type: string
           maxLength: 11
-          pattern: '^([0-9]{8,11})$'
+          pattern: '^([0-9]{8,11})'
           example: '29875132'
           description: Número de telefone do cliente
         phoneExtension:
           type: string
           maxLength: 5
-          pattern: '^\d{1,5}$'
+          pattern: '^\d{1,5}$|^NA$'
           description: Número do ramal. De preenchimento obrigatório se fizer parte da identificação do número do telefone informado
+          example: '932'
     CustomerPostalAddress:
       type: object
       required:
@@ -3483,6 +3689,7 @@ components:
         isMain:
           type: boolean
           description: Indica se o endereço informado é o principal
+          example: true
         address:
           type: string
           description: |
@@ -3499,29 +3706,30 @@ components:
         districtName:
           type: string
           description: |
-            Bairro é uma comunidade ou região localizada em uma cidade ou município de acordo com as suas subdivisões geográficas. p.ex: 'Paraíso'
+            Bairro é uma comunidade ou região localizada em uma cidade ou município de acordo com as suas subdivisões geográficas.
           maxLength: 50
           pattern: \w*\W*
           example: Centro
         townName:
           type: string
           description: |
-            Localidade: O nome da localidade corresponde à designação da cidade ou município no qual o endereço está localizado. p.ex. 'São Paulo'
+            Localidade: O nome da localidade corresponde à designação da cidade ou município no qual o endereço está localizado.
           maxLength: 50
           pattern: \w*\W*
           example: Marília
         ibgeTownCode:
           type: string
-          description: Código IBGE do município
-          pattern: '^(\d{7})$'
+          description: 'Código IBGE de Município. A Tabela de Códigos de Municípios do IBGE apresenta a lista dos municípios brasileiros associados a um código composto de 7 dígitos, sendo os dois primeiros referentes ao código da Unidade da Federação.'
+          pattern: '\d{7}$'
           maxLength: 7
           example: '3550308'
         countrySubDivision:
           $ref: '#/components/schemas/EnumCountrySubDivision'
         postCode:
           type: string
-          description: Código de Endereçamento Postal
-          pattern: '(\d{8}|^NA$)'
+          description: |
+            Código de Endereçamento Postal: Composto por um conjunto numérico de oito dígitos, o objetivo principal do CEP é orientar e acelerar o encaminhamento, o tratamento e a entrega de objetos postados nos Correios, por meio da sua atribuição a localidades, logradouros, unidades dos Correios, serviços, órgãos públicos, empresas e edifícios. p.ex. '01311000'
+          pattern: '\d{8}|^NA$'
           maxLength: 8
           example: '17500001'
         country:
@@ -3532,7 +3740,7 @@ components:
           example: Brasil
         countryCode:
           type: string
-          description: Código do país
+          description: Código do pais de acordo com o código “alpha3” do ISO-3166
           maxLength: 3
           example: BRA
         geographicCoordinates:
@@ -3569,7 +3777,11 @@ components:
         - CONTA_DEPOSITO_A_VISTA
         - CONTA_POUPANCA
         - CONTA_PAGAMENTO_PRE_PAGA
-      description: '| Tipos de contas ofertadas para pessoa natural ou jurídica, p.ex. ''CONTA_DEPOSITO_A_VISTA''. Conta de depósito à vista ou Conta corrente - é o tipo mais comum. Nela, o dinheiro fica à sua disposição para ser sacado a qualquer momento. Essa conta não gera rendimentos para o depositante Conta poupança - foi criada para estimular as pessoas a pouparem. O dinheiro que ficar na conta por trinta dias passa a gerar rendimentos, com isenção de imposto de renda para quem declara. Ou seja, o dinheiro “cresce” (rende) enquanto ficar guardado na conta. Cada depósito terá rendimentos de mês em mês, sempre no dia do mês em que o dinheiro tiver sido depositado Conta de pagamento pré-paga: segundo CIRCULAR Nº 3.680, BCB de  2013, é a ''destinada à execução de transações de pagamento em moeda eletrônica realizadas com base em fundos denominados em reais previamente aportados'''
+      description: |
+        Tipos de contas ofertadas para pessoa natural ou jurídica, p.ex. 'CONTA_DEPOSITO_A_VISTA'.
+        Conta de depósito à vista ou Conta corrente - é o tipo mais comum. Nela, o dinheiro fica à sua disposição para ser sacado a qualquer momento. Essa conta não gera rendimentos para o depositante
+        Conta poupança - foi criada para estimular as pessoas a pouparem. O dinheiro que ficar na conta por trinta dias passa a gerar rendimentos, com isenção de imposto de renda para quem declara. Ou seja, o dinheiro “cresce” (rende) enquanto ficar guardado na conta. Cada depósito terá rendimentos de mês em mês, sempre no dia do mês em que o dinheiro tiver sido depositado
+        Conta de pagamento pré-paga: segundo CIRCULAR Nº 3.680, BCB de  2013, é a 'destinada à execução de transações de pagamento em moeda eletrônica realizadas com base em fundos denominados em reais previamente aportados'
       example: CONTA_DEPOSITO_A_VISTA
     EnumAreaCode:
       type: string
@@ -3643,6 +3855,7 @@ components:
         - '97'
         - '98'
         - '99'
+        - NA
     EnumBankBorrowingContractAmortizationSchedule:
       type: string
       description: |
@@ -4029,6 +4242,7 @@ components:
     EnumCompletedAuthorisedPaymentIndicator:
       type: string
       description: Indicador da transação
+      maxLength: 19
       enum:
         - TRANSACAO_EFETIVADA
         - LANCAMENTO_FUTURO
@@ -4134,6 +4348,7 @@ components:
         - SP
         - SE
         - TO
+        - NA
       example: SP
     EnumCreditCardAccountBalance:
       type: string
@@ -4159,6 +4374,7 @@ components:
       description: |
         Categoria de Bandeiras de Cartões de Crédito (Instituidor do arranjo de pagamento).
         Bandeira é a detentora de todos os direitos e deveres da utilização da marca estampada no cartão, inclusive as bandeiras pertencentes aos emissores.
+      maxLength: 17
       enum:
         - VISA
         - MASTERCARD
@@ -4263,9 +4479,26 @@ components:
         - EMPRESTIMO
         - OUTROS
       example: CREDITO_ROTATIVO
+    EnumCreditCardAccountsOtherCreditType:
+      type: string
+      description: Traz outros tipos de crédito contratados no cartão.
+      enum:
+        - CREDITO_ROTATIVO
+        - PARCELAMENTO_FATURA
+        - EMPRESTIMO
+        - OUTROS
+      example: CREDITO_ROTATIVO
+    EnumCreditCardAccountsPaymentType:
+      type: string
+      description: Traz os tipos de pagamento
+      enum:
+        - A_VISTA
+        - A_PRAZO
+      example: A_VISTA
     EnumCreditCardAccountsProductType:
       type: string
       description: 'Categoria atribuída a um cartão de pagamento, sob uma certa denominação, que lhe agrega um conjunto de vantagens, diferenciando-o de acordo com o perfil do portador.'
+      maxLength: 26
       enum:
         - CLASSIC_NACIONAL
         - CLASSIC_INTERNACIONAL
@@ -4287,6 +4520,11 @@ components:
         - CORPORATIVO
         - EMPRESARIAL
         - COMPRAS
+        - BASICO_NACIONAL
+        - BASICO_INTERNACIONAL
+        - NANQUIM
+        - GRAFITE
+        - MAIS
         - OUTROS
       example: CLASSIC_NACIONAL
     EnumCreditCardTransactionType:
@@ -4304,6 +4542,7 @@ components:
       type: string
       description: |
         Indicador do tipo de lançamento: a crédito ou a débito.
+      maxLength: 7
       enum:
         - CREDITO
         - DEBITO
@@ -4321,6 +4560,16 @@ components:
         - BOLETO_BANCARIO
         - AVERBACAO_FOLHA
         - PIX
+    EnumOverdraftLimit:
+      type: string
+      description: Faixa de valor que corresponde ao valor monetário do limite de cheque esepciaql contratado. Cada faixa corresponde a um range de valor. São previstos valores diferentes das faixas para Contratos de Cheque Especial de Pessoa Natural e de Pessoa jurídica
+      enum:
+        - FAIXA_1
+        - FAIXA_2
+        - FAIXA_3
+        - FAIXA_4
+        - FAIXA_5
+      example: FAIXA_1
     EnumPartiesParticipationDocumentType:
       type: string
       enum:
@@ -4342,6 +4591,7 @@ components:
     EnumPayerPersonType:
       type: string
       description: Identificação do Tipo de Pessoa do Pagador da transação
+      maxLength: 14
       enum:
         - PESSOA_NATURAL
         - PESSOA_JURIDICA
@@ -4349,6 +4599,7 @@ components:
     EnumPayeePersonType:
       type: string
       description: Identificação do Tipo de Pessoa do Pagador da transação
+      maxLength: 14
       enum:
         - PESSOA_NATURAL
         - PESSOA_JURIDICA
@@ -4404,6 +4655,7 @@ components:
       type: string
       description: |
         Tipo de Transação
+      maxLength: 31
       enum:
         - TED
         - DOC
@@ -4740,22 +4992,6 @@ components:
           items:
             $ref: '#/components/schemas/FinancingsFinanceCharge'
           minItems: 1
-    FinancingsContractBank:
-      type: object
-      description: |
-        Conjunto de informações de operações de crédito de financiamentos contratadas
-      required:
-        - contract
-      properties:
-        contract:
-          $ref: '#/components/schemas/FinancingsContract'
-    FinancingsContractData:
-      type: object
-      required:
-        - financings
-      properties:
-        financings:
-          $ref: '#/components/schemas/FinancingsContractBank'
     FinancingsContractedFee:
       type: object
       description: Objeto que traz o conjunto de informações necessárias para demonstrar a composição das taxas de juros remuneratórios da Modalidade de crédito
@@ -5099,17 +5335,18 @@ components:
           $ref: '#/components/schemas/FinancingsWarrantiesBank'
     GeographicCoordinates:
       type: object
-      description: |
-        Objeto agrupador das informações que compõem as Coordenadas geográficas: latitude e longitude
+      description: 'Conjunto de informações, que correspondem aos valores das coordenadas geográficas em graus decimais, no Sistema de referência WGS84'
       properties:
         latitude:
-          description: Informação da latitude referente a geolocalização informada.
+          description: |
+            Informação da Latitude referente a geolocalização informada. Entre -90 e 90.p.ex. '-90.8365180'. (2 casas antes da vírgula, 11 posições) 
           type: string
           pattern: '^-?\d{1,2}\.\d{1,9}$'
           maxLength: 13
           example: '-90.8365180'
         longitude:
-          description: Informação da longitude referente a geolocalização informada.
+          description: |
+            Informação da Longitude referente a geolocalização informada. Entre -180 e 180. p.ex '-180.836519.' (3 casas antes da vírgula, 11 posições) 
           type: string
           pattern: '^-?\d{1,3}\.\d{1,8}$'
           maxLength: 13
@@ -5133,7 +5370,7 @@ components:
       properties:
         accountId:
           type: string
-          description: Um identificador único e imutável usado para identificar o recurso do contrato da operação de crédito. Este identificador não tem significado para oproprietário da conta
+          description: 'Um identificador único e imutável usado para identificar o recurso da conta (de depósito à vista, poupança ou de pagamento pré-paga). Este identificador não tem significado para o proprietário da conta.'
           pattern: \w*\W*
           maxLength: 100
           example: '92792126019929279212650822221989319252576'
@@ -5479,22 +5716,6 @@ components:
           items:
             $ref: '#/components/schemas/InvoiceFinancingsFinanceCharge'
           minItems: 1
-    InvoiceFinancingsContractBank:
-      type: object
-      description: |
-        Conjunto de informações de operações de crédito de direitos creditórios descontados contratadas
-      required:
-        - contract
-      properties:
-        contract:
-          $ref: '#/components/schemas/InvoiceFinancingsContract'
-    InvoiceFinancingsContractData:
-      type: object
-      required:
-        - invoiceFinancings
-      properties:
-        invoiceFinancings:
-          $ref: '#/components/schemas/InvoiceFinancingsContractBank'
     InvoiceFinancingsContractedFee:
       type: object
       description: Objeto que traz o conjunto de informações necessárias para demonstrar a composição das taxas de juros remuneratórios da Modalidade de crédito
@@ -6098,22 +6319,6 @@ components:
           pattern: '\d{14}'
           description: |
             CNPJ do consignante (CNPJ corresponde ao número de inscrição no Cadastro de Pessoa Jurídica). Deve-se ter apenas os números do CNPJ, sem máscara. Informação adicional específica para Modalidade de Crédito: Empréstimo-Crédito Pessoal Consignado
-    LoansContractBank:
-      type: object
-      description: |
-        Conjunto de informações de operações de crédito de empréstimos contratadas
-      required:
-        - contract
-      properties:
-        contract:
-          $ref: '#/components/schemas/LoansContract'
-    LoansContractData:
-      type: object
-      required:
-        - loans
-      properties:
-        loans:
-          $ref: '#/components/schemas/LoansContractBank'
     LoansContractedFee:
       type: object
       description: Objeto que traz o conjunto de informações necessárias para demonstrar a composição das taxas de juros remuneratórios da Modalidade de crédito
@@ -6520,10 +6725,12 @@ components:
             $ref: '#/components/schemas/NationalityComplementaryDocuments'
     PartiesParticipation:
       type: object
-      description: Objeto relativo às informações de composição da participação societária
+      description: |
+        Lista relativa às informações das partes envolvidas, como: sócio e /ou administrador
       required:
         - type
         - civilName
+        - socialName
         - shareholding
         - documentType
         - documentNumber
@@ -6545,16 +6752,17 @@ components:
         startDate:
           type: string
           maxLength: 10
-          pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$|^NA$'
+          pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$'
           format: DateString
           description: 'Data de início da participação, conforme especificação RFC-3339.'
+          example: '2019-02-02'
         shareholding:
           type: string
           maxLength: 4
           pattern: '^((\d{1,9}\.\d{2}){1}|NA)$'
           description: |
-            Percentual de participação societária. Só deve ser informada se igual ou superior a 25%. Ex: 0.25 (O valor ao lado representa 25%. O valor '1 'representa 100%)
-            A apuração pode acontecer com até 2 casas decimais.O preenchimento deve respeitar as 2 casas decimais, mesmo que venham preenchidas com zeros
+            Percentual de participação societária (informar com 2 casas decimais). Sócio só deve ser informado se sua participação societária for igual ou superior a 25%. p.ex: 0.25 (Este valor  representa 25%. O valor '1 'representa 100%)
+          example: '0.51'
         documentType:
           $ref: '#/components/schemas/EnumPartiesParticipationDocumentType'
         documentNumber:
@@ -6562,11 +6770,13 @@ components:
           maxLength: 20
           pattern: \w*\W*
           description: Número do documento informado. Campo Texto Livre para preencher número e dígito do documento se houver
+          example: '73677831148'
         documentAdditionalInfo:
           type: string
           maxLength: 100
           pattern: \w*\W*
           description: 'Campo livre, de preenchimento obrigatório quando o documento informado tiver informações complementares relevantes para a sua identificação'
+          example: CNH
         documentCountry:
           type: string
           description: País de emissão do documento. Código do pais de acordo com o código “alpha3” do ISO-3166.
@@ -6621,7 +6831,7 @@ components:
       properties:
         accountId:
           type: string
-          description: Um identificador único e imutável usado para identificar o recurso do contrato da operação de crédito. Este identificador não tem significado para oproprietário da conta
+          description: 'Um identificador único e imutável usado para identificar o recurso da conta (de depósito à vista, poupança ou de pagamento pré-paga). Este identificador não tem significado para o proprietário da conta.'
           pattern: \w*\W*
           maxLength: 100
           example: '92792126019929279212650822221989319252576'
@@ -6640,15 +6850,7 @@ components:
             Moeda referente aos valores de Limite de Cheque Especial e de Adiantamento a depositante , segundo modelo ISO-4217. p.ex. 'BRL'. Todos os saldos informados estão representados com a moeda vigente do Brasil.
           example: BRL
         overdraftLimit:
-          type: string
-          description: Faixa de valor que corresponde ao valor monetário do limite de cheque esepciaql contratado. Cada faixa corresponde a um range de valor. São previstos valores diferentes das faixas para Contratos de Cheque Especial de Pessoa Natural e de Pessoa jurídica
-          enum:
-            - FAIXA_1
-            - FAIXA_2
-            - FAIXA_3
-            - FAIXA_4
-            - FAIXA_5
-          example: FAIXA_1
+          $ref: '#/components/schemas/EnumOverdraftLimit'
         balances:
           type: array
           description: Lista dos valores referentes ao utilizado do Limite de Cheque especial e do adiantamento a depositante
@@ -7040,70 +7242,7 @@ components:
         - meta
       properties:
         data:
-          type: object
-          required:
-            - brandName
-            - companyCnpj
-            - accounts
-          properties:
-            brandName:
-              type: string
-              description: 'Nome da Marca reportada pelo participante do Open Banking. O conceito a que se refere a ''marca'' é em essência uma promessa da empresa em fornecer uma série específica de atributos, benefícios e serviços uniformes aos clientes.'
-              maxLength: 80
-              pattern: \w*\W*
-              example: Organização A
-            companyCnpj:
-              type: string
-              maxLength: 14
-              pattern: '\d{14}|^NA$'
-              description: 'Número completo do CNPJ da instituição responsável pelo Cadastro - o CNPJ corresponde ao número de inscrição no Cadastro de Pessoa Jurídica. Deve-se ter apenas os números do CNPJ, sem máscara'
-              example: '21128159000166'
-            accounts:
-              type: array
-              description: 'Lista de contas depósito à vista, poupança e pagamento pré-pagas mantidas pelo cliente na instituição transmissora e para as quais ele tenha fornecido consentimento'
-              items:
-                type: object
-                required:
-                  - type
-                  - compeCode
-                  - branchCode
-                  - number
-                  - checkDigit
-                  - accountID
-                properties:
-                  type:
-                    $ref: '#/components/schemas/EnumTypeAccount'
-                  compeCode:
-                    type: string
-                    description: 'Código identificador atribuído pelo Banco Central do Brasil às instituições participantes do STR (Sistema de Transferência de reservas).O Compe (Sistema de Compensação de Cheques e Outros Papéis) é um sistema que identifica e processa as compensações bancárias. Ele é representado por um código de três dígitos que serve como identificador de bancos, sendo assim, cada instituição bancária possui um número exclusivo'
-                    pattern: '\d{3}|^NA$'
-                    maxLength: 3
-                    example: '001'
-                  branchCode:
-                    type: string
-                    description: 'Código da Agência detentora da conta. (Agência é a dependência destinada ao atendimento aos clientes, ao público em geral e aos associados de cooperativas de crédito, no exercício de atividades da instituição, não podendo ser móvel ou transitória)'
-                    pattern: '\d{4}|^NA$'
-                    maxLength: 4
-                    example: '6272'
-                  number:
-                    type: string
-                    description: Número da conta
-                    pattern: '^\d{8,20}$|^NA$'
-                    maxLength: 20
-                    example: '94088392'
-                  checkDigit:
-                    type: string
-                    description: Dígito da conta
-                    pattern: \w*\W*
-                    maxLength: 1
-                    example: '4'
-                  accountID:
-                    type: string
-                    description: Um identificador único e imutável usado para identificar o recurso do contrato da operação de crédito. Este identificador não tem significado para oproprietário da conta
-                    pattern: \w*\W*
-                    maxLength: 100
-                    example: '92792126019929279212650822221989319252576'
-              minItems: 1
+          $ref: '#/components/schemas/AccountBrand'
         links:
           $ref: '#/components/schemas/Links'
         meta:
@@ -7142,7 +7281,7 @@ components:
         - meta
       properties:
         data:
-          $ref: '#/components/schemas/AccountOverdraftLimitsData'
+          $ref: '#/components/schemas/AccountOverdraftLimits'
         links:
           $ref: '#/components/schemas/Links'
         meta:
@@ -7284,6 +7423,65 @@ components:
           $ref: '#/components/schemas/Links'
         meta:
           $ref: '#/components/schemas/Meta'
+    ResponseCreditCardAccounts:
+      type: object
+      required:
+        - data
+        - links
+        - meta
+      properties:
+        data:
+          type: object
+          description: Conjunto de informações das Contas de pagamento pós paga
+          required:
+            - brandName
+            - companyCnpj
+            - name
+            - productType
+            - creditCardNetwork
+            - creditCardAccountId
+          properties:
+            brandName:
+              type: string
+              description: 'Nome da Marca reportada pelo participante do Open Banking. O conceito a que se refere a ''marca'' é em essência uma promessa da empresa em fornecer uma série específica de atributos, benefícios e serviços uniformes aos clientes'
+              pattern: \w*\W*
+              maxLength: 80
+              example: Organização A
+            companyCnpj:
+              type: string
+              description: 'Número completo do CNPJ da instituição responsável pelo Cadastro - o CNPJ corresponde ao número de inscrição no Cadastro de Pessoa Jurídica. Deve-se ter apenas os números do CNPJ, sem máscara'
+              pattern: '\d{14}|^NA$'
+              maxLength: 14
+              example: '21128159000166'
+            name:
+              type: string
+              description: 'Denominação/Identificação do nome da conta de pagamento pós-paga (cartão). Conforme CIRCULAR Nº 3.680,BCB, 2013: ''conta de pagamento pós-paga: destinada à execução de transações de pagamento que independem do aporte prévio de recursos'
+              pattern: \w*\W*
+              maxLength: 50
+              example: Cartão Universitário
+            productType:
+              $ref: '#/components/schemas/EnumCreditCardAccountsProductType'
+            productAdditionalInfo:
+              type: string
+              description: Informações complementares se tipo de Cartão 'OUTROS'
+              pattern: \w*\W*
+              maxLength: 50
+            creditCardNetwork:
+              $ref: '#/components/schemas/EnumCreditCardAccountNetwork'
+            networkAdditionalInfo:
+              type: string
+              description: Texto livre para especificar categoria de bandeira marcada como 'OUTRAS'
+              pattern: \w*\W*
+              maxLength: 50
+            creditCardAccountId:
+              type: string
+              description: Um identificador único e imutável usado para identificar o recurso da conta de pagamento pós paga. Este identificador não tem significado para o proprietário da conta
+              maxLength: 100
+              example: XXZTR3459087
+        links:
+          $ref: '#/components/schemas/Links'
+        meta:
+          $ref: '#/components/schemas/Meta'
     ResponseCreditCardAccountsIdentification:
       type: object
       required:
@@ -7354,45 +7552,6 @@ components:
           $ref: '#/components/schemas/Links'
         meta:
           $ref: '#/components/schemas/Meta'
-      example:
-        data:
-          creditCardAccounts:
-            limits:
-              creditCardAccountId: XXZTR3459087
-              requestDateTime: '2020-07-21T08:30:00Z'
-              brandName: Organização A
-              companyCnpj: '21128159000166'
-              currency: BRL
-              statementCreditCardAccounts:
-                - creditLineLimitType: LIMITE_CREDITO_TOTAL
-                  consolidationType: CONSOLIDADO
-                  balances:
-                    - type: VALOR_TOTAL
-                      amount: '2000.00'
-                    - type: VALOR_UTILIZADO
-                      amount: '1654.00'
-                    - type: VALOR_DISPONIVEL
-                      amount: '1200.00'
-                - creditLineLimitType: LIMITE_CREDITO_MODALIDADE_OPERACAO
-                  consolidationType: INDIVIDUAL
-                  lineName: SAQUE_CREDITO_BRASIL
-                  limitType: COM_LIMITE
-                  balances:
-                    - type: VALOR_TOTAL
-                      amount: '2000.00'
-                    - type: VALOR_UTILIZADO
-                      amount: '1654.00'
-                    - type: VALOR_DISPONIVEL
-                      amount: '1200.00'
-        links:
-          self: 'https://api.banco.com.br/open-banking/<api>/v1/<resource>'
-          first: 'https://api.banco.com.br/open-banking/<api>/v1/<resource>'
-          prev: string
-          next: string
-          last: 'https://api.banco.com.br/open-banking/<api>/v1/<resource>'
-        meta:
-          totalRecords: 1
-          totalPages: 1
     ResponseCreditCardAccountsTransactions:
       type: object
       required:
@@ -7536,7 +7695,7 @@ components:
         - meta
       properties:
         data:
-          $ref: '#/components/schemas/FinancingsContractData'
+          $ref: '#/components/schemas/FinancingsContract'
         links:
           $ref: '#/components/schemas/Links'
         meta:
@@ -7588,7 +7747,7 @@ components:
         - meta
       properties:
         data:
-          $ref: '#/components/schemas/LoansContractData'
+          $ref: '#/components/schemas/LoansContract'
         links:
           $ref: '#/components/schemas/Links'
         meta:
@@ -7640,7 +7799,7 @@ components:
         - meta
       properties:
         data:
-          $ref: '#/components/schemas/InvoiceFinancingsContractData'
+          $ref: '#/components/schemas/InvoiceFinancingsContract'
         links:
           $ref: '#/components/schemas/Links'
         meta:
@@ -7692,7 +7851,7 @@ components:
         - meta
       properties:
         data:
-          $ref: '#/components/schemas/UnarrangedAccountOverdraftContractData'
+          $ref: '#/components/schemas/UnarrangedAccountOverdraftContract'
         links:
           $ref: '#/components/schemas/Links'
         meta:
@@ -7777,7 +7936,7 @@ components:
       properties:
         accountID:
           type: string
-          description: 'Um identificador único e imutável usado para identificar o recurso da conta (depósito à vista, poupapança e de pagamento pré-paga). Este identificador não tem significado para o proprietário da conta'
+          description: 'Um identificador único e imutável usado para identificar o recurso da conta (de depósito à vista, poupança ou de pagamento pré-paga). Este identificador não tem significado para o proprietário da conta.'
           pattern: \w*\W*
           maxLength: 100
           example: '92792126019929279212650822221989319252576'
@@ -7803,6 +7962,7 @@ components:
         amount:
           type: number
           description: 'Valor do Saldo disponível, representado em valor monetário com 2 casas decimais. O tipo SALDO_DISPONIVEL admite valor negativo.'
+          maxLength: 19
           example: 500.54
         transactionDate:
           type: string
@@ -7813,6 +7973,13 @@ components:
              TRANSACAO_EFETIVADA - corresponde a data de lançamento da transação
              LANCAMENTO_FUTURO - corresponde a data prevista de efetivação da transação
           example: '2021-01-07'
+        payerCnpjCpf:
+          type: string
+          maxLength: 14
+          pattern: '^\d{11}$|^\d{14}$|^NA$'
+          description: |
+            Identificação do Pagador da transação. Número do cadastro nas Receita Federal (Preencher com CPF ou CNPJ sem formatação)
+          example: '43908445778'
         payerPersonType:
           $ref: '#/components/schemas/EnumPayerPersonType'
         payerCompeCode:
@@ -7839,13 +8006,6 @@ components:
           pattern: \w*\W*
           description: Dígito da conta
           example: '4'
-        payerCnpjCpf:
-          type: string
-          maxLength: 14
-          pattern: '^\d{11}$|^\d{14}$|^NA$'
-          description: |
-            Identificação do Pagador da transação. Número do cadastro nas Receita Federal (Preencher com CPF ou CNPJ sem formatação)
-          example: '43908445778'
         payeeCnpjCpf:
           type: string
           maxLength: 14
@@ -8098,22 +8258,6 @@ components:
           items:
             $ref: '#/components/schemas/UnarrangedAccountOverdraftFinanceCharge'
           minItems: 1
-    UnarrangedAccountOverdraftContractBank:
-      type: object
-      description: |
-        Conjunto de informações de operações de crédito de adiantamento a depositantes contratadas
-      required:
-        - contract
-      properties:
-        contract:
-          $ref: '#/components/schemas/UnarrangedAccountOverdraftContract'
-    UnarrangedAccountOverdraftContractData:
-      type: object
-      required:
-        - unarrangedAccountOverdraft
-      properties:
-        unarrangedAccountOverdraft:
-          $ref: '#/components/schemas/UnarrangedAccountOverdraftContractBank'
     UnarrangedAccountOverdraftContractedFee:
       type: object
       description: Objeto que traz o conjunto de informações necessárias para demonstrar a composição das taxas de juros remuneratórios da Modalidade de crédito
