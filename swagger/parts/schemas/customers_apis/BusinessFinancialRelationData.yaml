@@ -3,4 +3,4 @@ required:
   - business
 properties:
   business:
-    $ref: ./BusinessFinancialRelationBrand.yaml
+    $ref: ./BusinessFinancialRelation.yaml

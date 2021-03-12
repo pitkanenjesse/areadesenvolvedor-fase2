@@ -2944,7 +2944,7 @@ components:
           items:
             $ref: '#/components/schemas/EnumProductServiceType'
           minItems: 1
-          maxItems: 14
+          maxItems: 24
           description: Lista de produtos e serviços com contratos vigentes
         procurators:
           type: array
@@ -2952,61 +2952,13 @@ components:
             $ref: '#/components/schemas/BusinessProcurator'
           minItems: 1
           description: Lista dos representantes. De preenchimento obrigatório se houver representante.
-    BusinessFinancialRelationBrand:
-      type: object
-      description: Objeto que define a Organização controladora do grupo de instituições financeiras
-      required:
-        - name
-        - companies
-      properties:
-        name:
-          type: string
-          pattern: \w*\W*
-          maxLength: 80
-          description: 'Nome da Marca reportada pelo participante do Open Banking. O conceito a que se refere a ''marca'' é em essência uma promessa da empresa em fornecer uma série específica de atributos, benefícios e serviços uniformes aos clientes'
-          example: Organização A
-        companies:
-          type: array
-          items:
-            $ref: '#/components/schemas/BusinessFinancialRelationCompany'
-          minItems: 1
-          description: Companies traz uma lista de todas as instituições da Marca
-    BusinessFinancialRelationCompany:
-      type: object
-      required:
-        - name
-        - cnpjNumber
-        - businessCustomers
-      properties:
-        name:
-          type: string
-          maxLength: 80
-          pattern: \w*\W*
-          description: Nome da marca selecionada pela Organização
-          example: Organização A
-        cnpjNumber:
-          type: string
-          maxLength: 14
-          pattern: '\d{14}|^NA$'
-          description: Número completo do CNPJ da instituição responsável pelo Cadastro - o CNPJ corresponde ao número de inscrição no Cadastro de Pessoa Jurídica.
-          example: '00000000000100'
-        businessCustomers:
-          $ref: '#/components/schemas/BusinessFinancialRelationCustomers'
-    BusinessFinancialRelationCustomers:
-      type: object
-      description: Conjunto de informações cadastrais do Cliente pessoa jurídica.
-      required:
-        - financialRelation
-      properties:
-        financialRelation:
-          $ref: '#/components/schemas/BusinessFinancialRelation'
     BusinessFinancialRelationData:
       type: object
       required:
         - business
       properties:
         business:
-          $ref: '#/components/schemas/BusinessFinancialRelationBrand'
+          $ref: '#/components/schemas/BusinessFinancialRelation'
     BusinessIdentification:
       type: object
       description: Conjunto de informações relativas a Identificação ou seja a ação e o efeito de identificar de forma única a pessoa jurídica através de seus dados cadastrais
@@ -4696,7 +4648,6 @@ components:
       enum:
         - REPRESENTANTE_LOCAL
         - PROCURADOR
-        - NÃO_POSSUI
       description: |
         Tipo de representante.
         Representante legal - Nome Civil completo da Pessoa Natural que represente uma entidade ou uma empresa e é nomeado em seu ato constitutivo, ou seja, no contrato social ou estatuto social.

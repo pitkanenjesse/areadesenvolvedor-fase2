@@ -29,7 +29,7 @@ properties:
     items:    
       $ref: ../enum/EnumProductServiceType.yaml
     minItems: 1
-    maxItems: 14
+    maxItems: 24
     description: Lista de produtos e serviços com contratos vigentes
   procurators:
     type: array
