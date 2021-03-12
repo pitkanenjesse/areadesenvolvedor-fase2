@@ -2692,20 +2692,14 @@ components:
       $ref: ./schemas/accounts_apis/AccountOverdraftLimitsData.yaml
     AccountTransactionsData:
       $ref: ./schemas/accounts_apis/AccountTransactionsData.yaml
-    BusinessFinancialRelation:
-      $ref: ./schemas/customers_apis/BusinessFinancialRelation.yaml
     BusinessFinancialRelationData:
       $ref: ./schemas/customers_apis/BusinessFinancialRelationData.yaml
-    BusinessIdentification:
-      $ref: ./schemas/customers_apis/BusinessIdentification.yaml
     BusinessIdentificationData:
       $ref: ./schemas/customers_apis/BusinessIdentificationData.yaml
     BusinessOtherDocument:
       $ref: ./schemas/customers_apis/BusinessOtherDocument.yaml
     BusinessProcurator:
       $ref: ./schemas/customers_apis/BusinessProcurator.yaml
-    BusinessQualification:
-      $ref: ./schemas/customers_apis/BusinessQualification.yaml
     BusinessQualificationData:
       $ref: ./schemas/customers_apis/BusinessQualificationData.yaml
     CreditCardAccountBalances:
