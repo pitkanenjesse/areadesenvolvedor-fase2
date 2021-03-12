@@ -284,12 +284,6 @@ components:
   schemas:
     BusinessFinancialRelation:
       $ref: ./schemas/customers_apis/BusinessFinancialRelation.yaml
-    BusinessFinancialRelationBrand:
-      $ref: ./schemas/customers_apis/BusinessFinancialRelationBrand.yaml
-    BusinessFinancialRelationCompany:
-      $ref: ./schemas/customers_apis/BusinessFinancialRelationCompany.yaml
-    BusinessFinancialRelationCustomers:
-      $ref: ./schemas/customers_apis/BusinessFinancialRelationCustomers.yaml
     BusinessFinancialRelationData:
       $ref: ./schemas/customers_apis/BusinessFinancialRelationData.yaml
     BusinessIdentification:
