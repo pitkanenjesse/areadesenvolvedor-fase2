@@ -275,7 +275,7 @@ paths:
             - customers
 components:
   schemas:
-    BusinessFinancialRelation:
+    BusinessFinancialRelationData:
       type: object
       description: 'Objeto que reúne as informações relativas ao relacionamento do cliente junto à Instituição. Considera-se relacionamento as informações que permitam conhecer desde quando a pessoa consultada é cliente da instituição, bem como um indicador dos produtos e serviços que ela consome atualmente e seus representantes'
       required:
@@ -315,14 +315,7 @@ components:
             $ref: '#/components/schemas/BusinessProcurator'
           minItems: 1
           description: Lista dos representantes. De preenchimento obrigatório se houver representante.
-    BusinessFinancialRelationData:
-      type: object
-      required:
-        - business
-      properties:
-        business:
-          $ref: '#/components/schemas/BusinessFinancialRelation'
-    BusinessIdentification:
+    BusinessIdentificationData:
       type: object
       description: Conjunto de informações relativas a Identificação ou seja a ação e o efeito de identificar de forma única a pessoa jurídica através de seus dados cadastrais
       required:
@@ -412,13 +405,6 @@ components:
             Lista relativa às informações das partes envolvidas, como: sócio e /ou administrador
         contacts:
           $ref: '#/components/schemas/CustomerContacts'
-    BusinessIdentificationData:
-      type: object
-      required:
-        - business
-      properties:
-        business:
-          $ref: '#/components/schemas/BusinessIdentification'
     BusinessProcurator:
       type: object
       required:
@@ -447,7 +433,7 @@ components:
           description: 'Nome social da pessoa natural, se houver. (aquele pelo qual travestis e transexuais se reconhecem, bem como são identificados por sua comunidade e em seu meio social, conforme Decreto Nº 51.180, de 14 de janeiro de 2010)'
           maxLength: 70
           example: NA
-    BusinessQualification:
+    BusinessQualificationData:
       type: object
       description: 'Objeto que reúne as informações relativas ao processo de qualificação. Considera-se qualificação as informações que permitam as instituições apreciar, avaliar, caracterizar e classificar o cliente com a finalidade de conhecer o seu perfil de risco e sua capacidade econômico-financeira'
       required:
@@ -529,13 +515,6 @@ components:
           maxLength: 4
           description: 'Ano do Patrimônio, conforme especificação RFC-3339'
           example: 2014
-    BusinessQualificationData:
-      type: object
-      required:
-        - business
-      properties:
-        business:
-          $ref: '#/components/schemas/BusinessQualification'
     BusinessOtherDocument:
       type: object
       properties:
