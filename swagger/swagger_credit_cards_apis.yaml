@@ -1,4 +1,4 @@
-openapi: 3.0.0
+﻿openapi: 3.0.0
 info:
   title: API de contas de pagamento pós-pagas do Open Banking Brasil – Fase 2.
   description: |
@@ -250,7 +250,7 @@ components:
         - limitType
         - limitAmount
         - avaiableAmount
-        - usededAmount
+        - usedAmount
       properties:
         creditLineLimitType:
           $ref: '#/components/schemas/EnumCreditCardAccountsLineLimitType'
@@ -276,7 +276,7 @@ components:
           description: Valor disponível do limite informado.  Expresso em valor monetário com 4 casas decimais
           maxLength: 19
           example: 2000
-        usededAmount:
+        usedAmount:
           type: number
           nullable: true
           description: Valor utilizado do limite informado Expresso em valor monetário com 4 casas decimais
