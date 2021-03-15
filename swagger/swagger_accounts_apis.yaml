@@ -62,6 +62,7 @@ paths:
         - $ref: '#/components/parameters/xCustomerUserAgent'
         - $ref: '#/components/parameters/page'
         - $ref: '#/components/parameters/pageSize'
+        - $ref: '#/components/parameters/accountType'
       responses:
         '200':
           description: Dados de identificação das contas obtidos com sucesso.
@@ -275,33 +276,12 @@ components:
     AccountBalancesData:
       type: object
       description: |
-        Traz as informações relativas aos saldos para  Contas de: depósito à vista, poupança e de pagamento pré-paga
+        Conjunto de informações das Contas de: depósito à vista, poupança e de pagamento pré-paga
       required:
-        - accountId
-        - requestDateTime
         - avaiableAmount
         - blockedAmount
         - automaticallyInvestedAmount
       properties:
-        accountId:
-          type: string
-          description: 'Um identificador único e imutável usado para identificar o recurso da conta (de depósito à vista, poupança ou de pagamento pré-paga). Este identificador não tem significado para o proprietário da conta.'
-          pattern: \w*\W*
-          maxLength: 100
-          example: '92792126019929279212650822221989319252576'
-        requestDateTime:
-          type: string
-          description: 'Data e hora da consulta, conforme especificação RFC-3339, formato UTC.'
-          pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])T(?:[01]\d|2[0123]):(?:[012345]\d):(?:[012345]\d)Z$'
-          maxLength: 20
-          example: '2020-07-21T08:30:00Z'
-        currency:
-          type: string
-          description: 'Moeda referente ao valor da garantia, segundo modelo ISO-4217. p.ex. ''BRL'' Todos os valores monetários informados estão representados com a moeda vigente do Brasil'
-          maxLength: 3
-          format: CurrencyString
-          pattern: '^(\w{3}){1}$'
-          example: BRL
         avaiableAmount:
           type: number
           nullable: true
@@ -311,7 +291,7 @@ components:
         blockedAmount:
           type: number
           nullable: true
-          description: Saldo disponível com aplicação automática - corresponde a soma do saldo disponível acrescido do valor obtido a partir da aplicação automática Expresso em valor monetário com 4 casas decimais
+          description: 'Saldo bloqueado, não disponível para utilização imediata, por motivo de bloqueio apresentado para o cliente nos canais eletrônicos Expresso em valor monetário com 4 casas decimais'
           maxLength: 19
           example: 100000
         automaticallyInvestedAmount:
@@ -383,7 +363,6 @@ components:
       description: |
         Conjunto dos atributos que caracterizam as Contas de: depósito à vista, poupança e de pagamento pré-paga
       required:
-        - accountId
         - compeCode
         - branchCode
         - number
@@ -391,15 +370,11 @@ components:
         - brandName
         - companyCnpj
         - requestDateTime
+        - updateDateTime
         - type
         - subtype
+        - currency
       properties:
-        accountId:
-          type: string
-          description: 'Um identificador único e imutável usado para identificar o recurso da conta (de depósito à vista, poupança ou de pagamento pré-paga). Este identificador não tem significado para o proprietário da conta.'
-          pattern: \w*\W*
-          maxLength: 100
-          example: '92792126019929279212650822221989319252576'
         compeCode:
           type: string
           maxLength: 3
@@ -411,7 +386,7 @@ components:
           maxLength: 4
           pattern: '\d{4}|^NA$'
           description: |
-            Código da Agência detentora da conta
+            Código da Agência detentora da conta. (Agência é a dependência destinada ao atendimento aos clientes, ao público em geral e aos associados de cooperativas de crédito, no exercício de atividades da instituição, não podendo ser móvel ou transitória)
           example: '6272'
         number:
           type: string
@@ -447,41 +422,34 @@ components:
           pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])T(?:[01]\d|2[0123]):(?:[012345]\d):(?:[012345]\d)Z$'
           example: '2020-07-21T08:30:00Z'
           description: 'Data e hora da consulta, conforme especificação RFC-3339, formato UTC.'
+        updateDateTime:
+          type: string
+          pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])T(?:[01]\d|2[0123]):(?:[012345]\d):(?:[012345]\d)Z$'
+          description: 'Data e hora da atualização, conforme especificação RFC-3339.'
+          maxLength: 20
+          example: '2020-07-21T08:30:00Z'
         type:
           $ref: '#/components/schemas/EnumAccountType'
         subtype:
           $ref: '#/components/schemas/EnumAccountSubType'
-      additionalProperties: false
-    AccountOverdraftLimitsData:
-      type: object
-      description: Conjunto das informações relativas aos Limites referentes ao valor das operações de crédito (Cheque especial e Adiantamento a Depositantes) vinculadas à conta de depósito à vista ou conta corrente
-      required:
-        - accountId
-        - requestDateTime
-        - currency
-        - overdraftLimit
-        - balances
-      properties:
-        accountId:
-          type: string
-          description: 'Um identificador único e imutável usado para identificar o recurso da conta (de depósito à vista, poupança ou de pagamento pré-paga). Este identificador não tem significado para o proprietário da conta.'
-          pattern: \w*\W*
-          maxLength: 100
-          example: '92792126019929279212650822221989319252576'
-        requestDateTime:
-          type: string
-          maxLength: 20
-          pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])T(?:[01]\d|2[0123]):(?:[012345]\d):(?:[012345]\d)Z$'
-          example: '2020-07-21T08:30:00Z'
-          description: 'Data e hora da consulta, conforme especificação RFC-3339, formato UTC.'
         currency:
           type: string
           pattern: '^(\w{3}){1}$'
           maxLength: 3
           format: CurrencyString
           description: |
-            Moeda referente aos valores de Limite de Cheque Especial e de Adiantamento a depositante , segundo modelo ISO-4217. p.ex. 'BRL'. Todos os saldos informados estão representados com a moeda vigente do Brasil.
+            Moeda referente ao valor da transação, segundo modelo ISO-4217. p.ex. 'BRL' 
+            Todos os saldos informados estão representados com a moeda vigente do Brasil
           example: BRL
+      additionalProperties: false
+    AccountOverdraftLimitsData:
+      type: object
+      description: |
+        Conjunto de informações da Conta de: depósito à vista
+      required:
+        - overdraftLimit
+        - balances
+      properties:
         overdraftLimit:
           $ref: '#/components/schemas/EnumOverdraftLimit'
         balances:
@@ -493,34 +461,125 @@ components:
       additionalProperties: false
     AccountTransactionsData:
       type: object
-      description: |
-        Conjunto de informações das Contas de: depósito à vista, poupança e de pagamento pré-paga
       required:
-        - accountId
-        - transactions
-        - requestDateTime
+        - completedAuthorisedPaymentType
+        - creditDebitType
+        - transactionIdentification
+        - type
+        - amount
+        - transactionDate
+        - payerCnpjCpf
+        - payerPersonType
+        - payerCompeCode
+        - payerBranchCode
+        - payerNumber
+        - payerCheckDigit
+        - payeeCnpjCpf
+        - payeePersonType
+        - payeeCompeCode
+        - payeeBranchCode
+        - payeeNumber
+        - payeeCheckDigit
       properties:
-        accountId:
+        completedAuthorisedPaymentType:
+          $ref: '#/components/schemas/EnumCompletedAuthorisedPaymentIndicator'
+        creditDebitType:
+          $ref: '#/components/schemas/EnumCreditDebitIndicator'
+        transactionIdentification:
           type: string
-          description: Um identificador único e imutável usado para identificar o recurso do contrato da operação de crédito. Este identificador não tem significado para oproprietário da conta
+          maxLength: 60
           pattern: \w*\W*
-          maxLength: 100
-          example: '92792126019929279212650822221989319252576'
-        requestDateTime:
+          description: Campo livre que corresponde ao identificador da transação na instituição financeira
+          example: TRANSFCWAR5TXHCX5I9IDBHML8082N8NEO30M6LNNG7ANAYIJYRM00ZBZPU8
+        type:
+          $ref: '#/components/schemas/EnumTransactionTypes'
+        additionalInfo:
+          type: string
+          maxLength: 60
+          pattern: \w*\W*
+          description: |
+            Campo livre, de preenchimento obrigatório para complementar informação, quando selecionado o tipo de transação: OUTRO
+          example: Transferência
+        amount:
+          type: number
+          description: Valor da transação. Expressa em valor monetário com 4 casas decimais.
+          maxLength: 19
+          example: 500.54
+        transactionDate:
+          type: string
+          maxLength: 10
+          pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$'
+          description: |
+            Se indicador de transação:
+            TRANSACAO_EFETIVADA - corresponde a data de lançamento da transação
+            LANCAMENTO_FUTURO - corresponde a data prevista de efetivação da transação
+          example: '2021-01-07'
+        payerCnpjCpf:
+          type: string
+          maxLength: 14
+          pattern: '^\d{11}$|^\d{14}$|^NA$'
+          description: |
+            Identificação do Pagador da transação (Preencher com o CPF ou CNPJ, sem formatação)
+          example: '43908445778'
+        payerPersonType:
+          $ref: '#/components/schemas/EnumPayerPersonType'
+        payerCompeCode:
+          type: string
+          maxLength: 3
+          pattern: '\d{3}|^NA$'
+          description: 'Código identificador atribuído pelo Banco Central do Brasil às instituições participantes do STR (Sistema de Transferência de reservas) referente ao Pagador da transação. O número-código substituiu o antigo código COMPE. Todos os participantes do STR, exceto as Infraestruturas do Mercado Financeiro (IMF) e a Secretaria do Tesouro Nacional, possuem um número-código independentemente de participarem da Centralizadora da Compensação de Cheques (Compe). O campo tem a anotação “n/a” (“não se aplica”) para os participantes do STR aos quais não é atribuído um número-código'
+          example: '001'
+        payerBranchCode:
+          type: string
+          maxLength: 4
+          pattern: '\d{4}|^NA$'
+          description: 'Código da Agência detentora da conta do Pagador. (Agência é a dependência destinada ao atendimento aos clientes, ao público em geral e aos associados de cooperativas de crédito, no exercício de atividades da instituição, não podendo ser móvel ou transitória)'
+          example: '6272'
+        payerNumber:
           type: string
           maxLength: 20
-          pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])T(?:[01]\d|2[0123]):(?:[012345]\d):(?:[012345]\d)Z$'
-          example: '2020-07-21T08:30:00Z'
-          description: 'Data e hora da consulta, conforme especificação RFC-3339, formato UTC.'
-        currency:
+          pattern: '^\d{8,20}$|^NA$'
+          description: Número da conta do Pagador
+          example: '94088392'
+        payerCheckDigit:
           type: string
-          pattern: '^(\w{3}){1}$'
+          maxLength: 1
+          pattern: \w*\W*
+          description: Dígito da conta do Pagador
+          example: '4'
+        payeeCnpjCpf:
+          type: string
+          maxLength: 14
+          pattern: '^\d{11}$|^\d{14}$|^NA$'
+          description: |
+            Identificação do Recebedor da transação (Preencher com o CPF ou CNPJ, sem formatação)
+          example: '67890854360'
+        payeePersonType:
+          $ref: '#/components/schemas/EnumPayeePersonType'
+        payeeCompeCode:
+          type: string
           maxLength: 3
-          format: CurrencyString
-          description: 'Moeda referente ao valor mínimo da Tarifa, segundo modelo ISO-4217'
-          example: BRL
-        transactions:
-          $ref: '#/components/schemas/Transaction'
+          pattern: '\d{3}|^NA$'
+          description: 'Código identificador atribuído pelo Banco Central do Brasil às instituições participantes do STR (Sistema de Transferência de reservas) referente ao Recebedor da transação. O número-código substituiu o antigo código COMPE. Todos os participantes do STR, exceto as Infraestruturas do Mercado Financeiro (IMF) e a Secretaria do Tesouro Nacional, possuem um número-código independentemente de participarem da Centralizadora da Compensação de Cheques (Compe). O campo tem a anotação “n/a” (“não se aplica”) para os participantes do STR aos quais não é atribuído um número-código'
+          example: '001'
+        payeeBranchCode:
+          type: string
+          maxLength: 4
+          pattern: '\d{4}|^NA$'
+          description: 'Código da Agência detentora da conta do Recebedor. (Agência é a dependência destinada ao atendimento aos clientes, ao público em geral e aos associados de cooperativas de crédito, no exercício de atividades da instituição, não podendo ser móvel ou transitória)'
+          example: '6272'
+        payeeNumber:
+          type: string
+          maxLength: 20
+          pattern: '^\d{8,20}$|^NA$'
+          description: Número da conta do Recebedor
+          example: '94088392'
+        payeeCheckDigit:
+          type: string
+          maxLength: 1
+          pattern: \w*\W*
+          description: Dígito da conta do Recebedor
+          example: '4'
       additionalProperties: false
     EnumAccountSubType:
       type: string
@@ -529,6 +588,7 @@ components:
         - CONJUNTA_SOLIDARIA
         - CONJUNTA_NAO_SOLIDARIA
       description: |
+        Subtipo de conta (vide Enum): 
         Conta individual - possui um único titular
         Conta conjunta solidária - é a modalidade cujos titulares podem realizar movimentações de forma isolada, isto é, sem que seja necessária a autorização dos demais titulares
         Conta conjunta não solidária - onde as movimentações financeiras só podem serem realizadas mediante autorização de TODOS os correntistas da conta.
@@ -547,7 +607,10 @@ components:
       example: CONTA_DEPOSITO_A_VISTA
     EnumCompletedAuthorisedPaymentIndicator:
       type: string
-      description: Indicador da transação
+      description: |
+        Indicador da transação: 
+        - Transação efetivada
+        - Lançamento futuro
       maxLength: 19
       enum:
         - TRANSACAO_EFETIVADA
@@ -556,7 +619,9 @@ components:
     EnumCreditDebitIndicator:
       type: string
       description: |
-        Indicador do tipo de lançamento: a crédito ou a débito.
+        Indicador do tipo de lançamento: 
+        - Crédito
+        - Débito
       maxLength: 7
       enum:
         - CREDITO
@@ -564,7 +629,13 @@ components:
       example: CREDITO
     EnumOverdraftLimit:
       type: string
-      description: Faixa de valor que corresponde ao valor monetário do limite de cheque esepciaql contratado. Cada faixa corresponde a um range de valor. São previstos valores diferentes das faixas para Contratos de Cheque Especial de Pessoa Natural e de Pessoa jurídica
+      description: |
+        Faixa de valor que corresponde ao valor monetário do limite de cheque especial contratado. Cada faixa corresponde a um range de valor. São previstos valores diferentes das faixas para Contratos de Cheque Especial de Pessoa Natural e de Pessoa jurídica (vide Enum)
+        - Faixa1
+        - Faixa2
+        - Faixa3
+        - Faixa4
+        - Faixa5
       enum:
         - FAIXA_1
         - FAIXA_2
@@ -579,21 +650,25 @@ components:
         - SALDO_DESCOBERTO
       description: |
         Tipo de  saldo informado: (vide Enum)
-        - valor utilizado do limite do cheque especial
-        - saldo a descoberto em conta de depósito à vista (relativo ao excesso do limite de cheque especial ou ao adiantamento a depositante)
+        - Valor utilizado do limite do cheque especial
+        - Saldo a descoberto em conta de depósito à vista (relativo ao excesso do limite de cheque especial ou ao adiantamento a depositante)
       example: VALOR_UTILIZADO_LIMITE
     EnumPayerPersonType:
       type: string
-      description: Identificação do Tipo de Pessoa do Pagador da transação
-      maxLength: 14
+      description: |
+        Identificação do Tipo de Pessoa do Pagador da transação. Vide Enum
+        Pessoa Natural - Informar CPF no campo “payerCnpjCpf”
+        Pessoa Jurídica - Informar CNPJ no campo “payerCnpjCpf”
       enum:
         - PESSOA_NATURAL
         - PESSOA_JURIDICA
       example: PESSOA_NATURAL
     EnumPayeePersonType:
       type: string
-      description: Identificação do Tipo de Pessoa do Pagador da transação
-      maxLength: 14
+      description: |
+        Identificação do Tipo de Pessoa do Recebedor da transação. Vide Enum
+        Pessoa Natural - Informar CPF no campo “payerCnpjCpf”
+        Pessoa Jurídica - Informar CNPJ no campo “payerCnpjCpf”
       enum:
         - PESSOA_NATURAL
         - PESSOA_JURIDICA
@@ -759,7 +834,12 @@ components:
         - meta
       properties:
         data:
-          $ref: '#/components/schemas/AccountTransactionsData'
+          type: array
+          items:
+            $ref: '#/components/schemas/AccountTransactionsData'
+          minItems: 1
+          description: |
+            Lista dos lançamentos referentes às transações realizadas e de lançamentos futuros para as contas de: depósito à vista, poupança e de pagamento pré-paga
         links:
           $ref: '#/components/schemas/Links'
         meta:
@@ -799,130 +879,6 @@ components:
             additionalProperties: false
         meta:
           $ref: '#/components/schemas/Meta'
-      additionalProperties: false
-    Transaction:
-      type: object
-      description: |
-        Lista dos lançamentos referentes às transações realizadas e de pagamentos aurotizados para as contas de: depósito à vista, pouopança e de pagamento pré-paga.
-      required:
-        - completedAuthorisedPaymentType
-        - creditDebitType
-        - transactionIdentification
-        - type
-        - amount
-        - transactionDate
-        - payerCnpjCpf
-        - payeeCnpjCpf
-        - payerCheckDigit
-        - payerNumber
-        - payerBranchCode
-        - payerCompeCode
-        - payerPersonType
-        - payeePersonType
-        - payeeCompeCode
-        - payeeBranchCode
-        - payeeNumber
-        - payeeCheckDigit
-      properties:
-        completedAuthorisedPaymentType:
-          $ref: '#/components/schemas/EnumCompletedAuthorisedPaymentIndicator'
-        creditDebitType:
-          $ref: '#/components/schemas/EnumCreditDebitIndicator'
-        transactionIdentification:
-          type: string
-          maxLength: 60
-          pattern: \w*\W*
-          description: Campo livre que corresponde ao identificador da transação na instituição financeira
-          example: TRANSFCWAR5TXHCX5I9IDBHML8082N8NEO30M6LNNG7ANAYIJYRM00ZBZPU8
-        type:
-          $ref: '#/components/schemas/EnumTransactionTypes'
-        additionalInfo:
-          type: string
-          maxLength: 60
-          pattern: \w*\W*
-          description: |
-            Campo livre, de preenchimento obrigatório para complementar informação, quando selecionado o tipo de transação: OUTRO
-          example: Transferência
-        amount:
-          type: number
-          description: 'Valor do Saldo disponível, representado em valor monetário com 2 casas decimais. O tipo SALDO_DISPONIVEL admite valor negativo.'
-          maxLength: 19
-          example: 500.54
-        transactionDate:
-          type: string
-          maxLength: 10
-          pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$'
-          description: |
-            Se indicador de transação:
-             TRANSACAO_EFETIVADA - corresponde a data de lançamento da transação
-             LANCAMENTO_FUTURO - corresponde a data prevista de efetivação da transação
-          example: '2021-01-07'
-        payerCnpjCpf:
-          type: string
-          maxLength: 14
-          pattern: '^\d{11}$|^\d{14}$|^NA$'
-          description: |
-            Identificação do Pagador da transação. Número do cadastro nas Receita Federal (Preencher com CPF ou CNPJ sem formatação)
-          example: '43908445778'
-        payerPersonType:
-          $ref: '#/components/schemas/EnumPayerPersonType'
-        payerCompeCode:
-          type: string
-          maxLength: 3
-          pattern: '\d{3}|^NA$'
-          description: 'Código identificador atribuído pelo Banco Central do Brasil às instituições participantes do STR (Sistema de Transferência de reservas). O Compe (Sistema de Compensação de Cheques e Outros Papéis) é um sistema que identifica e processa as compensações bancárias. Ele é representado por um código de três dígitos que serve como identificador de bancos, sendo assim, cada instituição bancária possui um número exclusivo'
-          example: '001'
-        payerBranchCode:
-          type: string
-          maxLength: 4
-          pattern: '\d{4}|^NA$'
-          description: 'Código da Agência detentora da conta. (Agência é a dependência destinada ao atendimento aos clientes, ao público em geral e aos associados de cooperativas de crédito, no exercício de atividades da instituição, não podendo ser móvel ou transitória)'
-          example: '6272'
-        payerNumber:
-          type: string
-          maxLength: 20
-          pattern: '^\d{8,20}$|^NA$'
-          description: Número da conta
-          example: '94088392'
-        payerCheckDigit:
-          type: string
-          maxLength: 1
-          pattern: \w*\W*
-          description: Dígito da conta
-          example: '4'
-        payeeCnpjCpf:
-          type: string
-          maxLength: 14
-          pattern: '^\d{11}$|^\d{14}$|^NA$'
-          description: |
-            Identificação do Recebedor da transação. Número do cadastro nas Receita Federal  (Preencher com CPF ou CNPJ sem formatação)
-          example: '67890854360'
-        payeePersonType:
-          $ref: '#/components/schemas/EnumPayeePersonType'
-        payeeCompeCode:
-          type: string
-          maxLength: 3
-          pattern: '\d{3}|^NA$'
-          description: 'Código identificador atribuído pelo Banco Central do Brasil às instituições participantes do STR (Sistema de Transferência de reservas). O Compe (Sistema de Compensação de Cheques e Outros Papéis) é um sistema que identifica e processa as compensações bancárias. Ele é representado por um código de três dígitos que serve como identificador de bancos, sendo assim, cada instituição bancária possui um número exclusivo'
-          example: '001'
-        payeeBranchCode:
-          type: string
-          maxLength: 4
-          pattern: '\d{4}|^NA$'
-          description: 'Código da Agência detentora da conta. (Agência é a dependência destinada ao atendimento aos clientes, ao público em geral e aos associados de cooperativas de crédito, no exercício de atividades da instituição, não podendo ser móvel ou transitória)'
-          example: '6272'
-        payeeNumber:
-          type: string
-          maxLength: 20
-          pattern: '^\d{8,20}$|^NA$'
-          description: Número da conta
-          example: '94088392'
-        payeeCheckDigit:
-          type: string
-          maxLength: 1
-          pattern: \w*\W*
-          description: Dígito da conta
-          example: '4'
       additionalProperties: false
   parameters:
     accountId:
@@ -970,6 +926,11 @@ components:
         maxLength: 20
         pattern: '\d{20}|^NA$'
       required: true
+    accountType:
+      name: accountType
+      in: query
+      schema:
+        $ref: '#/components/schemas/EnumAccountType'
     Authorization:
       name: Authorization
       in: header
@@ -1056,8 +1017,8 @@ components:
       required: false
       schema:
         type: string
-        pattern: \w*\W*
-        maxLength: 2048
+        pattern: '^[a-zA-Z0-9][a-zA-Z0-9\-]{0,99}$'
+        maxLength: 100
   securitySchemes:
     OpenId:
       type: openIdConnect

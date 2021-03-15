@@ -41,6 +41,46 @@ servers:
 tags:
   - name: Unarranged Accounts Overdraft
 paths:
+  /contracts:
+    get:
+      tags:
+        - Unarranged Accounts Overdraft
+      summary: Obtém a lista de contratos de adiantamento a depositantes consentidos pelo cliente.
+      description: Método para obter a lista de contratos de adiantamento a depositantes mantidos pelo cliente na instituição transmissora e para os quais ele tenha fornecido consentimento.
+      operationId: getContracts
+      parameters:
+        - $ref: '#/components/parameters/Authorization'
+        - $ref: '#/components/parameters/xFapiAuthDate'
+        - $ref: '#/components/parameters/xFapiCustomerIpAddress'
+        - $ref: '#/components/parameters/xFapiInteractionId'
+        - $ref: '#/components/parameters/xCustomerUserAgent'
+        - $ref: '#/components/parameters/page'
+        - $ref: '#/components/parameters/pageSize'
+      responses:
+        '200':
+          $ref: '#/components/responses/OKResponseUnarrangedAccountOverdraftContractList'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '405':
+          $ref: '#/components/responses/MethodNotAllowed'
+        '406':
+          $ref: '#/components/responses/NotAcceptable'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+        default:
+          $ref: '#/components/responses/OKResponseUnarrangedAccountOverdraftContractList'
+      security:
+        - OpenId:
+            - openId
+            - unarranged-accounts-overdraft
   '/contracts/{contractId}':
     get:
       tags:
@@ -469,6 +509,24 @@ components:
       properties:
         data:
           $ref: '#/components/schemas/UnarrangedAccountOverdraftContract'
+        links:
+          $ref: '#/components/schemas/Links'
+        meta:
+          $ref: '#/components/schemas/Meta'
+      additionalProperties: false
+    ResponseUnarrangedAccountOverdraftContractList:
+      type: object
+      required:
+        - data
+        - links
+        - meta
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/UnarrangedAccountOverdraftData'
+          minItems: 1
+          description: Conjunto de informações  de contratos de adiantamento a depositantes mantidos pelo cliente na instituição transmissora e para os quais ele tenha fornecido consentimento
         links:
           $ref: '#/components/schemas/Links'
         meta:
@@ -1022,6 +1080,58 @@ components:
             $ref: '#/components/schemas/UnarrangedAccountOverdraftFinanceCharge'
           minItems: 1
       additionalProperties: false
+    UnarrangedAccountOverdraftData:
+      type: object
+      required:
+        - brandName
+        - companyCnpj
+        - productType
+        - productSubType
+        - ipocCode
+        - contractId
+      properties:
+        brandName:
+          type: string
+          maxLength: 80
+          pattern: \w*\W*
+          description: 'Nome da Marca reportada pelo participante do Open Banking. O conceito a que se refere a ''marca'' é em essência uma promessa da empresa em fornecer uma série específica de atributos, benefícios e serviços uniformes aos clientes'
+          example: Organização A
+        companyCnpj:
+          type: string
+          maxLength: 14
+          pattern: '\d{14}|^NA$'
+          description: 'Número completo do CNPJ da instituição responsável pelo Cadastro - o CNPJ corresponde ao número de inscrição no Cadastro de Pessoa Jurídica. Deve-se ter apenas os números do CNPJ, sem máscara'
+          example: '60500998000144'
+        ipocCode:
+          type: string
+          maxLength: 67
+          description: |
+            Número padronizado do contrato - IPOC (Identificação Padronizada da Operação de Crédito). Segundo DOC 3040, composta por:
+            - **CNPJ da instituição:** 8 (oito) posições iniciais;
+            - **Modalidade da operação:** 4 (quatro) posições;
+            - **Tipo do cliente:** 1 (uma) posição( 1 = pessoa natural - CPF, 2= pessoa jurídica – CNPJ, 3 = pessoa física no exterior, 4 = pessoa jurídica no exterior, 5 = pessoa natural sem CPF e 6 = pessoa jurídica sem CNPJ);
+            - **Código do cliente:** O número de posições varia conforme o tipo do cliente:
+              1. Para clientes pessoa física com CPF (tipo de cliente = 1), informar as 11 (onze) posições do CPF;
+              2. Para clientes pessoa jurídica com CNPJ (tipo de cliente = 2), informar as 8 (oito) posições iniciais do CNPJ;
+              3. Para os demais clientes (tipos de cliente 3, 4, 5 e 6), informar 14 (catorze) posições com complemento de zeros à esquerda se a identificação tiver tamanho inferior;
+            - **Código do contrato:** 1 (uma) até 40 (quarenta) posições, sem complemento de caracteres.
+          example: '92792126019929279212650822221989319252576'
+        productType:
+          type: string
+          maxLength: 30
+          description: 'Tipo da modalidade de crédito contratada, conforme  circular 4.015 e descrição do DOC3040 do SCR). (Vide Domínio). Adiantamento a depositantes'
+          example: ADIANTAMENTO_A_DEPOSITANTES
+        productSubType:
+          type: string
+          maxLength: 30
+          description: 'Sub tipo da modalidades de crédito adiantamento a depositantes contratadas, conforme  circular 4.015 e descrição do DOC3040 do SCR). (Vide Domínio). Adiantamento a depositantes'
+          example: ADIANTAMENTO_A_DEPOSITANTES
+        contractId:
+          type: string
+          maxLength: 100
+          description: Um identificador único e imutável usado para identificar o contrato de uma operação de crédito. Este identificador não tem significado para o tomador do crédito
+          example: xcjklompowsa279212650822221989319aadrtjk
+      additionalProperties: false
     UnarrangedAccountOverdraftContractedFee:
       type: object
       description: Objeto que traz o conjunto de informações necessárias para demonstrar a composição das taxas de juros remuneratórios da Modalidade de crédito
@@ -1200,14 +1310,24 @@ components:
       description: 'Um UID [RFC4122](https://tools.ietf.org/html/rfc4122) usado como um ID de correlação. Se fornecido, o transmissor deve "reproduzir" esse valor no cabeçalho de resposta.'
       required: false
       schema:
-        type: string
-        pattern: \w*\W*
-        maxLength: 2048
+        $ref: '#/components/responses/OKResponseUnarrangedAccountOverdraftContractList/headers/x-fapi-interaction-id/schema'
   securitySchemes:
     OpenId:
       type: openIdConnect
       openIdConnectUrl: 'https://authserver.example/.well-known/openid-configuration'
   responses:
+    OKResponseUnarrangedAccountOverdraftContractList:
+      description: Lista de contratos obtida com sucesso.
+      headers:
+        x-fapi-interaction-id:
+          schema:
+            type: string
+            pattern: '^[a-zA-Z0-9][a-zA-Z0-9\-]{0,99}$'
+            maxLength: 100
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ResponseUnarrangedAccountOverdraftContractList'
     BadRequest:
       description: 'A requisição foi malformada, omitindo atributos obrigatórios, seja no payload ou através de atributos na URL.'
       content:

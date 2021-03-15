@@ -543,7 +543,7 @@ components:
           example: 'https://api.banco.com.br/open-banking/<api>/v1/<resource>'
           maxLength: 2048
       additionalProperties: false
-    LoansBalloonInstalments:
+    LoansBalloonPayment:
       type: object
       required:
         - dueDate
@@ -561,26 +561,6 @@ components:
           description: Valor monetário da parcela não regular a vencer.  Expresso em valor monetário com 2 casas decimais
           maxLength: 19
           example: 200
-      additionalProperties: false
-    LoansBalloonPayment:
-      type: object
-      description: Conjunto de informações relativas às parcelas não regulares do contrato da modalidade de crédito consultada
-      required:
-        - currency
-        - instalments
-      properties:
-        currency:
-          type: string
-          description: 'Moeda referente ao valor mínimo da Tarifa, segundo modelo ISO-4217'
-          pattern: '^(\w{3}){1}$'
-          maxLength: 3
-          format: CurrencyString
-          example: BRL
-        instalments:
-          type: array
-          description: Lista que traz as datas de vencimento e valor das parcelas não regulares  do contrato da modalidade de crédito consultada
-          items:
-            $ref: '#/components/schemas/LoansBalloonInstalments'
       additionalProperties: false
     LoansContract:
       type: object
@@ -899,7 +879,8 @@ components:
         - contractRemainingDays
         - dueInstalments
         - pastDueInstalments
-        - balloonPayment
+        - currency
+        - balloonPayments
       properties:
         contractId:
           type: string
@@ -927,11 +908,24 @@ components:
           maxLength: 3
           description: 'Quantidade de prestações vencidas. (No caso de modalidades que não possuam parcelas, o número de prestações é igual a zero)'
           example: 73
-        balloonPayment:
-          $ref: '#/components/schemas/LoansBalloonPayment'
+        currency:
+          type: string
+          description: |
+            Moeda referente ao valor monetário informado, segundo modelo ISO-4217. p.ex. 'BRL' 
+            Todos os valores monetários informados estão representados com a moeda vigente do Brasil
+          pattern: '^(\w{3}){1}$'
+          maxLength: 3
+          format: CurrencyString
+          example: BRL
+        balloonPayments:
+          type: array
+          items:
+            $ref: '#/components/schemas/LoansBalloonPayment'
+          minItems: 1
       additionalProperties: false
     LoansListContract:
       type: object
+      description: Conjunto de informações  de contratos de empréstimo mantidos pelo cliente na instituição transmissora e para os quais ele tenha fornecido consentimento
       required:
         - brandName
         - companyCnpj
@@ -1197,7 +1191,9 @@ components:
         - meta
       properties:
         data:
-          $ref: '#/components/schemas/LoansListContract'
+          type: array
+          items:
+            $ref: '#/components/schemas/LoansListContract'
         links:
           $ref: '#/components/schemas/Links'
         meta:
@@ -1330,8 +1326,8 @@ components:
       required: false
       schema:
         type: string
-        pattern: \w*\W*
-        maxLength: 2048
+        pattern: '^[a-zA-Z0-9][a-zA-Z0-9\-]{0,99}$'
+        maxLength: 100
   securitySchemes:
     OpenId:
       type: openIdConnect

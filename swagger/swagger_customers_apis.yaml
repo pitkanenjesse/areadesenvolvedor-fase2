@@ -1777,8 +1777,8 @@ components:
       required: false
       schema:
         type: string
-        pattern: \w*\W*
-        maxLength: 2048
+        pattern: '^[a-zA-Z0-9][a-zA-Z0-9\-]{0,99}$'
+        maxLength: 100
   securitySchemes:
     OpenId:
       type: openIdConnect
