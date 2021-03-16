@@ -2940,10 +2940,6 @@ components:
       $ref: ./schemas/enum/EnumContractTaxPeriodicity.yaml
     EnumContractTaxType:
       $ref: ./schemas/enum/EnumContractTaxType.yaml
-    EnumFinanceChargeType:
-      $ref: ./schemas/enum/EnumFinanceChargeType.yaml
-    EnumInstalmentPeriodicity:
-      $ref: ./schemas/enum/EnumInstalmentPeriodicity.yaml
     EnumWarrantySubType:
       $ref: ./schemas/enum/EnumWarrantySubType.yaml
     EnumWarrantyType:
