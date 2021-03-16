@@ -4200,28 +4200,6 @@ components:
         - NOMINAL
         - EFETIVA
       example: EFETIVA
-    EnumFinanceChargeType:
-      type: string
-      description: Tipo de encargo avulso
-      enum:
-        - JUROS_REMUNERATORIOS_POR_ATRASO
-        - MULTA_ATRASO_PAGAMENTO
-        - JUROS_MORA_ATRASO
-        - IOF_CONTRATACAO
-        - OUTROS
-      example: JUROS_REMUNERATORIOS_POR_ATRASO
-    EnumInstalmentPeriodicity:
-      type: string
-      description: Informação relativa à periodicidade regular das parcelas.
-      enum:
-        - SEMANAL
-        - QUINZENAL
-        - MENSAL
-        - BIMESTRAL
-        - TRIMESTRAL
-        - SEMESTRAL
-        - ANUAL
-      example: SEMANAL
     EnumWarrantySubType:
       type: string
       description: 'Denominação/Identificação do sub tipo da garantia que avaliza a Modalidade da Operação de Crédito contratada (Doc 3040, Anexo 12)'
