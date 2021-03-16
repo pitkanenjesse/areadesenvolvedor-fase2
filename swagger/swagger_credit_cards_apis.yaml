@@ -2,38 +2,38 @@
 info:
   title: API Credit-cards-accounts - Open Banking Brasil
   description: |
-    API de contas de pagamento pós-pagas do Open Banking Brasil – Fase 2.     
+    API de contas de pagamento pós-pagas do Open Banking Brasil – Fase 2.
     API que retorna informações de contas de pagamento pós-paga mantidas nas instituições transmissoras por seus clientes, incluindo dados como denominação, produto, bandeira,\
     limites de crédito, informações sobre transações de pagamento efetuadas e faturas.\
-    Não possui segregação entre pessoa natural e pessoa jurídica.   
+    Não possui segregação entre pessoa natural e pessoa jurídica.
     Requer consentimento do cliente para todos os `endpoints`.
 
     ## Permissions necessárias para a API Credit-cards-accounts
 
-    Para cada um dos paths desta API, além dos escopos (`scopes`) indicados existem `permissions` que deverão ser observadas: 
-     
+    Para cada um dos paths desta API, além dos escopos (`scopes`) indicados existem `permissions` que deverão ser observadas:
+
     ### `/accounts`
-      - permissions: 
+      - permissions:
         - GET: **credit-cards-accounts.read**
     ### `/accounts/{creditCardAccountId}`
-      - permissions: 
+      - permissions:
         - GET: **credit-cards-accounts.read**
     ### `/accounts/{creditCardAccountId}/bills`
-      - permissions: 
+      - permissions:
         - GET: **credit-cards-accounts.bills.read**
     ### `/accounts/{creditCardAccountId}/{billId}/transactions`
-      - permissions: 
+      - permissions:
         - GET: **credit-cards-accounts.bills.transactions.read**
     ### `/accounts/{creditCardAccountId}/limits`
-      - permissions: 
-        - GET: **credit-cards-accounts.limits.read** 
+      - permissions:
+        - GET: **credit-cards-accounts.limits.read**
     ### `/accounts/{creditCardAccountId}/transactions`
-      - permissions: 
-        - GET: **credit-cards-accounts.transactions.read**   
+      - permissions:
+        - GET: **credit-cards-accounts.transactions.read**
   version: 1.0.0
   license:
     name: Apache 2.0
-    url: 'http://www.apache.org/licenses/LICENSE-2.0'
+    url: 'https://www.apache.org/licenses/LICENSE-2.0'
   contact:
     name: Governança do Open Banking Brasil – Interfaces
     email: gt-interfaces@openbankingbr.org
@@ -62,11 +62,7 @@ paths:
         - $ref: '#/components/parameters/xCustomerUserAgent'
       responses:
         '200':
-          description: Conjunto de informações das Contas de pagamento pós paga
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ResponseCreditCardAccounts'
+          $ref: '#/components/responses/OKResponseCreditCardAccountsList'
         '400':
           $ref: '#/components/responses/BadRequest'
         '401':
@@ -83,6 +79,8 @@ paths:
           $ref: '#/components/responses/TooManyRequests'
         '500':
           $ref: '#/components/responses/InternalServerError'
+        default:
+          $ref: '#/components/responses/OKResponseCreditCardAccountsList'
       security:
         - OpenId:
             - openId
@@ -103,11 +101,7 @@ paths:
         - $ref: '#/components/parameters/creditCardAccountId'
       responses:
         '200':
-          description: Dados de identificação da conta identificada por creditCardAccountId obtidos com sucesso.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ResponseCreditCardAccountsIdentification'
+          $ref: '#/components/responses/OKResponseCreditCardAccountsIdentification'
         '400':
           $ref: '#/components/responses/BadRequest'
         '401':
@@ -124,6 +118,8 @@ paths:
           $ref: '#/components/responses/TooManyRequests'
         '500':
           $ref: '#/components/responses/InternalServerError'
+        default:
+          $ref: '#/components/responses/OKResponseCreditCardAccountsIdentification'
       security:
         - OpenId:
             - openId
@@ -148,11 +144,7 @@ paths:
         - $ref: '#/components/parameters/toDueDate'
       responses:
         '200':
-          description: Dados referentes à lista de faturas da conta identificada por creditCardAccountId obtidos com sucesso.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ResponseCreditCardAccountsBills'
+          $ref: '#/components/responses/OKResponseCreditCardAccountsBills'
         '400':
           $ref: '#/components/responses/BadRequest'
         '401':
@@ -169,6 +161,8 @@ paths:
           $ref: '#/components/responses/TooManyRequests'
         '500':
           $ref: '#/components/responses/InternalServerError'
+        default:
+          $ref: '#/components/responses/OKResponseCreditCardAccountsBills'
       security:
         - OpenId:
             - openId
@@ -191,11 +185,7 @@ paths:
         - $ref: '#/components/parameters/creditCardAccountId'
       responses:
         '200':
-          description: Dados dos limites da conta identificada por creditCardAccountId obtidos com sucesso.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ResponseCreditCardAccountsLimits'
+          $ref: '#/components/responses/OKResponseCreditCardAccountsLimits'
         '400':
           $ref: '#/components/responses/BadRequest'
         '401':
@@ -212,6 +202,8 @@ paths:
           $ref: '#/components/responses/TooManyRequests'
         '500':
           $ref: '#/components/responses/InternalServerError'
+        default:
+          $ref: '#/components/responses/OKResponseCreditCardAccountsLimits'
       security:
         - OpenId:
             - openId
@@ -238,11 +230,7 @@ paths:
         - $ref: '#/components/parameters/creditCardPayeeMCC'
       responses:
         '200':
-          description: Dados das lista de transações da conta identificada por creditCardAccountId obtidos com sucesso.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ResponseCreditCardAccountsTransactions'
+          $ref: '#/components/responses/OKResponseCreditCardAccountsTransactions'
         '400':
           $ref: '#/components/responses/BadRequest'
         '401':
@@ -259,6 +247,8 @@ paths:
           $ref: '#/components/responses/TooManyRequests'
         '500':
           $ref: '#/components/responses/InternalServerError'
+        default:
+          $ref: '#/components/responses/OKResponseCreditCardAccountsTransactions'
       security:
         - OpenId:
             - openId
@@ -872,7 +862,7 @@ components:
           description: Número total de páginas no resultado
           example: 1
       additionalProperties: false
-    ResponseCreditCardAccounts:
+    ResponseCreditCardAccountsList:
       type: object
       required:
         - data
@@ -881,6 +871,7 @@ components:
       properties:
         data:
           type: array
+          description: Conjunto de informações de conta de pagamento pós-paga
           items:
             $ref: '#/components/schemas/CreditCardAccountsData'
           minItems: 1
@@ -1079,14 +1070,17 @@ components:
         maxLength: 100
     creditCardPayeeMCC:
       name: payeeMCC
+      description: 'MCC é o Merchant Category Code, ou o código da categoria do estabelecimento comercial. Os MCCs são agrupados segundo suas similaridades'
+      required: false
       in: query
       schema:
         type: number
         maxLength: 4
-        description: 'MCC é o Merchant Category Code, ou o código da categoria do estabelecimento comercial. Os MCCs são agrupados segundo suas similaridades'
         example: 8299
     creditCardTransactionType:
       name: transactionType
+      description: Traz os tipos de Transação
+      required: false
       in: query
       schema:
         $ref: '#/components/schemas/EnumCreditCardTransactionType'
@@ -1181,14 +1175,65 @@ components:
       description: 'Um UID [RFC4122](https://tools.ietf.org/html/rfc4122) usado como um ID de correlação. Se fornecido, o transmissor deve "reproduzir" esse valor no cabeçalho de resposta.'
       required: false
       schema:
-        type: string
-        pattern: '^[a-zA-Z0-9][a-zA-Z0-9\-]{0,99}$'
-        maxLength: 100
+        $ref: '#/components/responses/OKResponseCreditCardAccountsList/headers/x-fapi-interaction-id/schema'
   securitySchemes:
     OpenId:
       type: openIdConnect
       openIdConnectUrl: 'https://authserver.example/.well-known/openid-configuration'
   responses:
+    OKResponseCreditCardAccountsList:
+      description: Conjunto de informações das Contas de pagamento pós paga
+      headers:
+        x-fapi-interaction-id:
+          schema:
+            type: string
+            pattern: '^[a-zA-Z0-9][a-zA-Z0-9\-]{0,99}$'
+            maxLength: 100
+            description: 'Um UID [RFC4122](https://tools.ietf.org/html/rfc4122) usado como um ID de correlação. Se fornecido, o transmissor deve "reproduzir" esse valor no cabeçalho de resposta.'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ResponseCreditCardAccountsList'
+    OKResponseCreditCardAccountsIdentification:
+      description: Dados de identificação da conta identificada por creditCardAccountId obtidos com sucesso.
+      headers:
+        x-fapi-interaction-id:
+          schema:
+            $ref: '#/components/responses/OKResponseCreditCardAccountsList/headers/x-fapi-interaction-id/schema'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ResponseCreditCardAccountsIdentification'
+    OKResponseCreditCardAccountsBills:
+      description: Dados referentes à lista de faturas da conta identificada por creditCardAccountId obtidos com sucesso.
+      headers:
+        x-fapi-interaction-id:
+          schema:
+            $ref: '#/components/responses/OKResponseCreditCardAccountsList/headers/x-fapi-interaction-id/schema'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ResponseCreditCardAccountsBills'
+    OKResponseCreditCardAccountsLimits:
+      description: Dados dos limites da conta identificada por creditCardAccountId obtidos com sucesso.
+      headers:
+        x-fapi-interaction-id:
+          schema:
+            $ref: '#/components/responses/OKResponseCreditCardAccountsList/headers/x-fapi-interaction-id/schema'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ResponseCreditCardAccountsLimits'
+    OKResponseCreditCardAccountsTransactions:
+      description: Dados das lista de transações da conta identificada por creditCardAccountId obtidos com sucesso.
+      headers:
+        x-fapi-interaction-id:
+          schema:
+            $ref: '#/components/responses/OKResponseCreditCardAccountsList/headers/x-fapi-interaction-id/schema'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ResponseCreditCardAccountsTransactions'
     BadRequest:
       description: 'A requisição foi malformada, omitindo atributos obrigatórios, seja no payload ou através de atributos na URL.'
       content:

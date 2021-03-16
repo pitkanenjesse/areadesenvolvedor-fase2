@@ -2,7 +2,7 @@
 info:
   title: API Accounts - Open Banking Brasil
   description: |
-    API de contas de depósito à vista, contas de poupança e contas pré-pagas do Open Banking Brasil – Fase 2.  
+    API de contas de depósito à vista, contas de poupança e contas pré-pagas do Open Banking Brasil – Fase 2.
     API que retorna informações de contas de depósito à vista, contas de poupança e contas de pagamento pré-pagas mantidas nas instituições transmissoras por seus clientes,
     incluindo dados de identificação da conta, saldos, limites e transações.\
     Não possui segregação entre pessoa natural e pessoa jurídica.\
@@ -10,27 +10,27 @@ info:
 
     # Permissions necessárias para a API Accounts
 
-    Para cada um dos paths desta API, além dos escopos (`scopes`) indicados existem `permissions` que deverão ser observadas: 
-     
+    Para cada um dos paths desta API, além dos escopos (`scopes`) indicados existem `permissions` que deverão ser observadas:
+
     ### `/accounts`
-      - permissions: 
+      - permissions:
         - GET: **accounts.read**
     ### `/accounts/{accountId}`
-      - permissions: 
+      - permissions:
         - GET: **accounts.read**
     ### `/accounts/{accountId}/balances`
-      - permissions: 
+      - permissions:
         - GET: **accounts.balances.read**
     ### `/accounts/{accountId}/transactions`
-      - permissions: 
+      - permissions:
         - GET: **accounts.transactions.read**
     ### `/accounts/{accountId}/overdraft-limits`
-      - permissions: 
-        - GET: **accounts.overdfraft.limits.read**   
+      - permissions:
+        - GET: **accounts.overdfraft.limits.read**
   version: 1.0.0
   license:
     name: Apache 2.0
-    url: 'http://www.apache.org/licenses/LICENSE-2.0'
+    url: 'https://www.apache.org/licenses/LICENSE-2.0'
   contact:
     name: Governança do Open Banking Brasil – Interfaces
     email: gt-interfaces@openbankingbr.org
@@ -65,11 +65,7 @@ paths:
         - $ref: '#/components/parameters/accountType'
       responses:
         '200':
-          description: Dados de identificação das contas obtidos com sucesso.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ResponseAccount'
+          $ref: '#/components/responses/OKResponseAccountList'
         '400':
           $ref: '#/components/responses/BadRequest'
         '401':
@@ -86,6 +82,8 @@ paths:
           $ref: '#/components/responses/TooManyRequests'
         '500':
           $ref: '#/components/responses/InternalServerError'
+        default:
+          $ref: '#/components/responses/OKResponseAccountList'
       security:
         - OpenId:
             - openId
@@ -106,11 +104,7 @@ paths:
         - $ref: '#/components/parameters/accountId'
       responses:
         '200':
-          description: Dados de identificação da conta identificada por accountId obtidos com sucesso.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ResponseAccountIdentification'
+          $ref: '#/components/responses/OKResponseAccountIdentification'
         '400':
           $ref: '#/components/responses/BadRequest'
         '401':
@@ -127,6 +121,8 @@ paths:
           $ref: '#/components/responses/TooManyRequests'
         '500':
           $ref: '#/components/responses/InternalServerError'
+        default:
+          $ref: '#/components/responses/OKResponseAccountIdentification'
       security:
         - OpenId:
             - openId
@@ -151,11 +147,7 @@ paths:
         - $ref: '#/components/parameters/accountsCheckDigit'
       responses:
         '200':
-          description: Dados relativos aos saldos da conta identificada por accountId obtidos com sucesso.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ResponseAccountBalances'
+          $ref: '#/components/responses/OKResponseAccountBalances'
         '400':
           $ref: '#/components/responses/BadRequest'
         '401':
@@ -172,6 +164,8 @@ paths:
           $ref: '#/components/responses/TooManyRequests'
         '500':
           $ref: '#/components/responses/InternalServerError'
+        default:
+          $ref: '#/components/responses/OKResponseAccountBalances'
       security:
         - OpenId:
             - openId
@@ -201,11 +195,7 @@ paths:
         - $ref: '#/components/parameters/creditDebitIndicator'
       responses:
         '200':
-          description: Dados da lista de transações da conta identificada por accountId obtidos com sucesso.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ResponseAccountTransactions'
+          $ref: '#/components/responses/OKResponseAccountTransactions'
         '400':
           $ref: '#/components/responses/BadRequest'
         '401':
@@ -222,6 +212,8 @@ paths:
           $ref: '#/components/responses/TooManyRequests'
         '500':
           $ref: '#/components/responses/InternalServerError'
+        default:
+          $ref: '#/components/responses/OKResponseAccountTransactions'
       security:
         - OpenId:
             - openId
@@ -246,11 +238,7 @@ paths:
         - $ref: '#/components/parameters/accountsCheckDigit'
       responses:
         '200':
-          description: Dados de limites da conta identificada por accountId obtidos com sucesso.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ResponseAccountOverdraftLimits'
+          $ref: '#/components/responses/OKResponseAccountOverdraftLimits'
         '400':
           $ref: '#/components/responses/BadRequest'
         '401':
@@ -267,6 +255,8 @@ paths:
           $ref: '#/components/responses/TooManyRequests'
         '500':
           $ref: '#/components/responses/InternalServerError'
+        default:
+          $ref: '#/components/responses/OKResponseAccountOverdraftLimits'
       security:
         - OpenId:
             - openId
@@ -646,6 +636,7 @@ components:
     EnumOverdraftLimitType:
       type: string
       enum:
+        - VALOR_CONTRATADO_LIMITE
         - VALOR_UTILIZADO_LIMITE
         - SALDO_DESCOBERTO
       description: |
@@ -766,7 +757,7 @@ components:
           maxLength: 19
           example: 500
       additionalProperties: false
-    ResponseAccount:
+    ResponseAccountList:
       type: object
       required:
         - data
@@ -928,6 +919,8 @@ components:
       required: true
     accountType:
       name: accountType
+      description: 'Tipos de contas. Modalidades tradicionais previstas pela Resolução 4.753, não contemplando contas vinculadas, conta de domiciliados no exterior, contas em moedas estrangeiras e conta correspondente moeda eletrônica. Vide Enum.'
+      required: false
       in: query
       schema:
         $ref: '#/components/schemas/EnumAccountType'
@@ -942,6 +935,8 @@ components:
         maxLength: 2048
     creditDebitIndicator:
       name: creditDebitIndicator
+      description: Indicador do tipo de lançamento
+      required: false
       in: query
       schema:
         $ref: '#/components/schemas/EnumCreditDebitIndicator'
@@ -1016,14 +1011,65 @@ components:
       description: 'Um UID [RFC4122](https://tools.ietf.org/html/rfc4122) usado como um ID de correlação. Se fornecido, o transmissor deve "reproduzir" esse valor no cabeçalho de resposta.'
       required: false
       schema:
-        type: string
-        pattern: '^[a-zA-Z0-9][a-zA-Z0-9\-]{0,99}$'
-        maxLength: 100
+        $ref: '#/components/responses/OKResponseAccountList/headers/x-fapi-interaction-id/schema'
   securitySchemes:
     OpenId:
       type: openIdConnect
       openIdConnectUrl: 'https://authserver.example/.well-known/openid-configuration'
   responses:
+    OKResponseAccountList:
+      description: Dados de identificação das contas obtidos com sucesso.
+      headers:
+        x-fapi-interaction-id:
+          schema:
+            type: string
+            pattern: '^[a-zA-Z0-9][a-zA-Z0-9\-]{0,99}$'
+            maxLength: 100
+            description: 'Um UID [RFC4122](https://tools.ietf.org/html/rfc4122) usado como um ID de correlação. Se fornecido, o transmissor deve "reproduzir" esse valor no cabeçalho de resposta.'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ResponseAccountList'
+    OKResponseAccountIdentification:
+      description: Dados de identificação da conta identificada por accountId obtidos com sucesso.
+      headers:
+        x-fapi-interaction-id:
+          schema:
+            $ref: '#/components/responses/OKResponseAccountList/headers/x-fapi-interaction-id/schema'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ResponseAccountIdentification'
+    OKResponseAccountBalances:
+      description: Dados relativos aos saldos da conta identificada por accountId obtidos com sucesso.
+      headers:
+        x-fapi-interaction-id:
+          schema:
+            $ref: '#/components/responses/OKResponseAccountList/headers/x-fapi-interaction-id/schema'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ResponseAccountBalances'
+    OKResponseAccountTransactions:
+      description: Dados da lista de transações da conta identificada por accountId obtidos com sucesso.
+      headers:
+        x-fapi-interaction-id:
+          schema:
+            $ref: '#/components/responses/OKResponseAccountList/headers/x-fapi-interaction-id/schema'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ResponseAccountTransactions'
+    OKResponseAccountOverdraftLimits:
+      description: Dados de limites da conta identificada por accountId obtidos com sucesso.
+      headers:
+        x-fapi-interaction-id:
+          schema:
+            $ref: '#/components/responses/OKResponseAccountList/headers/x-fapi-interaction-id/schema'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ResponseAccountOverdraftLimits'
     BadRequest:
       description: 'A requisição foi malformada, omitindo atributos obrigatórios, seja no payload ou através de atributos na URL.'
       content:

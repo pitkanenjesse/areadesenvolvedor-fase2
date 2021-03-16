@@ -3,6 +3,9 @@ info:
   title: APIs do Open Banking Brasil
   description: ''
   version: 1.0.0
+  license:
+    name: Apache 2.0
+    url: 'https://www.apache.org/licenses/LICENSE-2.0'
   contact:
     name: Governança do Open Banking Brasil - Interfaces
     email: gt-interfaces@openbankingbr.org
@@ -41,21 +44,21 @@ paths:
 
         ### Visão de alto de nível das estruturas de dados
 
-        <img class="lazy" src="images/loading.gif" data-src="images/tld/customers/TLD_Personal_Identification_v3.png"/>
+        <img class="lazy" src="images/loading.gif" data-src="images/tld/customers/TLD_Personal_Identification.png"/>
 
         ### DER - Diagramas de Entidade e Relacionamento
 
         * DER Conceitual
 
-        <img class="lazy" src="images/loading.gif" data-src="images/der/customers/DER_Personal.v1.png"/>
+        <img class="lazy" src="images/loading.gif" data-src="images/der/customers/DER_Personal.png"/>
 
-        <a href="images/der/customers/DER_Personal.v1.png" target="_blank">Fazer download do DER Conceitual</a>
+        <a href="images/der/customers/DER_Personal.png" target="_blank">Fazer download do DER Conceitual</a>
 
         * DER Lógico
 
-        <img class="lazy" src="images/loading.gif" data-src="images/der/customers/DER_Personal_Identification.v1.png"/>
+        <img class="lazy" src="images/loading.gif" data-src="images/der/customers/DER_Personal_Identification.png"/>
 
-        <a href="images/der/customers/DER_Personal_Identification.v1.png" target="_blank">Fazer download do DER Lógico</a>
+        <a href="images/der/customers/DER_Personal_Identification.png" target="_blank">Fazer download do DER Lógico</a>
 
         ### Dicionário de dados
 
@@ -78,11 +81,7 @@ paths:
         - $ref: '#/components/parameters/pageSize'
       responses:
         '200':
-          description: Método para obter os dados de identificação da pessoa natural na transmissora.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ResponsePersonalCustomersIdentification'
+          $ref: '#/components/responses/OKResponsePersonalCustomersIdentification'
         '400':
           $ref: '#/components/responses/BadRequest'
         '401':
@@ -123,21 +122,21 @@ paths:
 
         ### Visão de alto de nível das estruturas de dados
 
-        <img class="lazy" src="images/loading.gif" data-src="images/tld/customers/TLD_Business_Customers_Identification_v2.png"/>
+        <img class="lazy" src="images/loading.gif" data-src="images/tld/customers/TLD_Business_Identification_v3.png"/>
 
         ### DER - Diagramas de Entidade e Relacionamento
 
         * DER Conceitual
 
-        <img class="lazy" src="images/loading.gif" data-src="images/der/customers/DER_Business_Customers.png"/>
+        <img class="lazy" src="images/loading.gif" data-src="images/der/customers/DER_Business.v1.png"/>
 
-        <a href="images/der/customers/DER_Business_Customers.png" target="_blank">Fazer download do DER Conceitual</a>
+        <a href="images/der/customers/DER_Business.v1.png" target="_blank">Fazer download do DER Conceitual</a>
 
         * DER Lógico
 
-        <img class="lazy" src="images/loading.gif" data-src="images/der/customers/DER_Business_Customers_Identification.v1.png"/>
+        <img class="lazy" src="images/loading.gif" data-src="images/der/customers/DER_Busines_Identification.v1.png"/>
 
-        <a href="images/der/customers/DER_Business_Customers_Identification.v1.png" target="_blank">Fazer download do DER Lógico</a>
+        <a href="images/der/customers/DER_Busines_Identification.v1.png" target="_blank">Fazer download do DER Lógico</a>
 
         ### Dicionário de dados
 
@@ -159,11 +158,7 @@ paths:
         - $ref: '#/components/parameters/pageSize'
       responses:
         '200':
-          description: Método para obter os dados de identificação da pessoa jurídica na transmissora.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ResponseBusinessCustomersIdentification'
+          $ref: '#/components/responses/OKResponseBusinessCustomersIdentification'
         '400':
           $ref: '#/components/responses/BadRequest'
         '401':
@@ -204,21 +199,21 @@ paths:
 
         ### Visão de alto de nível das estruturas de dados
 
-        <img class="lazy" src="images/loading.gif" data-src="images/tld/customers/TLD_Personal_Qualification_v3.png"/>
+        <img class="lazy" src="images/loading.gif" data-src="images/tld/customers/TLD_Personal_Qualification.png"/>
 
         ### DER - Diagramas de Entidade e Relacionamento
 
         * DER Conceitual
 
-        <img class="lazy" src="images/loading.gif" data-src="images/der/customers/DER_Personal.v1.png"/>
+        <img class="lazy" src="images/loading.gif" data-src="images/der/customers/DER_Personal.png"/>
 
-        <a href="images/der/customers/DER_Personal.v1.png" target="_blank">Fazer download do DER Conceitual</a>
+        <a href="images/der/customers/DER_Personal.png" target="_blank">Fazer download do DER Conceitual</a>
 
         * DER Lógico
 
-        <img class="lazy" src="images/loading.gif" data-src="images/der/customers/DER_Personal_Qualification.v1.png"/>
+        <img class="lazy" src="images/loading.gif" data-src="images/der/customers/DER_Personal_Qualification.png"/>
 
-        <a href="images/der/customers/DER_Personal_Qualification.v1.png" target="_blank">Fazer download do DER Lógico</a>
+        <a href="images/der/customers/DER_Personal_Qualification.png" target="_blank">Fazer download do DER Lógico</a>
 
         ### Dicionário de dados
 
@@ -241,11 +236,7 @@ paths:
         - $ref: '#/components/parameters/pageSize'
       responses:
         '200':
-          description: Método para obter os dados de qualificação da pessoa natural na transmissora.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ResponsePersonalCustomersQualification'
+          $ref: '#/components/responses/OKResponsePersonalCustomersQualification'
         '400':
           $ref: '#/components/responses/BadRequest'
         '401':
@@ -286,21 +277,21 @@ paths:
 
         ### Visão de alto de nível das estruturas de dados
 
-        <img class="lazy" src="images/loading.gif" data-src="images/tld/customers/TLD_Business_Customers_Qualification_v2.png"/>
+        <img class="lazy" src="images/loading.gif" data-src="images/tld/customers/TLD_Business_Qualification_v3.png"/>
 
         ### DER - Diagramas de Entidade e Relacionamento
 
         * DER Conceitual
 
-        <img class="lazy" src="images/loading.gif" data-src="images/der/customers/DER_Business_Customers.png"/>
+        <img class="lazy" src="images/loading.gif" data-src="images/der/customers/DER_Business.v1.png"/>
 
-        <a href="images/der/customers/DER_Business_Customers.png" target="_blank">Fazer download do DER Conceitual</a>
+        <a href="images/der/customers/DER_Business.v1.png" target="_blank">Fazer download do DER Conceitual</a>
 
         * DER Lógico
 
-        <img class="lazy" src="images/loading.gif" data-src="images/der/customers/DER_Business_Customers_Qualification.v1.png"/>
+        <img class="lazy" src="images/loading.gif" data-src="images/der/customers/DER_Business_Qualification.v1.png"/>
 
-        <a href="images/der/customers/DER_Business_Customers_Qualification.v1.png" target="_blank">Fazer download do DER Lógico</a>
+        <a href="images/der/customers/DER_Business_Qualification.v1.png" target="_blank">Fazer download do DER Lógico</a>
 
         ### Dicionário de dados
 
@@ -323,11 +314,7 @@ paths:
         - $ref: '#/components/parameters/pageSize'
       responses:
         '200':
-          description: Método para obter os dados de qualificação da pessoa jurídica na transmissora.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ResponseBusinessCustomersQualification'
+          $ref: '#/components/responses/OKResponseBusinessCustomersQualification'
         '400':
           $ref: '#/components/responses/BadRequest'
         '401':
@@ -368,21 +355,21 @@ paths:
 
         ### Visão de alto de nível das estruturas de dados
 
-        <img class="lazy" src="images/loading.gif" data-src="images/tld/customers/TLD_Personal_Financial_Relation_v3.png"/>
+        <img class="lazy" src="images/loading.gif" data-src="images/tld/customers/TLD_Personal_Financial_Relation.png"/>
 
         ### DER - Diagramas de Entidade e Relacionamento
 
         * DER Conceitual
 
-        <img class="lazy" src="images/loading.gif" data-src="images/der/customers/DER_Personal.v1.png"/>
+        <img class="lazy" src="images/loading.gif" data-src="images/der/customers/DER_Personal.png"/>
 
-        <a href="images/der/customers/DER_Personal.v1.png" target="_blank">Fazer download do DER Conceitual</a>
+        <a href="images/der/customers/DER_Personal.png" target="_blank">Fazer download do DER Conceitual</a>
 
         * DER Lógico
 
-        <img class="lazy" src="images/loading.gif" data-src="images/der/customers/DER_Personal_FinancialRelation.v1.png"/>
+        <img class="lazy" src="images/loading.gif" data-src="images/der/customers/DER_Personal_FinancialRelation.png"/>
 
-        <a href="images/der/customers/DER_Personal_FinancialRelation.v1.png" target="_blank">Fazer download do DER Lógico</a>
+        <a href="images/der/customers/DER_Personal_FinancialRelation.png" target="_blank">Fazer download do DER Lógico</a>
 
         ### Dicionário de dados
 
@@ -405,11 +392,7 @@ paths:
         - $ref: '#/components/parameters/pageSize'
       responses:
         '200':
-          description: Método para obter os dados de relacionamento financeiro da pessoa natural na transmissora.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ResponsePersonalCustomersFinancialRelation'
+          $ref: '#/components/responses/OKResponsePersonalCustomersFinancialRelation'
         '400':
           $ref: '#/components/responses/BadRequest'
         '401':
@@ -450,21 +433,21 @@ paths:
 
         ### Visão de alto de nível das estruturas de dados
 
-        <img class="lazy" src="images/loading.gif" data-src="images/tld/customers/TLD_Business_Customers_Financial_Relation_v2.png"/>
+        <img class="lazy" src="images/loading.gif" data-src="images/tld/customers/TLD_Business_Financial_Relation_v3.png"/>
 
         ### DER - Diagramas de Entidade e Relacionamento
 
         * DER Conceitual
 
-        <img class="lazy" src="images/loading.gif" data-src="images/der/customers/DER_Business_Customers.png"/>
+        <img class="lazy" src="images/loading.gif" data-src="images/der/customers/DER_Business.v1.png"/>
 
-        <a href="images/der/customers/DER_Business_Customers.png" target="_blank">Fazer download do DER Conceitual</a>
+        <a href="images/der/customers/DER_Business.v1.png" target="_blank">Fazer download do DER Conceitual</a>
 
         * DER Lógico
 
-        <img class="lazy" src="images/loading.gif" data-src="images/der/customers/DER_Business_Customers_FinancialRelation.v1.png"/>
+        <img class="lazy" src="images/loading.gif" data-src="images/der/customers/DER_Business_FinancialRelation.v1.png"/>
 
-        <a href="images/der/customers/DER_Business_Customers_FinancialRelation.v1.png" target="_blank">Fazer download do DER Lógico</a>
+        <a href="images/der/customers/DER_Business_FinancialRelation.v1.png" target="_blank">Fazer download do DER Lógico</a>
 
         ### Dicionário de dados
 
@@ -487,11 +470,7 @@ paths:
         - $ref: '#/components/parameters/pageSize'
       responses:
         '200':
-          description: Método para obter os dados de relacionamento financeiro da pessoa jurídica na transmissora.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ResponseBusinessCustomersFinancialRelation'
+          $ref: '#/components/responses/OKResponseBusinessCustomersFinancialRelation'
         '400':
           $ref: '#/components/responses/BadRequest'
         '401':
@@ -565,11 +544,7 @@ paths:
         - $ref: '#/components/parameters/xCustomerUserAgent'
       responses:
         '200':
-          description: Dados de identificação da conta identificada por creditCardAccountId obtidos com sucesso.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ResponseCreditCardAccounts'
+          $ref: '#/components/responses/OKResponseCreditCardAccountsList'
         '400':
           $ref: '#/components/responses/BadRequest'
         '401':
@@ -644,11 +619,7 @@ paths:
         - $ref: '#/components/parameters/creditCardAccountId'
       responses:
         '200':
-          description: Dados de identificação da conta identificada por creditCardAccountId obtidos com sucesso.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ResponseCreditCardAccountsIdentification'
+          $ref: '#/components/responses/OKResponseCreditCardAccountsIdentification'
         '400':
           $ref: '#/components/responses/BadRequest'
         '401':
@@ -723,11 +694,7 @@ paths:
         - $ref: '#/components/parameters/creditCardAccountId'
       responses:
         '200':
-          description: Dados dos limites da conta identificada por creditCardAccountId obtidos com sucesso.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ResponseCreditCardAccountsLimits'
+          $ref: '#/components/responses/OKResponseCreditCardAccountsLimits'
         '400':
           $ref: '#/components/responses/BadRequest'
         '401':
@@ -808,11 +775,7 @@ paths:
         - $ref: '#/components/parameters/creditCardPayeeMCC'
       responses:
         '200':
-          description: Dados das lista de transações da conta identificada por creditCardAccountId obtidos com sucesso.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ResponseCreditCardAccountsTransactions'
+          $ref: '#/components/responses/OKResponseCreditCardAccountsTransactions'
         '400':
           $ref: '#/components/responses/BadRequest'
         '401':
@@ -890,11 +853,7 @@ paths:
         - $ref: '#/components/parameters/toDueDate'
       responses:
         '200':
-          description: Dados referentes à lista de faturas da conta identificada por creditCardAccountId obtidos com sucesso.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ResponseCreditCardAccountsBills'
+          $ref: '#/components/responses/OKResponseCreditCardAccountsBills'
         '400':
           $ref: '#/components/responses/BadRequest'
         '401':
@@ -935,21 +894,21 @@ paths:
 
         ### Visão de alto de nível das estruturas de dados
 
-        <img class="lazy" src="images/loading.gif" data-src="images/tld/accounts/TLD_Accounts_Lista.png"/>
+        <img class="lazy" src="images/loading.gif" data-src="images/tld/accounts/TLD_Accounts_List.png"/>
 
         ### DER - Diagramas de Entidade e Relacionamento
 
         * DER Conceitual
 
-        <img class="lazy" src="images/loading.gif" data-src="images/der/accounts/DER_Accounts.v2.png"/>
+        <img class="lazy" src="images/loading.gif" data-src="images/der/accounts/DER_Lista_Accounts.png"/>
 
-        <a href="images/der/accounts/DER_Accounts.v2.png" target="_blank">Fazer download do DER Conceitual</a>
+        <a href="images/der/accounts/DER_Lista_Accounts.png" target="_blank">Fazer download do DER Conceitual</a>
 
         * DER Lógico
 
-        <img class="lazy" src="images/loading.gif" data-src="images/der/accounts/DER_Lista_Accounts.png"/>
+        <img class="lazy" src="images/loading.gif" data-src="images/der/accounts/DER_Accounts_List.png"/>
 
-        <a href="images/der/accounts/DER_Lista_Accounts.png" target="_blank">Fazer download do DER Lógico</a>
+        <a href="images/der/accounts/DER_Accounts_List.png" target="_blank">Fazer download do DER Lógico</a>
 
         ### Dicionário de dados
 
@@ -970,11 +929,7 @@ paths:
         - $ref: '#/components/parameters/accountType'
       responses:
         '200':
-          description: Dados de identificação da conta identificada por accountId obtidos com sucesso.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ResponseAccount'
+          $ref: '#/components/responses/OKResponseAccountList'
         '400':
           $ref: '#/components/responses/BadRequest'
         '401':
@@ -1015,21 +970,21 @@ paths:
 
         ### Visão de alto de nível das estruturas de dados
 
-        <img class="lazy" src="images/loading.gif" data-src="images/tld/accounts/TLD_Accounts_Identification.v1.png"/>
+        <img class="lazy" src="images/loading.gif" data-src="images/tld/accounts/TLD_Accounts_Identification.png"/>
 
         ### DER - Diagramas de Entidade e Relacionamento
 
         * DER Conceitual
 
-        <img class="lazy" src="images/loading.gif" data-src="images/der/accounts/DER_Accounts.v2.png"/>
+        <img class="lazy" src="images/loading.gif" data-src="images/der/accounts/DER_Accounts.png"/>
 
-        <a href="images/der/accounts/DER_Accounts.v2.png" target="_blank">Fazer download do DER Conceitual</a>
+        <a href="images/der/accounts/DER_Accounts.png" target="_blank">Fazer download do DER Conceitual</a>
 
         * DER Lógico
 
-        <img class="lazy" src="images/loading.gif" data-src="images/der/accounts/DER_Accounts_Identification.v2.png"/>
+        <img class="lazy" src="images/loading.gif" data-src="images/der/accounts/DER_Accounts_Identification.png"/>
 
-        <a href="images/der/accounts/DER_Accounts_Identification.v2.png" target="_blank">Fazer download do DER Lógico</a>
+        <a href="images/der/accounts/DER_Accounts_Identification.png" target="_blank">Fazer download do DER Lógico</a>
 
         ### Dicionário de dados
 
@@ -1050,11 +1005,7 @@ paths:
         - $ref: '#/components/parameters/accountId'
       responses:
         '200':
-          description: Dados de identificação da conta identificada por accountId obtidos com sucesso.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ResponseAccountIdentification'
+          $ref: '#/components/responses/OKResponseAccountIdentification'
         '400':
           $ref: '#/components/responses/BadRequest'
         '401':
@@ -1095,21 +1046,21 @@ paths:
 
         ### Visão de alto de nível das estruturas de dados
 
-        <img class="lazy" src="images/loading.gif" data-src="images/tld/accounts/TLD_Accounts_Balances.v1.png"/>
+        <img class="lazy" src="images/loading.gif" data-src="images/tld/accounts/TLD_Accounts_Balances.png"/>
 
         ### DER - Diagramas de Entidade e Relacionamento
 
         * DER Conceitual
 
-        <img class="lazy" src="images/loading.gif" data-src="images/der/accounts/DER_Accounts.v2.png"/>
+        <img class="lazy" src="images/loading.gif" data-src="images/der/accounts/DER_Accounts.png"/>
 
-        <a href="images/der/accounts/DER_Accounts.v2.png" target="_blank">Fazer download do DER Conceitual</a>
+        <a href="images/der/accounts/DER_Accounts.png" target="_blank">Fazer download do DER Conceitual</a>
 
         * DER Lógico
 
-        <img class="lazy" src="images/loading.gif" data-src="images/der/accounts/DER_Accounts_Balances.v2.png"/>
+        <img class="lazy" src="images/loading.gif" data-src="images/der/accounts/DER_Accounts_Balances.png"/>
 
-        <a href="images/der/accounts/DER_Accounts_Balances.v2.png" target="_blank">Fazer download do DER Lógico</a>
+        <a href="images/der/accounts/DER_Accounts_Balances.png" target="_blank">Fazer download do DER Lógico</a>
 
         ### Dicionário de dados
 
@@ -1134,11 +1085,7 @@ paths:
         - $ref: '#/components/parameters/accountsCheckDigit'
       responses:
         '200':
-          description: Dados relativos aos saldos da conta identificada por accountId obtidos com sucesso.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ResponseAccountBalances'
+          $ref: '#/components/responses/OKResponseAccountBalances'
         '400':
           $ref: '#/components/responses/BadRequest'
         '401':
@@ -1179,21 +1126,21 @@ paths:
 
         ### Visão de alto de nível das estruturas de dados
 
-        <img class="lazy" src="images/loading.gif" data-src="images/tld/accounts/TLD_Accounts_Transactions.v1.png"/>
+        <img class="lazy" src="images/loading.gif" data-src="images/tld/accounts/TLD_Accounts_Transactions.png"/>
 
         ### DER - Diagramas de Entidade e Relacionamento
 
         * DER Conceitual
 
-        <img class="lazy" src="images/loading.gif" data-src="images/der/accounts/DER_Accounts.v2.png"/>
+        <img class="lazy" src="images/loading.gif" data-src="images/der/accounts/DER_Accounts.png"/>
 
-        <a href="images/der/accounts/DER_Accounts.v2.png" target="_blank">Fazer download do DER Conceitual</a>
+        <a href="images/der/accounts/DER_Accounts.png" target="_blank">Fazer download do DER Conceitual</a>
 
         * DER Lógico
 
-        <img class="lazy" src="images/loading.gif" data-src="images/der/accounts/DER_Accounts_Transactions.v2.png"/>
+        <img class="lazy" src="images/loading.gif" data-src="images/der/accounts/DER_Accounts_Transactions.png"/>
 
-        <a href="images/der/accounts/DER_Accounts_Transactions.v2.png" target="_blank">Fazer download do DER Lógico</a>
+        <a href="images/der/accounts/DER_Accounts_Transactions.png" target="_blank">Fazer download do DER Lógico</a>
 
         ### Dicionário de dados
 
@@ -1223,11 +1170,7 @@ paths:
         - $ref: '#/components/parameters/creditDebitIndicator'
       responses:
         '200':
-          description: Dados da lista de transações da conta identificada por accountId obtidos com sucesso.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ResponseAccountTransactions'
+          $ref: '#/components/responses/OKResponseAccountTransactions'
         '400':
           $ref: '#/components/responses/BadRequest'
         '401':
@@ -1268,21 +1211,21 @@ paths:
 
         ### Visão de alto de nível das estruturas de dados
 
-        <img class="lazy" src="images/loading.gif" data-src="images/tld/accounts/TLD_Accounts_OverdraftLimits.v1.png"/>
+        <img class="lazy" src="images/loading.gif" data-src="images/tld/accounts/TLD_Accounts_OverdraftLimits.png"/>
 
         ### DER - Diagramas de Entidade e Relacionamento
 
         * DER Conceitual
 
-        <img class="lazy" src="images/loading.gif" data-src="images/der/accounts/DER_Accounts.v2.png"/>
+        <img class="lazy" src="images/loading.gif" data-src="images/der/accounts/DER_Accounts.png"/>
 
-        <a href="images/der/accounts/DER_Accounts.v2.png" target="_blank">Fazer download do DER Conceitual</a>
+        <a href="images/der/accounts/DER_Accounts.png" target="_blank">Fazer download do DER Conceitual</a>
 
         * DER Lógico
 
-        <img class="lazy" src="images/loading.gif" data-src="images/der/accounts/DER_Accounts_OverdraftLimits.v2.png"/>
+        <img class="lazy" src="images/loading.gif" data-src="images/der/accounts/DER_Accounts_OverdraftLimits.png"/>
 
-        <a href="images/der/accounts/DER_Accounts_OverdraftLimits.v2.png" target="_blank">Fazer download do DER Lógico</a>
+        <a href="images/der/accounts/DER_Accounts_OverdraftLimits.png" target="_blank">Fazer download do DER Lógico</a>
 
         ### Dicionário de dados
 
@@ -1307,11 +1250,7 @@ paths:
         - $ref: '#/components/parameters/accountsCheckDigit'
       responses:
         '200':
-          description: Dados de limites da conta identificada por accountId obtidos com sucesso.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ResponseAccountOverdraftLimits'
+          $ref: '#/components/responses/OKResponseAccountOverdraftLimits'
         '400':
           $ref: '#/components/responses/BadRequest'
         '401':
@@ -1350,27 +1289,27 @@ paths:
 
         ### Visão de alto de nível das estruturas de dados
 
-        <img class="lazy" src="images/loading.gif" data-src="images/tld/loans/TLD_Loans_Contract.png"/>
+        <img class="lazy" src="images/loading.gif" data-src="images/tld/loans/TLD_Loans_List.png"/>
 
         ### DER - Diagramas de Entidade e Relacionamento
 
         * DER Conceitual
 
-        <img class="lazy" src="images/loading.gif" data-src="images/der/loans/DER_Loans.png"/>
+        <img class="lazy" src="images/loading.gif" data-src="images/der/loans/DER_Loans_Conceitual.png"/>
 
-        <a href="images/der/loans/DER_Loans.png" target="_blank">Fazer download do DER Conceitual</a>
+        <a href="images/der/loans/DER_Loans_Conceitual.png" target="_blank">Fazer download do DER Conceitual</a>
 
         * DER Lógico
 
-        <img class="lazy" src="images/loading.gif" data-src="images/der/loans/DER_Loans_Contract.png"/>
+        <img class="lazy" src="images/loading.gif" data-src="images/der/loans/DER_Loans_Logico.png"/>
 
-        <a href="images/der/loans/DER_Loans_Contract.png" target="_blank">Fazer download do DER Lógico</a>
+        <a href="images/der/loans/DER_Loans_Logico.png" target="_blank">Fazer download do DER Lógico</a>
 
         ### Dicionário de dados
 
-        <a href='dictionary/loans_contract.csv' target="_blank">Fazer download do dicionário de dados</a>
+        <a href='dictionary/loans_contract_list.csv' target="_blank">Fazer download do dicionário de dados</a>
 
-        <a href="dictionary/example/examples_loans_contract.csv" target="_blank">Fazer download dos exemplos</a>
+        <a href="dictionary/example/examples_loans_contract_list.csv" target="_blank">Fazer download dos exemplos</a>
 
         ### Especificação em OAS 3.0
 
@@ -1384,11 +1323,7 @@ paths:
         - $ref: '#/components/parameters/xCustomerUserAgent'
       responses:
         '200':
-          description: Dados do contratos de empréstimos
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ResponseLoansListContract'
+          $ref: '#/components/responses/OKResponseLoansContractList'
         '400':
           $ref: '#/components/responses/BadRequest'
         '401':
@@ -1462,11 +1397,7 @@ paths:
         - $ref: '#/components/parameters/xCustomerUserAgent'
       responses:
         '200':
-          description: Dados do contrato de empréstimo identificado por `contractId`
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ResponseLoansContract'
+          $ref: '#/components/responses/OKResponseLoansContract'
         '400':
           $ref: '#/components/responses/BadRequest'
         '401':
@@ -1542,11 +1473,7 @@ paths:
         - $ref: '#/components/parameters/xCustomerUserAgent'
       responses:
         '200':
-          description: Lista de garantias vinculadas ao contrato de empréstimo identificado por `contractId`
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ResponseLoansWarranties'
+          $ref: '#/components/responses/OKResponseLoansWarranties'
         '400':
           $ref: '#/components/responses/BadRequest'
         '401':
@@ -1622,11 +1549,7 @@ paths:
         - $ref: '#/components/parameters/xCustomerUserAgent'
       responses:
         '200':
-          description: Dados de pagamentos do contrato de empréstimo identificado por `contractId`
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ResponseLoansPayments'
+          $ref: '#/components/responses/OKResponseLoansPayments'
         '400':
           $ref: '#/components/responses/BadRequest'
         '401':
@@ -1647,7 +1570,7 @@ paths:
         - OpenId:
             - openId
             - loans
-  '/loans/v1/contracts/{contractId}/schedule-instalments':
+  '/loans/v1/contracts/{contractId}/scheduled-instalments':
     get:
       tags:
         - API - Operações de Crédito - Empréstimos
@@ -1702,11 +1625,7 @@ paths:
         - $ref: '#/components/parameters/xCustomerUserAgent'
       responses:
         '200':
-          description: Dados do cronograma de parcelas do contrato de empréstimo identificado por `contractId`
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ResponseLoansInstalments'
+          $ref: '#/components/responses/OKResponseLoansInstalments'
         '400':
           $ref: '#/components/responses/BadRequest'
         '401':
@@ -1745,27 +1664,27 @@ paths:
 
         ### Visão de alto de nível das estruturas de dados
 
-        <img class="lazy" src="images/loading.gif" data-src="images/tld/financings/TLD_Financings_Contract.png"/>
+        <img class="lazy" src="images/loading.gif" data-src="images/tld/financings/TLD_Financings_List.png"/>
 
         ### DER - Diagramas de Entidade e Relacionamento
 
         * DER Conceitual
 
-        <img class="lazy" src="images/loading.gif" data-src="images/der/financings/DER_Financings.png"/>
+        <img class="lazy" src="images/loading.gif" data-src="images/der/financings/DER_Financings_List_Conceitual.png"/>
 
-        <a href="images/der/financings/DER_Financings.png" target="_blank">Fazer download do DER Conceitual</a>
+        <a href="images/der/financings/DER_Financings_List_Conceitual.png" target="_blank">Fazer download do DER Conceitual</a>
 
         * DER Lógico
 
-        <img class="lazy" src="images/loading.gif" data-src="images/der/financings/DER_Financings_Contract.png"/>
+        <img class="lazy" src="images/loading.gif" data-src="images/der/financings/DER_Financings_List.png"/>
 
-        <a href="images/der/financings/DER_Financings_Contract.png" target="_blank">Fazer download do DER Lógico</a>
+        <a href="images/der/financings/DER_Financings_List.png" target="_blank">Fazer download do DER Lógico</a>
 
         ### Dicionário de dados
 
-        <a href='dictionary/financings_contract.csv' target="_blank">Fazer download do dicionário de dados</a>
+        <a href='dictionary/financings_contract_list.csv' target="_blank">Fazer download do dicionário de dados</a>
 
-        <a href="dictionary/example/examples_financings_contract.csv" target="_blank">Fazer download dos exemplos</a>
+        <a href="dictionary/example/examples_financings_contract_list.csv" target="_blank">Fazer download dos exemplos</a>
 
         ### Especificação em OAS 3.0
 
@@ -1779,11 +1698,7 @@ paths:
         - $ref: '#/components/parameters/xCustomerUserAgent'
       responses:
         '200':
-          description: Dados dos contratos de financiamentos
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ResponseFinancingsListContract'
+          $ref: '#/components/responses/OKResponseFinancingsContractList'
         '400':
           $ref: '#/components/responses/BadRequest'
         '401':
@@ -1857,11 +1772,7 @@ paths:
         - $ref: '#/components/parameters/xCustomerUserAgent'
       responses:
         '200':
-          description: Dados do contrato de financiamento identificado por `contractId`
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ResponseFinancingsContract'
+          $ref: '#/components/responses/OKResponseFinancingsContract'
         '400':
           $ref: '#/components/responses/BadRequest'
         '401':
@@ -1937,11 +1848,7 @@ paths:
         - $ref: '#/components/parameters/xCustomerUserAgent'
       responses:
         '200':
-          description: Lista de garantias vinculadas ao contrato de financiamento identificado por `contractId`
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ResponseFinancingsWarranties'
+          $ref: '#/components/responses/OKResponseFinancingsWarranties'
         '400':
           $ref: '#/components/responses/BadRequest'
         '401':
@@ -2017,11 +1924,7 @@ paths:
         - $ref: '#/components/parameters/xCustomerUserAgent'
       responses:
         '200':
-          description: Dados de pagamentos do contrato de financiamento identificado por `contractId`
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ResponseFinancingsPayments'
+          $ref: '#/components/responses/OKResponseFinancingsPayments'
         '400':
           $ref: '#/components/responses/BadRequest'
         '401':
@@ -2042,7 +1945,7 @@ paths:
         - OpenId:
             - openId
             - financings
-  '/financings/v1/contracts/{contractId}/instalments':
+  '/financings/v1/contracts/{contractId}/scheduled-instalments':
     get:
       tags:
         - API - Operações de Crédito - Financiamentos
@@ -2097,11 +2000,7 @@ paths:
         - $ref: '#/components/parameters/xCustomerUserAgent'
       responses:
         '200':
-          description: Dados do cronograma de parcelas do contrato de financiamento identificado por `contractId`
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ResponseFinancingsInstalments'
+          $ref: '#/components/responses/OKResponseFinancingsInstalments'
         '400':
           $ref: '#/components/responses/BadRequest'
         '401':
@@ -2140,7 +2039,7 @@ paths:
 
         ### Visão de alto de nível das estruturas de dados
 
-        <img class="lazy" src="images/loading.gif" data-src="images/tld/unarranged_accounts_overdraft/TLD_UnarrangedAccOverdraft_List.png"/>
+        <img class="lazy" src="images/loading.gif" data-src="images/tld/unarranged_accounts_overdraft/TLD_UnarrangedAccountsOverdraft_List.png"/>
 
         ### DER - Diagramas de Entidade e Relacionamento
 
@@ -2433,7 +2332,7 @@ paths:
         - OpenId:
             - openId
             - unarranged-accounts-overdraft
-  '/unarranged-accounts-overdraft/v1/contracts/{contractId}/instalments':
+  '/unarranged-accounts-overdraft/v1/contracts/{contractId}/scheduled-instalments':
     get:
       tags:
         - API - Operações de Crédito - Adiantamento a Depositantes
@@ -2639,11 +2538,7 @@ paths:
         - $ref: '#/components/parameters/xCustomerUserAgent'
       responses:
         '200':
-          description: Dados do contrato de antecipação de recebíveis identificado por `contractId`
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ResponseInvoiceFinancingsContract'
+          $ref: '#/components/responses/OKResponseInvoiceFinancingsContract'
         '400':
           $ref: '#/components/responses/BadRequest'
         '401':
@@ -2719,11 +2614,7 @@ paths:
         - $ref: '#/components/parameters/xCustomerUserAgent'
       responses:
         '200':
-          description: Lista de garantias vinculadas ao contrato de antecipação de recebíveis identificado por `contractId`
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ResponseInvoiceFinancingsWarranties'
+          $ref: '#/components/responses/OKResponseInvoiceFinancingsWarranties'
         '400':
           $ref: '#/components/responses/BadRequest'
         '401':
@@ -2799,11 +2690,7 @@ paths:
         - $ref: '#/components/parameters/xCustomerUserAgent'
       responses:
         '200':
-          description: Dados de pagamentos do contrato de antecipação de recebíveis identificado por `contractId`
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ResponseInvoiceFinancingsPayments'
+          $ref: '#/components/responses/OKResponseInvoiceFinancingsPayments'
         '400':
           $ref: '#/components/responses/BadRequest'
         '401':
@@ -2824,7 +2711,7 @@ paths:
         - OpenId:
             - openId
             - invoice-financings
-  '/invoice-financings/v1/contracts/{contractId}/instalments':
+  '/invoice-financings/v1/contracts/{contractId}/scheduled-instalments':
     get:
       tags:
         - API - Operações de Crédito - Direitos Creditórios Descontados
@@ -2879,11 +2766,7 @@ paths:
         - $ref: '#/components/parameters/xCustomerUserAgent'
       responses:
         '200':
-          description: Dados do cronograma de parcelas do contrato de antecipação de recebíveis identificado por `contractId`
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ResponseInvoiceFinancingsInstalments'
+          $ref: '#/components/responses/OKResponseInvoiceFinancingsInstalments'
         '400':
           $ref: '#/components/responses/BadRequest'
         '401':
@@ -4097,6 +3980,7 @@ components:
       type: string
       example: '19'
       description: Número de DDD (Discagem Direta à Distância) do telefone do cliente - se houver
+      maxLength: 2
       enum:
         - '11'
         - '12'
@@ -4166,7 +4050,7 @@ components:
         - '98'
         - '99'
         - NA
-    EnumBankBorrowingContractAmortizationSchedule:
+    EnumContractAmortizationScheduled:
       type: string
       description: |
         Sistema de amortização (Vide Enum)
@@ -4181,7 +4065,7 @@ components:
         - SAM
         - SEM_SISTEMA_AMORTIZACAO
       example: SAC
-    EnumBankBorrowingContractCalculation:
+    EnumContractCalculation:
       type: string
       description: Base de cálculo
       maxLength: 6
@@ -4190,9 +4074,14 @@ components:
         - 30/360
         - 30/365
       example: 21/25
-    EnumBankBorrowingContractFeeCharge:
+    EnumContractFeeCharge:
       type: string
-      description: Forma de cobrança relativa a tarifa pactuada no contrato
+      description: |
+        Forma de cobrança relativa a tarifa pactuada no contrato. (Vide Enum)
+        - Mínimo
+        - Máximo
+        - Fixo
+        - Percentual
       maxLength: 10
       enum:
         - MINIMO
@@ -4200,7 +4089,7 @@ components:
         - FIXO
         - PERCENTUAL
       example: MINIMO
-    EnumBankBorrowingContractFeeChargeType:
+    EnumContractFeeChargeType:
       type: string
       description: Tipo de cobrança para a tarifa pactuada no contrato.
       maxLength: 10
@@ -4208,7 +4097,7 @@ components:
         - UNICA
         - POR_PARCELA
       example: UNICA
-    EnumBankBorrowingContractFinanceChargeType:
+    EnumContractFinanceChargeType:
       type: string
       description: Tipo de encargo pactuado no contrato.
       maxLength: 31
@@ -4220,9 +4109,11 @@ components:
         - IOF_POR_ATRASO
         - OUTROS
       example: JUROS_REMUNERATORIOS_POR_ATRASO
-    EnumBankBorrowingContractInstalmentPeriodicity:
+    EnumContractInstalmentPeriodicity:
       type: string
-      description: Informação relativa à periodicidade regular das parcelas
+      description: |
+        Informação relativa à periodicidade regular das parcelas. (Vide Enum)
+        sem periodicidade regular, semanal, quinzenal, mensal, bimestral, trimestral, semestral, anual
       maxLength: 24
       enum:
         - SEM_PERIODICIDADE_REGULAR
@@ -4234,7 +4125,7 @@ components:
         - SEMESTRAL
         - ANUAL
       example: SEMANAL
-    EnumBankBorrowingContractInterestRateType:
+    EnumContractInterestRateType:
       type: string
       description: |
         Tipo de Juros  (vide  Enum)
@@ -4245,51 +4136,7 @@ components:
         - SIMPLES
         - COMPOSTO
       example: SIMPLES
-    EnumBankBorrowingContractProductType:
-      type: string
-      description: |
-        Tipo da modalidade de crédito contratada, conforme circular 4.015 e descrição do DOC3040 do SCR). (Vide Enum)
-        Adiantamento a depositantes, Direitos creditórios descontados Empréstimos,  Financiamentos, Financiamentos rurais  e Financiamentos imobiliários
-      enum:
-        - ADIANTAMENTO_A_DEPOSITANTES
-        - DIREITOS_CREDITORIOS_DESCONTADOS
-        - EMPRESTIMO
-        - FINANCIAMENTOS
-        - FINANCIAMENTOS_RURAIS
-        - FINANCIAMENTOS_IMOBILIARIOS
-      example: ADIANTAMENTO_A_DEPOSITANTES
-    EnumBankBorrowingContractProductSubType:
-      type: string
-      description: |
-        Sub tipo da modalidades de crédito contratadas, conforme  circular 4.015 e descrição do DOC3040 do SCR). (Vide Enum)
-        Adiantamento a depositantes, Crédito pessoal sem consignação, Crédito pessoal com consignação, Home equity, Microcrédito produtivo orientado, Cheque especial, Conta garantida, Capital de giro com prazo de vencimento até 365 dias, capital de giro com prazo de vencimento superior a 365 dias, Capital de giro com teto rotativo, Desconto de duplicatas, Desconto de cheques,  Antecipação da fatura do cartão de crédito, Outros direitos creditórios descontados, outros títulos descontados, Aquisição de bens veículos automotores, Aquisição de bens de outros bens, Microcrédito, Custeio, Investimento, Industrialização, Comercialização, Financiamento habitacional SFH e Financiamento habitacional exceto SFH
-      enum:
-        - ADIANTAMENTO_A_DEPOSITANTES
-        - CREDITO_PESSOAL_SEM_CONSIGNACAO
-        - CREDITO_PESSOAL_COM_CONSIGNACAO
-        - HOME_EQUITY
-        - MICROCREDITO_PRODUTIVO_ORIENTADO
-        - CHEQUE_ESPECIAL
-        - CONTA_GARANTIDA
-        - CAPITAL_GIRO_PRAZO_VENCIMENTO_ATE_365_DIAS
-        - CAPITAL_GIRO_PRAZO_VENCIMENTO_SUPERIOR_365_DIAS
-        - CAPITAL_GIRO_TETO_ROTATIVO
-        - DESCONTO_DUPLICATAS
-        - DESCONTO_CHEQUES
-        - ANTECIPACAO_FATURA_CARTAO_CREDITO
-        - OUTROS_DIREITOS_CREDITORIOS_DESCONTADOS
-        - OUTROS_TITULOS_DESCONTADOS
-        - AQUISICAO_BENS_VEICULOS_AUTOMOTORES
-        - AQUISICAO_BENS_OUTROS_BENS
-        - MICROCREDITO
-        - CUSTEIO
-        - INVESTIMENTO
-        - INDUSTRIALIZACAO
-        - COMERCIALIZACAO
-        - FINANCIAMENTO_HABITACIONAL_SFH
-        - FINANCIAMENTO_HABITACIONAL_EXCETO_SFH
-      example: ADIANTAMENTO_A_DEPOSITANTES
-    EnumBankBorrowingContractReferentialRateIndexerType:
+    EnumContractReferentialRateIndexerType:
       type: string
       description: |
         Tipos de taxas referenciais ou indexadores, conforme Anexo 5: Taxa referencial ou Indexador (Indx), do Documento 3040
@@ -4304,7 +4151,7 @@ components:
         - CREDITO_RURAL
         - OUTROS_INDEXADORES
       example: PRE_FIXADO
-    EnumBankBorrowingContractReferentialRateIndexerSubType:
+    EnumContractReferentialRateIndexerSubType:
       type: string
       description: |
         Sub tipos de taxas referenciais ou indexadores, conforme Anexo 5: Taxa referencial ou Indexador (Indx), do Documento 3040
@@ -4331,7 +4178,7 @@ components:
         - TRFC_POS
         - OUTROS_INDEXADORES
       example: TJLP
-    EnumBankBorrowingContractTaxPeriodicity:
+    EnumContractTaxPeriodicity:
       type: string
       description: |
         Periodicidade da taxa . (Vide  Enum)
@@ -4342,7 +4189,7 @@ components:
         - AM
         - AA
       example: AA
-    EnumBankBorrowingContractTaxType:
+    EnumContractTaxType:
       type: string
       description: |
         Tipo de Taxa (vide  Enum)
@@ -4353,7 +4200,7 @@ components:
         - NOMINAL
         - EFETIVA
       example: EFETIVA
-    EnumBankBorrowingFinanceChargeType:
+    EnumFinanceChargeType:
       type: string
       description: Tipo de encargo avulso
       enum:
@@ -4363,7 +4210,7 @@ components:
         - IOF_CONTRATACAO
         - OUTROS
       example: JUROS_REMUNERATORIOS_POR_ATRASO
-    EnumBankBorrowingInstalmentPeriodicity:
+    EnumInstalmentPeriodicity:
       type: string
       description: Informação relativa à periodicidade regular das parcelas.
       enum:
@@ -4375,12 +4222,11 @@ components:
         - SEMESTRAL
         - ANUAL
       example: SEMANAL
-    EnumBankBorrowingWarrantySubType:
+    EnumWarrantySubType:
       type: string
       description: 'Denominação/Identificação do sub tipo da garantia que avaliza a Modalidade da Operação de Crédito contratada (Doc 3040, Anexo 12)'
       maxLength: 100
       enum:
-        - SEM_SUB_TIPO_GARANTIA
         - ACOES_DEBENTURES
         - APLICACOES_FINANCEIRAS_RENDA_FIXA
         - APLICACOES_FINANCEIRAS_RENDA_VARIAVEL
@@ -4404,7 +4250,7 @@ components:
         - FUNDO_GARANTIDOR_AVAL
         - GARANTIA_PRESTADA_FGPC_LEI_9531_ART_37
         - GARANTIA_PRESTADA_FUNDOS_QUAISQUER_OUTROS_MECANISMOS_COBERTURA_RISCO_CREDITO_ART_37
-        - GARANTIA_PRESTADA_TESOURO_NACIONAL_OU_BACEN_ART_37BENS_DIREITOS_INTEGRANTES_PATRIMONIO_AFETACAO
+        - GARANTIA_PRESTADA_TESOURO_NACIONAL_OU_BACEN_ART_37_BENS_DIREITOS_INTEGRANTES_PATRIMONIO_AFETACAO
         - IMOVEIS
         - IMOVEIS_RESIDENCIAIS
         - MITIGADORAS
@@ -4432,7 +4278,7 @@ components:
         - VEICULOS
         - VEICULOS_AUTOMOTORES
       example: NOTAS_PROMISSORIAS_OUTROS_DIREITOS_CREDITO
-    EnumBankBorrowingWarrantyType:
+    EnumWarrantyType:
       type: string
       description: 'Denominação/Identificação do tipo da garantia que avaliza a Modalidade da Operação de Crédito contratada  (Doc 3040, Anexo 12)'
       maxLength: 40
@@ -4451,17 +4297,16 @@ components:
         - GARANTIAS_INTERNACIONAIS
         - OPERACOES_GARANTIDAS_OUTRAS_ENTIDADES
         - ACORDOS_COMPENSACAO
-        - NAO_APLICAVEL
       example: CESSAO_DIREITOS_CREDITORIOS
     EnumCustomerPhoneType:
       type: string
+      description: Identificação do Tipo de telefone do cliente.
+      maxLength: 5
       enum:
         - FIXO
         - MOVEL
         - OUTRO
       example: FIXO
-      description: |
-        Identificação do Tipo de telefone do cliente.
     EnumTaxType:
       type: string
       description: Tipo de encargo pago fora da parcela
@@ -4948,6 +4793,7 @@ components:
     EnumOverdraftLimitType:
       type: string
       enum:
+        - VALOR_CONTRATADO_LIMITE
         - VALOR_UTILIZADO_LIMITE
         - SALDO_DESCOBERTO
       description: |
@@ -4957,9 +4803,11 @@ components:
       example: VALOR_UTILIZADO_LIMITE
     EnumProcuratorsType:
       type: string
+      maxLength: 19
       enum:
         - REPRESENTANTE_LOCAL
         - PROCURADOR
+        - NÃO_POSSUI
       description: |
         Tipo de representante.
         Representante legal - Nome Civil completo da Pessoa Natural que represente uma entidade ou uma empresa e é nomeado em seu ato constitutivo, ou seja, no contrato social ou estatuto social.
@@ -5046,25 +4894,6 @@ components:
           pattern: \w*\W*
           maxLength: 2048
       additionalProperties: false
-    FinancingsBalloonInstalments:
-      type: object
-      required:
-        - dueDate
-        - amount
-      properties:
-        dueDate:
-          type: string
-          pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$'
-          description: 'Traz a data de vencimento da parcela não regular  a vencer do contrato da modalidade de crédito consultada, conforme especificação RFC-3339'
-          maxLength: 10
-          example: '2020-01-10'
-        amount:
-          type: string
-          nullable: true
-          description: Valor monetário da parcela não regular a vencer.  Expresso em valor monetário com 2 casas decimais
-          maxLength: 19
-          example: '200.00'
-      additionalProperties: false
     FinancingsBalloonPayment:
       type: object
       description: Conjunto de informações relativas às parcelas não regulares do contrato da modalidade de crédito consultada
@@ -5072,18 +4901,18 @@ components:
         - currency
         - instalments
       properties:
-        currency:
+        dueDate:
           type: string
-          pattern: '^(\w{3}){1}$'
-          maxLength: 3
-          format: CurrencyString
-          description: 'Moeda referente ao valor mínimo da Tarifa, segundo modelo ISO-4217'
-          example: BRL
-        instalments:
-          type: array
-          description: Lista que traz as datas de vencimento e valor das parcelas não regulares  do contrato da modalidade de crédito consultada
-          items:
-            $ref: '#/components/schemas/FinancingsBalloonInstalments'
+          pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$'
+          description: 'Data de vencimento da parcela não regular  a vencer do contrato da modalidade de crédito consultada, conforme especificação RFC-3339. p.ex. 2014-03-19'
+          maxLength: 10
+          example: '2020-01-10'
+        amount:
+          type: number
+          nullable: true
+          description: Valor monetário da parcela não regular a vencer.  Expresso em valor monetário com 2 casas decimais
+          maxLength: 19
+          example: 200
       additionalProperties: false
     FinancingsChargeOverParcel:
       type: object
@@ -5096,7 +4925,7 @@ components:
         feeName:
           type: string
           description: Denominação da Tarifa avulsa paga fora da parcela
-          maxLength: 140
+          maxLength: 250
           pattern: \w*\W*
           example: reavaliação periódica do bem
         feeCode:
@@ -5107,7 +4936,7 @@ components:
           example: aval_bem
         feePaidDate:
           type: string
-          description: 'Traz a data de efetivação do pagamento da tarifa avulsa paga fora da parcela, conforme especificação RFC-3339.'
+          description: Data efetiva do pagamento da tarifa  conforme especificação RFC-3339. p.ex. 2014-03-19
           maxLength: 10
           pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$'
           example: '2020-01-10'
@@ -5139,6 +4968,7 @@ components:
       type: object
       description: Conjunto de informações referentes à identificação da operação de crédito de financiamentos
       required:
+        - contractId
         - ipocCode
         - requestDateTime
         - productName
@@ -5154,10 +4984,15 @@ components:
         - totalNumberOfInstalments
         - paidInstalments
         - CET
-        - amortizationSchedule
+        - amortizationScheduled
         - interestRates
         - contractedFees
       properties:
+        contractId:
+          type: string
+          description: Um identificador único e imutável usado para identificar o contrato de uma operação de crédito. Este identificador não tem significado para o tomador do crédito.
+          maxLength: 100
+          example: '92792126019929279212650822221989319252576'
         ipocCode:
           type: string
           maxLength: 67
@@ -5226,7 +5061,7 @@ components:
           description: Data de vencimento Final da operação. Especificação RFC-3339
           example: '2028-01-15'
         instalmentPeriodicity:
-          $ref: '#/components/schemas/EnumBankBorrowingContractInstalmentPeriodicity'
+          $ref: '#/components/schemas/EnumContractInstalmentPeriodicity'
         firstInstalmentDueDate:
           type: string
           maxLength: 10
@@ -5252,8 +5087,8 @@ components:
             (representação de porcentagem p.ex: 0.1500. Este valor representa 15%. O valor 1 representa 100%)
           maxLength: 19
           example: 0.29
-        amortizationSchedule:
-          $ref: '#/components/schemas/EnumBankBorrowingContractAmortizationSchedule'
+        amortizationScheduled:
+          $ref: '#/components/schemas/EnumContractAmortizationScheduled'
         interestRates:
           type: array
           items:
@@ -5292,9 +5127,9 @@ components:
           description: Sigla identificadora da tarifa pactuada
           example: EXCESSO_CONTA
         feeChargeType:
-          $ref: '#/components/schemas/EnumBankBorrowingContractFeeChargeType'
+          $ref: '#/components/schemas/EnumContractFeeChargeType'
         feeCharge:
-          $ref: '#/components/schemas/EnumBankBorrowingContractFeeCharge'
+          $ref: '#/components/schemas/EnumContractFeeCharge'
         feeAmount:
           type: number
           description: |
@@ -5317,9 +5152,9 @@ components:
         - warrantyAmount
       properties:
         warrantyType:
-          $ref: '#/components/schemas/EnumBankBorrowingWarrantyType'
+          $ref: '#/components/schemas/EnumWarrantyType'
         warrantySubType:
-          $ref: '#/components/schemas/EnumBankBorrowingWarrantySubType'
+          $ref: '#/components/schemas/EnumWarrantySubType'
         warrantyAmount:
           type: number
           maxLength: 19
@@ -5341,17 +5176,17 @@ components:
         - additionalInfo
       properties:
         taxType:
-          $ref: '#/components/schemas/EnumBankBorrowingContractTaxType'
+          $ref: '#/components/schemas/EnumContractTaxType'
         interestRateType:
-          $ref: '#/components/schemas/EnumBankBorrowingContractInterestRateType'
+          $ref: '#/components/schemas/EnumContractInterestRateType'
         taxPeriodicity:
-          $ref: '#/components/schemas/EnumBankBorrowingContractTaxPeriodicity'
+          $ref: '#/components/schemas/EnumContractTaxPeriodicity'
         calculation:
-          $ref: '#/components/schemas/EnumBankBorrowingContractCalculation'
+          $ref: '#/components/schemas/EnumContractCalculation'
         referentialRateIndexerType:
-          $ref: '#/components/schemas/EnumBankBorrowingContractReferentialRateIndexerType'
+          $ref: '#/components/schemas/EnumContractReferentialRateIndexerType'
         referentialRateIndexerSubType:
-          $ref: '#/components/schemas/EnumBankBorrowingContractReferentialRateIndexerSubType'
+          $ref: '#/components/schemas/EnumContractReferentialRateIndexerSubType'
         referentialRateIndexerAdditionalInfo:
           type: string
           description: 'Campo livre de preenchimento obrigatório para complementar a informação relativa ao Tipo de taxa referencial ou indexador, quando selecionada o tipo ou subtipo OUTRO'
@@ -5386,7 +5221,7 @@ components:
         - chargeType
       properties:
         chargeType:
-          $ref: '#/components/schemas/EnumBankBorrowingContractFinanceChargeType'
+          $ref: '#/components/schemas/EnumContractFinanceChargeType'
         chargeAdditionalInfo:
           type: string
           description: Campo de preenchimento obrigatório se selecionada a opção 'OUTROS' em Tipo de encargo pactuado no contrato
@@ -5402,22 +5237,28 @@ components:
       type: object
       description: Conjunto de informações referentes às parcelas / prestações da operação de crédito de financiamentos contratada
       required:
+        - contractId
         - requestDateTime
         - contractRemainingMonths
         - dueInstalments
         - pastDueInstalments
         - balloonPayment
       properties:
+        contractId:
+          type: string
+          description: Um identificador único e imutável usado para identificar o contrato de uma operação de crédito. Este identificador não tem significado para o tomador do crédito
+          maxLength: 100
+          example: '92792126019929279212650822221989319252576'
         requestDateTime:
           type: string
           maxLength: 20
           pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])T(?:[01]\d|2[0123]):(?:[012345]\d):(?:[012345]\d)Z$'
           example: '2020-01-05T08:30:00Z'
           description: 'Data e hora da consulta, conforme especificação RFC-3339, formato UTC.'
-        contractRemainingMonths:
+        contractRemainingDays:
           type: number
-          maxLength: 3
-          description: Prazo Remanescente em meses do contrato referente à Modalidade de Crédito informada
+          maxLength: 6
+          description: Prazo Remanescente em dias do contrato referente à Modalidade de Crédito informada
           example: 57
         dueInstalments:
           type: number
@@ -5429,25 +5270,19 @@ components:
           maxLength: 3
           description: 'Quantidade de prestações vencidas. (No caso de modalidades que não possuam parcelas, o número de prestações é igual a zero)'
           example: 73
-        balloonPayment:
-          $ref: '#/components/schemas/FinancingsBalloonPayment'
-      additionalProperties: false
-    FinancingsInstalmentsBank:
-      type: object
-      description: Conjunto de informações de operações de crédito de financiamentos contratadas
-      required:
-        - instalments
-      properties:
-        instalments:
-          $ref: '#/components/schemas/FinancingsInstalments'
-      additionalProperties: false
-    FinancingsInstalmentsData:
-      type: object
-      required:
-        - financings
-      properties:
-        financings:
-          $ref: '#/components/schemas/FinancingsInstalmentsBank'
+        currency:
+          type: string
+          description: |
+            Moeda referente ao valor monetário informado, segundo modelo ISO-4217. p.ex. 'BRL'
+            Todos os valores monetários informados estão representados com a moeda vigente do Brasil
+          pattern: '^(\w{3}){1}$'
+          maxLength: 3
+          format: CurrencyString
+          example: BRL
+        balloonPayments:
+          type: array
+          items:
+            $ref: '#/components/schemas/FinancingsBalloonPayment'
       additionalProperties: false
     FinancingsListContract:
       type: object
@@ -5498,38 +5333,22 @@ components:
           maxLength: 100
           example: '92792126019929279212650822221989319252576'
       additionalProperties: false
-    FinancingsNonRegulatedCharge:
-      type: object
-      required:
-        - currency
-      properties:
-        currency:
-          type: string
-          pattern: '^(\w{3}){1}$'
-          maxLength: 3
-          format: CurrencyString
-          description: 'Moeda referente ao valor mínimo da Tarifa, segundo modelo ISO-4217'
-      additionalProperties: false
-    FinancingsPaymentBank:
-      type: object
-      description: |
-        Conjunto de informações de operações de crédito de financiamentos contratadas
-      required:
-        - payments
-      properties:
-        payments:
-          $ref: '#/components/schemas/FinancingsPayments'
-      additionalProperties: false
     FinancingsPayments:
       type: object
       description: Conjunto de informações dos pagamentos referentes às operações de crédito de financiamentos contratadas
       required:
+        - contractId
         - requestDateTime
         - paidInstalments
-        - nonRegulatedCharge
+        - currency
         - contractOutstandingBalance
         - releases
       properties:
+        contractId:
+          type: string
+          description: Um identificador único e imutável usado para identificar o contrato de uma operação de crédito. Este identificador não tem significado para o tomador do crédito.
+          maxLength: 100
+          example: '92792126019929279212650822221989319252576'
         requestDateTime:
           type: string
           maxLength: 20
@@ -5541,8 +5360,12 @@ components:
           maxLength: 3
           description: Quantidade total de parcelas pagas do contrato referente à Modalidade de Crédito informada
           example: 73
-        nonRegulatedCharge:
-          $ref: '#/components/schemas/FinancingsNonRegulatedCharge'
+        currency:
+          type: string
+          pattern: '^(\w{3}){1}$'
+          maxLength: 3
+          format: CurrencyString
+          description: 'Moeda referente ao valor mínimo da Tarifa, segundo modelo ISO-4217'
         contractOutstandingBalance:
           type: string
           maxLength: 19
@@ -5561,14 +5384,6 @@ components:
           items:
             $ref: '#/components/schemas/FinancingsTaxesOverParcel'
       additionalProperties: false
-    FinancingsPaymentsData:
-      type: object
-      required:
-        - financings
-      properties:
-        financings:
-          $ref: '#/components/schemas/FinancingsPaymentBank'
-      additionalProperties: false
     FinancingsReleases:
       type: object
       description: Lista dos pagamentos realizados no período
@@ -5580,25 +5395,23 @@ components:
       properties:
         paymentId:
           type: string
-          description: Texto livre de responsabilidade de cada Instituição transmissora para identificar o pagamento informado
-          maxLength: 80
-          pattern: \w*\W*
+          description: Identificador de pagamento de responsabilidade de cada Instituição transmissora.
+          maxLength: 100
           example: Parcela regular
         instalmentId:
           type: string
-          description: Texto livre de responsabilidade de cada Instituição transmissora para identificar a parcela informada
-          maxLength: 40
-          pattern: \w*\W*
+          description: 'Identificador de parcela, de responsabilidade de cada Instituição transmissora.'
+          maxLength: 100
           example: '15'
         paidDate:
           type: string
-          description: 'Traz a data de efetivação do pagamento referente ao contrato da modalidade de crédito consultada, conforme especificação RFC-3339.'
+          description: 'Data efetiva do pagamento referente ao contrato da modalidade de crédito consultada, conforme especificação RFC-3339. p.ex. 2014-03-19'
           maxLength: 10
           pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$'
           example: '2020-01-10'
         paidAmount:
           type: number
-          description: Traz o valor do pagamento referente ao  contrato da modalidade de crédito consultada. Expresso em valor monetário com 2 casas decimais
+          description: Valor do pagamento referente ao  contrato da modalidade de crédito consultada. Expresso em valor monetário com até 4 casas decimais
           maxLength: 19
           example: 200
       additionalProperties: false
@@ -5631,10 +5444,16 @@ components:
       type: object
       description: Conjunto de informações referentes às garantias que avalizam a operação de crédito de financiamentos contratada
       required:
+        - contractId
         - requestDateTime
         - currency
         - contractedWarranties
       properties:
+        contractId:
+          type: string
+          description: Um identificador único e imutável usado para identificar o contrato de uma operação de crédito. Este identificador não tem significado para o tomador do crédito.
+          maxLength: 100
+          example: '92792126019929279212650822221989319252576'
         requestDateTime:
           type: string
           maxLength: 20
@@ -5658,24 +5477,6 @@ components:
           minItems: 1
           description: Lista das garantias que avalizam a operação de crédito contratada
       additionalProperties: false
-    FinancingsWarrantiesBank:
-      type: object
-      description: |
-        Conjunto de informações de operações de crédito de financiamentos contratadas
-      required:
-        - warranties
-      properties:
-        warranties:
-          $ref: '#/components/schemas/FinancingsWarranties'
-      additionalProperties: false
-    FinancingsWarrantiesData:
-      type: object
-      required:
-        - financings
-      properties:
-        financings:
-          $ref: '#/components/schemas/FinancingsWarrantiesBank'
-      additionalProperties: false
     GeographicCoordinates:
       type: object
       description: 'Conjunto de informações, que correspondem aos valores das coordenadas geográficas em graus decimais, no Sistema de referência WGS84'
@@ -5695,25 +5496,6 @@ components:
           maxLength: 13
           example: '-180.836519'
       additionalProperties: false
-    InvoiceFinancingsBalloonInstalments:
-      type: object
-      required:
-        - dueDate
-        - amount
-      properties:
-        dueDate:
-          type: string
-          pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$'
-          description: 'Traz a data de vencimento da parcela não regular  a vencer do contrato da modalidade de crédito consultada, conforme especificação RFC-3339'
-          maxLength: 10
-          example: '2020-01-10'
-        amount:
-          type: string
-          nullable: true
-          description: Valor monetário da parcela não regular a vencer.  Expresso em valor monetário com 2 casas decimais
-          maxLength: 19
-          example: '200.00'
-      additionalProperties: false
     InvoiceFinancingsBalloonPayment:
       type: object
       description: Conjunto de informações relativas às parcelas não regulares do contrato da modalidade de crédito consultada
@@ -5721,17 +5503,18 @@ components:
         - currency
         - instalments
       properties:
-        currency:
+        dueDate:
           type: string
-          pattern: '^(\w{3}){1}$'
-          maxLength: 3
-          format: CurrencyString
-          description: 'Moeda referente ao valor mínimo da Tarifa, segundo modelo ISO-4217'
-        instalments:
-          type: array
-          description: Lista que traz as datas de vencimento e valor das parcelas não regulares  do contrato da modalidade de crédito consultada
-          items:
-            $ref: '#/components/schemas/InvoiceFinancingsBalloonInstalments'
+          pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$'
+          description: 'Data de vencimento da parcela não regular  a vencer do contrato da modalidade de crédito consultada, conforme especificação RFC-3339. p.ex. 2014-03-19'
+          maxLength: 10
+          example: '2020-01-10'
+        amount:
+          type: number
+          nullable: true
+          description: Valor monetário da parcela não regular a vencer.  Expresso em valor monetário com 2 casas decimais
+          maxLength: 19
+          example: 200
       additionalProperties: false
     InvoiceFinancingsChargeOverParcel:
       type: object
@@ -5744,7 +5527,7 @@ components:
         feeName:
           type: string
           description: Denominação da Tarifa avulsa paga fora da parcela
-          maxLength: 140
+          maxLength: 250
           pattern: \w*\W*
           example: reavaliação periódica do bem
         feeCode:
@@ -5755,7 +5538,7 @@ components:
           example: aval_bem
         feePaidDate:
           type: string
-          description: 'Traz a data de efetivação do pagamento da tarifa avulsa paga fora da parcela, conforme especificação RFC-3339.'
+          description: Data efetiva do pagamento da tarifa  conforme especificação RFC-3339. p.ex. 2014-03-19
           maxLength: 10
           pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$'
           example: '2020-01-10'
@@ -5787,6 +5570,7 @@ components:
       type: object
       description: Conjunto de informações referentes à identificação da operação de crédito de direitos creditórios descontados
       required:
+        - contractId
         - ipocCode
         - requestDateTime
         - productName
@@ -5802,11 +5586,16 @@ components:
         - totalNumberOfInstalments
         - paidInstalments
         - CET
-        - amortizationSchedule
+        - amortizationScheduled
         - interestRates
         - contractedFees
-        - contractedFinancesCharges
+        - contractedFinanceCharges
       properties:
+        contractId:
+          type: string
+          description: Um identificador único e imutável usado para identificar o contrato de uma operação de crédito. Este identificador não tem significado para o tomador do crédito
+          maxLength: 100
+          example: '92792126019929279212650822221989319252576'
         ipocCode:
           type: string
           maxLength: 67
@@ -5856,7 +5645,7 @@ components:
         contractAmount:
           type: number
           maxLength: 19
-          description: Valor contratado da operação. Expresso em valor monetário com 2 casas decimais
+          description: Valor contratado da operação. Expresso em valor monetário com até 4 casas decimais
           example: 26000
         currency:
           type: string
@@ -5875,7 +5664,7 @@ components:
           description: Data de vencimento Final da operação. Especificação RFC-3339
           example: '2028-01-15'
         instalmentPeriodicity:
-          $ref: '#/components/schemas/EnumBankBorrowingContractInstalmentPeriodicity'
+          $ref: '#/components/schemas/EnumContractInstalmentPeriodicity'
         firstInstalmentDueDate:
           type: string
           maxLength: 10
@@ -5901,8 +5690,8 @@ components:
             (representação de porcentagem p.ex: 0.1500. Este valor representa 15%. O valor 1 representa 100%)
           maxLength: 19
           example: 0.29
-        amortizationSchedule:
-          $ref: '#/components/schemas/EnumBankBorrowingContractAmortizationSchedule'
+        amortizationScheduled:
+          $ref: '#/components/schemas/EnumContractAmortizationScheduled'
         interestRates:
           type: array
           items:
@@ -5912,12 +5701,18 @@ components:
           items:
             $ref: '#/components/schemas/InvoiceFinancingsContractedFee'
           minItems: 1
-        contractedFinancesCharges:
+        contractedFinanceCharges:
           type: array
           description: Lista que traz os encargos pactuados no contrato
           items:
             $ref: '#/components/schemas/InvoiceFinancingsFinanceCharge'
           minItems: 1
+        cnpjConsignee:
+          type: string
+          maxLength: 14
+          pattern: '\d{14}'
+          description: |
+            CNPJ do consignante (CNPJ corresponde ao número de inscrição no Cadastro de Pessoa Jurídica). Deve-se ter apenas os números do CNPJ, sem máscara. Informação adicional específica para Modalidade de Crédito: Empréstimo-Crédito Pessoal Consignado
       additionalProperties: false
     InvoiceFinancingsContractData:
       type: object
@@ -5993,9 +5788,9 @@ components:
           description: Sigla identificadora da tarifa pactuada
           example: EXCESSO_CONTA
         feeChargeType:
-          $ref: '#/components/schemas/EnumBankBorrowingContractFeeChargeType'
+          $ref: '#/components/schemas/EnumContractFeeChargeType'
         feeCharge:
-          $ref: '#/components/schemas/EnumBankBorrowingContractFeeCharge'
+          $ref: '#/components/schemas/EnumContractFeeCharge'
         feeAmount:
           type: number
           description: |
@@ -6018,14 +5813,14 @@ components:
         - warrantyAmount
       properties:
         warrantyType:
-          $ref: '#/components/schemas/EnumBankBorrowingWarrantyType'
+          $ref: '#/components/schemas/EnumWarrantyType'
         warrantySubType:
-          $ref: '#/components/schemas/EnumBankBorrowingWarrantySubType'
+          $ref: '#/components/schemas/EnumWarrantySubType'
         warrantyAmount:
           type: number
           maxLength: 19
           nullable: true
-          description: 'Valor original da garantia. Valor monetário, expresso com 2 casas decimais'
+          description: 'Valor original da garantia. Valor monetário, expresso com até 4 casas decimais.'
           example: 200
       additionalProperties: false
     InvoiceFinancingsContractInterestRate:
@@ -6042,17 +5837,17 @@ components:
         - additionalInfo
       properties:
         taxType:
-          $ref: '#/components/schemas/EnumBankBorrowingContractTaxType'
+          $ref: '#/components/schemas/EnumContractTaxType'
         interestRateType:
-          $ref: '#/components/schemas/EnumBankBorrowingContractInterestRateType'
+          $ref: '#/components/schemas/EnumContractInterestRateType'
         taxPeriodicity:
-          $ref: '#/components/schemas/EnumBankBorrowingContractTaxPeriodicity'
+          $ref: '#/components/schemas/EnumContractTaxPeriodicity'
         calculation:
-          $ref: '#/components/schemas/EnumBankBorrowingContractCalculation'
+          $ref: '#/components/schemas/EnumContractCalculation'
         referentialRateIndexerType:
-          $ref: '#/components/schemas/EnumBankBorrowingContractReferentialRateIndexerType'
+          $ref: '#/components/schemas/EnumContractReferentialRateIndexerType'
         referentialRateIndexerSubType:
-          $ref: '#/components/schemas/EnumBankBorrowingContractReferentialRateIndexerSubType'
+          $ref: '#/components/schemas/EnumContractReferentialRateIndexerSubType'
         referentialRateIndexerAdditionalInfo:
           type: string
           description: 'Campo livre de preenchimento obrigatório para complementar a informação relativa ao Tipo de taxa referencial ou indexador, quando selecionada o tipo ou subtipo OUTRO'
@@ -6087,7 +5882,7 @@ components:
         - chargeType
       properties:
         chargeType:
-          $ref: '#/components/schemas/EnumBankBorrowingContractFinanceChargeType'
+          $ref: '#/components/schemas/EnumContractFinanceChargeType'
         chargeAdditionalInfo:
           type: string
           description: Campo de preenchimento obrigatório se selecionada a opção 'OUTROS' em Tipo de encargo pactuado no contrato
@@ -6095,7 +5890,7 @@ components:
         chargeRate:
           type: number
           description: |
-            Percentual que representa o valor do encargo pactuado no contrato. Preenchimento obrigatório quando a forma de cobrança for: Mínimo, Máximo ou Fixo
+            Representa o valor do encargo em percentual pactuado no contrato. Exemplo: 0.0210 (=2.1%). Deve-se preencher as 4 casas decimais obrigatoriamente.
           maxLength: 19
           example: 0.07
       additionalProperties: false
@@ -6103,22 +5898,28 @@ components:
       type: object
       description: Conjunto de informações referentes às parcelas / prestações da operação de crédito contratada
       required:
+        - contractId
         - requestDateTime
         - contractRemainingMonths
         - dueInstalments
         - pastDueInstalments
         - balloonPayment
       properties:
+        contractId:
+          type: string
+          description: Um identificador único e imutável usado para identificar o contrato de uma operação de crédito. Este identificador não tem significado para o tomador do crédito
+          maxLength: 100
+          example: '92792126019929279212650822221989319252576'
         requestDateTime:
           type: string
           maxLength: 20
           pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])T(?:[01]\d|2[0123]):(?:[012345]\d):(?:[012345]\d)Z$'
           example: '2020-01-05T08:30:00Z'
           description: 'Data e hora da consulta, conforme especificação RFC-3339, formato UTC.'
-        contractRemainingMonths:
+        contractRemainingDays:
           type: number
-          maxLength: 3
-          description: Prazo Remanescente em meses do contrato referente à Modalidade de Crédito informada
+          maxLength: 6
+          description: Prazo Remanescente em dias do contrato referente à Modalidade de Crédito informada
           example: 57
         dueInstalments:
           type: number
@@ -6130,20 +5931,19 @@ components:
           maxLength: 3
           description: 'Quantidade de prestações vencidas. (No caso de modalidades que não possuam parcelas, o número de prestações é igual a zero)'
           example: 73
-        balloonPayment:
-          $ref: '#/components/schemas/InvoiceFinancingsBalloonPayment'
-      additionalProperties: false
-    InvoiceFinancingsNonRegulatedCharge:
-      type: object
-      required:
-        - currency
-      properties:
         currency:
           type: string
+          description: |
+            Moeda referente ao valor monetário informado, segundo modelo ISO-4217. p.ex. 'BRL'
+            Todos os valores monetários informados estão representados com a moeda vigente do Brasil
           pattern: '^(\w{3}){1}$'
           maxLength: 3
           format: CurrencyString
-          description: 'Moeda referente ao valor mínimo da Tarifa, segundo modelo ISO-4217'
+          example: BRL
+        balloonPayments:
+          type: array
+          items:
+            $ref: '#/components/schemas/InvoiceFinancingsBalloonPayment'
       additionalProperties: false
     InvoiceFinancingsPaymentBank:
       type: object
@@ -6165,6 +5965,11 @@ components:
         - contractOutstandingBalance
         - releases
       properties:
+        contractId:
+          type: string
+          description: Um identificador único e imutável usado para identificar o contrato de uma operação de crédito. Este identificador não tem significado para o tomador do crédito
+          maxLength: 100
+          example: '92792126019929279212650822221989319252576'
         requestDateTime:
           type: string
           maxLength: 20
@@ -6176,8 +5981,12 @@ components:
           maxLength: 3
           description: Quantidade total de parcelas pagas do contrato referente à Modalidade de Crédito informada
           example: 73
-        nonRegulatedCharge:
-          $ref: '#/components/schemas/InvoiceFinancingsNonRegulatedCharge'
+        currency:
+          type: string
+          pattern: '^(\w{3}){1}$'
+          maxLength: 3
+          format: CurrencyString
+          description: 'Moeda referente ao valor monetário informado, segundo modelo ISO-4217. p.ex. ''BRL''. Todos os valores monetários informados estão representados com a moeda vigente do Brasil'
         contractOutstandingBalance:
           type: string
           maxLength: 19
@@ -6242,15 +6051,16 @@ components:
           type: string
           description: Campo de preenchimento obrigatório se selecionada a opção 'OUTROS' em Tipo de encargo pago fora da parcela
           pattern: \w*\W*
+          maxLength: 140
         taxpaidDate:
           type: string
-          description: 'Traz a data de efetivação do pagamento do encargo pago fora da parcela, conforme especificação RFC-3339'
+          description: 'Data efetiva  do pagamento do encargo pago fora da parcela, conforme especificação RFC-3339. p.ex. 2014-03-19'
           pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$'
           maxLength: 10
           example: '2020-01-10'
         taxAmount:
           type: number
-          description: Traz o valor do pagamento do encargo pago fora da parcela. Expresso em valor monetário com 2 casas decimais
+          description: Valor do pagamento do encargo pago fora da parcela. Expresso em valor monetário com até 4 casas decimais.
           example: 200
           maxLength: 19
       additionalProperties: false
@@ -6258,10 +6068,16 @@ components:
       type: object
       description: Conjunto de informações referentes às garantias que avalizam a operação de direitos creditórios descontados contratada
       required:
+        - contractId
         - requestDateTime
         - currency
         - contractedWarranties
       properties:
+        contractId:
+          type: string
+          description: Um identificador único e imutável usado para identificar o contrato de uma operação de crédito. Este identificador não tem significado para o tomador do crédito
+          maxLength: 100
+          example: '92792126019929279212650822221989319252576'
         requestDateTime:
           type: string
           maxLength: 20
@@ -6274,12 +6090,11 @@ components:
           pattern: '^(\w{3}){1}$'
           maxLength: 3
           format: CurrencyString
-          description: |
-            Moeda referente ao valor da garantia, segundo modelo ISO-4217. p.ex. 'BRL'
-            Todos os valores monetários informados estão representados com a moeda vigente do Brasil
+          description: 'Moeda referente ao valor da garantia, segundo modelo ISO-4217. p.ex. ''BRL''. Todos os valores monetários informados estão representados com a moeda vigente do Brasil'
           example: BRL
-        contractedWarranties:
+        warranties:
           type: array
+          description: Lista das garantias que avalizam a operação de crédito contratada
           items:
             $ref: '#/components/schemas/InvoiceFinancingsContractedWarranty'
           minItems: 1
@@ -6480,7 +6295,7 @@ components:
         - totalNumberOfInstalments
         - paidInstalments
         - CET
-        - amortizationSchedule
+        - amortizationScheduled
         - interestRates
         - contractedFees
         - contractedFinanceCharges
@@ -6558,7 +6373,7 @@ components:
           description: Data de vencimento Final da operação. Especificação RFC-3339
           example: '2028-01-15'
         instalmentPeriodicity:
-          $ref: '#/components/schemas/EnumBankBorrowingContractInstalmentPeriodicity'
+          $ref: '#/components/schemas/EnumContractInstalmentPeriodicity'
         firstInstalmentDueDate:
           type: string
           maxLength: 10
@@ -6584,8 +6399,8 @@ components:
             (representação de porcentagem p.ex: 0.1500. Este valor representa 15%. O valor 1 representa 100%)
           maxLength: 19
           example: 0.29
-        amortizationSchedule:
-          $ref: '#/components/schemas/EnumBankBorrowingContractAmortizationSchedule'
+        amortizationScheduled:
+          $ref: '#/components/schemas/EnumContractAmortizationScheduled'
         interestRates:
           type: array
           items:
@@ -6630,9 +6445,9 @@ components:
           description: Sigla identificadora da tarifa pactuada
           example: EXCESSO_CONTA
         feeChargeType:
-          $ref: '#/components/schemas/EnumBankBorrowingContractFeeChargeType'
+          $ref: '#/components/schemas/EnumContractFeeChargeType'
         feeCharge:
-          $ref: '#/components/schemas/EnumBankBorrowingContractFeeCharge'
+          $ref: '#/components/schemas/EnumContractFeeCharge'
         feeAmount:
           type: number
           description: |
@@ -6655,9 +6470,9 @@ components:
         - warrantyAmount
       properties:
         warrantyType:
-          $ref: '#/components/schemas/EnumBankBorrowingWarrantyType'
+          $ref: '#/components/schemas/EnumWarrantyType'
         warrantySubType:
-          $ref: '#/components/schemas/EnumBankBorrowingWarrantySubType'
+          $ref: '#/components/schemas/EnumWarrantySubType'
         warrantyAmount:
           type: number
           maxLength: 19
@@ -6679,17 +6494,17 @@ components:
         - additionalInfo
       properties:
         taxType:
-          $ref: '#/components/schemas/EnumBankBorrowingContractTaxType'
+          $ref: '#/components/schemas/EnumContractTaxType'
         interestRateType:
-          $ref: '#/components/schemas/EnumBankBorrowingContractInterestRateType'
+          $ref: '#/components/schemas/EnumContractInterestRateType'
         taxPeriodicity:
-          $ref: '#/components/schemas/EnumBankBorrowingContractTaxPeriodicity'
+          $ref: '#/components/schemas/EnumContractTaxPeriodicity'
         calculation:
-          $ref: '#/components/schemas/EnumBankBorrowingContractCalculation'
+          $ref: '#/components/schemas/EnumContractCalculation'
         referentialRateIndexerType:
-          $ref: '#/components/schemas/EnumBankBorrowingContractReferentialRateIndexerType'
+          $ref: '#/components/schemas/EnumContractReferentialRateIndexerType'
         referentialRateIndexerSubType:
-          $ref: '#/components/schemas/EnumBankBorrowingContractReferentialRateIndexerSubType'
+          $ref: '#/components/schemas/EnumContractReferentialRateIndexerSubType'
         referentialRateIndexerAdditionalInfo:
           type: string
           description: 'Campo livre de preenchimento obrigatório para complementar a informação relativa ao Tipo de taxa referencial ou indexador, quando selecionada o tipo ou subtipo OUTRO'
@@ -6724,7 +6539,7 @@ components:
         - chargeType
       properties:
         chargeType:
-          $ref: '#/components/schemas/EnumBankBorrowingContractFinanceChargeType'
+          $ref: '#/components/schemas/EnumContractFinanceChargeType'
         chargeAdditionalInfo:
           type: string
           description: Campo de preenchimento obrigatório se selecionada a opção 'OUTROS' em Tipo de encargo pactuado no contrato
@@ -7441,7 +7256,7 @@ components:
           description: 'Campo livre, de preenchimento obrigatório. Traz o código da ocupação ou o descritivo da ocupação, se selecionada a opção ''OUTRO'''
           example: '01'
       additionalProperties: false
-    ResponseAccount:
+    ResponseAccountList:
       type: object
       required:
         - data
@@ -7562,7 +7377,7 @@ components:
         meta:
           $ref: '#/components/schemas/Meta'
       additionalProperties: false
-    ResponseCreditCardAccounts:
+    ResponseCreditCardAccountsList:
       type: object
       required:
         - data
@@ -7571,6 +7386,7 @@ components:
       properties:
         data:
           type: array
+          description: Conjunto de informações de conta de pagamento pós-paga
           items:
             $ref: '#/components/schemas/CreditCardAccountsData'
           minItems: 1
@@ -7861,13 +7677,13 @@ components:
         - meta
       properties:
         data:
-          $ref: '#/components/schemas/FinancingsInstalmentsData'
+          $ref: '#/components/schemas/FinancingsInstalments'
         links:
           $ref: '#/components/schemas/Links'
         meta:
           $ref: '#/components/schemas/Meta'
       additionalProperties: false
-    ResponseFinancingsListContract:
+    ResponseFinancingsContractList:
       type: object
       required:
         - data
@@ -7875,7 +7691,10 @@ components:
         - meta
       properties:
         data:
-          $ref: '#/components/schemas/FinancingsListContract'
+          type: array
+          description: Conjunto de informações  de contratos de financiamento mantidos pelo cliente na instituição transmissora e para os quais ele tenha fornecido consentimento
+          items:
+            $ref: '#/components/schemas/FinancingsListContract'
         links:
           $ref: '#/components/schemas/Links'
         meta:
@@ -7889,7 +7708,7 @@ components:
         - meta
       properties:
         data:
-          $ref: '#/components/schemas/FinancingsPaymentsData'
+          $ref: '#/components/schemas/FinancingsPayments'
         links:
           $ref: '#/components/schemas/Links'
         meta:
@@ -7903,13 +7722,13 @@ components:
         - meta
       properties:
         data:
-          $ref: '#/components/schemas/FinancingsWarrantiesData'
+          $ref: '#/components/schemas/FinancingsWarranties'
         links:
           $ref: '#/components/schemas/Links'
         meta:
           $ref: '#/components/schemas/Meta'
       additionalProperties: false
-    ResponseLoansListContract:
+    ResponseLoansContractList:
       type: object
       required:
         - data
@@ -7918,6 +7737,7 @@ components:
       properties:
         data:
           type: array
+          description: Conjunto de informações de contratos de empréstimo mantidos pelo cliente na instituição transmissora e para os quais ele tenha fornecido consentimento
           items:
             $ref: '#/components/schemas/LoansListContractData'
         links:
@@ -8004,6 +7824,7 @@ components:
       properties:
         data:
           type: array
+          description: Conjunto de informações  de contratos de direitos creditórios descontados mantidos pelo cliente na instituição transmissora e para os quais ele tenha fornecido consentimento
           items:
             $ref: '#/components/schemas/InvoiceFinancingsContractData'
         links:
@@ -8061,7 +7882,7 @@ components:
         - meta
       properties:
         data:
-          $ref: '#/components/schemas/UnarrangedAccountOverdraftContract'
+          $ref: '#/components/schemas/UnarrangedAccountOverdraftContractData'
         links:
           $ref: '#/components/schemas/Links'
         meta:
@@ -8077,7 +7898,7 @@ components:
         data:
           type: array
           items:
-            $ref: '#/components/schemas/UnarrangedAccountOverdraftData'
+            $ref: '#/components/schemas/UnarrangedAccountOverdraftContractListData'
           minItems: 1
           description: Conjunto de informações  de contratos de adiantamento a depositantes mantidos pelo cliente na instituição transmissora e para os quais ele tenha fornecido consentimento
         links:
@@ -8127,25 +7948,6 @@ components:
         meta:
           $ref: '#/components/schemas/Meta'
       additionalProperties: false
-    UnarrangedAccountOverdraftBalloonInstalments:
-      type: object
-      required:
-        - dueDate
-        - amount
-      properties:
-        dueDate:
-          type: string
-          pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$'
-          description: 'Traz a data de vencimento da parcela não regular  a vencer do contrato da modalidade de crédito consultada, conforme especificação RFC-3339'
-          maxLength: 10
-          example: '2020-01-10'
-        amount:
-          type: string
-          nullable: true
-          description: Valor monetário da parcela não regular a vencer.  Expresso em valor monetário com 2 casas decimais
-          maxLength: 19
-          example: '200.00'
-      additionalProperties: false
     UnarrangedAccountOverdraftBalloonPayment:
       type: object
       description: Conjunto de informações relativas às parcelas não regulares do contrato da modalidade de crédito consultada
@@ -8153,17 +7955,18 @@ components:
         - currency
         - instalments
       properties:
-        currency:
+        dueDate:
           type: string
-          pattern: '^(\w{3}){1}$'
-          maxLength: 3
-          format: CurrencyString
-          description: 'Moeda referente ao valor mínimo da Tarifa, segundo modelo ISO-4217'
-        instalments:
-          type: array
-          description: Lista que traz as datas de vencimento e valor das parcelas não regulares  do contrato da modalidade de crédito consultada
-          items:
-            $ref: '#/components/schemas/UnarrangedAccountOverdraftBalloonInstalments'
+          pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$'
+          description: 'Data de vencimento da parcela não regular  a vencer do contrato da modalidade de crédito consultada, conforme especificação RFC-3339. p.ex. 2014-03-19'
+          maxLength: 10
+          example: '2020-01-10'
+        amount:
+          type: string
+          nullable: true
+          description: Valor monetário da parcela não regular a vencer.  Expresso em valor monetário com até 4 casas decimais
+          maxLength: 19
+          example: '200.00'
       additionalProperties: false
     UnarrangedAccountOverdraftChargeOverParcel:
       type: object
@@ -8176,7 +7979,7 @@ components:
         feeName:
           type: string
           description: Denominação da Tarifa avulsa paga fora da parcela
-          maxLength: 140
+          maxLength: 250
           pattern: \w*\W*
           example: reavaliação periódica do bem
         feeCode:
@@ -8187,13 +7990,13 @@ components:
           example: aval_bem
         feePaidDate:
           type: string
-          description: 'Traz a data de efetivação do pagamento da tarifa avulsa paga fora da parcela, conforme especificação RFC-3339.'
+          description: Data efetiva do pagamento da tarifa  conforme especificação RFC-3339. p.ex. 2014-03-19
           maxLength: 10
           pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$'
           example: '2020-01-10'
         feeAmount:
           type: number
-          description: Traz o valor do pagamento da tarifa avulsa fora da parcela. Expresso em valor monetário com 2 casas decimais
+          description: Valor do pagamento do encargo pago fora da parcela. Expresso em valor monetário com até 4 casas decimais.
           maxLength: 19
           example: 200
       additionalProperties: false
@@ -8215,10 +8018,11 @@ components:
           maxLength: 12
           example: '200.00'
       additionalProperties: false
-    UnarrangedAccountOverdraftContract:
+    UnarrangedAccountOverdraftContractData:
       type: object
       description: Conjunto de informações referentes à identificação da operação de crédito de adiantamento a depositantes
       required:
+        - contractId
         - ipocCode
         - requestDateTime
         - productName
@@ -8233,12 +8037,17 @@ components:
         - firstInstalmentDueDate
         - totalNumberOfInstalments
         - paidInstalments
-        - CET
-        - amortizationSchedule
+        - cet
+        - amortizationScheduled
         - interestRates
         - contractedFees
         - contractedFinancesCharges
       properties:
+        contractId:
+          type: string
+          description: Um identificador único e imutável usado para identificar o contrato de uma operação de crédito. Este identificador não tem significado para o tomador do crédito
+          maxLength: 100
+          example: '92792126019929279212650822221989319252576'
         ipocCode:
           type: string
           maxLength: 67
@@ -8288,7 +8097,7 @@ components:
         contractAmount:
           type: number
           maxLength: 19
-          description: Valor contratado da operação. Expresso em valor monetário com 2 casas decimais
+          description: Valor contratado da operação. Expresso em valor monetário com até 4 casas decimais
           example: 26000
         currency:
           type: string
@@ -8307,7 +8116,7 @@ components:
           description: Data de vencimento Final da operação. Especificação RFC-3339
           example: '2028-01-15'
         instalmentPeriodicity:
-          $ref: '#/components/schemas/EnumBankBorrowingContractInstalmentPeriodicity'
+          $ref: '#/components/schemas/EnumContractInstalmentPeriodicity'
         firstInstalmentDueDate:
           type: string
           maxLength: 10
@@ -8325,7 +8134,7 @@ components:
           description: 'Quantidade de prestações pagas. (No caso de modalidades que não possuam parcelas, o número de prestações é igual a zero)'
           maxLength: 3
           example: 73
-        CET:
+        cet:
           type: number
           description: |
             CET – Custo Efetivo Total deve ser expresso na forma de taxa percentual anual e   incorpora todos os encargos e despesas incidentes nas operações de crédito (taxa de juro, mas também tarifas, tributos, seguros e outras despesas cobradas).
@@ -8333,17 +8142,19 @@ components:
             (representação de porcentagem p.ex: 0.1500. Este valor representa 15%. O valor 1 representa 100%)
           maxLength: 19
           example: 0.29
-        amortizationSchedule:
-          $ref: '#/components/schemas/EnumBankBorrowingContractAmortizationSchedule'
+        amortizationScheduled:
+          $ref: '#/components/schemas/EnumContractAmortizationScheduled'
         interestRates:
           type: array
           items:
             $ref: '#/components/schemas/UnarrangedAccountOverdraftContractInterestRate'
+          minItems: 1
         contractedFees:
           type: array
           items:
             $ref: '#/components/schemas/UnarrangedAccountOverdraftContractedFee'
           minItems: 1
+          description: Lista que traz a relação de tarifas pactuadas no contrato
         contractedFinancesCharges:
           type: array
           description: Lista que traz os encargos pactuados no contrato
@@ -8353,7 +8164,6 @@ components:
       additionalProperties: false
     UnarrangedAccountOverdraftContractedFee:
       type: object
-      description: Objeto que traz o conjunto de informações necessárias para demonstrar a composição das taxas de juros remuneratórios da Modalidade de crédito
       required:
         - feeName
         - feeCode
@@ -8373,9 +8183,9 @@ components:
           description: Sigla identificadora da tarifa pactuada
           example: EXCESSO_CONTA
         feeChargeType:
-          $ref: '#/components/schemas/EnumBankBorrowingContractFeeChargeType'
+          $ref: '#/components/schemas/EnumContractFeeChargeType'
         feeCharge:
-          $ref: '#/components/schemas/EnumBankBorrowingContractFeeCharge'
+          $ref: '#/components/schemas/EnumContractFeeCharge'
         feeAmount:
           type: number
           description: |
@@ -8385,28 +8195,9 @@ components:
         feeRate:
           type: number
           description: |
-            Percentual que representa o valor da tarifa pactuada para o contrato. Preenchimento obrigatório quando a forma de cobrança por Percentual
+            É o valor da tarifa em percentual pactuada no contrato. Preenchimento obrigatório quando a forma de cobrança for Percentual. Exemplo: 0.0150 = 1,5%. Deve-se informar 4 casas decimais, mesmo que preenchidas com zeros. Exemplo: 0.2000.
           maxLength: 19
           example: 50
-      additionalProperties: false
-    UnarrangedAccountOverdraftContractedWarranty:
-      type: object
-      description: Conjunto de informações referentes às garantias que avalizam a operação de crédito contratada
-      required:
-        - warrantyType
-        - warrantySubType
-        - warrantyAmount
-      properties:
-        warrantyType:
-          $ref: '#/components/schemas/EnumBankBorrowingWarrantyType'
-        warrantySubType:
-          $ref: '#/components/schemas/EnumBankBorrowingWarrantySubType'
-        warrantyAmount:
-          type: number
-          maxLength: 19
-          nullable: true
-          description: 'Valor original da garantia. Valor monetário, expresso com 2 casas decimais'
-          example: 200
       additionalProperties: false
     UnarrangedAccountOverdraftContractInterestRate:
       type: object
@@ -8422,17 +8213,17 @@ components:
         - additionalInfo
       properties:
         taxType:
-          $ref: '#/components/schemas/EnumBankBorrowingContractTaxType'
+          $ref: '#/components/schemas/EnumContractTaxType'
         interestRateType:
-          $ref: '#/components/schemas/EnumBankBorrowingContractInterestRateType'
+          $ref: '#/components/schemas/EnumContractInterestRateType'
         taxPeriodicity:
-          $ref: '#/components/schemas/EnumBankBorrowingContractTaxPeriodicity'
+          $ref: '#/components/schemas/EnumContractTaxPeriodicity'
         calculation:
-          $ref: '#/components/schemas/EnumBankBorrowingContractCalculation'
+          $ref: '#/components/schemas/EnumContractCalculation'
         referentialRateIndexerType:
-          $ref: '#/components/schemas/EnumBankBorrowingContractReferentialRateIndexerType'
+          $ref: '#/components/schemas/EnumContractReferentialRateIndexerType'
         referentialRateIndexerSubType:
-          $ref: '#/components/schemas/EnumBankBorrowingContractReferentialRateIndexerSubType'
+          $ref: '#/components/schemas/EnumContractReferentialRateIndexerSubType'
         referentialRateIndexerAdditionalInfo:
           type: string
           description: 'Campo livre de preenchimento obrigatório para complementar a informação relativa ao Tipo de taxa referencial ou indexador, quando selecionada o tipo ou subtipo OUTRO'
@@ -8460,7 +8251,7 @@ components:
           description: Texto com informações adicionais sobre a composição das taxas de juros pactuadas
           pattern: \w*\W*
       additionalProperties: false
-    UnarrangedAccountOverdraftData:
+    UnarrangedAccountOverdraftContractListData:
       type: object
       required:
         - brandName
@@ -8482,6 +8273,16 @@ components:
           pattern: '\d{14}|^NA$'
           description: 'Número completo do CNPJ da instituição responsável pelo Cadastro - o CNPJ corresponde ao número de inscrição no Cadastro de Pessoa Jurídica. Deve-se ter apenas os números do CNPJ, sem máscara'
           example: '60500998000144'
+        productType:
+          type: string
+          maxLength: 30
+          description: 'Tipo da modalidade de crédito contratada, conforme  circular 4.015 e descrição do DOC3040 do SCR). (Vide Domínio). Adiantamento a depositantes'
+          example: ADIANTAMENTO_A_DEPOSITANTES
+        productSubType:
+          type: string
+          maxLength: 30
+          description: 'Sub tipo da modalidades de crédito adiantamento a depositantes contratadas, conforme  circular 4.015 e descrição do DOC3040 do SCR). (Vide Domínio). Adiantamento a depositantes'
+          example: ADIANTAMENTO_A_DEPOSITANTES
         ipocCode:
           type: string
           maxLength: 67
@@ -8496,16 +8297,6 @@ components:
               3. Para os demais clientes (tipos de cliente 3, 4, 5 e 6), informar 14 (catorze) posições com complemento de zeros à esquerda se a identificação tiver tamanho inferior;
             - **Código do contrato:** 1 (uma) até 40 (quarenta) posições, sem complemento de caracteres.
           example: '92792126019929279212650822221989319252576'
-        productType:
-          type: string
-          maxLength: 30
-          description: 'Tipo da modalidade de crédito contratada, conforme  circular 4.015 e descrição do DOC3040 do SCR). (Vide Domínio). Adiantamento a depositantes'
-          example: ADIANTAMENTO_A_DEPOSITANTES
-        productSubType:
-          type: string
-          maxLength: 30
-          description: 'Sub tipo da modalidades de crédito adiantamento a depositantes contratadas, conforme  circular 4.015 e descrição do DOC3040 do SCR). (Vide Domínio). Adiantamento a depositantes'
-          example: ADIANTAMENTO_A_DEPOSITANTES
         contractId:
           type: string
           maxLength: 100
@@ -8516,9 +8307,10 @@ components:
       type: object
       required:
         - chargeType
+        - chargeRate
       properties:
         chargeType:
-          $ref: '#/components/schemas/EnumBankBorrowingContractFinanceChargeType'
+          $ref: '#/components/schemas/EnumContractFinanceChargeType'
         chargeAdditionalInfo:
           type: string
           description: Campo de preenchimento obrigatório se selecionada a opção 'OUTROS' em Tipo de encargo pactuado no contrato
@@ -8526,30 +8318,36 @@ components:
         chargeRate:
           type: number
           description: |
-            Percentual que representa o valor do encargo pactuado no contrato. Preenchimento obrigatório quando a forma de cobrança for: Mínimo, Máximo ou Fixo
+            Representa o valor do encargo em percentual pactuado no contrato. Exemplo: 0.0210 (=2.1%). Deve-se preencher as 4 casas decimais obrigatoriamente.
           maxLength: 19
           example: 0.07
       additionalProperties: false
-    UnarrangedAccountOverdraftInstalments:
+    UnarrangedAccountOverdraftInstalmentsData:
       type: object
-      description: Conjunto de informações referentes às garantias que avalizam a operação de crédito contratada
+      description: Conjunto de informações referentes ao prazo remanescente e às parcelas de uma operação de crédito de adiantamento a depositante
       required:
+        - contractId
         - requestDateTime
-        - contractRemainingMonths
+        - contractRemainingDays
         - dueInstalments
         - pastDueInstalments
         - balloonPayment
       properties:
+        contractId:
+          type: string
+          description: Um identificador único e imutável usado para identificar o contrato de uma operação de crédito. Este identificador não tem significado para o tomador do crédito
+          maxLength: 100
+          example: '92792126019929279212650822221989319252576'
         requestDateTime:
           type: string
           maxLength: 20
           pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])T(?:[01]\d|2[0123]):(?:[012345]\d):(?:[012345]\d)Z$'
           example: '2020-01-05T08:30:00Z'
           description: 'Data e hora da consulta, conforme especificação RFC-3339, formato UTC.'
-        contractRemainingMonths:
+        contractRemainingDays:
           type: number
-          maxLength: 3
-          description: Prazo Remanescente em meses do contrato referente à Modalidade de Crédito informada
+          maxLength: 6
+          description: Prazo Remanescente em dias do contrato referente à Modalidade de Crédito informada
           example: 57
         dueInstalments:
           type: number
@@ -8561,58 +8359,38 @@ components:
           maxLength: 3
           description: 'Quantidade de prestações vencidas. (No caso de modalidades que não possuam parcelas, o número de prestações é igual a zero)'
           example: 73
-        balloonPayment:
-          $ref: '#/components/schemas/UnarrangedAccountOverdraftBalloonPayment'
-      additionalProperties: false
-    UnarrangedAccountOverdraftInstalmentsBank:
-      type: object
-      description: Conjunto de informações de operações de crédito contratadas
-      required:
-        - instalments
-      properties:
-        instalments:
-          $ref: '#/components/schemas/UnarrangedAccountOverdraftInstalments'
-      additionalProperties: false
-    UnarrangedAccountOverdraftInstalmentsData:
-      type: object
-      required:
-        - unarrangedAccountOverdraft
-      properties:
-        unarrangedAccountOverdraft:
-          $ref: '#/components/schemas/UnarrangedAccountOverdraftInstalmentsBank'
-      additionalProperties: false
-    UnarrangedAccountOverdraftNonRegulatedCharge:
-      type: object
-      required:
-        - currency
-      properties:
         currency:
           type: string
           pattern: '^(\w{3}){1}$'
           maxLength: 3
           format: CurrencyString
-          description: 'Moeda referente ao valor mínimo da Tarifa, segundo modelo ISO-4217'
+          description: |
+            Moeda referente ao valor monetário informado, segundo modelo ISO-4217. p.ex. 'BRL' 
+            Todos os valores monetários informados estão representados com a moeda vigente do Brasil
+        balloonPayments:
+          type: array
+          items:
+            $ref: '#/components/schemas/UnarrangedAccountOverdraftBalloonPayment'
+          minItems: 1
+          description: Lista que traz as datas de vencimento e valor das parcelas não regulares  do contrato da modalidade de crédito consultada
       additionalProperties: false
-    UnarrangedAccountOverdraftPaymentBank:
+    UnarrangedAccountOverdraftPaymentsData:
       type: object
-      description: |
-        Conjunto de informações de operações de crédito de adiantamento a depositantes contratadas
+      description: Conjunto de informações referentes aos pagamentos realizados de uma operação de crédito de adiantamento a depositantes
       required:
-        - payments
-      properties:
-        payments:
-          $ref: '#/components/schemas/UnarrangedAccountOverdraftPayments'
-      additionalProperties: false
-    UnarrangedAccountOverdraftPayments:
-      type: object
-      description: Conjunto de informações dos pagamentos referentes às operações de crédito de adiantamento a depositantes contratadas
-      required:
+        - contractId
         - requestDateTime
         - paidInstalments
-        - nonRegulatedCharge
+        - currency
         - contractOutstandingBalance
         - releases
+        - chargesOverParcel
       properties:
+        contractId:
+          type: string
+          description: Um identificador único e imutável usado para identificar o contrato de uma operação de crédito. Este identificador não tem significado para o tomador do crédito
+          maxLength: 100
+          example: '92792126019929279212650822221989319252576'
         requestDateTime:
           type: string
           maxLength: 20
@@ -8624,13 +8402,17 @@ components:
           maxLength: 3
           description: Quantidade total de parcelas pagas do contrato referente à Modalidade de Crédito informada
           example: 73
-        nonRegulatedCharge:
-          $ref: '#/components/schemas/UnarrangedAccountOverdraftNonRegulatedCharge'
-        contractOutstandingBalance:
+        currency:
           type: string
+          pattern: '^(\w{3}){1}$'
+          maxLength: 3
+          format: CurrencyString
+          description: 'Moeda referente ao valor monetário informado, segundo modelo ISO-4217. p.ex. ''BRL''. Todos os valores monetários informados estão representados com a moeda vigente do Brasil'
+        contractOutstandingBalance:
+          type: number
           maxLength: 19
           description: 'Saldo devedor Remanescente, divulgado nos canais eletrônicos, do contrato referente à Modalidade de Crédito informada. Expresso em valor monetário com 2 casas decimais'
-          example: '11400.00'
+          example: 11400
         releases:
           $ref: '#/components/schemas/UnarrangedAccountOverdraftReleases'
         chargesOverParcel:
@@ -8638,19 +8420,12 @@ components:
           description: 'Lista das tarifas que foram pagas fora da parcela, só para pagamento avulso.'
           items:
             $ref: '#/components/schemas/UnarrangedAccountOverdraftChargeOverParcel'
+          minItems: 1
         taxesOverParcel:
           type: array
           description: Lista dos encargos que foram pagos fora da parcela
           items:
             $ref: '#/components/schemas/UnarrangedAccountOverdraftTaxesOverParcel'
-      additionalProperties: false
-    UnarrangedAccountOverdraftPaymentsData:
-      type: object
-      required:
-        - unarrangedAccountOverdraft
-      properties:
-        unarrangedAccountOverdraft:
-          $ref: '#/components/schemas/UnarrangedAccountOverdraftPaymentBank'
       additionalProperties: false
     UnarrangedAccountOverdraftReleases:
       type: object
@@ -8663,25 +8438,25 @@ components:
       properties:
         paymentId:
           type: string
-          description: Texto livre de responsabilidade de cada Instituição transmissora para identificar o pagamento informado
-          maxLength: 80
+          description: Identificador de pagamento de responsabilidade de cada Instituição transmissora.
+          maxLength: 100
           pattern: \w*\W*
           example: Parcela regular
         instalmentId:
           type: string
-          description: Texto livre de responsabilidade de cada Instituição transmissora para identificar a parcela informada
-          maxLength: 40
+          description: 'Identificador de parcela, de responsabilidade de cada Instituição transmissora.'
+          maxLength: 100
           pattern: \w*\W*
           example: '15'
         paidDate:
           type: string
-          description: 'Traz a data de efetivação do pagamento referente ao contrato da modalidade de crédito consultada, conforme especificação RFC-3339.'
+          description: 'Data efetiva do pagamento referente ao contrato da modalidade de crédito consultada, conforme especificação RFC-3339. p.ex. 2014-03-19'
           maxLength: 10
           pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$'
           example: '2020-01-10'
         paidAmount:
           type: number
-          description: Traz o valor do pagamento referente ao  contrato da modalidade de crédito consultada. Expresso em valor monetário com 2 casas decimais
+          description: Valor do pagamento referente ao  contrato da modalidade de crédito consultada. Expresso em valor monetário com até 4 casas decimais
           maxLength: 19
           example: 200
       additionalProperties: false
@@ -8710,14 +8485,20 @@ components:
           example: 200
           maxLength: 19
       additionalProperties: false
-    UnarrangedAccountOverdraftWarranties:
+    UnarrangedAccountOverdraftWarrantiesData:
       type: object
-      description: Conjunto de informações referentes às garantias que avalizam a operação de crédito contratada
+      description: Conjunto de informações referentes às garantias que avalizam a operação de crédito de adiantamento a depositantes
       required:
+        - contractId
         - requestDateTime
         - currency
         - contractedWarranties
       properties:
+        contractId:
+          type: string
+          description: Um identificador único e imutável usado para identificar o contrato de uma operação de crédito. Este identificador não tem significado para o tomador do crédito
+          maxLength: 100
+          example: '92792126019929279212650822221989319252576'
         requestDateTime:
           type: string
           maxLength: 20
@@ -8734,35 +8515,30 @@ components:
             Moeda referente ao valor da garantia, segundo modelo ISO-4217. p.ex. 'BRL'
             Todos os valores monetários informados estão representados com a moeda vigente do Brasil
           example: BRL
-        contractedWarranties:
+        warranties:
           type: array
           items:
-            $ref: '#/components/schemas/UnarrangedAccountOverdraftContractedWarranty'
+            type: object
+            description: Conjunto de informações referentes às garantias que avalizam a operação de crédito contratada
+            required:
+              - warrantyType
+              - warrantySubType
+              - warrantyAmount
+            properties:
+              warrantyType:
+                $ref: '#/components/schemas/EnumWarrantyType'
+              warrantySubType:
+                $ref: '#/components/schemas/EnumWarrantySubType'
+              warrantyAmount:
+                type: number
+                maxLength: 19
+                nullable: true
+                description: 'Valor original da garantia. Valor monetário, expresso com até 4 casas decimais.'
+                example: 200
+            additionalProperties: false
           minItems: 1
           description: Lista das garantias que avalizam a operação de crédito contratada
       additionalProperties: false
-    UnarrangedAccountOverdraftWarrantiesBank:
-      type: object
-      description: |
-        Conjunto de informações de operações de crédito contratadas
-      required:
-        - warranties
-      properties:
-        warranties:
-          $ref: '#/components/schemas/UnarrangedAccountOverdraftWarranties'
-      additionalProperties: false
-    UnarrangedAccountOverdraftWarrantiesData:
-      type: object
-      required:
-        - unarrangedAccountOverdraft
-      properties:
-        unarrangedAccountOverdraft:
-          $ref: '#/components/schemas/UnarrangedAccountOverdraftWarrantiesBank'
-      additionalProperties: false
-    XFapiInteractionId:
-      type: string
-      pattern: '^[a-zA-Z0-9][a-zA-Z0-9\-]{0,99}$'
-      maxLength: 100
   parameters:
     accountId:
       name: accountId
@@ -8816,6 +8592,8 @@ components:
       required: true
     accountType:
       name: accountType
+      description: 'Tipos de contas. Modalidades tradicionais previstas pela Resolução 4.753, não contemplando contas vinculadas, conta de domiciliados no exterior, contas em moedas estrangeiras e conta correspondente moeda eletrônica. Vide Enum.'
+      required: false
       in: query
       schema:
         $ref: '#/components/schemas/EnumAccountType'
@@ -8839,6 +8617,8 @@ components:
         maxLength: 40
     creditDebitIndicator:
       name: creditDebitIndicator
+      description: Indicador do tipo de lançamento
+      required: false
       in: query
       schema:
         $ref: '#/components/schemas/EnumCreditDebitIndicator'
@@ -8858,14 +8638,17 @@ components:
         $ref: '#/components/schemas/EnumCreditCardAccountNetwork'
     creditCardPayeeMCC:
       name: payeeMCC
+      description: 'MCC é o Merchant Category Code, ou o código da categoria do estabelecimento comercial. Os MCCs são agrupados segundo suas similaridades'
+      required: false
       in: query
       schema:
         type: number
         maxLength: 4
-        description: 'MCC é o Merchant Category Code, ou o código da categoria do estabelecimento comercial. Os MCCs são agrupados segundo suas similaridades'
         example: 8299
     creditCardTransactionType:
       name: transactionType
+      description: Traz os tipos de Transação
+      required: false
       in: query
       schema:
         $ref: '#/components/schemas/EnumCreditCardTransactionType'
@@ -8980,33 +8763,232 @@ components:
       description: 'Um UID [RFC4122](https://tools.ietf.org/html/rfc4122) usado como um ID de correlação. Se fornecido, o transmissor deve "reproduzir" esse valor no cabeçalho de resposta.'
       required: false
       schema:
-        $ref: '#/components/schemas/XFapiInteractionId'
+        type: string
+        pattern: '^[a-zA-Z0-9][a-zA-Z0-9\-]{0,99}$'
+        maxLength: 100
+        description: 'Um UID [RFC4122](https://tools.ietf.org/html/rfc4122) usado como um ID de correlação. Se fornecido, o transmissor deve "reproduzir" esse valor no cabeçalho de resposta.'
   securitySchemes:
     OpenId:
       type: openIdConnect
       description: 'O OpenID Connect é uma camada de identidade sobre o protocolo OAuth 2.0, que permite a identificação de um usuário final com base na autenticação realizada por um Authorization Server.'
       openIdConnectUrl: 'https://authserver.example/.well-known/openid-configuration'
   responses:
-    OKResponseInvoiceFinancingsContractList:
-      description: Lista de contratos obtida com sucesso.
-      headers:
-        x-fapi-interaction-id:
-          schema:
-            $ref: '#/components/schemas/XFapiInteractionId'
+    OKResponsePersonalCustomersIdentification:
+      description: Dados sobre identificação pessoa física.
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/ResponseInvoiceFinancingsContractList'
+            $ref: '#/components/schemas/ResponsePersonalCustomersIdentification'
+    OKResponsePersonalCustomersQualification:
+      description: Dados sobre qualificação da pessoa física
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ResponsePersonalCustomersQualification'
+    OKResponsePersonalCustomersFinancialRelation:
+      description: Dados sobre relacionamento da pessoa física
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ResponsePersonalCustomersFinancialRelation'
+    OKResponseBusinessCustomersIdentification:
+      description: Dados sobre identificação pessoa jurídica
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ResponseBusinessCustomersIdentification'
+    OKResponseBusinessCustomersQualification:
+      description: Dados sobre qualificação pessoa jurídica
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ResponseBusinessCustomersQualification'
+    OKResponseBusinessCustomersFinancialRelation:
+      description: Dados sobre relacionamento pessoa jurídica
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ResponseBusinessCustomersFinancialRelation'
+    OKResponseCreditCardAccountsList:
+      description: Conjunto de informações das Contas de pagamento pós paga
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ResponseCreditCardAccountsList'
+    OKResponseCreditCardAccountsIdentification:
+      description: Dados de identificação da conta identificada por creditCardAccountId obtidos com sucesso.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ResponseCreditCardAccountsIdentification'
+    OKResponseCreditCardAccountsLimits:
+      description: Dados dos limites da conta identificada por creditCardAccountId obtidos com sucesso.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ResponseCreditCardAccountsLimits'
+    OKResponseCreditCardAccountsTransactions:
+      description: Dados das lista de transações da conta identificada por creditCardAccountId obtidos com sucesso.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ResponseCreditCardAccountsTransactions'
+    OKResponseCreditCardAccountsBills:
+      description: Dados referentes à lista de faturas da conta identificada por creditCardAccountId obtidos com sucesso.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ResponseCreditCardAccountsBills'
+    OKResponseAccountList:
+      description: Dados de identificação das contas obtidos com sucesso.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ResponseAccountList'
+    OKResponseAccountIdentification:
+      description: Dados de identificação da conta identificada por accountId obtidos com sucesso.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ResponseAccountIdentification'
+    OKResponseAccountBalances:
+      description: Dados relativos aos saldos da conta identificada por accountId obtidos com sucesso.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ResponseAccountBalances'
+    OKResponseAccountTransactions:
+      description: Dados da lista de transações da conta identificada por accountId obtidos com sucesso.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ResponseAccountTransactions'
+    OKResponseAccountOverdraftLimits:
+      description: Dados de limites da conta identificada por accountId obtidos com sucesso.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ResponseAccountOverdraftLimits'
+    OKResponseLoansContractList:
+      description: Dados dos contratos de empréstimos obtidos com sucesso.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ResponseLoansContractList'
+    OKResponseLoansContract:
+      description: Dados do contrato de empréstimo identificado por contractId
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ResponseLoansContract'
+    OKResponseLoansWarranties:
+      description: Lista de garantias vinculadas ao contrato de empréstimo identificado por contractId
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ResponseLoansWarranties'
+    OKResponseLoansInstalments:
+      description: Dados do cronograma de parcelas do contrato de empréstimo identificado por contractId
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ResponseLoansInstalments'
+    OKResponseLoansPayments:
+      description: Dados de pagamentos do contrato de empréstimo identificado por contractId
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ResponseLoansPayments'
+    OKResponseFinancingsContractList:
+      description: Lista de contratos obtida com sucesso.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ResponseFinancingsContractList'
+    OKResponseFinancingsContract:
+      description: Dados do contrato de financiamento identificado por contractId
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ResponseFinancingsContract'
+    OKResponseFinancingsWarranties:
+      description: Lista de garantias vinculadas ao contrato de financiamento identificado por contractId
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ResponseFinancingsWarranties'
+    OKResponseFinancingsInstalments:
+      description: Dados do cronograma de parcelas do contrato de financiamento identificado por contractId
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ResponseFinancingsInstalments'
+    OKResponseFinancingsPayments:
+      description: Dados de pagamentos do contrato de financiamento identificado por contractId
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ResponseFinancingsPayments'
     OKResponseUnarrangedAccountOverdraftContractList:
       description: Lista de contratos obtida com sucesso.
-      headers:
-        x-fapi-interaction-id:
-          schema:
-            $ref: '#/components/schemas/XFapiInteractionId'
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/ResponseUnarrangedAccountOverdraftContractList'
+    OKResponseUnarrangedAccountOverdraftContract:
+      description: Dados do contrato de adiantamento a depositantes identificado por contractId
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ResponseUnarrangedAccountOverdraftContract'
+    OKResponseUnarrangedAccountOverdraftWarranties:
+      description: Lista de garantias vinculadas ao contrato de adiantamento a depositantes identificado por contractId
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ResponseUnarrangedAccountOverdraftWarranties'
+    OKResponseUnarrangedAccountOverdraftInstalments:
+      description: Dados do cronograma de parcelas do contrato de adiantamento a depositantes identificado por contractId
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ResponseUnarrangedAccountOverdraftInstalments'
+    OKResponseUnarrangedAccountOverdraftPayments:
+      description: Dados de pagamentos do contrato de adiantamento a depositantes identificado por contractId
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ResponseUnarrangedAccountOverdraftPayments'
+    OKResponseInvoiceFinancingsContractList:
+      description: Lista de contratos obtida com sucesso.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ResponseInvoiceFinancingsContractList'
+    OKResponseInvoiceFinancingsContract:
+      description: Dados do contrato de antecipação de recebíveis identificado por contractId
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ResponseInvoiceFinancingsContract'
+    OKResponseInvoiceFinancingsWarranties:
+      description: Lista de garantias vinculadas ao contrato de antecipação de recebíveis identificado por contractId
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ResponseInvoiceFinancingsWarranties'
+    OKResponseInvoiceFinancingsInstalments:
+      description: Dados do cronograma de parcelas do contrato de antecipação de recebíveis identificado por contractId
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ResponseInvoiceFinancingsInstalments'
+    OKResponseInvoiceFinancingsPayments:
+      description: Dados de pagamentos do contrato de antecipação de recebíveis identificado por contractId
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ResponseInvoiceFinancingsPayments'
     BadRequest:
       description: 'A requisição foi malformada, omitindo atributos obrigatórios, seja no payload ou através de atributos na URL.'
       content:
