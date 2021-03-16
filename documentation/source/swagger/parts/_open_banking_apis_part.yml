@@ -3,6 +3,9 @@ info:
   title: APIs do Open Banking Brasil
   description: ""
   version: 1.0.0
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
   contact:
     name: Governança do Open Banking Brasil - Interfaces
     email: gt-interfaces@openbankingbr.org
@@ -42,21 +45,21 @@ paths:
 
         ### Visão de alto de nível das estruturas de dados
 
-        <img class="lazy" src="images/loading.gif" data-src="images/tld/customers/TLD_Personal_Identification_v3.png"/>
+        <img class="lazy" src="images/loading.gif" data-src="images/tld/customers/TLD_Personal_Identification.png"/>
 
         ### DER - Diagramas de Entidade e Relacionamento
 
         * DER Conceitual
 
-        <img class="lazy" src="images/loading.gif" data-src="images/der/customers/DER_Personal.v1.png"/>
+        <img class="lazy" src="images/loading.gif" data-src="images/der/customers/DER_Personal.png"/>
 
-        <a href="images/der/customers/DER_Personal.v1.png" target="_blank">Fazer download do DER Conceitual</a>
+        <a href="images/der/customers/DER_Personal.png" target="_blank">Fazer download do DER Conceitual</a>
 
         * DER Lógico
 
-        <img class="lazy" src="images/loading.gif" data-src="images/der/customers/DER_Personal_Identification.v1.png"/>
+        <img class="lazy" src="images/loading.gif" data-src="images/der/customers/DER_Personal_Identification.png"/>
 
-        <a href="images/der/customers/DER_Personal_Identification.v1.png" target="_blank">Fazer download do DER Lógico</a>
+        <a href="images/der/customers/DER_Personal_Identification.png" target="_blank">Fazer download do DER Lógico</a>
 
         ### Dicionário de dados
 
@@ -80,11 +83,7 @@ paths:
         - $ref: '#/components/parameters/pageSize'
       responses:
         '200':
-          description: Método para obter os dados de identificação da pessoa natural na transmissora.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ResponsePersonalCustomersIdentification'
+          $ref: '#/components/responses/OKResponsePersonalCustomersIdentification'
         '400':
           $ref: '#/components/responses/BadRequest'
         '401':
@@ -126,21 +125,21 @@ paths:
 
         ### Visão de alto de nível das estruturas de dados
 
-        <img class="lazy" src="images/loading.gif" data-src="images/tld/customers/TLD_Business_Customers_Identification_v2.png"/>
+        <img class="lazy" src="images/loading.gif" data-src="images/tld/customers/TLD_Business_Identification_v3.png"/>
 
         ### DER - Diagramas de Entidade e Relacionamento
 
         * DER Conceitual
 
-        <img class="lazy" src="images/loading.gif" data-src="images/der/customers/DER_Business_Customers.png"/>
+        <img class="lazy" src="images/loading.gif" data-src="images/der/customers/DER_Business.v1.png"/>
 
-        <a href="images/der/customers/DER_Business_Customers.png" target="_blank">Fazer download do DER Conceitual</a>
+        <a href="images/der/customers/DER_Business.v1.png" target="_blank">Fazer download do DER Conceitual</a>
 
         * DER Lógico
 
-        <img class="lazy" src="images/loading.gif" data-src="images/der/customers/DER_Business_Customers_Identification.v1.png"/>
+        <img class="lazy" src="images/loading.gif" data-src="images/der/customers/DER_Busines_Identification.v1.png"/>
 
-        <a href="images/der/customers/DER_Business_Customers_Identification.v1.png" target="_blank">Fazer download do DER Lógico</a>
+        <a href="images/der/customers/DER_Busines_Identification.v1.png" target="_blank">Fazer download do DER Lógico</a>
 
         ### Dicionário de dados
 
@@ -163,11 +162,7 @@ paths:
         - $ref: '#/components/parameters/pageSize'
       responses:
         '200':
-          description: Método para obter os dados de identificação da pessoa jurídica na transmissora.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ResponseBusinessCustomersIdentification'
+          $ref: '#/components/responses/OKResponseBusinessCustomersIdentification'
         '400':
           $ref: '#/components/responses/BadRequest'
         '401':
@@ -209,21 +204,21 @@ paths:
 
         ### Visão de alto de nível das estruturas de dados
 
-        <img class="lazy" src="images/loading.gif" data-src="images/tld/customers/TLD_Personal_Qualification_v3.png"/>
+        <img class="lazy" src="images/loading.gif" data-src="images/tld/customers/TLD_Personal_Qualification.png"/>
 
         ### DER - Diagramas de Entidade e Relacionamento
 
         * DER Conceitual
 
-        <img class="lazy" src="images/loading.gif" data-src="images/der/customers/DER_Personal.v1.png"/>
+        <img class="lazy" src="images/loading.gif" data-src="images/der/customers/DER_Personal.png"/>
 
-        <a href="images/der/customers/DER_Personal.v1.png" target="_blank">Fazer download do DER Conceitual</a>
+        <a href="images/der/customers/DER_Personal.png" target="_blank">Fazer download do DER Conceitual</a>
 
         * DER Lógico
 
-        <img class="lazy" src="images/loading.gif" data-src="images/der/customers/DER_Personal_Qualification.v1.png"/>
+        <img class="lazy" src="images/loading.gif" data-src="images/der/customers/DER_Personal_Qualification.png"/>
 
-        <a href="images/der/customers/DER_Personal_Qualification.v1.png" target="_blank">Fazer download do DER Lógico</a>
+        <a href="images/der/customers/DER_Personal_Qualification.png" target="_blank">Fazer download do DER Lógico</a>
 
         ### Dicionário de dados
 
@@ -247,11 +242,7 @@ paths:
         - $ref: '#/components/parameters/pageSize'
       responses:
         '200':
-          description: Método para obter os dados de qualificação da pessoa natural na transmissora.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ResponsePersonalCustomersQualification'
+          $ref: '#/components/responses/OKResponsePersonalCustomersQualification'
         '400':
           $ref: '#/components/responses/BadRequest'
         '401':
@@ -293,21 +284,21 @@ paths:
 
         ### Visão de alto de nível das estruturas de dados
 
-        <img class="lazy" src="images/loading.gif" data-src="images/tld/customers/TLD_Business_Customers_Qualification_v2.png"/>
+        <img class="lazy" src="images/loading.gif" data-src="images/tld/customers/TLD_Business_Qualification_v3.png"/>
 
         ### DER - Diagramas de Entidade e Relacionamento
 
         * DER Conceitual
 
-        <img class="lazy" src="images/loading.gif" data-src="images/der/customers/DER_Business_Customers.png"/>
+        <img class="lazy" src="images/loading.gif" data-src="images/der/customers/DER_Business.v1.png"/>
 
-        <a href="images/der/customers/DER_Business_Customers.png" target="_blank">Fazer download do DER Conceitual</a>
+        <a href="images/der/customers/DER_Business.v1.png" target="_blank">Fazer download do DER Conceitual</a>
 
         * DER Lógico
 
-        <img class="lazy" src="images/loading.gif" data-src="images/der/customers/DER_Business_Customers_Qualification.v1.png"/>
+        <img class="lazy" src="images/loading.gif" data-src="images/der/customers/DER_Business_Qualification.v1.png"/>
 
-        <a href="images/der/customers/DER_Business_Customers_Qualification.v1.png" target="_blank">Fazer download do DER Lógico</a>
+        <a href="images/der/customers/DER_Business_Qualification.v1.png" target="_blank">Fazer download do DER Lógico</a>
 
         ### Dicionário de dados
 
@@ -331,11 +322,7 @@ paths:
         - $ref: '#/components/parameters/pageSize'
       responses:
         '200':
-          description: Método para obter os dados de qualificação da pessoa jurídica na transmissora.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ResponseBusinessCustomersQualification'
+          $ref: '#/components/responses/OKResponseBusinessCustomersQualification'
         '400':
           $ref: '#/components/responses/BadRequest'
         '401':
@@ -377,21 +364,21 @@ paths:
 
         ### Visão de alto de nível das estruturas de dados
 
-        <img class="lazy" src="images/loading.gif" data-src="images/tld/customers/TLD_Personal_Financial_Relation_v3.png"/>
+        <img class="lazy" src="images/loading.gif" data-src="images/tld/customers/TLD_Personal_Financial_Relation.png"/>
 
         ### DER - Diagramas de Entidade e Relacionamento
 
         * DER Conceitual
 
-        <img class="lazy" src="images/loading.gif" data-src="images/der/customers/DER_Personal.v1.png"/>
+        <img class="lazy" src="images/loading.gif" data-src="images/der/customers/DER_Personal.png"/>
 
-        <a href="images/der/customers/DER_Personal.v1.png" target="_blank">Fazer download do DER Conceitual</a>
+        <a href="images/der/customers/DER_Personal.png" target="_blank">Fazer download do DER Conceitual</a>
 
         * DER Lógico
 
-        <img class="lazy" src="images/loading.gif" data-src="images/der/customers/DER_Personal_FinancialRelation.v1.png"/>
+        <img class="lazy" src="images/loading.gif" data-src="images/der/customers/DER_Personal_FinancialRelation.png"/>
 
-        <a href="images/der/customers/DER_Personal_FinancialRelation.v1.png" target="_blank">Fazer download do DER Lógico</a>
+        <a href="images/der/customers/DER_Personal_FinancialRelation.png" target="_blank">Fazer download do DER Lógico</a>
 
         ### Dicionário de dados
 
@@ -415,11 +402,7 @@ paths:
         - $ref: '#/components/parameters/pageSize'
       responses:
         '200':
-          description: Método para obter os dados de relacionamento financeiro da pessoa natural na transmissora.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ResponsePersonalCustomersFinancialRelation'
+          $ref: '#/components/responses/OKResponsePersonalCustomersFinancialRelation'
         '400':
           $ref: '#/components/responses/BadRequest'
         '401':
@@ -461,21 +444,21 @@ paths:
 
         ### Visão de alto de nível das estruturas de dados
 
-        <img class="lazy" src="images/loading.gif" data-src="images/tld/customers/TLD_Business_Customers_Financial_Relation_v2.png"/>
+        <img class="lazy" src="images/loading.gif" data-src="images/tld/customers/TLD_Business_Financial_Relation_v3.png"/>
 
         ### DER - Diagramas de Entidade e Relacionamento
 
         * DER Conceitual
 
-        <img class="lazy" src="images/loading.gif" data-src="images/der/customers/DER_Business_Customers.png"/>
+        <img class="lazy" src="images/loading.gif" data-src="images/der/customers/DER_Business.v1.png"/>
 
-        <a href="images/der/customers/DER_Business_Customers.png" target="_blank">Fazer download do DER Conceitual</a>
+        <a href="images/der/customers/DER_Business.v1.png" target="_blank">Fazer download do DER Conceitual</a>
 
         * DER Lógico
 
-        <img class="lazy" src="images/loading.gif" data-src="images/der/customers/DER_Business_Customers_FinancialRelation.v1.png"/>
+        <img class="lazy" src="images/loading.gif" data-src="images/der/customers/DER_Business_FinancialRelation.v1.png"/>
 
-        <a href="images/der/customers/DER_Business_Customers_FinancialRelation.v1.png" target="_blank">Fazer download do DER Lógico</a>
+        <a href="images/der/customers/DER_Business_FinancialRelation.v1.png" target="_blank">Fazer download do DER Lógico</a>
 
         ### Dicionário de dados
 
@@ -499,11 +482,7 @@ paths:
         - $ref: '#/components/parameters/pageSize'
       responses:
         '200':
-          description: Método para obter os dados de relacionamento financeiro da pessoa jurídica na transmissora.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ResponseBusinessCustomersFinancialRelation'
+          $ref: '#/components/responses/OKResponseBusinessCustomersFinancialRelation'
         '400':
           $ref: '#/components/responses/BadRequest'
         '401':
@@ -579,11 +558,7 @@ paths:
         - $ref: "#/components/parameters/xCustomerUserAgent"
       responses:
         '200':
-          description: Dados de identificação da conta identificada por creditCardAccountId obtidos com sucesso.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ResponseCreditCardAccounts'
+          $ref: '#/components/responses/OKResponseCreditCardAccountsList'
         '400':
           $ref: '#/components/responses/BadRequest'
         '401':
@@ -660,11 +635,7 @@ paths:
         - $ref: '#/components/parameters/creditCardAccountId'
       responses:
         '200':
-          description: Dados de identificação da conta identificada por creditCardAccountId obtidos com sucesso.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ResponseCreditCardAccountsIdentification'
+          $ref: '#/components/responses/OKResponseCreditCardAccountsIdentification'
         '400':
           $ref: '#/components/responses/BadRequest'
         '401':
@@ -741,11 +712,7 @@ paths:
         - $ref: '#/components/parameters/creditCardAccountId'
       responses:
         '200':
-          description: Dados dos limites da conta identificada por creditCardAccountId obtidos com sucesso.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ResponseCreditCardAccountsLimits'
+          $ref: '#/components/responses/OKResponseCreditCardAccountsLimits'
         '400':
           $ref: '#/components/responses/BadRequest'
         '401':
@@ -828,11 +795,7 @@ paths:
         - $ref: '#/components/parameters/creditCardPayeeMCC'
       responses:
         '200':
-          description: Dados das lista de transações da conta identificada por creditCardAccountId obtidos com sucesso.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ResponseCreditCardAccountsTransactions'
+          $ref: '#/components/responses/OKResponseCreditCardAccountsTransactions'
         '400':
           $ref: '#/components/responses/BadRequest'
         '401':
@@ -912,11 +875,7 @@ paths:
         - $ref: '#/components/parameters/toDueDate'
       responses:
         '200':
-          description: Dados referentes à lista de faturas da conta identificada por creditCardAccountId obtidos com sucesso.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ResponseCreditCardAccountsBills'
+          $ref: '#/components/responses/OKResponseCreditCardAccountsBills'
         '400':
           $ref: '#/components/responses/BadRequest'
         '401':
@@ -958,21 +917,21 @@ paths:
 
         ### Visão de alto de nível das estruturas de dados
 
-        <img class="lazy" src="images/loading.gif" data-src="images/tld/accounts/TLD_Accounts_Lista.png"/>
+        <img class="lazy" src="images/loading.gif" data-src="images/tld/accounts/TLD_Accounts_List.png"/>
 
         ### DER - Diagramas de Entidade e Relacionamento
 
         * DER Conceitual
 
-        <img class="lazy" src="images/loading.gif" data-src="images/der/accounts/DER_Accounts.v2.png"/>
+        <img class="lazy" src="images/loading.gif" data-src="images/der/accounts/DER_Lista_Accounts.png"/>
 
-        <a href="images/der/accounts/DER_Accounts.v2.png" target="_blank">Fazer download do DER Conceitual</a>
+        <a href="images/der/accounts/DER_Lista_Accounts.png" target="_blank">Fazer download do DER Conceitual</a>
 
         * DER Lógico
 
-        <img class="lazy" src="images/loading.gif" data-src="images/der/accounts/DER_Lista_Accounts.png"/>
+        <img class="lazy" src="images/loading.gif" data-src="images/der/accounts/DER_Accounts_List.png"/>
 
-        <a href="images/der/accounts/DER_Lista_Accounts.png" target="_blank">Fazer download do DER Lógico</a>
+        <a href="images/der/accounts/DER_Accounts_List.png" target="_blank">Fazer download do DER Lógico</a>
 
         ### Dicionário de dados
 
@@ -994,11 +953,7 @@ paths:
         - $ref: "#/components/parameters/accountType"
       responses:
         '200':
-          description: Dados de identificação da conta identificada por accountId obtidos com sucesso.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ResponseAccount'
+          $ref: '#/components/responses/OKResponseAccountList'
         '400':
           $ref: '#/components/responses/BadRequest'
         '401':
@@ -1040,21 +995,21 @@ paths:
 
           ### Visão de alto de nível das estruturas de dados
 
-          <img class="lazy" src="images/loading.gif" data-src="images/tld/accounts/TLD_Accounts_Identification.v1.png"/>
+          <img class="lazy" src="images/loading.gif" data-src="images/tld/accounts/TLD_Accounts_Identification.png"/>
 
           ### DER - Diagramas de Entidade e Relacionamento
 
           * DER Conceitual
 
-          <img class="lazy" src="images/loading.gif" data-src="images/der/accounts/DER_Accounts.v2.png"/>
+          <img class="lazy" src="images/loading.gif" data-src="images/der/accounts/DER_Accounts.png"/>
 
-          <a href="images/der/accounts/DER_Accounts.v2.png" target="_blank">Fazer download do DER Conceitual</a>
+          <a href="images/der/accounts/DER_Accounts.png" target="_blank">Fazer download do DER Conceitual</a>
 
           * DER Lógico
 
-          <img class="lazy" src="images/loading.gif" data-src="images/der/accounts/DER_Accounts_Identification.v2.png"/>
+          <img class="lazy" src="images/loading.gif" data-src="images/der/accounts/DER_Accounts_Identification.png"/>
 
-          <a href="images/der/accounts/DER_Accounts_Identification.v2.png" target="_blank">Fazer download do DER Lógico</a>
+          <a href="images/der/accounts/DER_Accounts_Identification.png" target="_blank">Fazer download do DER Lógico</a>
 
           ### Dicionário de dados
 
@@ -1076,11 +1031,7 @@ paths:
           - $ref: "#/components/parameters/accountId"
         responses:
           '200':
-            description: Dados de identificação da conta identificada por accountId obtidos com sucesso.
-            content:
-              application/json:
-                schema:
-                  $ref: '#/components/schemas/ResponseAccountIdentification'
+            $ref: '#/components/responses/OKResponseAccountIdentification'
           '400':
             $ref: '#/components/responses/BadRequest'
           '401':
@@ -1122,21 +1073,21 @@ paths:
 
         ### Visão de alto de nível das estruturas de dados
 
-        <img class="lazy" src="images/loading.gif" data-src="images/tld/accounts/TLD_Accounts_Balances.v1.png"/>
+        <img class="lazy" src="images/loading.gif" data-src="images/tld/accounts/TLD_Accounts_Balances.png"/>
 
         ### DER - Diagramas de Entidade e Relacionamento
 
         * DER Conceitual
 
-        <img class="lazy" src="images/loading.gif" data-src="images/der/accounts/DER_Accounts.v2.png"/>
+        <img class="lazy" src="images/loading.gif" data-src="images/der/accounts/DER_Accounts.png"/>
 
-        <a href="images/der/accounts/DER_Accounts.v2.png" target="_blank">Fazer download do DER Conceitual</a>
+        <a href="images/der/accounts/DER_Accounts.png" target="_blank">Fazer download do DER Conceitual</a>
 
         * DER Lógico
 
-        <img class="lazy" src="images/loading.gif" data-src="images/der/accounts/DER_Accounts_Balances.v2.png"/>
+        <img class="lazy" src="images/loading.gif" data-src="images/der/accounts/DER_Accounts_Balances.png"/>
 
-        <a href="images/der/accounts/DER_Accounts_Balances.v2.png" target="_blank">Fazer download do DER Lógico</a>
+        <a href="images/der/accounts/DER_Accounts_Balances.png" target="_blank">Fazer download do DER Lógico</a>
 
         ### Dicionário de dados
 
@@ -1162,11 +1113,7 @@ paths:
         - $ref: "#/components/parameters/accountsCheckDigit"
       responses:
         '200':
-          description: Dados relativos aos saldos da conta identificada por accountId obtidos com sucesso.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ResponseAccountBalances'
+          $ref: '#/components/responses/OKResponseAccountBalances'
         '400':
           $ref: '#/components/responses/BadRequest'
         '401':
@@ -1208,21 +1155,21 @@ paths:
 
         ### Visão de alto de nível das estruturas de dados
 
-        <img class="lazy" src="images/loading.gif" data-src="images/tld/accounts/TLD_Accounts_Transactions.v1.png"/>
+        <img class="lazy" src="images/loading.gif" data-src="images/tld/accounts/TLD_Accounts_Transactions.png"/>
 
         ### DER - Diagramas de Entidade e Relacionamento
 
         * DER Conceitual
 
-        <img class="lazy" src="images/loading.gif" data-src="images/der/accounts/DER_Accounts.v2.png"/>
+        <img class="lazy" src="images/loading.gif" data-src="images/der/accounts/DER_Accounts.png"/>
 
-        <a href="images/der/accounts/DER_Accounts.v2.png" target="_blank">Fazer download do DER Conceitual</a>
+        <a href="images/der/accounts/DER_Accounts.png" target="_blank">Fazer download do DER Conceitual</a>
 
         * DER Lógico
 
-        <img class="lazy" src="images/loading.gif" data-src="images/der/accounts/DER_Accounts_Transactions.v2.png"/>
+        <img class="lazy" src="images/loading.gif" data-src="images/der/accounts/DER_Accounts_Transactions.png"/>
 
-        <a href="images/der/accounts/DER_Accounts_Transactions.v2.png" target="_blank">Fazer download do DER Lógico</a>
+        <a href="images/der/accounts/DER_Accounts_Transactions.png" target="_blank">Fazer download do DER Lógico</a>
 
         ### Dicionário de dados
 
@@ -1253,11 +1200,7 @@ paths:
         - $ref: "#/components/parameters/creditDebitIndicator"
       responses:
         '200':
-          description: Dados da lista de transações da conta identificada por accountId obtidos com sucesso.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ResponseAccountTransactions'
+          $ref: '#/components/responses/OKResponseAccountTransactions'
         '400':
           $ref: '#/components/responses/BadRequest'
         '401':
@@ -1299,21 +1242,21 @@ paths:
 
         ### Visão de alto de nível das estruturas de dados
 
-        <img class="lazy" src="images/loading.gif" data-src="images/tld/accounts/TLD_Accounts_OverdraftLimits.v1.png"/>
+        <img class="lazy" src="images/loading.gif" data-src="images/tld/accounts/TLD_Accounts_OverdraftLimits.png"/>
 
         ### DER - Diagramas de Entidade e Relacionamento
 
         * DER Conceitual
 
-        <img class="lazy" src="images/loading.gif" data-src="images/der/accounts/DER_Accounts.v2.png"/>
+        <img class="lazy" src="images/loading.gif" data-src="images/der/accounts/DER_Accounts.png"/>
 
-        <a href="images/der/accounts/DER_Accounts.v2.png" target="_blank">Fazer download do DER Conceitual</a>
+        <a href="images/der/accounts/DER_Accounts.png" target="_blank">Fazer download do DER Conceitual</a>
 
         * DER Lógico
 
-        <img class="lazy" src="images/loading.gif" data-src="images/der/accounts/DER_Accounts_OverdraftLimits.v2.png"/>
+        <img class="lazy" src="images/loading.gif" data-src="images/der/accounts/DER_Accounts_OverdraftLimits.png"/>
 
-        <a href="images/der/accounts/DER_Accounts_OverdraftLimits.v2.png" target="_blank">Fazer download do DER Lógico</a>
+        <a href="images/der/accounts/DER_Accounts_OverdraftLimits.png" target="_blank">Fazer download do DER Lógico</a>
 
         ### Dicionário de dados
 
@@ -1339,11 +1282,7 @@ paths:
         - $ref: "#/components/parameters/accountsCheckDigit"
       responses:
         '200':
-          description: Dados de limites da conta identificada por accountId obtidos com sucesso.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ResponseAccountOverdraftLimits'
+          $ref: '#/components/responses/OKResponseAccountOverdraftLimits'
         '400':
           $ref: '#/components/responses/BadRequest'
         '401':
@@ -1383,27 +1322,27 @@ paths:
 
         ### Visão de alto de nível das estruturas de dados
 
-        <img class="lazy" src="images/loading.gif" data-src="images/tld/loans/TLD_Loans_Contract.png"/>
+        <img class="lazy" src="images/loading.gif" data-src="images/tld/loans/TLD_Loans_List.png"/>
 
         ### DER - Diagramas de Entidade e Relacionamento
 
         * DER Conceitual
 
-        <img class="lazy" src="images/loading.gif" data-src="images/der/loans/DER_Loans.png"/>
+        <img class="lazy" src="images/loading.gif" data-src="images/der/loans/DER_Loans_Conceitual.png"/>
 
-        <a href="images/der/loans/DER_Loans.png" target="_blank">Fazer download do DER Conceitual</a>
+        <a href="images/der/loans/DER_Loans_Conceitual.png" target="_blank">Fazer download do DER Conceitual</a>
 
         * DER Lógico
 
-        <img class="lazy" src="images/loading.gif" data-src="images/der/loans/DER_Loans_Contract.png"/>
+        <img class="lazy" src="images/loading.gif" data-src="images/der/loans/DER_Loans_Logico.png"/>
 
-        <a href="images/der/loans/DER_Loans_Contract.png" target="_blank">Fazer download do DER Lógico</a>
+        <a href="images/der/loans/DER_Loans_Logico.png" target="_blank">Fazer download do DER Lógico</a>
 
         ### Dicionário de dados
 
-        <a href='dictionary/loans_contract.csv' target="_blank">Fazer download do dicionário de dados</a>
+        <a href='dictionary/loans_contract_list.csv' target="_blank">Fazer download do dicionário de dados</a>
 
-        <a href="dictionary/example/examples_loans_contract.csv" target="_blank">Fazer download dos exemplos</a>
+        <a href="dictionary/example/examples_loans_contract_list.csv" target="_blank">Fazer download dos exemplos</a>
 
         ### Especificação em OAS 3.0
 
@@ -1418,11 +1357,7 @@ paths:
         - $ref: "#/components/parameters/xCustomerUserAgent"
       responses:
         '200':
-          description: Dados do contratos de empréstimos
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ResponseLoansListContract'
+          $ref: '#/components/responses/OKResponseLoansContractList'
         '400':
           $ref: '#/components/responses/BadRequest'
         '401':
@@ -1498,11 +1433,7 @@ paths:
         - $ref: "#/components/parameters/xCustomerUserAgent"
       responses:
         '200':
-          description: Dados do contrato de empréstimo identificado por `contractId`
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ResponseLoansContract'
+          $ref: '#/components/responses/OKResponseLoansContract'
         '400':
           $ref: '#/components/responses/BadRequest'
         '401':
@@ -1580,11 +1511,7 @@ paths:
         - $ref: "#/components/parameters/xCustomerUserAgent"
       responses:
         '200':
-          description: Lista de garantias vinculadas ao contrato de empréstimo identificado por `contractId`
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ResponseLoansWarranties'
+          $ref: '#/components/responses/OKResponseLoansWarranties'
         '400':
           $ref: '#/components/responses/BadRequest'
         '401':
@@ -1662,11 +1589,7 @@ paths:
         - $ref: "#/components/parameters/xCustomerUserAgent"
       responses:
         '200':
-          description: Dados de pagamentos do contrato de empréstimo identificado por `contractId`
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ResponseLoansPayments'
+          $ref: '#/components/responses/OKResponseLoansPayments'
         '400':
           $ref: '#/components/responses/BadRequest'
         '401':
@@ -1688,7 +1611,7 @@ paths:
             - openId
             - loans
 
-  /loans/v1/contracts/{contractId}/schedule-instalments:
+  /loans/v1/contracts/{contractId}/scheduled-instalments:
     get:
       tags:
         - API - Operações de Crédito - Empréstimos
@@ -1744,11 +1667,7 @@ paths:
         - $ref: "#/components/parameters/xCustomerUserAgent"
       responses:
         '200':
-          description: Dados do cronograma de parcelas do contrato de empréstimo identificado por `contractId`
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ResponseLoansInstalments'
+          $ref: '#/components/responses/OKResponseLoansInstalments'
         '400':
           $ref: '#/components/responses/BadRequest'
         '401':
@@ -1788,27 +1707,27 @@ paths:
 
         ### Visão de alto de nível das estruturas de dados
 
-        <img class="lazy" src="images/loading.gif" data-src="images/tld/financings/TLD_Financings_Contract.png"/>
+        <img class="lazy" src="images/loading.gif" data-src="images/tld/financings/TLD_Financings_List.png"/>
 
         ### DER - Diagramas de Entidade e Relacionamento
 
         * DER Conceitual
 
-        <img class="lazy" src="images/loading.gif" data-src="images/der/financings/DER_Financings.png"/>
+        <img class="lazy" src="images/loading.gif" data-src="images/der/financings/DER_Financings_List_Conceitual.png"/>
 
-        <a href="images/der/financings/DER_Financings.png" target="_blank">Fazer download do DER Conceitual</a>
+        <a href="images/der/financings/DER_Financings_List_Conceitual.png" target="_blank">Fazer download do DER Conceitual</a>
 
         * DER Lógico
 
-        <img class="lazy" src="images/loading.gif" data-src="images/der/financings/DER_Financings_Contract.png"/>
+        <img class="lazy" src="images/loading.gif" data-src="images/der/financings/DER_Financings_List.png"/>
 
-        <a href="images/der/financings/DER_Financings_Contract.png" target="_blank">Fazer download do DER Lógico</a>
+        <a href="images/der/financings/DER_Financings_List.png" target="_blank">Fazer download do DER Lógico</a>
 
         ### Dicionário de dados
 
-        <a href='dictionary/financings_contract.csv' target="_blank">Fazer download do dicionário de dados</a>
+        <a href='dictionary/financings_contract_list.csv' target="_blank">Fazer download do dicionário de dados</a>
 
-        <a href="dictionary/example/examples_financings_contract.csv" target="_blank">Fazer download dos exemplos</a>
+        <a href="dictionary/example/examples_financings_contract_list.csv" target="_blank">Fazer download dos exemplos</a>
 
         ### Especificação em OAS 3.0
 
@@ -1823,11 +1742,7 @@ paths:
         - $ref: "#/components/parameters/xCustomerUserAgent"
       responses:
         '200':
-          description: Dados dos contratos de financiamentos
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ResponseFinancingsListContract'
+          $ref: '#/components/responses/OKResponseFinancingsContractList'
         '400':
           $ref: '#/components/responses/BadRequest'
         '401':
@@ -1903,11 +1818,7 @@ paths:
         - $ref: "#/components/parameters/xCustomerUserAgent"
       responses:
         '200':
-          description: Dados do contrato de financiamento identificado por `contractId`
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ResponseFinancingsContract'
+          $ref: '#/components/responses/OKResponseFinancingsContract'
         '400':
           $ref: '#/components/responses/BadRequest'
         '401':
@@ -1985,11 +1896,7 @@ paths:
         - $ref: "#/components/parameters/xCustomerUserAgent"
       responses:
         '200':
-          description: Lista de garantias vinculadas ao contrato de financiamento identificado por `contractId`
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ResponseFinancingsWarranties'
+          $ref: '#/components/responses/OKResponseFinancingsWarranties'
         '400':
           $ref: '#/components/responses/BadRequest'
         '401':
@@ -2067,11 +1974,7 @@ paths:
         - $ref: "#/components/parameters/xCustomerUserAgent"
       responses:
         '200':
-          description: Dados de pagamentos do contrato de financiamento identificado por `contractId`
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ResponseFinancingsPayments'
+          $ref: '#/components/responses/OKResponseFinancingsPayments'
         '400':
           $ref: '#/components/responses/BadRequest'
         '401':
@@ -2093,7 +1996,7 @@ paths:
             - openId
             - financings
 
-  /financings/v1/contracts/{contractId}/instalments:
+  /financings/v1/contracts/{contractId}/scheduled-instalments:
     get:
       tags:
         - API - Operações de Crédito - Financiamentos
@@ -2149,11 +2052,7 @@ paths:
         - $ref: "#/components/parameters/xCustomerUserAgent"
       responses:
         '200':
-          description: Dados do cronograma de parcelas do contrato de financiamento identificado por `contractId`
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ResponseFinancingsInstalments'
+          $ref: '#/components/responses/OKResponseFinancingsInstalments'
         '400':
           $ref: '#/components/responses/BadRequest'
         '401':
@@ -2193,7 +2092,7 @@ paths:
 
         ### Visão de alto de nível das estruturas de dados
 
-        <img class="lazy" src="images/loading.gif" data-src="images/tld/unarranged_accounts_overdraft/TLD_UnarrangedAccOverdraft_List.png"/>
+        <img class="lazy" src="images/loading.gif" data-src="images/tld/unarranged_accounts_overdraft/TLD_UnarrangedAccountsOverdraft_List.png"/>
 
         ### DER - Diagramas de Entidade e Relacionamento
 
@@ -2494,7 +2393,7 @@ paths:
             - openId
             - unarranged-accounts-overdraft
 
-  /unarranged-accounts-overdraft/v1/contracts/{contractId}/instalments:
+  /unarranged-accounts-overdraft/v1/contracts/{contractId}/scheduled-instalments:
     get:
       tags:
         - API - Operações de Crédito - Adiantamento a Depositantes
@@ -2705,11 +2604,7 @@ paths:
         - $ref: "#/components/parameters/xCustomerUserAgent"
       responses:
         '200':
-          description: Dados do contrato de antecipação de recebíveis identificado por `contractId`
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ResponseInvoiceFinancingsContract'
+          $ref: '#/components/responses/OKResponseInvoiceFinancingsContract'
         '400':
           $ref: '#/components/responses/BadRequest'
         '401':
@@ -2787,11 +2682,7 @@ paths:
         - $ref: "#/components/parameters/xCustomerUserAgent"
       responses:
         '200':
-          description: Lista de garantias vinculadas ao contrato de antecipação de recebíveis identificado por `contractId`
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ResponseInvoiceFinancingsWarranties'
+          $ref: '#/components/responses/OKResponseInvoiceFinancingsWarranties'
         '400':
           $ref: '#/components/responses/BadRequest'
         '401':
@@ -2869,11 +2760,7 @@ paths:
         - $ref: "#/components/parameters/xCustomerUserAgent"
       responses:
         '200':
-          description: Dados de pagamentos do contrato de antecipação de recebíveis identificado por `contractId`
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ResponseInvoiceFinancingsPayments'
+          $ref: '#/components/responses/OKResponseInvoiceFinancingsPayments'
         '400':
           $ref: '#/components/responses/BadRequest'
         '401':
@@ -2895,7 +2782,7 @@ paths:
             - openId
             - invoice-financings
 
-  /invoice-financings/v1/contracts/{contractId}/instalments:
+  /invoice-financings/v1/contracts/{contractId}/scheduled-instalments:
     get:
       tags:
         - API - Operações de Crédito - Direitos Creditórios Descontados
@@ -2951,11 +2838,7 @@ paths:
         - $ref: "#/components/parameters/xCustomerUserAgent"
       responses:
         '200':
-          description: Dados do cronograma de parcelas do contrato de antecipação de recebíveis identificado por `contractId`
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ResponseInvoiceFinancingsInstalments'
+          $ref: '#/components/responses/OKResponseInvoiceFinancingsInstalments'
         '400':
           $ref: '#/components/responses/BadRequest'
         '401':
@@ -3035,40 +2918,36 @@ components:
       $ref: ./schemas/enum/EnumAccountType.yaml
     EnumAreaCode:
       $ref: ./schemas/enum/EnumAreaCode.yaml
-    EnumBankBorrowingContractAmortizationSchedule:
-      $ref: ./schemas/enum/EnumBankBorrowingContractAmortizationSchedule.yaml
-    EnumBankBorrowingContractCalculation:
-      $ref: ./schemas/enum/EnumBankBorrowingContractCalculation.yaml
-    EnumBankBorrowingContractFeeCharge:
-      $ref: ./schemas/enum/EnumBankBorrowingContractFeeCharge.yaml
-    EnumBankBorrowingContractFeeChargeType:
-      $ref: ./schemas/enum/EnumBankBorrowingContractFeeChargeType.yaml
-    EnumBankBorrowingContractFinanceChargeType:
-      $ref: ./schemas/enum/EnumBankBorrowingContractFinanceChargeType.yaml
-    EnumBankBorrowingContractInstalmentPeriodicity:
-      $ref: ./schemas/enum/EnumBankBorrowingContractInstalmentPeriodicity.yaml
-    EnumBankBorrowingContractInterestRateType:
-      $ref: ./schemas/enum/EnumBankBorrowingContractInterestRateType.yaml
-    EnumBankBorrowingContractProductType:
-      $ref: ./schemas/enum/EnumBankBorrowingContractProductType.yaml
-    EnumBankBorrowingContractProductSubType:
-      $ref: ./schemas/enum/EnumBankBorrowingContractProductSubType.yaml
-    EnumBankBorrowingContractReferentialRateIndexerType:
-      $ref: ./schemas/enum/EnumBankBorrowingContractReferentialRateIndexerType.yaml
-    EnumBankBorrowingContractReferentialRateIndexerSubType:
-      $ref: ./schemas/enum/EnumBankBorrowingContractReferentialRateIndexerSubType.yaml
-    EnumBankBorrowingContractTaxPeriodicity:
-      $ref: ./schemas/enum/EnumBankBorrowingContractTaxPeriodicity.yaml
-    EnumBankBorrowingContractTaxType:
-      $ref: ./schemas/enum/EnumBankBorrowingContractTaxType.yaml
-    EnumBankBorrowingFinanceChargeType:
-      $ref: ./schemas/enum/EnumBankBorrowingFinanceChargeType.yaml
-    EnumBankBorrowingInstalmentPeriodicity:
-      $ref: ./schemas/enum/EnumBankBorrowingInstalmentPeriodicity.yaml
-    EnumBankBorrowingWarrantySubType:
-      $ref: ./schemas/enum/EnumBankBorrowingWarrantySubType.yaml
-    EnumBankBorrowingWarrantyType:
-      $ref: ./schemas/enum/EnumBankBorrowingWarrantyType.yaml
+    EnumContractAmortizationScheduled:
+      $ref: ./schemas/enum/EnumContractAmortizationScheduled.yaml
+    EnumContractCalculation:
+      $ref: ./schemas/enum/EnumContractCalculation.yaml
+    EnumContractFeeCharge:
+      $ref: ./schemas/enum/EnumContractFeeCharge.yaml
+    EnumContractFeeChargeType:
+      $ref: ./schemas/enum/EnumContractFeeChargeType.yaml
+    EnumContractFinanceChargeType:
+      $ref: ./schemas/enum/EnumContractFinanceChargeType.yaml
+    EnumContractInstalmentPeriodicity:
+      $ref: ./schemas/enum/EnumContractInstalmentPeriodicity.yaml
+    EnumContractInterestRateType:
+      $ref: ./schemas/enum/EnumContractInterestRateType.yaml
+    EnumContractReferentialRateIndexerType:
+      $ref: ./schemas/enum/EnumContractReferentialRateIndexerType.yaml
+    EnumContractReferentialRateIndexerSubType:
+      $ref: ./schemas/enum/EnumContractReferentialRateIndexerSubType.yaml
+    EnumContractTaxPeriodicity:
+      $ref: ./schemas/enum/EnumContractTaxPeriodicity.yaml
+    EnumContractTaxType:
+      $ref: ./schemas/enum/EnumContractTaxType.yaml
+    EnumFinanceChargeType:
+      $ref: ./schemas/enum/EnumFinanceChargeType.yaml
+    EnumInstalmentPeriodicity:
+      $ref: ./schemas/enum/EnumInstalmentPeriodicity.yaml
+    EnumWarrantySubType:
+      $ref: ./schemas/enum/EnumWarrantySubType.yaml
+    EnumWarrantyType:
+      $ref: ./schemas/enum/EnumWarrantyType.yaml
     EnumCustomerPhoneType:
       $ref: ./schemas/enum/EnumCustomerPhoneType.yaml
     EnumTaxType:
@@ -3165,8 +3044,6 @@ components:
       $ref: ./schemas/enum/EnumUnarrangedAccountOverdraftSubProductType.yaml
     Errors:
       $ref: ./schemas/Errors.yaml
-    FinancingsBalloonInstalments:
-      $ref: ./schemas/financings_apis/FinancingsBalloonInstalments.yaml
     FinancingsBalloonPayment:
       $ref: ./schemas/financings_apis/FinancingsBalloonPayment.yaml
     FinancingsChargeOverParcel:
@@ -3185,34 +3062,18 @@ components:
       $ref: ./schemas/financings_apis/FinancingsFinanceCharge.yaml
     FinancingsInstalments:
       $ref: ./schemas/financings_apis/FinancingsInstalments.yaml
-    FinancingsInstalmentsBank:
-      $ref: ./schemas/financings_apis/FinancingsInstalmentsBank.yaml
-    FinancingsInstalmentsData:
-      $ref: ./schemas/financings_apis/FinancingsInstalmentsData.yaml
     FinancingsListContract:
       $ref: ./schemas/financings_apis/FinancingsListContract.yaml
-    FinancingsNonRegulatedCharge:
-      $ref: ./schemas/financings_apis/FinancingsNonRegulatedCharge.yaml
-    FinancingsPaymentBank:
-      $ref: ./schemas/financings_apis/FinancingsPaymentBank.yaml
     FinancingsPayments:
       $ref: ./schemas/financings_apis/FinancingsPayments.yaml
-    FinancingsPaymentsData:
-      $ref: ./schemas/financings_apis/FinancingsPaymentsData.yaml
     FinancingsReleases:
       $ref: ./schemas/financings_apis/FinancingsReleases.yaml
     FinancingsTaxesOverParcel:
       $ref: ./schemas/financings_apis/FinancingsTaxesOverParcel.yaml
     FinancingsWarranties:
       $ref: ./schemas/financings_apis/FinancingsWarranties.yaml
-    FinancingsWarrantiesBank:
-      $ref: ./schemas/financings_apis/FinancingsWarrantiesBank.yaml
-    FinancingsWarrantiesData:
-      $ref: ./schemas/financings_apis/FinancingsWarrantiesData.yaml
     GeographicCoordinates:
       $ref: ./schemas/GeographicCoordinates.yaml
-    InvoiceFinancingsBalloonInstalments:
-      $ref: ./schemas/invoice_financings_apis/InvoiceFinancingsBalloonInstalments.yaml
     InvoiceFinancingsBalloonPayment:
       $ref: ./schemas/invoice_financings_apis/InvoiceFinancingsBalloonPayment.yaml
     InvoiceFinancingsChargeOverParcel:
@@ -3233,8 +3094,6 @@ components:
       $ref: ./schemas/invoice_financings_apis/InvoiceFinancingsFinanceCharge.yaml
     InvoiceFinancingsInstalments:
       $ref: ./schemas/invoice_financings_apis/InvoiceFinancingsInstalments.yaml
-    InvoiceFinancingsNonRegulatedCharge:
-      $ref: ./schemas/invoice_financings_apis/InvoiceFinancingsNonRegulatedCharge.yaml
     InvoiceFinancingsPaymentBank:
       $ref: ./schemas/invoice_financings_apis/InvoiceFinancingsPaymentBank.yaml
     InvoiceFinancingsPayments:
@@ -3258,13 +3117,13 @@ components:
     LoansCompletedPayment:
       $ref: ./schemas/loans_apis/LoansCompletedPayment.yaml
     LoansContract:
-      $ref: ./schemas/loans_apis/LoansContract.yaml
+      $ref: ./schemas/loans_apis/LoansFinancingsContract.yaml
     LoansContractedFee:
-      $ref: ./schemas/loans_apis/LoansContractedFee.yaml
+      $ref: ./schemas/loans_apis/LoansFinancingsContractedFee.yaml
     LoansContractedWarranty:
-      $ref: ./schemas/loans_apis/LoansContractedWarranty.yaml
+      $ref: ./schemas/loans_apis/LoansFinancingsContractedWarranty.yaml
     LoansContractInterestRate:
-      $ref: ./schemas/loans_apis/LoansContractInterestRate.yaml
+      $ref: ./schemas/loans_apis/LoansFinancingsContractInterestRate.yaml
     LoansFinanceCharge:
       $ref: ./schemas/loans_apis/LoansFinanceCharge.yaml
     LoansInstalments:
@@ -3301,8 +3160,8 @@ components:
       $ref: ./schemas/customers_apis/PersonalProcurator.yaml
     PersonalQualificationData:
       $ref: ./schemas/customers_apis/PersonalQualificationData.yaml
-    ResponseAccount:
-      $ref: ./schemas/accounts_apis/ResponseAccount.yaml
+    ResponseAccountList:
+      $ref: ./schemas/accounts_apis/ResponseAccountList.yaml
     ResponseAccountBalances:
       $ref: ./schemas/accounts_apis/ResponseAccountBalances.yaml
     ResponseAccountIdentification:
@@ -3317,8 +3176,8 @@ components:
       $ref: ./schemas/customers_apis/ResponseBusinessCustomersIdentification.yaml
     ResponseBusinessCustomersQualification:
       $ref: ./schemas/customers_apis/ResponseBusinessCustomersQualification.yaml
-    ResponseCreditCardAccounts:
-      $ref: ./schemas/credit_cards_apis/ResponseCreditCardAccounts.yaml
+    ResponseCreditCardAccountsList:
+      $ref: ./schemas/credit_cards_apis/ResponseCreditCardAccountsList.yaml
     ResponseCreditCardAccountsIdentification:
       $ref: ./schemas/credit_cards_apis/ResponseCreditCardAccountsIdentification.yaml
     ResponseCreditCardAccountsBills:
@@ -3339,16 +3198,16 @@ components:
       $ref: ./schemas/financings_apis/ResponseFinancingsContract.yaml
     ResponseFinancingsInstalments:
       $ref: ./schemas/financings_apis/ResponseFinancingsInstalments.yaml
-    ResponseFinancingsListContract:
-      $ref: ./schemas/financings_apis/ResponseFinancingsListContract.yaml
+    ResponseFinancingsContractList:
+      $ref: ./schemas/financings_apis/ResponseFinancingsContractList.yaml
     ResponseFinancingsPayments:
       $ref: ./schemas/financings_apis/ResponseFinancingsPayments.yaml
     ResponseFinancingsWarranties:
       $ref: ./schemas/financings_apis/ResponseFinancingsWarranties.yaml
-    ResponseLoansListContract:
-      $ref: ./schemas/loans_apis/ResponseLoansListContract.yaml
+    ResponseLoansContractList:
+      $ref: ./schemas/loans_apis/ResponseLoansContractList.yaml
     ResponseLoansContract:
-      $ref: ./schemas/loans_apis/ResponseLoansContract.yaml
+      $ref: ./schemas/loans_apis/ResponseLoansFinancingsContract.yaml
     ResponseLoansInstalments:
       $ref: ./schemas/loans_apis/ResponseLoansInstalments.yaml
     ResponseLoansPayments:
@@ -3375,52 +3234,32 @@ components:
       $ref: ./schemas/unarranged_account_overdraft_apis/ResponseUnarrangedAccountOverdraftPayments.yaml
     ResponseUnarrangedAccountOverdraftWarranties:
       $ref: ./schemas/unarranged_account_overdraft_apis/ResponseUnarrangedAccountOverdraftWarranties.yaml
-    UnarrangedAccountOverdraftBalloonInstalments:
-      $ref: ./schemas/unarranged_account_overdraft_apis/UnarrangedAccountOverdraftBalloonInstalments.yaml
     UnarrangedAccountOverdraftBalloonPayment:
       $ref: ./schemas/unarranged_account_overdraft_apis/UnarrangedAccountOverdraftBalloonPayment.yaml
     UnarrangedAccountOverdraftChargeOverParcel:
       $ref: ./schemas/unarranged_account_overdraft_apis/UnarrangedAccountOverdraftChargeOverParcel.yaml
     UnarrangedAccountOverdraftCompletedPayment:
       $ref: ./schemas/unarranged_account_overdraft_apis/UnarrangedAccountOverdraftCompletedPayment.yaml
-    UnarrangedAccountOverdraftContract:
-      $ref: ./schemas/unarranged_account_overdraft_apis/UnarrangedAccountOverdraftContract.yaml
+    UnarrangedAccountOverdraftContractData:
+      $ref: ./schemas/unarranged_account_overdraft_apis/UnarrangedAccountOverdraftContractData.yaml
     UnarrangedAccountOverdraftContractedFee:
       $ref: ./schemas/unarranged_account_overdraft_apis/UnarrangedAccountOverdraftContractedFee.yaml
-    UnarrangedAccountOverdraftContractedWarranty:
-      $ref: ./schemas/unarranged_account_overdraft_apis/UnarrangedAccountOverdraftContractedWarranty.yaml
     UnarrangedAccountOverdraftContractInterestRate:
       $ref: ./schemas/unarranged_account_overdraft_apis/UnarrangedAccountOverdraftContractInterestRate.yaml
-    UnarrangedAccountOverdraftData:
-      $ref: ./schemas/unarranged_account_overdraft_apis/UnarrangedAccountOverdraftData.yaml
+    UnarrangedAccountOverdraftContractListData:
+      $ref: ./schemas/unarranged_account_overdraft_apis/UnarrangedAccountOverdraftContractListData.yaml
     UnarrangedAccountOverdraftFinanceCharge:
       $ref: ./schemas/unarranged_account_overdraft_apis/UnarrangedAccountOverdraftFinanceCharge.yaml
-    UnarrangedAccountOverdraftInstalments:
-      $ref: ./schemas/unarranged_account_overdraft_apis/UnarrangedAccountOverdraftInstalments.yaml
-    UnarrangedAccountOverdraftInstalmentsBank:
-      $ref: ./schemas/unarranged_account_overdraft_apis/UnarrangedAccountOverdraftInstalmentsBank.yaml
     UnarrangedAccountOverdraftInstalmentsData:
       $ref: ./schemas/unarranged_account_overdraft_apis/UnarrangedAccountOverdraftInstalmentsData.yaml
-    UnarrangedAccountOverdraftNonRegulatedCharge:
-      $ref: ./schemas/unarranged_account_overdraft_apis/UnarrangedAccountOverdraftNonRegulatedCharge.yaml
-    UnarrangedAccountOverdraftPaymentBank:
-      $ref: ./schemas/unarranged_account_overdraft_apis/UnarrangedAccountOverdraftPaymentBank.yaml
-    UnarrangedAccountOverdraftPayments:
-      $ref: ./schemas/unarranged_account_overdraft_apis/UnarrangedAccountOverdraftPayments.yaml
     UnarrangedAccountOverdraftPaymentsData:
       $ref: ./schemas/unarranged_account_overdraft_apis/UnarrangedAccountOverdraftPaymentsData.yaml
     UnarrangedAccountOverdraftReleases:
       $ref: ./schemas/unarranged_account_overdraft_apis/UnarrangedAccountOverdraftReleases.yaml
     UnarrangedAccountOverdraftTaxesOverParcel:
       $ref: ./schemas/unarranged_account_overdraft_apis/UnarrangedAccountOverdraftTaxesOverParcel.yaml
-    UnarrangedAccountOverdraftWarranties:
-      $ref: ./schemas/unarranged_account_overdraft_apis/UnarrangedAccountOverdraftWarranties.yaml
-    UnarrangedAccountOverdraftWarrantiesBank:
-      $ref: ./schemas/unarranged_account_overdraft_apis/UnarrangedAccountOverdraftWarrantiesBank.yaml
     UnarrangedAccountOverdraftWarrantiesData:
       $ref: ./schemas/unarranged_account_overdraft_apis/UnarrangedAccountOverdraftWarrantiesData.yaml
-    XFapiInteractionId:
-      $ref: ./headers/XFapiInteractionId.yaml
   parameters:
     accountId:
       $ref: ./parameters/AccountId.yaml
@@ -3478,28 +3317,224 @@ components:
     OpenId:
       type: openIdConnect
       description: O OpenID Connect é uma camada de identidade sobre o protocolo OAuth 2.0, que permite a identificação de um usuário final com base na autenticação realizada por um Authorization Server.
-      openIdConnectUrl: "https://authserver.example/.well-known/openid-configuration"
+      openIdConnectUrl: 'https://authserver.example/.well-known/openid-configuration'
   responses:
-    OKResponseInvoiceFinancingsContractList:
-        description: Lista de contratos obtida com sucesso.
-        headers:
-          x-fapi-interaction-id:       
-            schema:
-              $ref: ./headers/XFapiInteractionId.yaml
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/ResponseInvoiceFinancingsContractList'
+    OKResponsePersonalCustomersIdentification:
+      description: Dados sobre identificação pessoa física.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ResponsePersonalCustomersIdentification'
+    OKResponsePersonalCustomersQualification:
+      description: Dados sobre qualificação da pessoa física
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ResponsePersonalCustomersQualification'
+    OKResponsePersonalCustomersFinancialRelation:
+      description: Dados sobre relacionamento da pessoa física
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ResponsePersonalCustomersFinancialRelation'
+    OKResponseBusinessCustomersIdentification:
+      description: Dados sobre identificação pessoa jurídica
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ResponseBusinessCustomersIdentification'
+    OKResponseBusinessCustomersQualification:
+      description: Dados sobre qualificação pessoa jurídica
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ResponseBusinessCustomersQualification'
+    OKResponseBusinessCustomersFinancialRelation:
+      description: Dados sobre relacionamento pessoa jurídica
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ResponseBusinessCustomersFinancialRelation'
+    OKResponseCreditCardAccountsList:
+      description: Conjunto de informações das Contas de pagamento pós paga
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ResponseCreditCardAccountsList'
+    OKResponseCreditCardAccountsIdentification:
+      description: Dados de identificação da conta identificada por creditCardAccountId obtidos com sucesso.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ResponseCreditCardAccountsIdentification'
+    OKResponseCreditCardAccountsLimits:
+      description: Dados dos limites da conta identificada por creditCardAccountId obtidos com sucesso.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ResponseCreditCardAccountsLimits'
+    OKResponseCreditCardAccountsTransactions:
+      description: Dados das lista de transações da conta identificada por creditCardAccountId obtidos com sucesso.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ResponseCreditCardAccountsTransactions'
+    OKResponseCreditCardAccountsBills:
+      description: Dados referentes à lista de faturas da conta identificada por creditCardAccountId obtidos com sucesso.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ResponseCreditCardAccountsBills'
+    OKResponseAccountList:
+      description: Dados de identificação das contas obtidos com sucesso.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ResponseAccountList'
+    OKResponseAccountIdentification:
+      description: Dados de identificação da conta identificada por accountId obtidos com sucesso.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ResponseAccountIdentification'
+    OKResponseAccountBalances:
+      description: Dados relativos aos saldos da conta identificada por accountId obtidos com sucesso.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ResponseAccountBalances'
+    OKResponseAccountTransactions:
+      description: Dados da lista de transações da conta identificada por accountId obtidos com sucesso.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ResponseAccountTransactions'
+    OKResponseAccountOverdraftLimits:
+      description: Dados de limites da conta identificada por accountId obtidos com sucesso.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ResponseAccountOverdraftLimits'
+    OKResponseLoansContractList:
+      description: Dados dos contratos de empréstimos obtidos com sucesso.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ResponseLoansContractList'
+    OKResponseLoansContract:
+      description: Dados do contrato de empréstimo identificado por contractId
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ResponseLoansContract'
+    OKResponseLoansWarranties:
+      description: Lista de garantias vinculadas ao contrato de empréstimo identificado por contractId
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ResponseLoansWarranties'
+    OKResponseLoansInstalments:
+      description: Dados do cronograma de parcelas do contrato de empréstimo identificado por contractId
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ResponseLoansInstalments'
+    OKResponseLoansPayments:
+      description: Dados de pagamentos do contrato de empréstimo identificado por contractId
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ResponseLoansPayments'
+    OKResponseFinancingsContractList:
+      description: Lista de contratos obtida com sucesso.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ResponseFinancingsContractList'
+    OKResponseFinancingsContract:
+      description: Dados do contrato de financiamento identificado por contractId
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ResponseFinancingsContract'
+    OKResponseFinancingsWarranties:
+      description: Lista de garantias vinculadas ao contrato de financiamento identificado por contractId
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ResponseFinancingsWarranties'
+    OKResponseFinancingsInstalments:
+      description: Dados do cronograma de parcelas do contrato de financiamento identificado por contractId
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ResponseFinancingsInstalments'
+    OKResponseFinancingsPayments:
+      description: Dados de pagamentos do contrato de financiamento identificado por contractId
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ResponseFinancingsPayments'
     OKResponseUnarrangedAccountOverdraftContractList:
-        description: Lista de contratos obtida com sucesso.
-        headers:
-          x-fapi-interaction-id:       
-            schema:
-              $ref: ./headers/XFapiInteractionId.yaml
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/ResponseUnarrangedAccountOverdraftContractList'
+      description: Lista de contratos obtida com sucesso.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ResponseUnarrangedAccountOverdraftContractList'
+    OKResponseUnarrangedAccountOverdraftContract:
+      description: Dados do contrato de adiantamento a depositantes identificado por contractId
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ResponseUnarrangedAccountOverdraftContract'
+    OKResponseUnarrangedAccountOverdraftWarranties:
+      description: Lista de garantias vinculadas ao contrato de adiantamento a depositantes identificado por contractId
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ResponseUnarrangedAccountOverdraftWarranties'
+    OKResponseUnarrangedAccountOverdraftInstalments:
+      description: Dados do cronograma de parcelas do contrato de adiantamento a depositantes identificado por contractId
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ResponseUnarrangedAccountOverdraftInstalments'
+    OKResponseUnarrangedAccountOverdraftPayments:
+      description: Dados de pagamentos do contrato de adiantamento a depositantes identificado por contractId
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ResponseUnarrangedAccountOverdraftPayments'
+    OKResponseInvoiceFinancingsContractList:
+      description: Lista de contratos obtida com sucesso.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ResponseInvoiceFinancingsContractList'
+    OKResponseInvoiceFinancingsContract:
+      description: Dados do contrato de antecipação de recebíveis identificado por contractId
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ResponseInvoiceFinancingsContract'
+    OKResponseInvoiceFinancingsWarranties:
+      description: Lista de garantias vinculadas ao contrato de antecipação de recebíveis identificado por contractId
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ResponseInvoiceFinancingsWarranties'
+    OKResponseInvoiceFinancingsInstalments:
+      description: Dados do cronograma de parcelas do contrato de antecipação de recebíveis identificado por contractId
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ResponseInvoiceFinancingsInstalments'
+    OKResponseInvoiceFinancingsPayments:
+      description: Dados de pagamentos do contrato de antecipação de recebíveis identificado por contractId
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ResponseInvoiceFinancingsPayments'
     BadRequest:
       $ref: ./responses/BadRequest.yaml
     Forbidden:
