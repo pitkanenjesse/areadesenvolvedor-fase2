@@ -2511,7 +2511,7 @@ paths:
 
         <img class="lazy" src="images/loading.gif" data-src="images/der/invoice_financings/DER_InvoiceFinancings.png"/>
 
-        <a href="images/der/invoice_financings/DER_InvoiceFinancings_.png" target="_blank">Fazer download do DER Conceitual</a>
+        <a href="images/der/invoice_financings/DER_InvoiceFinancings.png" target="_blank">Fazer download do DER Conceitual</a>
 
         * DER Lógico
 
@@ -4783,9 +4783,9 @@ components:
       type: string
       maxLength: 19
       enum:
-        - REPRESENTANTE_LOCAL
+        - REPRESENTANTE_LEGAL
         - PROCURADOR
-        - NÃO_POSSUI
+        - NAO_POSSUI
       description: |
         Tipo de representante.
         Representante legal - Nome Civil completo da Pessoa Natural que represente uma entidade ou uma empresa e é nomeado em seu ato constitutivo, ou seja, no contrato social ou estatuto social.
